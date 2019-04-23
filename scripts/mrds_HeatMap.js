@@ -1,13 +1,57 @@
-requirejs(['./worldwind.min',
+requirejs([
+        '../src/createGlobe',
+        '../src/domReady',
+        './worldwind.min',
         './LayerManager',
         './RadiantCircleTile',
         '../config/mainconf'],
-    function (WorldWind,
+    function (createGlobe,
+              domReady,
+              WorldWind,
               LayerManager,
               RadiantCircleTile) {
         "use strict";
+
+
         document.ready(function () {
             $(function (){
+
+                let globe = new createGlobe('canvasOne');
+
+                globe.wwd.goTo(new WorldWind.Position(37.0902, -95.7129, 9000000));
+
+                // Web Map Service information from NASA's Near Earth Observations WMS
+                let serviceAddress = "https://cors.aworldbridgelabs.com:9084/http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities";
+                // let serviceAddress = "../config/ows.xml";
+
+                let preloadWMSLayerName = [];
+                // let highlightedItems= [];
+                let preloadLayer = []; //preload entire layer name
+                let layers = globe.wwd.layers;
+                let bob=[];
+                let checked = []; //selected toggle switch value
+                let alertVal = true;
+                let LayerSelected;
+                let arrMenu = [];
+                let checkedCount=0;
+                let j = 0;
+                let Altitude;
+                let allCheckedArray=[];
+                let nextL = $(".next");
+                let previousL = $("#previousL");
+                let currentSelectedLayer = $("#currentSelectedLayer");
+                let infobox;
+                var placemark = [];
+                var autoSuggestion = [];
+                var suggestedLayer;
+                var clickedLayer;
+                // var suggestedLayer = [];
+                // var clickedLayer = [];
+
+                // reading configGlobal from mainconf.js
+                var mainconfig = config;
+
+
                 $.ajax({
                     url: '/mrdsData',
                     type: 'GET',
@@ -116,6 +160,18 @@ requirejs(['./worldwind.min',
                             //     // }, 10000);
                             //
                             //     // console.log(data);
+
+
+
+
+                            function logError (jqXhr, text, exception) {
+                                console.log("There was a failure retrieving the capabilities document: " + text + " exception: " + exception);
+                            }
+
+
+
+
+
                             wwd.worldWindowController.__proto__.handleWheelEvent = function (event) {
                                 var navigator = this.wwd.navigator;
                                 // Normalize the wheel delta based on the wheel delta mode. This produces a roughly consistent delta across

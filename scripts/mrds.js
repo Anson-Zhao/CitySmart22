@@ -1,12 +1,16 @@
-requirejs(['./worldwind.min',
-        './LayerManager',
+requirejs([
         '../src/createGlobe',
+        '../src/domReady',
+        './worldwind.min',
+        './LayerManager',
         './RadiantCircleTile',
         '../src/util/WWMath',
         '../src/geom/Angle',
         '../src/geom/Location',
         '../config/mainconf'],
-    function (WorldWind,
+    function (createGlobe,
+              domReady,
+              WorldWind,
               LayerManager,
               RadiantCircleTile,
               WWMath,
@@ -17,6 +21,31 @@ requirejs(['./worldwind.min',
         $(document).ready(function() {
             $(function () {
 
+                let globe = new createGlobe('canvasOne');
+
+                globe.wwd.goTo(new WorldWind.Position(37.0902, -95.7129, 9000000));
+
+                // Web Map Service information from NASA's Near Earth Observations WMS
+                let serviceAddress = "https://cors.aworldbridgelabs.com:9084/http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities";
+                // let serviceAddress = "../config/ows.xml";
+
+                let preloadWMSLayerName = [];
+                // let highlightedItems= [];
+                let preloadLayer = []; //preload entire layer name
+                let layers = globe.wwd.layers;
+                let bob=[];
+                let checked = []; //selected toggle switch value
+                let alertVal = true;
+                let LayerSelected;
+                let arrMenu = [];
+                let checkedCount=0;
+                let j = 0;
+                let Altitude;
+                let allCheckedArray=[];
+                let nextL = $(".next");
+                let previousL = $("#previousL");
+                let currentSelectedLayer = $("#currentSelectedLayer");
+                let infobox;
                 var placemark = [];
                 var autoSuggestion = [];
                 var suggestedLayer;
@@ -178,6 +207,12 @@ requirejs(['./worldwind.min',
                 // console.log(color['undefined']);
                 // console.log(color[undefined]);
                 // console.log(color[placemark[0].userProperties[category]]);
+
+
+                // Called if an error occurs during WMS Capabilities document retrieval
+                function logError (jqXhr, text, exception) {
+                    console.log("There was a failure retrieving the capabilities document: " + text + " exception: " + exception);
+                }
 
 
                 for (var i = 0; i < placemark.length; i++) {
