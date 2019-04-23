@@ -16,7 +16,7 @@
 
 requirejs([
         '../src/createGlobe',
-        './mrds',
+        // './mrds',
         // './mrds_HeatMap',
         '../src/domReady',
         './OptionList',
