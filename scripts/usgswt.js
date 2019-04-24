@@ -3,6 +3,7 @@ requirejs([
     //     '../src/util/WWMath',
     //     '../src/geom/Angle',
     //     '../src/geom/Location',
+    './MainMenu',
     '../config/mainconf'],
     function (
         // WorldWind,

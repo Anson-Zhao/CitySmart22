@@ -28,6 +28,8 @@ requirejs([
         "use strict";
         let globe = new createGlobe('canvasOne');
 
+        window.globe = globe;
+
         globe.wwd.goTo(new WorldWind.Position(37.0902, -95.7129, 9000000));
 
         // Web Map Service information from NASA's Near Earth Observations WMS
