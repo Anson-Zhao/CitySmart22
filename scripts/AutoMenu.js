@@ -137,11 +137,14 @@ $(document).ready(function () {
 
 
                     if (res3[i].LayerType === 'Wmslayer') {
+
                         var thelayertype = 'wmsLayer';
+
                     } else if (res3[i].LayerType === 'PlacemarkLayer'){
+
                         var thelayertype = 'placemarkLayer';
-                    } else{
-                    }
+
+                    } else{}
                     // if (res3[i].LayerType === 'Wmslayer') {
                         // console.log(res3[i].LayerType);
                         // console.log('hh');
