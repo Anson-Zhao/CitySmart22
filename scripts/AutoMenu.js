@@ -137,11 +137,9 @@ $(document).ready(function () {
 
 
                     if (res3[i].LayerType === 'Wmslayer') {
-
                         var thelayertype = 'wmsLayer';
 
                     } else if (res3[i].LayerType === 'PlacemarkLayer'){
-
                         var thelayertype = 'placemarkLayer';
 
                     } else{}

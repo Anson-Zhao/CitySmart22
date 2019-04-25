@@ -19,6 +19,8 @@ requirejs([
         '../3rdPartyLibs/domReady',
         './OptionList',
         './AutoMenu',
+        // './mrds.js',
+        // './mrds_HeatMap.js'
         // '../src/ogc/wms/WmsLayerCapabilities'
         ],
     function (
@@ -326,11 +328,15 @@ requirejs([
                     $(':checkbox:checked').each(function () {
                         if (layers[a].displayName === $(this).val()) {
                             layers[a].enabled = true;
+                            console.log(layers[a].displayName);
+                            // layers[a].addClass(layers[a].displayName);
                         } else {
                             bob = $(this).val().split(",");
                             bob.forEach(function (eleValue) {
                                 if (layers[a].displayName === eleValue) {
                                     layers[a].enabled = true;
+                                    console.log(layers[a].displayName);
+                                    // layers[a].addClass(layers[a].displayName);
                                 }
                             });
                         }
