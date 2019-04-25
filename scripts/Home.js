@@ -23,7 +23,7 @@ requirejs([
     function (
         newGlobe
     ) {
-        "use strict";
+        // "use strict";
 
         newGlobe.redraw;
 
@@ -349,6 +349,8 @@ requirejs([
             $('#globeOrigin').click(function(){
                 newGlobe.goTo(new WorldWind.Position(37.0902, -95.7129, 9000000));
             });
+
+
 
             newGlobe.addEventListener("click", handleMouseCLK);
         });
