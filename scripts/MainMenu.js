@@ -15,31 +15,28 @@
 */
 
 requirejs([
-        '../src/createGlobe',
-        '../src/domReady',
+        './newGlobe',
+        '../3rdPartyLibs/domReady',
         './OptionList',
         './AutoMenu',
         // '../src/ogc/wms/WmsLayerCapabilities'
         ],
     function (
-        createGlobe,
+        newGlobe,
         domReady
     ) {
         "use strict";
-        let globe = new createGlobe('canvasOne');
 
-        window.globe = globe;
-
-        globe.wwd.goTo(new WorldWind.Position(37.0902, -95.7129, 9000000));
+        newGlobe.goTo(new WorldWind.Position(37.0902, -95.7129, 9000000));
 
         // Web Map Service information from NASA's Near Earth Observations WMS
-        let serviceAddress = "https://cors.aworldbridgelabs.com:9084/http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities";
-        // let serviceAddress = "../config/ows.xml";
+        // let serviceAddress = "https://cors.aworldbridgelabs.com:9084/http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities";
+        let serviceAddress = "../config/ows.xml";
 
         let preloadWMSLayerName = [];
         // let highlightedItems= [];
         let preloadLayer = []; //preload entire layer name
-        let layers = globe.wwd.layers;
+        let layers = newGlobe.layers;
         let bob=[];
         let checked = []; //selected toggle switch value
         let alertVal = true;
@@ -61,6 +58,7 @@ requirejs([
 
             // Retrieve a WmsLayerCapabilities object by the desired layer name
             for (let n = 0; n < preloadWMSLayerName.length; n++) {
+                if (!preloadWMSLayerName[n]) continue;
 
                 let wmsLayerCapability = wms.getNamedLayer(preloadWMSLayerName[n]);
 
@@ -78,9 +76,9 @@ requirejs([
                 wmsLayer.enabled = false;
 
                 // Add the layers to WorldWind and update the layer manager
-                globe.wwd.addLayer(wmsLayer);
-                // console.log(globe.wwd.layers);
-                layerManager.synchronizeLayerList();
+                newGlobe.addLayer(wmsLayer);
+
+                newGlobe.redraw;
             }
 
         }
@@ -123,8 +121,7 @@ requirejs([
             placemarkAttributes.imageColor = WorldWind.Color.WHITE;
 
             placemark = new WorldWind.Placemark(new WorldWind.Position(coLat, coLong, 1e2), true, null);
-            // console.log(PKValue);
-            // placemark.label = "Placemark" + "\n"
+
             placemark.displayName = LayerName;
             //     + "Lat " + placemark.position.latitude.toPrecision(4).toString() + "\n"
             //     + "Lon " + placemark.position.longitude.toPrecision(5).toString();
@@ -146,40 +143,18 @@ requirejs([
             // Add the placemark to the layer.
             placemarkLayer.addRenderable(placemark);
             placemarkLayer.enabled = false;
-            // console.log(placemarkLayer);
-            // console.log(placemark);
-            globe.wwd.addLayer(placemarkLayer);
+            newGlobe.addLayer(placemarkLayer);
         }
 
         function handleMouseCLK (a)   {
             let x = a.clientX,
                 y = a.clientY;
-            let pickListCLK = globe.wwd.pick(globe.wwd.canvasCoordinates(x, y));
-            // console.log(pickListCLK);
+            let pickListCLK = newGlobe.pick(newGlobe.canvasCoordinates(x, y));
             for (let m = 0; m < pickListCLK.objects.length; m++) {
-                // console.log (pickListCLK.objects[m].position.latitude);
+
                 let pickedPM = pickListCLK.objects[m].userObject;
                 if (pickedPM instanceof WorldWind.Placemark) {
-
                     sitePopUp(pickListCLK.objects[m].userObject.primarykeyAttributes);
-
-                    $(document).ready(function () {
-
-                        let modal = document.getElementById('popupBox');
-                        let span = document.getElementById('closeIt');
-
-                        modal.style.display = "block";
-
-                        span.onclick = function () {
-                            modal.style.display = "none";
-
-                            window.onclick = function (event) {
-                                if (event.target === modal) {
-                                    modal.style.display = "none";
-                                }
-                            }
-                        }
-                    });
                 }
             }
         }
@@ -208,6 +183,21 @@ requirejs([
                     break
                 }
             }
+
+            let modal = document.getElementById('popupBox');
+            let span = document.getElementById('closeIt');
+
+            modal.style.display = "block";
+
+            span.onclick = function () {
+                modal.style.display = "none";
+
+                window.onclick = function (event) {
+                    if (event.target === modal) {
+                        modal.style.display = "none";
+                    }
+                }
+            }
         }
 
         function globlePosition (layerRequest){
@@ -219,9 +209,8 @@ requirejs([
                 async: false,
                 success: function (results) {
                     LayerSelected = results[0];//the first object of an array --- Longitude: " ", Latitude: "", Altitude: "", ThirdLayer: "", LayerName: ""console.log(LayerSelected);
-                    // console.log(LayerSelected);
                     Altitude = LayerSelected.Altitude * 1000;
-                    globe.wwd.goTo(new WorldWind.Position(LayerSelected.Latitude, LayerSelected.Longitude, Altitude));
+                    newGlobe.goTo(new WorldWind.Position(LayerSelected.Latitude, LayerSelected.Longitude, Altitude));
                 }
             })
         }
@@ -274,7 +263,7 @@ requirejs([
                         currentSelectedLayer.prop('disabled',true);
                         previousL.prop('disabled',true);
                         nextL.prop('disabled',true);
-                        // globe.wwd.goTo(new WorldWind.Position(37.0902, -95.7129, 9000000));
+                        // newGlobe.goTo(new WorldWind.Position(37.0902, -95.7129, 9000000));
                     } else{
                         previousL.prop('disabled',false);
                         nextL.prop('disabled',true);
@@ -320,7 +309,7 @@ requirejs([
 
             let preloadLayerStr = preloadLayer + '';//change preloadLayer into a string
             preloadWMSLayerName = preloadLayerStr.split(",");//split preloadLayerStr with ","
-            console.log(preloadWMSLayerName);
+
             $.get(serviceAddress).done(createWMSLayer).fail(logError);// get the xml file of wmslayer and pass the file into  createLayer function.
 
             $(".wmsLayer,.placemarkLayer").click(function () {
@@ -402,7 +391,7 @@ requirejs([
                         let FirstLayerId = '#' + results[0].FirstLayer;
                         let SecondLayerId = '#' + results[0].FirstLayer + '-' + results[0].SecondLayer;
 
-                        globe.wwd.goTo(new WorldWind.Position(results[0].Latitude, results[0].Longitude, results[0].Altitude * 1000));
+                        newGlobe.goTo(new WorldWind.Position(results[0].Latitude, results[0].Longitude, results[0].Altitude * 1000));
 
                         $(FirstLayerId).collapse('show');
                         $(SecondLayerId).collapse('show');
@@ -412,11 +401,11 @@ requirejs([
             });
 
             $('#globeOrigin').click(function(){
-                globe.wwd.goTo(new WorldWind.Position(37.0902, -95.7129, 9000000));
+                newGlobe.goTo(new WorldWind.Position(37.0902, -95.7129, 9000000));
             });
 
-            // globe.wwd.addEventListener("mousemove", handlePick);
+            // newGlobe.addEventListener("mousemove", handlePick);
 
-            globe.wwd.addEventListener("click", handleMouseCLK);
+            newGlobe.addEventListener("click", handleMouseCLK);
         });
     });
