@@ -19,7 +19,7 @@
  * @exports BingWMSLayer
  */
 define([
-        '../WWConf',
+        '../../scripts/WWConf',
         '../geom/Location',
         '../geom/Sector',
         '../layer/TiledImageLayer',

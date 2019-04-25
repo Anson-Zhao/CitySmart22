@@ -29,10 +29,11 @@ var configGlobal = {
 
     //upload path to geoserver when approved
     'geoServer' : 'http://cs.aworldbridgelabs.com:8080/geoserver/',
+    'geoServer' : 'http://10.11.90.16:8080/geoserver/',
 
     //sysnchronization between approvedfolder and data folder under geoserver when approved
     // 'Sync_Dir' : '/usr/share/geoserver-2.15.0/data_dir/data/Approved',
-    'Sync_Dir' : 'syncfolder',
+    // 'Sync_Dir' : 'syncfolder',
 
     //download/backup wmsCapabilities file (xml)
     'Download_From' : 'https://cors.aworldbridgelabs.com:9084/http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities',

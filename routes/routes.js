@@ -1510,7 +1510,7 @@ module.exports = function (app, passport) {
                     var type = "Content-type: application/zip";
                     var datastore = "datastore" + fName;
 
-                    var uploadStat1 = "curl -u julia:123654 -v -XPUT -H '" + type + "' --data-binary @approvedfolder/" + approvepictureStr[0] + " " + geoServer + "rest/workspaces/Approved/datastores/" + datastore +"/file.shp";
+                    var uploadStat1 = "curl -u julia:123654 -v -XPUT -H '" + type + "' --data-binary @approvedfolder/" + approvepictureStr[0] + " " + geoServer2 + "rest/workspaces/Approved/datastores/" + datastore +"/file.shp";
 
                     child = exec(uploadStat1,
                         function (error, stdout, stderr) {
@@ -1536,18 +1536,148 @@ module.exports = function (app, passport) {
                                             layerName = "Approved:" + jsonF.featureTypes.featureType[0].name;
                                             console.log(layerName);
                                             geoName = layerName;
+                                            // var lname = jsonF.featureTypes.featureType[0].name;
 
-                                            let myStat2 = "UPDATE Request_Form SET LayerName = '" + geoName +"' WHERE RID = '" + approveIDStr + "'";
+                                            let myState2 = "UPDATE Request_Form SET LayerName = '" + geoName +"' WHERE RID = '" + approveIDStr + "';";
+                                            let myState3 = "UPDATE LayerMenu SET LayerName = '" + geoName +"' WHERE RID = '" + approveIDStr + "'";
 
-                                            con_CS.query(myStat2, function (err, results) {
-                                                if (err) throw err;
-                                            })
+                                            con_CS.query(myState2 + myState3, function (err, results) {
+                                                if (err) {
+                                                    throw err;
+                                                } else {
+                                                    //res.json(results);
+                                                    var uploadStat3 = "curl -u julia:123654 -v -H 'Accept: text/xml' -XGET -H 'Content-type: text/json' " + geoServer2 + "rest/workspaces/Approved/datastores/" + datastore + "/featuretypes/"+ geoName +".json";
+                                                    var jsonL;
+                                                    child = exec(uploadStat3,
+                                                        function (error, stdout, stderr) {
+                                                            console.log(uploadStat3);
+                                                            console.log('stdout: ' + stdout);
+                                                            console.log('stderr: ' + stderr);
+
+                                                            jsonL = JSON.parse(stdout);
+                                                            if (error !== null) {
+
+                                                                console.log('exec error: ' + error);
+                                                            } else {
+                                                                var minx, maxx, miny, maxy, avgx, avgy;
+                                                                minx = jsonL.featureType.nativeBoundingBox.minx;
+                                                                maxx = jsonL.featureType.nativeBoundingBox.maxx;
+                                                                miny = jsonL.featureType.nativeBoundingBox.miny;
+                                                                maxy = jsonL.featureType.nativeBoundingBox.maxy;
+                                                                avgx = (minx + maxx)/2;
+                                                                avgy = (miny + maxy)/2;
+                                                                console.log(minx);
+                                                                console.log(maxx);
+                                                                console.log(avgx);
+                                                                console.log(miny);
+                                                                console.log(maxy);
+                                                                console.log(avgy);
+
+                                                                let myState4 = "UPDATE LayerMenu SET Latitude = '" + avgy +"', Longitude = '" + avgx +"' WHERE RID = '" + approveIDStr + "'";
+
+                                                                con_CS.query(myState4, function (err, results) {
+                                                                    if (err) {
+                                                                        throw err;
+                                                                    } else {
+                                                                        //res.json(results);
+                                                                    }
+                                                                });
+                                                            }
+                                                        });
+                                                }
+                                            });
+
                                         }
                                     });
                             }
                         });
                 } else if (format === "GeoTIFF - Tagged Image File Format with Geographic information (.tif)") {
                     console.log("geotiff file works :D");
+                    console.log("name of file: " + approvepictureStr[0]);
+                    type = "Content-type: text/plain";
+                    var coveragestore = "coveragestore" + fName;
+
+                    var uploadStat4 = "curl -u julia:123654 -v -XPUT -H '" + type + "' -d 'file:data_dir/data/Approved/coveragestore/" + approvepictureStr[0] + "' " + geoServer + "rest/workspaces/Approved/coveragestores/" + coveragestore +"/external.geotiff";
+
+                    child = exec(uploadStat4,
+                        function (error, stdout, stderr) {
+                            console.log(uploadStat4);
+                            console.log('stdout: ' + stdout);
+                            console.log('stderr: ' + stderr);
+                            if (error !== null) {
+                                console.log('exec error: ' + error);
+                            } else {
+                                // var statement = "curl -u julia:123654 -v -XGET " + geoServer + "rest/workspaces/Approved/coveragestore/" + datastore + "/featuretypes.json";
+                                // var jsonF;
+                                // child = exec(statement,
+                                //     function (error, stdout, stderr) {
+                                //         console.log(statement);
+                                //         console.log('stdout: ' + stdout);
+                                //         console.log('stderr: ' + stderr);
+                                //
+                                //         jsonF = JSON.parse(stdout);
+                                //         if (error !== null) {
+                                //
+                                //             console.log('exec error: ' + error);
+                                //         } else {
+                                //             layerName = "Approved:" + jsonF.featureTypes.featureType[0].name;
+                                //             console.log(layerName);
+                                //             geoName = layerName;
+                                //             var lname = jsonF.featureTypes.featureType[0].name;
+                                //
+                                //             let statementNext = "UPDATE Request_Form SET LayerName = '" + geoName +"' WHERE RID = '" + approveIDStr + "';";
+                                //             let statementNext2 = "UPDATE LayerMenu SET LayerName = '" + geoName +"' WHERE RID = '" + approveIDStr + "'";
+                                //
+                                //             con_CS.query(statementNext + statementNext2, function (err, results) {
+                                //                 if (err) {
+                                //                     throw err;
+                                //                 } else {
+                                //                     //res.json(results);
+                                //                     var statement = "curl -u julia:123654 -v -H 'Accept: text/xml' -XGET -H 'Content-type: text/json' " + geoServer + "rest/workspaces/Approved/datastores/" + datastore + "/featuretypes/"+ lname +".json";
+                                //                     var jsonL;
+                                //                     child = exec(statement,
+                                //                         function (error, stdout, stderr) {
+                                //                             console.log(statement);
+                                //                             console.log('stdout: ' + stdout);
+                                //                             console.log('stderr: ' + stderr);
+                                //
+                                //                             jsonL = JSON.parse(stdout);
+                                //                             if (error !== null) {
+                                //
+                                //                                 console.log('exec error: ' + error);
+                                //                             } else {
+                                //                                 var minx, maxx, miny, maxy, avgx, avgy;
+                                //                                 minx = jsonL.featureType.nativeBoundingBox.minx;
+                                //                                 maxx = jsonL.featureType.nativeBoundingBox.maxx;
+                                //                                 miny = jsonL.featureType.nativeBoundingBox.miny;
+                                //                                 maxy = jsonL.featureType.nativeBoundingBox.maxy;
+                                //                                 avgx = (minx + maxx)/2;
+                                //                                 avgy = (miny + maxy)/2;
+                                //                                 console.log(minx);
+                                //                                 console.log(maxx);
+                                //                                 console.log(avgx);
+                                //                                 console.log(miny);
+                                //                                 console.log(maxy);
+                                //                                 console.log(avgy);
+                                //
+                                //                                 let statementNext3 = "UPDATE LayerMenu SET Latitude = '" + avgy +"', Longitude = '" + avgx +"' WHERE RID = '" + approveIDStr + "'";
+                                //
+                                //                                 con_CS.query(statementNext3, function (err, results) {
+                                //                                     if (err) {
+                                //                                         throw err;
+                                //                                     } else {
+                                //                                         //res.json(results);
+                                //                                     }
+                                //                                 });
+                                //                             }
+                                //                         });
+                                //                 }
+                                //             });
+                                //
+                                //         }
+                                //     });
+                            }
+                        });
                 }
 
                 res.json(results[i]);
@@ -1562,20 +1692,20 @@ module.exports = function (app, passport) {
 
         console.log(result);
 
-        var statement = "curl -u julia:123654 -v -XGET " + geoServer + "rest/workspaces/Approved/datastores/datastoresigh/featuretypes.json";
-        var jsonF;
+        var statement = "curl -u julia:123654 -v -XPUT -H 'Content-type: text/plain' -d 'file:data_dir/data/Approved/coveragestore/marbles.tif' " + geoServer + "rest/workspaces/Approved/coveragestore/newCov2/external.geotiff";
+        // var jsonF;
         child = exec(statement,
             function (error, stdout, stderr) {
                 console.log(statement);
                 console.log('stdout: ' + stdout);
                 console.log('stderr: ' + stderr);
 
-                jsonF = JSON.parse(stdout);
+                // jsonF = JSON.parse(stdout);
                 if (error !== null) {
 
                     console.log('exec error: ' + error);
                 } else {
-                    console.log(jsonF.featureTypes.featureType[0].name);
+                    // console.log(jsonF.featureTypes.featureType[0].name);
                 }
             });
 
@@ -1809,17 +1939,6 @@ module.exports = function (app, passport) {
             res.json(results);
         })
     });
-
-//check if the layer name is available
-    app.get('/SearchLayerName', function (req, res) {
-        res.setHeader("Access-Control-Allow-Origin", "*");
-        con_CS.query("SELECT ThirdLayer FROM LayerMenu", function (err, results) {
-            if (err) throw err;
-            res.json(results);
-
-        });
-    });
-
 
     app.get('/EditData', function (req, res) {
         res.setHeader("Access-Control-Allow-Origin", "*");
