@@ -16,26 +16,19 @@
 
 requirejs([
         './newGlobe',
-        '../3rdPartyLibs/domReady',
-        './OptionList',
         './AutoMenu',
-        // '../src/ogc/wms/WmsLayerCapabilities'
+        './CS_wmsLayer',
+        './OptionList'
         ],
     function (
-        newGlobe,
-        domReady
+        newGlobe
     ) {
         "use strict";
 
+        newGlobe.redraw;
+
         newGlobe.goTo(new WorldWind.Position(37.0902, -95.7129, 9000000));
 
-        // Web Map Service information from NASA's Near Earth Observations WMS
-        // let serviceAddress = "https://cors.aworldbridgelabs.com:9084/http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities";
-        let serviceAddress = "../config/ows.xml";
-
-        let preloadWMSLayerName = [];
-        // let highlightedItems= [];
-        let preloadLayer = []; //preload entire layer name
         let layers = newGlobe.layers;
         let bob=[];
         let checked = []; //selected toggle switch value
@@ -50,43 +43,6 @@ requirejs([
         let previousL = $("#previousL");
         let currentSelectedLayer = $("#currentSelectedLayer");
         let infobox;
-
-        function createWMSLayer (xmlDom) {
-
-            // Create a WmsCapabilities object from the XML DOM
-            let wms = new WorldWind.WmsCapabilities(xmlDom);
-
-            // Retrieve a WmsLayerCapabilities object by the desired layer name
-            for (let n = 0; n < preloadWMSLayerName.length; n++) {
-                if (!preloadWMSLayerName[n]) continue;
-
-                let wmsLayerCapability = wms.getNamedLayer(preloadWMSLayerName[n]);
-
-                if (!wmsLayerCapability) continue;
-
-                // Form a configuration object from the wmsLayerCapability object
-                let wmsConfig = WorldWind.WmsLayer.formLayerConfiguration(wmsLayerCapability);
-
-                // Modify the configuration objects title property to a more user friendly title
-                wmsConfig.title = preloadWMSLayerName[n];
-
-                // Create the WMS Layer from the configuration object
-                let wmsLayer = new WorldWind.WmsLayer(wmsConfig);
-
-                wmsLayer.enabled = false;
-
-                // Add the layers to WorldWind and update the layer manager
-                newGlobe.addLayer(wmsLayer);
-
-                newGlobe.redraw;
-            }
-
-        }
-
-        // Called if an error occurs during WMS Capabilities document retrieval
-        function logError (jqXhr, text, exception) {
-            console.log("There was a failure retrieving the capabilities document: " + text + " exception: " + exception);
-        }
 
         function Placemark_Creation (RGB,PKValue, coLat, coLong, LayerName) {
             let placemark;
@@ -274,7 +230,7 @@ requirejs([
         }
 
         //preload function
-        domReady(function() {
+        $(document).ready(function () {
             //preload placemark
             $.ajax({
                 url: '/placemark',
@@ -302,17 +258,7 @@ requirejs([
             nextL.prop('disabled',true);
             previousL.prop('disabled',true);
 
-            //preload wmsLayer
-            $(".wmsLayer").each(function (i) {
-                preloadLayer[i] = $(this).val();
-            });
-
-            let preloadLayerStr = preloadLayer + '';//change preloadLayer into a string
-            preloadWMSLayerName = preloadLayerStr.split(",");//split preloadLayerStr with ","
-
-            $.get(serviceAddress).done(createWMSLayer).fail(logError);// get the xml file of wmslayer and pass the file into  createLayer function.
-
-            $(".wmsLayer,.placemarkLayer").click(function () {
+            $(".wmsLayer, .placemarkLayer, .heatmapLayer").click(function () {
                 let layer1 = $(this).val(); //the most current value of the selected switch
                 allCheckedArray = $(':checkbox:checked');
 
@@ -403,8 +349,6 @@ requirejs([
             $('#globeOrigin').click(function(){
                 newGlobe.goTo(new WorldWind.Position(37.0902, -95.7129, 9000000));
             });
-
-            // newGlobe.addEventListener("mousemove", handlePick);
 
             newGlobe.addEventListener("click", handleMouseCLK);
         });
