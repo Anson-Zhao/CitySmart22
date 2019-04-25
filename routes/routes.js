@@ -1653,6 +1653,10 @@ module.exports = function (app, passport) {
                                 //             });
                                 //
                                 //         }
+
+
+
+
                                 //     });
                             }
                         });
@@ -1670,7 +1674,7 @@ module.exports = function (app, passport) {
 
         console.log(result);
 
-        var statement = "curl -u julia:123654 -v -XPUT -H 'Content-type: text/plain' -d 'file:data_dir/data/Approved/coveragestore/marbles.tif' " + geoServer + "rest/workspaces/Approved/coveragestore/newCov2/external.geotiff";
+        var statement = "curl -u julia:123654 -v -XPUT -H 'Content-type: text/plain' -d 'file:data_dir/data/Approved/coveragestore/MARBLES.TIF' " + geoServer + "rest/workspaces/Approved/coveragestore/newCov2/external.geotiff";
         // var jsonF;
         child = exec(statement,
             function (error, stdout, stderr) {
