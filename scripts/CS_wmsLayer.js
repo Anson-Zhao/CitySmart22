@@ -1,12 +1,10 @@
 
 requirejs([
         './newGlobe',
-        '../3rdPartyLibs/domReady',
         '../config/mainconf'
     ],
     function (
-        newGlobe,
-        domReady
+        newGlobe
     ) {
         "use strict";
 
@@ -52,7 +50,7 @@ requirejs([
             console.log("There was a failure retrieving the capabilities document: " + text + " exception: " + exception);
         }
 
-        domReady(function() {
+        $(document).ready(function () {
 
             // let preloadLayerStr = preloadLayer + '';//change preloadLayer into a string
             // preloadWmsLayers = preloadLayerStr.split(",");//split preloadLayerStr with ","

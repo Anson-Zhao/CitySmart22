@@ -2,10 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2de1ac2b-c3a4-4935-a511-f40d0ff05b3e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/scripts/CS_wmsLayer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/examples/HeatMap.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/examples/HeatMap.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_4_24_16_20_40.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_4_24_17_20_40.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_4_24_18_20_40.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/AutoMenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/AutoMenu.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/CS_wmsLayer.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/CS_wmsLayer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/Home.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -19,43 +21,51 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/MainMenu.js">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/scripts/CS_wmsLayer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-311">
-              <caret line="31" column="3" selection-start-line="28" selection-end-line="31" selection-end-column="3" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-                <element signature="e#1866#3028#0" />
-                <element signature="e#3373#6161#0" />
-                <element signature="n#style#0;n#img#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="76">
+              <caret line="4" column="6" lean-forward="true" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/CS_wmsLayer.js">
-          <provider selected="true" editor-type-id="text-editor" />
+        <entry file="file://$PROJECT_DIR$/examples/HeatMap.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="572">
+              <caret line="59" lean-forward="true" selection-start-line="46" selection-start-column="7" selection-end-line="59" />
+            </state>
+          </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/newGlobe.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="38">
+              <caret line="2" column="46" selection-start-line="2" selection-start-column="37" selection-end-line="2" selection-end-column="46" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/AutoMenu.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-4">
+              <caret line="44" column="51" lean-forward="true" selection-start-line="44" selection-start-column="51" selection-end-line="44" selection-end-column="51" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scripts/Home.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
-              <caret line="19" column="24" lean-forward="true" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
+            <state relative-caret-position="235">
+              <caret line="232" column="37" selection-start-line="232" selection-start-column="8" selection-end-line="232" selection-end-column="37" />
               <folding>
-                <element signature="e#3373#6161#0" />
-                <element signature="e#6201#6669#0" />
-                <element signature="e#6708#8687#0" />
                 <element signature="n#style#0;n#img#0;n#!!top" expanded="true" />
-                <element signature="e#8735#9440#0" />
-                <element signature="e#9497#12769#0" />
-                <element signature="e#12879#13689#0" />
-                <element signature="e#14433#16080#0" />
-                <element signature="e#16128#16741#0" />
-                <element signature="e#16785#17189#0" />
-                <element signature="e#17311#18293#0" />
+                <element signature="e#13699#14312#0" />
+                <element signature="e#14882#15864#0" />
               </folding>
             </state>
           </provider>
@@ -72,8 +82,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>config</find>
-      <find>requirejs</find>
       <find>2.3.5</find>
       <find>WmsLayerCapabilities</find>
       <find>require</find>
@@ -81,7 +89,6 @@
       <find>globe.wwd</find>
       <find>createWMSlayer</find>
       <find>createWMSLayer</find>
-      <find>domReady</find>
       <find>Ready</find>
       <find>sitePopUp</find>
       <find>globe</find>
@@ -96,12 +103,15 @@
       <find>handleWheelEvent</find>
       <find>/mrdsData</find>
       <find>MainMenu</find>
-      <find>service</find>
       <find>globlePosition</find>
       <find>Altitude</find>
       <find>preloadWMSLayerName</find>
       <find>mrds</find>
       <find>handlePick</find>
+      <find>service</find>
+      <find>secondRes</find>
+      <find>ready</find>
+      <find>domReady</find>
     </findStrings>
     <replaceStrings>
       <replace>2.3.5</replace>
@@ -144,8 +154,10 @@
         <option value="$PROJECT_DIR$/config/mainconf.js" />
         <option value="$PROJECT_DIR$/scripts/usgswt.js" />
         <option value="$PROJECT_DIR$/scripts/MainMenu.js" />
-        <option value="$PROJECT_DIR$/scripts/CS_wmsLayer.js" />
+        <option value="$PROJECT_DIR$/scripts/AutoMenu.js" />
         <option value="$PROJECT_DIR$/scripts/Home.js" />
+        <option value="$PROJECT_DIR$/scripts/CS_wmsLayer.js" />
+        <option value="$PROJECT_DIR$/examples/HeatMap.js" />
       </list>
     </option>
   </component>
@@ -177,7 +189,7 @@
             <path>
               <item name="CitySmart22" type="b2602c69:ProjectViewProjectNode" />
               <item name="CitySmart22" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
+              <item name="examples" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="CitySmart22" type="b2602c69:ProjectViewProjectNode" />
@@ -197,7 +209,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="10.15.3" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/scripts" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/examples" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -216,6 +228,7 @@
       <recent name="$PROJECT_DIR$/src" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/examples" />
       <recent name="$PROJECT_DIR$/scripts" />
       <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/src/layer" />
@@ -255,7 +268,7 @@
       <option name="presentableId" value="Default" />
       <updated>1555789805933</updated>
       <workItem from="1555789807042" duration="1894000" />
-      <workItem from="1555791745817" duration="25166000" />
+      <workItem from="1555791745817" duration="28157000" />
     </task>
     <task id="LOCAL-00001" summary="V2.2">
       <created>1555795784459</created>
@@ -313,11 +326,25 @@
       <option name="project" value="LOCAL" />
       <updated>1556220101734</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="V2.2">
+      <created>1556228818321</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1556228818321</updated>
+    </task>
+    <task id="LOCAL-00010" summary="V2.2">
+      <created>1556228833018</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1556228833018</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27060000" />
+    <option name="totallyTimeSpent" value="30051000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="429" y="28" width="1743" height="1302" extended-state="0" />
@@ -500,13 +527,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/homepage.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="538">
-          <caret line="35" column="38" lean-forward="true" selection-start-line="35" selection-start-column="38" selection-end-line="35" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ogc/wms/WmsLayerCapabilities.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-11">
@@ -540,13 +560,6 @@
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/WWConf.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" column="3" lean-forward="true" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
         </state>
       </provider>
     </entry>
@@ -628,13 +641,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/mrds.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="12" column="23" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/RadiantCircleTile.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
@@ -676,13 +682,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/newGlobe.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="27" column="3" lean-forward="true" selection-start-line="27" selection-start-column="3" selection-end-line="27" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/WorldWindShim.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="209">
@@ -690,26 +689,67 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/CS_wmsLayer.js">
+    <entry file="file://$PROJECT_DIR$/views/homepageUSER.ejs">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/homepage.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="498">
+          <caret line="35" column="38" lean-forward="true" selection-start-line="35" selection-start-column="38" selection-end-line="35" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/WWConf.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="8" column="3" lean-forward="true" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/AutoMenu.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4">
+          <caret line="44" column="51" lean-forward="true" selection-start-line="44" selection-start-column="51" selection-end-line="44" selection-end-column="51" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/scripts/Home.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="19" column="24" lean-forward="true" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
+        <state relative-caret-position="235">
+          <caret line="232" column="37" selection-start-line="232" selection-start-column="8" selection-end-line="232" selection-end-column="37" />
           <folding>
-            <element signature="e#3373#6161#0" />
-            <element signature="e#6201#6669#0" />
-            <element signature="e#6708#8687#0" />
             <element signature="n#style#0;n#img#0;n#!!top" expanded="true" />
-            <element signature="e#8735#9440#0" />
-            <element signature="e#9497#12769#0" />
-            <element signature="e#12879#13689#0" />
-            <element signature="e#14433#16080#0" />
-            <element signature="e#16128#16741#0" />
-            <element signature="e#16785#17189#0" />
-            <element signature="e#17311#18293#0" />
+            <element signature="e#13699#14312#0" />
+            <element signature="e#14882#15864#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/newGlobe.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" column="46" selection-start-line="2" selection-start-column="37" selection-end-line="2" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/examples/HeatMap.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="572">
+          <caret line="59" lean-forward="true" selection-start-line="46" selection-start-column="7" selection-end-line="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/mrds.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="12" column="23" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/CS_wmsLayer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" column="6" lean-forward="true" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
         </state>
       </provider>
     </entry>

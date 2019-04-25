@@ -16,14 +16,12 @@
 
 requirejs([
         './newGlobe',
-        '../3rdPartyLibs/domReady',
-        './CS_wmsLayer',
-        './OptionList',
         './AutoMenu',
+        './CS_wmsLayer',
+        './OptionList'
         ],
     function (
-        newGlobe,
-        domReady
+        newGlobe
     ) {
         "use strict";
 
@@ -232,7 +230,7 @@ requirejs([
         }
 
         //preload function
-        domReady(function() {
+        $(document).ready(function () {
             //preload placemark
             $.ajax({
                 url: '/placemark',
@@ -260,7 +258,7 @@ requirejs([
             nextL.prop('disabled',true);
             previousL.prop('disabled',true);
 
-            $(".wmsLayer,.placemarkLayer").click(function () {
+            $(".wmsLayer, .placemarkLayer, .heatmapLayer").click(function () {
                 let layer1 = $(this).val(); //the most current value of the selected switch
                 allCheckedArray = $(':checkbox:checked');
 
