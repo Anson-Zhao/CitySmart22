@@ -121,6 +121,8 @@ function ChangeStateList(statelevel) {
         success: function (results) {
             console.log(results);
             cityList.add(new Option("-Select a City List-", "Select a City"));
+            cityList.add(new Option("All Cities", "All Cities",));
+
             for(var j = 0; j < results.length; j++){
                 var option = new Option(results[j].CityName, results[j].CityName);
                 cityList.add(option);
@@ -143,6 +145,9 @@ function ChangeStateList(statelevel) {
 }
 
 function ChangeCityList(citylevel){
+
+    $('.Menu').hide();
+    $('.State').hide();
     console.log(citylevel);
     var city = "citylevel="+ citylevel;
     console.log(city);
@@ -162,13 +167,18 @@ function ChangeCityList(citylevel){
 }
 
 function myFunction(returnCity) {
+
     for( var i = 0; i <returnCity.length ; i++){
         var obj1 = returnCity[i].FirstLayer;
-        var obj2 = returnCity[i].SecondLayer;
-        var obj3 = returnCity[i].ThirdLayer;
+        console.log (returnCity[i]);
+        var obj2 = returnCity[i].SecondLayer; //FirstLayer
+        console.log(obj2);
+        var obj3 = returnCity[i].ThirdLayer; //SecondLayer
+        console.log(obj3);
         var className1 = "." + obj1;
         var className2 = "." + obj2;
         var className3 = "." + obj3;
+
         $(className1).show();
         $(className2).show();
         $(className3).show();
