@@ -1,11 +1,11 @@
 requirejs([
-        '../src/createGlobe',
-        '../src/domReady',
+        './newGlobe',
+        '../3rdPartyLibs/domReady',
         './worldwind.min',
         './LayerManager',
         './RadiantCircleTile',
         '../config/mainconf'],
-    function (createGlobe,
+    function (newGlobe,
               domReady,
               WorldWind,
               LayerManager,
@@ -164,9 +164,9 @@ requirejs([
 
 
 
-                            function logError (jqXhr, text, exception) {
-                                console.log("There was a failure retrieving the capabilities document: " + text + " exception: " + exception);
-                            }
+                            // function logError (jqXhr, text, exception) {
+                            //     console.log("There was a failure retrieving the capabilities document: " + text + " exception: " + exception);
+                            // }
 
 
 

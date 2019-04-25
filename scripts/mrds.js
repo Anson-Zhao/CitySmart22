@@ -1,6 +1,6 @@
 requirejs([
-        '../src/createGlobe',
-        '../src/domReady',
+        './newGlobe',
+        '../3rdPartyLibs/domReady',
         './worldwind.min',
         './LayerManager',
         './RadiantCircleTile',
@@ -8,7 +8,7 @@ requirejs([
         '../src/geom/Angle',
         '../src/geom/Location',
         '../config/mainconf'],
-    function (createGlobe,
+    function (newGlobe,
               domReady,
               WorldWind,
               LayerManager,
@@ -21,18 +21,16 @@ requirejs([
         $(document).ready(function() {
             $(function () {
 
-                let globe = new createGlobe('canvasOne');
-
-                globe.wwd.goTo(new WorldWind.Position(37.0902, -95.7129, 9000000));
+                newGlobe.goTo(new WorldWind.Position(37.0902, -95.7129, 9000000));
 
                 // Web Map Service information from NASA's Near Earth Observations WMS
-                let serviceAddress = "https://cors.aworldbridgelabs.com:9084/http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities";
-                // let serviceAddress = "../config/ows.xml";
+                // let serviceAddress = "https://cors.aworldbridgelabs.com:9084/http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=wms&version=1.3.0&request=GetCapabilities";
+                let serviceAddress = "../config/ows.xml";
 
                 let preloadWMSLayerName = [];
                 // let highlightedItems= [];
                 let preloadLayer = []; //preload entire layer name
-                let layers = globe.wwd.layers;
+                let layers = newGlobe.layers;
                 let bob=[];
                 let checked = []; //selected toggle switch value
                 let alertVal = true;
@@ -46,10 +44,11 @@ requirejs([
                 let previousL = $("#previousL");
                 let currentSelectedLayer = $("#currentSelectedLayer");
                 let infobox;
-                var placemark = [];
-                var autoSuggestion = [];
-                var suggestedLayer;
-                var clickedLayer;
+                let placemark = [];
+                // var autoSuggestion = [];
+                // var suggestedLayer;
+                // var clickedLayer;
+                //
                 // var suggestedLayer = [];
                 // var clickedLayer = [];
 
