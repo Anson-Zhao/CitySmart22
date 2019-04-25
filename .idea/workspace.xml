@@ -2,439 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2de1ac2b-c3a4-4935-a511-f40d0ff05b3e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/scripts/newGlobe.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_4_18_15_39_27.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_4_18_16_39_27.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_4_18_17_39_27.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_4_20_10_7_9.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_4_20_11_13_54.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_4_20_13_10_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_4_20_14_10_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_4_20_15_10_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_4_20_9_7_9.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_4_21_8_45_28.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_4_22_10_39_46.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_4_22_11_39_46.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_4_22_12_39_46.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_4_22_13_39_46.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_4_22_15_11_12.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_4_22_16_11_12.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_4_22_17_11_12.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_4_22_20_11_5.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_4_22_9_39_46.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_4_23_10_46_32.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_4_23_11_46_32.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_4_23_9_46_32.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/RadiantCircleTile.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/mrds.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/mrds_HeatMap.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/mainconf.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/mainconf.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/MainMenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/MainMenu.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/usgswt.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/usgswt.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/WWConf.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/WWConf.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/createGlobe.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/domReady.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/domReady.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fine-uploader/continue.gif" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/fine-uploader/continue.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fine-uploader/dnd.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/fine-uploader/dnd.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fine-uploader/dnd.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/fine-uploader/dnd.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fine-uploader/dnd.min.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/fine-uploader/dnd.min.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fine-uploader/edit.gif" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/fine-uploader/edit.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fine-uploader/fine-uploader-gallery.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/fine-uploader/fine-uploader-gallery.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fine-uploader/fine-uploader-gallery.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/fine-uploader/fine-uploader-gallery.min.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fine-uploader/fine-uploader-new.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/fine-uploader/fine-uploader-new.min.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fine-uploader/fine-uploader.core.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/fine-uploader/fine-uploader.core.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fine-uploader/fine-uploader.core.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/fine-uploader/fine-uploader.core.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fine-uploader/fine-uploader.core.min.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/fine-uploader/fine-uploader.core.min.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fine-uploader/fine-uploader.css" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/fine-uploader/fine-uploader.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fine-uploader/fine-uploader.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/fine-uploader/fine-uploader.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fine-uploader/fine-uploader.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/fine-uploader/fine-uploader.min.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fine-uploader/fine-uploader.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/fine-uploader/fine-uploader.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fine-uploader/jquery.fine-uploader.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/fine-uploader/jquery.fine-uploader.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fine-uploader/jquery.fine-uploader.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/fine-uploader/jquery.fine-uploader.js.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fine-uploader/pause.gif" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/fine-uploader/pause.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fine-uploader/placeholders/waiting-generic.png" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/fine-uploader/placeholders/waiting-generic.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fine-uploader/routesBK.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/fine-uploader/routesBK.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fine-uploader/templates/default.html" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/fine-uploader/templates/default.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/fine-uploader/templates/simple-thumbnails.html" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/fine-uploader/templates/simple-thumbnails.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/globe/AsterV2ElevationCoverage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/globe/AsterV2ElevationCoverage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/globe/GebcoElevationCoverage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/globe/GebcoElevationCoverage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/globe/UsgsNedElevationCoverage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/globe/UsgsNedElevationCoverage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/globe/UsgsNedHiElevationCoverage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/globe/UsgsNedHiElevationCoverage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-3.3.1.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-3.3.1.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/Gruntfile.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/Gruntfile.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/demo/ajaxSubmit-integration-demo.html" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/demo/ajaxSubmit-integration-demo.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/demo/bootstrap/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/demo/bootstrap/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/demo/captcha/captcha.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/demo/captcha/captcha.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/demo/captcha/fonts/Anorexia.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/demo/captcha/fonts/Anorexia.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/demo/captcha/image_req.php" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/demo/captcha/image_req.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/demo/captcha/images/button.png" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/demo/captcha/images/button.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/demo/captcha/images/image.php" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/demo/captcha/images/image.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/demo/captcha/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/demo/captcha/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/demo/captcha/newsession.php" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/demo/captcha/newsession.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/demo/captcha/process.php" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/demo/captcha/process.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/demo/captcha/rand.php" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/demo/captcha/rand.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/demo/captcha/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/demo/captcha/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/demo/cinema/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/demo/cinema/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/demo/cinema/plan_9.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/demo/cinema/plan_9.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/demo/cinema/refer_madness.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/demo/cinema/refer_madness.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/demo/cinema/saucer_men.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/demo/cinema/saucer_men.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/demo/css/cmxform.css" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/demo/css/cmxform.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/demo/css/cmxformTemplate.css" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/demo/css/cmxformTemplate.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/demo/css/core.css" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/demo/css/core.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/demo/css/reset.css" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/demo/css/reset.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/demo/css/screen.css" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/demo/css/screen.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/demo/custom-messages-data-demo.html" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/demo/custom-messages-data-demo.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/demo/custom-methods-demo.html" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/demo/custom-methods-demo.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/demo/dynamic-totals.html" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/demo/dynamic-totals.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/demo/errorcontainer-demo.html" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/demo/errorcontainer-demo.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/demo/errors-within-labels.html" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/demo/errors-within-labels.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/demo/file_input.html" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/demo/file_input.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/demo/images/bg.gif" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/demo/images/bg.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/demo/images/checked.gif" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/demo/images/checked.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/demo/images/cmxform-divider.gif" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/demo/images/cmxform-divider.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/demo/images/cmxform-fieldset.gif" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/demo/images/cmxform-fieldset.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/demo/images/loading.gif" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/demo/images/loading.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/demo/images/unchecked.gif" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/demo/images/unchecked.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/demo/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/demo/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/demo/jquerymobile.html" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/demo/jquerymobile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/demo/login/images/bg.gif" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/demo/login/images/bg.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/demo/login/images/header1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/demo/login/images/header1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/demo/login/images/page.gif" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/demo/login/images/page.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/demo/login/images/required_star.gif" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/demo/login/images/required_star.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/demo/login/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/demo/login/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/demo/login/screen.css" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/demo/login/screen.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/demo/marketo/images/backRequiredGray.gif" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/demo/marketo/images/backRequiredGray.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/demo/marketo/images/back_green-fade.gif" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/demo/marketo/images/back_green-fade.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/demo/marketo/images/back_nav_blue.gif" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/demo/marketo/images/back_nav_blue.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/demo/marketo/images/blank.gif" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/demo/marketo/images/blank.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/demo/marketo/images/button-submit.gif" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/demo/marketo/images/button-submit.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/demo/marketo/images/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/demo/marketo/images/favicon.ico" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/demo/marketo/images/help.png" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/demo/marketo/images/help.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/demo/marketo/images/left-nav-callout-long.png" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/demo/marketo/images/left-nav-callout-long.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/demo/marketo/images/login-sprite.gif" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/demo/marketo/images/login-sprite.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/demo/marketo/images/logo_marketo.gif" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/demo/marketo/images/logo_marketo.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/demo/marketo/images/sf.png" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/demo/marketo/images/sf.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/demo/marketo/images/step1-24.gif" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/demo/marketo/images/step1-24.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/demo/marketo/images/step2-24.gif" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/demo/marketo/images/step2-24.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/demo/marketo/images/step3-24.gif" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/demo/marketo/images/step3-24.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/demo/marketo/images/tab-sprite.gif" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/demo/marketo/images/tab-sprite.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/demo/marketo/images/tab_green.gif" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/demo/marketo/images/tab_green.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/demo/marketo/images/time.png" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/demo/marketo/images/time.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/demo/marketo/images/toggle.gif" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/demo/marketo/images/toggle.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/demo/marketo/images/warning.gif" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/demo/marketo/images/warning.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/demo/marketo/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/demo/marketo/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/demo/marketo/jquery.maskedinput.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/demo/marketo/jquery.maskedinput.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/demo/marketo/mktSignup.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/demo/marketo/mktSignup.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/demo/marketo/step2.htm" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/demo/marketo/step2.htm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/demo/marketo/stylesheet.css" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/demo/marketo/stylesheet.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/demo/milk/bg.gif" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/demo/milk/bg.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/demo/milk/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/demo/milk/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/demo/milk/left_white.png" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/demo/milk/left_white.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/demo/milk/milk.css" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/demo/milk/milk.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/demo/milk/milk.png" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/demo/milk/milk.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/demo/milk/right_white.png" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/demo/milk/right_white.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/demo/multipart/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/demo/multipart/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/demo/multipart/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/demo/multipart/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/demo/radio-checkbox-select-demo.html" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/demo/radio-checkbox-select-demo.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/demo/requirejs/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/demo/requirejs/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/demo/requirejs/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/demo/requirejs/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/demo/semantic-ui/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/demo/semantic-ui/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/demo/site-demos.css" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/demo/site-demos.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/demo/themerollered.html" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/demo/themerollered.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/demo/tinymce/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/demo/tinymce/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/demo/tinymce/themes/simple/editor_template.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/demo/tinymce/themes/simple/editor_template.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/demo/tinymce/themes/simple/img/icons.gif" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/demo/tinymce/themes/simple/img/icons.gif" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/demo/tinymce/themes/simple/langs/en.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/demo/tinymce/themes/simple/langs/en.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/demo/tinymce/themes/simple/skins/default/ui.css" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/demo/tinymce/themes/simple/skins/default/ui.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/demo/tinymce/tiny_mce.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/demo/tinymce/tiny_mce.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/demo/tinymce4/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/demo/tinymce4/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/additional-methods.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/additional-methods.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/additional-methods.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/additional-methods.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/jquery.validate.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/jquery.validate.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/jquery.validate.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/jquery.validate.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/localization/messages_ar.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/localization/messages_ar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/localization/messages_ar.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/localization/messages_ar.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/localization/messages_az.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/localization/messages_az.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/localization/messages_az.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/localization/messages_az.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/localization/messages_bg.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/localization/messages_bg.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/localization/messages_bg.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/localization/messages_bg.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/localization/messages_bn_BD.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/localization/messages_bn_BD.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/localization/messages_bn_BD.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/localization/messages_bn_BD.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/localization/messages_ca.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/localization/messages_ca.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/localization/messages_ca.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/localization/messages_ca.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/localization/messages_cs.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/localization/messages_cs.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/localization/messages_cs.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/localization/messages_cs.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/localization/messages_da.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/localization/messages_da.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/localization/messages_da.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/localization/messages_da.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/localization/messages_de.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/localization/messages_de.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/localization/messages_de.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/localization/messages_de.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/localization/messages_el.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/localization/messages_el.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/localization/messages_el.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/localization/messages_el.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/localization/messages_es.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/localization/messages_es.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/localization/messages_es.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/localization/messages_es.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/localization/messages_es_AR.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/localization/messages_es_AR.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/localization/messages_es_AR.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/localization/messages_es_AR.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/localization/messages_es_PE.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/localization/messages_es_PE.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/localization/messages_es_PE.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/localization/messages_es_PE.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/localization/messages_et.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/localization/messages_et.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/localization/messages_et.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/localization/messages_et.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/localization/messages_eu.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/localization/messages_eu.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/localization/messages_eu.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/localization/messages_eu.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/localization/messages_fa.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/localization/messages_fa.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/localization/messages_fa.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/localization/messages_fa.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/localization/messages_fi.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/localization/messages_fi.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/localization/messages_fi.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/localization/messages_fi.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/localization/messages_fr.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/localization/messages_fr.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/localization/messages_fr.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/localization/messages_fr.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/localization/messages_ge.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/localization/messages_ge.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/localization/messages_ge.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/localization/messages_ge.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/localization/messages_gl.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/localization/messages_gl.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/localization/messages_gl.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/localization/messages_gl.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/localization/messages_he.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/localization/messages_he.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/localization/messages_he.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/localization/messages_he.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/localization/messages_hr.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/localization/messages_hr.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/localization/messages_hr.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/localization/messages_hr.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/localization/messages_hu.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/localization/messages_hu.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/localization/messages_hu.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/localization/messages_hu.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/localization/messages_hy_AM.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/localization/messages_hy_AM.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/localization/messages_hy_AM.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/localization/messages_hy_AM.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/localization/messages_id.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/localization/messages_id.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/localization/messages_id.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/localization/messages_id.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/localization/messages_is.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/localization/messages_is.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/localization/messages_is.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/localization/messages_is.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/localization/messages_it.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/localization/messages_it.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/localization/messages_it.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/localization/messages_it.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/localization/messages_ja.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/localization/messages_ja.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/localization/messages_ja.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/localization/messages_ja.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/localization/messages_ka.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/localization/messages_ka.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/localization/messages_ka.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/localization/messages_ka.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/localization/messages_kk.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/localization/messages_kk.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/localization/messages_kk.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/localization/messages_kk.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/localization/messages_ko.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/localization/messages_ko.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/localization/messages_ko.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/localization/messages_ko.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/localization/messages_lt.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/localization/messages_lt.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/localization/messages_lt.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/localization/messages_lt.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/localization/messages_lv.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/localization/messages_lv.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/localization/messages_lv.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/localization/messages_lv.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/localization/messages_mk.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/localization/messages_mk.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/localization/messages_mk.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/localization/messages_mk.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/localization/messages_my.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/localization/messages_my.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/localization/messages_my.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/localization/messages_my.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/localization/messages_nl.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/localization/messages_nl.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/localization/messages_nl.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/localization/messages_nl.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/localization/messages_no.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/localization/messages_no.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/localization/messages_no.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/localization/messages_no.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/localization/messages_pl.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/localization/messages_pl.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/localization/messages_pl.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/localization/messages_pl.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/localization/messages_pt_BR.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/localization/messages_pt_BR.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/localization/messages_pt_BR.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/localization/messages_pt_BR.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/localization/messages_pt_PT.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/localization/messages_pt_PT.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/localization/messages_pt_PT.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/localization/messages_pt_PT.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/localization/messages_ro.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/localization/messages_ro.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/localization/messages_ro.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/localization/messages_ro.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/localization/messages_ru.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/localization/messages_ru.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/localization/messages_ru.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/localization/messages_ru.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/localization/messages_sd.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/localization/messages_sd.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/localization/messages_sd.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/localization/messages_sd.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/localization/messages_si.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/localization/messages_si.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/localization/messages_si.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/localization/messages_si.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/localization/messages_sk.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/localization/messages_sk.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/localization/messages_sk.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/localization/messages_sk.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/localization/messages_sl.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/localization/messages_sl.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/localization/messages_sl.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/localization/messages_sl.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/localization/messages_sr.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/localization/messages_sr.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/localization/messages_sr.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/localization/messages_sr.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/localization/messages_sr_lat.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/localization/messages_sr_lat.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/localization/messages_sr_lat.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/localization/messages_sr_lat.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/localization/messages_sv.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/localization/messages_sv.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/localization/messages_sv.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/localization/messages_sv.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/localization/messages_th.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/localization/messages_th.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/localization/messages_th.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/localization/messages_th.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/localization/messages_tj.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/localization/messages_tj.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/localization/messages_tj.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/localization/messages_tj.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/localization/messages_tr.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/localization/messages_tr.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/localization/messages_tr.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/localization/messages_tr.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/localization/messages_uk.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/localization/messages_uk.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/localization/messages_uk.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/localization/messages_uk.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/localization/messages_ur.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/localization/messages_ur.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/localization/messages_ur.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/localization/messages_ur.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/localization/messages_vi.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/localization/messages_vi.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/localization/messages_vi.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/localization/messages_vi.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/localization/messages_zh.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/localization/messages_zh.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/localization/messages_zh.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/localization/messages_zh.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/localization/messages_zh_TW.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/localization/messages_zh_TW.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/localization/messages_zh_TW.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/localization/messages_zh_TW.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/localization/methods_de.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/localization/methods_de.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/localization/methods_de.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/localization/methods_de.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/localization/methods_es_CL.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/localization/methods_es_CL.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/localization/methods_es_CL.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/localization/methods_es_CL.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/localization/methods_fi.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/localization/methods_fi.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/localization/methods_fi.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/localization/methods_fi.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/localization/methods_nl.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/localization/methods_nl.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/localization/methods_nl.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/localization/methods_nl.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/localization/methods_pt.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/localization/methods_pt.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/dist/localization/methods_pt.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/dist/localization/methods_pt.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/lib/jquery-1.11.1.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/lib/jquery-1.11.1.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/lib/jquery-1.7.2.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/lib/jquery-1.7.2.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/lib/jquery-1.8.3.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/lib/jquery-1.8.3.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/lib/jquery-1.9.1.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/lib/jquery-1.9.1.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/lib/jquery-3.1.1.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/lib/jquery-3.1.1.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/lib/jquery.form.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/lib/jquery.form.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/lib/jquery.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/lib/jquery.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/lib/jquery.mockjax-1.5.3.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/lib/jquery.mockjax-1.5.3.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/lib/jquery.mockjax-2.2.1.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/lib/jquery.mockjax-2.2.1.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/lib/jquery.mockjax.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/lib/jquery.mockjax.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/lib/jquery.simulate.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/lib/jquery.simulate.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/lib/require.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/lib/require.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/src/additional/accept.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/src/additional/accept.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/src/additional/additional.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/src/additional/additional.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/src/additional/alphanumeric.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/src/additional/alphanumeric.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/src/additional/bankaccountNL.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/src/additional/bankaccountNL.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/src/additional/bankorgiroaccountNL.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/src/additional/bankorgiroaccountNL.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/src/additional/bic.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/src/additional/bic.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/src/additional/cifES.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/src/additional/cifES.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/src/additional/cpfBR.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/src/additional/cpfBR.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/src/additional/creditcard.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/src/additional/creditcard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/src/additional/creditcardtypes.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/src/additional/creditcardtypes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/src/additional/currency.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/src/additional/currency.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/src/additional/dateFA.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/src/additional/dateFA.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/src/additional/dateITA.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/src/additional/dateITA.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/src/additional/dateNL.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/src/additional/dateNL.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/src/additional/extension.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/src/additional/extension.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/src/additional/giroaccountNL.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/src/additional/giroaccountNL.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/src/additional/iban.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/src/additional/iban.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/src/additional/integer.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/src/additional/integer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/src/additional/ipv4.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/src/additional/ipv4.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/src/additional/ipv6.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/src/additional/ipv6.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/src/additional/lettersonly.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/src/additional/lettersonly.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/src/additional/letterswithbasicpunc.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/src/additional/letterswithbasicpunc.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/src/additional/mobileNL.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/src/additional/mobileNL.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/src/additional/mobileUK.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/src/additional/mobileUK.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/src/additional/netmask.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/src/additional/netmask.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/src/additional/nieES.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/src/additional/nieES.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/src/additional/nifES.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/src/additional/nifES.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/src/additional/nipPL.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/src/additional/nipPL.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/src/additional/notEqualTo.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/src/additional/notEqualTo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/src/additional/nowhitespace.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/src/additional/nowhitespace.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/src/additional/pattern.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/src/additional/pattern.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/src/additional/phoneNL.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/src/additional/phoneNL.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/src/additional/phoneUK.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/src/additional/phoneUK.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/src/additional/phoneUS.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/src/additional/phoneUS.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/src/additional/phonesUK.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/src/additional/phonesUK.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/src/additional/postalCodeCA.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/src/additional/postalCodeCA.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/src/additional/postalcodeBR.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/src/additional/postalcodeBR.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/src/additional/postalcodeIT.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/src/additional/postalcodeIT.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/src/additional/postalcodeNL.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/src/additional/postalcodeNL.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/src/additional/postcodeUK.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/src/additional/postcodeUK.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/src/additional/require_from_group.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/src/additional/require_from_group.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/src/additional/skip_or_fill_minimum.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/src/additional/skip_or_fill_minimum.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/src/additional/statesUS.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/src/additional/statesUS.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/src/additional/strippedminlength.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/src/additional/strippedminlength.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/src/additional/time.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/src/additional/time.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/src/additional/time12h.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/src/additional/time12h.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/src/additional/url2.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/src/additional/url2.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/src/additional/vinUS.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/src/additional/vinUS.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/src/additional/zipcodeUS.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/src/additional/zipcodeUS.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/src/additional/ziprange.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/src/additional/ziprange.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/src/ajax.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/src/ajax.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/src/core.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/src/core.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/src/localization/messages_ar.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/src/localization/messages_ar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/src/localization/messages_az.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/src/localization/messages_az.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/src/localization/messages_bg.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/src/localization/messages_bg.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/src/localization/messages_bn_BD.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/src/localization/messages_bn_BD.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/src/localization/messages_ca.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/src/localization/messages_ca.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/src/localization/messages_cs.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/src/localization/messages_cs.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/src/localization/messages_da.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/src/localization/messages_da.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/src/localization/messages_de.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/src/localization/messages_de.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/src/localization/messages_el.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/src/localization/messages_el.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/src/localization/messages_es.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/src/localization/messages_es.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/src/localization/messages_es_AR.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/src/localization/messages_es_AR.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/src/localization/messages_es_PE.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/src/localization/messages_es_PE.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/src/localization/messages_et.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/src/localization/messages_et.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/src/localization/messages_eu.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/src/localization/messages_eu.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/src/localization/messages_fa.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/src/localization/messages_fa.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/src/localization/messages_fi.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/src/localization/messages_fi.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/src/localization/messages_fr.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/src/localization/messages_fr.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/src/localization/messages_ge.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/src/localization/messages_ge.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/src/localization/messages_gl.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/src/localization/messages_gl.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/src/localization/messages_he.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/src/localization/messages_he.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/src/localization/messages_hr.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/src/localization/messages_hr.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/src/localization/messages_hu.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/src/localization/messages_hu.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/src/localization/messages_hy_AM.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/src/localization/messages_hy_AM.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/src/localization/messages_id.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/src/localization/messages_id.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/src/localization/messages_is.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/src/localization/messages_is.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/src/localization/messages_it.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/src/localization/messages_it.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/src/localization/messages_ja.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/src/localization/messages_ja.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/src/localization/messages_ka.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/src/localization/messages_ka.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/src/localization/messages_kk.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/src/localization/messages_kk.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/src/localization/messages_ko.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/src/localization/messages_ko.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/src/localization/messages_lt.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/src/localization/messages_lt.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/src/localization/messages_lv.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/src/localization/messages_lv.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/src/localization/messages_mk.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/src/localization/messages_mk.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/src/localization/messages_my.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/src/localization/messages_my.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/src/localization/messages_nl.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/src/localization/messages_nl.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/src/localization/messages_no.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/src/localization/messages_no.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/src/localization/messages_pl.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/src/localization/messages_pl.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/src/localization/messages_pt_BR.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/src/localization/messages_pt_BR.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/src/localization/messages_pt_PT.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/src/localization/messages_pt_PT.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/src/localization/messages_ro.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/src/localization/messages_ro.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/src/localization/messages_ru.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/src/localization/messages_ru.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/src/localization/messages_sd.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/src/localization/messages_sd.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/src/localization/messages_si.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/src/localization/messages_si.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/src/localization/messages_sk.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/src/localization/messages_sk.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/src/localization/messages_sl.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/src/localization/messages_sl.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/src/localization/messages_sr.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/src/localization/messages_sr.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/src/localization/messages_sr_lat.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/src/localization/messages_sr_lat.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/src/localization/messages_sv.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/src/localization/messages_sv.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/src/localization/messages_th.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/src/localization/messages_th.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/src/localization/messages_tj.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/src/localization/messages_tj.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/src/localization/messages_tr.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/src/localization/messages_tr.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/src/localization/messages_uk.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/src/localization/messages_uk.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/src/localization/messages_ur.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/src/localization/messages_ur.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/src/localization/messages_vi.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/src/localization/messages_vi.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/src/localization/messages_zh.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/src/localization/messages_zh.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/src/localization/messages_zh_TW.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/src/localization/messages_zh_TW.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/src/localization/methods_de.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/src/localization/methods_de.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/src/localization/methods_es_CL.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/src/localization/methods_es_CL.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/src/localization/methods_fi.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/src/localization/methods_fi.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/src/localization/methods_nl.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/src/localization/methods_nl.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/src/localization/methods_pt.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/src/localization/methods_pt.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/test/additional/creditcard.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/test/additional/creditcard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/test/additional/netmask.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/test/additional/netmask.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/test/aria.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/test/aria.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/test/error-placement.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/test/error-placement.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/test/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/test/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/test/messages.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/test/messages.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/test/methods.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/test/methods.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/test/rules.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/test/rules.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery-validation-1.17.0/test/test.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/test/test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery.form.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery.form.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jquery.multi-select.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/jquery.multi-select.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layer/BMNGLandsatLayer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/layer/BMNGLandsatLayer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layer/BMNGLayer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/layer/BMNGLayer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layer/BingWMSLayer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/layer/BingWMSLayer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/qrcode/camera.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/qrcode/camera.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/qrcode/jsqrscanner.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/qrcode/jsqrscanner.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/qrcode/qrcode.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/qrcode/qrcode.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/qrcode/scanner QR" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/qrcode/scanner QR" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/qrcode/scanner.html" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/qrcode/scanner.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/requirejs-2.3.6.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/requirejs-2.3.6.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/LayerRequestForm.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/LayerRequestForm.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/LayerRequestForm_edit.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/LayerRequestForm_edit.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/dataHistory.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/dataHistory.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/homepage.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/homepage.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/homepageUSER.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/homepageUSER.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/login.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/login.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/recovery.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/recovery.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/recovery_1.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/recovery_1.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/reset.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/reset.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/signup.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/signup.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/success.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/success.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/userEdit.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/userEdit.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/userHome.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/userHome.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/userHomeOG.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/userHomeOG.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/userManagement.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/userManagement.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/userProfile.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/userProfile.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/AutoMenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/AutoMenu.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -450,22 +23,13 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/scripts/MainMenu.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
-              <caret line="41" column="28" lean-forward="true" selection-start-line="41" selection-start-column="28" selection-end-line="41" selection-end-column="28" />
+            <state relative-caret-position="307">
+              <caret line="24" column="17" lean-forward="true" selection-start-line="24" selection-start-column="17" selection-end-line="24" selection-end-column="17" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
-                <element signature="e#3209#3343#0" />
-                <element signature="e#3421#6377#0" />
-                <element signature="e#8861#10112#0" />
-                <element signature="e#10151#11666#0" />
-                <element signature="e#10304#11656#0" />
+                <element signature="e#1866#3028#0" />
+                <element signature="e#3373#6161#0" />
                 <element signature="n#style#0;n#img#0;n#!!top" expanded="true" />
-                <element signature="e#11714#12467#0" />
-                <element signature="e#12524#15793#0" />
-                <element signature="e#15912#16722#0" />
-                <element signature="e#19455#21102#0" />
-                <element signature="e#21807#22211#0" />
-                <element signature="e#22333#23312#0" />
               </folding>
             </state>
           </provider>
@@ -561,7 +125,7 @@
     <auto-save>true</auto-save>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="430" />
+    <option name="x" value="429" />
     <option name="y" value="28" />
     <option name="width" value="1743" />
     <option name="height" value="1302" />
@@ -649,7 +213,7 @@
       <option name="presentableId" value="Default" />
       <updated>1555789805933</updated>
       <workItem from="1555789807042" duration="1894000" />
-      <workItem from="1555791745817" duration="20673000" />
+      <workItem from="1555791745817" duration="20823000" />
     </task>
     <task id="LOCAL-00001" summary="V2.2">
       <created>1555795784459</created>
@@ -672,30 +236,38 @@
       <option name="project" value="LOCAL" />
       <updated>1556107994727</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="V2.2">
+      <created>1556219274416</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1556219274416</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22567000" />
+    <option name="totallyTimeSpent" value="22717000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="430" y="28" width="1743" height="1302" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27143702" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27143702" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49970433" visible="true" weight="0.16708648" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49970433" weight="0.16708648" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
-      <window_info anchor="bottom" id="Version Control" order="9" weight="0.3299748" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="9" sideWeight="0.49970433" visible="true" weight="0.3299748" />
       <window_info anchor="bottom" id="Terminal" order="10" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5002957" side_tool="true" visible="true" weight="0.16708648" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5002957" side_tool="true" visible="true" weight="0.3299748" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -937,13 +509,6 @@
         <state relative-caret-position="-578" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/mainconf.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/globe/AsterV2ElevationCoverage.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="551">
@@ -1009,24 +574,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/config/mainconf.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/MainMenu.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="41" column="28" lean-forward="true" selection-start-line="41" selection-start-column="28" selection-end-line="41" selection-end-column="28" />
+        <state relative-caret-position="307">
+          <caret line="24" column="17" lean-forward="true" selection-start-line="24" selection-start-column="17" selection-end-line="24" selection-end-column="17" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
-            <element signature="e#3209#3343#0" />
-            <element signature="e#3421#6377#0" />
-            <element signature="e#8861#10112#0" />
-            <element signature="e#10151#11666#0" />
-            <element signature="e#10304#11656#0" />
+            <element signature="e#1866#3028#0" />
+            <element signature="e#3373#6161#0" />
             <element signature="n#style#0;n#img#0;n#!!top" expanded="true" />
-            <element signature="e#11714#12467#0" />
-            <element signature="e#12524#15793#0" />
-            <element signature="e#15912#16722#0" />
-            <element signature="e#19455#21102#0" />
-            <element signature="e#21807#22211#0" />
-            <element signature="e#22333#23312#0" />
           </folding>
         </state>
       </provider>
