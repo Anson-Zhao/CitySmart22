@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2de1ac2b-c3a4-4935-a511-f40d0ff05b3e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/scripts/CS_placemarkLayer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/AutoMenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/AutoMenu.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/CS_wmsLayer.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/CS_wmsLayer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/OptionList.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/OptionList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/Home.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -29,11 +24,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scripts/CS_placemarkLayer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
-              <caret line="63" column="12" selection-start-line="63" selection-start-column="12" selection-end-line="63" selection-end-column="12" />
+            <state relative-caret-position="684">
+              <caret line="50" column="25" lean-forward="true" selection-start-line="50" selection-start-column="25" selection-end-line="50" selection-end-column="25" />
               <folding>
                 <element signature="e#6201#6669#0" />
                 <element signature="n#style#0;n#img#0;n#!!top" expanded="true" />
@@ -51,13 +46,15 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/scripts/Home.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-571">
-              <caret line="19" column="24" lean-forward="true" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
+            <state relative-caret-position="574">
+              <caret line="45" column="8" selection-start-line="45" selection-start-column="8" selection-end-line="45" selection-end-column="8" />
               <folding>
-                <element signature="n#style#0;n#img#0;n#!!top" expanded="true" />
+                <element signature="e#6772#7477#0" />
+                <element signature="e#7534#10806#0" />
+                <element signature="e#12004#13651#0" />
                 <element signature="e#13699#14312#0" />
                 <element signature="e#14882#15864#0" />
                 <element signature="e#15914#16012#0" />
@@ -105,8 +102,8 @@
       <find>primarykeyAttributes</find>
       <find>PKValue</find>
       <find>/placemark</find>
-      <find>Placemark_Creation</find>
       <find>.heat</find>
+      <find>Placemark_Creation</find>
     </findStrings>
     <replaceStrings>
       <replace>2.3.5</replace>
@@ -116,8 +113,8 @@
       <replace>Home</replace>
       <replace>newGlobe</replace>
       <replace>firstLayer</replace>
-      <replace>let</replace>
       <replace>preloadWmsLayers</replace>
+      <replace>let</replace>
     </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/src</dir>
@@ -151,12 +148,12 @@
         <option value="$PROJECT_DIR$/scripts/usgswt.js" />
         <option value="$PROJECT_DIR$/scripts/MainMenu.js" />
         <option value="$PROJECT_DIR$/examples/HeatMap.js" />
-        <option value="$PROJECT_DIR$/scripts/Home.js" />
         <option value="$PROJECT_DIR$/scripts/CS_wmsLayer.js" />
         <option value="$PROJECT_DIR$/scripts/AutoMenu.js" />
         <option value="$PROJECT_DIR$/scripts/OptionList.js" />
         <option value="$PROJECT_DIR$/routes/routes.js" />
         <option value="$PROJECT_DIR$/scripts/CS_placemarkLayer.js" />
+        <option value="$PROJECT_DIR$/scripts/Home.js" />
       </list>
     </option>
   </component>
@@ -262,7 +259,7 @@
       <option name="presentableId" value="Default" />
       <updated>1555789805933</updated>
       <workItem from="1555789807042" duration="1894000" />
-      <workItem from="1555791745817" duration="33686000" />
+      <workItem from="1555791745817" duration="34139000" />
     </task>
     <task id="LOCAL-00001" summary="V2.2">
       <created>1555795784459</created>
@@ -348,11 +345,18 @@
       <option name="project" value="LOCAL" />
       <updated>1556236460124</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="V2.2">
+      <created>1556292510610</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1556292510610</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35580000" />
+    <option name="totallyTimeSpent" value="36033000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="429" y="28" width="1743" height="1302" extended-state="0" />
@@ -749,19 +753,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/Home.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-571">
-          <caret line="19" column="24" lean-forward="true" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
-          <folding>
-            <element signature="n#style#0;n#img#0;n#!!top" expanded="true" />
-            <element signature="e#13699#14312#0" />
-            <element signature="e#14882#15864#0" />
-            <element signature="e#15914#16012#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/CS_wmsLayer.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="57">
@@ -771,11 +762,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/scripts/CS_placemarkLayer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="63" column="12" selection-start-line="63" selection-start-column="12" selection-end-line="63" selection-end-column="12" />
+        <state relative-caret-position="684">
+          <caret line="50" column="25" lean-forward="true" selection-start-line="50" selection-start-column="25" selection-end-line="50" selection-end-column="25" />
           <folding>
             <element signature="e#6201#6669#0" />
             <element signature="n#style#0;n#img#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/Home.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="574">
+          <caret line="45" column="8" selection-start-line="45" selection-start-column="8" selection-end-line="45" selection-end-column="8" />
+          <folding>
+            <element signature="e#6772#7477#0" />
+            <element signature="e#7534#10806#0" />
+            <element signature="e#12004#13651#0" />
+            <element signature="e#13699#14312#0" />
+            <element signature="e#14882#15864#0" />
+            <element signature="e#15914#16012#0" />
           </folding>
         </state>
       </provider>
