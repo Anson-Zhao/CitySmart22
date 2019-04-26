@@ -18,7 +18,7 @@
  * @exports BMNGLandsatLayer
  */
 define([
-        '../WWConf',
+        '../../scripts/WWConf',
         '../geom/Location',
         '../geom/Sector',
         '../layer/TiledImageLayer',
