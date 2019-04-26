@@ -40,50 +40,10 @@ requirejs([
                 // console.log(mainconfig);
 
 
-                function handleMouseMove(o) {
 
-                    if ($("#popover").is(":visible")) {
-                        $("#popover").hide();
-                    }
 
-                    // The input argument is either an Event or a TapRecognizer. Both have the same properties for determining
-                    // the mouse or tap location.
-                    var x = o.clientX,
-                        y = o.clientY;
-
-                    // Perform the pick. Must first convert from window coordinates to canvas coordinates, which are
-                    // relative to the upper left corner of the canvas rather than the upper left corner of the page.
-
-                    var pickList = wwd.pick(wwd.canvasCoordinates(x, y));
-                    // console.log(pickList.objects);
-                    for (var q = 0; q < pickList.objects.length; q++) {
-                        var pickedPL = pickList.objects[q].userObject;
-                        // console.log(pickedPL);
-                        if (pickedPL instanceof WorldWind.Placemark) {
-                            // console.log("A");
-
-                            var xOffset = Math.max(document.documentElement.scrollLeft, document.body.scrollLeft);
-                            var yOffset = Math.max(document.documentElement.scrollTop, document.body.scrollTop);
-
-                            var popover = document.getElementById('popover');
-                            popover.style.position = "absolute";
-                            popover.style.left = (x + xOffset - 3) + 'px';
-                            popover.style.top = (y + yOffset - 3) + 'px';
-
-                            var content = "<p><strong>Site Name:</strong> " + pickedPL.userProperties.site_name +
-                                "<br>" + "<strong>Commodity:</strong> " + pickedPL.userProperties.commodity +
-                                "<br>" + "<strong>Development Status:</strong> " + pickedPL.userProperties.dev_stat + "</p>";
-
-                            $("#popover").attr('data-content', content);
-                            $("#popover").show();
-                        }
-                    }
-
-                    pickList = [];
-                }
-
-                    var category = this.id;
-                    console.log(category);
+                    // var category = this.id;
+                    // console.log(category);
                     var color = {
 
 
@@ -127,11 +87,11 @@ requirejs([
                         // console.log(placemark[i].userProperties[category]);
                         // console.log(color[placemark[i].userProperties[category]]);
 
-                        if (!color[placemark[i].userProperties[category]]) {
-                            gradient.addColorStop(0, color['Other']);
-                        } else {
+                        // if (!color[placemark[i].userProperties[category]]) {
+                        //     gradient.addColorStop(0, color['Other']);
+                        // } else {
                             gradient.addColorStop(0, color[placemark[i].userProperties[category]]);
-                        }
+                        // }
 
                         ctx.beginPath();
                         ctx.arc(radius, radius, radius, 0, Math.PI * 2, true);
@@ -227,7 +187,47 @@ requirejs([
                         }
                     });
 
+                function handleMouseMove(o) {
 
+                    if ($("#popover").is(":visible")) {
+                        $("#popover").hide();
+                    }
+
+                    // The input argument is either an Event or a TapRecognizer. Both have the same properties for determining
+                    // the mouse or tap location.
+                    var x = o.clientX,
+                        y = o.clientY;
+
+                    // Perform the pick. Must first convert from window coordinates to canvas coordinates, which are
+                    // relative to the upper left corner of the canvas rather than the upper left corner of the page.
+
+                    var pickList = wwd.pick(wwd.canvasCoordinates(x, y));
+                    // console.log(pickList.objects);
+                    for (var q = 0; q < pickList.objects.length; q++) {
+                        var pickedPL = pickList.objects[q].userObject;
+                        // console.log(pickedPL);
+                        if (pickedPL instanceof WorldWind.Placemark) {
+                            // console.log("A");
+
+                            var xOffset = Math.max(document.documentElement.scrollLeft, document.body.scrollLeft);
+                            var yOffset = Math.max(document.documentElement.scrollTop, document.body.scrollTop);
+
+                            var popover = document.getElementById('popover');
+                            popover.style.position = "absolute";
+                            popover.style.left = (x + xOffset - 3) + 'px';
+                            popover.style.top = (y + yOffset - 3) + 'px';
+
+                            var content = "<p><strong>Site Name:</strong> " + pickedPL.userProperties.site_name +
+                                "<br>" + "<strong>Commodity:</strong> " + pickedPL.userProperties.commodity +
+                                "<br>" + "<strong>Development Status:</strong> " + pickedPL.userProperties.dev_stat + "</p>";
+
+                            $("#popover").attr('data-content', content);
+                            $("#popover").show();
+                        }
+                    }
+
+                    pickList = [];
+                }
 
                     // Listen for mouse moves and highlight the placemarks that the cursor rolls over.
                     wwd.addEventListener("mousemove", handleMouseMove);
