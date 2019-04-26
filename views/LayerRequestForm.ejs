@@ -4,9 +4,6 @@
 <head>
     <title>CitySmart - WMS Layer Customized Request</title>
     <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
-
-    <!--<link rel="stylesheet" href="../css/style_final.css" type="text/css">
-    <link rel="stylesheet" href="../css/multi-select.css" media="screen" type="text/css">-->
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="../3rdPartyLibs/jquery-validation-1.17.0/demo/css/screen.css">
@@ -25,6 +22,7 @@
     <!--<script src="https://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script>-->
     <!--<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.min.js"></script>-->
     <script src="../3rdPartyLibs/jquery-validation-1.17.0/dist/jquery.validate.js"></script>
+    <script src="../scripts/LayerNameSearch.js"></script>
 
     <script type="text/template" id="qq-template">
         <div class="qq-uploader-selector qq-uploader qq-gallery" qq-drop-area-text="Drop files here">
@@ -353,20 +351,22 @@
 </div>
 
 <script>
-    var RID = '<%= RID %>';
-    var username = '<%= user.username %>';
-    var userrole = '<%= user.userrole %>';
+    // import {SearchLayerName, SearchThirdLayer} from "../scripts/LayerNameSearch";
+
+    let RID = '<%= RID %>';
+    let username = '<%= user.username %>';
+    let userrole = '<%= user.userrole %>';
     console.log(userrole);
     document.getElementById('User ID').value = username;
     document.getElementById('RID').value = RID;
 
     $(document).ready(function() {
 
-        var today = new Date();
-        var dd = today.getDate();
+        let today = new Date();
+        let dd = today.getDate();
 
-        var mm = today.getMonth() + 1;
-        var yyyy = today.getFullYear();
+        let mm = today.getMonth() + 1;
+        let yyyy = today.getFullYear();
         if (dd < 10) {
             dd = '0' + dd;
         }
@@ -384,11 +384,6 @@
             // $("#msg").append(" <b> (Disabled for administrator) </b>")
         // }
         // console.log now working, disable button working (test on submit button, need to find ID of upload button)
-    });
-
-
-
-    $(document).ready(function() {
 
         let continentList = document.getElementById("continent")
         $.ajax({
@@ -396,7 +391,7 @@
             dataType: 'json',
             success: function (results) {
                 console.log(results);
-                var option;
+                let option;
                 for (let i = 0; i < results.length; i++) {
                     option = new Option(results[i].Contitent_name, results[i].Continent);
                     continentList.add(option);
@@ -408,7 +403,7 @@
 
     function ChangeContinentList (continentValue){
         console.log(continentValue);
-        var country = "country="+continentValue;
+        let country = "country="+continentValue;
         let countryList = document.getElementById("country")
         while (countryList.options.length) {
             countryList.remove(0);
@@ -429,8 +424,8 @@
             data: country,
             success: function (results) {
                 console.log(results)
-                for(var j = 0; j < results.length; j++){
-                    var option = new Option(results[j].Country_name, results[j].Country_name);
+                for(let j = 0; j < results.length; j++){
+                    let option = new Option(results[j].Country_name, results[j].Country_name);
                     countryList.add(option);
                 }
             }
@@ -483,7 +478,7 @@
         }
     }
 
-    var uploader = new qq.FineUploader({
+    let uploader = new qq.FineUploader({
         element: document.getElementById("uploader"),
         // debug: true,
         request: {
@@ -510,7 +505,7 @@
 
     function submitForm () {
         alert("Submitted!");
-        var data =$("#layer").serialize();
+        let data =$("#layer").serialize();
         console.log(data);
         $.ajax({
             url  : 'submitL',
@@ -569,7 +564,7 @@
             url: "SearchLayerName",
             dataType:"json",
             success: function (results) {
-                for(var i = 0; i < results.length; i++) {
+                for(let i = 0; i < results.length; i++) {
                     // let newRes = JSON.stringify(results);
                     console.log(value);
                     console.log(results[0].LayerName);
@@ -590,7 +585,7 @@
                 }
             },
             error: function (jqXHR, exception) {
-                var msg = '';
+                let msg = '';
                 if (jqXHR.status === 0) {
                     msg = 'Not connect.\n Verify Network.';
                 } else if (jqXHR.status == 404) {

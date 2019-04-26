@@ -31,20 +31,15 @@ requirejs([
         newGlobe.goTo(new WorldWind.Position(37.0902, -95.7129, 9000000));
 
         let layers = newGlobe.layers;
-        let bob=[];
-        let checked = []; //selected toggle switch value
+        let bob = checked = arrMenu = allCheckedArray = [];
         let alertVal = true;
-        let LayerSelected;
-        let arrMenu = [];
-        let checkedCount=0;
-        let j = 0;
-        let Altitude;
-        let allCheckedArray=[];
+        let layerSelected, Altitude;
+        let checkedCount = j = 0;
         let nextL = $(".next");
         let previousL = $("#previousL");
         let currentSelectedLayer = $("#currentSelectedLayer");
 
-        function globlePosition (layerRequest){
+        function globePosition (layerRequest){
             $.ajax({
                 url: '/position',
                 type: 'GET',
@@ -52,9 +47,9 @@ requirejs([
                 data: layerRequest, //send the most current value of the selected switch to server-side
                 async: false,
                 success: function (results) {
-                    LayerSelected = results[0];//the first object of an array --- Longitude: " ", Latitude: "", Altitude: "", ThirdLayer: "", LayerName: ""console.log(LayerSelected);
-                    Altitude = LayerSelected.Altitude * 1000;
-                    newGlobe.goTo(new WorldWind.Position(LayerSelected.Latitude, LayerSelected.Longitude, Altitude));
+                    layerSelected = results[0];
+                    Altitude = layerSelected.Altitude * 1000;
+                    newGlobe.goTo(new WorldWind.Position(layerSelected.Latitude, layerSelected.Longitude, Altitude));
                 }
             })
         }
@@ -68,8 +63,8 @@ requirejs([
                 checked.push(layer1); //insert current value to "checked" array
                 checkedCount = allCheckedArray.length; //checkedCount now equals to the numbers of arrays that were inserted to allCheckedArray
                 alertVal = false; //alert (only appear at the first time)
-                currentSelectedLayer.prop('value', LayerSelected.ThirdLayer); //if there are new array was inserted into the allCheckedArray,the value of the opened layer button equals to the name of the switch that user selected
-                arrMenu.push(LayerSelected.ThirdLayer);
+                currentSelectedLayer.prop('value', layerSelected.ThirdLayer); //if there are new array was inserted into the allCheckedArray,the value of the opened layer button equals to the name of the switch that user selected
+                arrMenu.push(layerSelected.ThirdLayer);
 
                 //insert current ThirdLayer value to arrMenu
                 j = arrMenu.length - 1; //count
@@ -81,7 +76,6 @@ requirejs([
                     previousL.prop('disabled',false);
                     nextL.prop('disabled',true);
                 }
-                // LayerPosition.push(LayerSelected);
             } else { //if there is not new array was inserted into the allCheckedArray / If user un-checks a switch)
                 for( let i = 0 ; i < checked.length; i++) {
                     if (checked[i] === layer1) {
@@ -90,13 +84,12 @@ requirejs([
                         // LayerPosition.splice(i,1); //remove current Latlong from the array
                     }
                 }
-                // val = checked[checked.length - 1];
+
                 checkedCount = allCheckedArray.length;
                 alertVal = false;
                 currentSelectedLayer.prop('value',arrMenu[arrMenu.length - 1]);
-                // currentSelectedLayer.prop('value',arrMenu[j]);
-                // currentSelectedLayer.value = arrMenu[arrMenu.length - 1];
                 j = arrMenu.length - 1;
+
                 if(arrMenu.length === 1){
                     nextL.prop('disabled',true);
                     previousL.prop('disabled',true)
@@ -130,7 +123,7 @@ requirejs([
                 allCheckedArray = $(':checkbox:checked');
 
                 let layerRequest = 'layername=' + layer1;
-                globlePosition(layerRequest);
+                globePosition(layerRequest);
                 buttonControl(allCheckedArray,layer1);
 
 
@@ -190,8 +183,6 @@ requirejs([
 
             //if the opened layer was clicked, the layer shows
             $('#currentSelectedLayer').click(function(){
-                // $('.collapse').collapse('hide');
-                // let a = document.getElementById("accordion").children; //eight layer menus
 
                 let currentSelectedLayerData = "thirdlayer=" + arrMenu[j];
                 $.ajax({

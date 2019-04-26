@@ -562,7 +562,7 @@
             dataType: 'json',
             success: function (results) {
                 console.log(results);
-                var option;
+                let option;
                 for (let i = 0; i < results.length; i++) {
                     option = new Option(results[i].Contitent_name, results[i].Continent);
                     continentList.add(option);
@@ -574,7 +574,7 @@
 
     function ChangeContinentList (continentValue){
         console.log(continentValue);
-        var country = "country="+continentValue;
+        let country = "country="+continentValue;
         let countryList = document.getElementById("country")
         while (countryList.options.length) {
             countryList.remove(0);
@@ -595,8 +595,8 @@
             data: country,
             success: function (results) {
                 console.log(results)
-                for(var j = 0; j < results.length; j++){
-                    var option = new Option(results[j].Country_name, results[j].Country_name);
+                for(let j = 0; j < results.length; j++){
+                    let option = new Option(results[j].Country_name, results[j].Country_name);
                     countryList.add(option);
                 }
             }
@@ -660,7 +660,7 @@
     });
 
     $("#testButton").click(function () {
-        var data = $("#layer").serialize();
+        let data = $("#layer").serialize();
         console.log(data);
         $.ajax({
             url: 'testB',

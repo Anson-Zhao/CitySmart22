@@ -589,14 +589,14 @@
 </div>
 </body>
 <script type='text/javascript'>
-    var username = "<%= user.username %>";
+    let username = "<%= user.username %>";
     console.log(username);
-    var scoutingRowSelected, DropMenu, transactionpicturename;
-    var UserRole = "<%= user.userrole %>";
+    let scoutingRowSelected, DropMenu, transactionpicturename;
+    let UserRole = "<%= user.userrole %>";
     console.log(UserRole);
-    var scoutingTransactionID = [];
-    var trapTransactionID = [];
-    var LayerNameStr = [];
+    let scoutingTransactionID = [];
+    let trapTransactionID = [];
+    let LayerNameStr = [];
 
 
     function dropDown() {
@@ -609,9 +609,9 @@
     }
     window.onclick = function(event) {
         if (!event.target.matches('.dropbutton')) {
-            var dropdowns = document.getElementsByClassName("dropdown-content");
-            for (var i = 0; i < dropdowns.length; i++) {
-                var openDropdown = dropdowns[i];
+            let dropdowns = document.getElementsByClassName("dropdown-content");
+            for (let i = 0; i < dropdowns.length; i++) {
+                let openDropdown = dropdowns[i];
                 if (openDropdown.classList.contains('show')) {
                     openDropdown.classList.remove('show');
                 }
