@@ -36,7 +36,7 @@ requirejs([
                 // let bob=[];
                 let placemark = [];
                 let allCheckedArray=[];
-                var mainconfig = config;
+                let mainconfig = config;
                 // console.log(mainconfig);
 
 
