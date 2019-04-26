@@ -11,17 +11,14 @@ requirejs([
         // Web Map Service information from NASA's Near Earth Observations WMS
         let serviceAddress = config.Download_To;
         let preloadWmsLayers = [];//preload entire layer name
-        // let preloadLayer = [];
-        
+
         function createWMSLayer (xmlDom) {
 
             // Create a WmsCapabilities object from the XML DOM
             let wms = new WorldWind.WmsCapabilities(xmlDom);
 
             // Retrieve a WmsLayerCapabilities object by the desired layer name
-
             $(".wmsLayer").each(function (i) {
-
                 preloadWmsLayers[i] = $(this).val();
 
                 if (!preloadWmsLayers[i]) return true;
@@ -41,7 +38,6 @@ requirejs([
 
                 // Add the layers to WorldWind and update the layer manager
                 newGlobe.addLayer(wmsLayer);
-
             });
         }
 
@@ -51,13 +47,7 @@ requirejs([
         }
 
         $(document).ready(function () {
-
-            // let preloadLayerStr = preloadLayer + '';//change preloadLayer into a string
-            // preloadWmsLayers = preloadLayerStr.split(",");//split preloadLayerStr with ","
-
             //preload wmsLayer
             $.get(serviceAddress).done(createWMSLayer).fail(logError);// get the xml file of wmslayer and pass the file into  createLayer function.
-
         });
-
     });
