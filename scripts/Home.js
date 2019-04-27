@@ -18,7 +18,8 @@ requirejs([
         './newGlobe',
         './AutoMenu',
         './CS_wmsLayer',
-        './OptionList'
+        './OptionList',
+        './resource_H'
         ],
     function (
         newGlobe
