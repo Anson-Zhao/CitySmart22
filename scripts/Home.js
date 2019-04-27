@@ -19,7 +19,8 @@ requirejs([
         './AutoMenu',
         './CS_wmsLayer',
         './OptionList',
-        './CS_placemarkLayer'
+        './CS_placemarkLayer',
+        './mrds'
         ],
     function (
         newGlobe
