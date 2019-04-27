@@ -9,9 +9,11 @@ requirejs([
         "use strict";
 
         // Web Map Service information from NASA's Near Earth Observations WMS
-        let serviceAddress = config.Download_To;
+        let serviceAddress1 = config.Download_To;
+        let serviceAddress2 = config.Download_From;
+        let secondDownload = false;
         let preloadWmsLayers = [];//preload entire layer name
-
+        
         function createWMSLayer (xmlDom) {
 
             // Create a WmsCapabilities object from the XML DOM
@@ -43,11 +45,18 @@ requirejs([
 
         // Called if an error occurs during WMS Capabilities document retrieval
         function logError (jqXhr, text, exception) {
+            secondDownload = !secondDownload;
             console.log("There was a failure retrieving the capabilities document: " + text + " exception: " + exception);
+
+            if (secondDownload) {
+                $.get(serviceAddress2).done(createWMSLayer).fail(logError);
+            } else {
+                $.get(serviceAddress1).done(createWMSLayer).fail(logError);
+            }
         }
 
         $(document).ready(function () {
             //preload wmsLayer
-            $.get(serviceAddress).done(createWMSLayer).fail(logError);// get the xml file of wmslayer and pass the file into  createLayer function.
+            $.get(serviceAddress1).done(createWMSLayer).fail(logError);// get the xml file of wmslayer and pass the file into  createLayer function.
         });
     });
