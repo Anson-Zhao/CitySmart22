@@ -4,8 +4,7 @@ requirejs([
         ], function (newGlobe) {
 
     "use strict";
-
-    let placemark = [];
+    console.log(newGlobe.layers);
 
     //fetch the data from db and generate plackmarks and placemark layers
     $.ajax({
@@ -14,6 +13,7 @@ requirejs([
         dataType: 'json',
         async: false,
         success: function (resp) {
+            console.log(resp.data);
             if (!resp.error) {
                 let circle = document.createElement("canvas"),
                     ctx = circle.getContext('2d'),
@@ -36,7 +36,11 @@ requirejs([
 
                 ctx.closePath();
 
+                // start to create placemarks and placemark layers
+                let placemark = [];
+
                 for (let i = 0; i < resp.data.length; i++) {
+
                     let placemarkAttributes = new WorldWind.PlacemarkAttributes(null);
                     placemarkAttributes.imageSource = new WorldWind.ImageSource(circle);
                     placemarkAttributes.imageScale = 0.5;
@@ -59,9 +63,17 @@ requirejs([
                     placemark[i].userProperties.p_avgcap_color = resp.data[i].p_avgcap_color;
                     placemark[i].userProperties.t_ttlh_color = resp.data[i].t_ttlh_color;
 
-                    let placemarkLayer = new WorldWind.RenderableLayer(resp.data[i].case_id);
-                    placemarkLayer.addRenderable(placemark[i]);
-                    newGlobe.addLayer(placemarkLayer);
+                    let layerFound = newGlobe.layers.find( element => element.displayName === resp.data[i].p_name );
+                    let layerIndex = newGlobe.layers.indexOf(layerFound);
+
+                    if (layerIndex != -1) {
+                        newGlobe.layers[layerIndex].addRenderable(placemark[i]);
+                    } else {
+                        let placemarkLayer = new WorldWind.RenderableLayer(resp.data[i].p_name);
+                        placemarkLayer.addRenderable(placemark[i]);
+                        newGlobe.addLayer(placemarkLayer)
+                    }
+
 
                     // if (i === resp.data.length - 1) {
                     //     newGlobe.goTo(new WorldWind.Position(37.0902, -95.7129, config.eyeDistance_initial));
@@ -77,7 +89,7 @@ requirejs([
 
 
                 }
-            }
+            } else {alert(resp.error)}
         }
     });
 

@@ -14,6 +14,10 @@
 * limitations under the License.
 */
 
+requirejs.config({
+    waitSeconds: 15
+});
+
 requirejs(['./newGlobe',
     './CS_wmsLayer',
     './USGS_WT_placemarkLayer',
