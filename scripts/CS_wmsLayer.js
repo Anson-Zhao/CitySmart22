@@ -21,7 +21,7 @@ requirejs([
         let wms = new WorldWind.WmsCapabilities(xmlDom);
 
         // Retrieve a WmsLayerCapabilities object by the desired layer name
-        $(".wmsLayer").each(function (i) {
+        $(".WmsLayer").each(function (i) {
             preloadWmsLayers[i] = $(this).val();
 
             if (!preloadWmsLayers[i]) return true;
@@ -30,7 +30,6 @@ requirejs([
             // Form a configuration object from the wmsLayerCapability object
             if (!wmsLayerCapability) return true;
             let wmsConfig = WorldWind.WmsLayer.formLayerConfiguration(wmsLayerCapability);
-            console.log(wmsConfig);
 
             // Modify the configuration objects title property to a more user friendly title
             if (!wmsLayerCapability) return true;

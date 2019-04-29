@@ -19,7 +19,6 @@ requirejs.config({
 });
 
 requirejs(['./newGlobe',
-    'AutoMenu',
     './CS_wmsLayer',
     './USGS_WT_placemarkLayer',
     './CS_placemarkLayer',
@@ -145,9 +144,7 @@ requirejs(['./newGlobe',
             newGlobe.goTo(new WorldWind.Position(37.0902, -95.7129, 9000000));
         });
 
-        newGlobe.addEventListener("click", handleMouseCLK);
-
-        // newGlobe.addEventListener("mousemove", handleMouseMove);
+        newGlobe.addEventListener("mousemove", handleMouseMove);
     });
 
     function globePosition (layerRequest){
@@ -221,23 +218,10 @@ requirejs(['./newGlobe',
 
     }
 
-    function handleMouseCLK (a)   {
-        let x = a.clientX,
-            y = a.clientY;
-        let pickListCLK = newGlobe.pick(newGlobe.canvasCoordinates(x, y));
-        for (let m = 0; m < pickListCLK.objects.length; m++) {
-
-            let pickedPM = pickListCLK.objects[m].userObject;
-            if (pickedPM instanceof WorldWind.Placemark) {
-                sitePopUp(pickListCLK.objects[m].userObject.primarykeyAttributes);
-            }
-        }
-    }
 
     function handleMouseMove(o) {
-
         if ($("#popover").is(":visible")) {
-            $("#popover").hide();
+            $("#popover").popover('dispose');
         }
 
         // The input argument is either an Event or a TapRecognizer. Both have the same properties for determining
@@ -254,11 +238,11 @@ requirejs(['./newGlobe',
             let pickedPL = pickList.objects[q].userObject;
             // console.log(pickedPL);
             if (pickedPL instanceof WorldWind.Placemark) {
-                // console.log("A");
+                console.log("A");
 
                 let xOffset = Math.max(document.documentElement.scrollLeft, document.body.scrollLeft);
                 let yOffset = Math.max(document.documentElement.scrollTop, document.body.scrollTop);
-
+                //
                 let popover = document.getElementById('popover');
                 popover.style.position = "absolute";
                 popover.style.left = (x + xOffset - 3) + 'px';
@@ -270,48 +254,9 @@ requirejs(['./newGlobe',
                     "<br>" + "<strong>Total Height:</strong> " + pickedPL.userProperties.t_ttlh + "</p>";
 
                 $("#popover").attr('data-content', content);
-                $("#popover").show();
+                $("#popover").popover('show');
             }
         }
     }
 
-    function sitePopUp (PKValue) {
-        let popupBodyItem = $("#popupBody");
-
-        for (let k = 0, lengths = infobox.length; k < lengths; k++) {
-            if (infobox[k].PK === PKValue) {
-                popupBodyItem.children().remove();
-
-                let popupBodyName = $('<p class="site-name"><h4>' + infobox[k].LayerName + '</h4></p>');
-                let popupBodyDesc = $('<p class="site-description">' + infobox[k].Site_Description + '</p><br>');
-                let fillerImages = $('<img style="width:100%; height:110%;" src="../images/Pics/' + infobox[k].Picture_Location + '"/>');
-                let imageLinks = $('<p class="site-link" <h6>Site Link: </h6></p><a href="' + infobox[k].Link_to_site_location + '">Click here to navigate to the site&#8217;s website </a>');
-                let copyrightStatus = $('<p  class="copyright" <h6>Copyright Status: </h6>' + infobox[k].Copyright + '</p><br>');
-                let coordinates = $('<p class="coordinate" <h6>Latitude and Longitude: </h6>'+ infobox[k].Latitude + infobox[k].Longitude + '</p><br>');
-
-                popupBodyItem.append(popupBodyName);
-                popupBodyItem.append(popupBodyDesc);
-                popupBodyItem.append(fillerImages);
-                popupBodyItem.append(imageLinks);
-                popupBodyItem.append(copyrightStatus);
-                popupBodyItem.append(coordinates);
-                break
-            }
-        }
-
-        let modal = document.getElementById('popupBox');
-        let span = document.getElementById('closeIt');
-
-        modal.style.display = "block";
-
-        span.onclick = function () {
-            modal.style.display = "none";
-
-            window.onclick = function (event) {
-                if (event.target === modal) {
-                    modal.style.display = "none";
-                }
-            }
-        }
-    }
 });

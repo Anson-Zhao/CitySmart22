@@ -303,7 +303,7 @@ requirejs([
             previousL.prop('disabled',true);
 
             //preload wmsLayer
-            $(".wmsLayer").each(function (i) {
+            $(".WmsLayer").each(function (i) {
                 preloadLayer[i] = $(this).val();
             });
 
@@ -312,7 +312,7 @@ requirejs([
 
             $.get(serviceAddress).done(createWMSLayer).fail(logError);// get the xml file of wmslayer and pass the file into  createLayer function.
 
-            $(".wmsLayer,.placemarkLayer").click(function () {
+            $(".WmsLayer,.placemarkLayer").click(function () {
                 let layer1 = $(this).val(); //the most current value of the selected switch
                 allCheckedArray = $(':checkbox:checked');
 

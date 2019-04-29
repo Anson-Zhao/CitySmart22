@@ -132,7 +132,6 @@ $(document).ready(function() {
         url: "autoMenu",
         dataType: "json",
         success: function (res) {
-            console.log(res);
             // draw the first layer
             for ( let element of res) {
 
@@ -142,9 +141,6 @@ $(document).ready(function() {
 
                 if (!secondLayers.includes(element.SecondLayer)) {
                     createSecondLayer(element.FirstLayer, element.SecondLayer);
-                    // setTimeout(function () {
-                    //     createSecondLayer(element.FirstLayer, element.SecondLayer)
-                    // }, 100);
                 }
 
                 setTimeout(function() {
