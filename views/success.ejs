@@ -13,8 +13,8 @@
 <script>
     $(document).ready(function(){
         $(function () {
-            var timeleft = 3;
-            var downloadTimer = setInterval(function () {
+            let timeleft = 3;
+            let downloadTimer = setInterval(function () {
                 timeleft--;
                 document.getElementById("countdowntimer").textContent = timeleft;
                 if (timeleft <= 0) {

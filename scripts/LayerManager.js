@@ -26,8 +26,8 @@ define(function () {
      * @classdesc Provides a layer manager to interactively control layer visibility for a WorldWindow.
      * @param {WorldWindow} worldWindow The WorldWindow to associated this layer manager with.
      */
-    var LayerManager = function (worldWindow) {
-        var thisExplorer = this;
+    let LayerManager = function (worldWindow) {
+        let thisExplorer = this;
 
         this.wwd = worldWindow;
 
@@ -59,7 +59,7 @@ define(function () {
     };
 
     LayerManager.prototype.onProjectionClick = function (event) {
-        var projectionName = event.target.innerText || event.target.innerHTML;
+        let projectionName = event.target.innerText || event.target.innerHTML;
         $("#projectionDropdown").find("button").html(projectionName + ' <span class="caret"></span>');
 
         if (projectionName === "3D") {
@@ -102,11 +102,11 @@ define(function () {
     };
 
     LayerManager.prototype.onLayerClick = function (layerButton) {
-        var layerName = layerButton.text();
+        let layerName = layerButton.text();
 
         // Update the layer state for the selected layer.
-        for (var i = 0, len = this.wwd.layers.length; i < len; i++) {
-            var layer = this.wwd.layers[i];
+        for (let i = 0, len = this.wwd.layers.length; i < len; i++) {
+            let layer = this.wwd.layers[i];
             if (layer.hide) {
                 continue;
             }
@@ -125,25 +125,25 @@ define(function () {
     };
 
     LayerManager.prototype.synchronizeLayerList = function () {
-        var layerListItem = $("#layerList");
+        let layerListItem = $("#layerList");
 
         layerListItem.find("button").off("click");
         layerListItem.find("button").remove();
 
         // Synchronize the displayed layer list with the WorldWindow's layer list.
-        for (var i = 0, len = this.wwd.layers.length; i < len; i++) {
-            var layer = this.wwd.layers[i];
+        for (let i = 0, len = this.wwd.layers.length; i < len; i++) {
+            let layer = this.wwd.layers[i];
             if (layer.hide) {
                 continue;
             }
-            var layerItem = $('<button class="list-group-item btn btn-block">' + layer.displayName + '</button>');
+            let layerItem = $('<button class="list-group-item btn btn-block">' + layer.displayName + '</button>');
             layerListItem.append(layerItem);
 
             if (layer.showSpinner && Spinner) {
-                var opts = {
+                let opts = {
                     scale: 0.9,
                 };
-                var spinner = new Spinner(opts).spin();
+                let spinner = new Spinner(opts).spin();
                 layerItem.append(spinner.el);
             }
 
@@ -154,20 +154,20 @@ define(function () {
             }
         }
 
-        var self = this;
+        let self = this;
         layerListItem.find("button").on("click", function (e) {
             self.onLayerClick($(this));
         });
     };
     //
     //LayerManager.prototype.updateVisibilityState = function (worldWindow) {
-    //    var layerButtons = $("#layerList").find("button"),
+    //    let layerButtons = $("#layerList").find("button"),
     //        layers = worldWindow.layers;
     //
-    //    for (var i = 0; i < layers.length; i++) {
-    //        var layer = layers[i];
-    //        for (var j = 0; j < layerButtons.length; j++) {
-    //            var button = layerButtons[j];
+    //    for (let i = 0; i < layers.length; i++) {
+    //        let layer = layers[i];
+    //        for (let j = 0; j < layerButtons.length; j++) {
+    //            let button = layerButtons[j];
     //
     //            if (layer.displayName === button.innerText) {
     //                if (layer.inCurrentFrame) {
@@ -181,7 +181,7 @@ define(function () {
     //};
 
     LayerManager.prototype.createProjectionList = function () {
-        var projectionNames = [
+        let projectionNames = [
             "3D",
             "Equirectangular",
             "Mercator",
@@ -192,16 +192,16 @@ define(function () {
             "North Gnomonic",
             "South Gnomonic"
         ];
-        var projectionDropdown = $("#projectionDropdown");
+        let projectionDropdown = $("#projectionDropdown");
 
-        var dropdownButton = $('<button class="btn btn-info btn-block dropdown-toggle" type="button" data-toggle="dropdown">3D<span class="caret"></span></button>');
+        let dropdownButton = $('<button class="btn btn-info btn-block dropdown-toggle" type="button" data-toggle="dropdown">3D<span class="caret"></span></button>');
         projectionDropdown.append(dropdownButton);
 
-        var ulItem = $('<ul class="dropdown-menu">');
+        let ulItem = $('<ul class="dropdown-menu">');
         projectionDropdown.append(ulItem);
 
-        for (var i = 0; i < projectionNames.length; i++) {
-            var projectionItem = $('<li><a >' + projectionNames[i] + '</a></li>');
+        for (let i = 0; i < projectionNames.length; i++) {
+            let projectionItem = $('<li><a >' + projectionNames[i] + '</a></li>');
             ulItem.append(projectionItem);
         }
 
@@ -222,11 +222,11 @@ define(function () {
 
     LayerManager.prototype.performSearch = function (queryString) {
         if (queryString) {
-            var thisLayerManager = this,
+            let thisLayerManager = this,
                 latitude, longitude;
 
             if (queryString.match(WorldWind.WWUtil.latLonRegex)) {
-                var tokens = queryString.split(",");
+                let tokens = queryString.split(",");
                 latitude = parseFloat(tokens[0]);
                 longitude = parseFloat(tokens[1]);
                 thisLayerManager.goToAnimator.goTo(new WorldWind.Location(latitude, longitude));

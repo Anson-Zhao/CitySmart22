@@ -8,9 +8,10 @@ define(['./WorldWindShim'],function (WorldWind) {
     let layers = [
         // {layer: new WorldWind.BMNGLayer(), enabled: true},
         // {layer: new WorldWind.BMNGLandsatLayer(), enabled: false},
-        {layer: new WorldWind.BingAerialLayer(), enabled: false},
-        {layer: new WorldWind.BingAerialWithLabelsLayer(), enabled: true},
-        {layer: new WorldWind.BingRoadsLayer(), enabled: false},
+        // {layer: new WorldWind.AtmosphereLayer(), enabled: true},
+        // {layer: new WorldWind.BingAerialLayer(), enabled: false},
+        {layer: new WorldWind.BingAerialWithLabelsLayer(null), enabled: true},
+        // {layer: new WorldWind.BingRoadsLayer(), enabled: false},
         {layer: new WorldWind.CompassLayer(), enabled: true},
         {layer: new WorldWind.CoordinatesDisplayLayer(globe), enabled: true},
         {layer: new WorldWind.ViewControlsLayer(globe), enabled: true}

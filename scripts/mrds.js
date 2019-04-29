@@ -46,15 +46,15 @@ requirejs([
                 let previousL = $("#previousL");
                 let currentSelectedLayer = $("#currentSelectedLayer");
                 let infobox;
-                var placemark = [];
-                var autoSuggestion = [];
-                var suggestedLayer;
-                var clickedLayer;
-                // var suggestedLayer = [];
-                // var clickedLayer = [];
+                let placemark = [];
+                let autoSuggestion = [];
+                let suggestedLayer;
+                let clickedLayer;
+                // let suggestedLayer = [];
+                // let clickedLayer = [];
 
                 // reading configGlobal from mainconf.js
-                var mainconfig = config;
+                let mainconfig = config;
                 // console.log(mainconfig);
 
 
@@ -72,23 +72,23 @@ requirejs([
                 //     // // console.log(wwd.drawContext.orderedRenderingMode);
                 //     // console.log(wwd.drawContext.orderedRenderables);
                 //
-                //     var clientRect = wwd.canvas.getBoundingClientRect();
+                //     let clientRect = wwd.canvas.getBoundingClientRect();
                 //     console.log(clientRect);
-                //     var region = new WorldWind.Rectangle(
+                //     let region = new WorldWind.Rectangle(
                 //         0,
                 //         clientRect.height,
                 //         clientRect.width,
                 //         clientRect.height);
                 //     console.log(region);
                 //
-                //     var pickList = wwd.pickShapesInRegion(region);
+                //     let pickList = wwd.pickShapesInRegion(region);
                 //     console.log(pickList.objects);
                 //
-                //     var totalWT = 0;
-                //     var totalCap = 0;
+                //     let totalWT = 0;
+                //     let totalCap = 0;
                 //
-                //     for (var q = 0; q < pickList.objects.length; q++) {
-                //         var pickedPL = pickList.objects[q].userObject;
+                //     for (let q = 0; q < pickList.objects.length; q++) {
+                //         let pickedPL = pickList.objects[q].userObject;
                 //         // console.log(pickedPL);
                 //         if (pickedPL instanceof WorldWind.Placemark) {
                 //             totalWT++;
@@ -107,9 +107,9 @@ requirejs([
                 // });
 
 
-                var category = this.id;
+                let category = this.id;
                 console.log(category);
-                var color = {
+                let color = {
                     // 'Antimony': "",
                     // 'Asbestos': "",
                     // 'Barium-Barite': "",
@@ -168,7 +168,7 @@ requirejs([
                     'undefined': "#ffffff"
                 };
 
-                // var scale = {
+                // let scale = {
                 //     "none": ["", ""],
                 //     "type_color": ["1980", "2017"],
                 //     "commodity_color": ["<1MW", ">3 MW"],
@@ -215,15 +215,15 @@ requirejs([
                 }
 
 
-                for (var i = 0; i < placemark.length; i++) {
-                    var circle = document.createElement("canvas"),
+                for (let i = 0; i < placemark.length; i++) {
+                    let circle = document.createElement("canvas"),
                         ctx = circle.getContext('2d'),
                         radius = 10,
                         r2 = radius + radius;
 
                     circle.width = circle.height = r2;
 
-                    var gradient = ctx.createRadialGradient(radius, radius, 0, radius, radius, radius);
+                    let gradient = ctx.createRadialGradient(radius, radius, 0, radius, radius, radius);
                     // console.log(placemark[i].userProperties[category]);
                     // console.log(color[placemark[i].userProperties[category]]);
 
@@ -257,7 +257,7 @@ requirejs([
                 // $("#switchMethod").on('click', function() {
                 //     // $("#switchLayer").css('pointer-events', (this.checked === true) ? 'auto' : 'none');
                 //     // console.log($($("#switchLayer")[0].parentElement));
-                //     var switchLayer = $($("#switchLayer")[0].parentElement);
+                //     let switchLayer = $($("#switchLayer")[0].parentElement);
                 //     switchLayer.css('pointer-events', (this.checked === true) ? 'none' : 'auto');
                 //     $("#manualSwitch").css('display', (this.checked === true) ? 'none' : 'block');
                 // });
@@ -273,7 +273,7 @@ requirejs([
                 // if (this.checked) {
                 //     // $("#placemarkButton").find("input").each(function() {
                 //     //     if ($(this).is(':checked')) {
-                //     //         var id = "#" + $(this)[0].id;
+                //     //         let id = "#" + $(this)[0].id;
                 //     //
                 //     //         $(id).click();
                 //     //     }
@@ -284,15 +284,15 @@ requirejs([
                 //
                 // }
 
-                // for (var i = 0; i < placemark.length; i++) {
-                //     var circle = document.createElement("canvas"),
+                // for (let i = 0; i < placemark.length; i++) {
+                //     let circle = document.createElement("canvas"),
                 //         ctx = circle.getContext('2d'),
                 //         radius = 15,
                 //         r2 = radius + radius;
                 //
                 //     circle.width = circle.height = r2;
                 //
-                //     var gradient = ctx.createRadialGradient(radius, radius, 0, radius, radius, radius);
+                //     let gradient = ctx.createRadialGradient(radius, radius, 0, radius, radius, radius);
                 //
                 //     gradient.addColorStop(0, 'rgba(255, 255, 255, 0)');
                 //
@@ -307,7 +307,7 @@ requirejs([
                 //     placemark[i].updateImage = true;
                 //     placemark[i].attributes.imageSource.image = circle;
                 // }
-                // for (var i = layers.length; i < wwd.layers.length; i++) {
+                // for (let i = layers.length; i < wwd.layers.length; i++) {
                 //     if (i === wwd.layers.length - 1) {
                 //         wwd.layers[i].enabled = !this.checked;
                 //         // console.log(wwd.layers);
@@ -318,11 +318,11 @@ requirejs([
 
 
                 // $(".sortButton").on("click", function () {
-                //     var category = this.id;
+                //     let category = this.id;
                 //     // console.log(category);
                 //
                 //     // this.setAttribute('data-status', (this.getAttribute("data-status") === 'true') ? 'false' : 'true');
-                //     var status = this.getAttribute("data-status");
+                //     let status = this.getAttribute("data-status");
                 //     $(".sortButton").attr('data-status', 'false');
                 //     this.setAttribute('data-status', (status === 'true') ? 'false' : 'true');
                 //     status = !(status === 'true');
@@ -345,9 +345,9 @@ requirejs([
                 //         return arr;
                 //     }
                 //
-                //     var parent = $("#layerMenu");
+                //     let parent = $("#layerMenu");
                 //     // console.log(status);
-                //     var arr = sort(parent.children(), status);
+                //     let arr = sort(parent.children(), status);
                 //     // console.log(arr);
                 //     arr.detach().appendTo(parent);
                 //
@@ -359,7 +359,7 @@ requirejs([
                 // function moveList(id) {
                 //     // if (clickedLayer) {
                 //     //     $("#" + clickedLayer).remove();
-                //     //     var hiddenElement = $("#" + clickedLayer + "_hidden");
+                //     //     let hiddenElement = $("#" + clickedLayer + "_hidden");
                 //     //     hiddenElement.show();
                 //     //     hiddenElement.attr('id', clickedLayer);
                 //     //     clickedLayer = "";
@@ -370,8 +370,8 @@ requirejs([
                 //     // if (!clickedLayer) {
                 //     //     clickedLayer = id;
                 //     //
-                //     //     var item = $("#" + clickedLayer);
-                //     //     var clone = $("#" + clickedLayer).clone();
+                //     //     let item = $("#" + clickedLayer);
+                //     //     let clone = $("#" + clickedLayer).clone();
                 //     //     item.attr('id', clickedLayer + "_hidden");
                 //     //     item.hide();
                 //     //     clone.css('background-color', 'rgb(191, 191, 191)');
@@ -379,7 +379,7 @@ requirejs([
                 //     //     refreshEvent();
                 //     // } else if (clickedLayer === id) {
                 //     //     $("#" + clickedLayer).remove();
-                //     //     var hiddenElement = $("#" + clickedLayer + "_hidden");
+                //     //     let hiddenElement = $("#" + clickedLayer + "_hidden");
                 //     //     hiddenElement.show();
                 //     //     hiddenElement.attr('id', clickedLayer);
                 //     //     clickedLayer = "";
@@ -389,7 +389,7 @@ requirejs([
                 //     //     console.log($(".layers"));
                 //     //     $("#" + clickedLayer).remove();
                 //     //     console.log($(".layers"));
-                //     //     // var hiddenElement = $("#" + clickedLayer + "_hidden");
+                //     //     // let hiddenElement = $("#" + clickedLayer + "_hidden");
                 //     //     // console.log(hiddenElement);
                 //     //     // hiddenElement.show();
                 //     //     // hiddenElement.attr('id', clickedLayer);
@@ -398,8 +398,8 @@ requirejs([
                 //     //     clickedLayer = id;
                 //     //     // console.log(clickedLayer);
                 //     //
-                //     //     // var item = $("#" + clickedLayer);
-                //     //     // var clone = $("#" + clickedLayer).clone();
+                //     //     // let item = $("#" + clickedLayer);
+                //     //     // let clone = $("#" + clickedLayer).clone();
                 //     //     // item.attr('id', clickedLayer + "_hidden");
                 //     //     // item.hide();
                 //     //     // clone.css('background-color', 'rgb(191, 191, 191)');
@@ -410,7 +410,7 @@ requirejs([
                 //     if (!clickedLayer) {
                 //         clickedLayer = id;
                 //
-                //         var item = $("#" + clickedLayer);
+                //         let item = $("#" + clickedLayer);
                 //         item.css('background-color', 'rgb(191, 191, 191)');
                 //         item.prependTo($("#layerMenu"));
                 //         refreshEvent();
@@ -418,7 +418,7 @@ requirejs([
                 //         clickedLayer = "";
                 //         $(".sortButton").find("span").each(function() {
                 //             if ($(this).html()) {
-                //                 var id = "#" + $(this)[0].parentElement.id;
+                //                 let id = "#" + $(this)[0].parentElement.id;
                 //
                 //                 $(id).click();
                 //                 $(id).click();
@@ -428,7 +428,7 @@ requirejs([
                 //     } else if (clickedLayer !== id) {
                 //         clickedLayer = id;
                 //
-                //         var item = $("#" + clickedLayer);
+                //         let item = $("#" + clickedLayer);
                 //         item.css('background-color', 'rgb(191, 191, 191)');
                 //         item.prependTo($("#layerMenu"));
                 //         refreshEvent();
@@ -443,7 +443,7 @@ requirejs([
                 // function highlightLayer(e) {
                 //     // console.log("Z");
                 //
-                //     var id = this.id;
+                //     let id = this.id;
                 //
                 //     // if (id === suggestedLayer) {
                 //     //     clearHighlight(true, false);
@@ -465,9 +465,9 @@ requirejs([
                 //     //
                 //     // }
                 //
-                //     // var renderables = wwd.layers[this.id].renderables;
+                //     // let renderables = wwd.layers[this.id].renderables;
                 //     //
-                //     // for (var i = 0; i < renderables.length; i++) {
+                //     // for (let i = 0; i < renderables.length; i++) {
                 //     //
                 //     //     renderables[i].highlighted = (e.handleObj.type === "mouseover") ? true : false;
                 //     //
@@ -480,9 +480,9 @@ requirejs([
                 //
                 //     // console.log(clickedLayer + "   " + id);
                 //     if (clickedLayer && clickedLayer !== id) {
-                //         // var oldRenderables = wwd.layers[clickedLayer].renderables;
-                //         // var status = (clickedLayer === id);
-                //         // for (var z = 0; z < oldRenderables.length; z++) {
+                //         // let oldRenderables = wwd.layers[clickedLayer].renderables;
+                //         // let status = (clickedLayer === id);
+                //         // for (let z = 0; z < oldRenderables.length; z++) {
                 //         //     // oldRenderables[z].highlighted = !oldRenderables[z].highlighted;
                 //         //     oldRenderables[z].highlighted = status;
                 //         //
@@ -491,9 +491,9 @@ requirejs([
                 //         //     }
                 //         // }
                 //
-                //         var oldLayerIndex = clickedLayer.toString().split('-');
-                //         var status = (clickedLayer === id);
-                //         for (var z = 0; z < oldLayerIndex.length; z++) {
+                //         let oldLayerIndex = clickedLayer.toString().split('-');
+                //         let status = (clickedLayer === id);
+                //         for (let z = 0; z < oldLayerIndex.length; z++) {
                 //             // oldRenderables[z].highlighted = !oldRenderables[z].highlighted;
                 //             wwd.layers[oldLayerIndex[z]].renderables[0].highlighted = status;
                 //
@@ -508,9 +508,9 @@ requirejs([
                 //
                 //     function highlight() {
                 //
-                //         // var renderables = wwd.layers[id].renderables;
+                //         // let renderables = wwd.layers[id].renderables;
                 //         // // console.log("C");
-                //         // for (var i = 0; i < renderables.length; i++) {
+                //         // for (let i = 0; i < renderables.length; i++) {
                 //         //
                 //         //     renderables[i].highlighted = !renderables[i].highlighted;
                 //         //
@@ -532,9 +532,9 @@ requirejs([
                 //         //     }
                 //         // }
                 //
-                //         var layerIndex = id.toString().split('-');
+                //         let layerIndex = id.toString().split('-');
                 //         // console.log("C");
-                //         for (var i = 0; i < layerIndex.length; i++) {
+                //         for (let i = 0; i < layerIndex.length; i++) {
                 //
                 //             wwd.layers[layerIndex[i]].renderables[0].highlighted = !wwd.layers[layerIndex[i]].renderables[0].highlighted;
                 //
@@ -559,18 +559,18 @@ requirejs([
                 //         }
                 //     }
                 //
-                //     // var id = this.id;
+                //     // let id = this.id;
                 //     //
                 //     // if (id !== clickedLayer && clickedLayer) {
-                //     //     var oldRenderables = wwd.layers[clickedLayer].renderables;
-                //     //     for (var z = 0; z < oldRenderables.length; z++) {
+                //     //     let oldRenderables = wwd.layers[clickedLayer].renderables;
+                //     //     for (let z = 0; z < oldRenderables.length; z++) {
                 //     //         oldRenderables[z].highlighted = !oldRenderables[z].highlighted;
                 //     //     }
                 //     // }
                 //     //
                 //     //
-                //     // var renderables = wwd.layers[this.id].renderables;
-                //     // for (var i = 0; i < renderables.length; i++) {
+                //     // let renderables = wwd.layers[this.id].renderables;
+                //     // for (let i = 0; i < renderables.length; i++) {
                 //     //
                 //     //     renderables[i].highlighted = !renderables[i].highlighted;
                 //     //
@@ -585,10 +585,10 @@ requirejs([
                 // }
 
                 // wwd.worldWindowController.__proto__.handleWheelEvent = function (event) {
-                //     var navigator = this.wwd.navigator;
+                //     let navigator = this.wwd.navigator;
                 //     // Normalize the wheel delta based on the wheel delta mode. This produces a roughly consistent delta across
                 //     // browsers and input devices.
-                //     var normalizedDelta;
+                //     let normalizedDelta;
                 //     if (event.deltaMode === WheelEvent.DOM_DELTA_PIXEL) {
                 //         normalizedDelta = event.deltaY;
                 //     } else if (event.deltaMode === WheelEvent.DOM_DELTA_LINE) {
@@ -600,7 +600,7 @@ requirejs([
                 //     // Compute a zoom scale factor by adding a fraction of the normalized delta to 1. When multiplied by the
                 //     // navigator's range, this has the effect of zooming out or zooming in depending on whether the delta is
                 //     // positive or negative, respectfully.
-                //     var scale = 1 + (normalizedDelta / 1000);
+                //     let scale = 1 + (normalizedDelta / 1000);
                 //
                 //     // Apply the scale to this navigator's properties.
                 //     navigator.range *= scale;
@@ -614,11 +614,11 @@ requirejs([
                 // };
                 //
                 // wwd.worldWindowController.__proto__.handlePanOrDrag3D = function (recognizer) {
-                //     var state = recognizer.state,
+                //     let state = recognizer.state,
                 //         tx = recognizer.translationX,
                 //         ty = recognizer.translationY;
                 //
-                //     var navigator = this.wwd.navigator;
+                //     let navigator = this.wwd.navigator;
                 //
                 //     // this.lastPoint or navigator.lastPoint
                 //
@@ -628,7 +628,7 @@ requirejs([
                 //         // Convert the translation from screen coordinates to arc degrees. Use this navigator's range as a
                 //         // metric for converting screen pixels to meters, and use the globe's radius for converting from meters
                 //         // to arc degrees.
-                //         var canvas = this.wwd.canvas,
+                //         let canvas = this.wwd.canvas,
                 //             globe = this.wwd.globe,
                 //             globeRadius = WWMath.max(globe.equatorialRadius, globe.polarRadius),
                 //             distance = WWMath.max(1, navigator.range),
@@ -639,7 +639,7 @@ requirejs([
                 //             sideDegrees = (sideMeters / globeRadius) * Angle.RADIANS_TO_DEGREES;
                 //
                 //         // Apply the change in latitude and longitude to this navigator, relative to the current heading.
-                //         var sinHeading = Math.sin(navigator.heading * Angle.DEGREES_TO_RADIANS),
+                //         let sinHeading = Math.sin(navigator.heading * Angle.DEGREES_TO_RADIANS),
                 //             cosHeading = Math.cos(navigator.heading * Angle.DEGREES_TO_RADIANS);
                 //
                 //         navigator.lookAtLocation.latitude += forwardDegrees * cosHeading - sideDegrees * sinHeading;
@@ -655,7 +655,7 @@ requirejs([
                 // };
 
                 // wwd.worldWindowController.allGestureListeners[0].__proto__.handleZoom = function(e, control) {
-                //     var handled = false;
+                //     let handled = false;
                 //     // Start an operation on left button down or touch start.
                 //     if (this.isPointerDown(e) || this.isTouchStart(e)) {
                 //         this.activeControl = control;
@@ -665,8 +665,8 @@ requirejs([
                 //             this.currentTouchId = e.changedTouches.item(0).identifier; // capture the touch identifier
                 //         }
                 //         // This function is called by the timer to perform the operation.
-                //         var thisLayer = this; // capture 'this' for use in the function
-                //         var setRange = function () {
+                //         let thisLayer = this; // capture 'this' for use in the function
+                //         let setRange = function () {
                 //             if (thisLayer.activeControl) {
                 //                 if (thisLayer.activeControl === thisLayer.zoomInControl) {
                 //                     thisLayer.wwd.navigator.range *= (1 - thisLayer.zoomIncrement);
@@ -690,12 +690,12 @@ requirejs([
                 // };
 
                 // wwd.worldWindowController.allGestureListeners[0].__proto__.handlePan = function(e, control) {
-                //     var handled = false;
+                //     let handled = false;
                 //     // Capture the current position.
                 //     if (this.isPointerDown(e) || this.isPointerMove(e)) {
                 //         this.currentEventPoint = this.wwd.canvasCoordinates(e.clientX, e.clientY);
                 //     } else if (this.isTouchStart(e) || this.isTouchMove(e)) {
-                //         var touch = e.changedTouches.item(0);
+                //         let touch = e.changedTouches.item(0);
                 //         this.currentEventPoint = this.wwd.canvasCoordinates(touch.clientX, touch.clientY);
                 //     }
                 //     // Start an operation on left button down or touch start.
@@ -707,10 +707,10 @@ requirejs([
                 //             this.currentTouchId = e.changedTouches.item(0).identifier; // capture the touch identifier
                 //         }
                 //         // This function is called by the timer to perform the operation.
-                //         var thisLayer = this; // capture 'this' for use in the function
-                //         var setLookAtLocation = function () {
+                //         let thisLayer = this; // capture 'this' for use in the function
+                //         let setLookAtLocation = function () {
                 //             if (thisLayer.activeControl) {
-                //                 var dx = thisLayer.panControlCenter[0] - thisLayer.currentEventPoint[0],
+                //                 let dx = thisLayer.panControlCenter[0] - thisLayer.currentEventPoint[0],
                 //                     dy = thisLayer.panControlCenter[1]
                 //                         - (thisLayer.wwd.viewport.height - thisLayer.currentEventPoint[1]),
                 //                     oldLat = thisLayer.wwd.navigator.lookAtLocation.latitude,
@@ -741,7 +741,7 @@ requirejs([
 
                 // function autoSwitch() {
                 //     if ($("#switchMethod").is(':checked')) {
-                //         var altitude = wwd.layers[0].eyeText.text;
+                //         let altitude = wwd.layers[0].eyeText.text;
                 //
                 //         if (altitude.substring(altitude.length - 2, altitude.length) === "km") {
                 //             altitude = altitude.replace(/Eye  |,| km/g, '');
@@ -777,20 +777,20 @@ requirejs([
 
                 // function totalWTCap() {
                 //     // if ($("#switchLayer").is(':checked')) {
-                //     //     var clientRect = wwd.canvas.getBoundingClientRect();
-                //     //     var region = new WorldWind.Rectangle(
+                //     //     let clientRect = wwd.canvas.getBoundingClientRect();
+                //     //     let region = new WorldWind.Rectangle(
                 //     //         0,
                 //     //         clientRect.height,
                 //     //         clientRect.width,
                 //     //         clientRect.height);
                 //     //
-                //     //     var pickList = wwd.pickShapesInRegion(region);
+                //     //     let pickList = wwd.pickShapesInRegion(region);
                 //     //
-                //     //     var totalWT = 0;
-                //     //     var totalCap = 0;
+                //     //     let totalWT = 0;
+                //     //     let totalCap = 0;
                 //     //
-                //     //     for (var q = 0; q < pickList.objects.length; q++) {
-                //     //         var pickedPL = pickList.objects[q].userObject;
+                //     //     for (let q = 0; q < pickList.objects.length; q++) {
+                //     //         let pickedPL = pickList.objects[q].userObject;
                 //     //         if (pickedPL instanceof WorldWind.Placemark) {
                 //     //             totalWT++;
                 //     //             if (pickedPL.userProperties.p_avgcap !== "N/A") {
@@ -808,10 +808,10 @@ requirejs([
                 //     //     pickList = [];
                 //     // }
                 //
-                //     var totalWT = 0;
-                //     var totalCap = 0;
+                //     let totalWT = 0;
+                //     let totalCap = 0;
                 //
-                //     for (var i = layers.length; i < wwd.layers.length - 1; i++) {
+                //     for (let i = layers.length; i < wwd.layers.length - 1; i++) {
                 //
                 //         if (wwd.layers[i].inCurrentFrame) {
                 //             totalWT++;
@@ -829,7 +829,7 @@ requirejs([
                 // }
 
                 // function layerMenu() {
-                //    var altitude = wwd.layers[0].eyeText.text;
+                //    let altitude = wwd.layers[0].eyeText.text;
                 //
                 //    if (altitude.substring(altitude.length - 2, altitude.length) === "km") {
                 //        altitude = altitude.replace(/Eye  |,| km/g, '');
@@ -842,14 +842,14 @@ requirejs([
                 //
                 //    if (altitude <= mainconfig.eyeDistance_PL) {
                 //        // console.log(wwd.layers);
-                //        var projectNumber = 0;
-                //        var id;
-                //        var previousProject;
+                //        let projectNumber = 0;
+                //        let id;
+                //        let previousProject;
                 //
-                //        for (var i = layers.length; i < wwd.layers.length - 1; i++) {
+                //        for (let i = layers.length; i < wwd.layers.length - 1; i++) {
                 //
                 //            if (wwd.layers[i].inCurrentFrame) {
-                //                var projectName = wwd.layers[i].renderables[0].userProperties.p_name,
+                //                let projectName = wwd.layers[i].renderables[0].userProperties.p_name,
                 //                    state = wwd.layers[i].renderables[0].userProperties.t_state,
                 //                    year = wwd.layers[i].renderables[0].userProperties.p_year,
                 //                    number = wwd.layers[i].renderables[0].userProperties.p_tnum,
@@ -887,8 +887,8 @@ requirejs([
 
                 // function clearHighlight(suggested, clicked) {
                 //     if (suggestedLayer && suggested) {
-                //         // var layer = wwd.layers[suggestedLayer];
-                //         // for (var i = 0; i < layer.renderables.length; i++) {
+                //         // let layer = wwd.layers[suggestedLayer];
+                //         // for (let i = 0; i < layer.renderables.length; i++) {
                 //         //     layer.renderables[i].highlighted = false;
                 //         //
                 //         //     if (i === layer.renderables.length - 1) {
@@ -896,8 +896,8 @@ requirejs([
                 //         //     }
                 //         // }
                 //
-                //         var layerIndex = suggestedLayer.toString().split('-');
-                //         for (var i = 0; i < layerIndex.length; i++) {
+                //         let layerIndex = suggestedLayer.toString().split('-');
+                //         for (let i = 0; i < layerIndex.length; i++) {
                 //             wwd.layers[layerIndex[i]].renderables[0].highlighted = false;
                 //
                 //             if (i === layerIndex.length - 1) {
@@ -907,8 +907,8 @@ requirejs([
                 //     }
                 //
                 //     if (clickedLayer && clicked) {
-                //         // var layer = wwd.layers[clickedLayer];
-                //         // for (var i = 0; i < layer.renderables.length; i++) {
+                //         // let layer = wwd.layers[clickedLayer];
+                //         // for (let i = 0; i < layer.renderables.length; i++) {
                 //         //     layer.renderables[i].highlighted = false;
                 //         //
                 //         //     if (i === layer.renderables.length - 1) {
@@ -916,8 +916,8 @@ requirejs([
                 //         //     }
                 //         // }
                 //
-                //         var layerIndex = clickedLayer.toString().split('-');
-                //         for (var i = 0; i < layerIndex.length; i++) {
+                //         let layerIndex = clickedLayer.toString().split('-');
+                //         for (let i = 0; i < layerIndex.length; i++) {
                 //             wwd.layers[layerIndex[i]].renderables[0].highlighted = false;
                 //
                 //             if (i === layerIndex.length - 1) {
@@ -935,29 +935,29 @@ requirejs([
 
                     // The input argument is either an Event or a TapRecognizer. Both have the same properties for determining
                     // the mouse or tap location.
-                    var x = o.clientX,
+                    let x = o.clientX,
                         y = o.clientY;
 
                     // Perform the pick. Must first convert from window coordinates to canvas coordinates, which are
                     // relative to the upper left corner of the canvas rather than the upper left corner of the page.
 
-                    var pickList = wwd.pick(wwd.canvasCoordinates(x, y));
+                    let pickList = wwd.pick(wwd.canvasCoordinates(x, y));
                     // console.log(pickList.objects);
-                    for (var q = 0; q < pickList.objects.length; q++) {
-                        var pickedPL = pickList.objects[q].userObject;
+                    for (let q = 0; q < pickList.objects.length; q++) {
+                        let pickedPL = pickList.objects[q].userObject;
                         // console.log(pickedPL);
                         if (pickedPL instanceof WorldWind.Placemark) {
                             // console.log("A");
 
-                            var xOffset = Math.max(document.documentElement.scrollLeft, document.body.scrollLeft);
-                            var yOffset = Math.max(document.documentElement.scrollTop, document.body.scrollTop);
+                            let xOffset = Math.max(document.documentElement.scrollLeft, document.body.scrollLeft);
+                            let yOffset = Math.max(document.documentElement.scrollTop, document.body.scrollTop);
 
-                            var popover = document.getElementById('popover');
+                            let popover = document.getElementById('popover');
                             popover.style.position = "absolute";
                             popover.style.left = (x + xOffset - 3) + 'px';
                             popover.style.top = (y + yOffset - 3) + 'px';
 
-                            var content = "<p><strong>Site Name:</strong> " + pickedPL.userProperties.site_name +
+                            let content = "<p><strong>Site Name:</strong> " + pickedPL.userProperties.site_name +
                                 "<br>" + "<strong>Commodity:</strong> " + pickedPL.userProperties.commodity +
                                 "<br>" + "<strong>Development Status:</strong> " + pickedPL.userProperties.dev_stat + "</p>";
 
@@ -977,18 +977,18 @@ requirejs([
                     async: false,
                     success: function (resp) {
                         if (!resp.error) {
-                            var data = [];
-                            // var layerNames = [];
-                            // var placemarkLayers = [];
+                            let data = [];
+                            // let layerNames = [];
+                            // let placemarkLayers = [];
 
-                            var circle = document.createElement("canvas"),
+                            let circle = document.createElement("canvas"),
                                 ctx = circle.getContext('2d'),
                                 radius = 10,
                                 r2 = radius + radius;
 
                             circle.width = circle.height = r2;
 
-                            var gradient = ctx.createRadialGradient(radius, radius, 0, radius, radius, radius);
+                            let gradient = ctx.createRadialGradient(radius, radius, 0, radius, radius, radius);
                             // gradient.addColorStop(0, "rgba(192, 192, 192, 0.25)");
                             gradient.addColorStop(0, "rgba(255, 255, 255, 0)");
 
@@ -1003,21 +1003,21 @@ requirejs([
                             ctx.closePath();
                             // console.log(new Date());
 
-                            // var placemarkLayer = new WorldWind.RenderableLayer("USWTDB");
+                            // let placemarkLayer = new WorldWind.RenderableLayer("USWTDB");
 
                             // console.log(wwd.goToAnimator);
 
-                            for (var i = 0; i < resp.data.length; i++) {
+                            for (let i = 0; i < resp.data.length; i++) {
                                 data[i] = new WorldWind.IntensityLocation(resp.data[i].latitude, resp.data[i].longitude, 1);
 
-                                var placemarkAttributes = new WorldWind.PlacemarkAttributes(null);
+                                let placemarkAttributes = new WorldWind.PlacemarkAttributes(null);
                                 placemarkAttributes.imageSource = new WorldWind.ImageSource(circle);
                                 placemarkAttributes.imageScale = 0.5;
 
-                                var highlightAttributes = new WorldWind.PlacemarkAttributes(placemarkAttributes);
+                                let highlightAttributes = new WorldWind.PlacemarkAttributes(placemarkAttributes);
                                 highlightAttributes.imageScale = 2.0;
 
-                                var placemarkPosition = new WorldWind.Position(resp.data[i].latitude, resp.data[i].longitude, 0);
+                                let placemarkPosition = new WorldWind.Position(resp.data[i].latitude, resp.data[i].longitude, 0);
                                 placemark[i] = new WorldWind.Placemark(placemarkPosition, false, placemarkAttributes);
                                 placemark[i].altitudeMode = WorldWind.RELATIVE_TO_GROUND;
                                 placemark[i].highlightAttributes = highlightAttributes;
@@ -1033,12 +1033,12 @@ requirejs([
                                 //     wwd.addLayer(placemarkLayers[placemarkLayers.length - 1]);
                                 //     placemarkLayers[placemarkLayers.length - 1].addRenderable(placemark[i]);
                                 // } else {
-                                //     var index = $.inArray(resp.data[i].p_name, layerNames);
+                                //     let index = $.inArray(resp.data[i].p_name, layerNames);
                                 //     placemarkLayers[index].addRenderable(placemark[i]);
                                 // }
 
                                 // if (i === 0 || resp.data[i].p_name !== resp.data[i - 1].p_name) {
-                                //     var placemarkLayer = new WorldWind.RenderableLayer(resp.data[i].p_name);
+                                //     let placemarkLayer = new WorldWind.RenderableLayer(resp.data[i].p_name);
                                 //     // placemarkLayer.enabled = false;
                                 //     wwd.addLayer(placemarkLayer);
                                 //     wwd.layers[wwd.layers.length - 1].addRenderable(placemark[i]);
@@ -1047,7 +1047,7 @@ requirejs([
                                 //     wwd.layers[wwd.layers.length - 1].addRenderable(placemark[i]);
                                 // }
 
-                                var placemarkLayer = new WorldWind.RenderableLayer(resp.data[i].mrds_id);
+                                let placemarkLayer = new WorldWind.RenderableLayer(resp.data[i].mrds_id);
                                 placemarkLayer.addRenderable(placemark[i]);
                                 wwd.addLayer(placemarkLayer);
 
@@ -1059,10 +1059,10 @@ requirejs([
                                 //     // console.log(wwd.layers.length);
                                 //     // console.log(wwd.layers);
                                 //
-                                //     // var z = 10;
-                                //     // var x = z;
+                                //     // let z = 10;
+                                //     // let x = z;
                                 //     // setTimeout(function() {
-                                //     //     var showLayers = setInterval(function() {
+                                //     //     let showLayers = setInterval(function() {
                                 //     //         console.log(new Date());
                                 //     //         x += 100;
                                 //     //         for (; z < x; z++) {
@@ -1079,7 +1079,7 @@ requirejs([
                                 //     // }, 10000);
                                 //
                                 //     // console.log(data);
-                                //     var HeatMapLayer = new WorldWind.HeatMapLayer("Heatmap", data, {
+                                //     let HeatMapLayer = new WorldWind.HeatMapLayer("Heatmap", data, {
                                 //         tile: RadiantCircleTile,
                                 //         incrementPerIntensity: 0.05,
                                 //         blur: 10,
@@ -1120,9 +1120,9 @@ requirejs([
                 //                 // layerMenu();
                 //
                 //                 console.log(suggestedLayer);
-                //                 var layerIndex = suggestedLayer.toString().split('-');
+                //                 let layerIndex = suggestedLayer.toString().split('-');
                 //                 console.log(layerIndex);
-                //                 for (var i = 0; i < layerIndex.length; i++) {
+                //                 for (let i = 0; i < layerIndex.length; i++) {
                 //                     wwd.layers[layerIndex[i]].renderables[0].highlighted = true;
                 //                 }
                 //             }, 1)
