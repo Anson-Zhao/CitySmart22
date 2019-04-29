@@ -142,12 +142,12 @@ $(document).ready(function() {
                 if (!secondLayers.includes(element.SecondLayer)) {
                     setTimeout(function () {
                         createSecondLayer(element.FirstLayer, element.SecondLayer)
-                    }, 150);
+                    }, 100);
                 }
 
                 setTimeout(function() {
                     createThirdLayer(element)
-                }, 200);
+                }, 150);
             }
         }
     })
