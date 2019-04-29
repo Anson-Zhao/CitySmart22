@@ -221,7 +221,7 @@ requirejs(['./newGlobe',
 
     function handleMouseMove(o) {
         if ($("#popover").is(":visible")) {
-            $("#popover").popover('dispose');
+            $("#popover").hide();
         }
 
         // The input argument is either an Event or a TapRecognizer. Both have the same properties for determining
@@ -236,9 +236,8 @@ requirejs(['./newGlobe',
         // console.log(pickList.objects);
         for (let q = 0; q < pickList.objects.length; q++) {
             let pickedPL = pickList.objects[q].userObject;
-            // console.log(pickedPL);
-            if (pickedPL instanceof WorldWind.Placemark) {
-                console.log("A");
+
+            if (pickedPL instanceof WorldWind.Placemark && !!pickedPL.userProperties.p_name) {
 
                 let xOffset = Math.max(document.documentElement.scrollLeft, document.body.scrollLeft);
                 let yOffset = Math.max(document.documentElement.scrollTop, document.body.scrollTop);
@@ -254,7 +253,7 @@ requirejs(['./newGlobe',
                     "<br>" + "<strong>Total Height:</strong> " + pickedPL.userProperties.t_ttlh + "</p>";
 
                 $("#popover").attr('data-content', content);
-                $("#popover").popover('show');
+                $("#popover").show();
             }
         }
     }
