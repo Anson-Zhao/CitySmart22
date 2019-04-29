@@ -1,173 +1,150 @@
 //get the data from database with certain conditions
 
-$(document).ready(function () {
+$(document).ready(function() {
     //Main Menu creating starts here
     let parentMenu = document.getElementById("accordion");
-    let firstLayer =[];
-    let secondRes=[];
-    let thelayertype;
+    let firstLayers =[];
+    let secondLayers =[];
+
+    function createFirstLayer(firstL) {
+        let panelDefault1 = document.createElement("div");
+        panelDefault1.className = "Menu panel panel-info " + firstL;
+
+        let panelHeading1 = document.createElement("div");
+        panelHeading1.className = "panel-heading";
+
+        let panelTitle1 = document.createElement("h4");
+        panelTitle1.className = "panel-title";
+
+        let collapsed1 = document.createElement("a");
+        collapsed1.className = "collapsed";
+        collapsed1.setAttribute("data-toggle", "collapse");
+        collapsed1.setAttribute("data-parent", "#accordion");
+        collapsed1.href = "#" + firstL;
+
+        let firstLayerName = document.createTextNode(firstL + "  ");
+        firstLayerName.className = "menuwords";
+
+        let collapseOne = document.createElement("div");
+        collapseOne.className = "panel-collapse collapse";
+        collapseOne.id = firstL;
+
+        let panelBody1 = document.createElement("div");
+        panelBody1.className = "panel-body";
+
+        let panelGroup1 = document.createElement("div");
+        panelGroup1.className = "panel-group " + firstL;
+        // panelGroup1.id = "nested" + i;
+
+        collapsed1.appendChild(firstLayerName);
+        panelTitle1.appendChild(collapsed1);
+        panelHeading1.appendChild(panelTitle1);
+        panelDefault1.appendChild(panelHeading1);
+        panelDefault1.appendChild(collapseOne);
+        parentMenu.appendChild(panelDefault1);
+
+        panelBody1.appendChild(panelGroup1);
+        collapseOne.appendChild(panelBody1);
+
+        firstLayers.push(firstL);
+    }
+
+    function createSecondLayer(firstL, secondL) {
+        
+        let panelDefault2 = document.createElement("div");
+        panelDefault2.id = secondL;
+        panelDefault2.className = "Menu panel panel-info " + secondL;
+
+        let panelHeading2 = document.createElement("div");
+        panelHeading2.className = "panel-heading " + firstL + "-" + secondL;
+
+        let panelTitle2 = document.createElement("h4");
+        panelTitle2.className = "panel-title " + firstL + "-" + secondL;
+
+        let collapsed2 = document.createElement("a");
+        collapsed2.className = "collapsed";
+        collapsed2.setAttribute("data-toggle", "collapse");
+        collapsed2.setAttribute("data-parent", "#nested");
+        collapsed2.href = "#" + firstL + "-" + secondL;
+
+        let secondLayerName = document.createTextNode(secondL + "  ");
+        secondLayerName.className = "menuwords";
+
+        let nested1c1 = document.createElement("div");
+        nested1c1.id = firstL + "-" + secondL;
+        nested1c1.className = "panel-collapse collapse";
+
+        let panelBody3 = document.createElement("div");
+        panelBody3.className = "panel-body " + secondL;
+
+        collapsed2.appendChild(secondLayerName);
+        panelTitle2.appendChild(collapsed2);
+        panelHeading2.appendChild(panelTitle2);
+        panelDefault2.appendChild(panelHeading2);
+        panelDefault2.appendChild(nested1c1);
+
+        nested1c1.appendChild(panelBody3);
+
+        secondLayers.push(secondL);
+
+        document.getElementsByClassName("panel-group " + firstL)[0].appendChild(panelDefault2);
+    }
+
+    function createThirdLayer(element) {
+
+        let thirdReplace = element.ThirdLayer.replace(/\s+/g, '');
+        let countryNameStr = element.CountryName.replace(/\s+/g, '');
+        let stateNameStr = element.StateName.replace(/\s+/g, '');
+        let cityNameStr = element.CityName.replace(/\s+/g, '');
+
+        let checkboxDiv = document.createElement("div");
+        checkboxDiv.className = "State " + thirdReplace + " " + countryNameStr + stateNameStr + cityNameStr;
+        let checkboxH5 = document.createElement("h5");
+
+        let checkboxA = document.createElement("a");
+        let checkAboxAt = document.createTextNode(element.ThirdLayer + "   ");
+
+        let checkboxLabel = document.createElement("label");
+        checkboxLabel.className = "switch right";
+
+        let checkboxInput = document.createElement("input");
+        checkboxInput.type = "checkbox";
+        checkboxInput.className = element.LayerType + " input " + thirdReplace;
+        checkboxInput.setAttribute("value", element.LayerName);
+
+        let checkboxSpan = document.createElement("span");
+        checkboxSpan.className = "slider round";
+
+        checkboxA.appendChild(checkAboxAt);
+        checkboxH5.appendChild(checkboxA);
+        checkboxLabel.appendChild(checkboxInput);
+        checkboxLabel.appendChild(checkboxSpan);
+        checkboxH5.appendChild(checkboxLabel);
+        checkboxDiv.appendChild(checkboxH5);
+
+        document.getElementsByClassName("panel-body " + element.SecondLayer)[0].appendChild(checkboxDiv);
+
+    }
 
     //get data from database table using routes(ajax)
     $.ajax({
         type: "GET",
-        url: "/firstLayer",
+        url: "autoMenu",
         dataType: "json",
-        // sync:true,
-        async:false,
         success: function (res) {
+            console.log(res);
             // draw the first layer
-            firstLayer = res;
-            for( let i =0; i <firstLayer.length; i++){
+            for ( let element of res) {
+                if (!firstLayers.includes(element.FirstLayer)) {
+                    createFirstLayer(element.FirstLayer);
+                }
 
-                let firstlayerValue = "FirstLayer=" + res[i].FirstLayer; // A condition used to draw the second layer
-                let paneldefault1 = document.createElement("div");
-                paneldefault1.className = "Menu panel panel-info " + firstLayer[i].FirstLayer;
+                if (!secondLayers.includes(element.SecondLayer)) {
+                    setTimeout(createSecondLayer(element.FirstLayer, element.SecondLayer), 150);
+                }
 
-                let panelheading1 = document.createElement("div");
-                panelheading1.className = "panel-heading";
-
-                let paneltitle1 = document.createElement("h4");
-                paneltitle1.className = "panel-title";
-
-                let collapsed1 = document.createElement("a");
-                collapsed1.className = "collapsed";
-                collapsed1.setAttribute("data-toggle", "collapse");
-                collapsed1.setAttribute("data-parent", "#accordion");
-                collapsed1.href = "#" + firstLayer[i].FirstLayer;
-
-                let firstlayername = document.createTextNode(firstLayer[i].FirstLayer + "  ");
-                firstlayername.className = "menuwords";
-
-                let collapseone = document.createElement("div");
-                collapseone.className = "panel-collapse collapse";
-                collapseone.id = firstLayer[i].FirstLayer;
-
-                let panelbody1 = document.createElement("div");
-                panelbody1.className = "panel-body";
-
-                let panelgroup1 = document.createElement("div");
-                panelgroup1.className = "panel-group " + firstLayer[i].FirstLayer;
-                panelgroup1.id = "nested" + i;
-
-                collapsed1.appendChild(firstlayername);
-                paneltitle1.appendChild(collapsed1);
-                panelheading1.appendChild(paneltitle1);
-                paneldefault1.appendChild(panelheading1);
-                paneldefault1.appendChild(collapseone);
-                parentMenu.appendChild(paneldefault1);
-
-                panelbody1.appendChild(panelgroup1);
-                collapseone.appendChild(panelbody1);
-
-//---------------------------second layer starts here-------------------------------------
-                //draw second layer using base on the first layer
-                $.ajax({
-                    type: "GET",
-                    url: "/secondLayer",
-                    dataType: "json",
-                    data:firstlayerValue,
-                    // async:true,
-                    async: false,
-                    success: function (res2) {
-                        for (let a = 0; a < res2.length; a++) {
-
-                            secondRes.push(res2[a].SecondLayer);
-
-                            let paneldefault2 = document.createElement("div");
-                            paneldefault2.id = res2[a].SecondLayer;
-                            paneldefault2.className = "Menu panel panel-info " + res2[a].SecondLayer;
-
-                            let panelheading2 = document.createElement("div");
-                            panelheading2.className = "panel-heading " + res2[a].FirstLayer + "-" + res2[a].SecondLayer;
-
-                            let paneltitle2 = document.createElement("h4");
-                            paneltitle2.className = "panel-title " + res2[a].FirstLayer + "-" + res2[a].SecondLayer;
-
-                            let collapsed2 = document.createElement("a");
-                            collapsed2.className = "collapsed";
-                            collapsed2.setAttribute("data-toggle", "collapse");
-                            collapsed2.setAttribute("data-parent", "#nested");
-                            collapsed2.href = "#" + res2[a].FirstLayer + "-" + res2[a].SecondLayer;
-
-                            let secondlayername = document.createTextNode(res2[a].SecondLayer + "  ");
-                            secondlayername.className = "menuwords";
-
-                            let nested1c1 = document.createElement("div");
-                            nested1c1.id = res2[a].FirstLayer + "-" + res2[a].SecondLayer;
-                            nested1c1.className = "panel-collapse collapse";
-
-                            let panelbody3 = document.createElement("div");
-                            panelbody3.className = "panel-body " + res2[a].SecondLayer;
-
-                            collapsed2.appendChild(secondlayername);
-                            paneltitle2.appendChild(collapsed2);
-                            panelheading2.appendChild(paneltitle2);
-                            paneldefault2.appendChild(panelheading2);
-                            paneldefault2.appendChild(nested1c1);
-
-                            nested1c1.appendChild(panelbody3);
-
-                            document.getElementsByClassName("panel-group " + res2[a].FirstLayer)[0].appendChild(paneldefault2);
-                        }
-                    }
-                });
+                setTimeout(createThirdLayer(element), 200);
             }
         }
-    });
-
-    for(let k =0; k < secondRes.length; k++ ) {
-        let secondLayerValue = "SecondLayer=" + secondRes[k];
-        $.ajax({
-            type: "GET",
-            url: "/thirdLayer",
-            dataType: "json",
-            data: secondLayerValue,
-            async: false,
-            success: function (res3) {
-                for (let i = 0; i < res3.length; i++) {
-                    if (res3[i].LayerType === 'Wmslayer') {
-                        thelayertype = 'wmsLayer';
-                    } else if (res3[i].LayerType === 'PlacemarkLayer'){
-                        thelayertype = 'placemarkLayer';
-                    } else if (res3[i].LayerType === 'HeatmapLayer'){
-                        thelayertype = 'heatmapLayer';
-                    }
-
-                    let Thirdreplace = res3[i].ThirdLayer.replace(/\s+/g, '');
-                    let countrynamestr = res3[i].CountryName.replace(/\s+/g, '');
-                    let statenamestr = res3[i].StateName.replace(/\s+/g, '');
-                    let citynamestr = res3[i].CityName.replace(/\s+/g, '');
-
-                    let checkboxdiv = document.createElement("div");
-                    checkboxdiv.className = "State " + Thirdreplace + " " + countrynamestr + statenamestr + citynamestr;
-                    let checkboxh5 = document.createElement("h5");
-
-                    let checkboxa = document.createElement("a");
-                    let checkaboxat = document.createTextNode(res3[i].ThirdLayer + "   ");
-
-                    let checkboxlabel = document.createElement("label");
-                    checkboxlabel.className = "switch right";
-
-                    let checkboxinput = document.createElement("input");
-                    checkboxinput.type = "checkbox";
-                    checkboxinput.className = thelayertype + " input " + Thirdreplace;
-                    checkboxinput.setAttribute("value", res3[i].LayerName);
-
-                    let checkboxspan = document.createElement("span");
-                    checkboxspan.className = "slider round";
-
-                    checkboxa.appendChild(checkaboxat);
-                    checkboxh5.appendChild(checkboxa);
-                    checkboxlabel.appendChild(checkboxinput);
-                    checkboxlabel.appendChild(checkboxspan);
-                    checkboxh5.appendChild(checkboxlabel);
-                    checkboxdiv.appendChild(checkboxh5);
-
-                    document.getElementsByClassName("panel-body " + res3[i].SecondLayer)[0].appendChild(checkboxdiv);
-
-                }
-            }
-
-        })
-    }
+    })
 });
