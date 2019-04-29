@@ -1,5 +1,5 @@
 // config/database.js
-var configGlobal = {
+let configGlobal = {
     'commondb_connection': {
         'multipleStatements': true,
         'connectionLimit' : 100,

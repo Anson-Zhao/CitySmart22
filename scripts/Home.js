@@ -13,18 +13,20 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
+requirejs.config({
+    waitSeconds: 15
+});
 
 requirejs([
         './newGlobe',
-        './AutoMenu',
+        // './AutoMenu',
         './CS_wmsLayer',
+        './USGS_WT_placemarkLayer',
         './OptionList',
-        './CS_placemarkLayer',
-        './mrds'
-        ],
-    function (
-        newGlobe
-    ) {
+        './mrds',
+        './CS_placemarkLayer'
+    ],
+    function (newGlobe) {
         // "use strict";
 
         newGlobe.redraw;
@@ -32,93 +34,19 @@ requirejs([
         newGlobe.goTo(new WorldWind.Position(37.0902, -95.7129, 9000000));
 
         let layers = newGlobe.layers;
-        let bob=[];
-        let checked = []; //selected toggle switch value
-        let alertVal = true;
-        let LayerSelected;
+        let bob = [];
+        let checked = [];
         let arrMenu = [];
-        let checkedCount=0;
+        let allCheckedArray = [];
+        let alertVal = true;
+        let layerSelected, Altitude;
+        let checkedCount = 0;
         let j = 0;
-        let Altitude;
-        let allCheckedArray=[];
         let nextL = $(".next");
         let previousL = $("#previousL");
         let currentSelectedLayer = $("#currentSelectedLayer");
 
-        function globlePosition (layerRequest){
-            $.ajax({
-                url: '/position',
-                type: 'GET',
-                dataType: 'json',
-                data: layerRequest, //send the most current value of the selected switch to server-side
-                async: false,
-                success: function (results) {
-                    LayerSelected = results[0];//the first object of an array --- Longitude: " ", Latitude: "", Altitude: "", ThirdLayer: "", LayerName: ""console.log(LayerSelected);
-                    Altitude = LayerSelected.Altitude * 1000;
-                    newGlobe.goTo(new WorldWind.Position(LayerSelected.Latitude, LayerSelected.Longitude, Altitude));
-                }
-            })
-        }
-
-        function buttonControl (allCheckedArray,layer1){
-            if (alertVal){
-                confirm("Some layers may take awhile to load. Please be patient.")
-            }
-
-            if (allCheckedArray.length > checkedCount){ //if there is new array was inserted into the allCheckedArray ( If user choose more than 1 switch)
-                checked.push(layer1); //insert current value to "checked" array
-                checkedCount = allCheckedArray.length; //checkedCount now equals to the numbers of arrays that were inserted to allCheckedArray
-                alertVal = false; //alert (only appear at the first time)
-                currentSelectedLayer.prop('value', LayerSelected.ThirdLayer); //if there are new array was inserted into the allCheckedArray,the value of the opened layer button equals to the name of the switch that user selected
-                arrMenu.push(LayerSelected.ThirdLayer);
-
-                //insert current ThirdLayer value to arrMenu
-                j = arrMenu.length - 1; //count
-                if(arrMenu.length === 1){ //if the length of arrMenu is equal to 1 /if user only checks one switch.
-                    nextL.prop('disabled',true);
-                    previousL.prop('disabled',true);
-                    currentSelectedLayer.prop('disabled',false);
-                }else{//if user checks over 1 switch
-                    previousL.prop('disabled',false);
-                    nextL.prop('disabled',true);
-                }
-                // LayerPosition.push(LayerSelected);
-            } else { //if there is not new array was inserted into the allCheckedArray / If user un-checks a switch)
-                for( let i = 0 ; i < checked.length; i++) {
-                    if (checked[i] === layer1) {
-                        checked.splice(i,1); //remove current value from checked array
-                        arrMenu.splice(i,1); //remove current ThirdLayer from the array
-                        // LayerPosition.splice(i,1); //remove current Latlong from the array
-                    }
-                }
-                // val = checked[checked.length - 1];
-                checkedCount = allCheckedArray.length;
-                alertVal = false;
-                currentSelectedLayer.prop('value',arrMenu[arrMenu.length - 1]);
-                // currentSelectedLayer.prop('value',arrMenu[j]);
-                // currentSelectedLayer.value = arrMenu[arrMenu.length - 1];
-                j = arrMenu.length - 1;
-                if(arrMenu.length === 1){
-                    nextL.prop('disabled',true);
-                    previousL.prop('disabled',true)
-                }else{
-                    if(arrMenu.length === 0){
-                        // currentSelectedLayer.value = "No Layer Selected";
-                        currentSelectedLayer.prop('value','No Layer Selected');
-                        currentSelectedLayer.prop('disabled',true);
-                        previousL.prop('disabled',true);
-                        nextL.prop('disabled',true);
-                        // newGlobe.goTo(new WorldWind.Position(37.0902, -95.7129, 9000000));
-                    } else{
-                        previousL.prop('disabled',false);
-                        nextL.prop('disabled',true);
-                    }
-                }
-            }
-
-        }
-
-        //preload function
+        //All the event listeners
         $(document).ready(function () {
 
             //the beginning value of the button
@@ -126,12 +54,14 @@ requirejs([
             nextL.prop('disabled',true);
             previousL.prop('disabled',true);
 
-            $(".wmsLayer, .placemarkLayer, .heatmapLayer").click(function () {
+            $("#popover").popover({html: true, placement: "top", trigger: "hover"});
+
+            $(".WmsLayer, .PlacemarkLayer, .HeatmapLayer").click(function () {
                 let layer1 = $(this).val(); //the most current value of the selected switch
                 allCheckedArray = $(':checkbox:checked');
 
                 let layerRequest = 'layername=' + layer1;
-                globlePosition(layerRequest);
+                globePosition(layerRequest);
                 buttonControl(allCheckedArray,layer1);
 
 
@@ -193,8 +123,6 @@ requirejs([
 
             //if the opened layer was clicked, the layer shows
             $('#currentSelectedLayer').click(function(){
-                // $('.collapse').collapse('hide');
-                // let a = document.getElementById("accordion").children; //eight layer menus
 
                 let currentSelectedLayerData = "thirdlayer=" + arrMenu[j];
                 $.ajax({
@@ -219,5 +147,120 @@ requirejs([
             $('#globeOrigin').click(function(){
                 newGlobe.goTo(new WorldWind.Position(37.0902, -95.7129, 9000000));
             });
+
+            newGlobe.addEventListener("mousemove", handleMouseMove);
         });
+
+        function globePosition (layerRequest){
+            $.ajax({
+                url: '/position',
+                type: 'GET',
+                dataType: 'json',
+                data: layerRequest, //send the most current value of the selected switch to server-side
+                async: false,
+                success: function (results) {
+                    layerSelected = results[0];
+                    Altitude = layerSelected.Altitude * 1000;
+                    newGlobe.goTo(new WorldWind.Position(layerSelected.Latitude, layerSelected.Longitude, Altitude));
+                }
+            })
+        }
+
+        function buttonControl (allCheckedArray,layer1){
+            if (alertVal){
+                confirm("Some layers may take awhile to load. Please be patient.")
+            }
+
+            if (allCheckedArray.length > checkedCount){ //if there is new array was inserted into the allCheckedArray ( If user choose more than 1 switch)
+                checked.push(layer1); //insert current value to "checked" array
+                checkedCount = allCheckedArray.length; //checkedCount now equals to the numbers of arrays that were inserted to allCheckedArray
+                alertVal = false; //alert (only appear at the first time)
+                currentSelectedLayer.prop('value', layerSelected.ThirdLayer); //if there are new array was inserted into the allCheckedArray,the value of the opened layer button equals to the name of the switch that user selected
+                arrMenu.push(layerSelected.ThirdLayer);
+
+                //insert current ThirdLayer value to arrMenu
+                j = arrMenu.length - 1; //count
+                if(arrMenu.length === 1){ //if the length of arrMenu is equal to 1 /if user only checks one switch.
+                    nextL.prop('disabled',true);
+                    previousL.prop('disabled',true);
+                    currentSelectedLayer.prop('disabled',false);
+                }else{//if user checks over 1 switch
+                    previousL.prop('disabled',false);
+                    nextL.prop('disabled',true);
+                }
+            } else { //if there is not new array was inserted into the allCheckedArray / If user un-checks a switch)
+                for( let i = 0 ; i < checked.length; i++) {
+                    if (checked[i] === layer1) {
+                        checked.splice(i,1); //remove current value from checked array
+                        arrMenu.splice(i,1); //remove current ThirdLayer from the array
+                        // LayerPosition.splice(i,1); //remove current Latlong from the array
+                    }
+                }
+
+                checkedCount = allCheckedArray.length;
+                alertVal = false;
+                currentSelectedLayer.prop('value',arrMenu[arrMenu.length - 1]);
+                j = arrMenu.length - 1;
+
+                if(arrMenu.length === 1){
+                    nextL.prop('disabled',true);
+                    previousL.prop('disabled',true)
+                }else{
+                    if(arrMenu.length === 0){
+                        // currentSelectedLayer.value = "No Layer Selected";
+                        currentSelectedLayer.prop('value','No Layer Selected');
+                        currentSelectedLayer.prop('disabled',true);
+                        previousL.prop('disabled',true);
+                        nextL.prop('disabled',true);
+                        // newGlobe.goTo(new WorldWind.Position(37.0902, -95.7129, 9000000));
+                    } else{
+                        previousL.prop('disabled',false);
+                        nextL.prop('disabled',true);
+                    }
+                }
+            }
+
+        }
+
+
+        function handleMouseMove(o) {
+            if ($("#popover").is(":visible")) {
+                $("#popover").popover('dispose');
+            }
+
+            // The input argument is either an Event or a TapRecognizer. Both have the same properties for determining
+            // the mouse or tap location.
+            let x = o.clientX,
+                y = o.clientY;
+
+            // Perform the pick. Must first convert from window coordinates to canvas coordinates, which are
+            // relative to the upper left corner of the canvas rather than the upper left corner of the page.
+
+            let pickList = newGlobe.pick(newGlobe.canvasCoordinates(x, y));
+            // console.log(pickList.objects);
+            for (let q = 0; q < pickList.objects.length; q++) {
+                let pickedPL = pickList.objects[q].userObject;
+                // console.log(pickedPL);
+                if (pickedPL instanceof WorldWind.Placemark) {
+                    console.log("A");
+
+                    let xOffset = Math.max(document.documentElement.scrollLeft, document.body.scrollLeft);
+                    let yOffset = Math.max(document.documentElement.scrollTop, document.body.scrollTop);
+                    //
+                    let popover = document.getElementById('popover');
+                    popover.style.position = "absolute";
+                    popover.style.left = (x + xOffset - 3) + 'px';
+                    popover.style.top = (y + yOffset - 3) + 'px';
+
+                    let content = "<p><strong>Project Name:</strong> " + pickedPL.userProperties.p_name +
+                        "<br>" + "<strong>Year Online:</strong> " + pickedPL.userProperties.p_year +
+                        "<br>" + "<strong>Rated Capacity:</strong> " + pickedPL.userProperties.p_avgcap +
+                        "<br>" + "<strong>Total Height:</strong> " + pickedPL.userProperties.t_ttlh + "</p>";
+
+                    $("#popover").attr('data-content', content);
+                    $("#popover").popover('show');
+                }
+            }
+        }
+
     });
