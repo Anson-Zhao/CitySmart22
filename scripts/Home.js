@@ -19,6 +19,7 @@ requirejs.config({
 });
 
 requirejs(['./newGlobe',
+    'AutoMenu',
     './CS_wmsLayer',
     './USGS_WT_placemarkLayer',
     './CS_placemarkLayer',
@@ -146,7 +147,7 @@ requirejs(['./newGlobe',
 
         newGlobe.addEventListener("click", handleMouseCLK);
 
-        newGlobe.addEventListener("mousemove", handleMouseMove);
+        // newGlobe.addEventListener("mousemove", handleMouseMove);
     });
 
     function globePosition (layerRequest){

@@ -135,19 +135,21 @@ $(document).ready(function() {
             console.log(res);
             // draw the first layer
             for ( let element of res) {
+
                 if (!firstLayers.includes(element.FirstLayer)) {
                     createFirstLayer(element.FirstLayer);
                 }
 
                 if (!secondLayers.includes(element.SecondLayer)) {
-                    setTimeout(function () {
-                        createSecondLayer(element.FirstLayer, element.SecondLayer)
-                    }, 100);
+                    createSecondLayer(element.FirstLayer, element.SecondLayer);
+                    // setTimeout(function () {
+                    //     createSecondLayer(element.FirstLayer, element.SecondLayer)
+                    // }, 100);
                 }
 
                 setTimeout(function() {
                     createThirdLayer(element)
-                }, 150);
+                }, 20);
             }
         }
     })

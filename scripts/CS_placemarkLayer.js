@@ -21,15 +21,15 @@ requirejs([
 
     "use strict";
 
-    let infobox;
-
     //preload placemark
     $.ajax({
         url: '/placemark',
         dataType: 'json',
         success: function(result) {
             if (!result.err) {
-                infobox = result.data;
+                let infobox = result.data;
+                console.log(infobox);
+
                 for (let k = 0; k < infobox.length; k++) {
 
                     let colorAttribute = infobox[k].Color;
@@ -79,7 +79,7 @@ requirejs([
 
         placemark = new WorldWind.Placemark(new WorldWind.Position(coLat, coLong, 1e2), true, null);
 
-        placemark.displayName = LayerName;
+        // placemark.displayName = LayerName;
 
         placemark.altitudeMode = WorldWind.RELATIVE_TO_GROUND;
 

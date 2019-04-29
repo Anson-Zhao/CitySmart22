@@ -30,6 +30,7 @@ requirejs([
             // Form a configuration object from the wmsLayerCapability object
             if (!wmsLayerCapability) return true;
             let wmsConfig = WorldWind.WmsLayer.formLayerConfiguration(wmsLayerCapability);
+            console.log(wmsConfig);
 
             // Modify the configuration objects title property to a more user friendly title
             if (!wmsLayerCapability) return true;
