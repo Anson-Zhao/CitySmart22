@@ -31,8 +31,9 @@ requirejs(['./newGlobe',
 
     newGlobe.goTo(new WorldWind.Position(37.0902, -95.7129, 9000000));
 
-    let layers = newGlobe.layers;
-    let bob = [];
+    // let layers = newGlobe.layers;
+    // let bob = [];
+    let checkBox = false;
     let checked = [];
     let arrMenu = [];
     let allCheckedArray = [];
@@ -54,44 +55,26 @@ requirejs(['./newGlobe',
 
         $("#popover").popover({html: true, placement: "top", trigger: "hover"});
 
+        //turn on/off layers
         $(".WmsLayer, .HeatmapLayer, .CS_PKLayer, .USGSWT_PKLayer, .USGSMD_PKLayer, .USGSMR_PKLayer").click(function () {
-            let layer1 = $(this).val(); //the most current value of the selected switch
+            let toggleVal = this.value; //the most current value of the selected switch
+            let arrToggle = toggleVal.split(",");
+            checkBox = this.checked;
+
+            arrToggle.forEach(function (value, i) {
+                if (i === 0) {
+                    let layerRequest = 'layername=' + value;
+                    globePosition(layerRequest);
+                }
+
+                let selectedIndex = newGlobe.layers.findIndex(ele => ele.displayName === value);
+                newGlobe.layers[selectedIndex].enabled = !!(checkBox);
+            });
+
             allCheckedArray = $(':checkbox:checked');
 
-            let layerRequest = 'layername=' + layer1;
-            globePosition(layerRequest);
-            buttonControl(allCheckedArray,layer1);
+            buttonControl(allCheckedArray,toggleVal);
 
-
-            //turn on/off wmsLayer and placemark layer
-            for (let a = 0; a < layers.length; a++) {
-                $(':checkbox:checked').each(function () {
-                    if (layers[a].displayName === $(this).val()) {
-                        layers[a].enabled = true;
-                            layers[a].setAttribute("id", layer[a].displayName);
-                    } else {
-                        bob = $(this).val().split(",");
-                        bob.forEach(function (eleValue) {
-                            if (layers[a].displayName === eleValue) {
-                                layers[a].enabled = true;
-                                    layers[a].setAttribute("id", layer[a].displayName);
-                            }
-                        });
-                    }
-                });
-                $(':checkbox:not(:checked)').each(function () {
-                    if (layers[a].displayName === $(this).val()) {
-                        layers[a].enabled = false;
-                    } else {
-                        bob = $(this).val().split(",");
-                        bob.forEach(function (ery) {
-                            if (layers[a].displayName === ery) {
-                                layers[a].enabled = false;
-                            }
-                        });
-                    }
-                })
-            }
         });
 
         $('#previousL').click(function(){
@@ -164,13 +147,13 @@ requirejs(['./newGlobe',
         })
     }
 
-    function buttonControl (allCheckedArray,layer1){
+    function buttonControl (allCheckedArray,toggleVal){
         if (alertVal){
             confirm("Some layers may take awhile to load. Please be patient.")
         }
 
         if (allCheckedArray.length > checkedCount){ //if there is new array was inserted into the allCheckedArray ( If user choose more than 1 switch)
-            checked.push(layer1); //insert current value to "checked" array
+            checked.push(toggleVal); //insert current value to "checked" array
             checkedCount = allCheckedArray.length; //checkedCount now equals to the numbers of arrays that were inserted to allCheckedArray
             alertVal = false; //alert (only appear at the first time)
             currentSelectedLayer.prop('value', layerSelected.ThirdLayer); //if there are new array was inserted into the allCheckedArray,the value of the opened layer button equals to the name of the switch that user selected
@@ -188,10 +171,9 @@ requirejs(['./newGlobe',
             }
         } else { //if there is not new array was inserted into the allCheckedArray / If user un-checks a switch)
             for( let i = 0 ; i < checked.length; i++) {
-                if (checked[i] === layer1) {
+                if (checked[i] === toggleVal) {
                     checked.splice(i,1); //remove current value from checked array
                     arrMenu.splice(i,1); //remove current ThirdLayer from the array
-                    // LayerPosition.splice(i,1); //remove current Latlong from the array
                 }
             }
 
