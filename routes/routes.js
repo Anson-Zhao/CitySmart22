@@ -114,7 +114,7 @@ module.exports = function (app, passport) {
 
     app.get('/csPK', function(req, res) {
         res.setHeader("Access-Control-Allow-Origin", "*"); // Allow cross domain header
-        let select = "SELECT * FROM CitySmart2.LayerMenu WHERE LayerType = 'PlacemarkLayer'";
+        let select = "SELECT * FROM CitySmart2.LayerMenu WHERE LayerType = 'CS_PKLayer'";
         con_CS.query( select, function (err, result) {
             if (err) { throw err }
             else { res.json({"err": false, "data": result})}
