@@ -55,7 +55,7 @@ requirejs([
 
     //fetch the data from db and generate plackmarks and placemark layers
     $.ajax({
-        url: '/usgswtPL',
+        url: '/usgswtPK',
         type: 'GET',
         dataType: 'json',
         async: false,
