@@ -80,7 +80,7 @@ requirejs([
 
                         if (i === resp.data.length - 1) {
                             console.log(data);
-                            var heatmapLayer = new WorldWind.heatmapLayer("Heatmap", data,
+                            var heatmapLayer = new WorldWind.HeatMapLayer("USGS_MR_HeatMap", data,
                             //     {
                             //     // tile: HeatmapTile,
                             //     currentTiles: newGlobe.ImageTile,
@@ -105,6 +105,7 @@ requirejs([
 
                             heatmapLayer.enabled = false;
                             newGlobe.addLayer(heatmapLayer);
+                            console.log(newGlobe.layers);
 
                             // wwd.goTo(new WorldWind.Position(64.2008, -149.4937, mainconfig.eyeDistance_initial));
                             // console.log(wwd.layers);
