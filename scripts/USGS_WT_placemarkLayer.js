@@ -68,11 +68,12 @@ requirejs([
                 let yearPLayer = new WorldWind.RenderableLayer("USGS_TW_Year");
                 let capPLayer = new WorldWind.RenderableLayer("USGS_TW_Capacity");
                 let heightPLayer = new WorldWind.RenderableLayer("USGS_TW_Height");
+                yearPLayer.enabled = capPLayer.enabled = heightPLayer.enabled = false;
 
                 resp.data.forEach (function (ele, i) {
-                    let yearPK = new createWTPK(resp.data.p_year_color, ele);
-                    let capPK = new createWTPK(resp.data.p_avgcap_color, ele);
-                    let heightPK = new createWTPK(resp.data.t_ttlh_color, ele);
+                    let yearPK = new createWTPK(ele.p_year_color, ele);
+                    let capPK = new createWTPK(ele.p_avgcap_color, ele);
+                    let heightPK = new createWTPK(ele.t_ttlh_color, ele);
                     
                     yearPLayer.addRenderable(yearPK.pk);
                     capPLayer.addRenderable(capPK.pk);
