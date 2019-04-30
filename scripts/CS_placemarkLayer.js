@@ -24,7 +24,7 @@ requirejs([
 
     //preload placemark
     $.ajax({
-        url: '/placemark',
+        url: '/csPK',
         dataType: 'json',
         success: function(result) {
             if (!result.err) {
@@ -110,8 +110,8 @@ requirejs([
         for (let m = 0; m < pickListCLK.objects.length; m++) {
 
             let pickedPM = pickListCLK.objects[m].userObject;
-            if (pickedPM instanceof WorldWind.Placemark) {
-                sitePopUp(pickListCLK.objects[m].userObject.primarykeyAttributes);
+            if (pickedPM instanceof WorldWind.Placemark && !pickedPM.userProperties.p_name) {
+                sitePopUp(pickedPM.primarykeyAttributes);
             }
         }
     }
