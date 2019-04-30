@@ -54,7 +54,7 @@ requirejs(['./newGlobe',
 
         $("#popover").popover({html: true, placement: "top", trigger: "hover"});
 
-        $(".WmsLayer, .PlacemarkLayer, .HeatmapLayer").click(function () {
+        $(".WmsLayer, .ModelPKLayer, .PopPKLayer, .HeatmapLayer").click(function () {
             let layer1 = $(this).val(); //the most current value of the selected switch
             allCheckedArray = $(':checkbox:checked');
 

@@ -4,7 +4,6 @@ requirejs([
         ], function (newGlobe) {
 
     "use strict";
-    console.log(newGlobe.layers);
 
     let createWTPK = function(color, element) {
 
@@ -61,9 +60,7 @@ requirejs([
         dataType: 'json',
         async: false,
         success: function (resp) {
-            console.log(resp.data);
             if (!resp.error) {
-
                 // generate placemark layers
                 let yearPLayer = new WorldWind.RenderableLayer("USGS_TW_Year");
                 let capPLayer = new WorldWind.RenderableLayer("USGS_TW_Capacity");
