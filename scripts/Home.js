@@ -19,11 +19,10 @@ requirejs.config({
 
 requirejs([
         './newGlobe',
-        // './AutoMenu',
         './CS_wmsLayer',
         './USGS_WT_placemarkLayer',
         './OptionList',
-        './mrds',
+        // './mrds',
         './CS_placemarkLayer'
     ],
     function (newGlobe) {
