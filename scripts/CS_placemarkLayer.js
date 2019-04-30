@@ -29,7 +29,6 @@ requirejs([
         success: function(result) {
             if (!result.err) {
                 infobox = result.data;
-                console.log(infobox);
 
                 for (let k = 0; k < infobox.length; k++) {
 

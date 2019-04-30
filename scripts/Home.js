@@ -28,7 +28,6 @@ requirejs(['./newGlobe',
     "use strict";
 
     newGlobe.redraw;
-    console.log(newGlobe.layers);
 
     newGlobe.goTo(new WorldWind.Position(37.0902, -95.7129, 9000000));
 
