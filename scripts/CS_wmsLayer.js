@@ -21,7 +21,7 @@ requirejs([
         let wms = new WorldWind.WmsCapabilities(xmlDom);
 
         // Retrieve a WmsLayerCapabilities object by the desired layer name
-        $(".wmsLayer").each(function (i) {
+        $(".WmsLayer").each(function (i) {
             preloadWmsLayers[i] = $(this).val();
 
             if (!preloadWmsLayers[i]) return true;

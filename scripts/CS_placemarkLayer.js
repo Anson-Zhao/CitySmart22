@@ -20,7 +20,6 @@ requirejs([
         ], function (newGlobe) {
 
     "use strict";
-
     let infobox;
 
     //preload placemark
@@ -30,6 +29,8 @@ requirejs([
         success: function(result) {
             if (!result.err) {
                 infobox = result.data;
+                console.log(infobox);
+
                 for (let k = 0; k < infobox.length; k++) {
 
                     let colorAttribute = infobox[k].Color;
@@ -79,7 +80,7 @@ requirejs([
 
         placemark = new WorldWind.Placemark(new WorldWind.Position(coLat, coLong, 1e2), true, null);
 
-        placemark.displayName = LayerName;
+        // placemark.displayName = LayerName;
 
         placemark.altitudeMode = WorldWind.RELATIVE_TO_GROUND;
 
@@ -101,4 +102,61 @@ requirejs([
         placemarkLayer.enabled = false;
         newGlobe.addLayer(placemarkLayer);
     }
+
+    function handleMouseCLK (a)   {
+        let x = a.clientX,
+            y = a.clientY;
+        let pickListCLK = newGlobe.pick(newGlobe.canvasCoordinates(x, y));
+        for (let m = 0; m < pickListCLK.objects.length; m++) {
+
+            let pickedPM = pickListCLK.objects[m].userObject;
+            if (pickedPM instanceof WorldWind.Placemark && !pickedPM.userProperties.p_name) {
+                sitePopUp(pickedPM.primarykeyAttributes);
+            }
+        }
+    }
+
+    function sitePopUp (PKValue) {
+        let popupBodyItem = $("#popupBody");
+
+        for (let k = 0, lengths = infobox.length; k < lengths; k++) {
+            if (infobox[k].PK === PKValue) {
+                popupBodyItem.children().remove();
+
+                let popupBodyName = $('<p class="site-name"><h4>' + infobox[k].LayerName + '</h4></p>');
+                let popupBodyDesc = $('<p class="site-description">' + infobox[k].Site_Description + '</p><br>');
+                let fillerImages = $('<img style="width:100%; height:110%;" src="../images/Pics/' + infobox[k].Picture_Location + '"/>');
+                let imageLinks = $('<p class="site-link" <h6>Site Link: </h6></p><a href="' + infobox[k].Link_to_site_location + '">Click here to navigate to the site&#8217;s website </a>');
+                let copyrightStatus = $('<p  class="copyright" <h6>Copyright Status: </h6>' + infobox[k].Copyright + '</p><br>');
+                let coordinates = $('<p class="coordinate" <h6>Latitude and Longitude: </h6>'+ infobox[k].Latitude + infobox[k].Longitude + '</p><br>');
+
+                popupBodyItem.append(popupBodyName);
+                popupBodyItem.append(popupBodyDesc);
+                popupBodyItem.append(fillerImages);
+                popupBodyItem.append(imageLinks);
+                popupBodyItem.append(copyrightStatus);
+                popupBodyItem.append(coordinates);
+                break
+            }
+        }
+
+        let modal = document.getElementById('popupBox');
+        let span = document.getElementById('closeIt');
+
+        modal.style.display = "block";
+
+        span.onclick = function () {
+            modal.style.display = "none";
+
+            window.onclick = function (event) {
+                if (event.target === modal) {
+                    modal.style.display = "none";
+                }
+            }
+        }
+    }
+
+    $(document).ready(function() {
+        newGlobe.addEventListener("click", handleMouseCLK);
+    });
 });

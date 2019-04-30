@@ -121,6 +121,23 @@ module.exports = function (app, passport) {
         });
     });
 
+    app.get('/autoMenu',function (req,res) {
+        // res.setHeader("Access-Control-Allow-Origin", "*"); // Allow cross domain header
+        let queryState = "SELECT FirstLayer, SecondLayer, ThirdLayer, " +
+            "GROUP_CONCAT(LayerName) as LayerName, LayerType, CountryName, StateName, CityName " +
+            "FROM CitySmart2.LayerMenu WHERE Status = 'Approved' " +
+            "GROUP BY FirstLayer, SecondLayer, ThirdLayer, LayerType, CountryName, StateName, CityName";
+
+        con_CS.query(queryState, function (err, results) {
+            if (err) {
+                console.log(err);
+                res.json({"error": true, "message": "An unexpected error occurred !"});
+            } else {
+                res.json(results);
+                // console.log(results);
+            }
+        });
+    });
     app.get('/currentLayer',function (req,res) {
         res.setHeader("Access-Control-Allow-Origin", "*"); // Allow cross domain header
         let thirdlayer = req.query.thirdlayer;
@@ -1977,7 +1994,7 @@ module.exports = function (app, passport) {
 
     });
 
-    app.get('/uswtdb', function (req, res) {
+    app.get('/usgswtPL', function (req, res) {
         // console.log("A: " + new Date());
 
         res.setHeader("Access-Control-Allow-Origin", "*"); // Allow cross domain header

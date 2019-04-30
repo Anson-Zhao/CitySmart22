@@ -45,6 +45,9 @@ requirejs(['./newGlobe',
     let previousL = $("#previousL");
     let currentSelectedLayer = $("#currentSelectedLayer");
 
+    console.log("0");
+    console.log(layers);
+
     //All the event listeners
     $(document).ready(function () {
 
@@ -55,29 +58,30 @@ requirejs(['./newGlobe',
 
         $("#popover").popover({html: true, placement: "top", trigger: "hover"});
 
-        $(".wmsLayer, .placemarkLayer, .heatmapLayer").click(function () {
-            console.log("does this work");
+        $(".WmsLayer, .PlacemarkLayer, .HeatmapLayer").click(function () {
             let layer1 = $(this).val(); //the most current value of the selected switch
             allCheckedArray = $(':checkbox:checked');
-            console.log($(this));
+
+            console.log(layer1);
 
             let layerRequest = 'layername=' + layer1;
             globePosition(layerRequest);
             buttonControl(allCheckedArray,layer1);
-            console.log(layers);
 
 
             //turn on/off wmsLayer and placemark layer
             for (let a = 0; a < layers.length; a++) {
                 $(':checkbox:checked').each(function () {
                     if (layers[a].displayName === $(this).val()) {
-                        console.log(layers[a]);
                         layers[a].enabled = true;
+                        console.log("1");
+                        console.log(layers[a]);
                     } else {
                         bob = $(this).val().split(",");
                         bob.forEach(function (eleValue) {
                             if (layers[a].displayName === eleValue) {
                                 layers[a].enabled = true;
+                                console.log("2");
                                 console.log(layers[a]);
                             }
                         });
@@ -86,11 +90,15 @@ requirejs(['./newGlobe',
                 $(':checkbox:not(:checked)').each(function () {
                     if (layers[a].displayName === $(this).val()) {
                         layers[a].enabled = false;
+                        console.log("3");
+                        console.log(layers[a]);
                     } else {
                         bob = $(this).val().split(",");
                         bob.forEach(function (ery) {
                             if (layers[a].displayName === ery) {
                                 layers[a].enabled = false;
+                                console.log("4");
+                                console.log(layers[a]);
                             }
                         });
                     }
@@ -149,8 +157,6 @@ requirejs(['./newGlobe',
         $('#globeOrigin').click(function(){
             newGlobe.goTo(new WorldWind.Position(37.0902, -95.7129, 9000000));
         });
-
-        newGlobe.addEventListener("click", handleMouseCLK);
 
         newGlobe.addEventListener("mousemove", handleMouseMove);
     });
@@ -226,21 +232,7 @@ requirejs(['./newGlobe',
 
     }
 
-    function handleMouseCLK (a)   {
-        let x = a.clientX,
-            y = a.clientY;
-        let pickListCLK = newGlobe.pick(newGlobe.canvasCoordinates(x, y));
-        for (let m = 0; m < pickListCLK.objects.length; m++) {
-
-            let pickedPM = pickListCLK.objects[m].userObject;
-            if (pickedPM instanceof WorldWind.Placemark) {
-                sitePopUp(pickListCLK.objects[m].userObject.primarykeyAttributes);
-            }
-        }
-    }
-
     function handleMouseMove(o) {
-
         if ($("#popover").is(":visible")) {
             $("#popover").hide();
         }
@@ -257,13 +249,12 @@ requirejs(['./newGlobe',
         // console.log(pickList.objects);
         for (let q = 0; q < pickList.objects.length; q++) {
             let pickedPL = pickList.objects[q].userObject;
-            // console.log(pickedPL);
-            if (pickedPL instanceof WorldWind.Placemark) {
-                // console.log("A");
+
+            if (pickedPL instanceof WorldWind.Placemark && !!pickedPL.userProperties.p_name) {
 
                 let xOffset = Math.max(document.documentElement.scrollLeft, document.body.scrollLeft);
                 let yOffset = Math.max(document.documentElement.scrollTop, document.body.scrollTop);
-
+                //
                 let popover = document.getElementById('popover');
                 popover.style.position = "absolute";
                 popover.style.left = (x + xOffset - 3) + 'px';
@@ -280,43 +271,4 @@ requirejs(['./newGlobe',
         }
     }
 
-    function sitePopUp (PKValue) {
-        let popupBodyItem = $("#popupBody");
-
-        for (let k = 0, lengths = infobox.length; k < lengths; k++) {
-            if (infobox[k].PK === PKValue) {
-                popupBodyItem.children().remove();
-
-                let popupBodyName = $('<p class="site-name"><h4>' + infobox[k].LayerName + '</h4></p>');
-                let popupBodyDesc = $('<p class="site-description">' + infobox[k].Site_Description + '</p><br>');
-                let fillerImages = $('<img style="width:100%; height:110%;" src="../images/Pics/' + infobox[k].Picture_Location + '"/>');
-                let imageLinks = $('<p class="site-link" <h6>Site Link: </h6></p><a href="' + infobox[k].Link_to_site_location + '">Click here to navigate to the site&#8217;s website </a>');
-                let copyrightStatus = $('<p  class="copyright" <h6>Copyright Status: </h6>' + infobox[k].Copyright + '</p><br>');
-                let coordinates = $('<p class="coordinate" <h6>Latitude and Longitude: </h6>'+ infobox[k].Latitude + infobox[k].Longitude + '</p><br>');
-
-                popupBodyItem.append(popupBodyName);
-                popupBodyItem.append(popupBodyDesc);
-                popupBodyItem.append(fillerImages);
-                popupBodyItem.append(imageLinks);
-                popupBodyItem.append(copyrightStatus);
-                popupBodyItem.append(coordinates);
-                break
-            }
-        }
-
-        let modal = document.getElementById('popupBox');
-        let span = document.getElementById('closeIt');
-
-        modal.style.display = "block";
-
-        span.onclick = function () {
-            modal.style.display = "none";
-
-            window.onclick = function (event) {
-                if (event.target === modal) {
-                    modal.style.display = "none";
-                }
-            }
-        }
-    }
 });
