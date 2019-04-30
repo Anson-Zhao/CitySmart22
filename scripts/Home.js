@@ -218,7 +218,6 @@ requirejs(['./newGlobe',
 
     }
 
-
     function handleMouseMove(o) {
         if ($("#popover").is(":visible")) {
             $("#popover").hide();

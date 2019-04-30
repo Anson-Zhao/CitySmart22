@@ -1994,7 +1994,7 @@ module.exports = function (app, passport) {
 
     });
 
-    app.get('/uswtdb', function (req, res) {
+    app.get('/usgswtPL', function (req, res) {
         // console.log("A: " + new Date());
 
         res.setHeader("Access-Control-Allow-Origin", "*"); // Allow cross domain header
