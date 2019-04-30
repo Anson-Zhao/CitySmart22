@@ -12,7 +12,7 @@ requirejs([
 
         // Web Map Service information from NASA's Near Earth Observations WMS
         // let serviceAddress = config.Download_To;
-        // let preloadHeatmapLayers = [];//preload entire layer name
+        // let preloadheatmapLayers = [];//preload entire layer name
         // let placemark = [];
         // let preloadLayer = [];
 
@@ -80,7 +80,7 @@ requirejs([
 
                         if (i === resp.data.length - 1) {
                             console.log(data);
-                            var HeatMapLayer = new WorldWind.HeatMapLayer("Heatmap", data,
+                            var heatmapLayer = new WorldWind.heatmapLayer("Heatmap", data,
                             //     {
                             //     // tile: HeatmapTile,
                             //     currentTiles: newGlobe.ImageTile,
@@ -90,7 +90,7 @@ requirejs([
                             //     scale: ['#000000', '#ffffff', '#00ff00', '#ffff00', '#ff0000']
                             // }
                             );
-                            HeatMapLayer.scale = [
+                            heatmapLayer.scale = [
                                 '#0071ff',
                                 '#65d6ff',
                                 '#74ff7c',
@@ -98,13 +98,13 @@ requirejs([
                                 '#ffac5b',
                                 '#ff7500',
                                 '#FF3A33'];
-                            HeatMapLayer.radius = 6;
-                            // HeatMapLayer.gradient = [0, 0.3, 0.5, 0.7, 0.9];
-                            HeatMapLayer.incrementPerIntensity = 0.2;
-                            console.log(HeatMapLayer);
+                            heatmapLayer.radius = 6;
+                            // heatmapLayer.gradient = [0, 0.3, 0.5, 0.7, 0.9];
+                            heatmapLayer.incrementPerIntensity = 0.2;
+                            console.log(heatmapLayer);
 
-                            // HeatMapLayer.enabled = false;
-                            newGlobe.addLayer(HeatMapLayer);
+                            heatmapLayer.enabled = false;
+                            newGlobe.addLayer(heatmapLayer);
 
                             // wwd.goTo(new WorldWind.Position(64.2008, -149.4937, mainconfig.eyeDistance_initial));
                             // console.log(wwd.layers);
@@ -124,7 +124,7 @@ requirejs([
                     // console.log(locations);
                     //
                     // // Add new HeatMap Layer with the points as the data source.
-                    // newGlobe.addLayer(new WorldWind.HeatMapLayer("HeatMap", locations));
+                    // newGlobe.addLayer(new WorldWind.heatmapLayer("HeatMap", locations));
                 }
             }
         });
@@ -138,9 +138,9 @@ requirejs([
 
             $(".heatmapLayer").each(function (i) {
 
-                preloadHeatmapLayers[i] = $(this).val();
+                preloadheatmapLayers[i] = $(this).val();
 
-                var HeatMapLayer = new WorldWind.HeatMapLayer("Heatmap", data, {
+                var heatmapLayer = new WorldWind.heatmapLayer("Heatmap", data, {
                     // tile: RadiantCircleTile,
                     incrementPerIntensity: 0.05,
                     blur: 10,
@@ -148,10 +148,10 @@ requirejs([
                     scale: ['#000000', '#ffffff', '#00ff00', '#ffff00', '#ff0000']
                 });
 
-                // HeatMapLayer.enabled = false;
+                // heatmapLayer.enabled = false;
 
                 // Add the layers to WorldWind and update the layer manager
-                newGlobe.addLayer(HeatMapLayer);
+                newGlobe.addLayer(heatmapLayer);
 
             });
         }
@@ -169,7 +169,7 @@ requirejs([
             preload wmsLayer
             $.get(serviceAddress).done(createWMSLayer).fail(logError);// get the xml file of wmslayer and pass the file into  createLayer function.
 
-            return HeatMapLayer;
+            return heatmapLayer;
         });*/
 
     });

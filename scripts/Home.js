@@ -23,6 +23,7 @@ requirejs(['./newGlobe',
     './USGS_WT_placemarkLayer',
     './CS_placemarkLayer',
     './OptionList',
+    './resource_H'
 ], function (newGlobe) {
 
     "use strict";
@@ -55,24 +56,29 @@ requirejs(['./newGlobe',
         $("#popover").popover({html: true, placement: "top", trigger: "hover"});
 
         $(".wmsLayer, .placemarkLayer, .heatmapLayer").click(function () {
+            console.log("does this work");
             let layer1 = $(this).val(); //the most current value of the selected switch
             allCheckedArray = $(':checkbox:checked');
+            console.log($(this));
 
             let layerRequest = 'layername=' + layer1;
             globePosition(layerRequest);
             buttonControl(allCheckedArray,layer1);
+            console.log(layers);
 
 
             //turn on/off wmsLayer and placemark layer
             for (let a = 0; a < layers.length; a++) {
                 $(':checkbox:checked').each(function () {
                     if (layers[a].displayName === $(this).val()) {
+                        console.log(layers[a]);
                         layers[a].enabled = true;
                     } else {
                         bob = $(this).val().split(",");
                         bob.forEach(function (eleValue) {
                             if (layers[a].displayName === eleValue) {
                                 layers[a].enabled = true;
+                                console.log(layers[a]);
                             }
                         });
                     }
