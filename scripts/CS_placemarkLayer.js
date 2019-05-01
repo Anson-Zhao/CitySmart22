@@ -24,7 +24,7 @@ requirejs([
 
     //preload placemark
     $.ajax({
-        url: '/placemark',
+        url: '/csPK',
         dataType: 'json',
         success: function(result) {
             if (!result.err) {
