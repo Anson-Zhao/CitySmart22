@@ -29,7 +29,7 @@ let configGlobal = {
 
     //upload path to geoserver when approved
     'geoServer' : 'http://cs.aworldbridgelabs.com:8080/geoserver/',
-    'geoServer' : 'http://10.11.90.16:8080/geoserver/',
+    // 'geoServer' : 'http://10.11.90.16:8080/geoserver/',
 
     //sysnchronization between approvedfolder and data folder under geoserver when approved
     // 'Sync_Dir' : '/usr/share/geoserver-2.15.0/data_dir/data/Approved',
