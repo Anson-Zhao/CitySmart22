@@ -58,7 +58,7 @@ requirejs([
             if (!resp.error) {
 
                 // generate placemark layers
-                let Gold = new WorldWind.RenderableLayer("USGS_MR_MR_Gold_Placemark");
+                let Gold = new WorldWind.RenderableLayer("USGS_MR_Gold_Placemark");
                 let Silver = new WorldWind.RenderableLayer("USGS_MR_Silver_Placemark");
                 let Antimony = new WorldWind.RenderableLayer("USGS_MR_Antimony_Placemark");
                 let Asbestos = new WorldWind.RenderableLayer("USGS_MR_Asbestos_Placemark");
