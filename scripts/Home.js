@@ -23,6 +23,7 @@ requirejs(['./newGlobe',
     './USGS_WT_placemarkLayer',
     './CS_placemarkLayer',
     './OptionList',
+    './resource_H'
 ], function (newGlobe) {
 
     "use strict";
