@@ -35,9 +35,8 @@ requirejs([
                             heatmapLayer.incrementPerIntensity = 0.2;
 
                             heatmapLayer.enabled = false;
-                            newGlobe.addLayer(heatmapLayer);
 
-                            newGlobe.goTo(new WorldWind.Position(64.2008, -149.4937, mainconfig.eyeDistance_initial));
+                            newGlobe.addLayer(heatmapLayer)
                         }
                     }
                 }

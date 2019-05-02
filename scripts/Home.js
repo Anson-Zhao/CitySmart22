@@ -15,16 +15,15 @@
 */
 
 requirejs.config({
-    waitSeconds: 15
+    waitSeconds: 0
 });
 
 requirejs(['./newGlobe',
     './CS_wmsLayer',
-    './USGS_WT_placemarkLayer',
     './CS_placemarkLayer',
-    './OptionList',
-    './USGS_MR_heatmapLayer'
-], function (newGlobe) {
+    './USGS_WT_placemarkLayer',
+    './USGS_MR_heatmapLayer',
+    ], function (newGlobe) {
 
     "use strict";
 
