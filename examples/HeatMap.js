@@ -14,11 +14,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-requirejs(['./WorldWindShim',
-        './LayerManager'],
-    // function (WorldWind,
-    //           LayerManager) {
-    //     "use strict";
+requirejs(['./WorldWindShim'],
+    function (WorldWind) {
+
+        "use strict";
     //
     //     // Tell WorldWind to log only warnings and errors.
     //     WorldWind.Logger.setLoggingLevel(WorldWind.Logger.LEVEL_WARNING);

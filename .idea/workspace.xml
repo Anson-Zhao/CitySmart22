@@ -2,15 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2de1ac2b-c3a4-4935-a511-f40d0ff05b3e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/MARBLES.TIF" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/resource_H.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/scripts/resource_P.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_4_27_15_9_44.xml" beforeDir="false" afterPath="$PROJECT_DIR$/config/geoCapacity/2019_4_30_9_20_59.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_4_27_16_9_44.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_4_29_14_3_7.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_5_2_10_5_11.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/examples/HeatMap.js" beforeDir="false" afterPath="$PROJECT_DIR$/examples/HeatMap.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/Home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/resource_H.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/USGS_MR_heatmapLayer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/resource_P.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/USGS_MR_placemarkLayer.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -53,13 +50,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scripts/Home.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="112">
-              <caret line="20" column="14" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
+            <state relative-caret-position="267">
+              <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
               <folding>
-                <element signature="e#5198#8031#0" />
+                <element signature="e#5225#7968#0" />
                 <element signature="e#5128#6994#0" />
               </folding>
             </state>
@@ -76,19 +73,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/WWConf.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="10" column="3" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/mainconf.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-135">
               <caret line="12" column="32" selection-start-line="12" selection-start-column="32" selection-end-line="12" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/scripts/USGS_MR_heatmapLayer.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="152">
+              <caret line="8" column="8" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -163,8 +160,8 @@
       <replace>ModelPKLayer</replace>
       <replace>127.0.0.1</replace>
       <replace>yearPK</replace>
-      <replace>checkboxSpan</replace>
       <replace>let</replace>
+      <replace>checkboxSpan</replace>
       <replace>toggleVal</replace>
     </replaceStrings>
     <dirStrings>
@@ -194,7 +191,6 @@
         <option value="$PROJECT_DIR$/src/newGlobe.js" />
         <option value="$PROJECT_DIR$/scripts/usgswt.js" />
         <option value="$PROJECT_DIR$/scripts/MainMenu.js" />
-        <option value="$PROJECT_DIR$/examples/HeatMap.js" />
         <option value="$PROJECT_DIR$/scripts/OptionList.js" />
         <option value="$PROJECT_DIR$/scripts/LayerNameSearch.js" />
         <option value="$PROJECT_DIR$/views/LayerRequestForm.ejs" />
@@ -219,7 +215,9 @@
         <option value="$PROJECT_DIR$/src/globe/UsgsNedElevationCoverage.js" />
         <option value="$PROJECT_DIR$/src/globe/UsgsNedHiElevationCoverage.js" />
         <option value="$PROJECT_DIR$/scripts/WWConf.js" />
+        <option value="$PROJECT_DIR$/examples/HeatMap.js" />
         <option value="$PROJECT_DIR$/scripts/Home.js" />
+        <option value="$PROJECT_DIR$/scripts/USGS_MR_heatmapLayer.js" />
       </list>
     </option>
   </component>
@@ -252,6 +250,11 @@
               <item name="CitySmart22" type="b2602c69:ProjectViewProjectNode" />
               <item name="CitySmart22" type="462c0819:PsiDirectoryNode" />
               <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CitySmart22" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CitySmart22" type="462c0819:PsiDirectoryNode" />
+              <item name="examples" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="CitySmart22" type="b2602c69:ProjectViewProjectNode" />
@@ -328,6 +331,9 @@
     </option>
   </component>
   <component name="RunManager">
+    <configuration name="CS2_MainSvr.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="CS2_MainSvr.js" working-dir="$PROJECT_DIR$">
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Node.js.CS2_MainSvr.js" />
@@ -345,7 +351,7 @@
       <option name="presentableId" value="Default" />
       <updated>1555789805933</updated>
       <workItem from="1555789807042" duration="1894000" />
-      <workItem from="1555791745817" duration="103156000" />
+      <workItem from="1555791745817" duration="103994000" />
     </task>
     <task id="LOCAL-00001" summary="V2.2">
       <created>1555795784459</created>
@@ -592,31 +598,39 @@
       <option name="project" value="LOCAL" />
       <updated>1556808083095</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="Merge with Julia's Branch">
+      <created>1556808330510</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1556808330510</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="105050000" />
+    <option name="totallyTimeSpent" value="105888000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="115" y="29" width="1894" height="1302" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17046688" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17046688" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="File Transfer" sideWeight="0.49970433" weight="0.3299748" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49911296" weight="0.3299748" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49782845" weight="0.16708648" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49728554" visible="true" weight="0.16708648" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="9" sideWeight="0.4989142" visible="true" weight="0.3299748" />
+      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.4989142" weight="0.3299748" />
       <window_info anchor="bottom" id="Terminal" order="10" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50108576" side_tool="true" visible="true" weight="0.3299748" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50271446" side_tool="true" visible="true" weight="0.16708648" />
       <window_info anchor="right" id="Remote Host" visible="true" weight="0.19489685" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -637,19 +651,10 @@
     <MESSAGE value="V2.2 WT_Placemark" />
     <MESSAGE value="V2.2 Home.js" />
     <MESSAGE value="V2.2 Improve Globe Loading" />
-    <option name="LAST_COMMIT_MESSAGE" value="V2.2 Improve Globe Loading" />
+    <MESSAGE value="Merge with Julia's Branch" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge with Julia's Branch" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/util/WWUtil.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="116">
-          <caret line="282" column="11" selection-start-line="282" selection-start-column="11" selection-end-line="282" selection-end-column="11" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/WorldWind.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="541">
@@ -742,13 +747,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="19">
           <caret line="12" column="23" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/examples/HeatMap.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="572">
-          <caret line="59" lean-forward="true" selection-start-line="46" selection-start-column="7" selection-end-line="59" />
         </state>
       </provider>
     </entry>
@@ -1017,13 +1015,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/mainconf.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-135">
-          <caret line="12" column="32" selection-start-line="12" selection-start-column="32" selection-end-line="12" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/globe/AsterV2ElevationCoverage.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="634">
@@ -1075,14 +1066,35 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/examples/HeatMap.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="35" column="34" lean-forward="true" selection-start-line="35" selection-start-column="34" selection-end-line="35" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/mainconf.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-135">
+          <caret line="12" column="32" selection-start-line="12" selection-start-column="32" selection-end-line="12" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/Home.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="20" column="14" selection-start-line="20" selection-start-column="14" selection-end-line="20" selection-end-column="14" />
+        <state relative-caret-position="267">
+          <caret line="29" lean-forward="true" selection-start-line="29" selection-end-line="29" />
           <folding>
-            <element signature="e#5198#8031#0" />
+            <element signature="e#5225#7968#0" />
             <element signature="e#5128#6994#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/USGS_MR_heatmapLayer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="8" column="8" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
         </state>
       </provider>
     </entry>
