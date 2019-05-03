@@ -66,17 +66,22 @@ requirejs([
                 let Nickel = new WorldWind.RenderableLayer("USGS_MD_Nickel_Placemark");
                 let Iron = new WorldWind.RenderableLayer("USGS_MD_Iron_Placemark");
                 let Aluminum = new WorldWind.RenderableLayer("USGS_MD_Aluminum_Placemark");
-                let LeadZinc = new WorldWind.RenderableLayer("USGS_MDR_Lead-Zinc_Placemark");
+                let LeadZinc = new WorldWind.RenderableLayer("USGS_MD_Lead-Zinc_Placemark");
+                let PGE = new WorldWind.RenderableLayer("USGS_MD_PGE_Placemark");
+                let Diamond = new WorldWind.RenderableLayer("USGS_MD_Diamond_Placemark");
+                let Clay = new WorldWind.RenderableLayer("USGS_MD_Clay_Placemark");
+                let Potash = new WorldWind.RenderableLayer("USGS_MD_Potash_Placemark");
+                let RareEarths = new WorldWind.RenderableLayer("USGS_MD_RareEarths_Placemark");
                 let Silver = new WorldWind.RenderableLayer("USGS_MD_Silver_Placemark");
-                let Antimony = new WorldWind.RenderableLayer("USGS_MD_Antimony_Placemark");
-                let Asbestos = new WorldWind.RenderableLayer("USGS_MD_Asbestos_Placemark");
-                let Copper = new WorldWind.RenderableLayer("USGS_MD_Copper_Placemark");
-                let Zinc = new WorldWind.RenderableLayer("USGS_MD_Zinc_Placemark");
-                let Other = new WorldWind.RenderableLayer("USGS_MD_Other_Placemark");
+                let MultipleCommodities = new WorldWind.RenderableLayer("USGS_MD_MultipleCommodities_Placemark");
+                let Unclassified = new WorldWind.RenderableLayer("USGS_MD_Unclassified_Placemark");
+                let Surficial = new WorldWind.RenderableLayer("USGS_MD_Surficial_Placemark");
+                let Metamorphic = new WorldWind.RenderableLayer("USGS_MD_Metamorphic_Placemark");
+                let Igneous = new WorldWind.RenderableLayer("USGS_MD_Igneous_Placemark");
+                let Sedimentary = new WorldWind.RenderableLayer("USGS_MD_Sedimentary_Placemark");
+                let Hydrothermal = new WorldWind.RenderableLayer("USGS_MD_Hydrothermal_Placemark");
 
-
-
-                yearPLayer.enabled = capPLayer.enabled = heightPLayer.enabled = false;
+                Gold.enabled = Nickel.enabled = Iron.enabled = Aluminum.enabled = LeadZinc.enabled = PGE.enabled = Diamond.enabled = Clay.enabled = Potash.enabled = RareEarths.enabled = Silver.enabled = MultipleCommodities.enabled = Unclassified.enabled = Surficial.enabled = Metamorphic.enabled = Igneous.enabled = Sedimentary.enabled = Hydrothermal.enabled = false;
 
                 resp.data.forEach (function (ele, i) {
                     let yearPK = new createWTPK(ele.p_year_color, ele);
