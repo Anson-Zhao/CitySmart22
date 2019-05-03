@@ -5,7 +5,7 @@ requirejs([
 
     "use strict";
 
-    let createWTPK = function(color, element) {
+    let createMDPK = function(color, element) {
 
         // wrap up placemark image source
         let circle = document.createElement("canvas"),
@@ -84,9 +84,9 @@ requirejs([
                 Gold.enabled = Nickel.enabled = Iron.enabled = Aluminum.enabled = LeadZinc.enabled = PGE.enabled = Diamond.enabled = Clay.enabled = Potash.enabled = RareEarths.enabled = Silver.enabled = MultipleCommodities.enabled = Unclassified.enabled = Surficial.enabled = Metamorphic.enabled = Igneous.enabled = Sedimentary.enabled = Hydrothermal.enabled = false;
 
                 resp.data.forEach (function (ele, i) {
-                    let yearPK = new createWTPK(ele.p_year_color, ele);
-                    let capPK = new createWTPK(ele.p_avgcap_color, ele);
-                    let heightPK = new createWTPK(ele.t_ttlh_color, ele);
+                    let yearPK = new createMDPK(ele.p_year_color, ele);
+                    let capPK = new createMDPK(ele.p_avgcap_color, ele);
+                    let heightPK = new createMDPK(ele.t_ttlh_color, ele);
 
                     yearPLayer.addRenderable(yearPK.pk);
                     capPLayer.addRenderable(capPK.pk);
