@@ -4,7 +4,7 @@ requirejs([
         ], function (newGlobe) {
 
     "use strict";
-    console.log(newGlobe.layers);
+
     let createWTPK = function(color, element) {
         // wrap up placemark image source
         let circle = document.createElement("canvas"),
@@ -44,6 +44,7 @@ requirejs([
         this.pk.userProperties.dev_stat = element.dev_stat;
         this.pk.userProperties.commodity = element.commod1.split(",")[0];
     };
+
     //fetch the data from db and generate plackmarks and placemark layers
     let an = "USGS_MR_Antimony_Placemark";
     let as = "USGS_MR_Asbestos_Placemark";
@@ -65,7 +66,7 @@ requirejs([
 
     for (let i = 0; i < arrName.length; i++) {
         let layerName = "layerName=" + arrName[i];
-        console.log(layerName);
+
         $.ajax({
             url: '/mrdsDataP',
             type: 'GET',
@@ -74,6 +75,8 @@ requirejs([
             data: layerName,
             success: function (resp) {
                 if (!resp.error) {
+                    // console.log(resp.commN);
+
                     let a = layerName.split("=");
                     let b = a[1];
 

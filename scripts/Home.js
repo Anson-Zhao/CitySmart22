@@ -19,17 +19,15 @@ requirejs.config({
 });
 
 requirejs(['./newGlobe',
-    './CS_wmsLayer',
     './CS_placemarkLayer',
+    './CS_wmsLayer',
     './USGS_WT_placemarkLayer',
     './USGS_WT_heatmapLayer',
-    './USGS_MR_heatmapLayer',
-    './USGS_MR_placemarkLayer'
+    './USGS_MR_placemarkLayer',
+    './USGS_MR_heatmapLayer'
     ], function (newGlobe) {
 
     "use strict";
-
-    // newGlobe.redraw;
 
     newGlobe.goTo(new WorldWind.Position(37.0902, -95.7129, 9000000));
 
@@ -70,13 +68,14 @@ requirejs(['./newGlobe',
                 }
 
                 let selectedIndex = newGlobe.layers.findIndex(ele => ele.displayName === value);
-                console.log("1");
-                console.log(newGlobe.layers[10]);
-                console.log("2");
-                console.log(selectedIndex);
-                console.log("3");
-                console.log(newGlobe.layers[selectedIndex]);
-                newGlobe.layers[selectedIndex].enabled = !!(checkBox);
+
+                if (selectedIndex < 0) {
+                    if (checkBox){
+                        confirm("The layer you selected is tentatively not available. Please try it later.");
+                    }
+                } else {
+                    newGlobe.layers[selectedIndex].enabled = checkBox;
+                }
             });
 
             allCheckedArray = $(':checkbox:checked');
@@ -224,7 +223,7 @@ requirejs(['./newGlobe',
         // relative to the upper left corner of the canvas rather than the upper left corner of the page.
 
         let pickList = newGlobe.pick(newGlobe.canvasCoordinates(x, y));
-        // console.log(pickList.objects);
+
         for (let q = 0; q < pickList.objects.length; q++) {
             let pickedPL = pickList.objects[q].userObject;
 

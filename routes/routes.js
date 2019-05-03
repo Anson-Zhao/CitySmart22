@@ -195,7 +195,6 @@ module.exports = function (app, passport) {
         let commodity2 = commodity.split("_");
 
         let commName = commodity2[2];
-        console.log(commName);
 
         //Converts array to string
         let statement = "SELECT * FROM mrds_sample WHERE commod1 LIKE '" + commName +"' OR commod2 LIKE '" + commName +"' OR commod3 LIKE '" + commName +"';";
