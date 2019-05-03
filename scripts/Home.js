@@ -22,7 +22,8 @@ requirejs(['./newGlobe',
     './CS_wmsLayer',
     './CS_placemarkLayer',
     './USGS_WT_placemarkLayer',
-    './USGS_MR_heatmapLayer',
+    './USGS_WT_heatmapLayer',
+    './USGS_MR_heatmapLayer'
     ], function (newGlobe) {
 
     "use strict";
