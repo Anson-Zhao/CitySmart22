@@ -188,6 +188,20 @@ module.exports = function (app, passport) {
         });
     });
 
+    app.post('/mrdsDataP', function (req, res) {
+        let commodity = req.body.layerName;
+        let commName = commodity.split("_", 1);
+        res.setHeader("Access-Control-Allow-Origin", "*");
+
+        //Converts array to string
+        let statement = "SELECT * FROM mrds_sample WHERE commod1 LIKE '" + commName +"' OR commod2 LIKE '" + commName +"' OR commod3 LIKE '" + commName +"';";
+
+        con_CS.query(statement, function (err, result) {
+            if (err) throw err;
+            res.json({"error": false, "commN": result});
+        });
+
+    });
 
     app.get('/mrdsData', function (req, res) {
         // console.log( "A: " + new Date());
