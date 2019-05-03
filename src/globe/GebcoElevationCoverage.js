@@ -19,7 +19,7 @@
  * @exports GebcoElevationCoverage
  */
 define([
-        '../../scripts/WWConf',
+        '../WWConf',
         '../geom/Location',
         '../geom/Sector',
         '../globe/TiledElevationCoverage',

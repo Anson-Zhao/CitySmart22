@@ -2,12 +2,12 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
-      <webServer id="6027f2e6-93ee-48a4-9aeb-bc761059907b" name="16" url="">
-        <fileTransfer host="10.11.90.16" port="22" rootFolder="/usr/share/geoserver-2.15.0/data_dir/data" accessType="SFTP">
+      <webServer id="6f32712d-a060-4679-8019-b4cec0c93bb5" name="cs2_Live" url="http://v2.cs.aworldbridgelabs.com">
+        <fileTransfer host="v2.cs.aworldbridgelabs.com" port="5532" rootFolder="/var/www/cs/v2" accessType="SFTP">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
           </advancedOptions>
-          <option name="port" value="22" />
+          <option name="port" value="5532" />
         </fileTransfer>
       </webServer>
     </option>

@@ -15,21 +15,20 @@
 */
 
 requirejs.config({
-    waitSeconds: 15
+    waitSeconds: 0
 });
 
 requirejs(['./newGlobe',
     './CS_wmsLayer',
-    './USGS_WT_placemarkLayer',
     './CS_placemarkLayer',
-    './OptionList',
-    './resource_H',
-    './resource_P'
-], function (newGlobe) {
+    './USGS_WT_placemarkLayer',
+    './USGS_MR_heatmapLayer',
+    './USGS_MR_placemarkLayer'
+    ], function (newGlobe) {
 
     "use strict";
 
-    newGlobe.redraw;
+    // newGlobe.redraw;
 
     newGlobe.goTo(new WorldWind.Position(37.0902, -95.7129, 9000000));
 
@@ -67,12 +66,15 @@ requirejs(['./newGlobe',
                 if (i === 0) {
                     let layerRequest = 'layername=' + value;
                     globePosition(layerRequest);
+                    console.log(layerRequest);
+
                 }
 
+
                 let selectedIndex = newGlobe.layers.findIndex(ele => ele.displayName === value);
-                newGlobe.layers[selectedIndex].enabled = !!(checkBox);
                 console.log("1");
                 console.log(newGlobe.layers[selectedIndex]);
+                newGlobe.layers[selectedIndex].enabled = !!(checkBox);
             });
 
             allCheckedArray = $(':checkbox:checked');

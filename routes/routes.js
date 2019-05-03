@@ -188,10 +188,14 @@ module.exports = function (app, passport) {
         });
     });
 
-    app.post('/mrdsDataP', function (req, res) {
-        let commodity = req.body.layerName;
-        let commName = commodity.split("_", 1);
+    app.get('/mrdsDataP', function (req, res) {
         res.setHeader("Access-Control-Allow-Origin", "*");
+
+        let commodity = req.query.layerName;
+        let commodity2 = commodity.split("_");
+
+        let commName = commodity2[2];
+        console.log(commName);
 
         //Converts array to string
         let statement = "SELECT * FROM mrds_sample WHERE commod1 LIKE '" + commName +"' OR commod2 LIKE '" + commName +"' OR commod3 LIKE '" + commName +"';";
@@ -217,7 +221,7 @@ module.exports = function (app, passport) {
                 res.json({"error": true, "message": "An unexpected error occurred !"});
             } else {
                 // console.log("success: " + new Date());
-                console.log(results);
+                // console.log(results);
                 res.json({"error": false, "data": results});
             }
         });
