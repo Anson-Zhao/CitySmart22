@@ -55,16 +55,16 @@ requirejs([
 
     //fetch the data from db and generate plackmarks and placemark layers
     $.ajax({
-        url: '/usgswtPK',
+        url: '/usgsWT',
         type: 'GET',
         dataType: 'json',
         async: false,
         success: function (resp) {
             if (!resp.error) {
                 // generate placemark layers
-                let yearPLayer = new WorldWind.RenderableLayer("USGS_TW_Year");
-                let capPLayer = new WorldWind.RenderableLayer("USGS_TW_Capacity");
-                let heightPLayer = new WorldWind.RenderableLayer("USGS_TW_Height");
+                let yearPLayer = new WorldWind.RenderableLayer("USGS_WT_Year");
+                let capPLayer = new WorldWind.RenderableLayer("USGS_WT_Capacity");
+                let heightPLayer = new WorldWind.RenderableLayer("USGS_WT_Height");
                 yearPLayer.enabled = capPLayer.enabled = heightPLayer.enabled = false;
 
                 resp.data.forEach (function (ele, i) {

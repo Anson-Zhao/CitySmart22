@@ -1,4 +1,3 @@
-
 requirejs([
         './newGlobe',
         '../config/mainconf'

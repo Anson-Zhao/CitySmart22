@@ -127,7 +127,7 @@ requirejs([
                         pkColor = "#9B59B6";
                     } else if (arrName[13] === b) {
                         pkColor = "#BA4A00";
-                    } else {
+                    } else if (arrName[14] === b) {
                         pkColor = "#A6ACAF";
                     }
                     resp.commN.forEach (function (ele, i) {

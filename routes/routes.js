@@ -2012,7 +2012,7 @@ module.exports = function (app, passport) {
 
     });
 
-    app.get('/usgswtPK', function (req, res) {
+    app.get('/usgsWT', function (req, res) {
         // console.log("A: " + new Date());
 
         res.setHeader("Access-Control-Allow-Origin", "*"); // Allow cross domain header
