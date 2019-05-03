@@ -23,7 +23,8 @@ requirejs(['./newGlobe',
     './CS_placemarkLayer',
     './USGS_WT_placemarkLayer',
     './USGS_WT_heatmapLayer',
-    './USGS_MR_heatmapLayer'
+    './USGS_MR_heatmapLayer',
+    './USGS_MR_placemarkLayer'
     ], function (newGlobe) {
 
     "use strict";
@@ -69,6 +70,12 @@ requirejs(['./newGlobe',
                 }
 
                 let selectedIndex = newGlobe.layers.findIndex(ele => ele.displayName === value);
+                console.log("1");
+                console.log(newGlobe.layers[10]);
+                console.log("2");
+                console.log(selectedIndex);
+                console.log("3");
+                console.log(newGlobe.layers[selectedIndex]);
                 newGlobe.layers[selectedIndex].enabled = !!(checkBox);
             });
 
