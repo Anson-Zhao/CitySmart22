@@ -62,6 +62,19 @@ requirejs(['./newGlobe',
             let arrToggle = toggleVal.split(",");
             checkBox = this.checked;
 
+            //if the there is already one toggle switch is turned on, as another toggle is clicked then close the last button
+
+            if (allCheckedArray.length > checkedCount) {
+                console.log('close the last one');
+                console.log(arrMenu[arrMenu.length-1])
+            }
+
+
+            console.log(checkBox);
+            console.log(arrMenu);
+
+            changeElement(arrToggle[0]); //change the words under the color bar according the first value of arrToggle
+
             arrToggle.forEach(function (value, i) {
                 if (i === 0) {
                     let layerRequest = 'layername=' + value;
@@ -240,6 +253,34 @@ requirejs(['./newGlobe',
                 $("#popover").show();
             }
         }
+    }
+
+    function changeElement (arrToggle) {
+        $.ajax({
+            url: '/gradientValue',
+            type: 'GET',
+            dataType: 'json',
+            async: false,
+            success: function (resp) {
+                console.log(resp.data[0]);
+                var left = $("#leftScale");
+                var right = $("#rightScale");
+
+                if (arrToggle === "USGS_TW_Year") {
+                    left.html(resp.data[0].yearMin);
+                    right.html(resp.data[0].yearMax);
+
+                } else if (arrToggle === "USGS_TW_Capacity") {
+                    console.log('capacity');
+                    left.html("<" + resp.data[0].capMin + "MW");
+                    right.html(">" + resp.data[0].capMax + "MW");
+                } else if (arrToggle === "USGS_TW_Height") {
+                    left.html(resp.data[0].heightMin + "m");
+                    right.html(resp.data[0].heightMax + "m");
+                }
+
+            }
+        });
     }
 
 });
