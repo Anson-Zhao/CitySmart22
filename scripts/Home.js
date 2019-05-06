@@ -24,6 +24,7 @@ requirejs(['./newGlobe',
     './USGS_WT_placemarkLayer',
     './USGS_WT_heatmapLayer',
     './USGS_MR_placemarkLayer',
+    './USGS_MD_placemarkLayer',
     './USGS_MR_heatmapLayer'
     ], function (newGlobe) {
 
