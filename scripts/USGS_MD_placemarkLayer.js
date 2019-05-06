@@ -2,7 +2,7 @@ requirejs([
     './newGlobe',
     './customPK',
     // '../config/mainconf',
-    '../config/clientConfig',
+    '../config/MDclientConfig',
 ], function (newGlobe,customPK) {
 
     "use strict";
@@ -98,48 +98,70 @@ requirejs([
         success: function (resp) {
             if (!resp.error) {
                 // generate placemark layers
-                let MajorCommodity = new WorldWind.RenderableLayer("USGS_MD_MajorCommodity");
-                let MajorType = new WorldWind.RenderableLayer("USGS_MD_MajorType");
-                // let Gold = new WorldWind.RenderableLayer("USGS_MD_Gold_Placemark");
-                // let Nickel = new WorldWind.RenderableLayer("USGS_MD_Nickel_Placemark");
-                // let Iron = new WorldWind.RenderableLayer("USGS_MD_Iron_Placemark");
-                // let Aluminum = new WorldWind.RenderableLayer("USGS_MD_Aluminum_Placemark");
-                // let LeadZinc = new WorldWind.RenderableLayer("USGS_MD_Lead-Zinc_Placemark");
-                // let PGE = new WorldWind.RenderableLayer("USGS_MD_PGE_Placemark");
-                // let Diamond = new WorldWind.RenderableLayer("USGS_MD_Diamond_Placemark");
-                // let Clay = new WorldWind.RenderableLayer("USGS_MD_Clay_Placemark");
-                // let Potash = new WorldWind.RenderableLayer("USGS_MD_Potash_Placemark");
-                // let RareEarths = new WorldWind.RenderableLayer("USGS_MD_RareEarths_Placemark");
-                // let Silver = new WorldWind.RenderableLayer("USGS_MD_Silver_Placemark");
-                // let MultipleCommodities = new WorldWind.RenderableLayer("USGS_MD_MultipleCommodities_Placemark");
-                // let Unclassified = new WorldWind.RenderableLayer("USGS_MD_Unclassified_Placemark");
-                // let Surficial = new WorldWind.RenderableLayer("USGS_MD_Surficial_Placemark");
-                // let Metamorphic = new WorldWind.RenderableLayer("USGS_MD_Metamorphic_Placemark");
-                // let Igneous = new WorldWind.RenderableLayer("USGS_MD_Igneous_Placemark");
-                // let Sedimentary = new WorldWind.RenderableLayer("USGS_MD_Sedimentary_Placemark");
-                // let Hydrothermal = new WorldWind.RenderableLayer("USGS_MD_Hydrothermal_Placemark");
+                // let MajorCommodity = new WorldWind.RenderableLayer("USGS_MD_MajorCommodity");
+                // let MajorType = new WorldWind.RenderableLayer("USGS_MD_MajorType");
+                // // let Gold = new WorldWind.RenderableLayer("USGS_MD_Gold_Placemark");
+                // // let Nickel = new WorldWind.RenderableLayer("USGS_MD_Nickel_Placemark");
+                // // let Iron = new WorldWind.RenderableLayer("USGS_MD_Iron_Placemark");
+                // // let Aluminum = new WorldWind.RenderableLayer("USGS_MD_Aluminum_Placemark");
+                // // let LeadZinc = new WorldWind.RenderableLayer("USGS_MD_Lead-Zinc_Placemark");
+                // // let PGE = new WorldWind.RenderableLayer("USGS_MD_PGE_Placemark");
+                // // let Diamond = new WorldWind.RenderableLayer("USGS_MD_Diamond_Placemark");
+                // // let Clay = new WorldWind.RenderableLayer("USGS_MD_Clay_Placemark");
+                // // let Potash = new WorldWind.RenderableLayer("USGS_MD_Potash_Placemark");
+                // // let RareEarths = new WorldWind.RenderableLayer("USGS_MD_RareEarths_Placemark");
+                // // let Silver = new WorldWind.RenderableLayer("USGS_MD_Silver_Placemark");
+                // // let MultipleCommodities = new WorldWind.RenderableLayer("USGS_MD_MultipleCommodities_Placemark");
+                // // let Unclassified = new WorldWind.RenderableLayer("USGS_MD_Unclassified_Placemark");
+                // // let Surficial = new WorldWind.RenderableLayer("USGS_MD_Surficial_Placemark");
+                // // let Metamorphic = new WorldWind.RenderableLayer("USGS_MD_Metamorphic_Placemark");
+                // // let Igneous = new WorldWind.RenderableLayer("USGS_MD_Igneous_Placemark");
+                // // let Sedimentary = new WorldWind.RenderableLayer("USGS_MD_Sedimentary_Placemark");
+                // // let Hydrothermal = new WorldWind.RenderableLayer("USGS_MD_Hydrothermal_Placemark");
+                //
+                // // Gold.enabled = Nickel.enabled = Iron.enabled = Aluminum.enabled = LeadZinc.enabled = PGE.enabled = Diamond.enabled = Clay.enabled = Potash.enabled = RareEarths.enabled = Silver.enabled = MultipleCommodities.enabled = Unclassified.enabled = Surficial.enabled = Metamorphic.enabled = Igneous.enabled = Sedimentary.enabled = Hydrothermal.enabled = false;
+                //
+                // MajorCommodity.enabled = MajorType.enabled = false;
 
-                // Gold.enabled = Nickel.enabled = Iron.enabled = Aluminum.enabled = LeadZinc.enabled = PGE.enabled = Diamond.enabled = Clay.enabled = Potash.enabled = RareEarths.enabled = Silver.enabled = MultipleCommodities.enabled = Unclassified.enabled = Surficial.enabled = Metamorphic.enabled = Igneous.enabled = Sedimentary.enabled = Hydrothermal.enabled = false;
+                arrPL.forEach(function (e) {
+                    let rows = resp.data.filter(ele => ele.commod1.includes(e.Name) || ele.commod2.includes(e.Name)  || ele.commod3.includes(e.Name) );
+                    // console.log(rows);
+                    rows.forEach(function (v) {
 
-                MajorCommodity.enabled = MajorType.enabled = false;
+                        // create customized placemark and wrap it up with its own userProperties.
+                        let commodPK = new customPK(config.MD_COMM_Color[e.Name], v.latitude, v.longitude);
+                        commodPK.placemark.userProperties.site_name = v.site_name;
+                        commodPK.placemark.userProperties.country = v.country;
+                        commodPK.placemark.userProperties.stat = v.stat;
+                        commodPK.placemark.userProperties.mrds_id = v.mrds_id;
+                        commodPK.placemark.userProperties.url = v.url;
 
+                        // add this placemark onto placemarkLayer object
+                        e.Layer.addRenderable(commodPK.placemark);
+                    });
 
-                resp.data.forEach (function (ele, i) {
-                    let CommodityPK = new createMDPK(ele.commodity, ele);
-                    let TypePK = new createMDPK(ele.dep_type, ele);
-                    // let Name = new createMDPK(ele.dep_name, ele);
-
-                    MajorType.addRenderable(TypePK.pk);
-                    MajorCommodity.addRenderable(CommodityPK.pk);
-                    // heightPLayer.addRenderable(heightPK.pk);
-
-                    // add placemark layers into WorldWind layers object
-                    if (i === resp.data.length - 1) {
-                        newGlobe.addLayer(MajorCommodity);
-                        newGlobe.addLayer(MajorType);
-                        // newGlobe.addLayer(heightPLayer);
-                    }
+                    // add customized placemarkLayer onto worldwind layers
+                    e.Layer.enabled = false;
+                    newGlobe.addLayer(e.Layer);
+                    // console.log(newGlobe.layers);
                 });
+
+                // resp.data.forEach (function (ele, i) {
+                //     let CommodityPK = new createMDPK(ele.commodity, ele);
+                //     let TypePK = new createMDPK(ele.dep_type, ele);
+                //     // let Name = new createMDPK(ele.dep_name, ele);
+                //
+                //     MajorType.addRenderable(TypePK.pk);
+                //     MajorCommodity.addRenderable(CommodityPK.pk);
+                //     // heightPLayer.addRenderable(heightPK.pk);
+                //
+                //     // add placemark layers into WorldWind layers object
+                //     if (i === resp.data.length - 1) {
+                //         newGlobe.addLayer(MajorCommodity);
+                //         newGlobe.addLayer(MajorType);
+                //         // newGlobe.addLayer(heightPLayer);
+                //     }
+                // });
             } else {
                 alert(resp.error)
             }

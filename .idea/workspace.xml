@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3b2ba209-e08e-4f77-99ae-d893522cce16" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_5_6_15_6_31.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/USGS_MD_placemarkLayer.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/USGS_MD_placemarkLayer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/USGS_MR_placemarkLayer.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/USGS_MR_placemarkLayer.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -49,17 +50,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scripts/Home.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4095">
-              <caret line="288" column="26" lean-forward="true" selection-start-line="288" selection-start-column="26" selection-end-line="288" selection-end-column="26" />
+            <state relative-caret-position="4110">
+              <caret line="288" column="26" selection-start-line="288" selection-start-column="26" selection-end-line="288" selection-end-column="26" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scripts/USGS_MR_placemarkLayer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="495">
-              <caret line="33" column="30" selection-start-line="33" selection-start-column="30" selection-end-line="33" selection-end-column="30" />
+            <state relative-caret-position="615">
+              <caret line="41" column="44" lean-forward="true" selection-start-line="41" selection-start-column="44" selection-end-line="41" selection-end-column="44" />
             </state>
           </provider>
         </entry>
@@ -67,10 +68,24 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scripts/USGS_MD_placemarkLayer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="20">
-              <caret line="78" column="37" lean-forward="true" selection-start-line="78" selection-start-column="37" selection-end-line="78" selection-end-column="37" />
+            <state relative-caret-position="1965">
+              <caret line="131" column="61" lean-forward="true" selection-start-line="131" selection-start-column="61" selection-end-line="131" selection-end-column="61" />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/clientConfig.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="720">
+              <caret line="48" column="29" lean-forward="true" selection-start-line="48" selection-start-column="29" selection-end-line="48" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/config/MDclientConfig.js">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -86,10 +101,7 @@
         <entry file="file://$PROJECT_DIR$/scripts/CS_placemarkLayer.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="255">
-              <caret line="31" column="30" lean-forward="true" selection-start-line="31" selection-start-column="30" selection-end-line="31" selection-end-column="30" />
-              <folding>
-                <element signature="n#style#0;n#img#0;n#!!top" expanded="true" />
-              </folding>
+              <caret line="31" column="30" selection-start-line="31" selection-start-column="30" selection-end-line="31" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -106,8 +118,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/routes.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="571">
-              <caret line="2050" lean-forward="true" selection-start-line="2050" selection-end-line="2050" />
+            <state relative-caret-position="30750">
+              <caret line="2050" selection-start-line="2050" selection-end-line="2050" />
             </state>
           </provider>
         </entry>
@@ -249,8 +261,8 @@
         <option value="$PROJECT_DIR$/routes/routes.js" />
         <option value="$PROJECT_DIR$/scripts/MDViewer.js" />
         <option value="$PROJECT_DIR$/scripts/Home.js" />
-        <option value="$PROJECT_DIR$/scripts/USGS_MD_placemarkLayer.js" />
         <option value="$PROJECT_DIR$/scripts/USGS_MR_placemarkLayer.js" />
+        <option value="$PROJECT_DIR$/scripts/USGS_MD_placemarkLayer.js" />
       </list>
     </option>
   </component>
@@ -373,7 +385,9 @@
       <workItem from="1555791745817" duration="109052000" />
       <workItem from="1556824280458" duration="2000" />
       <workItem from="1556824289859" duration="6647000" />
-      <workItem from="1557171528853" duration="862000" />
+      <workItem from="1557171528853" duration="948000" />
+      <workItem from="1557172496070" duration="58000" />
+      <workItem from="1557172640167" duration="578000" />
     </task>
     <task id="LOCAL-00001" summary="V2.2">
       <created>1555795784459</created>
@@ -704,22 +718,35 @@
       <option name="project" value="LOCAL" />
       <updated>1557172291633</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="Merge branch 'Amy' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;routes/routes.js">
+      <created>1557172394917</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1557172394917</updated>
+    </task>
+    <task id="LOCAL-00049" summary="Merge branch 'Amy' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;routes/routes.js">
+      <created>1557172476636</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1557172476636</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="159587000" />
+    <option name="totallyTimeSpent" value="160309000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="60" y="42" width="1894" height="1302" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17656587" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17980562" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49837133" weight="0.3299748" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49402824" weight="0.3627204" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49402824" weight="0.36198348" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -814,33 +841,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="Merge branch 'Amy' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;routes/routes.js" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/views/LayerRequestForm_edit.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="749">
-          <caret line="894" column="9" lean-forward="true" selection-start-line="894" selection-start-column="9" selection-end-line="894" selection-end-column="9" />
-          <folding>
-            <element signature="n#script#7;n#head#0;n#html#0;n#!!top" />
-            <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
-            <element signature="n#div#1;n#body#0;n#html#0;n#!!top" />
-            <element signature="e#31301#32203#0#HTML" />
-            <element signature="e#32247#32893#0#HTML" />
-            <element signature="e#32936#33236#0#HTML" />
-            <element signature="e#33544#34828#0#HTML" />
-            <element signature="e#35005#35310#0#HTML" />
-            <element signature="e#35349#36909#0#HTML" />
-            <element signature="e#31352#31700#0#HTML" />
-            <element signature="e#31539#31572#0#HTML" />
-            <element signature="e#32218#33091#0#HTML" />
-            <element signature="e#35432#37200#0#HTML" />
-            <element signature="e#37243#37932#0#HTML" />
-            <element signature="e#37958#38138#0#HTML" />
-            <element signature="e#38164#38614#0#HTML" />
-            <element signature="e#40101#40136#0#HTML" />
-            <element signature="e#41453#41493#0#HTML" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/LayerRequestForm.ejs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="498">
@@ -1033,13 +1033,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/clientConfig.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
-          <caret line="30" column="19" selection-start-line="30" selection-start-column="19" selection-end-line="30" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/CS_placemarkLayer_O.js" />
     <entry file="file://$PROJECT_DIR$/src/layer/RenderableLayer.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -1080,10 +1073,11 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/MDViewer.js" />
     <entry file="file://$PROJECT_DIR$/scripts/Home.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4095">
-          <caret line="288" column="26" lean-forward="true" selection-start-line="288" selection-start-column="26" selection-end-line="288" selection-end-column="26" />
+        <state relative-caret-position="4110">
+          <caret line="288" column="26" selection-start-line="288" selection-start-column="26" selection-end-line="288" selection-end-column="26" />
         </state>
       </provider>
     </entry>
@@ -1097,10 +1091,7 @@
     <entry file="file://$PROJECT_DIR$/scripts/CS_placemarkLayer.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
-          <caret line="31" column="30" lean-forward="true" selection-start-line="31" selection-start-column="30" selection-end-line="31" selection-end-column="30" />
-          <folding>
-            <element signature="n#style#0;n#img#0;n#!!top" expanded="true" />
-          </folding>
+          <caret line="31" column="30" selection-start-line="31" selection-start-column="30" selection-end-line="31" selection-end-column="30" />
         </state>
       </provider>
     </entry>
@@ -1113,31 +1104,34 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/routes.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="571">
-          <caret line="2050" lean-forward="true" selection-start-line="2050" selection-end-line="2050" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/MDViewer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="129">
-          <caret line="39" column="10" lean-forward="true" selection-start-line="39" selection-start-column="10" selection-end-line="39" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/USGS_MD_placemarkLayer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="20">
-          <caret line="78" column="37" lean-forward="true" selection-start-line="78" selection-start-column="37" selection-end-line="78" selection-end-column="37" />
+        <state relative-caret-position="30750">
+          <caret line="2050" selection-start-line="2050" selection-end-line="2050" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/scripts/USGS_MR_placemarkLayer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="33" column="30" selection-start-line="33" selection-start-column="30" selection-end-line="33" selection-end-column="30" />
+        <state relative-caret-position="615">
+          <caret line="41" column="44" lean-forward="true" selection-start-line="41" selection-start-column="44" selection-end-line="41" selection-end-column="44" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/USGS_MD_placemarkLayer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1965">
+          <caret line="131" column="61" lean-forward="true" selection-start-line="131" selection-start-column="61" selection-end-line="131" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/clientConfig.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="720">
+          <caret line="48" column="29" lean-forward="true" selection-start-line="48" selection-start-column="29" selection-end-line="48" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/MDclientConfig.js">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
 </project>
