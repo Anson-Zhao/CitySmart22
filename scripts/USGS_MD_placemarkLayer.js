@@ -75,10 +75,10 @@ requirejs([
             if (!resp.error) {
                 resp.data.forEach(function (ele, i) {
                     if (ele.LayerType === 'USGSMD_PKLayer') {
-                        let commN = ele.LayerName.split("_");
-                        let commodName = commN[2];
+                        let comN = ele.LayerName.split("_");
+                        let commodityName = comN[2];
 
-                        arrPL.push({Name: commodName, Layer: new WorldWind.RenderableLayer(ele.LayerName)});
+                        arrPL.push({Name: commodityName, Layer: new WorldWind.RenderableLayer(ele.LayerName)});
                     }
                 })
             } else {

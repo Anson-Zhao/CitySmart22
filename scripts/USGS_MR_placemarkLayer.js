@@ -31,7 +31,7 @@ requirejs([
         }
     });
 
-    // create placemarks base on each commodity
+    // create placemarks based on each commodity
     $.ajax({
         url: '/mrdsData',
         type: 'GET',
