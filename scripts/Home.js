@@ -70,8 +70,10 @@ requirejs(['./newGlobe',
                 }
 
                 let selectedIndex = newGlobe.layers.findIndex(ele => ele.displayName === value);
+                console.log("0");
+                console.log(value);
                 console.log("1");
-                console.log(newGlobe.layers[10]);
+                console.log(newGlobe.layers[9]);
                 console.log("2");
                 console.log(selectedIndex);
                 console.log("3");
