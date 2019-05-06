@@ -2059,61 +2059,6 @@ module.exports = function (app, passport) {
         });
     });
 
-    app.get('/uswtdb', function (req, res) {
-        // console.log("A: " + new Date());
-
-        res.setHeader("Access-Control-Allow-Origin", "*"); // Allow cross domain header
-
-        // var statement = "SELECT p_name, xlong, ylat, p_year_color, p_avgcap_color, t_ttlh_color FROM USWTDB INNER JOIN USWTDB_COLOR ON USWTDB.case_id = USWTDB_COLOR.case_id ORDER BY p_name;";
-        var statement = "SELECT USGS.USWTDB_Sample.case_id, t_state, p_name, xlong, ylat, p_year, p_tnum, p_cap, p_avgcap, t_ttlh, p_year_color, p_avgcap_color, t_ttlh_color FROM USGS.USWTDB_Sample INNER JOIN USGS.USWTDB_COLOR_Sample ON USGS.USWTDB_Sample.case_id = USGS.USWTDB_COLOR_Sample.case_id ORDER BY p_name;";
-
-        con_CS.query(statement, function (err, results, fields) {
-            if (err) {
-                console.log(err);
-                res.json({"error": true, "message": "An unexpected error occurred !"});
-            } else {
-                // console.log("success: " + new Date());
-                // console.log(results);
-                res.json({"error": false, "data": results});
-            }
-        });
-    });
-
-    app.get('/gradientValue', function (req,res) {
-        res.setHeader("Acces-Control-Allow-Origin", "*");
-
-        var statement = "SELECT yearMin, yearMax, capMin, capMax, heightMin, heightMax FROM USGS.TestNumberRange;";
-
-        con_CS.query(statement, function (err, results, fields) {
-            if (err) {
-                console.log(err);
-                res.json({"error": true, "message": "An unexpected error occurred!"});
-            } else {
-                console.log("success: " + new Date());
-                console.log(results);
-                res.json({"error": false, "data": results});
-            }
-        })
-
-    });
-
-    app.get('/testLocations', function (req, res) {
-        res.setHeader("Access-Control-Allow-Origin", "*"); // Allow cross domain header
-
-        var statement = "SELECT latitude, longitude, measure, p_year, p_avgcap, t_ttlh FROM USGS.Test_Data_Locations;";
-
-        con_CS.query(statement, function (err, results, fields) {
-            if (err) {
-                console.log(err);
-                res.json({"error": true, "message": "An unexpected error occurred !"});
-            } else {
-                console.log("success: " + new Date());
-                console.log(results);
-                res.json({"error": false, "data": results});
-            }
-        });
-    });
-
 
 
 // Customized Functions Below
