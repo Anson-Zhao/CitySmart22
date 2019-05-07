@@ -29,11 +29,10 @@ requirejs(['./newGlobe',
 
     "use strict";
 
-    console.log(newGlobe.layers);
+    // console.log(newGlobe.layers);
 
     newGlobe.goTo(new WorldWind.Position(37.0902, -95.7129, 9000000));
 
-    // let checkBox = false;
     let arrMenu = [];
     let firstTime = true;
     let layerSelected, Altitude;
@@ -59,9 +58,8 @@ requirejs(['./newGlobe',
                 firstTime = false; //alert (only appear at the first time)
             }
 
-            let toggleVal = this.value; //the most current value of the selected switch
-            let arrToggle = toggleVal.split(",");
-            let checkBox = this.checked;
+            let toggle = this;
+            let arrToggle = toggle.value.split(",");
 
             //if the there is already one toggle switch is turned on, as another toggle is clicked then close the last button
 
@@ -71,30 +69,34 @@ requirejs(['./newGlobe',
             // }
             //
             //
-            // console.log(checkBox);
+            // console.log(toggle.checked);
             // console.log(arrMenu);
-            //
+
             // changeElement(arrToggle[0]); //change the words under the color bar according the first value of arrToggle
 
             arrToggle.forEach(function (value, i) {
-                if (i === 0) {
-                    let layerRequest = 'layername=' + value;
-                    globePosition(layerRequest);
-                }
 
                 let selectedIndex = newGlobe.layers.findIndex(ele => ele.displayName === value);
 
                 if (selectedIndex < 0 || !newGlobe.layers[selectedIndex].renderables.length) {
-                    if (checkBox){
-                        confirm("The layer you selected is tentatively not available. Please try it later.");
-                    }
+
+                    confirm("The layer you selected is tentatively not available. Please try it later.");
+                    $(toggle).prop('checked', false);
+
                 } else {
-                    newGlobe.layers[selectedIndex].enabled = checkBox;
+
+                    newGlobe.layers[selectedIndex].enabled = toggle.checked;
+
+                    if (toggle.checked && i === 0){
+                        let layerRequest = 'layername=' + value;
+                        globePosition(layerRequest);
+
+                    }
+
+                    buttonControl(toggle.checked);
+
                 }
             });
-
-            buttonControl(checkBox);
-
         });
 
         $('#previousL').click(function(){
