@@ -29,17 +29,14 @@ requirejs(['./newGlobe',
 
     "use strict";
 
-    // console.log(newGlobe.layers);
+    console.log(newGlobe.layers);
 
     newGlobe.goTo(new WorldWind.Position(37.0902, -95.7129, 9000000));
 
-    let checkBox = false;
-    // let checked = [];
+    // let checkBox = false;
     let arrMenu = [];
-    // let allCheckedArray = [];
-    let alertVal = true;
+    let firstTime = true;
     let layerSelected, Altitude;
-    // let checkedCount = 0;
     let j = 0;
     let nextL = $(".next");
     let previousL = $("#previousL");
@@ -57,9 +54,14 @@ requirejs(['./newGlobe',
 
         //turn on/off layers
         $(".WmsLayer, .HeatmapLayer, .CS_PKLayer, .USGSWT_PKLayer, .USGSMD_PKLayer, .USGSMR_PKLayer").click(function () {
+            if (firstTime){
+                confirm("Some layers may take awhile to load. Please be patient.");
+                firstTime = false; //alert (only appear at the first time)
+            }
+
             let toggleVal = this.value; //the most current value of the selected switch
             let arrToggle = toggleVal.split(",");
-            checkBox = this.checked;
+            let checkBox = this.checked;
 
             //if the there is already one toggle switch is turned on, as another toggle is clicked then close the last button
 
@@ -82,7 +84,7 @@ requirejs(['./newGlobe',
 
                 let selectedIndex = newGlobe.layers.findIndex(ele => ele.displayName === value);
 
-                if (selectedIndex < 0) {
+                if (selectedIndex < 0 || !newGlobe.layers[selectedIndex].renderables.length) {
                     if (checkBox){
                         confirm("The layer you selected is tentatively not available. Please try it later.");
                     }
@@ -91,9 +93,7 @@ requirejs(['./newGlobe',
                 }
             });
 
-            // allCheckedArray = $(':checkbox:checked');
-
-            buttonControl();
+            buttonControl(checkBox);
 
         });
 
@@ -167,12 +167,9 @@ requirejs(['./newGlobe',
         })
     }
 
-    function buttonControl () {
-        if (alertVal){
-            confirm("Some layers may take awhile to load. Please be patient.")
-        }
+    function buttonControl (toggleOn) {
 
-        if (checkBox) {
+        if (toggleOn) {
             // insert the current third layer onto button
             currentSelectedLayer.prop('value', layerSelected.ThirdLayer);
 
@@ -190,8 +187,6 @@ requirejs(['./newGlobe',
                 previousL.prop('disabled',false);
                 nextL.prop('disabled',true);
             }
-
-            alertVal = false; //alert (only appear at the first time)
 
         } else {
 
@@ -217,65 +212,7 @@ requirejs(['./newGlobe',
                     nextL.prop('disabled',true);
                 }
             }
-
-            alertVal = false; //alert (only appear at the first time)
-
         }
-
-
-
-        // if (alertVal){
-        //     confirm("Some layers may take awhile to load. Please be patient.")
-        // }
-        //
-        // if (allCheckedArray.length > checkedCount){ //if there is new array was inserted into the allCheckedArray ( If user choose more than 1 switch)
-        //     checked.push(toggleVal); //insert current value to "checked" array
-        //     checkedCount = allCheckedArray.length; //checkedCount now equals to the numbers of arrays that were inserted to allCheckedArray
-        //     alertVal = false; //alert (only appear at the first time)
-        //     currentSelectedLayer.prop('value', layerSelected.ThirdLayer); //if there are new array was inserted into the allCheckedArray,the value of the opened layer button equals to the name of the switch that user selected
-        //     arrMenu.push(layerSelected.ThirdLayer);
-        //
-        //     //insert current ThirdLayer value to arrMenu
-        //     j = arrMenu.length - 1; //count
-        //     if(arrMenu.length === 1){ //if the length of arrMenu is equal to 1 /if user only checks one switch.
-        //         nextL.prop('disabled',true);
-        //         previousL.prop('disabled',true);
-        //         currentSelectedLayer.prop('disabled',false);
-        //     }else{//if user checks over 1 switch
-        //         previousL.prop('disabled',false);
-        //         nextL.prop('disabled',true);
-        //     }
-        // } else { //if there is not new array was inserted into the allCheckedArray / If user un-checks a switch)
-        //     for( let i = 0 ; i < checked.length; i++) {
-        //         if (checked[i] === toggleVal) {
-        //             checked.splice(i,1); //remove current value from checked array
-        //             arrMenu.splice(i,1); //remove current ThirdLayer from the array
-        //         }
-        //     }
-        //
-        //     checkedCount = allCheckedArray.length;
-        //     alertVal = false;
-        //     currentSelectedLayer.prop('value',arrMenu[arrMenu.length - 1]);
-        //     j = arrMenu.length - 1;
-        //
-        //     if(arrMenu.length === 1){
-        //         nextL.prop('disabled',true);
-        //         previousL.prop('disabled',true)
-        //     }else{
-        //         if(arrMenu.length === 0){
-        //             // currentSelectedLayer.value = "No Layer Selected";
-        //             currentSelectedLayer.prop('value','No Layer Selected');
-        //             currentSelectedLayer.prop('disabled',true);
-        //             previousL.prop('disabled',true);
-        //             nextL.prop('disabled',true);
-        //             // newGlobe.goTo(new WorldWind.Position(37.0902, -95.7129, 9000000));
-        //         } else{
-        //             previousL.prop('disabled',false);
-        //             nextL.prop('disabled',true);
-        //         }
-        //     }
-        // }
-
     }
 
     function handleMouseMove(o) {

@@ -19,10 +19,10 @@ requirejs([
             if (!resp.error) {
                 resp.data.forEach(function (ele, i) {
                     if (ele.LayerType === 'USGSMR_PKLayer') {
-                        let commN = ele.LayerName.split("_");
-                        let commodName = commN[2];
+                        let category = ele.LayerName.split("_");
+                        let categoryN = category[2];
 
-                        arrPL.push({Name: commodName, Layer: new WorldWind.RenderableLayer(ele.LayerName)});
+                        arrPL.push({Name: categoryN, Layer: new WorldWind.RenderableLayer(ele.LayerName)});
                     }
                 })
             } else {
@@ -45,22 +45,23 @@ requirejs([
                     rows.forEach(function (v) {
 
                         // create customized placemark and wrap it up with its own userProperties.
-                        let commodPK = new customPK(config.MR_COMM_Color[e.Name], v.latitude, v.longitude);
-                        commodPK.placemark.userProperties.site_name = v.site_name;
-                        commodPK.placemark.userProperties.country = v.country;
-                        commodPK.placemark.userProperties.stat = v.stat;
-                        commodPK.placemark.userProperties.mrds_id = v.mrds_id;
-                        commodPK.placemark.userProperties.url = v.url;
+                        let categoryPK = new customPK(config.MR_COMM_Color[e.Name], v.latitude, v.longitude);
+                        categoryPK.placemark.userProperties.site_name = v.site_name;
+                        categoryPK.placemark.userProperties.country = v.country;
+                        categoryPK.placemark.userProperties.stat = v.stat;
+                        categoryPK.placemark.userProperties.mrds_id = v.mrds_id;
+                        categoryPK.placemark.userProperties.url = v.url;
 
                         // add this placemark onto placemarkLayer object
-                        e.Layer.addRenderable(commodPK.placemark);
+                        e.Layer.addRenderable(categoryPK.placemark);
+
                     });
 
                     // add customized placemarkLayer onto worldwind layers
                     e.Layer.enabled = false;
                     newGlobe.addLayer(e.Layer);
-                    // console.log(newGlobe.layers);
-                });
+                })
+
             } else {
                 alert(resp.error)
             }
