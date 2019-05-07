@@ -33,13 +33,9 @@ requirejs(['./newGlobe',
 
     newGlobe.goTo(new WorldWind.Position(37.0902, -95.7129, 9000000));
 
-    let checkBox = false;
-    // let checked = [];
     let arrMenu = [];
-    // let allCheckedArray = [];
-    let alertVal = true;
+    let firstTime = true;
     let layerSelected, Altitude;
-    // let checkedCount = 0;
     let j = 0;
     let nextL = $(".next");
     let previousL = $("#previousL");
@@ -57,58 +53,49 @@ requirejs(['./newGlobe',
 
         //turn on/off layers
         $(".WmsLayer, .HeatmapLayer, .CS_PKLayer, .USGSWT_PKLayer, .USGSMD_PKLayer, .USGSMR_PKLayer").click(function () {
-            let toggleVal = this.value; //the most current value of the selected switch
-            let arrToggle = toggleVal.split(",");
-            checkBox = this.checked;
-            let countClick= 0;
-            console.log(toggleVal);
-            console.log(arrMenu);
+            if (firstTime){
+                confirm("Some layers may take awhile to load. Please be patient.");
+                firstTime = false; //alert (only appear at the first time)
+            }
 
-            changeElement(toggleVal);
+            let toggle = this;
+            let arrToggle = toggle.value.split(",");
+
+            changeElement(arrToggle[0]);
 
             //if the there is already one toggle switch is turned on, as another toggle is clicked then close the last button
-
-            // if (allCheckedArray.length > checkedCount) {
-            //     console.log('close the last one');
-            //     console.log(arrMenu[arrMenu.length-1])
-            // }
-            //
-            //
-            // console.log(checkBox);
-            // console.log(arrMenu);
-            //
-            // changeElement(arrToggle[0]); //change the words under the color bar according the first value of arrToggle
-
-            if (checkBox) {
-                console.log("ss");
-                console.log(arrMenu);
-                console.log(arrMenu[arrMenu.length - 1]);
-                $("." + arrMenu[arrMenu.length - 1]).prop("checked", false);
-                // arrMenu.splice(0,1);
-
-                arrToggle.forEach(function (value, i) {
-                    if (i === 0) {
-                        let layerRequest = 'layername=' + value;
-                        globePosition(layerRequest);
-                    }
-
-                    let selectedIndex = newGlobe.layers.findIndex(ele => ele.displayName === value);
-
-                    if (selectedIndex < 0) {
-                        if (checkBox){
-                            confirm("The layer you selected is tentatively not available. Please try it later.");
-                        }
-                    } else {
-                        newGlobe.layers[selectedIndex].enabled = checkBox;
-                    }
-                });
+            if (arrMenu.length> 0 ) {
+                var clickedClass = '.'+arrMenu[arrMenu.length-1];
+                $(clickedClass).prop('checked',false);
+                var lastIndex = newGlobe.layers.findIndex(ele => ele.displayName === arrMenu[arrMenu.length-1]);
+                newGlobe.layers[lastIndex].enabled = clickedClass.checked;
             }
 
 
-            // allCheckedArray = $(':checkbox:checked');
+            arrToggle.forEach(function (value, i) {
 
-            buttonControl();
+                let selectedIndex = newGlobe.layers.findIndex(ele => ele.displayName === value);
 
+                console.log(!newGlobe.layers[selectedIndex].renderables.length);
+
+                if (selectedIndex < 0 || !newGlobe.layers[selectedIndex].renderables.length) {
+
+                    confirm("The layer you selected is tentatively not available. Please try it later.");
+                    $(toggle).prop('checked', false);
+
+                } else {
+
+                    newGlobe.layers[selectedIndex].enabled = toggle.checked;
+
+                    if (toggle.checked && i === 0){
+                        let layerRequest = 'layername=' + value;
+                        globePosition(layerRequest,toggle.checked);
+
+                    }
+                    // buttonControl(toggle.checked);
+
+                }
+            });
         });
 
         $('#previousL').click(function(){
@@ -136,7 +123,6 @@ requirejs(['./newGlobe',
             }
         });
 
-        //if the opened layer was clicked, the layer shows
         $('#currentSelectedLayer').click(function(){
 
             let currentSelectedLayerData = "thirdlayer=" + arrMenu[j];
@@ -157,7 +143,7 @@ requirejs(['./newGlobe',
 
                 }
             });
-        });
+        });//if the opened layer was clicked, the layer shows
 
         $('#globeOrigin').click(function(){
             newGlobe.goTo(new WorldWind.Position(37.0902, -95.7129, 9000000));
@@ -166,7 +152,7 @@ requirejs(['./newGlobe',
         newGlobe.addEventListener("mousemove", handleMouseMove);
     });
 
-    function globePosition (layerRequest){
+    function globePosition (layerRequest,checked){
         $.ajax({
             url: '/position',
             type: 'GET',
@@ -177,16 +163,14 @@ requirejs(['./newGlobe',
                 layerSelected = results[0];
                 Altitude = layerSelected.Altitude * 1000;
                 newGlobe.goTo(new WorldWind.Position(layerSelected.Latitude, layerSelected.Longitude, Altitude));
+                buttonControl(checked)
             }
         })
     }
 
-    function buttonControl () {
-        if (alertVal){
-            confirm("Some layers may take awhile to load. Please be patient.")
-        }
+    function buttonControl (toggleOn) {
 
-        if (checkBox) {
+        if (toggleOn) {
             // insert the current third layer onto button
             currentSelectedLayer.prop('value', layerSelected.ThirdLayer);
 
@@ -204,8 +188,6 @@ requirejs(['./newGlobe',
                 previousL.prop('disabled',false);
                 nextL.prop('disabled',true);
             }
-
-            alertVal = false; //alert (only appear at the first time)
 
         } else {
 
@@ -231,63 +213,7 @@ requirejs(['./newGlobe',
                     nextL.prop('disabled',true);
                 }
             }
-
-            alertVal = false; //alert (only appear at the first time)
-
         }
-
-        // if (alertVal){
-        //     confirm("Some layers may take awhile to load. Please be patient.")
-        // }
-        //
-        // if (allCheckedArray.length > checkedCount){ //if there is new array was inserted into the allCheckedArray ( If user choose more than 1 switch)
-        //     checked.push(toggleVal); //insert current value to "checked" array
-        //     checkedCount = allCheckedArray.length; //checkedCount now equals to the numbers of arrays that were inserted to allCheckedArray
-        //     alertVal = false; //alert (only appear at the first time)
-        //     currentSelectedLayer.prop('value', layerSelected.ThirdLayer); //if there are new array was inserted into the allCheckedArray,the value of the opened layer button equals to the name of the switch that user selected
-        //     arrMenu.push(layerSelected.ThirdLayer);
-        //
-        //     //insert current ThirdLayer value to arrMenu
-        //     j = arrMenu.length - 1; //count
-        //     if(arrMenu.length === 1){ //if the length of arrMenu is equal to 1 /if user only checks one switch.
-        //         nextL.prop('disabled',true);
-        //         previousL.prop('disabled',true);
-        //         currentSelectedLayer.prop('disabled',false);
-        //     }else{//if user checks over 1 switch
-        //         previousL.prop('disabled',false);
-        //         nextL.prop('disabled',true);
-        //     }
-        // } else { //if there is not new array was inserted into the allCheckedArray / If user un-checks a switch)
-        //     for( let i = 0 ; i < checked.length; i++) {
-        //         if (checked[i] === toggleVal) {
-        //             checked.splice(i,1); //remove current value from checked array
-        //             arrMenu.splice(i,1); //remove current ThirdLayer from the array
-        //         }
-        //     }
-        //
-        //     checkedCount = allCheckedArray.length;
-        //     alertVal = false;
-        //     currentSelectedLayer.prop('value',arrMenu[arrMenu.length - 1]);
-        //     j = arrMenu.length - 1;
-        //
-        //     if(arrMenu.length === 1){
-        //         nextL.prop('disabled',true);
-        //         previousL.prop('disabled',true)
-        //     }else{
-        //         if(arrMenu.length === 0){
-        //             // currentSelectedLayer.value = "No Layer Selected";
-        //             currentSelectedLayer.prop('value','No Layer Selected');
-        //             currentSelectedLayer.prop('disabled',true);
-        //             previousL.prop('disabled',true);
-        //             nextL.prop('disabled',true);
-        //             // newGlobe.goTo(new WorldWind.Position(37.0902, -95.7129, 9000000));
-        //         } else{
-        //             previousL.prop('disabled',false);
-        //             nextL.prop('disabled',true);
-        //         }
-        //     }
-        // }
-
     }
 
     function handleMouseMove(o) {
@@ -335,17 +261,17 @@ requirejs(['./newGlobe',
                 var left = $("#leftScale");
                 var right = $("#rightScale");
 
-                if (arrToggle === "USGS_WT_Year") {
+                if (arrToggle == "USGS_WT_Year") {
                     console.log('USGS_WT_Year');
                     left.html(config.yearMin);
                     right.html(config.yearMax);
                 }
-                if (arrToggle === "USGS_WT_Capacity") {
+                if (arrToggle == "USGS_WT_Capacity") {
                     console.log('capacity');
                     left.html("<" + config.capMin + "MW");
                     right.html(">" + config.capMax + "MW");
                 }
-                if (arrToggle === "USGS_WT_Height") {
+                if (arrToggle == "USGS_WT_Height") {
                     left.html(config.heightMin + "m");
                     right.html(config.heightMax + "m");
 
