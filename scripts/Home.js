@@ -78,6 +78,7 @@ requirejs(['./newGlobe',
 
                 let selectedIndex = newGlobe.layers.findIndex(ele => ele.displayName === value);
 
+                // console.log(newGlobe.layers[selectedIndex]);
                 if (selectedIndex < 0 || !newGlobe.layers[selectedIndex].renderables.length) {
 
                     confirm("The layer you selected is tentatively not available. Please try it later.");
@@ -260,8 +261,8 @@ requirejs(['./newGlobe',
     }
 
     function changeElement (toggleV) {
+        // console.log(toggleV);
 
-        console.log(toggleV);
         let left = $("#leftScale");
         let right = $("#rightScale");
 

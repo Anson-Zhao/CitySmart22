@@ -16,50 +16,74 @@
 
 requirejs([
     './newGlobe',
-    './customPK'
-], function (newGlobe, customPK) {
+    './customPK',
+    './All_Layer_Menu'
+], function (newGlobe, customPK, arrPL) {
 
     "use strict";
 
-    // create Placemark Layers base on the LayerName column in LayerMenu table
-    $.ajax({
-        url: '/allLayerMenu',
-        type: 'GET',
-        dataType: 'json',
-        async: false,
-        success: function (resp) {
-            // console.log(resp);
-            if (!resp.error) {
-                resp.data.forEach(function (ele) {
+    arrPL.arrCS.forEach(function (e) {
+        let csPK = new customPK(e.Color, e.Row.Latitude, e.Row.Longitude);
+        csPK.placemark.userProperties.layerType = e.Row.LayerType;
+        csPK.placemark.userProperties.layerName = e.Row.LayerName;
+        csPK.placemark.userProperties.siteDesc = e.Row.Site_Description;
+        csPK.placemark.userProperties.picLocation = e.Row.Picture_Location;
+        csPK.placemark.userProperties.url = e.Row.Link_to_site_location;
+        csPK.placemark.userProperties.copyright = e.Row.Copyright;
 
-                    if (ele.LayerType === 'CS_PKLayer') {
-                        // create cs placemark
-                        let color = ele.Color.split(" ");
-                        let csPK = new customPK(color, ele.Latitude, ele.Longitude);
-                        csPK.placemark.userProperties.layerType = ele.LayerType;
-                        csPK.placemark.userProperties.layerName = ele.LayerName;
-                        csPK.placemark.userProperties.siteDesc = ele.Site_Description;
-                        csPK.placemark.userProperties.picLocation = ele.Picture_Location;
-                        csPK.placemark.userProperties.url = ele.Link_to_site_location;
-                        csPK.placemark.userProperties.copyright = ele.Copyright;
+        //add placemark onto placemark layer
+        e.Layer.addRenderable(csPK.placemark);
 
-                        // create cs placemark layer obj
-                        let csPKLayer = new WorldWind.RenderableLayer(ele.LayerName);
+        // add placemark layer onto worldwind layer obj
+        e.Layer.enabled = false;
+        e.Layer.layerType = 'CS_PKLayer';
+        newGlobe.addLayer(e.Layer);
 
-                        //add placemark onto placemark layer
-                        csPKLayer.addRenderable(csPK.placemark);
-
-                        // add placemark layer onto worldwind layer obj
-                        csPKLayer.enabled = false;
-                        csPKLayer.layerType = 'CS_PKLayer';
-                        newGlobe.addLayer(csPKLayer);
-                    }
-                })
-            } else {
-                alert(resp.error)
-            }
-        }
     });
+
+    $(document).ready(function() {
+        newGlobe.addEventListener("click", handleMouseCLK);
+    });
+
+    // // create Placemark Layers base on the LayerName column in LayerMenu table
+    // $.ajax({
+    //     url: '/allLayerMenu',
+    //     type: 'GET',
+    //     dataType: 'json',
+    //     async: false,
+    //     success: function (resp) {
+    //         // console.log(resp);
+    //         if (!resp.error) {
+    //             resp.data.forEach(function (ele) {
+    //
+    //                 if (ele.LayerType === 'CS_PKLayer') {
+    //                     // create cs placemark
+    //                     let color = ele.Color.split(" ");
+    //                     let csPK = new customPK(color, ele.Latitude, ele.Longitude);
+    //                     csPK.placemark.userProperties.layerType = ele.LayerType;
+    //                     csPK.placemark.userProperties.layerName = ele.LayerName;
+    //                     csPK.placemark.userProperties.siteDesc = ele.Site_Description;
+    //                     csPK.placemark.userProperties.picLocation = ele.Picture_Location;
+    //                     csPK.placemark.userProperties.url = ele.Link_to_site_location;
+    //                     csPK.placemark.userProperties.copyright = ele.Copyright;
+    //
+    //                     // create cs placemark layer obj
+    //                     let csPKLayer = new WorldWind.RenderableLayer(ele.LayerName);
+    //
+    //                     //add placemark onto placemark layer
+    //                     csPKLayer.addRenderable(csPK.placemark);
+    //
+    //                     // add placemark layer onto worldwind layer obj
+    //                     csPKLayer.enabled = false;
+    //                     csPKLayer.layerType = 'CS_PKLayer';
+    //                     newGlobe.addLayer(csPKLayer);
+    //                 }
+    //             })
+    //         } else {
+    //             alert(resp.error)
+    //         }
+    //     }
+    // });
 
     function handleMouseCLK (e)   {
         let x = e.clientX,
@@ -107,8 +131,4 @@ requirejs([
             }
         }
     }
-
-    $(document).ready(function() {
-        newGlobe.addEventListener("click", handleMouseCLK);
-    });
 });
