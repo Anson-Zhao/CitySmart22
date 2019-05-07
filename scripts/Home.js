@@ -257,31 +257,26 @@ requirejs(['./newGlobe',
     }
 
     function changeElement (arrToggle) {
-        $.ajax({
-            url: '/gradientValue',
-            type: 'GET',
-            dataType: 'json',
-            async: false,
-            success: function (resp) {
-                console.log(resp.data[0]);
+
+                console.log(arrToggle);
                 var left = $("#leftScale");
                 var right = $("#rightScale");
 
-                if (arrToggle === "USGS_TW_Year") {
-                    left.html(resp.data[0].yearMin);
-                    right.html(resp.data[0].yearMax);
-
-                } else if (arrToggle === "USGS_TW_Capacity") {
-                    console.log('capacity');
-                    left.html("<" + resp.data[0].capMin + "MW");
-                    right.html(">" + resp.data[0].capMax + "MW");
-                } else if (arrToggle === "USGS_TW_Height") {
-                    left.html(resp.data[0].heightMin + "m");
-                    right.html(resp.data[0].heightMax + "m");
+                if (arrToggle === "USGS_WT_Year") {
+                    console.log('USGS_WT_Year');
+                    left.html(config.yearMin);
+                    right.html(config.yearMax);
                 }
+                if (arrToggle === "USGS_WT_Capacity") {
+                    console.log('capacity');
+                    left.html("<" + config.capMin + "MW");
+                    right.html(">" + config.capMax + "MW");
+                }
+                if (arrToggle === "USGS_WT_Height") {
+                    left.html(config.heightMin + "m");
+                    right.html(config.heightMax + "m");
 
-            }
-        });
+                }
     }
 
 });

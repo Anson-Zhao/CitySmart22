@@ -42,7 +42,14 @@ let clientConfig = {
         Uranium: "#9B59B6",
         Zinc: "#BA4A00",
         Other: "#A6ACAF"
-    }
+    },
+
+    'yearMin':1980,
+    'yearMax':2017,
+    'capMax':4,
+    'capMin':0,
+    'heightMin':5,
+    'heightMax':185
 
 };
 
