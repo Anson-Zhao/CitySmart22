@@ -44,12 +44,20 @@ let clientConfig = {
         Other: "#A6ACAF"
     },
 
-    'yearMin':1980,
-    'yearMax':2017,
-    'capMax':4,
-    'capMin':0,
-    'heightMin':5,
-    'heightMax':185
+    USGS_WT_Year: {
+        Min: '1980',
+        Max: '2017',
+    },
+
+    USGS_WT_Capacity: {
+        Min: '>0MW',
+        Max: '<4MW'
+    },
+
+    USGS_WT_Height: {
+        Min: '5m',
+        Max: '185m'
+    }
 
 };
 

@@ -84,13 +84,16 @@ requirejs(['./newGlobe',
                     $(toggle).prop('checked', false);
 
                 } else {
-
+                    console.log(newGlobe.layers[selectedIndex]);
                     newGlobe.layers[selectedIndex].enabled = toggle.checked;
 
                     if (toggle.checked && i === 0){
                         let layerRequest = 'layername=' + value;
                         globePosition(layerRequest);
+                    }
 
+                    if (newGlobe.layers[selectedIndex].layerType === 'USGSWT_PKLayer') {
+                        changeElement(value)
                     }
 
                     buttonControl(toggle.checked);
@@ -256,27 +259,15 @@ requirejs(['./newGlobe',
         }
     }
 
-    function changeElement (arrToggle) {
+    function changeElement (toggleV) {
 
-                console.log(arrToggle);
-                var left = $("#leftScale");
-                var right = $("#rightScale");
+        console.log(toggleV);
+        let left = $("#leftScale");
+        let right = $("#rightScale");
 
-                if (arrToggle === "USGS_WT_Year") {
-                    console.log('USGS_WT_Year');
-                    left.html(config.yearMin);
-                    right.html(config.yearMax);
-                }
-                if (arrToggle === "USGS_WT_Capacity") {
-                    console.log('capacity');
-                    left.html("<" + config.capMin + "MW");
-                    right.html(">" + config.capMax + "MW");
-                }
-                if (arrToggle === "USGS_WT_Height") {
-                    left.html(config.heightMin + "m");
-                    right.html(config.heightMax + "m");
+        left.html(config[toggleV].Min);
+        right.html(config[toggleV].Max);
 
-                }
     }
 
 });

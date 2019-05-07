@@ -51,6 +51,7 @@ requirejs([
 
                         // add placemark layer onto worldwind layer obj
                         csPKLayer.enabled = false;
+                        csPKLayer.layerType = 'CS_PKLayer';
                         newGlobe.addLayer(csPKLayer);
                     }
                 })

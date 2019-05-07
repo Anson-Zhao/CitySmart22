@@ -145,6 +145,7 @@ requirejs([
 
                     // add customized placemarkLayer onto worldwind layers
                     e.Layer.enabled = false;
+                    e.Layer.layerType = 'USGSWT_PKLayer';
                     newGlobe.addLayer(e.Layer);
 
                 })
