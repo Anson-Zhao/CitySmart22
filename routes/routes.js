@@ -1,7 +1,7 @@
 // routes/routes.js
 const mysql = require('mysql');
 const bodyParser = require('body-parser');
-const configGlobal = require('../config/mainconf');
+const serverConfig = require('../config/serverConfig');
 const fs = require("fs");
 const fsextra = require('fs-extra');
 const request = require("request");
@@ -15,23 +15,23 @@ const mkdirp = require("mkdirp");
 const multiparty = require('multiparty');
 const path    = require('path');
 
-const geoServer = configGlobal.geoServer;
-const Download_From = configGlobal.Download_From;
+const geoServer = serverConfig.geoServer;
+const Download_From = serverConfig.Download_From;
 
-const copySource = path.resolve(__dirname, configGlobal.Download_To); //the path of the source file
-const copyDestDir = path.resolve(__dirname, configGlobal.Backup_Dir);
-const num_backups = configGlobal.num_backups;
-const download_interval = configGlobal.download_interval;
+const copySource = path.resolve(__dirname, serverConfig.Download_To); //the path of the source file
+const copyDestDir = path.resolve(__dirname, serverConfig.Backup_Dir);
+const num_backups = serverConfig.num_backups;
+const download_interval = serverConfig.download_interval;
 
-const Approve_Dir = path.resolve(__dirname, "../" + configGlobal.Approve_Dir);
-const Pending_Dir = path.resolve(__dirname, "../" + configGlobal.Pending_Dir);
-const Reject_Dir = path.resolve(__dirname, "../" + configGlobal.Reject_Dir);
-const Delete_Dir = path.resolve(__dirname, "../" + configGlobal.Delete_Dir);
+const Approve_Dir = path.resolve(__dirname, "../" + serverConfig.Approve_Dir);
+const Pending_Dir = path.resolve(__dirname, "../" + serverConfig.Pending_Dir);
+const Reject_Dir = path.resolve(__dirname, "../" + serverConfig.Reject_Dir);
+const Delete_Dir = path.resolve(__dirname, "../" + serverConfig.Delete_Dir);
 
 const fileInputName = process.env.FILE_INPUT_NAME || "qqfile";
 const maxFileSize = process.env.MAX_FILE_SIZE || 0; // in bytes, 0 for unlimited
 
-const con_CS = mysql.createConnection(configGlobal.commondb_connection);
+const con_CS = mysql.createConnection(serverConfig.commondb_connection);
 const smtpTrans = nodemailer.createTransport({
     service: 'Gmail',
     auth: {
@@ -45,7 +45,7 @@ let transactionID, myStat, myVal, myErrMsg, token, errStatus, mylogin;
 let today, date2, date3, time2, time3, dateTime, tokenExpire, child;
 let downloadFalse = null ;
 
-con_CS.query('USE ' + configGlobal.Login_db); // Locate Login DB
+con_CS.query('USE ' + serverConfig.Login_db); // Locate Login DB
 
 module.exports = function (app, passport) {
 
@@ -210,15 +210,13 @@ module.exports = function (app, passport) {
         res.setHeader("Access-Control-Allow-Origin", "*"); // Allow cross domain header
 
         // let statement = "SELECT p_name, xlong, ylat, p_year_color, p_avgcap_color, t_ttlh_color FROM USWTDB INNER JOIN USWTDB_COLOR ON USWTDB.case_id = USWTDB_COLOR.case_id ORDER BY p_name;";
-        let statement = "SELECT * FROM mrds_sample;";
+        let statement = "SELECT url, mrds_id, site_name, latitude, longitude, country, state, commod1, commod2, commod3 FROM mrds_sample;";
 
         con_CS.query(statement, function (err, results, fields) {
             if (err) {
                 console.log(err);
                 res.json({"error": true, "message": "An unexpected error occurred !"});
             } else {
-                // console.log("success: " + new Date());
-                // console.log(results);
                 res.json({"error": false, "data": results});
             }
         });
@@ -909,7 +907,7 @@ module.exports = function (app, passport) {
 
     app.post('/signup', function (req, res) {
         res.setHeader("Access-Control-Allow-Origin", "*"); // Allow cross domain header
-        // con_CS.query('USE ' + configGlobal.Login_db); // Locate Login DB
+        // con_CS.query('USE ' + serverConfig.Login_db); // Locate Login DB
 
         let newUser = {
             username: req.body.username,
@@ -953,7 +951,7 @@ module.exports = function (app, passport) {
     app.post('/addUser', isLoggedIn, function (req, res) {
 
         res.setHeader("Access-Control-Allow-Origin", "*"); // Allow cross domain header
-        // connection.query('USE ' + configGlobal.Login_db); // Locate Login DB
+        // connection.query('USE ' + serverConfig.Login_db); // Locate Login DB
 
         let newUser = {
             username: req.body.username,
@@ -2018,13 +2016,16 @@ module.exports = function (app, passport) {
     });
 
 
-    app.get('/createlayer', function (req, res) {
+    app.get('/allLayerMenu', function (req, res) {
         res.setHeader("Access-Control-Allow-Origin", "*");
 
-        con_CS.query("SELECT * From LayerMenu WHERE Status = 'Approved'", function (err, result) {
-            // let JSONresult = JSON.stringify(result, null, "\t");
-            // res.send(JSONresult);
-            res.json(result);
+        con_CS.query("SELECT * From LayerMenu WHERE Status = 'Approved'", function (err, results) {
+            if (err) {
+                console.log(err);
+                res.json({"error": true, "message": "An unexpected error occurred !"});
+            } else {
+                res.json({"error": false, "data": results});
+            }
         });
 
     });
@@ -2042,8 +2043,6 @@ module.exports = function (app, passport) {
                 console.log(err);
                 res.json({"error": true, "message": "An unexpected error occurred !"});
             } else {
-                // console.log("success: " + new Date());
-                // console.log(results);
                 res.json({"error": false, "data": results});
             }
         });
@@ -2059,6 +2058,7 @@ module.exports = function (app, passport) {
         });
     });
 
+    app.get('/reDownload', (req, res) => predownloadXml());
 
 
 // Customized Functions Below
@@ -2620,7 +2620,7 @@ function QueryStat(myObj, sqlStat, res) {
             .on('response', function (res) {
                 resXMLRequest = res;
                 if (res.statusCode === 200){
-                    res.pipe(fs.createWriteStream(copySource))
+                    res.pipe(fs.createWriteStream(copySource));
                     console.log('download starting');
                 } else {
                     console.log("Respose with Error Code: " + res.statusCode);

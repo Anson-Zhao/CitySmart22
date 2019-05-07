@@ -1,6 +1,6 @@
 requirejs([
         './newGlobe',
-        '../config/mainconf'
+        '../config/clientConfig'
     ],
     function (newGlobe) {
 
