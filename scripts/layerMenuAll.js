@@ -76,6 +76,18 @@ define(['../src/WorldWind'], function (WorldWind) {
                             arrMD[index].hlName = ele.LayerName;
                             arrMD[index].wLayer = new WorldWind.RenderableLayer(ele.LayerName)
                         }
+                    } else if (ele.LayerType === 'USGSMD_HMLayer') {
+
+                        category = ele.LayerName.split("_");
+                        categoryN = category[2];
+
+                        index = arrMD.findIndex(ele => ele.cName === categoryN);
+
+                        if (index < 0) {
+                            arrMD.push({cName: categoryN, plName: 'Null', hlName: ele.LayerName, wLayer: 'Null'});
+                        } else {
+                            arrMD[index].hlName = ele.LayerName
+                        }
                     }
                 })
             } else {
@@ -84,5 +96,5 @@ define(['../src/WorldWind'], function (WorldWind) {
         }
     });
 
-    return {arrAll, arrType, arrWT, arrMR, arrCS}
+    return {arrAll, arrType, arrWT, arrMR, arrCS, arrMD}
 });
