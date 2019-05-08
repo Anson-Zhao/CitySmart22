@@ -15,9 +15,11 @@ requirejs([
         async: false,
         success: function (resp) {
             if (!resp.error) {
+
                 menuL.arrMR.forEach(function (e) {
                     let rows = resp.data.filter(ele => ele.commod1.includes(e.cName) || ele.commod2.includes(e.cName)  || ele.commod3.includes(e.cName) );
                     let data = [];
+
                     rows.forEach(function (v, i) {
 
                         // create customized placemark and wrap it up with its own userProperties.
@@ -33,7 +35,7 @@ requirejs([
 
                         data.push(new WorldWind.MeasuredLocation(v.latitude, v.longitude, 1));
 
-                        if (i === resp.data.length - 1) {
+                        if (i === rows.length - 1) {
 
                             // wrap up heatmap layer, and then put onto worldwind layers
                             let heatmapLayer = new WorldWind.HeatMapLayer(e.hlName, data);
@@ -47,7 +49,7 @@ requirejs([
                             heatmapLayer.layerType = 'USGSMR_HMLayer';
                             newGlobe.addLayer(heatmapLayer);
 
-                            // add customized placemarkLayer onto worldwind layers
+                            // reset placemarkLayer properties
                             e.wLayer.enabled = false;
                             e.wLayer.layerType = 'USGSMR_PKLayer';
                             newGlobe.addLayer(e.wLayer);

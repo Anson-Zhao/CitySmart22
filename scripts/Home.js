@@ -28,7 +28,7 @@ requirejs(['./newGlobe',
 
     "use strict";
 
-    // console.log(newGlobe.layers);
+    console.log(newGlobe.layers);
 
     newGlobe.goTo(new WorldWind.Position(37.0902, -95.7129, 9000000));
 
@@ -63,6 +63,8 @@ requirejs(['./newGlobe',
             arrToggle.forEach(function (value, i) {
 
                 let selectedIndex = newGlobe.layers.findIndex(ele => ele.displayName === value);
+
+                console.log(newGlobe.layers[selectedIndex]);
 
                 if (newGlobe.layers[selectedIndex] instanceof WorldWind.RenderableLayer) {
                     if (selectedIndex < 0 || !newGlobe.layers[selectedIndex].renderables.length) {
