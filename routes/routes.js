@@ -227,6 +227,45 @@ module.exports = function (app, passport) {
         });
     });
 
+    app.get('/placemarktP', function (req, res) {
+        res.setHeader("Access-Control-Allow-Origin", "*");
+
+        let commodity = req.query.layerName;
+        let commodity2 = commodity.split("_");
+
+        let commName = commodity2[2];
+        console.log(commName);
+
+        //Converts array to string
+        let statement = "SELECT * FROM Mineral_Deposits WHERE commodity LIKE '" + commName +"';";
+
+        con_CS.query(statement, function (err, result) {
+            if (err) throw err;
+            res.json({"error": false, "commN": result});
+        });
+
+    });
+
+    app.get('/placemarkt', function (req, res) {
+        // console.log( "A: " + new Date());
+
+        res.setHeader("Access-Control-Allow-Origin", "*"); // Allow cross domain header
+
+        // let statement = "SELECT p_name, xlong, ylat, p_year_color, p_avgcap_color, t_ttlh_color FROM USWTDB INNER JOIN USWTDB_COLOR ON USWTDB.case_id = USWTDB_COLOR.case_id ORDER BY p_name;";
+        let statement = "SELECT * FROM Mineral_Deposits;";
+
+        con_CS.query(statement, function (err, results, fields) {
+            if (err) {
+                console.log(err);
+                res.json({"error": true, "message": "An unexpected error occurred !"});
+            } else {
+                // console.log("success: " + new Date());
+                // console.log(results);
+                res.json({"error": false, "data": results});
+            }
+        });
+    });
+
 
     // app.get('/request',function (req,res) {
     //     res.setHeader("Access-Control-Allow-Origin", "*"); // Allow cross domain header
