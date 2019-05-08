@@ -19,14 +19,12 @@ requirejs.config({
 });
 
 requirejs(['./newGlobe',
+    './layerMenuAll',
     './CS_placemarkLayer',
     './CS_wmsLayer',
-    './USGS_WT_placemarkLayer',
-    './USGS_WT_heatmapLayer',
-    './USGS_MR_placemarkLayer',
-    './USGS_MD_placemarkLayer',
-    './USGS_MR_heatmapLayer'
-    ], function (newGlobe) {
+    './USGS_WT',
+    './USGS_MR'
+], function (newGlobe, menuL) {
 
     "use strict";
 
@@ -34,104 +32,112 @@ requirejs(['./newGlobe',
 
     newGlobe.goTo(new WorldWind.Position(37.0902, -95.7129, 9000000));
 
-    let checkBox = false;
-    // let checked = [];
     let arrMenu = [];
-    // let allCheckedArray = [];
-    let alertVal = true;
+    let firstTime = true;
     let layerSelected, Altitude;
-    // let checkedCount = 0;
     let j = 0;
-    let nextL = $(".next");
-    let previousL = $("#previousL");
-    let currentSelectedLayer = $("#currentSelectedLayer");
+    const nextL = $(".next");
+    const previousL = $("#previousL");
+    const currentSelectedLayer = $("#currentSelectedLayer");
 
     //All the event listeners
     $(document).ready(function () {
 
         //the beginning value of the button
-        currentSelectedLayer.prop('value','No Layer Selected');
-        nextL.prop('disabled',true);
-        previousL.prop('disabled',true);
+        currentSelectedLayer.prop('value', 'No Layer Selected');
+        nextL.prop('disabled', true);
+        previousL.prop('disabled', true);
 
         $("#popover").popover({html: true, placement: "top", trigger: "hover"});
 
         //turn on/off layers
-        $(".WmsLayer, .HeatmapLayer, .CS_PKLayer, .USGSWT_PKLayer, .USGSMD_PKLayer, .USGSMR_PKLayer").click(function () {
-            let toggleVal = this.value; //the most current value of the selected switch
-            let arrToggle = toggleVal.split(",");
-            checkBox = this.checked;
+        $(menuL.arrType.toString()).click(function () {
+            if (firstTime) {
+                confirm("Some layers may take awhile to load. Please be patient.");
+                firstTime = false; //alert (only appear at the first time)
+            }
 
-            //if the there is already one toggle switch is turned on, as another toggle is clicked then close the last button
-
-            // if (allCheckedArray.length > checkedCount) {
-            //     console.log('close the last one');
-            //     console.log(arrMenu[arrMenu.length-1])
-            // }
-            //
-            //
-            // console.log(checkBox);
-            // console.log(arrMenu);
-            //
-            // changeElement(arrToggle[0]); //change the words under the color bar according the first value of arrToggle
+            let toggle = this;
+            let arrToggle = toggle.value.split(",");
 
             arrToggle.forEach(function (value, i) {
-                if (i === 0) {
-                    let layerRequest = 'layername=' + value;
-                    globePosition(layerRequest);
-                }
 
                 let selectedIndex = newGlobe.layers.findIndex(ele => ele.displayName === value);
 
-                if (selectedIndex < 0) {
-                    if (checkBox){
+                if (newGlobe.layers[selectedIndex] instanceof WorldWind.RenderableLayer) {
+                    if (selectedIndex < 0 || !newGlobe.layers[selectedIndex].renderables.length) {
+
                         confirm("The layer you selected is tentatively not available. Please try it later.");
+                        $(toggle).prop('checked', false);
+
+                    } else {
+                        newGlobe.layers[selectedIndex].enabled = toggle.checked;
+
+                        if (toggle.checked && i === 0) {
+                            let layerRequest = 'layername=' + value;
+                            globePosition(layerRequest, toggle.checked);
+                        }
+
+                        if (newGlobe.layers[selectedIndex].layerType === 'USGSWT_PKLayer') {
+                            barChange(value)
+                        }
                     }
                 } else {
-                    newGlobe.layers[selectedIndex].enabled = checkBox;
+                    if (selectedIndex < 0) {
+
+                        confirm("The layer you selected is tentatively not available. Please try it later.");
+                        $(toggle).prop('checked', false);
+
+                    } else {
+                        newGlobe.layers[selectedIndex].enabled = toggle.checked;
+
+                        if (toggle.checked && i === 0) {
+                            let layerRequest = 'layername=' + value;
+                            globePosition(layerRequest, toggle.checked);
+                        }
+
+                        if (newGlobe.layers[selectedIndex].layerType === 'USGSWT_PKLayer') {
+                            barChange(value)
+                        }
+                    }
                 }
             });
-
-            // allCheckedArray = $(':checkbox:checked');
-
-            buttonControl();
-
         });
 
-        $('#previousL').click(function(){
-            nextL.prop('disabled',false);
-            if(j < 1){ //if there was only one switch was checked
-                previousL.prop('disabled',true) //
-            }else{//if there was more than one switch was checked
+        $('#previousL').click(function () {
+            nextL.prop('disabled', false);
+            if (j < 1) { //if there was only one switch was checked
+                previousL.prop('disabled', true) //
+            } else {//if there was more than one switch was checked
                 j = j - 1;
-                currentSelectedLayer.prop('value',arrMenu[j]); //value of currentSelectedLayer changes to the previous one
+                currentSelectedLayer.prop('value', arrMenu[j]); //value of currentSelectedLayer changes to the previous one
 
-                if (j === 0){
-                    previousL.prop('disabled',true);// if there is no previous layer ,then the button would be disabled
+                if (j === 0) {
+                    previousL.prop('disabled', true);// if there is no previous layer ,then the button would be disabled
                 }
             }
         });
 
-        $('#nextL').click(function(){
-            if(j !== arrMenu.length - 1){ // if there is not only one switch was selected
-                if(j === arrMenu.length - 2){
-                    nextL.prop('disabled',true);
+        $('#nextL').click(function () {
+            if (j !== arrMenu.length - 1) { // if there is not only one switch was selected
+                if (j === arrMenu.length - 2) {
+                    nextL.prop('disabled', true);
                 }
                 j = j + 1;
-                previousL.prop('disabled',false);
-                currentSelectedLayer.prop('value',arrMenu[j]);
+                previousL.prop('disabled', false);
+                currentSelectedLayer.prop('value', arrMenu[j]);
             }
         });
 
         //if the opened layer was clicked, the layer shows
-        $('#currentSelectedLayer').click(function(){
+        $('#currentSelectedLayer').click(function () {
 
             let currentSelectedLayerData = "thirdlayer=" + arrMenu[j];
             $.ajax({
                 url: '/currentLayer',
                 type: 'GET',
                 dataType: 'json',
-                data:currentSelectedLayerData,
+                data: currentSelectedLayerData,
                 async: false,
                 success: function (results) {
                     let FirstLayerId = '#' + results[0].FirstLayer;
@@ -146,34 +152,82 @@ requirejs(['./newGlobe',
             });
         });
 
-        $('#globeOrigin').click(function(){
+        $('#globeOrigin').click(function () {
             newGlobe.goTo(new WorldWind.Position(37.0902, -95.7129, 9000000));
         });
 
         newGlobe.addEventListener("mousemove", handleMouseMove);
+
+        newGlobe.addEventListener("click", handleMouseCLK);
     });
 
-    function globePosition (layerRequest){
+    function handleMouseCLK(e) {
+        let x = e.clientX,
+            y = e.clientY;
+        let pickListCLK = newGlobe.pick(newGlobe.canvasCoordinates(x, y));
+
+        pickListCLK.objects.forEach(function (value) {
+            let pickedPM = value.userObject;
+            if (pickedPM instanceof WorldWind.Placemark && pickedPM.userProperties.layerType === 'CS_PKLayer') {
+                sitePopUp(pickedPM);
+            }
+        })
+    }
+
+    function sitePopUp(PM) {
+        let popupBodyItem = $("#popupBody");
+        popupBodyItem.children().remove();
+
+        let popupBodyName = $('<p class="site-name"><h4>' + PM.userProperties.layerName + '</h4></p>');
+        let popupBodyDesc = $('<p class="site-description">' + PM.userProperties.siteDesc + '</p><br>');
+        let fillerImages = $('<img style="width:100%; height:110%;" src="../images/Pics/' + PM.userProperties.picLocation + '"/>');
+        let imageLinks = $('<p class="site-link" <h6>Site Link: </h6></p><a href="' + PM.userProperties.url + '">Click here to navigate to the site&#8217;s website </a>');
+        let copyrightStatus = $('<p  class="copyright" <h6>Copyright Status: </h6>' + PM.userProperties.copyright + '</p><br>');
+        let coordinates = $('<p class="coordinate" <h6>Latitude and Longitude: </h6>' + PM.position.latitude + PM.position.longitude + '</p><br>');
+
+        popupBodyItem.append(popupBodyName);
+        popupBodyItem.append(popupBodyDesc);
+        popupBodyItem.append(fillerImages);
+        popupBodyItem.append(imageLinks);
+        popupBodyItem.append(copyrightStatus);
+        popupBodyItem.append(coordinates);
+
+        let modal = document.getElementById('popupBox');
+        let span = document.getElementById('closeIt');
+
+        modal.style.display = "block";
+
+        span.onclick = function () {
+            modal.style.display = "none";
+        };
+
+        window.onclick = function (event) {
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        }
+    }
+
+    function globePosition(request, toggleB) {
         $.ajax({
             url: '/position',
             type: 'GET',
             dataType: 'json',
-            data: layerRequest, //send the most current value of the selected switch to server-side
+            data: request, //send the most current value of the selected switch to server-side
             async: false,
             success: function (results) {
                 layerSelected = results[0];
                 Altitude = layerSelected.Altitude * 1000;
                 newGlobe.goTo(new WorldWind.Position(layerSelected.Latitude, layerSelected.Longitude, Altitude));
+
+                buttonControl(toggleB);
             }
         })
     }
 
-    function buttonControl () {
-        if (alertVal){
-            confirm("Some layers may take awhile to load. Please be patient.")
-        }
+    function buttonControl(toggleOn) {
 
-        if (checkBox) {
+        if (toggleOn) {
             // insert the current third layer onto button
             currentSelectedLayer.prop('value', layerSelected.ThirdLayer);
 
@@ -184,15 +238,13 @@ requirejs(['./newGlobe',
 
             // reset next/previous status with disable/enable
             if (arrMenu.length === 1) { //if the length of arrMenu is equal to 1 /if user only checks one switch.
-                nextL.prop('disabled',true);
-                previousL.prop('disabled',true);
-                currentSelectedLayer.prop('disabled',false);
+                nextL.prop('disabled', true);
+                previousL.prop('disabled', true);
+                currentSelectedLayer.prop('disabled', false);
             } else {//if user checks more than one switch
-                previousL.prop('disabled',false);
-                nextL.prop('disabled',true);
+                previousL.prop('disabled', false);
+                nextL.prop('disabled', true);
             }
-
-            alertVal = false; //alert (only appear at the first time)
 
         } else {
 
@@ -203,80 +255,22 @@ requirejs(['./newGlobe',
 
             // reset next/previous status with disable/enable
             if (arrMenu.length === 0) {
-                currentSelectedLayer.prop('value','No Layer Selected');
-                currentSelectedLayer.prop('disabled',true);
-                previousL.prop('disabled',true);
-                nextL.prop('disabled',true);
+                currentSelectedLayer.prop('value', 'No Layer Selected');
+                currentSelectedLayer.prop('disabled', true);
+                previousL.prop('disabled', true);
+                nextL.prop('disabled', true);
                 newGlobe.goTo(new WorldWind.Position(37.0902, -95.7129, 9000000));
             } else {
-                currentSelectedLayer.prop('value',arrMenu[arrMenu.length - 1]);
-                if(arrMenu.length === 1){
-                    nextL.prop('disabled',true);
-                    previousL.prop('disabled',true)
+                currentSelectedLayer.prop('value', arrMenu[arrMenu.length - 1]);
+                if (arrMenu.length === 1) {
+                    nextL.prop('disabled', true);
+                    previousL.prop('disabled', true)
                 } else {
-                    previousL.prop('disabled',false);
-                    nextL.prop('disabled',true);
+                    previousL.prop('disabled', false);
+                    nextL.prop('disabled', true);
                 }
             }
-
-            alertVal = false; //alert (only appear at the first time)
-
         }
-
-
-
-        // if (alertVal){
-        //     confirm("Some layers may take awhile to load. Please be patient.")
-        // }
-        //
-        // if (allCheckedArray.length > checkedCount){ //if there is new array was inserted into the allCheckedArray ( If user choose more than 1 switch)
-        //     checked.push(toggleVal); //insert current value to "checked" array
-        //     checkedCount = allCheckedArray.length; //checkedCount now equals to the numbers of arrays that were inserted to allCheckedArray
-        //     alertVal = false; //alert (only appear at the first time)
-        //     currentSelectedLayer.prop('value', layerSelected.ThirdLayer); //if there are new array was inserted into the allCheckedArray,the value of the opened layer button equals to the name of the switch that user selected
-        //     arrMenu.push(layerSelected.ThirdLayer);
-        //
-        //     //insert current ThirdLayer value to arrMenu
-        //     j = arrMenu.length - 1; //count
-        //     if(arrMenu.length === 1){ //if the length of arrMenu is equal to 1 /if user only checks one switch.
-        //         nextL.prop('disabled',true);
-        //         previousL.prop('disabled',true);
-        //         currentSelectedLayer.prop('disabled',false);
-        //     }else{//if user checks over 1 switch
-        //         previousL.prop('disabled',false);
-        //         nextL.prop('disabled',true);
-        //     }
-        // } else { //if there is not new array was inserted into the allCheckedArray / If user un-checks a switch)
-        //     for( let i = 0 ; i < checked.length; i++) {
-        //         if (checked[i] === toggleVal) {
-        //             checked.splice(i,1); //remove current value from checked array
-        //             arrMenu.splice(i,1); //remove current ThirdLayer from the array
-        //         }
-        //     }
-        //
-        //     checkedCount = allCheckedArray.length;
-        //     alertVal = false;
-        //     currentSelectedLayer.prop('value',arrMenu[arrMenu.length - 1]);
-        //     j = arrMenu.length - 1;
-        //
-        //     if(arrMenu.length === 1){
-        //         nextL.prop('disabled',true);
-        //         previousL.prop('disabled',true)
-        //     }else{
-        //         if(arrMenu.length === 0){
-        //             // currentSelectedLayer.value = "No Layer Selected";
-        //             currentSelectedLayer.prop('value','No Layer Selected');
-        //             currentSelectedLayer.prop('disabled',true);
-        //             previousL.prop('disabled',true);
-        //             nextL.prop('disabled',true);
-        //             // newGlobe.goTo(new WorldWind.Position(37.0902, -95.7129, 9000000));
-        //         } else{
-        //             previousL.prop('disabled',false);
-        //             nextL.prop('disabled',true);
-        //         }
-        //     }
-        // }
-
     }
 
     function handleMouseMove(o) {
@@ -318,32 +312,13 @@ requirejs(['./newGlobe',
         }
     }
 
-    function changeElement (arrToggle) {
-        $.ajax({
-            url: '/gradientValue',
-            type: 'GET',
-            dataType: 'json',
-            async: false,
-            success: function (resp) {
-                console.log(resp.data[0]);
-                var left = $("#leftScale");
-                var right = $("#rightScale");
+    function barChange(toggleV) {
 
-                if (arrToggle === "USGS_TW_Year") {
-                    left.html(resp.data[0].yearMin);
-                    right.html(resp.data[0].yearMax);
+        const left = $("#leftScale");
+        const right = $("#rightScale");
 
-                } else if (arrToggle === "USGS_TW_Capacity") {
-                    console.log('capacity');
-                    left.html("<" + resp.data[0].capMin + "MW");
-                    right.html(">" + resp.data[0].capMax + "MW");
-                } else if (arrToggle === "USGS_TW_Height") {
-                    left.html(resp.data[0].heightMin + "m");
-                    right.html(resp.data[0].heightMax + "m");
-                }
+        left.html(config[toggleV].Min);
+        right.html(config[toggleV].Max);
 
-            }
-        });
     }
-
 });

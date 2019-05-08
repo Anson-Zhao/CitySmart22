@@ -2,7 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3b2ba209-e08e-4f77-99ae-d893522cce16" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/scripts/USGS_MR.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/USGS_WT.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/layerMenuAll.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/MDclientConfig.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/clientConfig.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/clientConfig.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/CS_placemarkLayer.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/CS_placemarkLayer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/Home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/USGS_MR_placemarkLayer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/USGS_WT_heatmapLayer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/USGS_WT_placemarkLayer.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/customPK.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/customPK.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -48,35 +60,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scripts/Home.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4110">
-              <caret line="288" column="26" selection-start-line="288" selection-start-column="26" selection-end-line="288" selection-end-column="26" />
+            <state relative-caret-position="4020">
+              <caret line="282" column="26" selection-start-line="282" selection-start-column="26" selection-end-line="282" selection-end-column="26" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/USGS_MR_placemarkLayer.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
-              <caret line="35" column="25" lean-forward="true" selection-start-line="35" selection-start-column="25" selection-end-line="35" selection-end-column="25" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/routes/routes.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="753">
-              <caret line="230" column="99" selection-start-line="230" selection-start-column="99" selection-end-line="230" selection-end-column="99" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/MDclientConfig.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="16" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
+            <state relative-caret-position="498">
+              <caret line="213" column="50" selection-start-line="213" selection-start-column="50" selection-end-line="213" selection-end-column="50" />
             </state>
           </provider>
         </entry>
@@ -84,8 +78,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scripts/USGS_MD_placemarkLayer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="914">
-              <caret line="126" column="39" selection-start-line="126" selection-start-column="39" selection-end-line="126" selection-end-column="39" />
+            <state relative-caret-position="482">
+              <caret line="114" column="37" selection-start-line="114" selection-start-column="37" selection-end-line="114" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -99,11 +93,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/scripts/CS_placemarkLayer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="31" column="30" selection-start-line="31" selection-start-column="30" selection-end-line="31" selection-end-column="30" />
+            <state relative-caret-position="420">
+              <caret line="42" column="3" lean-forward="true" selection-start-line="42" selection-start-column="3" selection-end-line="42" selection-end-column="3" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/clientConfig.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="512">
+              <caret line="56" column="7" selection-start-line="56" selection-start-column="7" selection-end-line="56" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -128,76 +131,76 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>createlayer</find>
-      <find>/createLayer</find>
-      <find>from LayerMenu</find>
-      <find>createl</find>
-      <find>commName</find>
       <find>element</find>
-      <find>arr</find>
-      <find>el.</find>
-      <find>newGlobe</find>
-      <find>this</find>
-      <find>wt</find>
-      <find>alllay</find>
-      <find>serverConfig</find>
-      <find>mainconf</find>
-      <find>configGlobal</find>
-      <find>userProperties</find>
-      <find>/csPK</find>
-      <find>coLayer</find>
-      <find>alllayer</find>
-      <find>infobox[k].PK</find>
+      <find>commodPK</find>
       <find>circle</find>
-      <find>infobox</find>
-      <find>config</find>
-      <find>mrdsData</find>
       <find>allCheckedArray</find>
-      <find>allLayerMen</find>
+      <find>alertVal</find>
+      <find>buttonControl</find>
+      <find>firstTime</find>
+      <find>radius</find>
+      <find>config</find>
+      <find>/gra</find>
+      <find>checkBox</find>
+      <find>arrToggle</find>
+      <find>HeatmapLayer</find>
+      <find>auto</find>
+      <find>usgs</find>
+      <find>arrMR</find>
+      <find>arrWT</find>
+      <find>csPKLayer</find>
+      <find>arrPL</find>
+      <find>menuLayer</find>
+      <find>changeElement</find>
+      <find>usgsWT</find>
+      <find>USGS_WT</find>
+      <find>measuredLocations</find>
+      <find>All_Layer_Menu</find>
+      <find>barChange</find>
+      <find>LayerType</find>
       <find>USGS_MR</find>
-      <find>mrds</find>
-      <find>mrds_id</find>
-      <find>/mrdsDataP</find>
+      <find>menuL</find>
+      <find>indexP</find>
     </findStrings>
     <replaceStrings>
-      <replace>res</replace>
-      <replace>first</replace>
-      <replace>first.FirstLayer</replace>
-      <replace>firstL</replace>
-      <replace>thirdReplace</replace>
-      <replace>panelBody3</replace>
-      <replace>.WmsLayer</replace>
-      <replace>this.placemark</replace>
-      <replace>this.pmk</replace>
-      <replace>this.pk</replace>
-      <replace>createWTPK</replace>
-      <replace>ModelPKLayer</replace>
-      <replace>127.0.0.1</replace>
-      <replace>yearPK</replace>
-      <replace>let</replace>
-      <replace>toggleVal</replace>
       <replace>checkboxSpan</replace>
       <replace>b</replace>
       <replace>arr</replace>
       <replace>el</replace>
       <replace>element.</replace>
       <replace>placemark</replace>
-      <replace>v</replace>
       <replace>commodPK</replace>
       <replace>userP</replace>
       <replace>Name</replace>
       <replace>Layer</replace>
       <replace>serverConfig</replace>
+      <replace>categoryPK.placemark</replace>
       <replace>canvas</replace>
+      <replace>v</replace>
+      <replace>firstTime</replace>
+      <replace>outerR</replace>
+      <replace>categoryPK</replace>
       <replace>clientConfig</replace>
+      <replace>toggle.checked</replace>
+      <replace>toggleV</replace>
+      <replace>All_Layer_Menu</replace>
+      <replace>arrWT</replace>
+      <replace>arrMR</replace>
+      <replace>arrPL</replace>
+      <replace>e.Layer</replace>
+      <replace>menuLayer</replace>
+      <replace>menuL</replace>
+      <replace>layerMenuAll</replace>
+      <replace>barChange</replace>
+      <replace>index</replace>
     </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/config</dir>
       <dir>$PROJECT_DIR$/routes</dir>
       <dir>$PROJECT_DIR$/views</dir>
       <dir>$PROJECT_DIR$/src</dir>
-      <dir>$PROJECT_DIR$/scripts</dir>
       <dir>$PROJECT_DIR$</dir>
+      <dir>$PROJECT_DIR$/scripts</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -206,7 +209,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/layer/BMNGLayer.js" />
         <option value="$PROJECT_DIR$/src/layer/BingWMSLayer.js" />
         <option value="$PROJECT_DIR$/src/layer/BMNGLandsatLayer.js" />
         <option value="$PROJECT_DIR$/scripts2/WorldWindShim.js" />
@@ -238,9 +240,6 @@
         <option value="$PROJECT_DIR$/3rdPartyLibs/bootstrap-3.3.4.min.js" />
         <option value="$PROJECT_DIR$/views/homepage.ejs" />
         <option value="&lt;6f32712d-a060-4679-8019-b4cec0c93bb5&gt;/scripts/Home.js" />
-        <option value="$PROJECT_DIR$/scripts/USGS_WT_placemarkLayer.js" />
-        <option value="$PROJECT_DIR$/scripts/USGS_WT_heatmapLayer.js" />
-        <option value="$PROJECT_DIR$/scripts/USGS_MR_heatmapLayer.js" />
         <option value="$PROJECT_DIR$/scripts/newGlobe.js" />
         <option value="$PROJECT_DIR$/scripts/AutoMenu.js" />
         <option value="$PROJECT_DIR$/scripts/createPlacemark.js" />
@@ -248,15 +247,19 @@
         <option value="$PROJECT_DIR$/config/clientConf.js" />
         <option value="$PROJECT_DIR$/scripts/CS_wmsLayer.js" />
         <option value="$PROJECT_DIR$/config/serverConfig.js" />
-        <option value="$PROJECT_DIR$/scripts/CS_placemarkLayer.js" />
+        <option value="$PROJECT_DIR$/scripts/s.js" />
         <option value="$PROJECT_DIR$/scripts/customPK.js" />
         <option value="$PROJECT_DIR$/routes/routes.js" />
-        <option value="$PROJECT_DIR$/scripts/MDViewer.js" />
-        <option value="$PROJECT_DIR$/scripts/Home.js" />
-        <option value="$PROJECT_DIR$/config/MDclientConfig.js" />
-        <option value="$PROJECT_DIR$/scripts/USGS_MD_placemarkLayer.js" />
-        <option value="$PROJECT_DIR$/config/clientConfig.js" />
+        <option value="$PROJECT_DIR$/scripts/USGS_WT_heatmapLayer.js" />
+        <option value="$PROJECT_DIR$/scripts/USGS_WT_placemarkLayer.js" />
+        <option value="$PROJECT_DIR$/scripts/All_Layer_Menu.js" />
+        <option value="$PROJECT_DIR$/scripts/USGS_MR_heatmapLayer.js" />
+        <option value="$PROJECT_DIR$/scripts/layerMenuAll.js" />
         <option value="$PROJECT_DIR$/scripts/USGS_MR_placemarkLayer.js" />
+        <option value="$PROJECT_DIR$/scripts/CS_placemarkLayer.js" />
+        <option value="$PROJECT_DIR$/scripts/USGS_WT.js" />
+        <option value="$PROJECT_DIR$/scripts/Home.js" />
+        <option value="$PROJECT_DIR$/config/clientConfig.js" />
       </list>
     </option>
   </component>
@@ -267,8 +270,8 @@
     <auto-save>true</auto-save>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="60" />
-    <option name="y" value="42" />
+    <option name="x" value="252" />
+    <option name="y" value="46" />
     <option name="width" value="1894" />
     <option name="height" value="1302" />
   </component>
@@ -313,7 +316,7 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
-    <property name="javascript.nodejs.core.library.configured.version" value="10.4.0" />
+    <property name="javascript.nodejs.core.library.configured.version" value="10.15.3" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/config" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -329,10 +332,10 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/config" />
       <recent name="$PROJECT_DIR$/scripts" />
       <recent name="$PROJECT_DIR$/examples" />
       <recent name="$PROJECT_DIR$/src" />
-      <recent name="$PROJECT_DIR$/config" />
       <recent name="$PROJECT_DIR$/3rdPartyLibs" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
@@ -379,24 +382,7 @@
       <workItem from="1555791745817" duration="109052000" />
       <workItem from="1556824280458" duration="2000" />
       <workItem from="1556824289859" duration="6647000" />
-      <workItem from="1557171528853" duration="948000" />
-      <workItem from="1557172496070" duration="58000" />
-      <workItem from="1557172640167" duration="888000" />
-      <workItem from="1557334647866" duration="840000" />
-    </task>
-    <task id="LOCAL-00002" summary="V2.2">
-      <created>1556047272102</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1556047272102</updated>
-    </task>
-    <task id="LOCAL-00003" summary="V2.2">
-      <created>1556107994727</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1556107994727</updated>
+      <workItem from="1557256468400" duration="21316000" />
     </task>
     <task id="LOCAL-00004" summary="V2.2">
       <created>1556219274416</created>
@@ -692,46 +678,60 @@
       <option name="project" value="LOCAL" />
       <updated>1556983834356</updated>
     </task>
-    <task id="LOCAL-00046" summary="Merge branch 'Amy' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;routes/routes.js">
-      <created>1557171743217</created>
+    <task id="LOCAL-00046" summary="V2.3">
+      <created>1557170411420</created>
       <option name="number" value="00046" />
       <option name="presentableId" value="LOCAL-00046" />
       <option name="project" value="LOCAL" />
-      <updated>1557171743217</updated>
+      <updated>1557170411420</updated>
     </task>
-    <task id="LOCAL-00047" summary="Merge branch 'Amy' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;routes/routes.js">
-      <created>1557172291633</created>
+    <task id="LOCAL-00047" summary="V2.3">
+      <created>1557250979347</created>
       <option name="number" value="00047" />
       <option name="presentableId" value="LOCAL-00047" />
       <option name="project" value="LOCAL" />
-      <updated>1557172291633</updated>
+      <updated>1557250979347</updated>
     </task>
-    <task id="LOCAL-00048" summary="Merge branch 'Amy' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;routes/routes.js">
-      <created>1557172394917</created>
+    <task id="LOCAL-00048" summary="V2.3">
+      <created>1557251009242</created>
       <option name="number" value="00048" />
       <option name="presentableId" value="LOCAL-00048" />
       <option name="project" value="LOCAL" />
-      <updated>1557172394917</updated>
+      <updated>1557251009242</updated>
     </task>
-    <task id="LOCAL-00049" summary="Merge branch 'Amy' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;routes/routes.js">
-      <created>1557172476636</created>
+    <task id="LOCAL-00049" summary="V2.3">
+      <created>1557254310618</created>
       <option name="number" value="00049" />
       <option name="presentableId" value="LOCAL-00049" />
       <option name="project" value="LOCAL" />
-      <updated>1557172476636</updated>
+      <updated>1557254310618</updated>
     </task>
-    <task id="LOCAL-00050" summary="...">
-      <created>1557173389976</created>
+    <task id="LOCAL-00050" summary="V2.3">
+      <created>1557255646132</created>
       <option name="number" value="00050" />
       <option name="presentableId" value="LOCAL-00050" />
       <option name="project" value="LOCAL" />
-      <updated>1557173389976</updated>
+      <updated>1557255646132</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="V2.3">
+      <created>1557261792504</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1557261792504</updated>
+    </task>
+    <task id="LOCAL-00052" summary="V2.3">
+      <created>1557266362905</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1557266362905</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="161459000" />
+    <option name="totallyTimeSpent" value="197006000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="60" y="42" width="1894" height="1302" extended-state="0" />
@@ -742,7 +742,7 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49837133" weight="0.3299748" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49402824" weight="0.36198348" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49402824" weight="0.3627204" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -751,13 +751,13 @@
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49837133" weight="0.3299748" />
       <window_info anchor="bottom" id="Terminal" order="10" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5059718" side_tool="true" weight="0.36198348" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5059718" side_tool="true" visible="true" weight="0.3479339" />
       <window_info anchor="bottom" id="File Transfer" order="12" sideWeight="0.4989142" weight="0.3299748" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Database" order="3" weight="0.32998225" />
-      <window_info anchor="right" id="Remote Host" order="4" weight="0.19438446" />
+      <window_info anchor="right" id="Remote Host" order="4" visible="true" weight="0.17372422" />
     </layout>
     <layout-to-restore>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17656587" />
@@ -834,42 +834,10 @@
     <MESSAGE value="AutoMenu bugs fix" />
     <MESSAGE value="Merge branch 'Yiyang' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
     <MESSAGE value="Merge branch 'Amy' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;routes/routes.js" />
-    <MESSAGE value="..." />
-    <option name="LAST_COMMIT_MESSAGE" value="..." />
+    <MESSAGE value="V2.3" />
+    <option name="LAST_COMMIT_MESSAGE" value="V2.3" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/views/LayerRequestForm.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="498">
-          <caret line="508" lean-forward="true" selection-start-line="478" selection-start-column="4" selection-end-line="508" />
-          <folding>
-            <element signature="n#head#0;n#html#0;n#!!top" />
-            <element signature="n#style#0;n#head#0;n#html#0;n#!!top" />
-            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#div#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#3;n#fieldset#0;n#form#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#4;n#fieldset#0;n#form#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#4;n#fieldset#0;n#form#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#div#0;n#div#5;n#fieldset#0;n#form#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#div#0;n#div#8;n#fieldset#0;n#form#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#9;n#fieldset#0;n#form#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#div#10;n#fieldset#0;n#form#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#11;n#fieldset#0;n#form#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#12;n#fieldset#0;n#form#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#div#0;n#div#13;n#fieldset#0;n#form#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="e#21106#22435#0#HTML" />
-            <element signature="e#22940#23593#0#HTML" />
-            <element signature="e#21086#21959#0#HTML" />
-            <element signature="e#21985#22156#0#HTML" />
-            <element signature="e#22199#22880#0#HTML" />
-            <element signature="e#23823#24202#0#HTML" />
-            <element signature="e#24228#24413#0#HTML" />
-            <element signature="e#25139#25515#0#HTML" />
-            <element signature="e#26118#26216#0#HTML" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/ows.xml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -962,26 +930,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/layer/heatmap/HeatMapLayer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="56">
-          <caret line="283" column="24" selection-start-line="283" selection-start-column="24" selection-end-line="283" selection-end-column="24" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/RadiantCircleTile.js" />
     <entry file="file://$PROJECT_DIR$/scripts/WorldWindShim.js" />
     <entry file="file://$PROJECT_DIR$/scripts/mrds.js" />
-    <entry file="file://$PROJECT_DIR$/scripts/AutoMenu.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="129" lean-forward="true" selection-start-line="129" selection-end-line="129" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/OptionList.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="178">
@@ -1012,16 +963,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/newGlobe.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="2" column="48" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/examples/mainconf.js" />
     <entry file="file://$PROJECT_DIR$/package-lock.json">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/serverConfig.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="333">
+          <caret line="41" lean-forward="true" selection-start-line="41" selection-end-line="41" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/scripts/CS_placemarkLayer_O.js" />
     <entry file="file://$PROJECT_DIR$/src/layer/RenderableLayer.js">
@@ -1042,46 +993,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/USGS_WT_placemarkLayer.js">
+    <entry file="file://$PROJECT_DIR$/scripts/s.js" />
+    <entry file="file://$PROJECT_DIR$/scripts/Home_Y.js" />
+    <entry file="file://$PROJECT_DIR$/scripts/newGlobe.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="840">
-          <caret line="56" column="12" selection-start-line="56" selection-start-column="12" selection-end-line="56" selection-end-column="12" />
+        <state relative-caret-position="38">
+          <caret line="2" column="48" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="48" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/USGS_WT_heatmapLayer.js">
+    <entry file="file://$PROJECT_DIR$/routes/routes.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="16" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
+        <state relative-caret-position="498">
+          <caret line="213" column="50" selection-start-line="213" selection-start-column="50" selection-end-line="213" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/layer/heatmap/HeatMapLayer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="109">
+          <caret line="56" column="63" selection-start-line="56" selection-start-column="46" selection-end-line="56" selection-end-column="63" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/USGS_WT_heatmapLayer.js" />
+    <entry file="file://$PROJECT_DIR$/scripts/CS_wmsLayer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="49" selection-start-line="9" selection-start-column="49" selection-end-line="9" selection-end-column="49" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/scripts/customPK.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/MDViewer.js" />
-    <entry file="file://$PROJECT_DIR$/config/serverConfig.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="33" column="37" selection-start-line="33" selection-start-column="37" selection-end-line="33" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/clientConfig.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="35" column="20" lean-forward="true" selection-start-line="35" selection-start-column="20" selection-end-line="35" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/Home.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4110">
-          <caret line="288" column="26" selection-start-line="288" selection-start-column="26" selection-end-line="288" selection-end-column="26" />
+        <state relative-caret-position="437">
+          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
         </state>
       </provider>
     </entry>
@@ -1092,45 +1041,59 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/CS_placemarkLayer.js">
+    <entry file="file://$PROJECT_DIR$/scripts/USGS_MR.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="31" column="30" selection-start-line="31" selection-start-column="30" selection-end-line="31" selection-end-column="30" />
+        <state relative-caret-position="513">
+          <caret line="54" column="25" lean-forward="true" selection-start-line="54" selection-start-column="25" selection-end-line="54" selection-end-column="25" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/CS_wmsLayer.js">
+    <entry file="file://$PROJECT_DIR$/scripts/AutoMenu.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="49" selection-start-line="9" selection-start-column="49" selection-end-line="9" selection-end-column="49" />
+        <state relative-caret-position="249">
+          <caret line="107" lean-forward="true" selection-start-line="107" selection-end-line="107" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/layerMenuAll.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="834">
+          <caret line="71" lean-forward="true" selection-start-line="71" selection-end-line="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/USGS_WT.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="337">
+          <caret line="19" column="12" lean-forward="true" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/Home.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4020">
+          <caret line="282" column="26" selection-start-line="282" selection-start-column="26" selection-end-line="282" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/clientConfig.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="512">
+          <caret line="56" column="7" selection-start-line="56" selection-start-column="7" selection-end-line="56" selection-end-column="7" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config/MDclientConfig.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="16" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
+        <state relative-caret-position="480">
+          <caret line="32" column="33" lean-forward="true" selection-start-line="32" selection-start-column="33" selection-end-line="32" selection-end-column="33" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/USGS_MR_placemarkLayer.js">
+    <entry file="file://$PROJECT_DIR$/scripts/CS_placemarkLayer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="35" column="25" lean-forward="true" selection-start-line="35" selection-start-column="25" selection-end-line="35" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/USGS_MD_placemarkLayer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="914">
-          <caret line="126" column="39" selection-start-line="126" selection-start-column="39" selection-end-line="126" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/routes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="753">
-          <caret line="230" column="99" selection-start-line="230" selection-start-column="99" selection-end-line="230" selection-end-column="99" />
+        <state relative-caret-position="420">
+          <caret line="42" column="3" lean-forward="true" selection-start-line="42" selection-start-column="3" selection-end-line="42" selection-end-column="3" />
         </state>
       </provider>
     </entry>
