@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="3b2ba209-e08e-4f77-99ae-d893522cce16" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/ows.xml" beforeDir="false" afterPath="$PROJECT_DIR$/config/ows.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/routes.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -295,7 +293,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -351,6 +348,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -430,6 +428,7 @@
       <workItem from="1556824280458" duration="2000" />
       <workItem from="1556824289859" duration="6647000" />
       <workItem from="1557257407558" duration="9000" />
+      <workItem from="1557319554432" duration="100000" />
     </task>
     <task id="LOCAL-00001" summary="V2.2">
       <created>1555795784459</created>
@@ -704,17 +703,23 @@
       <option name="project" value="LOCAL" />
       <updated>1556916397301</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="Merge branch 'master' of https://github.com/Anson-Zhao/CitySmart22 into julia&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;config/geoCapacity/2019_5_2_11_46_2.xml&#10;#&#9;config/geoCapacity/2019_5_3_10_11_38.xml&#10;#&#9;config/geoCapacity/2019_5_3_12_38_12.xml&#10;#&#9;config/geoCapacity/2019_5_3_12_5_18.xml&#10;#&#9;config/geoCapacity/2019_5_3_13_5_18.xml&#10;#&#9;scripts/Home.js">
+      <created>1557319574467</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1557319574467</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="120420000" />
+    <option name="totallyTimeSpent" value="120520000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="716" y="55" width="2189" height="1302" extended-state="0" />
-    <editor active="true" />
+    <frame x="371" y="34" width="2189" height="1302" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22123894" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.223102" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -734,7 +739,7 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Database" order="3" weight="0.32998225" />
-      <window_info anchor="right" id="Remote Host" order="4" visible="true" weight="0.19469027" />
+      <window_info active="true" anchor="right" id="Remote Host" order="4" visible="true" weight="0.19469027" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
