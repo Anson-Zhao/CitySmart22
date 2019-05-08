@@ -4,6 +4,7 @@ define(['../src/WorldWind'], function (WorldWind) {
     let arrType = [];
     let arrWT = [];
     let arrMR = [];
+    let arrMD = [];
     let arrCS = [];
     let categoryN = [];
     let arrColor = [];
@@ -62,6 +63,19 @@ define(['../src/WorldWind'], function (WorldWind) {
 
                         arrCS.push({Row: ele, wLayer: new WorldWind.RenderableLayer(ele.LayerName), Color: arrColor});
 
+                    } else if (ele.LayerType === 'USGSMD_PKLayer') {
+
+                        category = ele.LayerName.split("_");
+                        categoryN = category[2];
+
+                        index = arrMD.findIndex(ele => ele.cName === categoryN);
+
+                        if (index < 0) {
+                            arrMD.push({cName: categoryN, plName: ele.LayerName, hlName: 'Null', wLayer: new WorldWind.RenderableLayer(ele.LayerName)});
+                        } else {
+                            arrMD[index].hlName = ele.LayerName;
+                            arrMD[index].wLayer = new WorldWind.RenderableLayer(ele.LayerName)
+                        }
                     }
                 })
             } else {
