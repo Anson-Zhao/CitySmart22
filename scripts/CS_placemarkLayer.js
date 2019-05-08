@@ -17,12 +17,12 @@
 requirejs([
     './newGlobe',
     './customPK',
-    './All_Layer_Menu'
-], function (newGlobe, customPK, arrPL) {
+    './layerMenuAll'
+], function (newGlobe, customPK, menuL) {
 
     "use strict";
 
-    arrPL.arrCS.forEach(function (e) {
+    menuL.arrCS.forEach(function (e) {
         let csPK = new customPK(e.Color, e.Row.Latitude, e.Row.Longitude);
         csPK.placemark.userProperties.layerType = e.Row.LayerType;
         csPK.placemark.userProperties.layerName = e.Row.LayerName;
@@ -32,103 +32,12 @@ requirejs([
         csPK.placemark.userProperties.copyright = e.Row.Copyright;
 
         //add placemark onto placemark layer
-        e.Layer.addRenderable(csPK.placemark);
+        e.wLayer.addRenderable(csPK.placemark);
 
         // add placemark layer onto worldwind layer obj
-        e.Layer.enabled = false;
-        e.Layer.layerType = 'CS_PKLayer';
-        newGlobe.addLayer(e.Layer);
+        e.wLayer.enabled = false;
+        e.wLayer.layerType = 'CS_PKLayer';
+        newGlobe.addLayer(e.wLayer);
 
     });
-
-    $(document).ready(function() {
-        newGlobe.addEventListener("click", handleMouseCLK);
-    });
-
-    // // create Placemark Layers base on the LayerName column in LayerMenu table
-    // $.ajax({
-    //     url: '/allLayerMenu',
-    //     type: 'GET',
-    //     dataType: 'json',
-    //     async: false,
-    //     success: function (resp) {
-    //         // console.log(resp);
-    //         if (!resp.error) {
-    //             resp.data.forEach(function (ele) {
-    //
-    //                 if (ele.LayerType === 'CS_PKLayer') {
-    //                     // create cs placemark
-    //                     let color = ele.Color.split(" ");
-    //                     let csPK = new customPK(color, ele.Latitude, ele.Longitude);
-    //                     csPK.placemark.userProperties.layerType = ele.LayerType;
-    //                     csPK.placemark.userProperties.layerName = ele.LayerName;
-    //                     csPK.placemark.userProperties.siteDesc = ele.Site_Description;
-    //                     csPK.placemark.userProperties.picLocation = ele.Picture_Location;
-    //                     csPK.placemark.userProperties.url = ele.Link_to_site_location;
-    //                     csPK.placemark.userProperties.copyright = ele.Copyright;
-    //
-    //                     // create cs placemark layer obj
-    //                     let csPKLayer = new WorldWind.RenderableLayer(ele.LayerName);
-    //
-    //                     //add placemark onto placemark layer
-    //                     csPKLayer.addRenderable(csPK.placemark);
-    //
-    //                     // add placemark layer onto worldwind layer obj
-    //                     csPKLayer.enabled = false;
-    //                     csPKLayer.layerType = 'CS_PKLayer';
-    //                     newGlobe.addLayer(csPKLayer);
-    //                 }
-    //             })
-    //         } else {
-    //             alert(resp.error)
-    //         }
-    //     }
-    // });
-
-    function handleMouseCLK (e)   {
-        let x = e.clientX,
-            y = e.clientY;
-        let pickListCLK = newGlobe.pick(newGlobe.canvasCoordinates(x, y));
-
-        pickListCLK.objects.forEach(function (value) {
-            let pickedPM = value.userObject;
-            if (pickedPM instanceof WorldWind.Placemark && pickedPM.userProperties.layerType === 'CS_PKLayer') {
-                sitePopUp(pickedPM);
-            }
-        })
-    }
-
-    function sitePopUp (PM) {
-        let popupBodyItem = $("#popupBody");
-        popupBodyItem.children().remove();
-
-        let popupBodyName = $('<p class="site-name"><h4>' + PM.userProperties.layerName + '</h4></p>');
-        let popupBodyDesc = $('<p class="site-description">' + PM.userProperties.siteDesc + '</p><br>');
-        let fillerImages = $('<img style="width:100%; height:110%;" src="../images/Pics/' + PM.userProperties.picLocation + '"/>');
-        let imageLinks = $('<p class="site-link" <h6>Site Link: </h6></p><a href="' + PM.userProperties.url + '">Click here to navigate to the site&#8217;s website </a>');
-        let copyrightStatus = $('<p  class="copyright" <h6>Copyright Status: </h6>' + PM.userProperties.copyright + '</p><br>');
-        let coordinates = $('<p class="coordinate" <h6>Latitude and Longitude: </h6>'+ PM.position.latitude + PM.position.longitude + '</p><br>');
-
-        popupBodyItem.append(popupBodyName);
-        popupBodyItem.append(popupBodyDesc);
-        popupBodyItem.append(fillerImages);
-        popupBodyItem.append(imageLinks);
-        popupBodyItem.append(copyrightStatus);
-        popupBodyItem.append(coordinates);
-
-        let modal = document.getElementById('popupBox');
-        let span = document.getElementById('closeIt');
-
-        modal.style.display = "block";
-
-        span.onclick = function () {
-            modal.style.display = "none";
-        };
-
-        window.onclick = function (event) {
-            if (event.target === modal) {
-                modal.style.display = "none";
-            }
-        }
-    }
 });
