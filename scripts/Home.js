@@ -93,7 +93,6 @@ requirejs(['./newGlobe',
 
                     }
                     // buttonControl(toggle.checked);
-
                 }
             });
         });
@@ -188,11 +187,13 @@ requirejs(['./newGlobe',
                 previousL.prop('disabled',false);
                 nextL.prop('disabled',true);
             }
+            console.log('2: '+arrMenu);
 
         } else {
 
             // remove current display ThirdLayer from arrMenu
             arrMenu.splice(arrMenu.findIndex(elem => elem === layerSelected.ThirdLayer), 1);
+            console.log('1: '+arrMenu);
 
             j = arrMenu.length - 1;
 
