@@ -119,23 +119,6 @@ module.exports = function (app, passport) {
         });
     });
 
-    app.get('/autoMenu',function (req,res) {
-        // res.setHeader("Access-Control-Allow-Origin", "*"); // Allow cross domain header
-        let queryState = "SELECT FirstLayer, SecondLayer, ThirdLayer, " +
-            "GROUP_CONCAT(LayerName) as LayerName, LayerType, CountryName, StateName, CityName " +
-            "FROM CitySmart2.LayerMenu WHERE Status = 'Approved' " +
-            "GROUP BY FirstLayer, SecondLayer, ThirdLayer, LayerType, CountryName, StateName, CityName";
-
-        con_CS.query(queryState, function (err, results) {
-            if (err) {
-                console.log(err);
-                res.json({"error": true, "message": "An unexpected error occurred !"});
-            } else {
-                res.json(results);
-                // console.log(results);
-            }
-        });
-    });
     app.get('/currentLayer',function (req,res) {
         res.setHeader("Access-Control-Allow-Origin", "*"); // Allow cross domain header
         let thirdlayer = req.query.thirdlayer;
@@ -2015,6 +1998,23 @@ module.exports = function (app, passport) {
         });
     });
 
+    app.get('/autoMenu',function (req,res) {
+        // res.setHeader("Access-Control-Allow-Origin", "*"); // Allow cross domain header
+        let queryState = "SELECT FirstLayer, SecondLayer, ThirdLayer, " +
+            "GROUP_CONCAT(LayerName) as LayerName, LayerType, CountryName, StateName, CityName " +
+            "FROM CitySmart2.LayerMenu WHERE Status = 'Approved' " +
+            "GROUP BY FirstLayer, SecondLayer, ThirdLayer, LayerType, CountryName, StateName, CityName";
+
+        con_CS.query(queryState, function (err, results) {
+            if (err) {
+                console.log(err);
+                res.json({"error": true, "message": "An unexpected error occurred !"});
+            } else {
+                res.json(results);
+                // console.log(results);
+            }
+        });
+    });
 
     app.get('/allLayerMenu', function (req, res) {
         res.setHeader("Access-Control-Allow-Origin", "*");
@@ -2036,7 +2036,10 @@ module.exports = function (app, passport) {
         res.setHeader("Access-Control-Allow-Origin", "*"); // Allow cross domain header
 
         // var statement = "SELECT p_name, xlong, ylat, p_year_color, p_avgcap_color, t_ttlh_color FROM USWTDB INNER JOIN USWTDB_COLOR ON USWTDB.case_id = USWTDB_COLOR.case_id ORDER BY p_name;";
-        let statement = "SELECT USWTDB_Sample.case_id, t_state, p_name, xlong, ylat, p_year, p_tnum, p_cap, p_avgcap, t_ttlh, p_year_color as Year_Color, p_avgcap_color as Capacity_Color, t_ttlh_color as Height_Color FROM USWTDB_Sample INNER JOIN USWTDB_COLOR_Sample ON USWTDB_Sample.case_id = USWTDB_COLOR_Sample.case_id ORDER BY p_name;";
+        let statement = "SELECT USWTDB_Sample.case_id, t_state, p_name, xlong, ylat, p_year, p_tnum, " +
+            "p_cap, p_avgcap, t_ttlh, p_year_color as Year_Color, p_avgcap_color as Capacity_Color, " +
+            "t_ttlh_color as Height_Color FROM USWTDB_Sample INNER JOIN USWTDB_COLOR_Sample " +
+            "ON USWTDB_Sample.case_id = USWTDB_COLOR_Sample.case_id ORDER BY p_name;";
 
         con_CS.query(statement, function (err, results, fields) {
             if (err) {
