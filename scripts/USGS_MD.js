@@ -21,7 +21,7 @@ requirejs([
                     rows.forEach(function (v, i) {
 
                         // create customized placemark and wrap it up with its own userProperties.
-                        let categoryPK = new customPK(config.MR_COMM_Color[e.cName], v.latitude, v.longitude);
+                        let categoryPK = new customPK(config.MD_COMM_Color[e.cName], v.latitude, v.longitude);
                         categoryPK.placemark.userProperties.site_name = v.site_name;
                         categoryPK.placemark.userProperties.country = v.country;
                         categoryPK.placemark.userProperties.stat = v.stat;
@@ -44,12 +44,12 @@ requirejs([
                             heatmapLayer.incrementPerIntensity = config.heatmapSetting.incrementPerIntensity;
 
                             heatmapLayer.enabled = false;
-                            heatmapLayer.layerType = 'USGSMR_HMLayer';
+                            heatmapLayer.layerType = 'USGSMD_HMLayer';
                             newGlobe.addLayer(heatmapLayer);
 
                             // add customized placemarkLayer onto worldwind layers
                             e.wLayer.enabled = false;
-                            e.wLayer.layerType = 'USGSMR_PKLayer';
+                            e.wLayer.layerType = 'USGSMD_PKLayer';
                             newGlobe.addLayer(e.wLayer);
 
                         }
