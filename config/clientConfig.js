@@ -44,6 +44,30 @@ let clientConfig = {
         Other: "#A6ACAF"
     },
 
+
+    MD_COMM_Color: {
+        Hydrothermal: "#2E4053",
+        Sedimentary: "#58D68D  ",
+        Igneous: "#A93226",
+        Metamorphic: "#CD6155",
+        Surficial: "#2980B9  ",
+        Gemstone :"rgba(255, 255, 255, 1)",
+        Unclassified: "#A6ACAF",
+        Nickel : "#626567",
+        Iron:"#CB4335",
+        Aluminum:"#A6ACAF",
+        Copper:"#E67E22",
+        Lead:"#117864",
+        PGE:"#1F618D",
+        Gold:"#F7DC6F",
+        Diamond:"#FAD7A0",
+        Clay:"#AED6F1",
+        Potash:"#D5F5E3",
+        undefined:"rgba(255, 255, 255, 1)",
+        Silver:"#48C9B0",
+        Zinc:"#99A3A4",
+    },
+
     USGS_WT_Year: {
         Min: '1980',
         Max: '2017',
