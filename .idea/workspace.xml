@@ -2,7 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3b2ba209-e08e-4f77-99ae-d893522cce16" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_5_8_17_46_4.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/3rdPartyLibs/almond.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/3rdPartyLibs/build.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/3rdPartyLibs/end.frag" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/3rdPartyLibs/start.frag" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3rdPartyLibs/popper-1.14.0.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/popper-1.14.0.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/3rdPartyLibs/r-2.3.6.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/r-2.3.6.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_5_9_9_39_8.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/npm/node_modules/ajv/dist/nodent.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/npm/node_modules/ajv/dist/nodent.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/npm/node_modules/ajv/dist/regenerator.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/npm/node_modules/ajv/dist/regenerator.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/customPK.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/customPK.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/layerMenuAll.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/layerMenuAll.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/newGlobe.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/newGlobe.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/util/jszip.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/util/jszip.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/homepage.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/homepage.ejs" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -48,15 +62,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scripts/Home.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="52" column="17" selection-start-line="52" selection-start-column="17" selection-end-line="52" selection-end-column="17" />
-              <folding>
-                <element signature="e#5847#6259#0" />
-                <element signature="e#6289#7842#0" />
-                <element signature="n#style#0;n#img#0;n#!!top" expanded="true" />
-                <element signature="e#6063#7918#0" />
-                <element signature="e#7952#9756#0" />
-              </folding>
+            <state relative-caret-position="171">
+              <caret line="23" column="20" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/homepage.ejs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="684">
+              <caret line="36" column="28" selection-start-line="36" selection-start-column="28" selection-end-line="36" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -64,7 +80,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/routes.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="235">
+            <state relative-caret-position="4294">
               <caret line="226" column="10" selection-start-line="226" selection-start-column="10" selection-end-line="226" selection-end-column="10" />
             </state>
           </provider>
@@ -73,20 +89,29 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/passport.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="235">
+            <state relative-caret-position="399">
               <caret line="21" column="10" selection-start-line="21" selection-start-column="10" selection-end-line="21" selection-end-column="10" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CS2_MainSvr.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="482">
-              <caret line="31" column="52" selection-start-line="31" selection-start-column="52" selection-end-line="31" selection-end-column="52" />
+            <state relative-caret-position="114">
+              <caret line="7" column="61" selection-start-line="7" selection-start-column="61" selection-end-line="7" selection-end-column="61" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/3rdPartyLibs/build.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="133">
+              <caret line="7" column="6" lean-forward="true" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -102,7 +127,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>alertVal</find>
       <find>buttonControl</find>
       <find>firstTime</find>
       <find>radius</find>
@@ -129,9 +153,10 @@
       <find>indexP</find>
       <find>config</find>
       <find>10.11.90.16</find>
-      <find>menuL</find>
       <find>popper</find>
       <find>pop</find>
+      <find>WorldWind</find>
+      <find>menuL</find>
     </findStrings>
     <replaceStrings>
       <replace>b</replace>
@@ -161,17 +186,17 @@
       <replace>menuLayer</replace>
       <replace>menuL</replace>
       <replace>layerMenuAll</replace>
-      <replace>barChange</replace>
       <replace>index</replace>
       <replace>127.0.0.1</replace>
+      <replace>barChange</replace>
     </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/config</dir>
       <dir>$PROJECT_DIR$/routes</dir>
       <dir>$PROJECT_DIR$/views</dir>
       <dir>$PROJECT_DIR$/src</dir>
-      <dir>$PROJECT_DIR$/scripts</dir>
       <dir>$PROJECT_DIR$</dir>
+      <dir>$PROJECT_DIR$/scripts</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -180,12 +205,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/scripts2/WorldWindShim.js" />
-        <option value="$PROJECT_DIR$/src/WorldWind.js" />
-        <option value="$PROJECT_DIR$/src/domReady.js" />
-        <option value="$PROJECT_DIR$/scripts/createGlobe.js" />
-        <option value="$PROJECT_DIR$/src/createGlobe.js" />
-        <option value="$PROJECT_DIR$/src/newGlobe.js" />
         <option value="$PROJECT_DIR$/scripts/usgswt.js" />
         <option value="$PROJECT_DIR$/scripts/MainMenu.js" />
         <option value="$PROJECT_DIR$/scripts/OptionList.js" />
@@ -206,9 +225,7 @@
         <option value="&lt;6f32712d-a060-4679-8019-b4cec0c93bb5&gt;/cs/v2/scripts/Home.js" />
         <option value="$PROJECT_DIR$/3rdPartyLibs/popper-1.14.0.min.js" />
         <option value="$PROJECT_DIR$/3rdPartyLibs/bootstrap-3.3.4.min.js" />
-        <option value="$PROJECT_DIR$/views/homepage.ejs" />
         <option value="&lt;6f32712d-a060-4679-8019-b4cec0c93bb5&gt;/scripts/Home.js" />
-        <option value="$PROJECT_DIR$/scripts/newGlobe.js" />
         <option value="$PROJECT_DIR$/scripts/AutoMenu.js" />
         <option value="$PROJECT_DIR$/scripts/createPlacemark.js" />
         <option value="$PROJECT_DIR$/config/mainconf.js" />
@@ -216,7 +233,6 @@
         <option value="$PROJECT_DIR$/scripts/CS_wmsLayer.js" />
         <option value="$PROJECT_DIR$/config/serverConfig.js" />
         <option value="$PROJECT_DIR$/scripts/s.js" />
-        <option value="$PROJECT_DIR$/scripts/customPK.js" />
         <option value="$PROJECT_DIR$/routes/routes.js" />
         <option value="$PROJECT_DIR$/config/clientConfig.js" />
         <option value="$PROJECT_DIR$/scripts/USGS_WT_heatmapLayer.js" />
@@ -226,11 +242,20 @@
         <option value="$PROJECT_DIR$/scripts/USGS_MR_placemarkLayer.js" />
         <option value="$PROJECT_DIR$/scripts/CS_placemarkLayer.js" />
         <option value="$PROJECT_DIR$/scripts/USGS_WT.js" />
-        <option value="$PROJECT_DIR$/scripts/layerMenuAll.js" />
         <option value="$PROJECT_DIR$/scripts/USGS_MR.js" />
         <option value="$PROJECT_DIR$/scripts/Home.js" />
         <option value="$PROJECT_DIR$/views/homepageUSER.ejs" />
         <option value="&lt;6f32712d-a060-4679-8019-b4cec0c93bb5&gt;/config/serverConfig.js" />
+        <option value="$PROJECT_DIR$/scripts/newGlobe.js" />
+        <option value="$PROJECT_DIR$/scripts/customPK.js" />
+        <option value="$PROJECT_DIR$/scripts/layerMenuAll.js" />
+        <option value="$PROJECT_DIR$/views/homepage.ejs" />
+        <option value="$PROJECT_DIR$/3rdPartyLibs/almond.js" />
+        <option value="$PROJECT_DIR$/3rdPartyLibs/start.frag" />
+        <option value="$PROJECT_DIR$/3rdPartyLibs/end.frag" />
+        <option value="$PROJECT_DIR$/3rdPartyLibs/build/build.js" />
+        <option value="$PROJECT_DIR$/3rdPartyLibs/r-2.3.6.js" />
+        <option value="$PROJECT_DIR$/3rdPartyLibs/build.js" />
       </list>
     </option>
   </component>
@@ -241,8 +266,8 @@
     <auto-save>true</auto-save>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="740" />
-    <option name="y" value="56" />
+    <option name="x" value="516" />
+    <option name="y" value="23" />
     <option name="width" value="1894" />
     <option name="height" value="1302" />
   </component>
@@ -259,6 +284,16 @@
             <path>
               <item name="CitySmart22" type="b2602c69:ProjectViewProjectNode" />
               <item name="CitySmart22" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CitySmart22" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CitySmart22" type="462c0819:PsiDirectoryNode" />
+              <item name="3rdPartyLibs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CitySmart22" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CitySmart22" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -289,15 +324,15 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="Settings.JavaScript" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/config" />
-      <recent name="$PROJECT_DIR$/scripts" />
-      <recent name="$PROJECT_DIR$/examples" />
-      <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/3rdPartyLibs" />
+      <recent name="$PROJECT_DIR$/3rdPartyLibs/build" />
+      <recent name="$PROJECT_DIR$/approvedfolder" />
+      <recent name="$PROJECT_DIR$/src" />
+      <recent name="$PROJECT_DIR$/config" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/config" />
@@ -343,14 +378,12 @@
       <workItem from="1555791745817" duration="109052000" />
       <workItem from="1556824280458" duration="2000" />
       <workItem from="1556824289859" duration="6647000" />
-      <workItem from="1557256468400" duration="30597000" />
-    </task>
-    <task id="LOCAL-00008" summary="V2.2">
-      <created>1556220101734</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1556220101734</updated>
+      <workItem from="1557256468400" duration="33774000" />
+      <workItem from="1557425162342" duration="7000" />
+      <workItem from="1557425196210" duration="19000" />
+      <workItem from="1557425230051" duration="2207000" />
+      <workItem from="1557428979805" duration="508000" />
+      <workItem from="1557429506347" duration="272000" />
     </task>
     <task id="LOCAL-00009" summary="V2.2">
       <created>1556228818321</created>
@@ -688,21 +721,29 @@
       <option name="project" value="LOCAL" />
       <updated>1557354818563</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="V2.3">
+      <created>1557412671189</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1557412671189</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="206114000" />
+    <option name="totallyTimeSpent" value="212304000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="251" y="53" width="1894" height="1302" extended-state="0" />
+    <frame x="516" y="23" width="1894" height="1302" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17698154" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1878393" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49837133" weight="0.3299748" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49402824" visible="true" weight="0.3627204" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49402824" weight="0.3627204" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3988245" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -710,7 +751,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49837133" weight="0.3299748" />
-      <window_info anchor="bottom" id="Terminal" order="10" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.3299748" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5059718" side_tool="true" weight="0.3627204" />
       <window_info anchor="bottom" id="File Transfer" order="12" sideWeight="0.4989142" weight="0.3299748" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -775,18 +816,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="V2.3" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/config/geoCapacity/2019_4_26_14_25_49.xml" />
-    <entry file="file://$PROJECT_DIR$/scripts/usgswt.js" />
-    <entry file="file://$PROJECT_DIR$/scripts/first.js" />
-    <entry file="file://$PROJECT_DIR$/scripts/second.js" />
-    <entry file="file://$PROJECT_DIR$/scripts/AutoMenu0.js" />
-    <entry file="file://$PROJECT_DIR$/views/homepageUSER.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="427">
-          <caret line="23" column="19" lean-forward="true" selection-start-line="23" selection-start-column="19" selection-end-line="23" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/WorldWind.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="97">
@@ -857,13 +886,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/MARBLES.TIF" />
-    <entry file="file://$PROJECT_DIR$/views/homepage.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="19" column="4" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/RadiantCircleTile.js" />
     <entry file="file://$PROJECT_DIR$/scripts/WorldWindShim.js" />
     <entry file="file://$PROJECT_DIR$/scripts/mrds.js" />
@@ -946,13 +968,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/USGS_WT_heatmapLayer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="2" column="8" lean-forward="true" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/USGS_WT_heatmapLayer.js" />
     <entry file="file://$PROJECT_DIR$/scripts/CS_wmsLayer.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-174">
@@ -981,13 +997,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/USGS_MR_heatmapLayer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="598">
-          <caret line="38" column="25" lean-forward="true" selection-start-line="17" selection-start-column="24" selection-end-line="38" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/USGS_MR_heatmapLayer.js" />
     <entry file="file://$PROJECT_DIR$/scripts/USGS_MR.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -1016,41 +1026,77 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/3rdPartyLibs/WorldWind-built.js" />
+    <entry file="file://$PROJECT_DIR$/3rdPartyLibs/end.frag">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="5" column="4" lean-forward="true" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/3rdPartyLibs/start.frag">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="13" column="51" lean-forward="true" selection-start-line="13" selection-start-column="51" selection-end-line="13" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/3rdPartyLibs/almond.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3788">
+          <caret line="433" column="5" selection-start-line="433" selection-start-column="5" selection-end-line="433" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/Home.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="52" column="17" selection-start-line="52" selection-start-column="17" selection-end-line="52" selection-end-column="17" />
-          <folding>
-            <element signature="e#5847#6259#0" />
-            <element signature="e#6289#7842#0" />
-            <element signature="n#style#0;n#img#0;n#!!top" expanded="true" />
-            <element signature="e#6063#7918#0" />
-            <element signature="e#7952#9756#0" />
-          </folding>
+        <state relative-caret-position="171">
+          <caret line="23" column="20" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/homepage.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="684">
+          <caret line="36" column="28" selection-start-line="36" selection-start-column="28" selection-end-line="36" selection-end-column="28" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/routes.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
+        <state relative-caret-position="4294">
           <caret line="226" column="10" selection-start-line="226" selection-start-column="10" selection-end-line="226" selection-end-column="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/passport.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
+        <state relative-caret-position="399">
           <caret line="21" column="10" selection-start-line="21" selection-start-column="10" selection-end-line="21" selection-end-column="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/CS2_MainSvr.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="482">
-          <caret line="31" column="52" selection-start-line="31" selection-start-column="52" selection-end-line="31" selection-end-column="52" />
+        <state relative-caret-position="114">
+          <caret line="7" column="61" selection-start-line="7" selection-start-column="61" selection-end-line="7" selection-end-column="61" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/3rdPartyLibs/r-2.3.6.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="705">
+          <caret line="30429" column="63" selection-start-line="30429" selection-start-column="63" selection-end-line="30429" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/3rdPartyLibs/build.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="7" column="6" lean-forward="true" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
         </state>
       </provider>
     </entry>
