@@ -1,4 +1,4 @@
-define([],function (WorldWind) {
+define(['../src/WorldWind'],function (WorldWind) {
     let customPK = function (color, lat, long) {
 
          // wrap up World Wind Placemark object
