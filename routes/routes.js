@@ -1872,16 +1872,18 @@ module.exports = function (app, passport) {
             res.json(results);
         });
     });
-    //Class for menu
+    // Class for menu
     app.get('/ClassName', function (req, res) {
 
         res.setHeader("Access-Control-Allow-Origin", "*");
         var recieveCitylist = req.query.citylevel;
         var my2statement = "SELECT FirstLayer, SecondLayer, ThirdLayer FROM LayerMenu WHERE StateName = ?";
         var receiveStatelist = req.query.statelevel;
+console.log(recieveCitylist === 'All Cities');
 
         if (recieveCitylist === 'All Cities') {
             con_CS.query( my2statement , [receiveStatelist], function(err, results) {
+                console.log(results);
                 res.json(results);
             })
         }
@@ -1909,9 +1911,13 @@ module.exports = function (app, passport) {
         res.setHeader("Access-Control-Allow-Origin", "*");
         var recieveCountrylist = req.query.countrylevel;
         stat = "Kodiak";
-        con_CS.query("SELECT StateName FROM LayerMenu  WHERE CountryName = '" + recieveCountrylist + "' GROUP BY StateName", function (err, results, fields) {
+        // con_CS.query("SELECT StateName FROM LayerMenu  WHERE CountryName = '" + recieveCountrylist + "' GROUP BY StateName", function (err, results, fields) {
+        //     res.json(results);
+        // });
+        con_CS.query("SELECT StateName FROM LayerMenu WHERE StateName <> 'All States' AND CountryName = '" + recieveCountrylist + "' GROUP BY StateName", function (err, results, fields) {
             res.json(results);
         });
+
     });
     //city level
     app.get('/CityList', function (req, res) {
@@ -1919,13 +1925,16 @@ module.exports = function (app, passport) {
         var recieveCitylist = req.query.statelevel;
         console.log(recieveCitylist);
         // stat = "ddd";
-        con_CS.query("SELECT CityName FROM LayerMenu  WHERE StateName = '" + recieveCitylist + "' GROUP BY CityName", function (err, results, fields) {
+        // con_CS.query("SELECT CityName FROM LayerMenu  WHERE StateName = '" + recieveCitylist + "' GROUP BY CityName", function (err, results, fields) {
+        //     res.json(results);
+        // });
+        con_CS.query("SELECT CityName FROM LayerMenu WHERE CityName <> 'All Cities' AND StateName = '" + recieveCitylist + "' GROUP BY CityName", function (err, results, fields) {
             res.json(results);
         });
     });
     app.get('/layerRequestContinent',function(req,res){
         res.setHeader("Access-Control-Allow-Origin", "*");
-        con_CS.query("SELECT Continent,Contitent_name  FROM Country group by Continent,Contitent_name", function (err, results) {
+        con_CS.query("SELECT Continent,Continent_name  FROM Country group by Continent,Continent_name", function (err, results) {
             console.log(results);
             if (err) throw err;
             res.json(results);
