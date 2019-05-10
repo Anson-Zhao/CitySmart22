@@ -2000,7 +2000,7 @@ module.exports = function (app, passport) {
         // res.setHeader("Access-Control-Allow-Origin", "*"); // Allow cross domain header
         let queryState = "SELECT FirstLayer, SecondLayer, ThirdLayer, " +
             "GROUP_CONCAT(LayerName) as LayerName, LayerType, CountryName, StateName, CityName " +
-            "FROM CitySmart2.LayerMenu WHERE Status = 'Approved' " +
+            "FROM CitySmart2.LayerMenu WHERE Status = 'Approved' and Available = 'Yes' " +
             "GROUP BY FirstLayer, SecondLayer, ThirdLayer, LayerType, CountryName, StateName, CityName";
 
         con_CS.query(queryState, function (err, results) {
