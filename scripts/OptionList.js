@@ -121,7 +121,7 @@ function ChangeStateList(statelevel) {
             for(var j = 0; j < results.length; j++){
                 var option = new Option(results[j].CityName, results[j].CityName);
                 cityList.add(option);
-                console.log (results[j].CityName);
+                // console.log (results[j].CityName);
             }
         }
     });
@@ -143,9 +143,8 @@ function ChangeCityList(citylevel){
 
     $('.Menu').hide();
     $('.State').hide();
-    console.log(citylevel);
+    // console.log(citylevel);
     let city = "citylevel="+ citylevel + '&'+ state;
-    console.log(city);
 
     $.ajax({
         url: "ClassName",
@@ -173,7 +172,6 @@ function myFunction(returnCity) {
         $(className1).show();
         $(className2).show();
         $(className3).show();
-        console.log(className3);
     }
 }
 
