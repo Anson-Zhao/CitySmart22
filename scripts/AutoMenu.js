@@ -125,8 +125,13 @@ $(document).ready(function() {
         let stateNameStr = element.StateName.replace(/\s+/g, '');
         let cityNameStr = element.CityName.replace(/\s+/g, '');
 
+        if (countryNameStr !== element.CountryName) {
+            console.log(countryNameStr);
+            console.log(element.CountryName);
+        }
+
         let checkboxDiv = document.createElement("div");
-        checkboxDiv.className = "State " + thirdReplace + " " + countryNameStr + stateNameStr + cityNameStr;
+        checkboxDiv.className = "State " + thirdReplace + " " + countryNameStr + " " + stateNameStr + " " + cityNameStr;
         let checkboxH5 = document.createElement("h5");
 
         let checkboxA = document.createElement("a");

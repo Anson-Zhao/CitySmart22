@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3b2ba209-e08e-4f77-99ae-d893522cce16" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/routes/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_5_10_15_55_8.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/AutoMenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/AutoMenu.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -48,29 +49,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scripts/OptionList.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="558">
-              <caret line="173" column="29" selection-start-line="173" selection-start-column="29" selection-end-line="173" selection-end-column="29" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/AutoMenu.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="124" column="65" selection-start-line="124" selection-start-column="65" selection-end-line="124" selection-end-column="65" />
+            <state relative-caret-position="394">
+              <caret line="155" column="38" selection-start-line="155" selection-start-column="31" selection-end-line="155" selection-end-column="38" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/routes/routes.js">
+        <entry file="file://$PROJECT_DIR$/scripts/AutoMenu.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="373">
-              <caret line="206" column="4" selection-start-line="206" selection-start-column="4" selection-end-line="206" selection-end-column="4" />
-              <folding>
-                <element signature="e#71605#71748#0" />
-              </folding>
+            <state relative-caret-position="179">
+              <caret line="129" column="45" selection-start-line="129" selection-start-column="45" selection-end-line="129" selection-end-column="45" />
             </state>
           </provider>
         </entry>
@@ -86,7 +75,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>auto</find>
       <find>usgs</find>
       <find>arrMR</find>
       <find>arrWT</find>
@@ -115,6 +103,7 @@
       <find>newGlobe</find>
       <find>newGlobe.</find>
       <find>console</find>
+      <find>autoM</find>
       <find>ThirdLayer</find>
     </findStrings>
     <replaceStrings>
@@ -213,8 +202,8 @@
         <option value="$PROJECT_DIR$/views/homepage.ejs" />
         <option value="$PROJECT_DIR$/views/homepageUSER.ejs" />
         <option value="$PROJECT_DIR$/scripts/OptionList.js" />
-        <option value="$PROJECT_DIR$/scripts/AutoMenu.js" />
         <option value="$PROJECT_DIR$/routes/routes.js" />
+        <option value="$PROJECT_DIR$/scripts/AutoMenu.js" />
       </list>
     </option>
   </component>
@@ -342,14 +331,7 @@
       <workItem from="1557425196210" duration="19000" />
       <workItem from="1557425230051" duration="2207000" />
       <workItem from="1557428979805" duration="508000" />
-      <workItem from="1557429506347" duration="12666000" />
-    </task>
-    <task id="LOCAL-00018" summary="V2.2 WT_Placemark layer">
-      <created>1556388829608</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1556388829608</updated>
+      <workItem from="1557429506347" duration="14862000" />
     </task>
     <task id="LOCAL-00019" summary="V2.2 WT_Placemark layer">
       <created>1556397100221</created>
@@ -687,11 +669,18 @@
       <option name="project" value="LOCAL" />
       <updated>1557518788256</updated>
     </task>
-    <option name="localTasksCounter" value="67" />
+    <task id="LOCAL-00067" summary="Merge branch 'Amy' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;config/geoCapacity/2019_5_10_11_25_32.xml&#10;#&#9;config/mainconf.js&#10;#&#9;routes/routes.js">
+      <created>1557519617277</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1557519617277</updated>
+    </task>
+    <option name="localTasksCounter" value="68" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="224698000" />
+    <option name="totallyTimeSpent" value="226894000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="516" y="23" width="1894" height="1302" extended-state="0" />
@@ -702,7 +691,7 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49837133" weight="0.3299748" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49402824" visible="true" weight="0.3627204" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49402824" visible="true" weight="0.3627204" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3988245" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -717,7 +706,7 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Database" order="3" weight="0.32998225" />
-      <window_info anchor="right" id="Remote Host" order="4" visible="true" weight="0.17372422" />
+      <window_info active="true" anchor="right" id="Remote Host" order="4" visible="true" weight="0.17372422" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1054,27 +1043,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/AutoMenu.js">
+    <entry file="file://$PROJECT_DIR$/routes/routes.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="124" column="65" selection-start-line="124" selection-start-column="65" selection-end-line="124" selection-end-column="65" />
+        <state relative-caret-position="266">
+          <caret line="14" column="41" lean-forward="true" selection-start-line="14" selection-start-column="41" selection-end-line="14" selection-end-column="41" />
+          <folding>
+            <element signature="e#71605#71748#0" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/scripts/OptionList.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="558">
-          <caret line="173" column="29" selection-start-line="173" selection-start-column="29" selection-end-line="173" selection-end-column="29" />
+        <state relative-caret-position="394">
+          <caret line="155" column="38" selection-start-line="155" selection-start-column="31" selection-end-line="155" selection-end-column="38" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/routes.js">
+    <entry file="file://$PROJECT_DIR$/scripts/AutoMenu.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="373">
-          <caret line="206" column="4" selection-start-line="206" selection-start-column="4" selection-end-line="206" selection-end-column="4" />
-          <folding>
-            <element signature="e#71605#71748#0" />
-          </folding>
+        <state relative-caret-position="179">
+          <caret line="129" column="45" selection-start-line="129" selection-start-column="45" selection-end-line="129" selection-end-column="45" />
         </state>
       </provider>
     </entry>
