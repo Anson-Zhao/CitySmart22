@@ -1,10 +1,36 @@
 //get the data from database with certain conditions
 
 $(document).ready(function() {
+
     //Main Menu creating starts here
     let parentMenu = document.getElementById("accordion");
     let firstLayers =[];
     let secondLayers =[];
+
+    //get data from database table using routes(ajax)
+    $.ajax({
+        type: "GET",
+        url: "autoMenu",
+        dataType: "json",
+        success: function (res) {
+            // draw the first layer
+            for ( let element of res) {
+                let secondIndex = element.FirstLayer + '--' + element.SecondLayer;
+
+                if (!firstLayers.includes(element.FirstLayer)) {
+                    createFirstLayer(element.FirstLayer);
+                }
+
+                if (!secondLayers.includes(secondIndex)) {
+                    createSecondLayer(element.FirstLayer, element.SecondLayer);
+                }
+
+                setTimeout(function() {
+                    createThirdLayer(element)
+                }, 20);
+            }
+        }
+    });
 
     function createFirstLayer(firstL) {
         let panelDefault1 = document.createElement("div");
@@ -50,7 +76,7 @@ $(document).ready(function() {
     }
 
     function createSecondLayer(firstL, secondL) {
-        
+
         let panelDefault2 = document.createElement("div");
         panelDefault2.id = secondL;
         panelDefault2.className = "Menu panel panel-info " + secondL;
@@ -128,28 +154,5 @@ $(document).ready(function() {
         document.getElementById(element.FirstLayer + "--" + element.SecondLayer).appendChild(checkboxDiv);
     }
 
-    //get data from database table using routes(ajax)
-    $.ajax({
-        type: "GET",
-        url: "autoMenu",
-        dataType: "json",
-        success: function (res) {
-            // draw the first layer
-            for ( let element of res) {
-                let secondIndex = element.FirstLayer + '--' + element.SecondLayer;
-
-                if (!firstLayers.includes(element.FirstLayer)) {
-                    createFirstLayer(element.FirstLayer);
-                }
-
-                if (!secondLayers.includes(secondIndex)) {
-                    createSecondLayer(element.FirstLayer, element.SecondLayer);
-                }
-
-                setTimeout(function() {
-                    createThirdLayer(element)
-                }, 20);
-            }
-        }
-    })
 });
+

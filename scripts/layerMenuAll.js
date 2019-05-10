@@ -1,4 +1,4 @@
-define(['../src/WorldWind'], function (WorldWind) {
+define(['./WorldWindShim'], function (WorldWind) {
 
     let arrAll = [];
     let arrType = [];
