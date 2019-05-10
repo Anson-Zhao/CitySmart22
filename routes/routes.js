@@ -205,12 +205,6 @@ module.exports = function (app, passport) {
         });
     });
 
-
-    // app.get('/request',function (req,res) {
-    //     res.setHeader("Access-Control-Allow-Origin", "*"); // Allow cross domain header
-    //     res.render('login.ejs');
-    // });
-
     // =====================================
     // LOGIN Section =======================
     // =====================================

@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3b2ba209-e08e-4f77-99ae-d893522cce16" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/config/ows.xml" beforeDir="false" afterPath="$PROJECT_DIR$/config/ows.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/routes.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -67,8 +66,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/routes/routes.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="298">
-              <caret line="2002" column="88" selection-start-line="2002" selection-start-column="88" selection-end-line="2002" selection-end-column="88" />
+            <state relative-caret-position="373">
+              <caret line="206" column="4" selection-start-line="206" selection-start-column="4" selection-end-line="206" selection-end-column="4" />
+              <folding>
+                <element signature="e#71605#71748#0" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -340,14 +342,7 @@
       <workItem from="1557425196210" duration="19000" />
       <workItem from="1557425230051" duration="2207000" />
       <workItem from="1557428979805" duration="508000" />
-      <workItem from="1557429506347" duration="12030000" />
-    </task>
-    <task id="LOCAL-00017" summary="V2.2">
-      <created>1556372362206</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1556372362206</updated>
+      <workItem from="1557429506347" duration="12666000" />
     </task>
     <task id="LOCAL-00018" summary="V2.2 WT_Placemark layer">
       <created>1556388829608</created>
@@ -685,22 +680,29 @@
       <option name="project" value="LOCAL" />
       <updated>1557504897104</updated>
     </task>
-    <option name="localTasksCounter" value="66" />
+    <task id="LOCAL-00066" summary="Merge branch 'Amy' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;config/geoCapacity/2019_5_10_11_25_32.xml&#10;#&#9;config/mainconf.js&#10;#&#9;routes/routes.js">
+      <created>1557518788256</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1557518788256</updated>
+    </task>
+    <option name="localTasksCounter" value="67" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="224062000" />
+    <option name="totallyTimeSpent" value="224698000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="516" y="23" width="1894" height="1302" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1878393" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1878393" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49837133" weight="0.3299748" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49402824" visible="true" weight="0.3627204" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49402824" visible="true" weight="0.3627204" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3988245" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -1068,8 +1070,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/routes.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="2002" column="88" selection-start-line="2002" selection-start-column="88" selection-end-line="2002" selection-end-column="88" />
+        <state relative-caret-position="373">
+          <caret line="206" column="4" selection-start-line="206" selection-start-column="4" selection-end-line="206" selection-end-column="4" />
+          <folding>
+            <element signature="e#71605#71748#0" />
+          </folding>
         </state>
       </provider>
     </entry>
