@@ -53,13 +53,13 @@ function ChangeCountryList(countrylevel) {
         document.getElementById("myListState").disabled = false;
         document.getElementById("myListState").style.backgroundColor = "white";
     }
-    if(countrylevel === "AL"){
-        document.getElementById("myListState").disabled = true ;
-        document.getElementById("myListState").style.backgroundColor = "lightgray";
-        $("#myListCity").html("<option>-Select A City List-</option>");
-        document.getElementById("myListCity").disabled = true ;
-        document.getElementById("myListCity").style.backgroundColor = "lightgray";
-    }
+    // if(countrylevel === "AL"){
+    //     document.getElementById("myListState").disabled = true ;
+    //     document.getElementById("myListState").style.backgroundColor = "lightgray";
+    //     $("#myListCity").html("<option>-Select A City List-</option>");
+    //     document.getElementById("myListCity").disabled = true ;
+    //     document.getElementById("myListCity").style.backgroundColor = "lightgray";
+    // }
     if(countrylevel === "All Layer") {
         $('.Menu').show();
         $('.State').show();

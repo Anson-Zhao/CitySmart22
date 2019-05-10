@@ -5922,7 +5922,6 @@
       <CRS>EPSG:68186405</CRS>
       <CRS>EPSG:68206405</CRS>
       <CRS>EPSG:69036405</CRS>
-      <CRS>EPSG:404000</CRS>
       <CRS>EPSG:102113</CRS>
       <CRS>EPSG:42302</CRS>
       <CRS>EPSG:42301</CRS>
@@ -5955,6 +5954,7 @@
       <CRS>EPSG:42305</CRS>
       <CRS>EPSG:42304</CRS>
       <CRS>EPSG:42303</CRS>
+      <CRS>EPSG:404000</CRS>
       <CRS>CRS:84</CRS>
       <EX_GeographicBoundingBox>
         <westBoundLongitude>-180.0</westBoundLongitude>
