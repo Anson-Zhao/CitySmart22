@@ -79,7 +79,7 @@ $(document).ready(function() {
 
         let panelDefault2 = document.createElement("div");
         panelDefault2.id = secondL;
-        panelDefault2.className = "Menu panel panel-info " + secondL;
+        panelDefault2.className = "Menu panel panel-info " + secondL + " " + firstL + "-" + secondL;
 
         let panelHeading2 = document.createElement("div");
         panelHeading2.className = "panel-heading " + firstL + "-" + secondL;
@@ -125,13 +125,13 @@ $(document).ready(function() {
         let stateNameStr = element.StateName.replace(/\s+/g, '');
         let cityNameStr = element.CityName.replace(/\s+/g, '');
 
-        if (countryNameStr !== element.CountryName) {
-            console.log(countryNameStr);
-            console.log(element.CountryName);
+        if (thirdReplace !== element.ThirdLayer) {
+            console.log(thirdReplace);
+            console.log(element.ThirdLayer);
         }
 
         let checkboxDiv = document.createElement("div");
-        checkboxDiv.className = "State " + thirdReplace + " " + countryNameStr + " " + stateNameStr + " " + cityNameStr;
+        checkboxDiv.className = "Menu " + thirdReplace + " " + countryNameStr + " " + stateNameStr + " " + cityNameStr;
         let checkboxH5 = document.createElement("h5");
 
         let checkboxA = document.createElement("a");
@@ -142,7 +142,7 @@ $(document).ready(function() {
 
         let checkboxInput = document.createElement("input");
         checkboxInput.type = "checkbox";
-        checkboxInput.className = element.LayerType + " input " + thirdReplace;
+        checkboxInput.className = element.LayerType + " input";
         checkboxInput.setAttribute("value", element.LayerName);
 
         let checkboxSpan = document.createElement("span");

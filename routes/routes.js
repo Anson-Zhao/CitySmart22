@@ -1879,21 +1879,22 @@ module.exports = function (app, passport) {
             res.json(results);
         });
     });
+
     // Class for menu
     app.get('/ClassName', function (req, res) {
 
         res.setHeader("Access-Control-Allow-Origin", "*");
         let recieveCitylist = req.query.citylevel;
-        let my2statement = "SELECT FirstLayer, SecondLayer, ThirdLayer FROM LayerMenu WHERE StateName = ?";
+        let my2statement = "SELECT FirstLayer, SecondLayer, ThirdLayer FROM LayerMenu WHERE StateName = ? ;";
         let receiveStatelist = req.query.statelevel;
 
         if (recieveCitylist === 'All Cities') {
-            con_CS.query( my2statement , [receiveStatelist], function(err, results) {
+            con_CS.query( my2statement , receiveStatelist, function(err, results) {
                 res.json(results);
             })
         }
         else {
-            con_CS.query("SELECT FirstLayer, SecondLayer, ThirdLayer FROM LayerMenu WHERE CityName = '" + recieveCitylist + "'", function (err, results) {
+            con_CS.query("SELECT FirstLayer, SecondLayer, ThirdLayer FROM LayerMenu WHERE CityName = ? ;", recieveCitylist, function (err, results) {
                 res.json(results);
                 //select every city where state is =
             })
@@ -1906,7 +1907,7 @@ module.exports = function (app, passport) {
         res.setHeader("Access-Control-Allow-Origin", "*");
         // console.log(stat);
         let recieveCountrylist = req.query.countrylevel;
-        con_CS.query("SELECT FirstLayer, SecondLayer, ThirdLayer FROM LayerMenu WHERE CountryName = '" + recieveCountrylist + "'", function (err, results) {
+        con_CS.query("SELECT FirstLayer, SecondLayer, ThirdLayer FROM LayerMenu WHERE CountryName = ? ;", recieveCountrylist, function (err, results) {
             res.json(results);
         });
     });
@@ -1916,7 +1917,7 @@ module.exports = function (app, passport) {
         res.setHeader("Access-Control-Allow-Origin", "*");
         const recieveCountrylist = req.query.countrylevel;
         stat = "Kodiak";
-        con_CS.query("SELECT StateName FROM LayerMenu WHERE StateName <> 'All States' AND CountryName = '" + recieveCountrylist + "' GROUP BY StateName", function (err, results, fields) {
+        con_CS.query("SELECT StateName FROM LayerMenu WHERE StateName <> 'All States' AND CountryName = ? GROUP BY StateName", recieveCountrylist, function (err, results, fields) {
             res.json(results);
         });
     });
@@ -1924,10 +1925,11 @@ module.exports = function (app, passport) {
     app.get('/CityList', function (req, res) {
         res.setHeader("Access-Control-Allow-Origin", "*");
         const recieveCitylist = req.query.statelevel;
-        con_CS.query("SELECT CityName FROM LayerMenu WHERE CityName <> 'All Cities' AND StateName = '" + recieveCitylist + "' GROUP BY CityName", function (err, results, fields) {
+        con_CS.query("SELECT CityName FROM LayerMenu WHERE CityName <> 'All Cities' AND StateName = ? GROUP BY CityName" , recieveCitylist, function (err, results, fields) {
             res.json(results);
         });
     });
+
     app.get('/layerRequestContinent',function(req,res){
         res.setHeader("Access-Control-Allow-Origin", "*");
         con_CS.query("SELECT Continent,Continent_name  FROM Country group by Continent,Continent_name", function (err, results) {
@@ -1948,9 +1950,6 @@ module.exports = function (app, passport) {
             res.json(results);
         });
     });
-
-
-
 
 //AddData in table
     app.get('/AddData', function (req, res) {
@@ -2011,7 +2010,7 @@ module.exports = function (app, passport) {
     app.get('/allLayerMenu', function (req, res) {
         res.setHeader("Access-Control-Allow-Origin", "*");
 
-        con_CS.query("SELECT * From LayerMenu WHERE Status = 'Approved'", function (err, results) {
+        con_CS.query("SELECT * From LayerMenu WHERE Status = 'Approved' and Available = 'Yes'", function (err, results) {
             if (err) {
                 console.log(err);
                 res.json({"error": true, "message": "An unexpected error occurred !"});
