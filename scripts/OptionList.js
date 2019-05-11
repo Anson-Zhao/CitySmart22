@@ -163,7 +163,9 @@ function myFunction(returnCity) {
         let className2 = "." + obj2;
         let className3 = "." + obj3;
 
-        $(className1, className2, className3).show();
+        $(className1).show();
+        $(className2).show();
+        $(className3).show();
 
     }
 }

@@ -2002,7 +2002,6 @@ module.exports = function (app, passport) {
                 res.json({"error": true, "message": "An unexpected error occurred !"});
             } else {
                 res.json(results);
-                // console.log(results);
             }
         });
     });
