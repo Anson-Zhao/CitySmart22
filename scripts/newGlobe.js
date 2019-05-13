@@ -1,6 +1,6 @@
 // exports the globe to at top-level
 
-define([],function (WorldWind) {
+define(['../src/WorldWind'],function (WorldWind) {
     "use strict";
 
     // Load Globe

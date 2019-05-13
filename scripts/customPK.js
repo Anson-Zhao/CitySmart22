@@ -1,4 +1,4 @@
-define([],function (WorldWind) {
+define(['../src/WorldWind'],function (WorldWind) {
     let customPK = function (color, lat, long) {
 
          // wrap up World Wind Placemark object
@@ -8,7 +8,7 @@ define([],function (WorldWind) {
         if (Array.isArray(color)) {
             placemarkAttributes.imageSource = new WorldWind.ImageSource(imagePK(color, 5, 15));
         } else {
-            placemarkAttributes.imageSource = new WorldWind.ImageSource(imagePK(color, 0, 12));
+            placemarkAttributes.imageSource = new WorldWind.ImageSource(imagePK(color, 0, 10));
         }
 
         let highlightAttributes = new WorldWind.PlacemarkAttributes(placemarkAttributes);
