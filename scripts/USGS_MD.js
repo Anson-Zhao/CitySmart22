@@ -26,6 +26,7 @@ requirejs([
                         categoryPK.placemark.userProperties.country = v.country;
                         categoryPK.placemark.userProperties.state = v.state;
                         categoryPK.placemark.userProperties.type = v.dep_type;
+                        categoryPK.placemark.userProperties.site_name = v.dep_name;
 
                         // add this placemark onto placemarkLayer object
                         e.wLayer.addRenderable(categoryPK.placemark);

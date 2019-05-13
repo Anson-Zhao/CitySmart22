@@ -293,8 +293,23 @@ requirejs(['./newGlobe',
         for (let q = 0; q < pickList.objects.length; q++) {
             let pickedPL = pickList.objects[q].userObject;
 
-            if (pickedPL instanceof WorldWind.Placemark && !!pickedPL.userProperties.p_name) {
 
+            if (pickedPL instanceof WorldWind.Placemark && pickedPL.userProperties.layerType === 'USGS_MDPKLayer') {
+                let xOffset = Math.max(document.documentElement.scrollLeft, document.body.scrollLeft);
+                let yOffset = Math.max(document.documentElement.scrollTop, document.body.scrollTop);
+                //
+                let popover = document.getElementById('popover');
+                popover.style.position = "absolute";
+                popover.style.left = (x + xOffset - 3) + 'px';
+                popover.style.top = (y + yOffset - 3) + 'px';
+
+                var content = "<p><strong>Site Name:</strong> " + pickedPL.userProperties.dep_name +
+                    "<br>" + "<strong>Commodity:</strong> " + pickedPL.userProperties.commodity +
+                    "<br>" + "<strong>Development Status:</strong> " + pickedPL.userProperties.dep_type + "</p>";
+
+                $("#popover").attr('data-content', content);
+                $("#popover").show();
+            } else if (pickedPL instanceof WorldWind.Placemark && pickedPL.userProperties.layerType === 'USGS_WTPKLayer') {
                 let xOffset = Math.max(document.documentElement.scrollLeft, document.body.scrollLeft);
                 let yOffset = Math.max(document.documentElement.scrollTop, document.body.scrollTop);
                 //
@@ -310,9 +325,46 @@ requirejs(['./newGlobe',
 
                 $("#popover").attr('data-content', content);
                 $("#popover").show();
+            } else if (pickedPL instanceof WorldWind.Placemark && pickedPL.userProperties.layerType === 'USGS_MRPKLayer') {
+                let xOffset = Math.max(document.documentElement.scrollLeft, document.body.scrollLeft);
+                let yOffset = Math.max(document.documentElement.scrollTop, document.body.scrollTop);
+                //
+                let popover = document.getElementById('popover');
+                popover.style.position = "absolute";
+                popover.style.left = (x + xOffset - 3) + 'px';
+                popover.style.top = (y + yOffset - 3) + 'px';
+
+                var content = "<p><strong>Site Name:</strong> " + pickedPL.userProperties.site_name +
+                    "<br>" + "<strong>Commodity:</strong> " + pickedPL.userProperties.commodity +
+                    "<br>" + "<strong>Development Status:</strong> " + pickedPL.userProperties.dev_stat + "</p>";
+
+                $("#popover").attr('data-content', content);
+                $("#popover").show();
             }
+
+
+            // if (pickedPL instanceof WorldWind.Placemark && pickedPL.userProperties.layerType === 'USGS_WTPKLayer') {
+            //
+            //     let xOffset = Math.max(document.documentElement.scrollLeft, document.body.scrollLeft);
+            //     let yOffset = Math.max(document.documentElement.scrollTop, document.body.scrollTop);
+            //     //
+            //     let popover = document.getElementById('popover');
+            //     popover.style.position = "absolute";
+            //     popover.style.left = (x + xOffset - 3) + 'px';
+            //     popover.style.top = (y + yOffset - 3) + 'px';
+            //
+            //     let content = "<p><strong>Project Name:</strong> " + pickedPL.userProperties.p_name +
+            //         "<br>" + "<strong>Year Online:</strong> " + pickedPL.userProperties.p_year +
+            //         "<br>" + "<strong>Rated Capacity:</strong> " + pickedPL.userProperties.p_avgcap +
+            //         "<br>" + "<strong>Total Height:</strong> " + pickedPL.userProperties.t_ttlh + "</p>";
+            //
+            //     $("#popover").attr('data-content', content);
+            //     $("#popover").show();
+            // }
         }
     }
+
+
 
     function barChange(toggleV) {
 
