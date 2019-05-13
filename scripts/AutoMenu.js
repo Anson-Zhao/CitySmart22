@@ -1,10 +1,36 @@
 //get the data from database with certain conditions
 
 $(document).ready(function() {
+
     //Main Menu creating starts here
     let parentMenu = document.getElementById("accordion");
     let firstLayers =[];
     let secondLayers =[];
+
+    //get data from database table using routes(ajax)
+    $.ajax({
+        type: "GET",
+        url: "autoMenu",
+        dataType: "json",
+        success: function (res) {
+            // draw the first layer
+            for ( let element of res) {
+                let secondIndex = element.FirstLayer + '--' + element.SecondLayer;
+
+                if (!firstLayers.includes(element.FirstLayer)) {
+                    createFirstLayer(element.FirstLayer);
+                }
+
+                if (!secondLayers.includes(secondIndex)) {
+                    createSecondLayer(element.FirstLayer, element.SecondLayer);
+                }
+
+                setTimeout(function() {
+                    createThirdLayer(element)
+                }, 20);
+            }
+        }
+    });
 
     function createFirstLayer(firstL) {
         let panelDefault1 = document.createElement("div");
@@ -50,10 +76,10 @@ $(document).ready(function() {
     }
 
     function createSecondLayer(firstL, secondL) {
-        
+
         let panelDefault2 = document.createElement("div");
         panelDefault2.id = secondL;
-        panelDefault2.className = "Menu panel panel-info " + secondL;
+        panelDefault2.className = "Menu panel panel-info " + secondL + " " + firstL + "-" + secondL;
 
         let panelHeading2 = document.createElement("div");
         panelHeading2.className = "panel-heading " + firstL + "-" + secondL;
@@ -99,8 +125,13 @@ $(document).ready(function() {
         let stateNameStr = element.StateName.replace(/\s+/g, '');
         let cityNameStr = element.CityName.replace(/\s+/g, '');
 
+        if (thirdReplace !== element.ThirdLayer) {
+            console.log(thirdReplace);
+            console.log(element.ThirdLayer);
+        }
+
         let checkboxDiv = document.createElement("div");
-        checkboxDiv.className = "State " + thirdReplace + " " + countryNameStr + stateNameStr + cityNameStr;
+        checkboxDiv.className = "Menu " + thirdReplace + " " + countryNameStr + " " + stateNameStr + " " + cityNameStr;
         let checkboxH5 = document.createElement("h5");
 
         let checkboxA = document.createElement("a");
@@ -111,7 +142,7 @@ $(document).ready(function() {
 
         let checkboxInput = document.createElement("input");
         checkboxInput.type = "checkbox";
-        checkboxInput.className = element.LayerType + " input " + thirdReplace;
+        checkboxInput.className = element.LayerType + " input";
         checkboxInput.setAttribute("value", element.LayerName);
 
         let checkboxSpan = document.createElement("span");
@@ -128,28 +159,5 @@ $(document).ready(function() {
         document.getElementById(element.FirstLayer + "--" + element.SecondLayer).appendChild(checkboxDiv);
     }
 
-    //get data from database table using routes(ajax)
-    $.ajax({
-        type: "GET",
-        url: "autoMenu",
-        dataType: "json",
-        success: function (res) {
-            // draw the first layer
-            for ( let element of res) {
-                let secondIndex = element.FirstLayer + '--' + element.SecondLayer;
-
-                if (!firstLayers.includes(element.FirstLayer)) {
-                    createFirstLayer(element.FirstLayer);
-                }
-
-                if (!secondLayers.includes(secondIndex)) {
-                    createSecondLayer(element.FirstLayer, element.SecondLayer);
-                }
-
-                setTimeout(function() {
-                    createThirdLayer(element)
-                }, 20);
-            }
-        }
-    })
 });
+
