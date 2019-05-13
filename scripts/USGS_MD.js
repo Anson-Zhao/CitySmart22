@@ -22,13 +22,13 @@ requirejs([
                     rows.forEach(function (v, i) {
 
                         // create customized placemark and wrap it up with its own userProperties.
-                        let MDPK = new customPK(config.MD_COMM_Color[e.cName], v.latitude, v.longitude);
-                        MDPK.placemark.userProperties.country = v.country;
-                        MDPK.placemark.userProperties.state = v.state;
-                        MDPK.placemark.userProperties.url = v.url;
+                        let categoryPK = new customPK(config.MD_COMM_Color[e.cName], v.latitude, v.longitude);
+                        categoryPK.placemark.userProperties.country = v.country;
+                        categoryPK.placemark.userProperties.state = v.state;
+                        categoryPK.placemark.userProperties.type = v.dep_type;
 
                         // add this placemark onto placemarkLayer object
-                        e.wLayer.addRenderable(MDPK.placemark);
+                        e.wLayer.addRenderable(categoryPK.placemark);
 
                         data.push(new WorldWind.MeasuredLocation(v.latitude, v.longitude, 1));
 
