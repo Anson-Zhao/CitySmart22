@@ -41,7 +41,12 @@ let clientConfig = {
         Tungsten: "#922B21",
         Uranium: "#9B59B6",
         Zinc: "#BA4A00",
-        Other: "#A6ACAF"
+        Other: "#A6ACAF",
+        Producer: "#A93226",
+        Occurrence: "#82E0AA",
+        Prospect: "#28B463",
+        Unknown: "#A6ACAF",
+        undefined: "#ffffff"
     },
 
 
