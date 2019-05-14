@@ -23,10 +23,11 @@ requirejs([
 
                         // create customized placemark and wrap it up with its own userProperties.
                         let categoryPK = new customPK(config.MD_COMM_Color[e.cName], v.latitude, v.longitude);
+                        categoryPK.placemark.userProperties.dep_name = v.dep_name;
                         categoryPK.placemark.userProperties.country = v.country;
                         categoryPK.placemark.userProperties.state = v.state;
-                        categoryPK.placemark.userProperties.type = v.dep_type;
-                        categoryPK.placemark.userProperties.site_name = v.dep_name;
+                        categoryPK.placemark.userProperties.dep_type = v.dep_type;
+                        categoryPK.placemark.userProperties.commodity = v.commodity;
 
                         // add this placemark onto placemarkLayer object
                         e.wLayer.addRenderable(categoryPK.placemark);

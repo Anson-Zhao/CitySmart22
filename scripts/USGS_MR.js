@@ -34,6 +34,8 @@ requirejs([
                         categoryPK.placemark.userProperties.stat = v.stat;
                         categoryPK.placemark.userProperties.mrds_id = v.mrds_id;
                         categoryPK.placemark.userProperties.url = v.url;
+                        categoryPK.placemark.userProperties.commodity = v.commodity;
+                        categoryPK.placemark.userProperties.dev_stat = v.dev_stat;
 
                         // add this placemark onto placemarkLayer object
                         e.wLayer.addRenderable(categoryPK.placemark);
