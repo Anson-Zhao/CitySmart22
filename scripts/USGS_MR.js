@@ -16,12 +16,8 @@ requirejs([
         success: function (resp) {
             if (!resp.error) {
 
-
                 menuL.arrMR.forEach(function (e) {
-                    console.log(menuL.arrMR);
-                    // ele =>  function(ele) {
-                    //     return ele.commod1.includes(e.cName)
-                    // }
+
                     let rows = resp.data.filter(ele => ele.commod1.includes(e.cName) || ele.commod2.includes(e.cName)  || ele.commod3.includes(e.cName) );
                     let data = [];
 
