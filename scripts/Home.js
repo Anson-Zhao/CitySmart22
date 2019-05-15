@@ -311,7 +311,7 @@ requirejs(['./newGlobe',
 
                 $("#popover").attr('data-content', content);
                 $("#popover").show();
-            } else if (pickedPL instanceof WorldWind.Placemark && pickedPL.userProperties.layerType === 'USGS_MDPKLayer') {
+            } else if (pickedPL instanceof WorldWind.Placemark && !!pickedPL.userProperties.dep_name) {
                 let xOffset = Math.max(document.documentElement.scrollLeft, document.body.scrollLeft);
                 let yOffset = Math.max(document.documentElement.scrollTop, document.body.scrollTop);
                 //
@@ -326,7 +326,7 @@ requirejs(['./newGlobe',
 
                 $("#popover").attr('data-content', content);
                 $("#popover").show();
-            } else if (pickedPL instanceof WorldWind.Placemark && pickedPL.userProperties.layerType === 'USGS_MRPKLayer') {
+            } else if (pickedPL instanceof WorldWind.Placemark && !!pickedPL.userProperties.site_name) {
                 let xOffset = Math.max(document.documentElement.scrollLeft, document.body.scrollLeft);
                 let yOffset = Math.max(document.documentElement.scrollTop, document.body.scrollTop);
                 //
