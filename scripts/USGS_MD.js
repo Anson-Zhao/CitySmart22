@@ -17,7 +17,7 @@ requirejs([
             if (!resp.error) {
 
                 menuL.arrMD.forEach(function (e) {
-                    let rows = resp.data.filter(ele => ele.commodity.includes(e.cName));
+                    let rows = resp.data.filter(ele => ele.commodity.includes(e.cName)|| ele.dep_type.includes(e.cName));
                     let data = [];
                     rows.forEach(function (v, i) {
 

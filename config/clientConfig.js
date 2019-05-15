@@ -55,7 +55,7 @@ let clientConfig = {
         Sedimentary: "#58D68D  ",
         Igneous: "#A93226",
         Metamorphic: "#CD6155",
-        Surficial: "#2980B9  ",
+        Surficial: "#2980B9",
         Gemstone :"rgba(255, 255, 255, 1)",
         Unclassified: "#A6ACAF",
         Nickel : "#626567",
