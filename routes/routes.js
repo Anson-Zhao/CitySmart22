@@ -193,7 +193,7 @@ module.exports = function (app, passport) {
         res.setHeader("Access-Control-Allow-Origin", "*"); // Allow cross domain header
 
         // let statement = "SELECT p_name, xlong, ylat, p_year_color, p_avgcap_color, t_ttlh_color FROM USWTDB INNER JOIN USWTDB_COLOR ON USWTDB.case_id = USWTDB_COLOR.case_id ORDER BY p_name;";
-        let statement = "SELECT url, mrds_id, site_name, latitude, longitude, country, state, commod1, commod2, commod3 FROM mrds_sample;";
+        let statement = "SELECT url, mrds_id, site_name, latitude, longitude, country, state, dev_stat, commod1, commod2, commod3 FROM mrds_sample;";
 
         con_CS.query(statement, function (err, results, fields) {
             if (err) {

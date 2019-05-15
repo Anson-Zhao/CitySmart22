@@ -41,7 +41,12 @@ let clientConfig = {
         Tungsten: "#922B21",
         Uranium: "#9B59B6",
         Zinc: "#BA4A00",
-        Other: "#A6ACAF"
+        Other: "#A6ACAF",
+        Producer: "#A93226",
+        Occurrence: "#82E0AA",
+        Prospect: "#28B463",
+        Unknown: "#A6ACAF",
+        undefined: "#ffffff"
     },
 
 
@@ -50,7 +55,7 @@ let clientConfig = {
         Sedimentary: "#58D68D  ",
         Igneous: "#A93226",
         Metamorphic: "#CD6155",
-        Surficial: "#2980B9  ",
+        Surficial: "#2980B9",
         Gemstone :"rgba(255, 255, 255, 1)",
         Unclassified: "#A6ACAF",
         Nickel : "#626567",
