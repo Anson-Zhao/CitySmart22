@@ -3,37 +3,29 @@ requirejs([
         './customPK',
         './layerMenuAll',
         '../config/clientConfig',
-        ], function (newGlobe, customPK, menuL) {
+], function (newGlobe, customPK, menuL) {
 
     "use strict";
 
     // create placemarks base on each commodity
     $.ajax({
-        url: '/mrdsData',
+        url: '/placemarkt',
         type: 'GET',
         dataType: 'json',
         async: false,
         success: function (resp) {
             if (!resp.error) {
 
-
-                menuL.arrMR.forEach(function (e) {
-                    console.log(menuL.arrMR);
-                    // ele =>  function(ele) {
-                    //     return ele.commod1.includes(e.cName)
-                    // }
-                    let rows = resp.data.filter(ele => ele.commod1.includes(e.cName) || ele.commod2.includes(e.cName)  || ele.commod3.includes(e.cName) );
+                menuL.arrMD.forEach(function (e) {
+                    let rows = resp.data.filter(ele => ele.commodity.includes(e.cName));
                     let data = [];
-
                     rows.forEach(function (v, i) {
 
                         // create customized placemark and wrap it up with its own userProperties.
-                        let categoryPK = new customPK(config.MR_COMM_Color[e.cName], v.latitude, v.longitude);
-                        categoryPK.placemark.userProperties.site_name = v.site_name;
+                        let categoryPK = new customPK(config.MD_COMM_Color[e.cName], v.latitude, v.longitude);
                         categoryPK.placemark.userProperties.country = v.country;
-                        categoryPK.placemark.userProperties.stat = v.stat;
-                        categoryPK.placemark.userProperties.mrds_id = v.mrds_id;
-                        categoryPK.placemark.userProperties.url = v.url;
+                        categoryPK.placemark.userProperties.state = v.state;
+                        categoryPK.placemark.userProperties.type = v.dep_type;
 
                         // add this placemark onto placemarkLayer object
                         e.wLayer.addRenderable(categoryPK.placemark);
@@ -51,12 +43,12 @@ requirejs([
                             heatmapLayer.incrementPerIntensity = config.heatmapSetting.incrementPerIntensity;
 
                             heatmapLayer.enabled = false;
-                            heatmapLayer.layerType = 'USGSMR_HMLayer';
+                            heatmapLayer.layerType = 'USGSMD_HMLayer';
                             newGlobe.addLayer(heatmapLayer);
 
-                            // reset placemarkLayer properties
+                            // add customized placemarkLayer onto worldwind layers
                             e.wLayer.enabled = false;
-                            e.wLayer.layerType = 'USGSMR_PKLayer';
+                            e.wLayer.layerType = 'USGSMD_PKLayer';
                             newGlobe.addLayer(e.wLayer);
 
                         }

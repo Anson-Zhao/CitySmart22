@@ -23,6 +23,7 @@ requirejs(['./newGlobe',
     './CS_placemarkLayer',
     './CS_wmsLayer',
     './USGS_WT',
+    './USGS_MD',
     './USGS_MR'
 ], function (newGlobe, menuL) {
 
