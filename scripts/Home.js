@@ -60,10 +60,12 @@ requirejs(['./newGlobe',
 
             let toggle = this;
             let arrToggle = toggle.value.split(",");
+            console.log(arrToggle);
 
             arrToggle.forEach(function (value, i) {
 
                 let selectedIndex = newGlobe.layers.findIndex(ele => ele.displayName === value);
+                console.log(selectedIndex);
 
                 if (newGlobe.layers[selectedIndex] instanceof WorldWind.RenderableLayer) {
                     if (selectedIndex < 0 || !newGlobe.layers[selectedIndex].renderables.length) {
