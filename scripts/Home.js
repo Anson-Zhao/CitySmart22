@@ -60,7 +60,6 @@ requirejs(['./newGlobe',
 
             let toggle = this;
             let arrToggle = toggle.value.split(",");
-            console.log(arrToggle);
 
             arrToggle.forEach(function (value, i) {
 
@@ -79,7 +78,6 @@ requirejs(['./newGlobe',
                         if (toggle.checked && i === 0) {
                             let layerRequest = 'layername=' + value;
                             globePosition(layerRequest, toggle.checked);
-                            confirm("Some layers' positions might be incorrect. Please bear with us as our technicians work on it.");
                         }
 
                         if (newGlobe.layers[selectedIndex].layerType === 'USGSWT_PKLayer') {
