@@ -41,127 +41,119 @@ function getObjects(obj, key, val) {
 }
 
 function ChangeCountryList(countrylevel) {
+
     $('.Menu').hide();
-    $('.State').hide();
+
     let stateList = document.getElementById("myListState");
     while (stateList.options.length) {
         stateList.remove(0);
     }
 
-    if(countrylevel !== "SAS"){
-        $("#myListState").html("<option>-Select A State List-</option>");
-        document.getElementById("myListState").disabled = false;
-        document.getElementById("myListState").style.backgroundColor = "white";
-    }
-    if(countrylevel === "AL"){
-        document.getElementById("myListState").disabled = true ;
-        document.getElementById("myListState").style.backgroundColor = "lightgray";
-        $("#myListCity").html("<option>-Select A City List-</option>");
-        document.getElementById("myListCity").disabled = true ;
-        document.getElementById("myListCity").style.backgroundColor = "lightgray";
-    }
     if(countrylevel === "All Layer") {
+
         $('.Menu').show();
-        $('.State').show();
+        // $('.State').show();
         $("#myListState").html("<option>All Layer</option>");
         document.getElementById("myListState").disabled = true;
         document.getElementById("myListState").style.backgroundColor = "lightgray";
         $("#myListCity").html("<option>All Layer</option>");
         document.getElementById("myListCity").disabled = true;
         document.getElementById("myListCity").style.backgroundColor = "lightgray";
-    }
 
-    country = "countrylevel="+ countrylevel;
+    } else if(countrylevel !== "SAS"){
 
-    $.ajax({
-        url: "StateList",
-        method: 'GET',
-        dataType: 'json',
-        data: country,
-        success: function (results) {
-            stateList.add(new Option("All Layer", "All Layer"));
-            for(let j = 0; j < results.length; j++){
-                stateList.add(new Option(results[j].StateName, results[j].StateName));
+        $("#myListState").html("<option>-Select A State List-</option>");
+        document.getElementById("myListState").disabled = false;
+        document.getElementById("myListState").style.backgroundColor = "white";
+
+        country = "countrylevel="+ countrylevel;
+
+        $.ajax({
+            url: "StateList",
+            method: 'GET',
+            dataType: 'json',
+            data: country,
+            success: function (results) {
+                stateList.add(new Option("All Layer", "All Layer"));
+                for(let j = 0; j < results.length; j++){
+                    stateList.add(new Option(results[j].StateName, results[j].StateName));
+                }
             }
-        }
-    });
+        })
+    }
 }
 
 function ChangeStateList(statelevel) {
+
     let cityList = document.getElementById("myListCity");
     while (cityList.options.length) {
         cityList.remove(0);
     }
 
     $('.Menu').hide();
-    $('.State').hide();
 
-    if(statelevel!== "SAS"){
-        $("myListCity").html("<option> -Select A City List- </option>");
-        document.getElementById("myListCity").disabled = false;
-        document.getElementById("myListCity").style.backgroundColor = "white";
-    }
     if(statelevel === "All Layer"){
+
         $("myListCity").html("<option>All Layer</option>");
         document.getElementById("myListCity").disabled = true;
         document.getElementById("myListCity").style.backgroundColor = "lightgray";
 
-    }
-    state = "statelevel="+ statelevel;
-
-    $.ajax({
-        url: "CityList",
-        method: 'GET',
-        dataType: 'json',
-        data:state,
-        success: function (results) {
-            cityList.add(new Option("-Select a City List-", "Select a City"));
-            cityList.add(new Option("All Cities", "All Cities",));
-
-            for(var j = 0; j < results.length; j++){
-                var option = new Option(results[j].CityName, results[j].CityName);
-                cityList.add(option);
-                console.log (results[j].CityName);
-            }
-        }
-    });
-
-    $.ajax({
-        url: "CountryClassName",
-        method: 'GET',
-        dataType: 'json',
-        data:country,
-        success: function (results) {
-            if (statelevel === "All Layer") {
+        $.ajax({
+            url: "CountryClassName",
+            method: 'GET',
+            dataType: 'json',
+            data:country,
+            success: function (results) {
                 myFunction(results);
             }
-        }
-    });
+        })
+
+    } else if(statelevel!== "SAS"){
+
+        $("myListCity").html("<option> -Select A City List- </option>");
+        document.getElementById("myListCity").disabled = false;
+        document.getElementById("myListCity").style.backgroundColor = "white";
+
+        state = "statelevel="+ statelevel;
+
+        $.ajax({
+            url: "CityList",
+            method: 'GET',
+            dataType: 'json',
+            data:state,
+            success: function (results) {
+                cityList.add(new Option("-Select a City List-", "Select a City"));
+                cityList.add(new Option("All Cities", "All Cities",));
+
+                for(var j = 0; j < results.length; j++){
+                    var option = new Option(results[j].CityName, results[j].CityName);
+                    cityList.add(option);
+                    // console.log (results[j].CityName);
+                }
+            }
+        })
+    }
 }
 
 function ChangeCityList(citylevel){
 
     $('.Menu').hide();
-    $('.State').hide();
-    console.log(citylevel);
-    let city = "citylevel="+ citylevel + '&'+ state;
-    console.log(city);
 
-    $.ajax({
-        url: "ClassName",
-        method: 'GET',
-        dataType: 'json',
-        data:city,
-        success: function (results) {
-                if (citylevel !== "SAS") {
-                    myFunction(results);
+    if (citylevel !== "SAS") {
 
-                }
-
+        let city = "citylevel="+ citylevel + '&'+ state;
+        $.ajax({
+            url: "ClassName",
+            method: 'GET',
+            dataType: 'json',
+            data:city,
+            success: function (results) {
+                myFunction(results);
             }
-    });
-
+        })
+    }
 }
+
 function myFunction(returnCity) {
     for( let i = 0; i <returnCity.length ; i++){
         let obj1 = returnCity[i].FirstLayer;
@@ -170,10 +162,11 @@ function myFunction(returnCity) {
         let className1 = "." + obj1;
         let className2 = "." + obj2;
         let className3 = "." + obj3;
+
         $(className1).show();
         $(className2).show();
         $(className3).show();
-        console.log(className3);
+
     }
 }
 

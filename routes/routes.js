@@ -193,7 +193,7 @@ module.exports = function (app, passport) {
         res.setHeader("Access-Control-Allow-Origin", "*"); // Allow cross domain header
 
         // let statement = "SELECT p_name, xlong, ylat, p_year_color, p_avgcap_color, t_ttlh_color FROM USWTDB INNER JOIN USWTDB_COLOR ON USWTDB.case_id = USWTDB_COLOR.case_id ORDER BY p_name;";
-        let statement = "SELECT url, mrds_id, site_name, latitude, longitude, country, state, commod1, commod2, commod3 FROM mrds_sample;";
+        let statement = "SELECT url, mrds_id, site_name, latitude, longitude, country, state, dev_stat, commod1, commod2, commod3 FROM mrds_sample;";
 
         con_CS.query(statement, function (err, results, fields) {
             if (err) {
@@ -231,6 +231,27 @@ module.exports = function (app, passport) {
 
         // let statement = "SELECT p_name, xlong, ylat, p_year_color, p_avgcap_color, t_ttlh_color FROM USWTDB INNER JOIN USWTDB_COLOR ON USWTDB.case_id = USWTDB_COLOR.case_id ORDER BY p_name;";
         let statement = "SELECT * FROM Mineral_Deposits;";
+
+        con_CS.query(statement, function (err, results, fields) {
+            if (err) {
+                console.log(err);
+                res.json({"error": true, "message": "An unexpected error occurred !"});
+            } else {
+                // console.log("success: " + new Date());
+                // console.log(results);
+                res.json({"error": false, "data": results});
+            }
+        });
+    });
+
+
+    app.get('/placemarkt', function (req, res) {
+        // console.log("A: " + new Date());
+
+        res.setHeader("Access-Control-Allow-Origin", "*"); // Allow cross domain header
+
+        // var statement = "SELECT p_name, xlong, ylat, p_year_color, p_avgcap_color, t_ttlh_color FROM USWTDB INNER JOIN USWTDB_COLOR ON USWTDB.case_id = USWTDB_COLOR.case_id ORDER BY p_name;";
+        var statement = "SELECT * FROM Mineral_Deposits;";
 
         con_CS.query(statement, function (err, results, fields) {
             if (err) {
@@ -1924,21 +1945,22 @@ module.exports = function (app, passport) {
             res.json(results);
         });
     });
-    //Class for menu
+
+    // Class for menu
     app.get('/ClassName', function (req, res) {
 
         res.setHeader("Access-Control-Allow-Origin", "*");
         let recieveCitylist = req.query.citylevel;
-        let my2statement = "SELECT FirstLayer, SecondLayer, ThirdLayer FROM LayerMenu WHERE StateName = ?";
+        let my2statement = "SELECT FirstLayer, SecondLayer, ThirdLayer FROM LayerMenu WHERE StateName = ? ;";
         let receiveStatelist = req.query.statelevel;
 
         if (recieveCitylist === 'All Cities') {
-            con_CS.query( my2statement , [receiveStatelist], function(err, results) {
+            con_CS.query( my2statement , receiveStatelist, function(err, results) {
                 res.json(results);
             })
         }
         else {
-            con_CS.query("SELECT FirstLayer, SecondLayer, ThirdLayer FROM LayerMenu WHERE CityName = '" + recieveCitylist + "'", function (err, results) {
+            con_CS.query("SELECT FirstLayer, SecondLayer, ThirdLayer FROM LayerMenu WHERE CityName = ? ;", recieveCitylist, function (err, results) {
                 res.json(results);
                 //select every city where state is =
             })
@@ -1951,7 +1973,7 @@ module.exports = function (app, passport) {
         res.setHeader("Access-Control-Allow-Origin", "*");
         // console.log(stat);
         let recieveCountrylist = req.query.countrylevel;
-        con_CS.query("SELECT FirstLayer, SecondLayer, ThirdLayer FROM LayerMenu WHERE CountryName = '" + recieveCountrylist + "'", function (err, results) {
+        con_CS.query("SELECT FirstLayer, SecondLayer, ThirdLayer FROM LayerMenu WHERE CountryName = ? ;", recieveCountrylist, function (err, results) {
             res.json(results);
         });
     });
@@ -1959,25 +1981,24 @@ module.exports = function (app, passport) {
 
     app.get('/StateList', function (req, res) {
         res.setHeader("Access-Control-Allow-Origin", "*");
-        let recieveCountrylist = req.query.countrylevel;
-        // stat = "Kodiak";
-        con_CS.query("SELECT StateName FROM LayerMenu  WHERE CountryName = '" + recieveCountrylist + "' GROUP BY StateName", function (err, results, fields) {
+        const recieveCountrylist = req.query.countrylevel;
+        stat = "Kodiak";
+        con_CS.query("SELECT StateName FROM LayerMenu WHERE StateName <> 'All States' AND CountryName = ? GROUP BY StateName", recieveCountrylist, function (err, results, fields) {
             res.json(results);
         });
     });
     //city level
     app.get('/CityList', function (req, res) {
         res.setHeader("Access-Control-Allow-Origin", "*");
-        let recieveCitylist = req.query.statelevel;
-        // console.log(recieveCitylist);
-        // stat = "ddd";
-        con_CS.query("SELECT CityName FROM LayerMenu  WHERE StateName = '" + recieveCitylist + "' GROUP BY CityName", function (err, results, fields) {
+        const recieveCitylist = req.query.statelevel;
+        con_CS.query("SELECT CityName FROM LayerMenu WHERE CityName <> 'All Cities' AND StateName = ? GROUP BY CityName" , recieveCitylist, function (err, results, fields) {
             res.json(results);
         });
     });
+
     app.get('/layerRequestContinent',function(req,res){
         res.setHeader("Access-Control-Allow-Origin", "*");
-        con_CS.query("SELECT Continent,Contitent_name  FROM Country group by Continent,Contitent_name", function (err, results) {
+        con_CS.query("SELECT Continent,Continent_name  FROM Country group by Continent,Continent_name", function (err, results) {
             // console.log(results);
             if (err) throw err;
             res.json(results);
@@ -1987,7 +2008,7 @@ module.exports = function (app, passport) {
     app.get('/layerRequestCountry',function(req,res){
         res.setHeader("Access-Control-Allow-Origin", "*");
         // console.log(req.query);
-        let recieveCountryData = req.query.country;
+        const recieveCountryData = req.query.country;
         // console.log(recieveCountryData);
         con_CS.query("SELECT Country_name FROM Country WHERE Continent = ?", recieveCountryData, function (err, results) {
             console.log(results);
@@ -2041,7 +2062,7 @@ module.exports = function (app, passport) {
         // res.setHeader("Access-Control-Allow-Origin", "*"); // Allow cross domain header
         let queryState = "SELECT FirstLayer, SecondLayer, ThirdLayer, " +
             "GROUP_CONCAT(LayerName) as LayerName, LayerType, CountryName, StateName, CityName " +
-            "FROM CitySmart2.LayerMenu WHERE Status = 'Approved' " +
+            "FROM CitySmart2.LayerMenu WHERE Status = 'Approved' and Available = 'Yes' " +
             "GROUP BY FirstLayer, SecondLayer, ThirdLayer, LayerType, CountryName, StateName, CityName";
 
         con_CS.query(queryState, function (err, results) {
@@ -2050,7 +2071,6 @@ module.exports = function (app, passport) {
                 res.json({"error": true, "message": "An unexpected error occurred !"});
             } else {
                 res.json(results);
-                // console.log(results);
             }
         });
     });
@@ -2058,7 +2078,7 @@ module.exports = function (app, passport) {
     app.get('/allLayerMenu', function (req, res) {
         res.setHeader("Access-Control-Allow-Origin", "*");
 
-        con_CS.query("SELECT * From LayerMenu WHERE Status = 'Approved'", function (err, results) {
+        con_CS.query("SELECT * From LayerMenu WHERE Status = 'Approved' and Available = 'Yes'", function (err, results) {
             if (err) {
                 console.log(err);
                 res.json({"error": true, "message": "An unexpected error occurred !"});
@@ -2100,7 +2120,7 @@ module.exports = function (app, passport) {
         });
     });
 
-    app.get('/reDownload', (req, res) => predownloadXml());
+    app.get('/reDownload', () => predownloadXml());
 
 
 // Customized Functions Below
@@ -2534,7 +2554,7 @@ function QueryStat(myObj, sqlStat, res) {
             },
             function(token, done, err) {
                 // Message object
-                let message = {
+                const message = {
                     from: 'FTAA <aaaa.zhao@g.northernacademy.org>', // sender info
                     to: username, // Comma separated list of recipients
                     subject: subject, // Subject of the message
@@ -2587,7 +2607,7 @@ function QueryStat(myObj, sqlStat, res) {
             },
             function(token, done, err) {
                 // Message object
-                let message = {
+                const message = {
                     from: 'FTAA <aaaa.zhao@g.northernacademy.org>', // sender info
                     to: username, // Comma separated list of recipients
                     subject: subject, // Subject of the message
@@ -2615,7 +2635,7 @@ function QueryStat(myObj, sqlStat, res) {
     }
 
     function successMail(username, subject, text, res) {
-        let message = {
+        const message = {
             from: 'FTAA <aaaa.zhao@g.northernacademy.org>',
             to: username,
             subject: subject,
