@@ -24,7 +24,8 @@ requirejs(['./newGlobe',
     './CS_wmsLayer',
     './USGS_WT',
     './USGS_MD',
-    './USGS_MR'
+    './USGS_MR',
+    './heat'
 ], function (newGlobe, menuL) {
 
     "use strict";
@@ -64,6 +65,15 @@ requirejs(['./newGlobe',
             arrToggle.forEach(function (value, i) {
 
                 let selectedIndex = newGlobe.layers.findIndex(ele => ele.displayName === value);
+
+                console.log("0");
+                console.log(newGlobe.layers);
+                if (value === "heat") {
+                    console.log("1");
+                    console.log(value);
+                    let layerRequest = 'layername=' + value;
+                    globePosition(layerRequest, toggle.checked);
+                }
 
                 if (newGlobe.layers[selectedIndex] instanceof WorldWind.RenderableLayer) {
                     if (selectedIndex < 0 || !newGlobe.layers[selectedIndex].renderables.length) {
