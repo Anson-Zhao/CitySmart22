@@ -77,7 +77,7 @@ requirejs(['./newGlobe',
                         if (toggle.checked && i === 0) {
                             let layerRequest = 'layername=' + value;
                             globePosition(layerRequest, toggle.checked);
-                            confirm("Some layers' positions might be incorrect. Please bear with us as our technicians work on it.");
+                            // confirm("Some layers' positions might be incorrect. Please bear with us as our technicians work on it.");
                         }
 
                         if (newGlobe.layers[selectedIndex].layerType === 'USGSWT_PKLayer') {
