@@ -69,7 +69,7 @@
 	<% } %>
 	<!-- LOGIN FORM -->
 	<!--<form onsubmit="return checkForm()" action="/signup" method="post" id="signup">-->
-	<form  onsubmit="return checkForm()" action="/signup" method="post" id="signup">
+	<form action="/signup" method="post" id="signup">
 		<div class="form-group">
 			<label>Username (email address):</label>
 			<input type="email" class="form-control" name="username" onchange="SearchUsername(this.value)" style="height: 50px;" required>
@@ -175,6 +175,56 @@
 			}
 		})
 	}
+
+	// function checkForm() {
+	// 	let xyj = document.getElementById("updateForm");
+	// 	let oldP = document.getElementById("currentPassword").value;
+	// 	let newP = document.getElementById("newPassword").value;
+	// 	let confirmP = document.getElementById("confirmPassword").value;
+	// 	let userEditData = "username=" + getvalue[0] + "&pass=" + document.getElementById("currentPassword").value;
+	// 	if (LoginUser !== getvalue[0]) {
+	// 		if (confirmP !== "" && newP !== "") {
+	// 			if (newP === confirmP) {
+	// 				alert("Your new passwords match!");
+	// 				document.getElementById("updateForm").removeAttribute("disabled");
+	// 				xyj.style.display === "none";
+	// 			} else {
+	// 				alert("New passwords do not match! Please try again.");
+	// 			}
+	// 		}
+	// 	} else {
+	// 		$.ajax({
+	// 			url  : '/checkpassword',
+	// 			method : "POST",
+	// 			data : userEditData,
+	// 			dataType: 'json',
+	// 			success : function(d){
+	// 				if (d === true) {
+	// 					alert("Please make sure you typed your current password correctly.");
+	// 				}else if(d === false){
+	// 					if (oldP !== "" && confirmP !== "" && newP !== "") {
+	// 						if (oldP !== newP) {
+	// 							if (newP === confirmP) {
+	// 								alert("You can submit now!");
+	// 								document.getElementById("updateForm").removeAttribute("disabled");
+	// 							} else {
+	// 								alert("New passwords do not match!");
+	// 							}
+	// 						} else {
+	// 							alert("Your new password should be different from your current password.");
+	// 						}
+	// 					} else {
+	// 						alert("All password fields are required.");
+	// 					}
+	// 				}
+	// 			}
+	// 		});
+	// 	}
+	//
+	//
+	// }
+
+
 </script>
 </body>
 </html>

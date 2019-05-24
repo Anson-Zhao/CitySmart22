@@ -36,7 +36,7 @@ const smtpTrans = nodemailer.createTransport({
     service: 'Gmail',
     auth: {
         user: 'aaaa.zhao@g.northernacademy.org',
-        pass: "12344321"
+        pass: "qwer1234"
     }
 });
 
@@ -927,7 +927,8 @@ module.exports = function (app, passport) {
 
         myStat = "INSERT INTO UserLogin ( username, password, userrole, dateCreated, dateModified, createdUser, status) VALUES ( '" + newUser.username + "','" + newUser.password+ "','" + newUser.userrole+ "','" + newUser.dateCreated+ "','" + newUser.dateModified+ "','" + newUser.createdUser + "','" + newUser.status + "');";
         mylogin = "INSERT INTO UserProfile ( username, firstName, lastName) VALUES ('"+ newUser.username + "','" + newUser.firstName+ "','" + newUser.lastName + "');";
-        con_CS.query(myStat + mylogin, function (err, rows) {
+
+        con_CS.query(myStat + ''+ mylogin, function (err) {
             // newUser.id = rows.insertId;
             if (err) {
                 console.log(err);
