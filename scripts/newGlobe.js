@@ -1,8 +1,10 @@
 // exports the globe to at top-level
 
-define(['./WorldWindShim'],function (WorldWind) {
+define([],function () {
     "use strict";
+
     // Load Globe
+    // let wwd = window.WorldWind;
     let globe = new WorldWind.WorldWindow('canvasOne');
 
     let layers = [
