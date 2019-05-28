@@ -346,7 +346,7 @@
                         <label class="col-md-4 control-label">Picture String Name</label>
                         <div class="col-md-8 inputGroupContainer">
                             <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
-                                <input id="pictureStr" name="Layer_Uploader_name" value="" placeholder="Layer Name.  NOTE: Do not include spaces." class="form-control" required  type="text" onchange="SearchLayerName(this.value)"></div>
+                                <input id="pictureStr" name="Layer_Uploader_name" value="" placeholder="Layer Name.  NOTE: Do not include spaces." class="form-control" required  type="text" onchange="SearchLayerName(this.value)" disabled></div>
                             <p id="LayerUploaderName" style="color: palevioletred;margin-top:15px;"></p>
                         </div>
                     </div>
@@ -507,6 +507,47 @@
             }
         });
     }
+
+
+    function SearchLayerName (LayerValue){
+
+        let LayersValue = "LayerName="+LayerValue;
+        // let LayerUploaderName = document.getElementById("LayerUploaderName")
+        //
+        // while (countryList.options.length) {
+        //     countryList.remove(0);
+        // }
+        //
+        // if(LayerValue !== 'SAS'){
+        //     countryList.disabled = false;
+        // }
+        //
+        // if(LayerValue === "AL"){
+        //     countryList.disabled = true;
+        //     $("#country").html("<option>SELECT A COUNTRY</option>")
+        // }
+
+        $.ajax({
+            url: "searchlayername",
+            method: 'GET',
+            dataType: 'json',
+            data: LayersValue,
+            success: function (results) {
+                for (let i = 0; i < results.length; i++) {
+                    // let newRes = JSON.stringify(results);
+                    console.log(LayerValue);
+                    console.log(results[i].LayerName);
+                    if (value === results[i].LayerName) {
+                        document.getElementById("pictureStr").innerHTML = "This layer name is already taken. Please use a different one.";
+                        break;
+                    } else {
+                        document.getElementById("pictureStr").innerHTML = "";
+                    }
+                }
+            }
+        });
+    }
+
 
     function clearForm(){
         if (confirm("Are you sure you want to clear the form? All the data will be reset accordingly!") === true) {

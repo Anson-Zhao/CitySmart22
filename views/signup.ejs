@@ -159,6 +159,7 @@
 	function SearchUsername(value) {
 		$.ajax({
 			url: "SearchUsername",
+			method: 'GET',
 			dataType: "json",
 			success: function (results) {
 				for (let i = 0; i < results.length; i++) {

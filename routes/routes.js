@@ -1364,6 +1364,8 @@ module.exports = function (app, passport) {
         let result = Object.keys(req.body).map(function (key) {
             return [String(key), req.body[key]];
         });
+        console.log("Result");
+        console.log(result);
 
         res.setHeader("Access-Control-Allow-Origin", "*");
 
@@ -1389,6 +1391,15 @@ module.exports = function (app, passport) {
 
         let statement2 = "INSERT INTO Request_Form (" + name + ") VALUES (" + valueSubmit + ");";
         let statement = "UPDATE Request_Form SET ThirdLayer = '" + result[7][1] + "' WHERE RID = '" + result[1][1] + "';";
+        console.log('name and valuesubmit');
+        console.log(name);
+        console.log(valueSubmit);
+        console.log('Barry');
+        console.log(newImage.Layer_Uploader);
+        console.log(newImage.Layer_Uploader_name);
+        console.log('Seoul');
+        console.log(statement);
+        console.log(statement2);
 
         con_CS.query(statement2 + statement, function (err, result) {
             if (err) {
