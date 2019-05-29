@@ -56,7 +56,7 @@
                             <span class="qq-upload-file-selector qq-upload-file"></span>
                             <span class="qq-edit-filename-icon-selector qq-btn qq-edit-filename-icon" aria-label="Edit filename"></span>
                         </div>
-                        <input class="qq-edit-filename-selector qq-edit-filename" tabindex="0" type="text">
+                        <input class="qq-edit-filename-selector qq-edit-filename" tabindex="0" type="text" spellcheck="true">
                         <span class="qq-upload-size-selector qq-upload-size"></span>
                         <button type="button" class="qq-btn qq-upload-delete-selector qq-upload-delete">
                             <span class="qq-btn qq-delete-icon" aria-label="Delete"></span>
@@ -277,7 +277,7 @@
                                     <option value="other">Other(Please specify)</option>
                                 </select>
                                 <div id="other1" style="display:none;">
-                                    <input class="other" type="text" name="FirstOther" id="inputone">
+                                    <input class="other" type="text" name="FirstOther" id="inputone" spellcheck="true">
                                 </div>
                             </div>
                         </div>
@@ -292,7 +292,7 @@
                                     <option value="other" id="secondOther">Other(Please specify)</option>
                                 </select>
                                 <div id="other2" style="display:none;">
-                                    <input class="other" type="text" name="SecondOther" id="inputtwo">
+                                    <input class="other" type="text" name="SecondOther" id="inputtwo" spellcheck="true">
                                 </div>
                             </div>
                         </div>
@@ -301,7 +301,7 @@
                         <label class="col-md-4 control-label">Layer Name</label>
                         <div class="col-md-8 inputGroupContainer">
                             <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
-                                <input id="LayerNameInput" name="LayerName" value="" placeholder="Layer Name.  NOTE: Do not include spaces." class="form-control" required  type="text" onchange="SearchLayerName(this.value)"></div>
+                                <input id="LayerNameInput" name="LayerName" value="" placeholder="Layer Name.  NOTE: Do not include spaces." class="form-control" required  type="text" onchange="SearchLayerName(this.value)" spellcheck="true"></div>
                             <p id="LayerName1" style="color: palevioletred;margin-top:15px;"></p>
                         </div>
                     </div>
@@ -310,7 +310,7 @@
                         <div class="col-md-8 inputGroupContainer">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
-                                <input id="DisplayName" name="ThirdLayer" value="" placeholder="ThirdLayer Name.  NOTE: Do not include spaces." class="form-control" required  type="text" onchange="SearchThirdLayer(this.value)"></div>
+                                <input id="DisplayName" name="ThirdLayer" value="" placeholder="ThirdLayer Name.  NOTE: Do not include spaces." class="form-control" required  type="text" onchange="SearchThirdLayer(this.value)" spellcheck="true"></div>
                             <p id="LayerName2" style="color:palevioletred; margin-top:15px;"></p>
                         </div>
                     </div>
@@ -381,7 +381,7 @@
                         <label class="col-md-4 control-label">Layer Description</label>
                         <div class="col-md-8 inputGroupContainer">
                             <div>
-                                <textarea class="form-control" id="message" name="Layer_Description" placeholder="Enter your description here..." required type="text" rows="6" maxlength="400" ></textarea>
+                                <textarea class="form-control" id="message" name="Layer_Description" placeholder="Enter your description here..." required type="text" rows="6" maxlength="400" spellcheck="true"></textarea>
                                 <p style="color:palevioletred;margin-top:15px;">Please include image resolution, drone altitude, date created and other conditions.</p>
                             </div>
                         </div>
@@ -425,7 +425,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-md-4 control-label" id="msg">Layer Uploader <p>(You can only upload one file)</p> </label>
+                        <label class="col-md-4 control-label" id="msg">Layer Uploader <p id="bobman">(You can only upload one file)</p> </label>
                         <div class="col-md-8 inputGroupContainer">
                             <div id="uploader"></div>
                         </div>
@@ -437,7 +437,7 @@
                         <label class="col-md-4 control-label">Reject Comments <p>(official use only)</p></label>
                         <div class="col-md-8 inputGroupContainer">
                             <div>
-                                <textarea class="form-control" id="comment" name="Comments" disabled type="text" rows="8" maxlength="500" ></textarea>
+                                <textarea class="form-control" id="comment" name="Comments" disabled type="text" rows="8" maxlength="500" spellcheck="true"></textarea>
                             </div>
                         </div>
                     </div>
@@ -493,6 +493,7 @@
         }
 
         if (UserRole === "Admin") {
+            document.getElementById("msg").innerHTML = "";
             document.getElementById("comment").disabled = false;
             document.getElementById("approve").disabled = false;
             document.getElementById("reject").disabled = false;
@@ -508,11 +509,11 @@
             document.getElementById('sub').disabled = false;
             document.getElementById('main').disabled = false;
             document.getElementsByClassName('qq-uploader-selector').disabled = true;
-            document.getElementById('upload-button').disabled = true;
-            // $('#upload-button').prop('disabled',true);
             document.getElementById("submit").style.backgroundColor = "lightgray";
             document.getElementById("adminonly").style.display = "block";
             document.getElementById("comment").placeholder = "Please describe why you are rejecting the request.";
+            // document.getElementById('upload-button').disabled = true;
+            // $('#upload-button').prop('disabled',true);
         } else if (UserRole === "Regular") {
             document.getElementById("comment").disabled = true;
             document.getElementById("submit").disabled = false;
@@ -594,19 +595,19 @@
             }
         });
 
-        $("#testButton").click(function () {
-            let data = $("#layer").serialize();
-            console.log(data);
-            $.ajax({
-                url: 'testB',
-                method: "post",
-                data: data,
-                dataType: 'json',
-                success: function (d) {
-                    console.log(data);
-                }
-            });
-        })
+        // $("#testButton").click(function () {
+        //     let data = $("#layer").serialize();
+        //     console.log(data);
+        //     $.ajax({
+        //         url: 'testB',
+        //         method: "post",
+        //         data: data,
+        //         dataType: 'json',
+        //         success: function (d) {
+        //             console.log(data);
+        //         }
+        //     });
+        // })
 
         // Wait for the DOM to be ready
         $('#layer').validate({

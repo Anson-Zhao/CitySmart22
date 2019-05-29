@@ -676,6 +676,7 @@ module.exports = function (app, passport) {
     });
 
     app.get('/layerReqQuery', isLoggedIn, function (req, res) {
+        console.log('queryboy');
         console.log(req.query);
         let iniStat = "SELECT * FROM Request_Form";
         let myQueryObj = [ //change everything because we need to make sure it matches what we want to happen in client side

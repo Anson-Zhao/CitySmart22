@@ -243,7 +243,7 @@
     </div>
     <br>
     <div class="center" style="width: 850px;">
-        <h4 id="subtitles"><strong>Most Recent Records (still pending approval):</strong></h4>
+        <h4 id="subtitles"><strong>Most Recent Records (Pending or Rejected):</strong></h4>
         <div id="dvData">
             <table id="dataDisplay">
                 <thead>
@@ -309,6 +309,7 @@
     let transactionID = [];
     let LayerNameStr = [];
     let queryStr;
+    let queryStr2;
 
     $(document).ready(function() {
 
@@ -325,11 +326,14 @@
             if (UserRole === "Regular") {
                 document.getElementById('searchname').style.display = "none"; //disables username search for regular members
                 queryStr = "Current_Status=Pending&UID=" + username;
+                queryStr2 = "Current_Status=Rejected&UID=" + username;
             } else {
                 queryStr = "Current_Status=Pending";
+                queryStr2 = "Current_Status=Rejected";
             }
             console.log(queryStr);
             queryAndDisplay(queryStr);
+            queryAndDisplay(queryStr2);
             //the console below refers to the above as querystr
             // just for the Pending table
             //By changing this we allow the initial table to only show pending records
@@ -452,12 +456,14 @@
         let endDate = document.getElementsByClassName("date")[1].value;
 
         queryStr = "firstName=" + firstName + "&lastName=" + lastName + "&startDate=" + startDate + "&endDate=" + endDate;
+        queryStr2 = "firstName=" + firstName + "&lastName=" + lastName + "&startDate=" + startDate + "&endDate=" + endDate;
 //This queryStr is for the admin's filtering options, that's why you need first and last names
         table.clear();
         table.draw();
         // trapTable.clear();
         // trapTable.draw();
         queryAndDisplay(queryStr);
+        queryAndDisplay(queryStr2);
     }
 
     let queryAndDisplay = function (query) {
@@ -470,7 +476,7 @@
             success: function (results) {
                 console.log(results);
                 if (results.errMsg === "no data") {
-                    alert("You currently have no pending data entries!");//this right here will let users know that they currently have no pending records;
+                    alert("You currently have no pending/rejected data entries!");//this right here will let users know that they currently have no pending records;
                     //clarifies that it is not an error
                     table.draw();
                 } else if (results.errMsg === "fail") {
