@@ -476,7 +476,7 @@
             success: function (results) {
                 console.log(results);
                 if (results.errMsg === "no data") {
-                    alert("You currently have no pending/rejected data entries!");//this right here will let users know that they currently have no pending records;
+                    alert("You currently have no pending data entries!");//this right here will let users know that they currently have no pending records;
                     //clarifies that it is not an error
                     table.draw();
                 } else if (results.errMsg === "fail") {
