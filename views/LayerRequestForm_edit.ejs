@@ -512,9 +512,11 @@
             document.getElementById("submit").style.backgroundColor = "lightgray";
             document.getElementById("adminonly").style.display = "block";
             document.getElementById("comment").placeholder = "Please describe why you are rejecting the request.";
+            console.log(document.getElementsByClassName('qq-upload-button'));
+            // document.getElementsByClassName('qq-upload-button')[0].disabled = true;
             // document.getElementById('upload-button').disabled = true;
             document.getElementById("approve").disabled = false;
-            document.getElementById("uploader").disabled = true;
+            document.getElementById("uploader").hidden = true;
             // $('#upload-button').prop('disabled',true);
         } else if (UserRole === "Regular") {
             document.getElementById("comment").disabled = true;
@@ -611,9 +613,12 @@
         //     });
         // })
 
+
         // Wait for the DOM to be ready
         $('#layer').validate({
             // Specify validation rules
+            success: "valid",
+            debug: true,
             rules: {
                 // The key name on the left side is the name attribute
                 // of an input field. Validation rules are defined
@@ -643,9 +648,26 @@
             // Make sure the form is submitted to the destination defined
             // in the "action" attribute of the form when valid
             submitHandler: function (form) {
+                alert("tell");
                 submitForm();
             }
         });
+
+        // ("#myform").validate({
+        //     invalidHandler: function(event, validator) {
+        //         // 'this' refers to the form
+        //         var errors = validator.numberOfInvalids();
+        //         if (errors) {
+        //             var message = errors == 1
+        //                 ? 'You missed 1 field. It has been highlighted'
+        //                 : 'You missed ' + errors + ' fields. They have been highlighted';
+        //             $("div.error span").html(message);
+        //             $("div.error").show();
+        //         } else {
+        //             $("div.error").hide();
+        //         }
+        //     }
+        // });
 
         $("#City").click(function () {
             new dgCitysCountries({
