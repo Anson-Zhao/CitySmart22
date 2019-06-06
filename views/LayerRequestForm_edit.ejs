@@ -811,6 +811,10 @@
             if (confirm("Are you sure you would like to submit this data?") === true) {
                 let regulardata = $("#layer").serialize();
                 let status = "status=" + rowSelectedValue[15];
+                console.log('status');
+                console.log(status);
+                console.log('regular data');
+                console.log(regulardata);
                 $.ajax({
                     url: 'rsubmit',
                     method: "post",
