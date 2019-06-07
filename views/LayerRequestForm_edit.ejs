@@ -458,6 +458,7 @@
     <script>
     let UserRole = "<%= user.userrole %>";
     let rowSelectedValue = JSON.parse(localStorage.getItem("rowSelectedValue"));
+    let continentList = document.getElementById("continent2");
 
     $(document).ready(function() {
         document.getElementById('date').value = rowSelectedValue[0];
@@ -521,6 +522,8 @@
         } else if (UserRole === "Regular") {
             document.getElementById("comment").disabled = true;
             document.getElementById("submit").disabled = false;
+            document.getElementById("continent2").disabled = false;
+            document.getElementById("country2").disabled = false;
             document.getElementById("adminonly").style.display = "none";
             document.getElementById("approve").style.backgroundColor = "lightgray";
             document.getElementById("reject").style.backgroundColor = "lightgray";
@@ -538,9 +541,20 @@
         $("#City").change(function () {
             let val = $(this).val();
             if (val == "select") {
-                $("#country").html("<option value='select'>SELECT SUBCATEGORY</option>");
+                $("#country2").html("<option value='select'>SELECT SUBCATEGORY</option>");
             }
         })
+
+        $.ajax({
+            url: "layerRequestContinent",
+            method: 'GET',
+            dataType: 'json',
+            success: function (results) {
+                for (let i = 0; i < results.length; i++) {
+                    continentList.add(new Option(results[i].Continent_name, results[i].Continent));
+                }
+            }
+        });
 
         //resubmit the photo
         let photoDiv = $("#photo");
@@ -671,9 +685,9 @@
         $("#City").click(function () {
             new dgCitysCountries({
                 CityVal: document.getElementById("City").val,
-                countryVal: document.getElementById("country").val,
+                countryVal: document.getElementById("country2").val,
                 City: document.getElementById("City"),
-                country: document.getElementById("country"),
+                country: document.getElementById("country2"),
                 change: true
             });
         });
@@ -693,6 +707,8 @@
                     window.location.replace('/userHome')
                 }
             });
+
+
             // if (confirm("Are you sure to reject the data?") === true) {
             //     let tID = "reject=" + document.getElementById('RID').value;
             //     let Comment = "comment=" + document.getElementById('comment').value;
@@ -750,7 +766,7 @@
     function changeContinent (continentValue){
 
         let country = "country="+continentValue;
-        let countryList = document.getElementById("country")
+        let countryList = document.getElementById("country2")
 
         while (countryList.options.length) {
             countryList.remove(0);
@@ -762,7 +778,7 @@
 
         if(continentValue === "AL"){
             countryList.disabled = true;
-            $("#country").html("<option>SELECT A COUNTRY</option>")
+            $("#country2").html("<option>SELECT A COUNTRY</option>")
         }
 
         $.ajax({
@@ -863,7 +879,7 @@
            $("#main").value = "Category";
             $("#sub").html("<option>SELECT SUBCATEGORY</option>");
             $("#City").html("<option>SELECT CONTINENT</option>");
-            $("#country").html("<option>SELECT COUNTRY</option>");
+            $("#country2").html("<option>SELECT COUNTRY</option>");
         }
     }
 
