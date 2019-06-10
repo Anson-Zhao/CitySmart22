@@ -44,6 +44,9 @@ requirejs(['./newGlobe',
     //All the event listeners
     $(document).ready(function () {
 
+        var dateT = new Date();
+        console.log(dateT.toString());
+
         //the beginning value of the button
         currentSelectedLayer.prop('value', 'No Layer Selected');
         nextL.prop('disabled', true);

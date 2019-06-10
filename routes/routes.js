@@ -927,13 +927,11 @@ module.exports = function (app, passport) {
 
         myStat = "INSERT INTO UserLogin ( username, password, userrole, dateCreated, dateModified, createdUser, status) VALUES ( '" + newUser.username + "','" + newUser.password+ "','" + newUser.userrole+ "','" + newUser.dateCreated+ "','" + newUser.dateModified+ "','" + newUser.createdUser + "','" + newUser.status + "');";
         mylogin = "INSERT INTO UserProfile ( username, firstName, lastName) VALUES ('"+ newUser.username + "','" + newUser.firstName+ "','" + newUser.lastName + "');";
-
-        con_CS.query(myStat + ''+ mylogin, function (err) {
+        con_CS.query(myStat + mylogin, function (err, rows) {
             // newUser.id = rows.insertId;
             if (err) {
                 console.log(err);
                 res.json({"error": true, "message": "An unexpected error occurred!"});
-                res.end();
             } else {
                 let username = req.body.username;
                 let subject = "Sign Up";
@@ -1978,9 +1976,6 @@ module.exports = function (app, passport) {
             res.json(results);
         });
     });
-
-
-
 
 //AddData in table
     app.get('/AddData', function (req, res) {
