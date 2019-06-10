@@ -61,6 +61,14 @@ requirejs(['./newGlobe',
                 firstTime = false; //alert (only appear at the first time)
             }
 
+            //if the there is already one toggle switch is turned on, as another toggle is clicked then close the last button
+            if (arrMenu.length> 0 ) {
+                var clickedClass = '.'+arrMenu[arrMenu.length-1];
+                $(clickedClass).prop('checked',false);
+                var lastIndex = newGlobe.layers.findIndex(ele => ele.displayName === arrMenu[arrMenu.length-1]);
+                newGlobe.layers[lastIndex].enabled = clickedClass.checked;
+            }
+
             let toggle = this;
             let arrToggle = toggle.value.split(",");
 
