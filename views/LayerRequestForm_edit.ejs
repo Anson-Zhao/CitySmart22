@@ -56,7 +56,7 @@
                             <span class="qq-upload-file-selector qq-upload-file"></span>
                             <span class="qq-edit-filename-icon-selector qq-btn qq-edit-filename-icon" aria-label="Edit filename"></span>
                         </div>
-                        <input class="qq-edit-filename-selector qq-edit-filename" tabindex="0" type="text">
+                        <input class="qq-edit-filename-selector qq-edit-filename" tabindex="0" type="text" spellcheck="true">
                         <span class="qq-upload-size-selector qq-upload-size"></span>
                         <button type="button" class="qq-btn qq-upload-delete-selector qq-upload-delete">
                             <span class="qq-btn qq-delete-icon" aria-label="Delete"></span>
@@ -209,9 +209,10 @@
 
 </head>
 
-<body onload="init()">
-    <div class="navul" style="height: 150px;
-        background: #000000;">
+<body>
+<!--<body onload="init()">-->
+    <!--<div class="navul" style="height: 150px;-->
+        <!--background: #000000;">-->
         <a class="navul" href="//aworldbridge.com" style="background: #000000;
         width: 500px;
         height: 60px;">
@@ -276,7 +277,7 @@
                                     <option value="other">Other(Please specify)</option>
                                 </select>
                                 <div id="other1" style="display:none;">
-                                    <input class="other" type="text" name="FirstOther" id="inputone">
+                                    <input class="other" type="text" name="FirstOther" id="inputone" spellcheck="true">
                                 </div>
                             </div>
                         </div>
@@ -291,7 +292,7 @@
                                     <option value="other" id="secondOther">Other(Please specify)</option>
                                 </select>
                                 <div id="other2" style="display:none;">
-                                    <input class="other" type="text" name="SecondOther" id="inputtwo">
+                                    <input class="other" type="text" name="SecondOther" id="inputtwo" spellcheck="true">
                                 </div>
                             </div>
                         </div>
@@ -300,7 +301,7 @@
                         <label class="col-md-4 control-label">Layer Name</label>
                         <div class="col-md-8 inputGroupContainer">
                             <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
-                                <input id="LayerNameInput" name="LayerName" value="" placeholder="Layer Name.  NOTE: Do not include spaces." class="form-control" required  type="text" onchange="SearchLayerName(this.value)"></div>
+                                <input id="LayerNameInput" name="LayerName" value="" placeholder="Layer Name.  NOTE: Do not include spaces." class="form-control" required  type="text" onchange="SearchLayerName(this.value)" spellcheck="true"></div>
                             <p id="LayerName1" style="color: palevioletred;margin-top:15px;"></p>
                         </div>
                     </div>
@@ -309,7 +310,7 @@
                         <div class="col-md-8 inputGroupContainer">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
-                                <input id="DisplayName" name="ThirdLayer" value="" placeholder="ThirdLayer Name.  NOTE: Do not include spaces." class="form-control" required  type="text" onchange="SearchThirdLayer(this.value)"></div>
+                                <input id="DisplayName" name="ThirdLayer" value="" placeholder="ThirdLayer Name.  NOTE: Do not include spaces." class="form-control" required  type="text" onchange="SearchThirdLayer(this.value)" spellcheck="true"></div>
                             <p id="LayerName2" style="color:palevioletred; margin-top:15px;"></p>
                         </div>
                     </div>
@@ -380,7 +381,7 @@
                         <label class="col-md-4 control-label">Layer Description</label>
                         <div class="col-md-8 inputGroupContainer">
                             <div>
-                                <textarea class="form-control" id="message" name="Layer_Description" placeholder="Enter your description here..." required type="text" rows="6" maxlength="400" ></textarea>
+                                <textarea class="form-control" id="message" name="Layer_Description" placeholder="Enter your description here..." required type="text" rows="6" maxlength="400" spellcheck="true"></textarea>
                                 <p style="color:palevioletred;margin-top:15px;">Please include image resolution, drone altitude, date created and other conditions.</p>
                             </div>
                         </div>
@@ -436,7 +437,7 @@
                         <label class="col-md-4 control-label">Reject Comments <p>(official use only)</p></label>
                         <div class="col-md-8 inputGroupContainer">
                             <div>
-                                <textarea class="form-control" id="comment" name="Comments" disabled type="text" rows="8" maxlength="500" ></textarea>
+                                <textarea class="form-control" id="comment" name="Comments" disabled type="text" rows="8" maxlength="500" spellcheck="true"></textarea>
                             </div>
                         </div>
                     </div>
@@ -446,9 +447,8 @@
         <div>
             <button id="submit" form="layer" disabled title="this is only for Regular Users">Submit</button>
             <button id="clear" type="reset" onclick="clearForm()" value="  Clear  ">Clear</button>
-            <button id="approve" type="submit" form="layer" disabled  title="this is only for Admin Users">Approve</button>
-            <button id="reject" disabled  title="this is only for Admin Users">Reject</button>
-            <button id="testButton" type="button">click pls</button>
+            <button id="approve" type="submit" form="layer" disabled  title="Admin Users Only">Approve</button>
+            <button id="reject" disabled  title="Admin Users Only">Reject</button>
 
         </div>
         <hr>
@@ -458,6 +458,7 @@
     <script>
     let UserRole = "<%= user.userrole %>";
     let rowSelectedValue = JSON.parse(localStorage.getItem("rowSelectedValue"));
+    let continentList = document.getElementById("continent2");
 
     $(document).ready(function() {
         document.getElementById('date').value = rowSelectedValue[0];
@@ -493,6 +494,7 @@
         }
 
         if (UserRole === "Admin") {
+            document.getElementById("msg").innerHTML = "";
             document.getElementById("comment").disabled = false;
             document.getElementById("approve").disabled = false;
             document.getElementById("reject").disabled = false;
@@ -508,14 +510,20 @@
             document.getElementById('sub').disabled = false;
             document.getElementById('main').disabled = false;
             document.getElementsByClassName('qq-uploader-selector').disabled = true;
-            document.getElementById('upload-button').disabled = true;
-            // $('#upload-button').prop('disabled',true);
             document.getElementById("submit").style.backgroundColor = "lightgray";
             document.getElementById("adminonly").style.display = "block";
             document.getElementById("comment").placeholder = "Please describe why you are rejecting the request.";
+            console.log(document.getElementsByClassName('qq-upload-button'));
+            // document.getElementsByClassName('qq-upload-button')[0].disabled = true;
+            // document.getElementById('upload-button').disabled = true;
+            document.getElementById("approve").disabled = false;
+            document.getElementById("uploader").hidden = true;
+            // $('#upload-button').prop('disabled',true);
         } else if (UserRole === "Regular") {
             document.getElementById("comment").disabled = true;
             document.getElementById("submit").disabled = false;
+            document.getElementById("continent2").disabled = false;
+            document.getElementById("country2").disabled = false;
             document.getElementById("adminonly").style.display = "none";
             document.getElementById("approve").style.backgroundColor = "lightgray";
             document.getElementById("reject").style.backgroundColor = "lightgray";
@@ -533,9 +541,20 @@
         $("#City").change(function () {
             let val = $(this).val();
             if (val == "select") {
-                $("#country").html("<option value='select'>SELECT SUBCATEGORY</option>");
+                $("#country2").html("<option value='select'>SELECT SUBCATEGORY</option>");
             }
         })
+
+        $.ajax({
+            url: "layerRequestContinent",
+            method: 'GET',
+            dataType: 'json',
+            success: function (results) {
+                for (let i = 0; i < results.length; i++) {
+                    continentList.add(new Option(results[i].Continent_name, results[i].Continent));
+                }
+            }
+        });
 
         //resubmit the photo
         let photoDiv = $("#photo");
@@ -594,23 +613,26 @@
             }
         });
 
-        $("#testButton").click(function () {
-            let data = $("#layer").serialize();
-            console.log(data);
-            $.ajax({
-                url: 'testB',
-                method: "post",
-                data: data,
-                dataType: 'json',
-                success: function (d) {
-                    console.log(data);
-                }
-            });
-        })
+        // $("#testButton").click(function () {
+        //     let data = $("#layer").serialize();
+        //     console.log(data);
+        //     $.ajax({
+        //         url: 'testB',
+        //         method: "post",
+        //         data: data,
+        //         dataType: 'json',
+        //         success: function (d) {
+        //             console.log(data);
+        //         }
+        //     });
+        // })
+
 
         // Wait for the DOM to be ready
         $('#layer').validate({
             // Specify validation rules
+            success: "valid",
+            debug: true,
             rules: {
                 // The key name on the left side is the name attribute
                 // of an input field. Validation rules are defined
@@ -644,12 +666,28 @@
             }
         });
 
+        // ("#myform").validate({
+        //     invalidHandler: function(event, validator) {
+        //         // 'this' refers to the form
+        //         var errors = validator.numberOfInvalids();
+        //         if (errors) {
+        //             var message = errors == 1
+        //                 ? 'You missed 1 field. It has been highlighted'
+        //                 : 'You missed ' + errors + ' fields. They have been highlighted';
+        //             $("div.error span").html(message);
+        //             $("div.error").show();
+        //         } else {
+        //             $("div.error").hide();
+        //         }
+        //     }
+        // });
+
         $("#City").click(function () {
             new dgCitysCountries({
                 CityVal: document.getElementById("City").val,
-                countryVal: document.getElementById("country").val,
+                countryVal: document.getElementById("country2").val,
                 City: document.getElementById("City"),
-                country: document.getElementById("country"),
+                country: document.getElementById("country2"),
                 change: true
             });
         });
@@ -669,6 +707,8 @@
                     window.location.replace('/userHome')
                 }
             });
+
+
             // if (confirm("Are you sure to reject the data?") === true) {
             //     let tID = "reject=" + document.getElementById('RID').value;
             //     let Comment = "comment=" + document.getElementById('comment').value;
@@ -726,7 +766,7 @@
     function changeContinent (continentValue){
 
         let country = "country="+continentValue;
-        let countryList = document.getElementById("country")
+        let countryList = document.getElementById("country2")
 
         while (countryList.options.length) {
             countryList.remove(0);
@@ -738,7 +778,7 @@
 
         if(continentValue === "AL"){
             countryList.disabled = true;
-            $("#country").html("<option>SELECT A COUNTRY</option>")
+            $("#country2").html("<option>SELECT A COUNTRY</option>")
         }
 
         $.ajax({
@@ -787,6 +827,10 @@
             if (confirm("Are you sure you would like to submit this data?") === true) {
                 let regulardata = $("#layer").serialize();
                 let status = "status=" + rowSelectedValue[15];
+                console.log('status');
+                console.log(status);
+                console.log('regular data');
+                console.log(regulardata);
                 $.ajax({
                     url: 'rsubmit',
                     method: "post",
@@ -835,7 +879,7 @@
            $("#main").value = "Category";
             $("#sub").html("<option>SELECT SUBCATEGORY</option>");
             $("#City").html("<option>SELECT CONTINENT</option>");
-            $("#country").html("<option>SELECT COUNTRY</option>");
+            $("#country2").html("<option>SELECT COUNTRY</option>");
         }
     }
 

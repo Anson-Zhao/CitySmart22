@@ -229,7 +229,8 @@
                              if (oldP !== newP) {
                                  if (newP === confirmP) {
                                      alert("You can submit now!");
-                                         document.getElementById("updateForm").removeAttribute("disabled");
+                                     document.getElementById("updateForm").removeAttribute("disabled");
+                                     document.getElementById("updateForm").disabled = false;
                                  } else {
                                      alert("New passwords do not match!");
                                  }
