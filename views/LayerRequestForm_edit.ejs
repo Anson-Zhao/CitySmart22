@@ -441,6 +441,14 @@
                             </div>
                         </div>
                     </div>
+                    <div>
+                        <label class="col-md-4 control-label">Status</label>
+                        <div class="col-md-8 inputGroupContainer">
+                            <div>
+                                <textarea class="form-control" id="Status" name="Status" disabled required readonly type="text" rows="1" maxlength="300" spellcheck="true"></textarea>
+                            </div>
+                        </div>
+                    </div>
                 </fieldset>
             </form>
         </div>
@@ -465,6 +473,7 @@
         document.getElementById('User ID').value = rowSelectedValue[1];
         document.getElementById('RID').value = rowSelectedValue[2];
         document.getElementById('pictureStr').value = rowSelectedValue[15];
+        document.getElementById('Status').value = rowSelectedValue[16];
         document.getElementById('LayerStateInput').value = rowSelectedValue[6];
         document.getElementById('LayerFormat').value = rowSelectedValue[14];
         document.getElementById('LayerFormat2').value = rowSelectedValue[14];
@@ -477,7 +486,7 @@
         $('#country2 option[value="select"]').val(rowSelectedValue[5]);
         $("#country2").html("<option>" + rowSelectedValue[5]+ "</option>")
         document.getElementById('DisplayName').value = rowSelectedValue[12];
-        document.getElementById('comment').value = rowSelectedValue[16];
+        document.getElementById('comment').value = rowSelectedValue[17];
 
         if(rowSelectedValue[8] === "other" || rowSelectedValue[10] === "other"){
             document.getElementById('main').value = rowSelectedValue[8];
@@ -555,6 +564,9 @@
                 }
             }
         });
+
+
+
 
         //resubmit the photo
         let photoDiv = $("#photo");
@@ -826,7 +838,7 @@
         }else if (UserRole === "Regular") {
             if (confirm("Are you sure you would like to submit this data?") === true) {
                 let regulardata = $("#layer").serialize();
-                let status = "status=" + rowSelectedValue[15];
+                let status = "status=" + rowSelectedValue[16];
                 console.log('status');
                 console.log(status);
                 console.log('regular data');
