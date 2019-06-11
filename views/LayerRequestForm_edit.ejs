@@ -393,10 +393,10 @@
                                 <span class="input-group-addon" style="max-width: 100%;"><i class="glyphicon glyphicon-list"></i></span>
                                 <select required class="selectpicker form-control" name="LayerFormat" id="LayerFormat">
                                     <option value="">SELECT LAYER FORMAT</option>
-                                    <option>GeoTIFF - Tagged Image File Format with Geographic information (.tif)</option>
-                                    <option>Shapefile - ESRI(tm) Shapefiles (.shp)</option>
-                                    <option>JP2ECW - JP2K (.jp2/.j2k)</option>
-                                    <option>AIG - Arc/Info Binary Grid (.adf)</option>
+                                    <option id="GeoBoy">GeoTIFF - Tagged Image File Format with Geographic information (.tif)</option>
+                                    <option id="ShapeBoy">Shapefile - ESRI(tm) Shapefiles (.shp)</option>
+                                    <option id="J2kBoy">JP2ECW - JP2K (.jp2/.j2k)</option>
+                                    <option id="AdfBoy">AIG - Arc/Info Binary Grid (.adf)</option>
                                 </select>
                             </div>
                         </div>
@@ -467,6 +467,7 @@
     let UserRole = "<%= user.userrole %>";
     let rowSelectedValue = JSON.parse(localStorage.getItem("rowSelectedValue"));
     let continentList = document.getElementById("continent2");
+    let layerformat;
 
     $(document).ready(function() {
         document.getElementById('date').value = rowSelectedValue[0];
@@ -477,16 +478,34 @@
         document.getElementById('LayerStateInput').value = rowSelectedValue[6];
         document.getElementById('LayerFormat').value = rowSelectedValue[14];
         document.getElementById('LayerFormat2').value = rowSelectedValue[14];
+        // $("#LayerFormat").html("<option>" + rowSelectedValue[14]+ "</option>");
+        $("#LayerFormat2").html("<option>" + rowSelectedValue[14]+ "</option>");
         document.getElementById('message').value = rowSelectedValue[13];
         document.getElementById('City').value = rowSelectedValue[7];
         $('#continent option[value="AL"]').val(rowSelectedValue[4]);
-        $('#continent2 option[value="AL"]').val(rowSelectedValue[4]);
-        $("#continent2").html("<option>" + rowSelectedValue[4]+ "</option>")
+        // $('#continent2 option[value="AL"]').val(rowSelectedValue[4]);
+        $("#continent2").html("<option>" + rowSelectedValue[4]+ "</option>");
         $('#country option[value="select"]').val(rowSelectedValue[5]);
-        $('#country2 option[value="select"]').val(rowSelectedValue[5]);
-        $("#country2").html("<option>" + rowSelectedValue[5]+ "</option>")
+        // $('#country2 option[value="select"]').val(rowSelectedValue[5]);
+        $("#country2").html("<option>" + rowSelectedValue[5]+ "</option>");
         document.getElementById('DisplayName').value = rowSelectedValue[12];
         document.getElementById('comment').value = rowSelectedValue[17];
+
+        if (rowSelectedValue[14] = "GeoTIFF - Tagged Image File Format with Geographic information (.tif)") {
+             layerformat = 'GeoBoy';
+             console.log('GeoBoy');
+        } else if (rowSelectedValue[14]="Shapefile - ESRI(tm) Shapefiles (.shp)") {
+            layerformat = 'ShapeBoy';
+            console.log('ShapeBoy');
+        } else if (rowSelectedValue[14]="JP2ECW - JP2K (.jp2/.j2k)") {
+            layerformat = 'J2kBoy';
+            console.log('J2kBoy');
+        } else if (rowSelectedValue[14]="AIG - Arc/Info Binary Grid (.adf)") {
+            layerformat = 'AdfBoy';
+            console.log('AdfBoy');
+        } else {}
+
+        document.getElementById(layerformat).selected = true;
 
         if(rowSelectedValue[8] === "other" || rowSelectedValue[10] === "other"){
             document.getElementById('main').value = rowSelectedValue[8];
@@ -553,6 +572,8 @@
                 $("#country2").html("<option value='select'>SELECT SUBCATEGORY</option>");
             }
         })
+
+
 
         $.ajax({
             url: "layerRequestContinent",
@@ -708,15 +729,15 @@
             let tID = "reject=" + document.getElementById('RID').value;
             let Comment = "comment=" + document.getElementById('comment').value;
             let rejectPicPath = "picturePath="+ rowSelectedValue[15];
+            $(".form-group").fadeOut("slow");
             $.ajax({
                 url: 'reject',
                 type: "GET",
                 dataType: 'json',
                 data: tID + "&" + Comment + "&" +rejectPicPath,
                 success: function (result) {
-
                     alert(result.message);
-                    window.location.replace('/userHome')
+                    window.location.replace('/userHome');
                 }
             });
 
