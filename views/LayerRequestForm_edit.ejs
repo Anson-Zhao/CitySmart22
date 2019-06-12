@@ -485,7 +485,7 @@
         $('#continent option[value="AL"]').val(rowSelectedValue[4]);
         // $('#continent2 option[value="AL"]').val(rowSelectedValue[4]);
         $("#continent2").html("<option>" + rowSelectedValue[4]+ "</option>");
-        $('#country option[value="select"]').val(rowSelectedValue[5]);
+        $('#country option[value="selected"]').val(rowSelectedValue[5]);
         // $('#country2 option[value="select"]').val(rowSelectedValue[5]);
         $("#country2").html("<option>" + rowSelectedValue[5]+ "</option>");
         document.getElementById('DisplayName').value = rowSelectedValue[12];
@@ -506,6 +506,7 @@
         } else {}
 
         document.getElementById(layerformat).selected = true;
+
 
         if(rowSelectedValue[8] === "other" || rowSelectedValue[10] === "other"){
             document.getElementById('main').value = rowSelectedValue[8];
@@ -859,7 +860,7 @@
         }else if (UserRole === "Regular") {
             if (confirm("Are you sure you would like to submit this data?") === true) {
                 let regulardata = $("#layer").serialize();
-                let status = "status=" + rowSelectedValue[16];
+                let status = "Current_Status=" + rowSelectedValue[16];
                 console.log('status');
                 console.log(status);
                 console.log('regular data');
