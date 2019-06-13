@@ -1485,7 +1485,7 @@ module.exports = function (app, passport) {
                 }
             });
         }else{
-            con_CS.query(statement1 + statement2 + statement3, function (err, result) {
+            con_CS.query(statement1 + "" + statement2 + "" + statement3, function (err, result) {
                 if (err) {
                     throw err;
                 } else {
