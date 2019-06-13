@@ -1462,7 +1462,7 @@ module.exports = function (app, passport) {
         }
         let Layer_Uploader = Pending_Dir + "/" + responseDataUuid;
         let Layer_Uploader_name = responseDataUuid;
-        let filepathname = Pending_Dir + "/" + responseDataUuid;
+        // let filepathname = Pending_Dir + "/" + responseDataUuid;
         let statement1 = update1+update2+update3;
         let statement2 = "UPDATE Request_Form SET Layer_Uploader = '" + Layer_Uploader + "', Layer_Uploader_name = '" + Layer_Uploader_name + "';";
         let statement3 = "UPDATE Request_Form SET ThirdLayer = '" + result[7][1] + "' WHERE RID = '" + result[1][1] + "';";

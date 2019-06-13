@@ -476,8 +476,8 @@
         document.getElementById('pictureStr').value = rowSelectedValue[15];
         document.getElementById('Status').value = rowSelectedValue[16];
         document.getElementById('LayerStateInput').value = rowSelectedValue[6];
-        document.getElementById('LayerFormat').value = rowSelectedValue[14];
-        document.getElementById('LayerFormat2').value = rowSelectedValue[14];
+        // document.getElementById('LayerFormat').value = rowSelectedValue[14];
+        // document.getElementById('LayerFormat2').value = rowSelectedValue[14];
         // $("#LayerFormat").html("<option>" + rowSelectedValue[14]+ "</option>");
         $("#LayerFormat2").html("<option>" + rowSelectedValue[14]+ "</option>");
         document.getElementById('message').value = rowSelectedValue[13];
@@ -874,6 +874,10 @@
                     }
                 });
                 window.location.replace('/userHome');
+                console.log('status');
+                console.log(status);
+                console.log('regular data');
+                console.log(regulardata);
             } else {
                 return false;
             }
