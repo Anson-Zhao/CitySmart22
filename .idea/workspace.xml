@@ -2,14 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3b2ba209-e08e-4f77-99ae-d893522cce16" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/config/clientConfig.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/clientConfig.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/Home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/USGS_MR.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/USGS_MR.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/layerMenuAll.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/layerMenuAll.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/LayerRequestForm.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/LayerRequestForm.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/homepage.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/homepage.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/signup.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/signup.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_5_6_11_27_15.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_5_6_12_27_15.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_5_6_13_27_15.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_5_6_14_27_15.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_5_6_15_27_15.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/serverConfig.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/serverConfig.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -41,6 +39,12 @@
         <item name="@90.16" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
       </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="@90.16" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="CitySmart2: schema" type="76f4a085:MysqlImplModel$Schema" />
+      </path>
     </expand>
     <select />
   </component>
@@ -49,8 +53,38 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/scripts/Home.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2587">
-              <caret line="21" column="21" lean-forward="true" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
+            <state relative-caret-position="446">
+              <caret line="52" column="33" selection-start-line="52" selection-start-column="33" selection-end-line="52" selection-end-column="33" />
+              <folding>
+                <element signature="n#style#0;n#img#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/serverConfig.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="418">
+              <caret line="22" column="28" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routes/routes.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="49856">
+              <caret line="2625" column="32" selection-start-line="2625" selection-start-column="32" selection-end-line="2625" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/clientConfig.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="912">
+              <caret line="48" column="32" selection-start-line="48" selection-start-column="32" selection-end-line="48" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -66,7 +100,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>barChange</find>
       <find>LayerType</find>
       <find>USGS_MR</find>
       <find>mrdsData</find>
@@ -96,6 +129,7 @@
       <find>auto</find>
       <find>bear</find>
       <find>globePosition</find>
+      <find>mail</find>
     </findStrings>
     <replaceStrings>
       <replace>userP</replace>
@@ -158,7 +192,6 @@
         <option value="$PROJECT_DIR$/scripts/createPlacemark.js" />
         <option value="$PROJECT_DIR$/config/mainconf.js" />
         <option value="$PROJECT_DIR$/config/clientConf.js" />
-        <option value="$PROJECT_DIR$/config/serverConfig.js" />
         <option value="$PROJECT_DIR$/scripts/s.js" />
         <option value="$PROJECT_DIR$/config/clientConfig.js" />
         <option value="$PROJECT_DIR$/scripts/USGS_WT_heatmapLayer.js" />
@@ -191,10 +224,11 @@
         <option value="$PROJECT_DIR$/views/homepageUSER.ejs" />
         <option value="$PROJECT_DIR$/scripts/AutoMenu.js" />
         <option value="$PROJECT_DIR$/routes/passport.js" />
-        <option value="$PROJECT_DIR$/routes/routes.js" />
         <option value="$PROJECT_DIR$/scripts/OptionList.js" />
         <option value="$PROJECT_DIR$/scripts/USGS_MR.js" />
+        <option value="$PROJECT_DIR$/routes/routes.js" />
         <option value="$PROJECT_DIR$/scripts/Home.js" />
+        <option value="$PROJECT_DIR$/config/serverConfig.js" />
       </list>
     </option>
   </component>
@@ -205,9 +239,9 @@
     <auto-save>true</auto-save>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="183" />
+    <option name="x" value="843" />
     <option name="y" value="23" />
-    <option name="width" value="1894" />
+    <option name="width" value="1410" />
     <option name="height" value="1302" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -216,7 +250,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -227,12 +260,13 @@
             <path>
               <item name="CitySmart22" type="b2602c69:ProjectViewProjectNode" />
               <item name="CitySmart22" type="462c0819:PsiDirectoryNode" />
-              <item name="scripts" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -246,6 +280,7 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
+    <property name="database.console.LAST_STATE" value="true" />
     <property name="javascript.nodejs.core.library.configured.version" value="10.15.3" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/config" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -318,28 +353,10 @@
       <workItem from="1557425230051" duration="2207000" />
       <workItem from="1557428979805" duration="508000" />
       <workItem from="1557429506347" duration="22619000" />
-      <workItem from="1558452332174" duration="2408000" />
-    </task>
-    <task id="LOCAL-00027" summary="V2.2 WT_Placemark">
-      <created>1556584799022</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1556584799022</updated>
-    </task>
-    <task id="LOCAL-00028" summary="V2.2 WT_Placemark">
-      <created>1556633909485</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1556633909485</updated>
-    </task>
-    <task id="LOCAL-00029" summary="V2.2 WT_Placemark">
-      <created>1556634186504</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1556634186504</updated>
+      <workItem from="1558452332174" duration="5100000" />
+      <workItem from="1559311388756" duration="13000" />
+      <workItem from="1559311414670" duration="2271000" />
+      <workItem from="1560168590379" duration="5311000" />
     </task>
     <task id="LOCAL-00030" summary="V2.2 WT_Placemark">
       <created>1556635063090</created>
@@ -663,36 +680,59 @@
       <option name="project" value="LOCAL" />
       <updated>1558708386711</updated>
     </task>
-    <option name="localTasksCounter" value="76" />
+    <task id="LOCAL-00076" summary="Merge branch 'IV3' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;scripts/Home.js">
+      <created>1558709920696</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1558709920696</updated>
+    </task>
+    <task id="LOCAL-00077" summary="Merge branch 'IV3' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;scripts/Home.js">
+      <created>1560182269585</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1560182269585</updated>
+    </task>
+    <task id="LOCAL-00078" summary="Merge branch 'Yiyang' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
+      <created>1560182306444</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1560182306444</updated>
+    </task>
+    <option name="localTasksCounter" value="79" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="241263000" />
+    <option name="totallyTimeSpent" value="251550000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="183" y="23" width="1894" height="1302" extended-state="0" />
+    <frame x="843" y="23" width="1410" height="1302" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19001086" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26730487" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49837133" weight="0.3299748" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49402824" weight="0.3627204" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49189985" visible="true" weight="0.3627204" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3988245" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="9" sideWeight="0.49837133" visible="true" weight="0.3299748" />
+      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49782845" weight="0.3299748" />
       <window_info anchor="bottom" id="Terminal" order="10" weight="0.3299748" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5059718" side_tool="true" weight="0.3627204" />
+      <window_info active="true" anchor="bottom" id="Event Log" order="11" sideWeight="0.50810015" side_tool="true" visible="true" weight="0.3627204" />
       <window_info anchor="bottom" id="File Transfer" order="12" sideWeight="0.4989142" weight="0.3299748" />
+      <window_info anchor="bottom" id="Database Console" order="13" weight="0.3299748" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Database" order="3" visible="true" weight="0.32953313" />
-      <window_info anchor="right" id="Remote Host" order="4" weight="0.17372422" />
+      <window_info anchor="right" id="Database" order="3" weight="0.28175896" />
+      <window_info anchor="right" id="Remote Host" order="4" visible="true" weight="0.23564065" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -744,23 +784,17 @@
     <MESSAGE value="Merge branch 'master' of https://github.com/Anson-Zhao/CitySmart22 into julia&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;config/geoCapacity/2019_5_2_11_46_2.xml&#10;#&#9;config/geoCapacity/2019_5_3_10_11_38.xml&#10;#&#9;config/geoCapacity/2019_5_3_12_38_12.xml&#10;#&#9;config/geoCapacity/2019_5_3_12_5_18.xml&#10;#&#9;config/geoCapacity/2019_5_3_13_5_18.xml&#10;#&#9;scripts/Home.js" />
     <MESSAGE value="Merge branch 'julia' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
     <MESSAGE value="AutoMenu bugs fix" />
-    <MESSAGE value="Merge branch 'Yiyang' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
     <MESSAGE value="Merge branch 'Amy' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;routes/routes.js" />
     <MESSAGE value="V2.3" />
     <MESSAGE value="Merge branch 'Amy' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;config/geoCapacity/2019_5_10_11_25_32.xml&#10;#&#9;config/mainconf.js&#10;#&#9;routes/routes.js" />
     <MESSAGE value="fix option list classes" />
     <MESSAGE value="Merge branch 'IV3' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
     <MESSAGE value="Merge branch 'IanNew' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;scripts/USGS_MD.js" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge branch 'IanNew' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;scripts/USGS_MD.js" />
+    <MESSAGE value="Merge branch 'IV3' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;scripts/Home.js" />
+    <MESSAGE value="Merge branch 'Yiyang' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge branch 'Yiyang' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/layer/BMNGLayer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="21" column="8" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/3rdPartyLibs/popper-1.14.0.min.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="76">
@@ -974,13 +1008,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config/geoCapacity/2019_5_10_17_20_27.xml" />
-    <entry file="file://$PROJECT_DIR$/config/geoCapacity/2019_5_10_12_55_8.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="13" column="39" lean-forward="true" selection-start-line="13" selection-start-column="39" selection-end-line="13" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/config/geoCapacity/2019_5_10_12_55_8.xml" />
     <entry file="file://$PROJECT_DIR$/scripts/AutoMenu.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="228">
@@ -999,20 +1027,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="493">
           <caret line="167" column="8" selection-start-line="165" selection-start-column="8" selection-end-line="167" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/clientConfig.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="33">
-          <caret line="48" column="32" selection-start-line="48" selection-start-column="32" selection-end-line="48" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/routes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38627">
-          <caret line="2033" column="34" selection-start-line="2033" selection-start-column="34" selection-end-line="2033" selection-end-column="34" />
         </state>
       </provider>
     </entry>
@@ -1037,17 +1051,43 @@
         </state>
       </provider>
     </entry>
+    <entry file="das://c48d83a6-e379-4929-b3de-4319e482d0fe/schema/CitySmart2/table/LayerMenu">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state projectRestartId="841b825d-6a00-46b1-93fe-778c20d9d978">
+          <filtering>
+            <filter text="" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/routes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="49856">
+          <caret line="2625" column="32" selection-start-line="2625" selection-start-column="32" selection-end-line="2625" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/clientConfig.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="912">
+          <caret line="48" column="32" selection-start-line="48" selection-start-column="32" selection-end-line="48" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/config/serverConfig.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="7" column="32" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="32" />
+        <state relative-caret-position="418">
+          <caret line="22" column="28" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="28" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/scripts/Home.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2587">
-          <caret line="21" column="21" lean-forward="true" selection-start-line="21" selection-start-column="21" selection-end-line="21" selection-end-column="21" />
+        <state relative-caret-position="446">
+          <caret line="52" column="33" selection-start-line="52" selection-start-column="33" selection-end-line="52" selection-end-column="33" />
+          <folding>
+            <element signature="n#style#0;n#img#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
