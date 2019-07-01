@@ -928,7 +928,10 @@ module.exports = function (app, passport) {
 
         myStat = "INSERT INTO UserLogin ( username, password, userrole, dateCreated, dateModified, createdUser, status) VALUES ( '" + newUser.username + "','" + newUser.password+ "','" + newUser.userrole+ "','" + newUser.dateCreated+ "','" + newUser.dateModified+ "','" + newUser.createdUser + "','" + newUser.status + "');";
         mylogin = "INSERT INTO UserProfile ( username, firstName, lastName) VALUES ('"+ newUser.username + "','" + newUser.firstName+ "','" + newUser.lastName + "');";
-        con_CS.query(myStat + mylogin, function (err, rows) {
+        console.log("mystat");
+        console.log(myStat);
+        console.log(mylogin);
+        con_CS.query(myStat + '' + mylogin, function (err, rows) {
             // newUser.id = rows.insertId;
             if (err) {
                 console.log(err);
@@ -1523,6 +1526,7 @@ module.exports = function (app, passport) {
 
         let myState1 = "UPDATE Request_Form SET Current_Status = 'Approved' WHERE RID = '" + approveIDStr + "'";
 
+
         // mover folder
         for(let i = 0; i < approvepictureStr.length; i++) {
             fs.rename(''+ Pending_Dir +'/' + approvepictureStr[i] + '' , '' + Approve_Dir + '/' + approvepictureStr[i] + '',  function (err) {
@@ -1747,6 +1751,8 @@ module.exports = function (app, passport) {
             return [String(key), req.body[key]];
         });
 
+        console.log('result');
+        console.log(result);
         res.setHeader("Access-Control-Allow-Origin", "*");
 
         let update1 = "UPDATE Request_Form SET " ;
@@ -1756,6 +1762,8 @@ module.exports = function (app, passport) {
         let datastore = "datastore" + result[7][1];
 
         console.log(result);
+        console.log(result[6][1]);
+        console.log(result[7][1]);
         console.log(datastore);
 
         for (let i = 0; i < result.length; i++) {
@@ -1772,9 +1780,16 @@ module.exports = function (app, passport) {
         let statement1 = update1+update2+update3;
         let statement2 = "UPDATE Request_Form SET Layer_Uploader = '" + Layer_Uploader + "', Layer_Uploader_name = '" + result[15][1] + "' WHERE RID = '" + result[1][1] + "';";
         let statement3 = "UPDATE Request_Form SET ThirdLayer = '" + result[8][1] + "' WHERE RID = '" + result[1][1] + "';";
+
+        console.log('s1');
+        console.log(statement1);
+        console.log("statement2");
+        console.log(statement2);
+        console.log(statement3);
         if(result[3][1] === "other"){
             let statement = "INSERT INTO LayerMenu (LayerName, LayerType, FirstLayer, SecondLayer, ThirdLayer, Picture_Location, ContinentName, CountryName, StateName, CityName, Site_Description, Status, RID) VALUES ('" + result[7][1] + "', 'Wmslayer', '" + result[4][1] + "','" + result[6][1] + "','" + result[8][1] + "','" + result[15][1] + "','" + result[9][1] + "','" + result[10][1] + "','" + result[11][1] + "','" + result[12][1] + "','" + result[13][1] + "', 'Approved', '" + result[1][1] + "') ON DUPLICATE KEY UPDATE LayerName ='" + result[7][1] + "', FirstLayer = '" + result[4][1] + "', SecondLayer = '" + result[6][1] + "', ThirdLayer = '" + result[8][1] + "', Picture_Location = '" + result[15][1] + "', Status = 'Approved';";
             con_CS.query(statement1 + statement + statement2 + statement3, function (err, result) {
+                console.log(statement);
                 if (err) {
                     throw err;
                 } else {
@@ -1784,7 +1799,8 @@ module.exports = function (app, passport) {
         }else{
             let statement = "INSERT INTO LayerMenu (LayerName, LayerType, FirstLayer, SecondLayer, ThirdLayer, Picture_Location, ContinentName, CountryName, StateName, CityName, Site_Description, Status, RID) VALUES ('" + result[7][1] + "', 'Wmslayer', '" + result[3][1] + "','" + result[5][1] + "','" + result[8][1] + "','" + result[15][1] + "','" + result[9][1] + "','" + result[10][1] + "','" + result[11][1] + "','" + result[12][1] + "','" + result[13][1] + "', 'Approved', '" + result[1][1] + "') ON DUPLICATE KEY UPDATE LayerName ='" + result[7][1] + "', FirstLayer = '" + result[3][1] + "', SecondLayer = '" + result[5][1] + "', ThirdLayer = '" + result[8][1] + "', Picture_Location = '" + result[15][1] + "', Status = 'Approved';";
            con_CS.query(statement1 + statement + statement2 + statement3, function (err, result) {
-                if (err) {
+               console.log(statement);
+               if (err) {
                     throw err;
                 } else {
                     res.json("Connected!")

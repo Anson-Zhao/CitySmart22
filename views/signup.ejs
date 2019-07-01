@@ -69,7 +69,7 @@
 	<% } %>
 	<!-- LOGIN FORM -->
 	<!--<form onsubmit="return checkForm()" action="/signup" method="post" id="signup">-->
-	<form action="/signup" method="post" id="signup">
+	<form  onsubmit="return checkForm()" action="/signup" method="post" id="signup">
 		<div class="form-group">
 			<label>Username (email address):</label>
 			<input type="email" class="form-control" name="username" onchange="SearchUsername(this.value)" style="height: 50px;" required>
@@ -142,6 +142,7 @@
                             // alert(result.message);
                             alert("We are sending you the email verification. Please check it before login to your account.");
                             window.location.replace('/login');
+                            console.log(("#signup").serialize);
                         } else {
                             alert(result.message);
                         }
