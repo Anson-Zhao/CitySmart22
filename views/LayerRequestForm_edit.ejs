@@ -478,7 +478,8 @@
         document.getElementById('Status').value = rowSelectedValue[16];
         document.getElementById('main').value = rowSelectedValue[8];
         document.getElementById('LayerStateInput').value = rowSelectedValue[6];
-        document.getElementById('LayerFormat2').value = rowSelectedValue[14];
+        document.getElementById('LayerFormat2').value = document.getElementById('LayerFormat').value;
+        // document.getElementById('LayerFormat').value = document.getElementById('LayerFormat2').value;
         // $("#LayerFormat").html("<option>" + rowSelectedValue[14]+ "</option>");
         $("#LayerFormat2").html("<option>" + rowSelectedValue[14]+ "</option>");
         document.getElementById('message').value = rowSelectedValue[13];
