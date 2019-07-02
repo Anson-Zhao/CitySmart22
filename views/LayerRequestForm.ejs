@@ -160,6 +160,9 @@
             border-radius: 5px;
             border: 1px solid lightgray;
         }
+        #boldboy {
+            color: black;
+        }
 
     </style>
 
@@ -256,7 +259,7 @@
                         <div class="col-md-8 inputGroupContainer">
                             <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
                                 <input id="LayerNameInput" name="LayerName" value="" placeholder="Layer Name" class="form-control" required  type="text" spellcheck="true" onchange="SearchLayerName(this.value)"></div>
-                            <p id="LayerName1" style="color: palevioletred;margin-top:15px;">Please enter the layer name. The name you submit is the layer name, after the approval of the admin, your display name may be changed. <br>NOTE: <strong>DO NOT </strong>include spaces.</p>
+                            <p id="LayerName1" style="color: palevioletred;margin-top:15px;">Please enter the layer name. The name you submit is the layer name, after the approval of the admin, your display name may be changed. <br>NOTE: <strong id="boldboy">DO NOT include spaces.</strong></p>
                         </div>
                     </div>
                     <!--<p id="LayerName1" style="color: palevioletred; margin-left:270px;">Please Enter the Layer Name, the Layer Name must be at least 6 characters</p>-->
@@ -386,6 +389,8 @@
     let userrole = '<%= user.userrole %>';
     
     $(document).ready(function() {
+
+        console.log($("#layer").serialize());
 
         let today = new Date();
         let dd = today.getDate();
@@ -548,7 +553,6 @@
         });
     }
 
-
     function clearForm(){
         if (confirm("Are you sure you want to clear the form? All the data will be reset accordingly!") === true) {
             window.location.reload();
@@ -573,6 +577,7 @@
                 }
             }
         })
+        console.log($("#layer").serialize());
     }
 
     //to check if the current option of main Main-Category is "other" or not
@@ -593,8 +598,8 @@
     }
 
     function submitForm () {
-        alert("Submitted!");
         let data =$("#layer").serialize();
+        console.log(data);
 
         $.ajax({
             url  : 'submitL',
@@ -603,6 +608,7 @@
             dataType: 'json',
             success : function(d){
                 console.log(d);
+                alert("Submitted!");
             }
         });
         window.location.replace('/userHome');

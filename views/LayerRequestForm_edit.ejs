@@ -292,7 +292,7 @@
                                     <option value="other" id="secondOther">Other(Please specify)</option>
                                 </select>
                                 <div id="other2" style="display:none;">
-                                    <input class="other" type="text" name="SecondOther" id="inputtwo" spellcheck="true">
+                                    <input class="other" type="text" name="SecondOther" id="inputtwo">
                                 </div>
                             </div>
                         </div>
@@ -301,7 +301,7 @@
                         <label class="col-md-4 control-label">Layer Name</label>
                         <div class="col-md-8 inputGroupContainer">
                             <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
-                                <input id="LayerNameInput" name="LayerName" value="" placeholder="Layer Name.  NOTE: Do not include spaces." class="form-control" required  type="text" onchange="SearchLayerName(this.value)" spellcheck="true"></div>
+                                <input id="LayerNameInput" name="LayerName" value="" placeholder="Layer Name.  NOTE: Do not include spaces." class="form-control" required  type="text" onchange="SearchLayerName(this.value)"></div>
                             <p id="LayerName1" style="color: palevioletred;margin-top:15px;"></p>
                         </div>
                     </div>
@@ -310,7 +310,7 @@
                         <div class="col-md-8 inputGroupContainer">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
-                                <input id="DisplayName" name="ThirdLayer" value="" placeholder="ThirdLayer Name.  NOTE: Do not include spaces." class="form-control" required  type="text" onchange="SearchThirdLayer(this.value)" spellcheck="true"></div>
+                                <input id="DisplayName" name="ThirdLayer" value="" placeholder="ThirdLayer Name.  NOTE: Do not include spaces." class="form-control" required  type="text" onchange="SearchThirdLayer(this.value)"></div>
                             <p id="LayerName2" style="color:palevioletred; margin-top:15px;"></p>
                         </div>
                     </div>
@@ -470,11 +470,13 @@
     let layerformat;
 
     $(document).ready(function() {
+        console.log(rowSelectedValue);
         document.getElementById('date').value = rowSelectedValue[0];
         document.getElementById('User ID').value = rowSelectedValue[1];
         document.getElementById('RID').value = rowSelectedValue[2];
         document.getElementById('pictureStr').value = rowSelectedValue[15];
         document.getElementById('Status').value = rowSelectedValue[16];
+        document.getElementById('main').value = rowSelectedValue[8];
         document.getElementById('LayerStateInput').value = rowSelectedValue[6];
         document.getElementById('LayerFormat2').value = rowSelectedValue[14];
         // $("#LayerFormat").html("<option>" + rowSelectedValue[14]+ "</option>");
@@ -490,21 +492,22 @@
         document.getElementById('DisplayName').value = rowSelectedValue[12];
         document.getElementById('comment').value = rowSelectedValue[17];
 
-        if (rowSelectedValue[14] == "GeoTIFF - Tagged Image File Format with Geographic information (.tif)") {
+        if (rowSelectedValue[14] == "GeoTIFF - Tagged Image File Format with Geographic information (.tif)" || rowSelectedValue[14] == "GeoTIFF - Tagged Image File Format with Geographic information (.tif),") {
              layerformat = 'GeoBoy';
-        } else if (rowSelectedValue[14] == "Shapefile - ESRI(tm) Shapefiles (.shp)") {
+        } else if (rowSelectedValue[14] == "Shapefile - ESRI(tm) Shapefiles (.shp)" || rowSelectedValue[14] == "Shapefile - ESRI(tm) Shapefiles (.shp),") {
             layerformat = 'ShapeBoy';
-        } else if (rowSelectedValue[14] == "JP2ECW - JP2K (.jp2/.j2k)") {
+        } else if (rowSelectedValue[14] == "JP2ECW - JP2K (.jp2/.j2k)" || rowSelectedValue[14] == "JP2ECW - JP2K (.jp2/.j2k),") {
             layerformat = 'J2kBoy';
-        } else if (rowSelectedValue[14] == "AIG - Arc/Info Binary Grid (.adf)") {
+        } else if (rowSelectedValue[14] == "AIG - Arc/Info Binary Grid (.adf)" || rowSelectedValue[14] == "AIG - Arc/Info Binary Grid (.adf),") {
             layerformat = 'AdfBoy';
+        } else {
+            document.getElementById('LayerFormat').value = rowSelectedValue[14];
         }
 
         document.getElementById(layerformat).selected = true;
 
 
         if(rowSelectedValue[8] === "other" || rowSelectedValue[10] === "other"){
-            document.getElementById('main').value = rowSelectedValue[8];
             document.getElementById("other1").style.display = "block";
             document.getElementById("inputone").value = rowSelectedValue[9];
             $('#sub option[value="Category"]').val(rowSelectedValue[10]);
@@ -512,7 +515,6 @@
             document.getElementById("other2").style.display = "block";
             document.getElementById("inputtwo").value = rowSelectedValue[11];
         }else{
-            document.getElementById('main').value = rowSelectedValue[8];
             $('#sub option[value="Category"]').val(rowSelectedValue[10]);
             $("#sub").html("<option>" + rowSelectedValue[10]+ "</option>")
         }
@@ -726,7 +728,7 @@
             let tID = "reject=" + document.getElementById('RID').value;
             let Comment = "comment=" + document.getElementById('comment').value;
             let rejectPicPath = "picturePath="+ rowSelectedValue[15];
-            $(".form-group").fadeOut("slow");
+            // $(".form-group").fadeOut("slow");
             $.ajax({
                 url: 'reject',
                 type: "GET",

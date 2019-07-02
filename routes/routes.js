@@ -1391,6 +1391,9 @@ module.exports = function (app, passport) {
 
         let statement2 = "INSERT INTO Request_Form (" + name + ") VALUES (" + valueSubmit + ");";
         let statement = "UPDATE Request_Form SET ThirdLayer = '" + result[7][1] + "' WHERE RID = '" + result[1][1] + "';";
+        console.log('statement2&1');
+        console.log(statement2);
+        console.log(statement);
 
         con_CS.query(statement2 + statement, function (err, result) {
             if (err) {
