@@ -588,9 +588,21 @@
             dataType: 'json',
             success: function (results) {
                 for (let i = 0; i < results.length; i++) {
-                    continentList.add(new Option(results[i].Continent_name, results[i].Continent));//Continent name refers to the actual name while the continent just refers to the abbreviation of the continent
-                    console.log(continentList);
 
+                    // if (results[i].Continent_name = rowSelectedValue[4]) {
+                    //     continentList.remove(results[i].Continent_name, results[i].Continent);
+                    // } else if (results[i].Continent = rowSelectedValue[4]) {
+                    //     continentList.remove(results[i].Continent_name, results[i].Continent);
+                    // } else {}
+                    // continentList.className = results[i].Continent;
+                    // console.log(continentList.className);
+                    if (results[i].Continent_name != rowSelectedValue[4] || results[i].Continent != rowSelectedValue[4]) {
+                        continentList.add(new Option(results[i].Continent_name, results[i].Continent));//Continent name refers to the actual name while the continent just refers to the abbreviation of the continent
+                    } else{}
+
+
+                    console.log(continentList);
+                    console.log(results);
                 }
             }
         });
@@ -613,13 +625,13 @@
             valueboy = rowSelectedValue[4];
         } else if (rowSelectedValue[4] === "AS") {
             continentabbrvalue = "Asia";
-            valueboy = rowSelectedValue[4];;
+            valueboy = rowSelectedValue[4];
         } else if (rowSelectedValue[4] === "AN") {
             continentabbrvalue = "Antarctica";
             valueboy = rowSelectedValue[4];
         } else if (rowSelectedValue[4] === "Others") {
             continentabbrvalue = rowSelectedValue[4];
-            valueboy = rowSelectedValue[4];;
+            valueboy = rowSelectedValue[4];
         } else if(rowSelectedValue[4] === "Oceania") {
             continentabbrvalue = rowSelectedValue[4];
             valueboy = 'OC';
@@ -644,7 +656,7 @@
         } else {
             continentabbrvalue = rowSelectedValue[4];
         }
-        $("#continent2").html('<option selected value ' + "'"+ valueboy + "'" +" >"+ continentabbrvalue + "</option>");
+        $("#continent2").html('<option selected value = ' + "'"+ valueboy + "'" +">"+ continentabbrvalue + "</option>");
 
 
 
