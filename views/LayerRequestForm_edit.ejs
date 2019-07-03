@@ -596,9 +596,9 @@
                     // } else {}
                     // continentList.className = results[i].Continent;
                     // console.log(continentList.className);
-                    if (results[i].Continent_name != rowSelectedValue[4] || results[i].Continent != rowSelectedValue[4]) {
+                    if (results[i].Continent != rowSelectedValue[4]) {
                         continentList.add(new Option(results[i].Continent_name, results[i].Continent));//Continent name refers to the actual name while the continent just refers to the abbreviation of the continent
-                    } else{}
+                    } else {}
 
 
                     console.log(continentList);
