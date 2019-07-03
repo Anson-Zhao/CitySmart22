@@ -1448,7 +1448,6 @@ module.exports = function (app, passport) {
         let result = Object.keys(req.body).map(function (key) {
             return [String(key), req.body[key]];
         });
-        console.log(result);
         res.setHeader("Access-Control-Allow-Origin", "*");
         let status = req.body.status;
 
@@ -1470,11 +1469,6 @@ module.exports = function (app, passport) {
         let statement2 = "UPDATE Request_Form SET Layer_Uploader = '" + Layer_Uploader + "', Layer_Uploader_name = '" + Layer_Uploader_name + "';";
         let statement3 = "UPDATE Request_Form SET ThirdLayer = '" + result[7][1] + "' WHERE RID = '" + result[1][1] + "';";
         let statement4 = "UPDATE Request_Form SET Current_Status = 'Pending' WHERE RID = '" + result[1][1] + "'";
-        console.log('statement');
-        console.log(statement1);
-        console.log(statement2);
-        console.log(statement3);
-        console.log(statement4);
         if(status === "Reject"){
             con_CS.query(statement1 + statement2 + statement3 + statement4, function (err, result) {
                 if (err) {
