@@ -62,6 +62,10 @@
         h1 {
             text-align: center;
         }
+        #caps {
+            color: red;
+            text-align: center;
+        }
     </style>
 
 </head>
@@ -115,6 +119,7 @@
                         <div>
                             <label style="font-size:18px;">Password Change</label>
                         </div>
+                        <p id="caps" hidden><strong>WARNING: Caps lock is enabled.</strong></p>
                         <div class="form-group">
                             <label id="displayCurrentPassword" class="col-md-4 control-label">Current Password</label>
                             <div class="col-md-8 inputGroupContainer">
@@ -145,6 +150,10 @@
 </div>
 <script>
      let LoginUser = "<%= user.username %>";
+     let CurrPassword = document.getElementById("CurrentPassword");
+     let NewPassword = document.getElementById("NewPassword");
+     let ConfirmPassword = document.getElementById("ConfirmNewPassword");
+     let caps = document.getElementById("caps");
 
 
      let getvalue = JSON.parse(localStorage.getItem("getvalue"));
@@ -224,7 +233,7 @@
                  success : function(d){
                      if (d === true) {
                          alert("Please make sure you typed your current password correctly.");
-                     }else if(d === false){
+                     } else if(d === false){
                          if (oldP !== "" && confirmP !== "" && newP !== "") {
                              if (oldP !== newP) {
                                  if (newP === confirmP) {
@@ -295,6 +304,52 @@
      function offFunction() {
          alert ("Your are offline. Some functionality may be unavailable.");
      }
+
+     CurrPassword.addEventListener("keydown", function(ebay) {
+
+         if (ebay.getModifierState("CapsLock")) {
+             caps.style.display = "block";
+             document.getElementById("caps").hidden = false;
+         } else {}
+     });
+     CurrPassword.addEventListener("keyup", function(ebay) {
+
+         if (ebay.getModifierState("CapsLock")) {}
+         else {
+             caps.style.display = "none";
+             document.getElementById("caps").hidden = true;
+         }
+     });
+     NewPassword.addEventListener("keydown", function(amazon) {
+
+         if (amazon.getModifierState("CapsLock")) {
+             caps.style.display = "block";
+             document.getElementById("caps").hidden = false;
+         } else {}
+     });
+     NewPassword.addEventListener("keyup", function(amazon) {
+
+         if (amazon.getModifierState("CapsLock")) {}
+         else {
+             caps.style.display = "none";
+             document.getElementById("caps").hidden = true;
+         }
+     });
+     ConfirmPassword.addEventListener("keydown", function(amazon) {
+
+         if (amazon.getModifierState("CapsLock")) {
+             caps.style.display = "block";
+             document.getElementById("caps").hidden = false;
+         } else {}
+     });
+     ConfirmPassword.addEventListener("keyup", function(amazon) {
+
+         if (amazon.getModifierState("CapsLock")) {}
+         else {
+             caps.style.display = "none";
+             document.getElementById("caps").hidden = true;
+         }
+     });
 
 
 </script>

@@ -209,7 +209,7 @@
 
 </head>
 
-<body>
+<body ononline="onFunction()" onoffline="offFunction()">
 <!--<body onload="init()">-->
     <!--<div class="navul" style="height: 150px;-->
         <!--background: #000000;">-->
@@ -468,8 +468,10 @@
     let rowSelectedValue = JSON.parse(localStorage.getItem("rowSelectedValue"));
     let continentList = document.getElementById("continent2");
     let layerformat;
-    let continentabbrvalue;
-    let valueboy;
+    // let continentabbrvalue;
+    // let valueboy;
+    // let countryList = document.getElementById("country2");
+    // let obedientvalue = countryList[countryList.selectedIndex].value;
 
 
     $(document).ready(function() {
@@ -491,9 +493,10 @@
         // $("#continent2").html("<option>" + rowSelectedValue[4]+ "</option>");
         $('#country option[value="selected"]').val(rowSelectedValue[5]);
         // $('#country2 option[value="select"]').val(rowSelectedValue[5]);
-        $("#country2").html("<option>" + rowSelectedValue[5]+ "</option>");
+        $("#country2").html("<option selected>" + rowSelectedValue[5]+ "</option>");
         document.getElementById('DisplayName').value = rowSelectedValue[12];
         document.getElementById('comment').value = rowSelectedValue[17];
+        // $("#country2 option:selected").val(rowSelectedValue[5]);
 
         if (rowSelectedValue[14] == "GeoTIFF - Tagged Image File Format with Geographic information (.tif)" || rowSelectedValue[14] == "GeoTIFF - Tagged Image File Format with Geographic information (.tif),") {
              layerformat = 'GeoBoy';
@@ -526,6 +529,7 @@
             $('#sub option[value="Category"]').val(rowSelectedValue[10]);
             $("#sub").html("<option>" + rowSelectedValue[10]+ "</option>")
         }
+
 
         if (UserRole === "Admin") {
             document.getElementById("msg").innerHTML = "";
@@ -869,6 +873,17 @@
     //     });
     // });
 
+    // $("select").change(function() {
+    //         var str = "";
+    //         $( "select option:selected" ).each(function() {
+    //             str += $( this ).text() + " ";
+    //         });
+    //         $( "div" ).text( str );
+    //     }).trigger( "change" );
+
+
+
+
     function changeContinent (continentValue){
 
         let country = "country="+continentValue;
@@ -999,6 +1014,13 @@
         }
     }
 
+    function onFunction() {
+        alert ("You are now online.");
+    }
+
+    function offFunction() {
+        alert ("Your are offline. Some functionality may be unavailable.");
+    }
     // function SearchLayerName(value){
     //     $.ajax({
     //         url: "SearchLayerName",
