@@ -176,7 +176,7 @@
         </div>
     </div>
 </div>
-<body>
+<body ononline="onFunction()" onoffline="offFunction()">
 
 <div class="container center">
     <div class="page-header text-center header">
@@ -515,6 +515,14 @@
 
             }
         })
+    }
+
+    function onFunction() {
+        alert ("You are online.");
+    }
+
+    function offFunction() {
+        alert ("Your are offline. Some functionality may be unavailable.");
     }
 
 </script>

@@ -56,7 +56,7 @@
     margin: auto; display: block;" />
 	</a>
 </div>
-<body>
+<body ononline="onFunction()" onoffline="offFunction()">
 <div class="container" style="width: 500px;
     padding: 0px;">
 
@@ -226,6 +226,14 @@
 	//
 	// }
 
+
+	function onFunction() {
+		alert ("You are online.");
+	}
+
+	function offFunction() {
+		alert ("Your are offline. Some functionality may be unavailable.");
+	}
 
 </script>
 </body>

@@ -65,7 +65,7 @@
     </style>
 
 </head>
-<body>
+<body ononline="onFunction()" onoffline="offFunction()">
 <div class="container" style="width: 750px;">
     <div class="container" style="width: 500px;padding: 0px;">
         <h1><span class="fa fa-sign-in"></span> Edit User</h1>
@@ -286,6 +286,15 @@
             //
             // return false;
         }
+
+
+     function onFunction() {
+         alert ("You are online.");
+     }
+
+     function offFunction() {
+         alert ("Your are offline. Some functionality may be unavailable.");
+     }
 
 
 </script>

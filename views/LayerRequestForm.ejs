@@ -168,7 +168,7 @@
 
 </head>
 
-<body>
+<body ononline="onFunction()" onoffline="offFunction()">
     <div class="navul" style="height: 150px;
         background: #000000;">
         <a class="navul" href="//aworldbridge.com" style="background: #000000;
@@ -614,6 +614,13 @@
         window.location.replace('/userHome');
     }
 
+    function onFunction() {
+        alert ("You are online.");
+    }
+
+    function offFunction() {
+        alert ("Your are offline. Some functionality may be unavailable.");
+    }
 
 //to check that if there are duplicated from the layer name that layer name that you just inserted
 //     function SearchLayerName(value){

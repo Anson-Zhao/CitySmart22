@@ -13,7 +13,6 @@
     <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css">-->
     <link href="//www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
     <link href='//fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-    <link href="https://fonts.googleapis.com/css?family=EB+Garamond&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/menu.css"/>
     <script src="../3rdPartyLibs/jquery-3.3.1.min.js" type="text/javascript"></script>
     <script src="../3rdPartyLibs/build/WorldWind-built.js"></script>
@@ -172,7 +171,7 @@
         .popup-Body {padding: 2px 16px;}
         #browserpar {
             text-align: center;
-            font-family: 'EB Garamond', serif;
+            font-family: serif;
         }
         #capsboy {
             color: red;
@@ -188,9 +187,9 @@
         <img class="banner" src="../images/NewWBBanner.jpg" style="width: 950px;height: 150px; margin: auto; display: block;" />
     </a>
 </div>
-<body>
+<body ononline="onFunction()" onoffline="offFunction()">
 <div class="container">
-    <p id="browserpar"> This page works best on the most recent version of the <strong>Chrome</strong> browser.</p>
+    <p id="browserpar"> This page works best on the most recent version of <strong>Chrome</strong>.</p>
     <div class="page-header text-center header">
         <h1><span class="fa fa-globe"></span> City Smart V2 </h1>
         <div class="log-form">
@@ -561,6 +560,14 @@
 
     function herFunction() {
         document.getElementById("shower").hidden = false;
+    }
+
+    function onFunction() {
+        alert ("You are online.");
+    }
+
+    function offFunction() {
+        alert ("Your are offline. Some functionality may be unavailable.");
     }
 </script>
 </body>

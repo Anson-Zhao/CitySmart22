@@ -200,7 +200,7 @@
         </div>
     </div>
 </div>
-<body>
+<body ononline="onFunction()" onoffline="offFunction()">
 <div class="container">
     <div class="page-header text-center">
         <h1><span class="fa fa-check-square-o"></span><strong> CitySmart - Approved Layers </strong></h1>
@@ -672,6 +672,14 @@
 
         // Click download link
         downloadLink.click();
+    }
+
+    function onFunction() {
+        alert ("You are online.");
+    }
+
+    function offFunction() {
+        alert ("Your are offline. Some functionality may be unavailable.");
     }
 
 

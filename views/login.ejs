@@ -57,7 +57,7 @@
     margin: auto; display: block;" />
     </a>
 </div>
-<body>
+<body ononline="onFunction()" onoffline="offFunction()">
 <div class="container" style="width: 500px;
     padding: 0px;">
     <h1><span class="fa fa-sign-in"></span> Login</h1>
@@ -156,6 +156,14 @@
     let time2 = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
     let dateTime = date + ' ' + time2;
     document.getElementById("date").value = dateTime;
+
+    function onFunction() {
+        alert ("You are online.");
+    }
+
+    function offFunction() {
+        alert ("Your are offline. Some functionality may be unavailable.");
+    }
 </script>
 </body>
 </html>
