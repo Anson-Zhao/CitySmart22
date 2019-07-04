@@ -62,6 +62,10 @@
         input[type="password"] {
             height: 60px;
         }
+        #caps {
+            color: red;
+            text-align: center;
+        }
     </style>
 
 </head>
@@ -199,27 +203,29 @@
                     <div>
                         <label style="font-size:18px;">Password Change</label>
                     </div>
+                    <p id="caps" hidden><strong>WARNING: Caps lock is enabled.</strong></p>
                     <div class="form-group">
                         <label class="col-md-4 control-label">Current Password</label>
                         <div class="col-md-8 inputGroupContainer">
-                            <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span><input id="currentPassword" name="CurrentPassword"  class="form-control"  value="" type="password"></div>
+                            <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span><input id="currentPassword" name="CurrentPassword"  class="form-control"  onfocus ="thisFunction()" value="" type="password"></div>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-md-4 control-label">New Password</label>
                         <div class="col-md-8 inputGroupContainer">
-                            <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span><input id="newPassword" name="NewPassword" class="form-control" value="" type="password"></div>
+                            <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span><input id="newPassword" name="NewPassword" class="form-control" onfocus ="thisFunction()" value="" type="password"></div>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-md-4 control-label">Confirm New Password</label>
                         <div class="col-md-8 inputGroupContainer">
-                            <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span><input id="confirmPassword" name="ConfirmNewPassword" class="form-control"  value="" type="password"></div>
+                            <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span><input id="confirmPassword" name="ConfirmNewPassword" class="form-control"  onfocus ="thisFunction()" value="" type="password"></div>
                         </div>
                     </div>
                 <br>
                 <br>
             </fieldset>
+                <div id="shower" hidden><input type="checkbox" onclick="yourFunction()"> Show Passwords</div>
             </form>
             <button id="checkit" class="btn-primary" style="display:none; margin-top:-85px; margin-left:550px;" onclick="check()">Check</button>
         </div>
@@ -235,6 +241,78 @@
     let UserName = "<%= user.username %>";
     let passwordC = "<%= user.password %>";
     let newusername;
+    let CurrPassword = document.getElementById("currentPassword");
+    let NewPassword = document.getElementById("newPassword");
+    let ConfirmPassword = document.getElementById("confirmPassword");
+    let caps = document.getElementById("caps");
+
+    CurrPassword.addEventListener("keydown", function(ebay) {
+
+        if (ebay.getModifierState("CapsLock")) {
+            caps.style.display = "block";
+            document.getElementById("caps").hidden = false;
+        } else {}
+    });
+    CurrPassword.addEventListener("keyup", function(ebay) {
+
+        if (ebay.getModifierState("CapsLock")) {}
+        else {
+            caps.style.display = "none";
+            document.getElementById("caps").hidden = true;
+        }
+    });
+    NewPassword.addEventListener("keydown", function(amazon) {
+
+        if (amazon.getModifierState("CapsLock")) {
+            caps.style.display = "block";
+            document.getElementById("caps").hidden = false;
+        } else {}
+    });
+    NewPassword.addEventListener("keyup", function(amazon) {
+
+        if (amazon.getModifierState("CapsLock")) {}
+        else {
+            caps.style.display = "none";
+            document.getElementById("caps").hidden = true;
+        }
+    });
+    ConfirmPassword.addEventListener("keydown", function(amazon) {
+
+        if (amazon.getModifierState("CapsLock")) {
+            caps.style.display = "block";
+            document.getElementById("caps").hidden = false;
+        } else {}
+    });
+    ConfirmPassword.addEventListener("keyup", function(amazon) {
+
+        if (amazon.getModifierState("CapsLock")) {}
+        else {
+            caps.style.display = "none";
+            document.getElementById("caps").hidden = true;
+        }
+    });
+
+    function yourFunction() {
+        if (CurrPassword.type === "password") {
+            CurrPassword.type = "text";
+        } else {
+            CurrPassword.type = "password";
+        }
+        if (NewPassword.type === "password") {
+            NewPassword.type = "text";
+        } else {
+            NewPassword.type = "password";
+        }
+        if (ConfirmPassword.type === "password") {
+            ConfirmPassword.type = "text";
+        } else {
+            ConfirmPassword.type = "password";
+        }
+    }
+
+    function thisFunction() {
+        document.getElementById("shower").hidden = false;
+    }
 
 
     let getvalue = JSON.parse(localStorage.getItem("getvalue"));
