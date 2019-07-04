@@ -75,7 +75,7 @@
     margin: auto; display: block;" />
     </a>
 </div>
-<body>
+<body ononline="onFunction()" onoffline="offFunction()">
 
 <div class="container" style="width: 850px;">
     <h1 class="text-center page-header"><strong>User Profile</strong></h1>
@@ -462,6 +462,16 @@
         }
         return input;
     }
+
+
+    function onFunction() {
+        alert ("You are now online.");
+    }
+
+    function offFunction() {
+        alert ("Your are offline. Some functionality may be unavailable.");
+    }
+
 </script>
 </body>
 </html>

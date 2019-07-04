@@ -200,7 +200,7 @@
         </div>
     </div>
 </div>
-<body>
+<body ononline="onFunction()" onoffline="offFunction()">
 <div class="container">
     <div class="page-header text-center">
         <h1><span class="fa fa-check-square-o"></span><strong> CitySmart - Approved Layers </strong></h1>
@@ -409,6 +409,7 @@
     let transactionID = [];
     let transactionpicturename = [];
     let LayerNameStr = [];
+    // let layer0continent;
 
     $(document).ready(function(){
         $(function() {
@@ -535,6 +536,43 @@
                     console.log(resp);
                     for (let i = 0; i < resp.length; i++) {
                         if (resp[i].Current_Status === "Approved") {
+                            // if (resp[i].ContinentName = 'SA') {
+                            //     layer0continent = "South America";
+                            // } else if (resp[i].ContinentName = 'NA') {
+                            //     layer0continent = "North America";
+                            // } else if (resp[i].ContinentName = 'OC') {
+                            //     layer0continent = "Oceania";
+                            // } else if (resp[i].ContinentName = 'AF') {
+                            //     layer0continent = "Africa";
+                            // } else if (resp[i].ContinentName = 'AS') {
+                            //     layer0continent = "Asia";
+                            // } else if (resp[i].ContinentName = 'EU') {
+                            //     layer0continent = "Europe";
+                            // } else if (resp[i].ContinentName = 'AN') {
+                            //     layer0continent = "Antarctica";
+                            // } else {
+                            //     layer0continent = resp[i].ContinentName;
+                            // }
+                                //layer0continent
+                            // table.row.add([
+                            //     resp[i].Date,
+                            //     resp[i].UID,
+                            //     resp[i].RID,
+                            //     resp[i].LayerCategory,
+                            //     layer0continent,
+                            //     resp[i].CountryName,
+                            //     resp[i].StateName,
+                            //     resp[i].CityName,
+                            //     resp[i].FirstLayer,
+                            //     resp[i].FirstOther,
+                            //     resp[i].SecondLayer,
+                            //     resp[i].SecondOther,
+                            //     resp[i].ThirdLayer,
+                            //     resp[i].Layer_Description,
+                            //     resp[i].LayerFormat,
+                            //     resp[i].Layer_Uploader_name,
+                            //     resp[i].Current_Status
+                            // ]).draw(false);
                             table.row.add([
                                 resp[i].Date,
                                 resp[i].UID,
@@ -632,6 +670,14 @@
 
         // Click download link
         downloadLink.click();
+    }
+
+    function onFunction() {
+        alert ("You are now online.");
+    }
+
+    function offFunction() {
+        alert ("Your are offline. Some functionality may be unavailable.");
     }
 
 

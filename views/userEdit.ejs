@@ -62,10 +62,14 @@
         h1 {
             text-align: center;
         }
+        #caps {
+            color: red;
+            text-align: center;
+        }
     </style>
 
 </head>
-<body>
+<body ononline="onFunction()" onoffline="offFunction()">
 <div class="container" style="width: 750px;">
     <div class="container" style="width: 500px;padding: 0px;">
         <h1><span class="fa fa-sign-in"></span> Edit User</h1>
@@ -115,28 +119,32 @@
                         <div>
                             <label style="font-size:18px;">Password Change</label>
                         </div>
+                        <p id="caps" hidden><strong>WARNING: Caps lock is enabled.</strong></p>
                         <div class="form-group">
                             <label id="displayCurrentPassword" class="col-md-4 control-label">Current Password</label>
                             <div class="col-md-8 inputGroupContainer">
-                                <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span><input id="currentPassword" name="CurrentPassword" class="form-control"  value="" type="password"></div>
+                                <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span><input id="currentPassword" name="CurrentPassword" class="form-control"  onfocus ="thisFunction()" value="" type="password"></div>
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-md-4 control-label">New Password</label>
                             <div class="col-md-8 inputGroupContainer">
-                                <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span><input id="newPassword" name="NewPassword" class="form-control" value="" type="password"></div>
+                                <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span><input id="newPassword" name="NewPassword" class="form-control" onfocus ="thisFunction()" value="" type="password"></div>
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="col-md-4 control-label">Confirm New Password</label>
                             <div class="col-md-8 inputGroupContainer">
-                                <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span><input id="confirmPassword" name="ConfirmNewPassword" class="form-control"  value="" type="password"></div>
+                                <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span><input id="confirmPassword" name="ConfirmNewPassword" class="form-control"  onfocus ="thisFunction()" value="" type="password"></div>
                             </div>
                         </div>
                 </form>
+                <div id="shower" hidden><input type="checkbox" onclick="yourFunction()"> Show Passwords</div>
+                <h1></h1>
                 <button id="checkit" class="btn-primary" style="display:none; margin-top:-57px; margin-left: 410px;" onclick="checkForm()">Check</button>
             </div>
             <br>
+        <div></div>
             <button id="updateForm" type="submit" class="button1" onclick="submitForm();" > Update </button>
             <hr>
             <a href="/userManagement" style="margin-left: 230px;">Cancel</a>
@@ -145,7 +153,78 @@
 </div>
 <script>
      let LoginUser = "<%= user.username %>";
+     let CurrPassword = document.getElementById("currentPassword");
+     let NewPassword = document.getElementById("newPassword");
+     let ConfirmPassword = document.getElementById("confirmPassword");
+     let caps = document.getElementById("caps");
 
+     CurrPassword.addEventListener("keydown", function(ebay) {
+
+         if (ebay.getModifierState("CapsLock")) {
+             caps.style.display = "block";
+             document.getElementById("caps").hidden = false;
+         } else {}
+     });
+     CurrPassword.addEventListener("keyup", function(ebay) {
+
+         if (ebay.getModifierState("CapsLock")) {}
+         else {
+             caps.style.display = "none";
+             document.getElementById("caps").hidden = true;
+         }
+     });
+     NewPassword.addEventListener("keydown", function(amazon) {
+
+         if (amazon.getModifierState("CapsLock")) {
+             caps.style.display = "block";
+             document.getElementById("caps").hidden = false;
+         } else {}
+     });
+     NewPassword.addEventListener("keyup", function(amazon) {
+
+         if (amazon.getModifierState("CapsLock")) {}
+         else {
+             caps.style.display = "none";
+             document.getElementById("caps").hidden = true;
+         }
+     });
+     ConfirmPassword.addEventListener("keydown", function(amazon) {
+
+         if (amazon.getModifierState("CapsLock")) {
+             caps.style.display = "block";
+             document.getElementById("caps").hidden = false;
+         } else {}
+     });
+     ConfirmPassword.addEventListener("keyup", function(amazon) {
+
+         if (amazon.getModifierState("CapsLock")) {}
+         else {
+             caps.style.display = "none";
+             document.getElementById("caps").hidden = true;
+         }
+     });
+
+     function yourFunction() {
+         if (CurrPassword.type === "password") {
+             CurrPassword.type = "text";
+         } else {
+             CurrPassword.type = "password";
+         }
+         if (NewPassword.type === "password") {
+             NewPassword.type = "text";
+         } else {
+             NewPassword.type = "password";
+         }
+         if (ConfirmPassword.type === "password") {
+             ConfirmPassword.type = "text";
+         } else {
+             ConfirmPassword.type = "password";
+         }
+     }
+
+     function thisFunction() {
+         document.getElementById("shower").hidden = false;
+     }
 
      let getvalue = JSON.parse(localStorage.getItem("getvalue"));
     document.getElementById('username').value = getvalue[0];
@@ -195,7 +274,8 @@
             document.getElementById("checkit").style.display = "none";
             document.getElementById("checkit").style.backgroundColor =  "lightgray";
             document.getElementById("updateForm").removeAttribute("disabled");
-        }
+             document.getElementById("shower").hidden = true;
+         }
     }
 
 
@@ -224,7 +304,7 @@
                  success : function(d){
                      if (d === true) {
                          alert("Please make sure you typed your current password correctly.");
-                     }else if(d === false){
+                     } else if(d === false){
                          if (oldP !== "" && confirmP !== "" && newP !== "") {
                              if (oldP !== newP) {
                                  if (newP === confirmP) {
@@ -286,6 +366,17 @@
             //
             // return false;
         }
+
+
+     function onFunction() {
+         alert ("You are now online.");
+     }
+
+     function offFunction() {
+         alert ("Your are offline. Some functionality may be unavailable.");
+     }
+
+
 
 
 </script>

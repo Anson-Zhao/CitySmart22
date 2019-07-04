@@ -176,7 +176,7 @@
         </div>
     </div>
 </div>
-<body>
+<body ononline="onFunction()" onoffline="offFunction()">
 
 <div class="container center">
     <div class="page-header text-center header">
@@ -241,6 +241,8 @@
     <br>
     <div class="center" style="width: 850px;">
         <h4 id="subtitles"><strong>Most Recent Records (Pending or Rejected):</strong></h4>
+        <h5>Continent Key</h5>
+        <p>SA: South America <br> NA: North America <br> OC: Oceania <br> EU: Europe <br> AS: Asia <br> AF: Africa <br> AN: Antarctica</p>
         <div id="dvData">
             <table id="dataDisplay">
                 <thead>
@@ -513,6 +515,14 @@
 
             }
         })
+    }
+
+    function onFunction() {
+        alert ("You are now online.");
+    }
+
+    function offFunction() {
+        alert ("Your are offline. Some functionality may be unavailable.");
     }
 
 </script>

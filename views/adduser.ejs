@@ -49,7 +49,7 @@
     margin: auto; display: block;" />
     </a>
 </div>
-<body>
+<body ononline="onFunction()" onoffline="offFunction()">
 <div class="container" style="width: 500px;
     padding: 0px;">
     <h1 style="margin-top: 20px;"><span class="fa fa-sign-in"></span> Add User </h1>
@@ -133,6 +133,14 @@
         let dateTime = date + ' ' + time2;
         document.getElementById("DATE").value = dateTime;
     });
+
+    function onFunction() {
+        alert ("You are now online.");
+    }
+
+    function offFunction() {
+        alert ("Your are offline. Some functionality may be unavailable.");
+    }
 </script>
 </body>
 </html>

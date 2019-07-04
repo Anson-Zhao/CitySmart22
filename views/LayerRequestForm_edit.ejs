@@ -209,7 +209,7 @@
 
 </head>
 
-<body>
+<body ononline="onFunction()" onoffline="offFunction()">
 <!--<body onload="init()">-->
     <!--<div class="navul" style="height: 150px;-->
         <!--background: #000000;">-->
@@ -468,6 +468,11 @@
     let rowSelectedValue = JSON.parse(localStorage.getItem("rowSelectedValue"));
     let continentList = document.getElementById("continent2");
     let layerformat;
+    // let continentabbrvalue;
+    // let valueboy;
+    // let countryList = document.getElementById("country2");
+    // let obedientvalue = countryList[countryList.selectedIndex].value;
+
 
     $(document).ready(function() {
         console.log(rowSelectedValue);
@@ -478,19 +483,20 @@
         document.getElementById('Status').value = rowSelectedValue[16];
         document.getElementById('main').value = rowSelectedValue[8];
         document.getElementById('LayerStateInput').value = rowSelectedValue[6];
-        document.getElementById('LayerFormat2').value = rowSelectedValue[14];
+        // document.getElementById('LayerFormat').value = document.getElementById('LayerFormat2').value;
         // $("#LayerFormat").html("<option>" + rowSelectedValue[14]+ "</option>");
         $("#LayerFormat2").html("<option>" + rowSelectedValue[14]+ "</option>");
         document.getElementById('message').value = rowSelectedValue[13];
         document.getElementById('City').value = rowSelectedValue[7];
         $('#continent option[value="AL"]').val(rowSelectedValue[4]);
         // $('#continent2 option[value="AL"]').val(rowSelectedValue[4]);
-        $("#continent2").html("<option>" + rowSelectedValue[4]+ "</option>");
+        // $("#continent2").html("<option>" + rowSelectedValue[4]+ "</option>");
         $('#country option[value="selected"]').val(rowSelectedValue[5]);
         // $('#country2 option[value="select"]').val(rowSelectedValue[5]);
-        $("#country2").html("<option>" + rowSelectedValue[5]+ "</option>");
+        $("#country2").html("<option selected>" + rowSelectedValue[5]+ "</option>");
         document.getElementById('DisplayName').value = rowSelectedValue[12];
         document.getElementById('comment').value = rowSelectedValue[17];
+        // $("#country2 option:selected").val(rowSelectedValue[5]);
 
         if (rowSelectedValue[14] == "GeoTIFF - Tagged Image File Format with Geographic information (.tif)" || rowSelectedValue[14] == "GeoTIFF - Tagged Image File Format with Geographic information (.tif),") {
              layerformat = 'GeoBoy';
@@ -505,6 +511,11 @@
         }
 
         document.getElementById(layerformat).selected = true;
+        document.getElementById('LayerFormat2').value = document.getElementById('LayerFormat').value;
+
+
+
+        //getAttributeNode("value").value
 
 
         if(rowSelectedValue[8] === "other" || rowSelectedValue[10] === "other"){
@@ -518,6 +529,7 @@
             $('#sub option[value="Category"]').val(rowSelectedValue[10]);
             $("#sub").html("<option>" + rowSelectedValue[10]+ "</option>")
         }
+
 
         if (UserRole === "Admin") {
             document.getElementById("msg").innerHTML = "";
@@ -580,10 +592,75 @@
             dataType: 'json',
             success: function (results) {
                 for (let i = 0; i < results.length; i++) {
-                    continentList.add(new Option(results[i].Continent_name, results[i].Continent));
+
+                    // if (results[i].Continent_name = rowSelectedValue[4]) {
+                    //     continentList.remove(results[i].Continent_name, results[i].Continent);
+                    // } else if (results[i].Continent = rowSelectedValue[4]) {
+                    //     continentList.remove(results[i].Continent_name, results[i].Continent);
+                    // } else {}
+                    // continentList.className = results[i].Continent;
+                    // console.log(continentList.className);
+                    if (results[i].Continent != rowSelectedValue[4]) {
+                        continentList.add(new Option(results[i].Continent_name, results[i].Continent));//Continent name refers to the actual name while the continent just refers to the abbreviation of the continent
+                    } else {}
+
+
+                    console.log(continentList);
+                    console.log(results);
                 }
             }
         });
+
+
+        if(rowSelectedValue[4] === "OC") {
+            continentabbrvalue = "Oceania";
+            valueboy = rowSelectedValue[4];
+        } else if (rowSelectedValue[4] === "NA") {
+            continentabbrvalue = "North America";
+            valueboy = rowSelectedValue[4];
+        } else if (rowSelectedValue[4] === "SA") {
+            continentabbrvalue = "South America";
+            valueboy = rowSelectedValue[4];
+        } else if (rowSelectedValue[4] === "EU") {
+            continentabbrvalue = "Europe";
+            valueboy = rowSelectedValue[4];
+        } else if (rowSelectedValue[4] === "AF") {
+            continentabbrvalue = "Africa";
+            valueboy = rowSelectedValue[4];
+        } else if (rowSelectedValue[4] === "AS") {
+            continentabbrvalue = "Asia";
+            valueboy = rowSelectedValue[4];
+        } else if (rowSelectedValue[4] === "AN") {
+            continentabbrvalue = "Antarctica";
+            valueboy = rowSelectedValue[4];
+        } else if (rowSelectedValue[4] === "Others") {
+            continentabbrvalue = rowSelectedValue[4];
+            valueboy = rowSelectedValue[4];
+        } else if(rowSelectedValue[4] === "Oceania") {
+            continentabbrvalue = rowSelectedValue[4];
+            valueboy = 'OC';
+        } else if (rowSelectedValue[4] === "North America") {
+            continentabbrvalue = rowSelectedValue[4];
+            valueboy = 'NA';
+        } else if (rowSelectedValue[4] === "South America") {
+            continentabbrvalue = rowSelectedValue[4];
+            valueboy = 'SA';
+        } else if (rowSelectedValue[4] === "Europe") {
+            continentabbrvalue = rowSelectedValue[4];
+            valueboy = 'EU';
+        } else if (rowSelectedValue[4] === "Africa") {
+            continentabbrvalue = rowSelectedValue[4];
+            valueboy = 'AF';
+        } else if (rowSelectedValue[4] === "Asia") {
+            continentabbrvalue = rowSelectedValue[4];
+            valueboy = 'AS';
+        } else if (rowSelectedValue[4] === "Antarctica") {
+            continentabbrvalue = rowSelectedValue[4];
+            valueboy = 'AN';
+        } else {
+            continentabbrvalue = rowSelectedValue[4];
+        }
+        $("#continent2").html('<option selected value = ' + "'"+ valueboy + "'" +">"+ continentabbrvalue + "</option>");
 
 
 
@@ -796,10 +873,21 @@
     //     });
     // });
 
+    // $("select").change(function() {
+    //         var str = "";
+    //         $( "select option:selected" ).each(function() {
+    //             str += $( this ).text() + " ";
+    //         });
+    //         $( "div" ).text( str );
+    //     }).trigger( "change" );
+
+
+
+
     function changeContinent (continentValue){
 
         let country = "country="+continentValue;
-        let countryList = document.getElementById("country2")
+        let countryList = document.getElementById("country2");
 
         while (countryList.options.length) {
             countryList.remove(0);
@@ -857,6 +945,12 @@
                 return false;
             }
         }else if (UserRole === "Regular") {
+            let regulardata = $("#layer").serialize();
+            let status = "Current_Status=" + rowSelectedValue[16];
+            console.log('status');
+            console.log(status);
+            console.log('regular data');
+            console.log(regulardata);
             if (confirm("Are you sure you would like to submit this data?") === true) {
                 let regulardata = $("#layer").serialize();
                 let status = "Current_Status=" + rowSelectedValue[16];
@@ -920,6 +1014,13 @@
         }
     }
 
+    function onFunction() {
+        alert ("You are now online.");
+    }
+
+    function offFunction() {
+        alert ("Your are offline. Some functionality may be unavailable.");
+    }
     // function SearchLayerName(value){
     //     $.ajax({
     //         url: "SearchLayerName",
