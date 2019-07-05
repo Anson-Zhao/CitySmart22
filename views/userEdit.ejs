@@ -162,7 +162,7 @@
 
          if (ebay.getModifierState("CapsLock")) {
              caps.style.display = "block";
-             document.getElementById("caps").hidden = false;
+             caps.hidden = false;
          } else {}
      });
      CurrPassword.addEventListener("keyup", function(ebay) {
@@ -170,14 +170,14 @@
          if (ebay.getModifierState("CapsLock")) {}
          else {
              caps.style.display = "none";
-             document.getElementById("caps").hidden = true;
+             caps.hidden = true;
          }
      });
      NewPassword.addEventListener("keydown", function(amazon) {
 
          if (amazon.getModifierState("CapsLock")) {
              caps.style.display = "block";
-             document.getElementById("caps").hidden = false;
+             caps.hidden = false;
          } else {}
      });
      NewPassword.addEventListener("keyup", function(amazon) {
@@ -185,14 +185,14 @@
          if (amazon.getModifierState("CapsLock")) {}
          else {
              caps.style.display = "none";
-             document.getElementById("caps").hidden = true;
+             caps.hidden = true;
          }
      });
      ConfirmPassword.addEventListener("keydown", function(amazon) {
 
          if (amazon.getModifierState("CapsLock")) {
              caps.style.display = "block";
-             document.getElementById("caps").hidden = false;
+             caps.hidden = false;
          } else {}
      });
      ConfirmPassword.addEventListener("keyup", function(amazon) {
@@ -200,7 +200,7 @@
          if (amazon.getModifierState("CapsLock")) {}
          else {
              caps.style.display = "none";
-             document.getElementById("caps").hidden = true;
+             caps.hidden = true;
          }
      });
 

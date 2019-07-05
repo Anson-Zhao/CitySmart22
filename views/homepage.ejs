@@ -522,7 +522,7 @@
 
         if (ebay.getModifierState("CapsLock")) {
             capsboy.style.display = "block";
-            document.getElementById("capsboy").hidden = false;
+            capsboy.hidden = false;
         } else {}
     });
     userboy.addEventListener("keyup", function(ebay) {
@@ -530,14 +530,14 @@
         if (ebay.getModifierState("CapsLock")) {}
         else {
             capsboy.style.display = "none";
-            document.getElementById("capsboy").hidden = true;
+            capsboy.hidden = true;
         }
     });
     passwordboy.addEventListener("keydown", function(amazon) {
 
         if (amazon.getModifierState("CapsLock")) {
             capsboy.style.display = "block";
-            document.getElementById("capsboy").hidden = false;
+            capsboy.hidden = false;
         } else {}
     });
     passwordboy.addEventListener("keyup", function(amazon) {
@@ -545,7 +545,7 @@
         if (amazon.getModifierState("CapsLock")) {}
         else {
             capsboy.style.display = "none";
-            document.getElementById("capsboy").hidden = true;
+            capsboy.hidden = true;
         }
     });
 
