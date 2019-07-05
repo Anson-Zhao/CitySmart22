@@ -1764,7 +1764,6 @@ module.exports = function (app, passport) {
         let layerName;
         let datastore = "datastore" + result[7][1];
 
-        console.log(result);
         console.log(result[6][1]);
         console.log(result[7][1]);
         console.log(datastore);
@@ -1796,7 +1795,7 @@ module.exports = function (app, passport) {
                 if (err) {
                     throw err;
                 } else {
-                    res.json("Connected!")
+                    res.json("Connected!");
                 }
             });
         }else{
@@ -1806,7 +1805,7 @@ module.exports = function (app, passport) {
                if (err) {
                     throw err;
                 } else {
-                    res.json("Connected!")
+                    res.json("Connected!");
                 }
             });
         }
