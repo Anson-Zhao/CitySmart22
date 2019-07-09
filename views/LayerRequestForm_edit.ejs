@@ -406,7 +406,7 @@
                         <div class="col-md-8 inputGroupContainer">
                             <div class="input-group">
                                 <span class="input-group-addon" style="max-width: 100%;"><i class="glyphicon glyphicon-list"></i></span>
-                                <select required class="selectpicker form-control" name="LayerFormat" id="LayerFormat2">
+                                <select required class="selectpicker form-control" id="LayerFormat2">
                                     <option value="">SELECT LAYER FORMAT</option>
                                     <option>GeoTIFF - Tagged Image File Format with Geographic information (.tif)</option>
                                     <option>Shapefile - ESRI(tm) Shapefiles (.shp)</option>
@@ -520,39 +520,39 @@
         console.log('Big Nose');
 
 
-        // if (document.getElementById('LayerFormat').value == "GeoTIFF - Tagged Image File Format with Geographic information (.tif),") {
-        //
-        //     document.getElementById('LayerFormat').value = "GeoTIFF - Tagged Image File Format with Geographic information (.tif)";
-        //
-        // } else if (document.getElementById('LayerFormat2').value == "Shapefile - ESRI(tm) Shapefiles (.shp),") {
-        //
-        //     document.getElementById('LayerFormat2').value = "Shapefile - ESRI(tm) Shapefiles (.shp)";
-        //
-        // } else if (document.getElementById('LayerFormat').value == "Shapefile - ESRI(tm) Shapefiles (.shp),") {
-        //
-        //     document.getElementById('LayerFormat').value = "Shapefile - ESRI(tm) Shapefiles (.shp)";
-        //
-        // } else if (document.getElementById('LayerFormat2').value == "Shapefile - ESRI(tm) Shapefiles (.shp),") {
-        //
-        //     document.getElementById('LayerFormat2').value = "Shapefile - ESRI(tm) Shapefiles (.shp)";
-        //
-        // } else if (document.getElementById('LayerFormat').value == "JP2ECW - JP2K (.jp2/.j2k),") {
-        //
-        //     document.getElementById('LayerFormat').value = "JP2ECW - JP2K (.jp2/.j2k)";
-        //
-        // } else if (document.getElementById('LayerFormat2').value == "JP2ECW - JP2K (.jp2/.j2k),") {
-        //
-        //     document.getElementById('LayerFormat2').value = "JP2ECW - JP2K (.jp2/.j2k)";
-        //
-        // } else if (document.getElementById('LayerFormat').value == "AIG - Arc/Info Binary Grid (.adf),") {
-        //
-        //     document.getElementById('LayerFormat').value = "AIG - Arc/Info Binary Grid (.adf)";
-        //
-        // } else if (document.getElementById('LayerFormat2').value == "AIG - Arc/Info Binary Grid (.adf),") {
-        //
-        //     document.getElementById('LayerFormat2').value = "AIG - Arc/Info Binary Grid (.adf)";
-        //
-        // } else{}
+        if (document.getElementById('LayerFormat').value == "GeoTIFF - Tagged Image File Format with Geographic information (.tif),") {
+
+            document.getElementById('LayerFormat').value = "GeoTIFF - Tagged Image File Format with Geographic information (.tif)";
+
+        } else if (document.getElementById('LayerFormat2').value == "Shapefile - ESRI(tm) Shapefiles (.shp),") {
+
+            document.getElementById('LayerFormat2').value = "Shapefile - ESRI(tm) Shapefiles (.shp)";
+
+        } else if (document.getElementById('LayerFormat').value == "Shapefile - ESRI(tm) Shapefiles (.shp),") {
+
+            document.getElementById('LayerFormat').value = "Shapefile - ESRI(tm) Shapefiles (.shp)";
+
+        } else if (document.getElementById('LayerFormat2').value == "Shapefile - ESRI(tm) Shapefiles (.shp),") {
+
+            document.getElementById('LayerFormat2').value = "Shapefile - ESRI(tm) Shapefiles (.shp)";
+
+        } else if (document.getElementById('LayerFormat').value == "JP2ECW - JP2K (.jp2/.j2k),") {
+
+            document.getElementById('LayerFormat').value = "JP2ECW - JP2K (.jp2/.j2k)";
+
+        } else if (document.getElementById('LayerFormat2').value == "JP2ECW - JP2K (.jp2/.j2k),") {
+
+            document.getElementById('LayerFormat2').value = "JP2ECW - JP2K (.jp2/.j2k)";
+
+        } else if (document.getElementById('LayerFormat').value == "AIG - Arc/Info Binary Grid (.adf),") {
+
+            document.getElementById('LayerFormat').value = "AIG - Arc/Info Binary Grid (.adf)";
+
+        } else if (document.getElementById('LayerFormat2').value == "AIG - Arc/Info Binary Grid (.adf),") {
+
+            document.getElementById('LayerFormat2').value = "AIG - Arc/Info Binary Grid (.adf)";
+
+        } else{}
 
 
         //getAttributeNode("value").value
@@ -982,6 +982,24 @@
                 console.log(tID);
                 console.log(LUN);
                 console.log(lForm);
+
+                if (lForm == "lForm=GeoTIFF - Tagged Image File Format with Geographic information (.tif),") {
+
+                    lForm = "lForm=GeoTIFF - Tagged Image File Format with Geographic information (.tif)";
+
+                } else if (lForm == "lForm=Shapefile - ESRI(tm) Shapefiles (.shp),") {
+
+                    lForm = "lForm=Shapefile - ESRI(tm) Shapefiles (.shp)";
+
+                } else if (lForm == "lForm=JP2ECW - JP2K (.jp2/.j2k),") {
+
+                    lForm = "lForm=JP2ECW - JP2K (.jp2/.j2k)";
+
+                } else if (lForm == "lForm=AIG - Arc/Info Binary Grid (.adf),") {
+
+                    lForm = "lForm=AIG - Arc/Info Binary Grid (.adf)";
+
+                } else{}
                 $.ajax({
                     url: 'approve',
                     type: "GET",
