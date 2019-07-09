@@ -1879,7 +1879,7 @@ module.exports = function (app, passport) {
             } else {
                 // console.log("Yes");
                 // console.log(req.user);
-                res.render('userHome.ejs', {
+                res.render('rejected.ejs', {
                     user: req.user, // get the user out of session and pass to template
                     firstName: results[1][0].firstName,
                     lastName: results[1][0].lastName,
