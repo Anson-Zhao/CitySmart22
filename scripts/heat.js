@@ -17,7 +17,7 @@ requirejs([
 
             // Generate 10000 random points to display on the HeatMap with varying intensity over the area of the whole world.
             var locations = [];
-            for (let j = 0; i < 100; i++) {
+            for (let j = 0; j < 100; j++) {
                 locations.push(
                     new WorldWind.MeasuredLocation(
                         -89 + (179 * Math.random()),
@@ -43,6 +43,8 @@ requirejs([
             heatmapLayer.incrementPerIntensity = 0.2;
 
             heatmapLayer.enabled = false;
+
+            console.log(heatmapLayer);
 
             newGlobe.addLayer(heatmapLayer)
         }

@@ -68,12 +68,24 @@ requirejs(['./newGlobe',
 
                 console.log("0");
                 console.log(newGlobe.layers);
-                if (value === "heat") {
-                    console.log("1");
-                    console.log(value);
-                    let layerRequest = 'layername=' + value;
-                    globePosition(layerRequest, toggle.checked);
+                if (value === "heat0"){
+                    (function myLoop (i) {
+                        setTimeout(function () {
+                            console.log("i: " + i);
+                            let newVal = "heat" + (i-1);
+                            newGlobe.layers[selectedIndex+(i-1)].enabled = toggle.checked;
+                            console.log("1");
+                            console.log(newVal);
+                            let layerRequest = 'layername=' + newVal;
+                            newGlobe.redraw();
+                            if (--i) {
+                                myLoop(i);
+                            }
+                        }, 2000)
+                    })(10);
                 }
+
+
 
                 if (newGlobe.layers[selectedIndex] instanceof WorldWind.RenderableLayer) {
                     if (selectedIndex < 0 || !newGlobe.layers[selectedIndex].renderables.length) {
@@ -363,5 +375,13 @@ requirejs(['./newGlobe',
         left.html(config[toggleV].Min);
         right.html(config[toggleV].Max);
 
+    }
+
+    function wait(ms){
+        var start = new Date().getTime();
+        var end = start;
+        while(end < start + ms) {
+            end = new Date().getTime();
+        }
     }
 });
