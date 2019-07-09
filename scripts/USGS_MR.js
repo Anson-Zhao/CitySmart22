@@ -18,7 +18,7 @@ requirejs([
 
                 menuL.arrMR.forEach(function (e) {
 
-                    let rows = resp.data.filter(ele => ele.commod1.includes(e.cName) || ele.commod2.includes(e.cName)  || ele.commod3.includes(e.cName) );
+                    let rows = resp.data.filter(ele => ele.commod1.includes(e.cName) || ele.commod2.includes(e.cName)  || ele.commod3.includes(e.cName) || ele.dev_stat.includes(e.cName) );
                     let data = [];
 
                     rows.forEach(function (v, i) {

@@ -73,7 +73,7 @@ define([], function () {
                         if (index < 0) {
                             arrMD.push({cName: categoryN, plName: ele.LayerName, hlName: 'Null', wLayer: new WorldWind.RenderableLayer(ele.LayerName)});
                         } else {
-                            arrMD[index].hlName = ele.LayerName;
+                            arrMD[index].plName = ele.LayerName;
                             arrMD[index].wLayer = new WorldWind.RenderableLayer(ele.LayerName)
                         }
                     } else if (ele.LayerType === 'USGSMD_HMLayer') {
