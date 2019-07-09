@@ -497,6 +497,8 @@
         document.getElementById('DisplayName').value = rowSelectedValue[12];
         document.getElementById('comment').value = rowSelectedValue[17];
         // $("#country2 option:selected").val(rowSelectedValue[5]);
+        console.log(rowSelectedValue[15]);
+        console.log(document.getElementById('pictureStr').value);
 
         if (rowSelectedValue[14] == "GeoTIFF - Tagged Image File Format with Geographic information (.tif)" || rowSelectedValue[14] == "GeoTIFF - Tagged Image File Format with Geographic information (.tif),") {
              layerformat = 'GeoBoy';
@@ -510,43 +512,48 @@
             document.getElementById('LayerFormat').value = rowSelectedValue[14];
         }
 
-        if (document.getElementById('LayerFormat').value == "GeoTIFF - Tagged Image File Format with Geographic information (.tif),") {
-
-            document.getElementById('LayerFormat').value = "GeoTIFF - Tagged Image File Format with Geographic information (.tif)";
-
-        } else if (document.getElementById('LayerFormat2').value == "Shapefile - ESRI(tm) Shapefiles (.shp),") {
-
-            document.getElementById('LayerFormat2').value = "Shapefile - ESRI(tm) Shapefiles (.shp)";
-
-        } else if (document.getElementById('LayerFormat').value == "Shapefile - ESRI(tm) Shapefiles (.shp),") {
-
-            document.getElementById('LayerFormat').value = "Shapefile - ESRI(tm) Shapefiles (.shp)";
-
-        } else if (document.getElementById('LayerFormat2').value == "Shapefile - ESRI(tm) Shapefiles (.shp),") {
-
-            document.getElementById('LayerFormat2').value = "Shapefile - ESRI(tm) Shapefiles (.shp)";
-
-        } else if (document.getElementById('LayerFormat').value == "JP2ECW - JP2K (.jp2/.j2k),") {
-
-            document.getElementById('LayerFormat').value = "JP2ECW - JP2K (.jp2/.j2k)";
-
-        } else if (document.getElementById('LayerFormat2').value == "JP2ECW - JP2K (.jp2/.j2k),") {
-
-            document.getElementById('LayerFormat2').value = "JP2ECW - JP2K (.jp2/.j2k)";
-
-        } else if (document.getElementById('LayerFormat').value == "AIG - Arc/Info Binary Grid (.adf),") {
-
-            document.getElementById('LayerFormat').value = "AIG - Arc/Info Binary Grid (.adf)";
-
-        } else if (document.getElementById('LayerFormat2').value == "AIG - Arc/Info Binary Grid (.adf),") {
-
-            document.getElementById('LayerFormat2').value = "AIG - Arc/Info Binary Grid (.adf)";
-
-        } else{}
-
         document.getElementById(layerformat).selected = true;
         document.getElementById('LayerFormat2').value = document.getElementById('LayerFormat').value;
+        console.log(document.getElementById('LayerFormat2').value);
+        console.log(document.getElementById('LayerFormat2'));
+        console.log(document.getElementById('Adfboy'));
+        console.log('Big Nose');
+        console.log(document.getElementById('Adfboy').value);
 
+
+        // if (document.getElementById('LayerFormat').value == "GeoTIFF - Tagged Image File Format with Geographic information (.tif),") {
+        //
+        //     document.getElementById('LayerFormat').value = "GeoTIFF - Tagged Image File Format with Geographic information (.tif)";
+        //
+        // } else if (document.getElementById('LayerFormat2').value == "Shapefile - ESRI(tm) Shapefiles (.shp),") {
+        //
+        //     document.getElementById('LayerFormat2').value = "Shapefile - ESRI(tm) Shapefiles (.shp)";
+        //
+        // } else if (document.getElementById('LayerFormat').value == "Shapefile - ESRI(tm) Shapefiles (.shp),") {
+        //
+        //     document.getElementById('LayerFormat').value = "Shapefile - ESRI(tm) Shapefiles (.shp)";
+        //
+        // } else if (document.getElementById('LayerFormat2').value == "Shapefile - ESRI(tm) Shapefiles (.shp),") {
+        //
+        //     document.getElementById('LayerFormat2').value = "Shapefile - ESRI(tm) Shapefiles (.shp)";
+        //
+        // } else if (document.getElementById('LayerFormat').value == "JP2ECW - JP2K (.jp2/.j2k),") {
+        //
+        //     document.getElementById('LayerFormat').value = "JP2ECW - JP2K (.jp2/.j2k)";
+        //
+        // } else if (document.getElementById('LayerFormat2').value == "JP2ECW - JP2K (.jp2/.j2k),") {
+        //
+        //     document.getElementById('LayerFormat2').value = "JP2ECW - JP2K (.jp2/.j2k)";
+        //
+        // } else if (document.getElementById('LayerFormat').value == "AIG - Arc/Info Binary Grid (.adf),") {
+        //
+        //     document.getElementById('LayerFormat').value = "AIG - Arc/Info Binary Grid (.adf)";
+        //
+        // } else if (document.getElementById('LayerFormat2').value == "AIG - Arc/Info Binary Grid (.adf),") {
+        //
+        //     document.getElementById('LayerFormat2').value = "AIG - Arc/Info Binary Grid (.adf)";
+        //
+        // } else{}
 
 
         //getAttributeNode("value").value
@@ -956,13 +963,27 @@
 
     function submitForm() {
         if (UserRole === "Admin") {
+            let tID = "tID=" + document.getElementById('RID').value;
+            let LUN = "LUN=" + rowSelectedValue[15];
+            let lForm = "lForm=" + rowSelectedValue[14];
+            let fName = "fName=" + rowSelectedValue[12];
+            let data = $("#layer").serialize();
+            console.log(data);
+            console.log(fName);
+            console.log(tID);
+            console.log(LUN);
+            console.log(lForm);
             if (confirm("Are you sure you would like to approve this data?") === true) {
                 let tID = "tID=" + document.getElementById('RID').value;
                 let LUN = "LUN=" + rowSelectedValue[15];
                 let lForm = "lForm=" + rowSelectedValue[14];
                 let fName = "fName=" + rowSelectedValue[12];
                 let data = $("#layer").serialize();
+                console.log(data);
                 console.log(fName);
+                console.log(tID);
+                console.log(LUN);
+                console.log(lForm);
                 $.ajax({
                     url: 'approve',
                     type: "GET",

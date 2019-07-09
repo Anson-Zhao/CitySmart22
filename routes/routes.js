@@ -1527,8 +1527,16 @@ module.exports = function (app, passport) {
         let fName = req.query.fName;
         let layerName;
 
-        let myState1 = "UPDATE Request_Form SET Current_Status = 'Approved' WHERE RID = '" + approveIDStr + "'";
+        console.log('Approveboy');
+        console.log(approveIDStr);
+        console.log(approvepictureStr);
+        console.log(format);
+        console.log(fName);
 
+
+        let myState1 = "UPDATE Request_Form SET Current_Status = 'Approved' WHERE RID = '" + approveIDStr + "'";
+        console.log('myState1');
+        console.log(myState1);
 
         // mover folder
         for(let i = 0; i < approvepictureStr.length; i++) {
@@ -1754,7 +1762,7 @@ module.exports = function (app, passport) {
             return [String(key), req.body[key]];
         });
 
-        console.log('result');
+        console.log('results.');
         console.log(result);
         res.setHeader("Access-Control-Allow-Origin", "*");
 
@@ -1764,6 +1772,9 @@ module.exports = function (app, passport) {
         let layerName;
         let datastore = "datastore" + result[7][1];
 
+        console.log(update1);
+        console.log(update3);
+        console.log(datastore);
         console.log(result[6][1]);
         console.log(result[7][1]);
         console.log(datastore);
@@ -1849,6 +1860,34 @@ module.exports = function (app, passport) {
             });
         }
     });
+
+
+    app.get('/rejected', isLoggedIn, function (req, res) {
+        let myStat = "SELECT userrole FROM UserLogin WHERE username = '" + req.user.username + "';";
+        let state2 = "SELECT firstName, lastName FROM UserProfile WHERE username = '" + req.user.username + "';"; //define last name
+
+        con_CS.query(myStat + state2, function (err, results) {
+            // console.log("Users: ");
+            // console.log(results);
+
+            if (err) throw err;
+
+            if (!results[0][0].userrole) {
+                console.log("Error2");
+            } else if (!results[1][0].firstName) {
+                console.log("Error1")
+            } else {
+                // console.log("Yes");
+                // console.log(req.user);
+                res.render('userHome.ejs', {
+                    user: req.user, // get the user out of session and pass to template
+                    firstName: results[1][0].firstName,
+                    lastName: results[1][0].lastName,
+                });
+            }
+        });
+    });
+
 
     let olduuid;
     //Put back the photo in the form
