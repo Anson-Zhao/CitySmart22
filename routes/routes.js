@@ -332,6 +332,33 @@ module.exports = function (app, passport) {
         });
     });
 
+    app.get('/emailRequest', function (req, res) {
+        res.setHeader("Access-Control-Allow-Origin", "*"); // Allow cross domain header
+        let requester = req.query.requester;
+        console.log("got here");
+        console.log(requester);
+
+        let statement = "SELECT * FROM UserLogin WHERE username = '" + requester + "';";
+
+        con_CS.query(statement, function (err, results, fields) {
+            if (err) {
+                console.log(statement + "ERROR");
+                console.log(err);
+                res.json({"error": true, "message": "An unexpected error occurred !"});
+            } else if (results.length === 0) {
+                console.log(statement);
+                res.json({"error": true, "message": "Please verify your email address !"});
+            } else {
+                console.log(requester);
+                let username = 'julial.zhu@g.feitianacademy.org';
+                let subject = "New User Request By " + requester;
+                let text = 'requested to publish a new layer.';
+                let url = "http://" + req.headers.host + "/userhome/";
+                sendToken2(username, subject, text, url, res);
+            }
+        });
+    });
+
     app.get('/reset/:token', function (req, res) {
         res.setHeader("Access-Control-Allow-Origin", "*"); // Allow cross domain header
 
@@ -1574,24 +1601,26 @@ module.exports = function (app, passport) {
             });
             con_CS.query(myState1, function (err, results) {
                 if (err) throw err;
-                // console.log(results);
+                console.log(results);
 
                 if (format === "Shapefile - ESRI(tm) Shapefiles (.shp)") {
                     console.log("name of file: " + approvepictureStr[0]);
                     let type = "Content-type: application/zip";
                     let datastore = "datastore" + fName;
 
-                    let uploadStat1 = "curl -u julia:123654 -v -XPUT -H '" + type + "' --data-binary @approvedfolder/" + approvepictureStr[0] + " " + geoServer2 + "rest/workspaces/Approved/datastores/" + datastore +"/file.shp";
+                    let uploadStat1 = "curl -u julia:123654 -v -XPUT -H '" + type + "' --data-binary @approvedfolder/" + approvepictureStr[0] + " " + geoServer + "rest/workspaces/Approved/datastores/" + datastore +"/file.shp";
 
                     child = exec(uploadStat1,
                         function (error, stdout, stderr) {
                             console.log(uploadStat1);
                             console.log('stdout: ' + stdout);
                             console.log('stderr: ' + stderr);
+
                             if (error !== null) {
                                 console.log('exec error: ' + error);
                             } else {
-                                let uploadStat2 = "curl -u julia:123654 -v -XGET " + geoServer + "rest/workspaces/Approved/datastores/" + datastore + "/featuretypes.json";
+                                setTimeout( function () {
+                                    let uploadStat2 = "curl -u julia:123654 -v -XGET " + geoServer + "rest/workspaces/Approved/datastores/" + datastore + "/featuretypes.json";
                                 let jsonF;
                                 child = exec(uploadStat2,
                                     function (error, stdout, stderr) {
@@ -1600,11 +1629,13 @@ module.exports = function (app, passport) {
                                         console.log('stderr: ' + stderr);
 
                                         jsonF = JSON.parse(stdout);
+                                        console.log(jsonF);
                                         if (error !== null) {
 
                                             console.log('exec error: ' + error);
                                         } else {
-                                            layerName = "Approved:" + jsonF.featureTypes.featureType[0].name;
+                                            setTimeout( function () {
+                                                layerName = "Approved:" + jsonF.featureTypes.featureType[0].name;
                                             console.log(layerName);
                                             geoName = layerName;
                                             // let lname = jsonF.featureTypes.featureType[0].name;
@@ -1616,10 +1647,11 @@ module.exports = function (app, passport) {
                                                 if (err) {
                                                     throw err;
                                                 } else {
-                                                    //res.json(results);
-                                                    let uploadStat3 = "curl -u julia:123654 -v -H 'Accept: text/xml' -XGET -H 'Content-type: text/json' " + geoServer2 + "rest/workspaces/Approved/datastores/" + datastore + "/featuretypes/"+ geoName +".json";
+                                                    setTimeout( function () {
+                                                        //res.json(results);
+                                                    let uploadStat3 = "curl -u julia:123654 -v -H 'Accept: text/xml' -XGET -H 'Content-type: text/json' " + geoServer + "rest/workspaces/Approved/datastores/" + datastore + "/featuretypes/"+ jsonF.featureTypes.featureType[0].name +".json";
                                                     let jsonL;
-                                                    child = exec(uploadStat3,
+                                                        child = exec(uploadStat3,
                                                         function (error, stdout, stderr) {
                                                             console.log(uploadStat3);
                                                             console.log('stdout: ' + stdout);
@@ -1653,12 +1685,12 @@ module.exports = function (app, passport) {
                                                                         //res.json(results);
                                                                     }
                                                                 });
-                                                            }
+                                                            }}, 5000);
                                                         });
-                                                }
+                                                }}, 5000);
                                             });
 
-                                        }
+                                        }}, 5000);
                                     });
                             }
                         });
@@ -2583,6 +2615,40 @@ function QueryStat(myObj, sqlStat, res) {
             res.json({"error": true, "message": "An unexpected error occurred !"});
         });
     }
+
+    function sendToken2(username, subject, text, url, res) {
+        async.waterfall([
+            function(done) {
+                // Message object
+                const message = {
+                    from: 'FTAA <aaaa.zhao@g.northernacademy.org>', // sender info
+                    to: username, // Comma separated list of recipients
+                    subject: subject, // Subject of the message
+
+                    // plaintext body
+                    text: 'This email is sent to inform all admins that user ' + username + ' has ' + text + '\n\n' +
+                        'Please click on the following link, or paste this into your browser to review the new layer:\n\n' +
+                    url + '\n\n'
+                };
+
+                smtpTrans.sendMail(message, function(error){
+                    if(error){
+                        console.log(error.message);
+                        res.json({"error": true, "message": "An unexpected error occurred !"});
+                        // alert('it didnt work :(');
+                    } else {
+                        res.json({"error": false, "message": "Message sent successfully !"});
+                        // alert('An e-mail has been sent to ' + username + ' with further instructions.');
+                    }
+                });
+            }
+        ], function(err) {
+            if (err) return next(err);
+            // res.redirect('/forgot');
+            res.json({"error": true, "message": "An unexpected error occurred !"});
+        });
+    }
+
 
     function sendname(username, subject, text, url, res){
         async.waterfall([

@@ -209,7 +209,7 @@
 
 </head>
 
-<body onload="init()">
+<body>
     <div class="navul" style="height: 150px;
         background: #000000;">
         <a class="navul" href="//aworldbridge.com" style="background: #000000;
@@ -272,7 +272,7 @@
                                     <option>NaturalHazards</option>
                                     <option>OtherFeaturedData</option>
                                     <option>Small-Scale</option>
-                                    <option>ThemeOverlayers</option>
+                                    <option>ThemeOverlays</option>
                                     <option value="other">Other(Please specify)</option>
                                 </select>
                                 <div id="other1" style="display:none;">
@@ -318,7 +318,7 @@
                         <div class="col-md-8 inputGroupContainer">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span>
-                                <select name="ContinentName" class="crs-country form-control" data-region-id="two" data-default-option="SELECT CONTINENT" id="continent" onchange="changeContinent(this.value)">
+                                <select class="crs-country form-control" data-region-id="two" data-default-option="SELECT CONTINENT" id="continent" onchange="changeContinent(this.value)">
                                     <option selected="selected" value="AL" id="continent-option">SELECT A CONTINENT</option>
                                 </select>
                             </div>
@@ -329,7 +329,7 @@
                         <div class="col-md-8 inputGroupContainer">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span>
-                                <select  id="country" name="CountryName" class="crs-country form-control" data-region-id="two" data-default-option="SELECT COUNTRY">
+                                <select  id="country" class="crs-country form-control" data-region-id="two" data-default-option="SELECT COUNTRY">
                                     <option value="select">SELECT COUNTRY</option>
                                 </select>
                             </div>
@@ -392,10 +392,10 @@
                                 <span class="input-group-addon" style="max-width: 100%;"><i class="glyphicon glyphicon-list"></i></span>
                                 <select required class="selectpicker form-control" name="LayerFormat" id="LayerFormat">
                                     <option value="">SELECT LAYER FORMAT</option>
-                                    <option>GeoTIFF - Tagged Image File Format with Geographic information (.tif)</option>
-                                    <option>Shapefile - ESRI(tm) Shapefiles (.shp)</option>
-                                    <option>JP2ECW - JP2K (.jp2/.j2k)</option>
-                                    <option>AIG - Arc/Info Binary Grid (.adf)</option>
+                                    <option label = "GeoTIFF - Tagged Image File Format with Geographic information (.tif)" id="GeoBoy">GeoTIFF - Tagged Image File Format with Geographic information (.tif)</option>
+                                    <option label="Shapefile - ESRI(tm) Shapefiles (.shp)" id="ShapeBoy">Shapefile - ESRI(tm) Shapefiles (.shp)</option>
+                                    <option label = "JP2ECW - JP2K (.jp2/.j2k)" id="J2kBoy">JP2ECW - JP2K (.jp2/.j2k)</option>
+                                    <option label = "AIG - Arc/Info Binary Grid (.adf)" id="AdfBoy">AIG - Arc/Info Binary Grid (.adf)</option>
                                 </select>
                             </div>
                         </div>
@@ -405,7 +405,7 @@
                         <div class="col-md-8 inputGroupContainer">
                             <div class="input-group">
                                 <span class="input-group-addon" style="max-width: 100%;"><i class="glyphicon glyphicon-list"></i></span>
-                                <select required class="selectpicker form-control" name="LayerFormat" id="LayerFormat2">
+                                <select required class="selectpicker form-control"id="LayerFormat2">
                                     <option value="">SELECT LAYER FORMAT</option>
                                     <option>GeoTIFF - Tagged Image File Format with Geographic information (.tif)</option>
                                     <option>Shapefile - ESRI(tm) Shapefiles (.shp)</option>
@@ -436,7 +436,15 @@
                         <label class="col-md-4 control-label">Reject Comments <p>(official use only)</p></label>
                         <div class="col-md-8 inputGroupContainer">
                             <div>
-                                <textarea class="form-control" id="comment" name="Comments" disabled type="text" rows="8" maxlength="500" ></textarea>
+                                <textarea class="form-control" id="comment" name="Comments" disabled type="text" rows="8" maxlength="500" spellcheck="true"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="col-md-4 control-label">Status</label>
+                        <div class="col-md-8 inputGroupContainer">
+                            <div>
+                                <textarea class="form-control" id="Status" name="Status" disabled required readonly type="text" rows="1" maxlength="100" spellcheck="true"></textarea>
                             </div>
                         </div>
                     </div>
@@ -446,8 +454,8 @@
         <div>
             <button id="submit" form="layer" disabled title="this is only for Regular Users">Submit</button>
             <button id="clear" type="reset" onclick="clearForm()" value="  Clear  ">Clear</button>
-            <button id="approve" type="submit" form="layer" disabled  title="this is only for Admin Users">Approve</button>
-            <button id="reject" disabled  title="this is only for Admin Users">Reject</button>
+            <button id="approve" type="submit" form="layer" disabled  title="Admin Users Only">Approve</button>
+            <button id="reject" disabled  title="Admin Users Only">Reject</button>
             <button id="testButton" type="button">click pls</button>
 
         </div>
@@ -458,28 +466,98 @@
     <script>
     let UserRole = "<%= user.userrole %>";
     let rowSelectedValue = JSON.parse(localStorage.getItem("rowSelectedValue"));
+    let continentList = document.getElementById("continent2");
+    let layerformat;
+    // let continentabbrvalue;
+    // let valueboy;
+    // let countryList = document.getElementById("country2");
+    // let obedientvalue = countryList[countryList.selectedIndex].value;
 
+    console.log(UserRole);
     $(document).ready(function() {
         document.getElementById('date').value = rowSelectedValue[0];
         document.getElementById('User ID').value = rowSelectedValue[1];
         document.getElementById('RID').value = rowSelectedValue[2];
         document.getElementById('pictureStr').value = rowSelectedValue[15];
+        document.getElementById('Status').value = rowSelectedValue[16];
+        document.getElementById('main').value = rowSelectedValue[8];
         document.getElementById('LayerStateInput').value = rowSelectedValue[6];
-        document.getElementById('LayerFormat').value = rowSelectedValue[14];
-        document.getElementById('LayerFormat2').value = rowSelectedValue[14];
+        // document.getElementById('LayerFormat').value = document.getElementById('LayerFormat2').value;
+        // $("#LayerFormat").html("<option>" + rowSelectedValue[14]+ "</option>");
+        // $("#LayerFormat2").html("<option>" + rowSelectedValue[14]+ "</option>");
         document.getElementById('message').value = rowSelectedValue[13];
         document.getElementById('City').value = rowSelectedValue[7];
         $('#continent option[value="AL"]').val(rowSelectedValue[4]);
-        $('#continent2 option[value="AL"]').val(rowSelectedValue[4]);
-        $("#continent2").html("<option>" + rowSelectedValue[4]+ "</option>")
-        $('#country option[value="select"]').val(rowSelectedValue[5]);
-        $('#country2 option[value="select"]').val(rowSelectedValue[5]);
-        $("#country2").html("<option>" + rowSelectedValue[5]+ "</option>")
+        // $('#continent2 option[value="AL"]').val(rowSelectedValue[4]);
+        // $("#continent2").html("<option>" + rowSelectedValue[4]+ "</option>");
+        $('#country option[value="selected"]').val(rowSelectedValue[5]);
+        // $('#country2 option[value="select"]').val(rowSelectedValue[5]);
+        $("#country2").html("<option selected>" + rowSelectedValue[5]+ "</option>");
         document.getElementById('DisplayName').value = rowSelectedValue[12];
-        document.getElementById('comment').value = rowSelectedValue[16];
+        document.getElementById('comment').value = rowSelectedValue[17];
+        // $("#country2 option:selected").val(rowSelectedValue[5]);
+        console.log(rowSelectedValue[15]);
+        console.log(document.getElementById('pictureStr').value);
+
+        if (rowSelectedValue[14] === "GeoTIFF - Tagged Image File Format with Geographic information (.tif)" || rowSelectedValue[14] === "GeoTIFF - Tagged Image File Format with Geographic information (.tif),") {
+             layerformat = 'GeoBoy';
+        } else if (rowSelectedValue[14] === "Shapefile - ESRI(tm) Shapefiles (.shp)" || rowSelectedValue[14] === "Shapefile - ESRI(tm) Shapefiles (.shp),") {
+            layerformat = 'ShapeBoy';
+        } else if (rowSelectedValue[14] === "JP2ECW - JP2K (.jp2/.j2k)" || rowSelectedValue[14] === "JP2ECW - JP2K (.jp2/.j2k),") {
+            layerformat = 'J2kBoy';
+        } else if (rowSelectedValue[14] === "AIG - Arc/Info Binary Grid (.adf)" || rowSelectedValue[14] === "AIG - Arc/Info Binary Grid (.adf),") {
+            layerformat = 'AdfBoy';
+        } else {
+            document.getElementById('LayerFormat').value = rowSelectedValue[14];
+        }
+
+        document.getElementById(layerformat).selected = true;
+        document.getElementById('LayerFormat2').value = document.getElementById('LayerFormat').value;
+        console.log(document.getElementById('LayerFormat2').value);
+        console.log(document.getElementById('LayerFormat2'));
+        console.log(document.getElementById('Adfboy'));
+        console.log('Big Nose');
+
+
+        if (document.getElementById('LayerFormat').value === "GeoTIFF - Tagged Image File Format with Geographic information (.tif),") {
+
+            document.getElementById('LayerFormat').value = "GeoTIFF - Tagged Image File Format with Geographic information (.tif)";
+
+        } else if (document.getElementById('LayerFormat2').value === "Shapefile - ESRI(tm) Shapefiles (.shp),") {
+
+            document.getElementById('LayerFormat2').value = "Shapefile - ESRI(tm) Shapefiles (.shp)";
+
+        } else if (document.getElementById('LayerFormat').value === "Shapefile - ESRI(tm) Shapefiles (.shp),") {
+
+            document.getElementById('LayerFormat').value = "Shapefile - ESRI(tm) Shapefiles (.shp)";
+
+        } else if (document.getElementById('LayerFormat2').value === "Shapefile - ESRI(tm) Shapefiles (.shp),") {
+
+            document.getElementById('LayerFormat2').value = "Shapefile - ESRI(tm) Shapefiles (.shp)";
+
+        } else if (document.getElementById('LayerFormat').value === "JP2ECW - JP2K (.jp2/.j2k),") {
+
+            document.getElementById('LayerFormat').value = "JP2ECW - JP2K (.jp2/.j2k)";
+
+        } else if (document.getElementById('LayerFormat2').value === "JP2ECW - JP2K (.jp2/.j2k),") {
+
+            document.getElementById('LayerFormat2').value = "JP2ECW - JP2K (.jp2/.j2k)";
+
+        } else if (document.getElementById('LayerFormat').value === "AIG - Arc/Info Binary Grid (.adf),") {
+
+            document.getElementById('LayerFormat').value = "AIG - Arc/Info Binary Grid (.adf)";
+
+        } else if (document.getElementById('LayerFormat2').value === "AIG - Arc/Info Binary Grid (.adf),") {
+
+            document.getElementById('LayerFormat2').value = "AIG - Arc/Info Binary Grid (.adf)";
+
+        } else{}
+
+
+        //getAttributeNode("value").value
+
 
         if(rowSelectedValue[8] === "other" || rowSelectedValue[10] === "other"){
-            document.getElementById('main').value = rowSelectedValue[8];
             document.getElementById("other1").style.display = "block";
             document.getElementById("inputone").value = rowSelectedValue[9];
             $('#sub option[value="Category"]').val(rowSelectedValue[10]);
@@ -487,7 +565,6 @@
             document.getElementById("other2").style.display = "block";
             document.getElementById("inputtwo").value = rowSelectedValue[11];
         }else{
-            document.getElementById('main').value = rowSelectedValue[8];
             $('#sub option[value="Category"]').val(rowSelectedValue[10]);
             $("#sub").html("<option>" + rowSelectedValue[10]+ "</option>")
         }
@@ -508,14 +585,21 @@
             document.getElementById('sub').disabled = false;
             document.getElementById('main').disabled = false;
             document.getElementsByClassName('qq-uploader-selector').disabled = true;
-            document.getElementById('upload-button').disabled = true;
-            // $('#upload-button').prop('disabled',true);
             document.getElementById("submit").style.backgroundColor = "lightgray";
             document.getElementById("adminonly").style.display = "block";
             document.getElementById("comment").placeholder = "Please describe why you are rejecting the request.";
+            console.log(document.getElementsByClassName('qq-upload-button'));
+            // document.getElementsByClassName('qq-upload-button')[0].disabled = true;
+            // document.getElementById('upload-button').disabled = true;
+            document.getElementById("approve").disabled = false;
+            document.getElementById("uploader").hidden = true;
+            document.getElementById('LayerFormat').value = rowSelectedValue[14];
+            // $('#upload-button').prop('disabled',true);
         } else if (UserRole === "Regular") {
             document.getElementById("comment").disabled = true;
             document.getElementById("submit").disabled = false;
+            document.getElementById("continent2").disabled = false;
+            document.getElementById("country2").disabled = false;
             document.getElementById("adminonly").style.display = "none";
             document.getElementById("approve").style.backgroundColor = "lightgray";
             document.getElementById("reject").style.backgroundColor = "lightgray";
@@ -533,9 +617,90 @@
         $("#City").change(function () {
             let val = $(this).val();
             if (val == "select") {
-                $("#country").html("<option value='select'>SELECT SUBCATEGORY</option>");
+                $("#country2").html("<option value='select'>SELECT SUBCATEGORY</option>");
             }
         })
+
+
+
+        $.ajax({
+            url: "layerRequestContinent",
+            method: 'GET',
+            dataType: 'json',
+            success: function (results) {
+                for (let i = 0; i < results.length; i++) {
+
+                    // if (results[i].Continent_name = rowSelectedValue[4]) {
+                    //     continentList.remove(results[i].Continent_name, results[i].Continent);
+                    // } else if (results[i].Continent = rowSelectedValue[4]) {
+                    //     continentList.remove(results[i].Continent_name, results[i].Continent);
+                    // } else {}
+                    // continentList.className = results[i].Continent;
+                    // console.log(continentList.className);
+                    if (results[i].Continent != rowSelectedValue[4]) {
+                        continentList.add(new Option(results[i].Continent_name, results[i].Continent));//Continent name refers to the actual name while the continent just refers to the abbreviation of the continent
+                    } else {}
+
+
+                    console.log(continentList);
+                    console.log(results);
+                }
+            }
+        });
+
+
+        if(rowSelectedValue[4] === "OC") {
+            continentabbrvalue = "Oceania";
+            valueboy = rowSelectedValue[4];
+        } else if (rowSelectedValue[4] === "NA") {
+            continentabbrvalue = "North America";
+            valueboy = rowSelectedValue[4];
+        } else if (rowSelectedValue[4] === "SA") {
+            continentabbrvalue = "South America";
+            valueboy = rowSelectedValue[4];
+        } else if (rowSelectedValue[4] === "EU") {
+            continentabbrvalue = "Europe";
+            valueboy = rowSelectedValue[4];
+        } else if (rowSelectedValue[4] === "AF") {
+            continentabbrvalue = "Africa";
+            valueboy = rowSelectedValue[4];
+        } else if (rowSelectedValue[4] === "AS") {
+            continentabbrvalue = "Asia";
+            valueboy = rowSelectedValue[4];
+        } else if (rowSelectedValue[4] === "AN") {
+            continentabbrvalue = "Antarctica";
+            valueboy = rowSelectedValue[4];
+        } else if (rowSelectedValue[4] === "Others") {
+            continentabbrvalue = rowSelectedValue[4];
+            valueboy = rowSelectedValue[4];
+        } else if(rowSelectedValue[4] === "Oceania") {
+            continentabbrvalue = rowSelectedValue[4];
+            valueboy = 'OC';
+        } else if (rowSelectedValue[4] === "North America") {
+            continentabbrvalue = rowSelectedValue[4];
+            valueboy = 'NA';
+        } else if (rowSelectedValue[4] === "South America") {
+            continentabbrvalue = rowSelectedValue[4];
+            valueboy = 'SA';
+        } else if (rowSelectedValue[4] === "Europe") {
+            continentabbrvalue = rowSelectedValue[4];
+            valueboy = 'EU';
+        } else if (rowSelectedValue[4] === "Africa") {
+            continentabbrvalue = rowSelectedValue[4];
+            valueboy = 'AF';
+        } else if (rowSelectedValue[4] === "Asia") {
+            continentabbrvalue = rowSelectedValue[4];
+            valueboy = 'AS';
+        } else if (rowSelectedValue[4] === "Antarctica") {
+            continentabbrvalue = rowSelectedValue[4];
+            valueboy = 'AN';
+        } else {
+            continentabbrvalue = rowSelectedValue[4];
+        }
+        $("#continent2").html('<option selected value = ' + "'"+ valueboy + "'" +">"+ continentabbrvalue + "</option>");
+
+
+
 
         //resubmit the photo
         let photoDiv = $("#photo");
@@ -611,6 +776,8 @@
         // Wait for the DOM to be ready
         $('#layer').validate({
             // Specify validation rules
+            success: "valid",
+            debug: true,
             rules: {
                 // The key name on the left side is the name attribute
                 // of an input field. Validation rules are defined
@@ -647,9 +814,9 @@
         $("#City").click(function () {
             new dgCitysCountries({
                 CityVal: document.getElementById("City").val,
-                countryVal: document.getElementById("country").val,
+                countryVal: document.getElementById("country2").val,
                 City: document.getElementById("City"),
-                country: document.getElementById("country"),
+                country: document.getElementById("country2"),
                 change: true
             });
         });
@@ -666,9 +833,14 @@
                 success: function (result) {
 
                     alert(result.message);
-                    window.location.replace('/userHome')
+                    window.location.replace('/userHome');
                 }
             });
+
+            document.getElementById('country').value = document.getElementById('country2').value;
+            document.getElementById('continent').value = document.getElementById('continent2').value;
+
+
             // if (confirm("Are you sure to reject the data?") === true) {
             //     let tID = "reject=" + document.getElementById('RID').value;
             //     let Comment = "comment=" + document.getElementById('comment').value;
@@ -726,7 +898,7 @@
     function changeContinent (continentValue){
 
         let country = "country="+continentValue;
-        let countryList = document.getElementById("country")
+        let countryList = document.getElementById("country2");
 
         while (countryList.options.length) {
             countryList.remove(0);
@@ -738,7 +910,7 @@
 
         if(continentValue === "AL"){
             countryList.disabled = true;
-            $("#country").html("<option>SELECT A COUNTRY</option>")
+            $("#country2").html("<option>SELECT A COUNTRY</option>")
         }
 
         $.ajax({
@@ -763,7 +935,29 @@
                 let lForm = "lForm=" + rowSelectedValue[14];
                 let fName = "fName=" + rowSelectedValue[12];
                 let data = $("#layer").serialize();
+                console.log(data);
                 console.log(fName);
+                console.log(tID);
+                console.log(LUN);
+                console.log(lForm);
+
+                if (lForm == "lForm=GeoTIFF - Tagged Image File Format with Geographic information (.tif),") {
+
+                    lForm = "lForm=GeoTIFF - Tagged Image File Format with Geographic information (.tif)";
+
+                } else if (lForm == "lForm=Shapefile - ESRI(tm) Shapefiles (.shp),") {
+
+                    lForm = "lForm=Shapefile - ESRI(tm) Shapefiles (.shp)";
+
+                } else if (lForm == "lForm=JP2ECW - JP2K (.jp2/.j2k),") {
+
+                    lForm = "lForm=JP2ECW - JP2K (.jp2/.j2k)";
+
+                } else if (lForm == "lForm=AIG - Arc/Info Binary Grid (.adf),") {
+
+                    lForm = "lForm=AIG - Arc/Info Binary Grid (.adf)";
+
+                } else{}
                 $.ajax({
                     url: 'approve',
                     type: "GET",
@@ -784,9 +978,19 @@
                 return false;
             }
         }else if (UserRole === "Regular") {
+            let regulardata = $("#layer").serialize();
+            let status = "Current_Status=" + rowSelectedValue[16];
+            console.log('status');
+            console.log(status);
+            console.log('regular data');
+            console.log(regulardata);
             if (confirm("Are you sure you would like to submit this data?") === true) {
                 let regulardata = $("#layer").serialize();
-                let status = "status=" + rowSelectedValue[15];
+                let status = "Current_Status=" + rowSelectedValue[16];
+                console.log('status');
+                console.log(status);
+                console.log('regular data');
+                console.log(regulardata);
                 $.ajax({
                     url: 'rsubmit',
                     method: "post",
@@ -796,6 +1000,10 @@
                     }
                 });
                 window.location.replace('/userHome');
+                console.log('status');
+                console.log(status);
+                console.log('regular data');
+                console.log(regulardata);
             } else {
                 return false;
             }
@@ -835,7 +1043,7 @@
            $("#main").value = "Category";
             $("#sub").html("<option>SELECT SUBCATEGORY</option>");
             $("#City").html("<option>SELECT CONTINENT</option>");
-            $("#country").html("<option>SELECT COUNTRY</option>");
+            $("#country2").html("<option>SELECT COUNTRY</option>");
         }
     }
 

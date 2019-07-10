@@ -346,7 +346,7 @@
                         <label class="col-md-4 control-label">Picture String Name</label>
                         <div class="col-md-8 inputGroupContainer">
                             <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
-                                <input id="pictureStr" name="Layer_Uploader_name" value="" placeholder="Layer Name.  NOTE: Do not include spaces." class="form-control" required  type="text" onchange="SearchLayerName(this.value)"></div>
+                                <input id="pictureStr" name="Layer_Uploader_name" value="" placeholder="Layer Name.  NOTE: Do not include spaces." class="form-control" required  type="text" onchange="SearchLayerName(this.value)" disabled></div>
                             <p id="LayerUploaderName" style="color: palevioletred;margin-top:15px;"></p>
                         </div>
                     </div>
@@ -554,6 +554,8 @@
     function submitForm () {
         alert("Submitted!");
         let data =$("#layer").serialize();
+        let userPost = "requester=" + username;
+        console.log(userPost);
 
         $.ajax({
             url  : 'submitL',
@@ -564,7 +566,14 @@
                 console.log(d);
             }
         });
-        window.location.replace('/userHome');
+
+        $.ajax({
+            type: "get",
+            url: "/emailRequest",
+            dataType: 'json',
+            data: userPost
+        })
+        // window.location.replace('/userHome');
     }
 
 
