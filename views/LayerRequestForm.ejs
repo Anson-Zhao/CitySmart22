@@ -395,7 +395,7 @@
     
     $(document).ready(function() {
 
-        if (userrole == "Admin") {
+        if (userrole === "Admin") {
             document.getElementsByTagName("BODY")[0].setAttribute("id", "bodyboy");
             document.getElementById("bodyboy").innerHTML = 'The layer request form is only available for regular users but not for admin users, please register a new regular user if a layer is needed for submission.';
         }
