@@ -163,6 +163,11 @@
         #boldboy {
             color: black;
         }
+        #bodyboy {
+            text-align: center;
+            font-family: Times New Roman, serif;
+            font-size: large;
+        }
 
     </style>
 
@@ -389,6 +394,11 @@
     let userrole = '<%= user.userrole %>';
     
     $(document).ready(function() {
+
+        if (userrole == "Admin") {
+            document.getElementsByTagName("BODY")[0].setAttribute("id", "bodyboy");
+            document.getElementById("bodyboy").innerHTML = 'The layer request form is only available for regular users but not for admin users, please register a new regular user if a layer is needed for submission.';
+        }
 
         console.log($("#layer").serialize());
 

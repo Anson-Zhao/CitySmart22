@@ -842,24 +842,25 @@
         });
 
         $("#reject").click(function () {
-            let tID = "reject=" + document.getElementById('RID').value;
-            let Comment = "comment=" + document.getElementById('comment').value;
-            let rejectPicPath = "picturePath="+ rowSelectedValue[15];
-            // $(".form-group").fadeOut("slow");
-            $.ajax({
-                url: 'reject',
-                type: "GET",
-                dataType: 'json',
-                data: tID + "&" + Comment + "&" +rejectPicPath,
-                success: function (result) {
+            if (confirm("Are you sure you would like to reject this request?") === true) {
+                let tID = "reject=" + document.getElementById('RID').value;
+                let Comment = "comment=" + document.getElementById('comment').value;
+                let rejectPicPath = "picturePath="+ rowSelectedValue[15];
+                // $(".form-group").fadeOut("slow");
+                $.ajax({
+                    url: 'reject',
+                    type: "GET",
+                    dataType: 'json',
+                    data: tID + "&" + Comment + "&" +rejectPicPath,
+                    success: function (result) {
 
-                    alert(result.message);
-                    window.location.replace('/userHome');
-                }
-            });
-
-            document.getElementById('country').value = document.getElementById('country2').value;
-            document.getElementById('continent').value = document.getElementById('continent2').value;
+                        alert(result.message);
+                        window.location.replace('/userHome');
+                    }
+                });
+            } else{
+                return false;
+            }
 
 
             // if (confirm("Are you sure to reject the data?") === true) {
@@ -887,6 +888,8 @@
             //     return false;
             // }
         });
+        document.getElementById('country').value = document.getElementById('country2').value;
+        document.getElementById('continent').value = document.getElementById('continent2').value;
     });
 
     function Check(that) {

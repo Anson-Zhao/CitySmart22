@@ -1862,31 +1862,31 @@ module.exports = function (app, passport) {
     });
 
 
-    // app.get('/rejected', isLoggedIn, function (req, res) {
-    //     let myStat = "SELECT userrole FROM UserLogin WHERE username = '" + req.user.username + "';";
-    //     let state2 = "SELECT firstName, lastName FROM UserProfile WHERE username = '" + req.user.username + "';"; //define last name
-    //
-    //     con_CS.query(myStat + state2, function (err, results) {
-    //         // console.log("Users: ");
-    //         // console.log(results);
-    //
-    //         if (err) throw err;
-    //
-    //         if (!results[0][0].userrole) {
-    //             console.log("Error2");
-    //         } else if (!results[1][0].firstName) {
-    //             console.log("Error1")
-    //         } else {
-    //             // console.log("Yes");
-    //             // console.log(req.user);
-    //             res.render('rejected.ejs', {
-    //                 user: req.user, // get the user out of session and pass to template
-    //                 firstName: results[1][0].firstName,
-    //                 lastName: results[1][0].lastName,
-    //             });
-    //         }
-    //     });
-    // });
+    app.get('/rejected', isLoggedIn, function (req, res) {
+        let myStat = "SELECT userrole FROM UserLogin WHERE username = '" + req.user.username + "';";
+        let state2 = "SELECT firstName, lastName FROM UserProfile WHERE username = '" + req.user.username + "';"; //define last name
+
+        con_CS.query(myStat + state2, function (err, results) {
+            // console.log("Users: ");
+            // console.log(results);
+
+            if (err) throw err;
+
+            if (!results[0][0].userrole) {
+                console.log("Error2");
+            } else if (!results[1][0].firstName) {
+                console.log("Error1")
+            } else {
+                // console.log("Yes");
+                // console.log(req.user);
+                res.render('rejected.ejs', {
+                    user: req.user, // get the user out of session and pass to template
+                    firstName: results[1][0].firstName,
+                    lastName: results[1][0].lastName,
+                });
+            }
+        });
+    });
 
 
     let olduuid;

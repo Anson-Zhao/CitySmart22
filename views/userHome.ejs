@@ -160,9 +160,9 @@
     <a href="/dataHistory" style="width:110px;">
         <button class="navbutton1" style="width: 160px"> Approved Requests </button>
     </a>
-<!--    <a href="/rejected" style="width:110px;">-->
-<!--        <button class="navbutton1" style="width: 160px"> Rejected Requests </button>-->
-<!--    </a>-->
+    <a href="/rejected" style="width:110px;">
+        <button class="navbutton1" style="width: 160px"> Rejected Requests </button>
+    </a>
     <div class="dropdown" style="height: 80px; width: 200px; float: right; margin: 0;">
         <button onclick="dropDown()" class="dropbutton" id="Username">
             <%= firstName%>
@@ -243,7 +243,7 @@
     </div>
     <br>
     <div class="center" style="width: 850px;">
-        <h4 id="subtitles"><strong>Most Recent Records (Pending or Rejected):</strong></h4>
+        <h4 id="subtitles"><strong>Most Recent Pending Records </strong></h4>
         <h5>Continent Key</h5>
         <p>SA: South America <br> NA: North America <br> OC: Oceania <br> EU: Europe <br> AS: Asia <br> AF: Africa <br> AN: Antarctica</p>
         <div id="dvData">
@@ -311,7 +311,7 @@
     let transactionID = [];
     let LayerNameStr = [];
     let queryStr;
-    let queryStr2;
+
 
     $(document).ready(function() {
 
@@ -328,14 +328,12 @@
             if (UserRole === "Regular") {
                 document.getElementById('searchname').style.display = "none"; //disables username search for regular members
                 queryStr = "Current_Status=Pending&UID=" + username;
-                queryStr2 = "Current_Status=Rejected&UID=" + username;
             } else {
                 queryStr = "Current_Status=Pending";
-                queryStr2 = "Current_Status=Rejected";
             }
             console.log(queryStr);
             queryAndDisplay(queryStr);
-            queryAndDisplay(queryStr2);
+
             //the console below refers to the above as querystr
             // just for the Pending table
             //By changing this we allow the initial table to only show pending records
