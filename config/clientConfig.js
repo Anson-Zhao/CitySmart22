@@ -14,11 +14,11 @@ let clientConfig = {
     // uswtdb initial eye distance (m)
     eyeDistance_initial: 5000000,
 
-    'Color_Year': {red: 2010, orange: 2005, yellow: 2000, green: 1990, blue: 1980},
+    Color_Year: {red: 2010, orange: 2005, yellow: 2000, green: 1990, blue: 1980},
 
-    'Color_Capacity': {red: 3, orange: 2.5, yellow: 2, green: 1.5, blue: 0},
+    Color_Capacity: {red: 3, orange: 2.5, yellow: 2, green: 1.5, blue: 0},
 
-    'Color_Height': {red: 160, orange: 120, yellow: 80, green: 40, blue: 5},
+    Color_Height: {red: 160, orange: 120, yellow: 80, green: 40, blue: 5},
 
     // 'color_red': 2010, //the value would determine what year(s) greater or equal to this number would be red
     // 'color_orange': 2005, //the value would determine what year(s) greater or equal to this number would be orange

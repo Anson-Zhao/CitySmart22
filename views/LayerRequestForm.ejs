@@ -332,7 +332,7 @@
                         <div class="col-md-8 inputGroupContainer">
                             <div class="input-group">
                                 <span class="input-group-addon" style="max-width: 100%;"><i class="glyphicon glyphicon-list"></i></span>
-                                <select required class="selectpicker form-control" name="LayerFormat" id="LayerFormat2">
+                                <select required class="selectpicker form-control"  id="LayerFormat2">
                                     <option value="">SELECT LAYER FORMAT</option>
                                     <option>GeoTIFF - Tagged Image File Format with Geographic information (.tif)</option>
                                     <option>Shapefile - ESRI(tm) Shapefiles (.shp)</option>
@@ -386,6 +386,13 @@
     let userrole = '<%= user.userrole %>';
     
     $(document).ready(function() {
+
+        // if (userrole === "Admin") {
+        //     document.getElementsByTagName("BODY")[0].setAttribute("id", "bodyboy");
+        //     document.getElementById("bodyboy").innerHTML = 'The layer request form is only available for regular users but not for admin users, please register a new regular user if a layer is needed for submission.';
+        // }
+
+        console.log($("#layer").serialize());
 
         let today = new Date();
         let dd = today.getDate();
@@ -552,7 +559,6 @@
     }
 
     function submitForm () {
-        alert("Submitted!");
         let data =$("#layer").serialize();
         let userPost = "requester=" + username;
         console.log(userPost);
@@ -564,16 +570,10 @@
             dataType: 'json',
             success : function(d){
                 console.log(d);
+                alert("Submitted!");
             }
         });
-
-        $.ajax({
-            type: "get",
-            url: "/emailRequest",
-            dataType: 'json',
-            data: userPost
-        })
-        // window.location.replace('/userHome');
+        window.location.replace('/userHome');
     }
 
 

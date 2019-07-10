@@ -45,6 +45,9 @@ requirejs(['./newGlobe',
     //All the event listeners
     $(document).ready(function () {
 
+        var dateT = new Date();
+        console.log(dateT.toString());
+
         //the beginning value of the button
         currentSelectedLayer.prop('value', 'No Layer Selected');
         nextL.prop('disabled', true);
@@ -57,6 +60,14 @@ requirejs(['./newGlobe',
             if (firstTime) {
                 confirm("Some layers may take awhile to load. Please be patient.");
                 firstTime = false; //alert (only appear at the first time)
+            }
+
+            //if the there is already one toggle switch is turned on, as another toggle is clicked then close the last button
+            if (arrMenu.length> 0 ) {
+                var clickedClass = '.'+arrMenu[arrMenu.length-1];
+                $(clickedClass).prop('checked',false);
+                var lastIndex = newGlobe.layers.findIndex(ele => ele.displayName === arrMenu[arrMenu.length-1]);
+                newGlobe.layers[lastIndex].enabled = clickedClass.checked;
             }
 
             let toggle = this;

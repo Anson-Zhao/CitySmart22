@@ -318,7 +318,7 @@
                         <div class="col-md-8 inputGroupContainer">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span>
-                                <select class="crs-country form-control" data-region-id="two" data-default-option="SELECT CONTINENT" id="continent" onchange="changeContinent(this.value)">
+                                <select name="ContinentName" class="crs-country form-control" data-region-id="two" data-default-option="SELECT CONTINENT" id="continent" onchange="changeContinent(this.value)">
                                     <option selected="selected" value="AL" id="continent-option">SELECT A CONTINENT</option>
                                 </select>
                             </div>
@@ -329,7 +329,7 @@
                         <div class="col-md-8 inputGroupContainer">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span>
-                                <select  id="country" class="crs-country form-control" data-region-id="two" data-default-option="SELECT COUNTRY">
+                                <select  id="country" name="CountryName" class="crs-country form-control" data-region-id="two" data-default-option="SELECT COUNTRY">
                                     <option value="select">SELECT COUNTRY</option>
                                 </select>
                             </div>
@@ -340,7 +340,7 @@
                         <div class="col-md-8 inputGroupContainer">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span>
-                                <select name="ContinentName" class="crs-country form-control" data-region-id="two" data-default-option="SELECT CONTINENT" id="continent2" onchange="changeContinent(this.value)">
+                                <select class="crs-country form-control" data-region-id="two" data-default-option="SELECT CONTINENT" id="continent2" onchange="changeContinent(this.value)">
                                     <option selected="selected" value="AL" id="continent-option">SELECT A CONTINENT</option>
                                 </select>
                             </div>
@@ -351,7 +351,7 @@
                         <div class="col-md-8 inputGroupContainer">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span>
-                                <select  id="country2" name="CountryName" class="crs-country form-control" data-region-id="two" data-default-option="SELECT COUNTRY">
+                                <select  id="country2" class="crs-country form-control" data-region-id="two" data-default-option="SELECT COUNTRY">
                                     <option value="select">SELECT COUNTRY</option>
                                 </select>
                             </div>
@@ -405,7 +405,7 @@
                         <div class="col-md-8 inputGroupContainer">
                             <div class="input-group">
                                 <span class="input-group-addon" style="max-width: 100%;"><i class="glyphicon glyphicon-list"></i></span>
-                                <select required class="selectpicker form-control"id="LayerFormat2">
+                                <select required class="selectpicker form-control" id="LayerFormat2">
                                     <option value="">SELECT LAYER FORMAT</option>
                                     <option>GeoTIFF - Tagged Image File Format with Geographic information (.tif)</option>
                                     <option>Shapefile - ESRI(tm) Shapefiles (.shp)</option>
@@ -456,7 +456,6 @@
             <button id="clear" type="reset" onclick="clearForm()" value="  Clear  ">Clear</button>
             <button id="approve" type="submit" form="layer" disabled  title="Admin Users Only">Approve</button>
             <button id="reject" disabled  title="Admin Users Only">Reject</button>
-            <button id="testButton" type="button">click pls</button>
 
         </div>
         <hr>
@@ -473,7 +472,7 @@
     // let countryList = document.getElementById("country2");
     // let obedientvalue = countryList[countryList.selectedIndex].value;
 
-    console.log(UserRole);
+
     $(document).ready(function() {
         document.getElementById('date').value = rowSelectedValue[0];
         document.getElementById('User ID').value = rowSelectedValue[1];
@@ -490,8 +489,9 @@
         $('#continent option[value="AL"]').val(rowSelectedValue[4]);
         // $('#continent2 option[value="AL"]').val(rowSelectedValue[4]);
         // $("#continent2").html("<option>" + rowSelectedValue[4]+ "</option>");
-        $('#country option[value="selected"]').val(rowSelectedValue[5]);
+        // $('#country option[value="selected"]').val(rowSelectedValue[5]);
         // $('#country2 option[value="select"]').val(rowSelectedValue[5]);
+        $("#country").html("<option selected>" + rowSelectedValue[5]+ "</option>");
         $("#country2").html("<option selected>" + rowSelectedValue[5]+ "</option>");
         document.getElementById('DisplayName').value = rowSelectedValue[12];
         document.getElementById('comment').value = rowSelectedValue[17];
@@ -607,9 +607,9 @@
 
         $("#main").change(function () {
             let val = $(this).val();
-            if (val == "") {
+            if (val === "") {
                 $("#sub").html("<option value='Category'>SELECT SUBCATEGORY</option>");
-            }else if(val =="other") {
+            }else if(val ==="other") {
                 $("#sub").html("<option value='other'>Other(Please specify)</option>");
             }
         })
@@ -822,23 +822,25 @@
         });
 
         $("#reject").click(function () {
-            let tID = "reject=" + document.getElementById('RID').value;
-            let Comment = "comment=" + document.getElementById('comment').value;
-            let rejectPicPath = "picturePath="+ rowSelectedValue[15];
-            $.ajax({
-                url: 'reject',
-                type: "GET",
-                dataType: 'json',
-                data: tID + "&" + Comment + "&" +rejectPicPath,
-                success: function (result) {
+            if (confirm("Are you sure you would like to reject this request?") === true) {
+                let tID = "reject=" + document.getElementById('RID').value;
+                let Comment = "comment=" + document.getElementById('comment').value;
+                let rejectPicPath = "picturePath="+ rowSelectedValue[15];
+                // $(".form-group").fadeOut("slow");
+                $.ajax({
+                    url: 'reject',
+                    type: "GET",
+                    dataType: 'json',
+                    data: tID + "&" + Comment + "&" +rejectPicPath,
+                    success: function (result) {
 
-                    alert(result.message);
-                    window.location.replace('/userHome');
-                }
-            });
-
-            document.getElementById('country').value = document.getElementById('country2').value;
-            document.getElementById('continent').value = document.getElementById('continent2').value;
+                        alert(result.message);
+                        window.location.replace('/userHome');
+                    }
+                });
+            } else{
+                return false;
+            }
 
 
             // if (confirm("Are you sure to reject the data?") === true) {
@@ -866,6 +868,8 @@
             //     return false;
             // }
         });
+        document.getElementById('country').value = document.getElementById('country2').value;
+        document.getElementById('continent').value = document.getElementById('continent2').value;
     });
 
     function Check(that) {
@@ -962,7 +966,7 @@
                     url: 'approve',
                     type: "GET",
                     dataType: 'json',
-                    data: tID + '&' + LUN + '&' + lForm + '&' + fName,
+                    data: tID + '&' + LUN + '&' + lForm + '&' + fName + '&' + data,
                 });
                 $.ajax({
                     url: 'replace',

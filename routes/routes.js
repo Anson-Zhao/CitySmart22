@@ -742,6 +742,7 @@ module.exports = function (app, passport) {
     });
 
     app.get('/layerReqQuery', isLoggedIn, function (req, res) {
+        console.log('queryboy');
         console.log(req.query);
         let iniStat = "SELECT * FROM Request_Form";
         let myQueryObj = [ //change everything because we need to make sure it matches what we want to happen in client side
@@ -993,13 +994,14 @@ module.exports = function (app, passport) {
 
         myStat = "INSERT INTO UserLogin ( username, password, userrole, dateCreated, dateModified, createdUser, status) VALUES ( '" + newUser.username + "','" + newUser.password+ "','" + newUser.userrole+ "','" + newUser.dateCreated+ "','" + newUser.dateModified+ "','" + newUser.createdUser + "','" + newUser.status + "');";
         mylogin = "INSERT INTO UserProfile ( username, firstName, lastName) VALUES ('"+ newUser.username + "','" + newUser.firstName+ "','" + newUser.lastName + "');";
-
-        con_CS.query(myStat + ''+ mylogin, function (err) {
+        console.log("mystat");
+        console.log(myStat);
+        console.log(mylogin);
+        con_CS.query(myStat + '' + mylogin, function (err, rows) {
             // newUser.id = rows.insertId;
             if (err) {
                 console.log(err);
                 res.json({"error": true, "message": "An unexpected error occurred!"});
-                res.end();
             } else {
                 let username = req.body.username;
                 let subject = "Sign Up";
@@ -1455,6 +1457,9 @@ module.exports = function (app, passport) {
 
         let statement2 = "INSERT INTO Request_Form (" + name + ") VALUES (" + valueSubmit + ");";
         let statement = "UPDATE Request_Form SET ThirdLayer = '" + result[7][1] + "' WHERE RID = '" + result[1][1] + "';";
+        console.log('statement2&1');
+        console.log(statement2);
+        console.log(statement);
 
         con_CS.query(statement2 + statement, function (err, result) {
             if (err) {
@@ -1525,7 +1530,7 @@ module.exports = function (app, passport) {
         }
         let Layer_Uploader = Pending_Dir + "/" + responseDataUuid;
         let Layer_Uploader_name = responseDataUuid;
-        let filepathname = Pending_Dir + "/" + responseDataUuid;
+        // let filepathname = Pending_Dir + "/" + responseDataUuid;
         let statement1 = update1+update2+update3;
         let statement2 = "UPDATE Request_Form SET Layer_Uploader = '" + Layer_Uploader + "', Layer_Uploader_name = '" + Layer_Uploader_name + "';";
         let statement3 = "UPDATE Request_Form SET ThirdLayer = '" + result[7][1] + "' WHERE RID = '" + result[1][1] + "';";
@@ -1588,7 +1593,16 @@ module.exports = function (app, passport) {
         let fName = req.query.fName;
         let layerName;
 
+        console.log('Approveboy');
+        console.log(approveIDStr);
+        console.log(approvepictureStr);
+        console.log(format);
+        console.log(fName);
+
+
         let myState1 = "UPDATE Request_Form SET Current_Status = 'Approved' WHERE RID = '" + approveIDStr + "'";
+        console.log('myState1');
+        console.log(myState1);
 
         // mover folder
         for(let i = 0; i < approvepictureStr.length; i++) {
@@ -1815,21 +1829,28 @@ module.exports = function (app, passport) {
     });
 
     app.post('/replace', function (req, res) { //puts everything from a request form into LayerMenu once it has been approved
+        console.log("this is it");
         let result = Object.keys(req.body).map(function (key) {
             return [String(key), req.body[key]];
         });
-
+        //
+        console.log('results.');
+        console.log(result);
         res.setHeader("Access-Control-Allow-Origin", "*");
 
         let update1 = "UPDATE Request_Form SET " ;
         let update3 = " WHERE RID = '" + result[1][1] + "';";
         let update2 = "";
-        let layerName;
-        let datastore = "datastore" + result[7][1];
-
-        console.log(result);
-        console.log(datastore);
-
+        // let layerName;
+        // let datastore = "datastore" + result[7][1];
+        //
+        console.log(update1);
+        console.log(update3);
+        // console.log(datastore);
+        // console.log(result[6][1]);
+        // console.log(result[7][1]);
+        // console.log(datastore);
+        //
         for (let i = 0; i < result.length; i++) {
             if (i === result.length - 1) {
                 update2 += result[i][0] + " = '" + result[i][1]+ "'";
@@ -1838,28 +1859,38 @@ module.exports = function (app, passport) {
             }
         }
 
+        console.log(update2);
+        //
         let Layer_Uploader = Pending_Dir + "/" + responseDataUuid;
         let Layer_Uploader_name = responseDataUuid;
         let filepathname = Pending_Dir + "/" + responseDataUuid;
         let statement1 = update1+update2+update3;
-        let statement2 = "UPDATE Request_Form SET Layer_Uploader = '" + Layer_Uploader + "', Layer_Uploader_name = '" + result[15][1] + "' WHERE RID = '" + result[1][1] + "';";
+        let statement2 = "UPDATE Request_Form SET Layer_Uploader = '" + Layer_Uploader + "', Layer_Uploader_name = '" + result[14][1] + "' WHERE RID = '" + result[1][1] + "';";
         let statement3 = "UPDATE Request_Form SET ThirdLayer = '" + result[8][1] + "' WHERE RID = '" + result[1][1] + "';";
+        //
+        console.log('s1');
+        console.log(statement1);
+        console.log("statement2");
+        console.log(statement2);
+        console.log(statement3);
         if(result[3][1] === "other"){
-            let statement = "INSERT INTO LayerMenu (LayerName, LayerType, FirstLayer, SecondLayer, ThirdLayer, Picture_Location, ContinentName, CountryName, StateName, CityName, Site_Description, Status, RID) VALUES ('" + result[7][1] + "', 'Wmslayer', '" + result[4][1] + "','" + result[6][1] + "','" + result[8][1] + "','" + result[15][1] + "','" + result[9][1] + "','" + result[10][1] + "','" + result[11][1] + "','" + result[12][1] + "','" + result[13][1] + "', 'Approved', '" + result[1][1] + "') ON DUPLICATE KEY UPDATE LayerName ='" + result[7][1] + "', FirstLayer = '" + result[4][1] + "', SecondLayer = '" + result[6][1] + "', ThirdLayer = '" + result[8][1] + "', Picture_Location = '" + result[15][1] + "', Status = 'Approved';";
+            let statement = " INSERT INTO LayerMenu (LayerName, LayerType, FirstLayer, SecondLayer, ThirdLayer, Picture_Location, ContinentName, CountryName, StateName, CityName, Site_Description, Status, RID) VALUES ('" + result[7][1] + "', 'Wmslayer', '" + result[4][1] + "','" + result[6][1] + "','" + result[8][1] + "','" + result[14][1] + "','" + result[9][1] + "','" + result[10][1] + "','" + result[11][1] + "','" + result[12][1] + "','" + result[13][1] + "', 'Approved', '" + result[1][1] + "') ON DUPLICATE KEY UPDATE LayerName ='" + result[7][1] + "', FirstLayer = '" + result[4][1] + "', SecondLayer = '" + result[6][1] + "', ThirdLayer = '" + result[8][1] + "', Picture_Location = '" + result[14][1] + "', Status = 'Approved'; ";
             con_CS.query(statement1 + statement + statement2 + statement3, function (err, result) {
+                console.log(statement);
                 if (err) {
                     throw err;
                 } else {
-                    res.json("Connected!")
+                    res.json("Connected!");
                 }
             });
         }else{
-            let statement = "INSERT INTO LayerMenu (LayerName, LayerType, FirstLayer, SecondLayer, ThirdLayer, Picture_Location, ContinentName, CountryName, StateName, CityName, Site_Description, Status, RID) VALUES ('" + result[7][1] + "', 'Wmslayer', '" + result[3][1] + "','" + result[5][1] + "','" + result[8][1] + "','" + result[15][1] + "','" + result[9][1] + "','" + result[10][1] + "','" + result[11][1] + "','" + result[12][1] + "','" + result[13][1] + "', 'Approved', '" + result[1][1] + "') ON DUPLICATE KEY UPDATE LayerName ='" + result[7][1] + "', FirstLayer = '" + result[3][1] + "', SecondLayer = '" + result[5][1] + "', ThirdLayer = '" + result[8][1] + "', Picture_Location = '" + result[15][1] + "', Status = 'Approved';";
+            let statement = " INSERT INTO LayerMenu (LayerName, LayerType, FirstLayer, SecondLayer, ThirdLayer, Picture_Location, ContinentName, CountryName, StateName, CityName, Site_Description, Status, RID) VALUES ('" + result[7][1] + "', 'Wmslayer', '" + result[3][1] + "','" + result[5][1] + "','" + result[8][1] + "','" + result[14][1] + "','" + result[9][1] + "','" + result[10][1] + "','" + result[11][1] + "','" + result[12][1] + "','" + result[13][1] + "', 'Approved', '" + result[1][1] + "') ON DUPLICATE KEY UPDATE LayerName ='" + result[7][1] + "', FirstLayer = '" + result[3][1] + "', SecondLayer = '" + result[5][1] + "', ThirdLayer = '" + result[8][1] + "', Picture_Location = '" + result[14][1] + "', Status = 'Approved'; ";
            con_CS.query(statement1 + statement + statement2 + statement3, function (err, result) {
-                if (err) {
+               console.log(statement);
+               if (err) {
                     throw err;
                 } else {
-                    res.json("Connected!")
+                    res.json("Connected!");
                 }
             });
         }
@@ -1903,6 +1934,34 @@ module.exports = function (app, passport) {
             });
         }
     });
+
+
+    app.get('/rejected', isLoggedIn, function (req, res) {
+        let myStat = "SELECT userrole FROM UserLogin WHERE username = '" + req.user.username + "';";
+        let state2 = "SELECT firstName, lastName FROM UserProfile WHERE username = '" + req.user.username + "';"; //define last name
+
+        con_CS.query(myStat + state2, function (err, results) {
+            // console.log("Users: ");
+            // console.log(results);
+
+            if (err) throw err;
+
+            if (!results[0][0].userrole) {
+                console.log("Error2");
+            } else if (!results[1][0].firstName) {
+                console.log("Error1")
+            } else {
+                // console.log("Yes");
+                // console.log(req.user);
+                res.render('rejected.ejs', {
+                    user: req.user, // get the user out of session and pass to template
+                    firstName: results[1][0].firstName,
+                    lastName: results[1][0].lastName,
+                });
+            }
+        });
+    });
+
 
     let olduuid;
     //Put back the photo in the form
@@ -2049,9 +2108,6 @@ module.exports = function (app, passport) {
             res.json(results);
         });
     });
-
-
-
 
 //AddData in table
     app.get('/AddData', function (req, res) {
