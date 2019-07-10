@@ -325,7 +325,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="form-group" hidden>
+                    <div class="form-group" >
                         <label class="col-md-4 control-label">Layer Country</label>
                         <div class="col-md-8 inputGroupContainer">
                             <div class="input-group">
@@ -491,8 +491,7 @@
         $('#continent option[value="AL"]').val(rowSelectedValue[4]);
         // $('#continent2 option[value="AL"]').val(rowSelectedValue[4]);
         // $("#continent2").html("<option>" + rowSelectedValue[4]+ "</option>");
-        $('#country option[value="selected"]').val(rowSelectedValue[5]);
-        // $('#country2 option[value="select"]').val(rowSelectedValue[5]);
+        $("#country").html("<option selected>" + rowSelectedValue[5]+ "</option>");
         $("#country2").html("<option selected>" + rowSelectedValue[5]+ "</option>");
         document.getElementById('DisplayName').value = rowSelectedValue[12];
         document.getElementById('comment').value = rowSelectedValue[17];
@@ -1008,6 +1007,7 @@
                     type: "GET",
                     dataType: 'json',
                     data: tID + '&' + LUN + '&' + lForm + '&' + fName,
+
                 });
                 $.ajax({
                     url: 'replace',
