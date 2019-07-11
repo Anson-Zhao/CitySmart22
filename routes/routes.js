@@ -313,7 +313,7 @@ module.exports = function (app, passport) {
     // //Detects if user is admin
     app.get('/admindetector', function (req, res) {
         dateNtime();
-        if (req.user.userrole == "Admin") {
+        if (req.user.userrole === "Admin") {
             res.render('2step.ejs');
         } else {
             res.redirect('/loginUpdate');
@@ -356,17 +356,20 @@ module.exports = function (app, passport) {
     });
 
     app.post('/kauth', function (req, res) {
-        res.render('KnowledgeAuth.ejs', {message: req.flash('forgotPassMessage')});
+        res.render('KnowledgeAuth.ejs');
+    //    res.render('userProfile.ejs', {
+        //             user: req.user,
+        //         });
 
     });
 
     app.post('/pauth', function (req, res) {
-        res.render('PhoneAuth.ejs', {message: req.flash('forgotPassMessage')});
+        res.render('PhoneAuth.ejs');
 
     });
 
     app.post('/eauth', function (req, res) {
-        res.render('EmailAuth.ejs', {message: req.flash('forgotPassMessage')});
+        res.render('EmailAuth.ejs');
 
     });
 
