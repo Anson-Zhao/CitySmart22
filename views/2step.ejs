@@ -1,0 +1,116 @@
+<!-- views/addUser.ejs -->
+<!doctype html>
+<html>
+<head>
+    <title>CitySmart - User Management - Two Step Verification</title>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <!-- load fontawesome -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <!--<link rel="stylesheet" href="//unpkg.com/flatpickr/dist/flatpickr.min.css">-->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/flatpickr"></script>
+    <!--<script src="//unpkg.com/flatpickr"></script>-->
+    <style>
+        .banner {
+            position: relative;
+            width: 100%;
+        }
+        .button {
+            padding: 14px 40px;
+            text-align: center;
+            border-radius: 3px;
+            background-color: #008CBA;
+            color: white;
+            border: 2px solid #008CBA;
+        }
+        .button:hover {
+            box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+            background-color: rgba(0, 140, 186, 0.56);
+            color: black;
+            border: 2px none rgba(0, 140, 186, 0.61);
+        }
+        .form-group {
+            margin: auto;
+            width: 50%;
+            padding: 10px;
+        }
+        #falldown {
+            text-align: center;
+        }
+    </style>
+</head>
+<div class="navul" style="height: 80px; background: #000000;">
+    <a class="navul" href="//aworldbridge.com" style="background: #000000; width: 500px; height: 80px;">
+        <img class="banner" src="../images/NewWBBanner.jpg" style="width: 550px; height: 80px; margin: auto; display: block;" />
+    </a>
+</div>
+<body ononline="onFunction()" onoffline="offFunction()">
+<div class="container" style="width: 500px; padding: 0px;">
+    <h1 style="margin-top: 20px; text-align: center;">Two Step Verification </h1>
+    <!-- show any messages that come back with authentication -->
+    <!-- ADD USER FORM -->
+    <p id="falldown">Admin users are required to go through a two-step sign in process. To proceed, please choose one of the following three ways to sign in.</p>
+    <form onsubmit="return checkForm()" action="/kauth" method="post" id="addUser">
+        <div class="form-group">
+            <button type="submit" class="button" id="kBA">Knowledge-Based Authentication</button>
+        </div>
+    </form>
+    <form onsubmit="return checkForm()" action="/pauth" method="post" id="addUser">
+        <div class="form-group">
+            <button type="submit" class="button" id="pA">Phone Authentication</button>
+        </div>
+    </form>
+    <form onsubmit="return checkForm()" action="/eauth" method="post" id="addUser">
+        <div class="form-group">
+            <button type="submit" class="button" id="eA">Email Authentication</button>
+        </div>
+    </form>
+    <hr style="margin-bottom: 10px;">
+    <p style="margin-left: 225px;"> <a href="/">Cancel</a></p>
+</div>
+<br>
+<script>
+    let UsErname = document.getElementById("UsErname");
+    let FiRsTname = document.getElementById("FiRsTname");
+    let LaStname = document.getElementById("LaStname");
+
+
+    $(document).ready(function() {
+        $(function() {
+            $('#addUser').submit(function(e) {
+                e.preventDefault();
+                $.ajax({
+                    type: "post",
+                    url: "/addUser",
+                    dataType: 'json',
+                    data: $("#addUser").serialize(),
+                    success: function (result) {
+                        if (!result.error) {
+                            alert(result.message);
+                            window.location.replace('/userManagement');
+                        } else {
+                            alert(result.message);
+                        }
+                    }
+                })
+            });
+        });
+        let today = new Date();
+        let date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+        let time2 = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+        let dateTime = date + ' ' + time2;
+        document.getElementById("DATE").value = dateTime;
+    });
+
+    function onFunction() {
+        alert ("You are now online.");
+    }
+
+    function offFunction() {
+        alert ("Your are offline. Some functionality may be unavailable.");
+    }
+</script>
+</body>
+</html>

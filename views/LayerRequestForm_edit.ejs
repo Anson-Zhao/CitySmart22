@@ -56,7 +56,7 @@
                             <span class="qq-upload-file-selector qq-upload-file"></span>
                             <span class="qq-edit-filename-icon-selector qq-btn qq-edit-filename-icon" aria-label="Edit filename"></span>
                         </div>
-                        <input class="qq-edit-filename-selector qq-edit-filename" tabindex="0" type="text">
+                        <input class="qq-edit-filename-selector qq-edit-filename" tabindex="0" type="text" spellcheck="true">
                         <span class="qq-upload-size-selector qq-upload-size"></span>
                         <button type="button" class="qq-btn qq-upload-delete-selector qq-upload-delete">
                             <span class="qq-btn qq-delete-icon" aria-label="Delete"></span>
@@ -209,9 +209,10 @@
 
 </head>
 
-<body>
-    <div class="navul" style="height: 150px;
-        background: #000000;">
+<body ononline="onFunction()" onoffline="offFunction()">
+<!--<body onload="init()">-->
+    <!--<div class="navul" style="height: 150px;-->
+        <!--background: #000000;">-->
         <a class="navul" href="//aworldbridge.com" style="background: #000000;
         width: 500px;
         height: 60px;">
@@ -276,7 +277,7 @@
                                     <option value="other">Other(Please specify)</option>
                                 </select>
                                 <div id="other1" style="display:none;">
-                                    <input class="other" type="text" name="FirstOther" id="inputone">
+                                    <input class="other" type="text" name="FirstOther" id="inputone" spellcheck="true">
                                 </div>
                             </div>
                         </div>
@@ -380,7 +381,7 @@
                         <label class="col-md-4 control-label">Layer Description</label>
                         <div class="col-md-8 inputGroupContainer">
                             <div>
-                                <textarea class="form-control" id="message" name="Layer_Description" placeholder="Enter your description here..." required type="text" rows="6" maxlength="400" ></textarea>
+                                <textarea class="form-control" id="message" name="Layer_Description" placeholder="Enter your description here..." required type="text" rows="6" maxlength="400" spellcheck="true"></textarea>
                                 <p style="color:palevioletred;margin-top:15px;">Please include image resolution, drone altitude, date created and other conditions.</p>
                             </div>
                         </div>
@@ -499,13 +500,13 @@
         console.log(rowSelectedValue[15]);
         console.log(document.getElementById('pictureStr').value);
 
-        if (rowSelectedValue[14] === "GeoTIFF - Tagged Image File Format with Geographic information (.tif)" || rowSelectedValue[14] === "GeoTIFF - Tagged Image File Format with Geographic information (.tif),") {
+        if (rowSelectedValue[14] == "GeoTIFF - Tagged Image File Format with Geographic information (.tif)" || rowSelectedValue[14] == "GeoTIFF - Tagged Image File Format with Geographic information (.tif),") {
              layerformat = 'GeoBoy';
-        } else if (rowSelectedValue[14] === "Shapefile - ESRI(tm) Shapefiles (.shp)" || rowSelectedValue[14] === "Shapefile - ESRI(tm) Shapefiles (.shp),") {
+        } else if (rowSelectedValue[14] == "Shapefile - ESRI(tm) Shapefiles (.shp)" || rowSelectedValue[14] == "Shapefile - ESRI(tm) Shapefiles (.shp),") {
             layerformat = 'ShapeBoy';
-        } else if (rowSelectedValue[14] === "JP2ECW - JP2K (.jp2/.j2k)" || rowSelectedValue[14] === "JP2ECW - JP2K (.jp2/.j2k),") {
+        } else if (rowSelectedValue[14] == "JP2ECW - JP2K (.jp2/.j2k)" || rowSelectedValue[14] == "JP2ECW - JP2K (.jp2/.j2k),") {
             layerformat = 'J2kBoy';
-        } else if (rowSelectedValue[14] === "AIG - Arc/Info Binary Grid (.adf)" || rowSelectedValue[14] === "AIG - Arc/Info Binary Grid (.adf),") {
+        } else if (rowSelectedValue[14] == "AIG - Arc/Info Binary Grid (.adf)" || rowSelectedValue[14] == "AIG - Arc/Info Binary Grid (.adf),") {
             layerformat = 'AdfBoy';
         } else {
             document.getElementById('LayerFormat').value = rowSelectedValue[14];
@@ -759,19 +760,20 @@
             }
         });
 
-        $("#testButton").click(function () {
-            let data = $("#layer").serialize();
-            console.log(data);
-            $.ajax({
-                url: 'testB',
-                method: "post",
-                data: data,
-                dataType: 'json',
-                success: function (d) {
-                    console.log(data);
-                }
-            });
-        })
+        // $("#testButton").click(function () {
+        //     let data = $("#layer").serialize();
+        //     console.log(data);
+        //     $.ajax({
+        //         url: 'testB',
+        //         method: "post",
+        //         data: data,
+        //         dataType: 'json',
+        //         success: function (d) {
+        //             console.log(data);
+        //         }
+        //     });
+        // })
+
 
         // Wait for the DOM to be ready
         $('#layer').validate({
@@ -810,6 +812,22 @@
                 submitForm();
             }
         });
+
+        // ("#myform").validate({
+        //     invalidHandler: function(event, validator) {
+        //         // 'this' refers to the form
+        //         var errors = validator.numberOfInvalids();
+        //         if (errors) {
+        //             var message = errors == 1
+        //                 ? 'You missed 1 field. It has been highlighted'
+        //                 : 'You missed ' + errors + ' fields. They have been highlighted';
+        //             $("div.error span").html(message);
+        //             $("div.error").show();
+        //         } else {
+        //             $("div.error").hide();
+        //         }
+        //     }
+        // });
 
         $("#City").click(function () {
             new dgCitysCountries({
@@ -899,6 +917,17 @@
     //     });
     // });
 
+    // $("select").change(function() {
+    //         var str = "";
+    //         $( "select option:selected" ).each(function() {
+    //             str += $( this ).text() + " ";
+    //         });
+    //         $( "div" ).text( str );
+    //     }).trigger( "change" );
+
+
+
+
     function changeContinent (continentValue){
 
         let country = "country="+continentValue;
@@ -945,19 +974,19 @@
                 console.log(LUN);
                 console.log(lForm);
 
-                if (lForm === "lForm=GeoTIFF - Tagged Image File Format with Geographic information (.tif),") {
+                if (lForm == "lForm=GeoTIFF - Tagged Image File Format with Geographic information (.tif),") {
 
                     lForm = "lForm=GeoTIFF - Tagged Image File Format with Geographic information (.tif)";
 
-                } else if (lForm === "lForm=Shapefile - ESRI(tm) Shapefiles (.shp),") {
+                } else if (lForm == "lForm=Shapefile - ESRI(tm) Shapefiles (.shp),") {
 
                     lForm = "lForm=Shapefile - ESRI(tm) Shapefiles (.shp)";
 
-                } else if (lForm === "lForm=JP2ECW - JP2K (.jp2/.j2k),") {
+                } else if (lForm == "lForm=JP2ECW - JP2K (.jp2/.j2k),") {
 
                     lForm = "lForm=JP2ECW - JP2K (.jp2/.j2k)";
 
-                } else if (lForm === "lForm=AIG - Arc/Info Binary Grid (.adf),") {
+                } else if (lForm == "lForm=AIG - Arc/Info Binary Grid (.adf),") {
 
                     lForm = "lForm=AIG - Arc/Info Binary Grid (.adf)";
 
@@ -966,7 +995,7 @@
                     url: 'approve',
                     type: "GET",
                     dataType: 'json',
-                    data: tID + '&' + LUN + '&' + lForm + '&' + fName + '&' + data,
+                    data: tID + '&' + LUN + '&' + lForm + '&' + fName,
                 });
                 $.ajax({
                     url: 'replace',
@@ -1051,6 +1080,13 @@
         }
     }
 
+    function onFunction() {
+        alert ("You are now online.");
+    }
+
+    function offFunction() {
+        alert ("Your are offline. Some functionality may be unavailable.");
+    }
     // function SearchLayerName(value){
     //     $.ajax({
     //         url: "SearchLayerName",
