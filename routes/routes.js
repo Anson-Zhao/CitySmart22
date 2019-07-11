@@ -297,7 +297,7 @@ module.exports = function (app, passport) {
 
     // process the login form
     app.post('/login', bruteforce.prevent, passport.authenticate('local-login', {
-            successRedirect: '/loginUpdate', // redirect to the secure profile section
+            successRedirect: '/admindetector', // redirect to the secure profile section
             failureRedirect: '/login', // redirect to the login page if there is an error
             failureFlash: true // allow flash messages
         }),
