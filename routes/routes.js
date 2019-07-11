@@ -355,6 +355,21 @@ module.exports = function (app, passport) {
         });
     });
 
+    app.post('/kauth', function (req, res) {
+        res.render('KnowledgeAuth.ejs', {message: req.flash('forgotPassMessage')});
+
+    });
+
+    app.post('/pauth', function (req, res) {
+        res.render('PhoneAuth.ejs', {message: req.flash('forgotPassMessage')});
+
+    });
+
+    app.post('/eauth', function (req, res) {
+        res.render('EmailAuth.ejs', {message: req.flash('forgotPassMessage')});
+
+    });
+
     app.get('/phonenumber', function (req, res) {
         res.setHeader("Access-Control-Allow-Origin", "*"); // Allow cross domain header
         let statement = "SELECT * FROM UserLogin WHERE username = '" + req.body.username + "';";
