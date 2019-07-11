@@ -319,18 +319,18 @@
                         <div class="col-md-8 inputGroupContainer">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span>
-                                <select class="crs-country form-control" data-region-id="two" data-default-option="SELECT CONTINENT" id="continent" onchange="changeContinent(this.value)">
+                                <select name="ContinentName" class="crs-country form-control" data-region-id="two" data-default-option="SELECT CONTINENT" id="continent" onchange="changeContinent(this.value)">
                                     <option selected="selected" value="AL" id="continent-option">SELECT A CONTINENT</option>
                                 </select>
                             </div>
                         </div>
                     </div>
-                    <div class="form-group" >
+                    <div class="form-group" hidden>
                         <label class="col-md-4 control-label">Layer Country</label>
                         <div class="col-md-8 inputGroupContainer">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span>
-                                <select  id="country" class="crs-country form-control" data-region-id="two" data-default-option="SELECT COUNTRY">
+                                <select  id="country" name="CountryName" class="crs-country form-control" data-region-id="two" data-default-option="SELECT COUNTRY">
                                     <option value="select">SELECT COUNTRY</option>
                                 </select>
                             </div>
@@ -341,7 +341,7 @@
                         <div class="col-md-8 inputGroupContainer">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span>
-                                <select name="ContinentName" class="crs-country form-control" data-region-id="two" data-default-option="SELECT CONTINENT" id="continent2" onchange="changeContinent(this.value)">
+                                <select class="crs-country form-control" data-region-id="two" data-default-option="SELECT CONTINENT" id="continent2" onchange="changeContinent(this.value)">
                                     <option selected="selected" value="AL" id="continent-option">SELECT A CONTINENT</option>
                                 </select>
                             </div>
@@ -352,7 +352,7 @@
                         <div class="col-md-8 inputGroupContainer">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span>
-                                <select  id="country2" name="CountryName" class="crs-country form-control" data-region-id="two" data-default-option="SELECT COUNTRY">
+                                <select  id="country2" class="crs-country form-control" data-region-id="two" data-default-option="SELECT COUNTRY">
                                     <option value="select">SELECT COUNTRY</option>
                                 </select>
                             </div>
@@ -475,7 +475,6 @@
 
 
     $(document).ready(function() {
-        console.log(rowSelectedValue);
         document.getElementById('date').value = rowSelectedValue[0];
         document.getElementById('User ID').value = rowSelectedValue[1];
         document.getElementById('RID').value = rowSelectedValue[2];
@@ -491,6 +490,8 @@
         $('#continent option[value="AL"]').val(rowSelectedValue[4]);
         // $('#continent2 option[value="AL"]').val(rowSelectedValue[4]);
         // $("#continent2").html("<option>" + rowSelectedValue[4]+ "</option>");
+        // $('#country option[value="selected"]').val(rowSelectedValue[5]);
+        // $('#country2 option[value="select"]').val(rowSelectedValue[5]);
         $("#country").html("<option selected>" + rowSelectedValue[5]+ "</option>");
         $("#country2").html("<option selected>" + rowSelectedValue[5]+ "</option>");
         document.getElementById('DisplayName').value = rowSelectedValue[12];
@@ -519,35 +520,35 @@
         console.log('Big Nose');
 
 
-        if (document.getElementById('LayerFormat').value == "GeoTIFF - Tagged Image File Format with Geographic information (.tif),") {
+        if (document.getElementById('LayerFormat').value === "GeoTIFF - Tagged Image File Format with Geographic information (.tif),") {
 
             document.getElementById('LayerFormat').value = "GeoTIFF - Tagged Image File Format with Geographic information (.tif)";
 
-        } else if (document.getElementById('LayerFormat2').value == "Shapefile - ESRI(tm) Shapefiles (.shp),") {
+        } else if (document.getElementById('LayerFormat2').value === "Shapefile - ESRI(tm) Shapefiles (.shp),") {
 
             document.getElementById('LayerFormat2').value = "Shapefile - ESRI(tm) Shapefiles (.shp)";
 
-        } else if (document.getElementById('LayerFormat').value == "Shapefile - ESRI(tm) Shapefiles (.shp),") {
+        } else if (document.getElementById('LayerFormat').value === "Shapefile - ESRI(tm) Shapefiles (.shp),") {
 
             document.getElementById('LayerFormat').value = "Shapefile - ESRI(tm) Shapefiles (.shp)";
 
-        } else if (document.getElementById('LayerFormat2').value == "Shapefile - ESRI(tm) Shapefiles (.shp),") {
+        } else if (document.getElementById('LayerFormat2').value === "Shapefile - ESRI(tm) Shapefiles (.shp),") {
 
             document.getElementById('LayerFormat2').value = "Shapefile - ESRI(tm) Shapefiles (.shp)";
 
-        } else if (document.getElementById('LayerFormat').value == "JP2ECW - JP2K (.jp2/.j2k),") {
+        } else if (document.getElementById('LayerFormat').value === "JP2ECW - JP2K (.jp2/.j2k),") {
 
             document.getElementById('LayerFormat').value = "JP2ECW - JP2K (.jp2/.j2k)";
 
-        } else if (document.getElementById('LayerFormat2').value == "JP2ECW - JP2K (.jp2/.j2k),") {
+        } else if (document.getElementById('LayerFormat2').value === "JP2ECW - JP2K (.jp2/.j2k),") {
 
             document.getElementById('LayerFormat2').value = "JP2ECW - JP2K (.jp2/.j2k)";
 
-        } else if (document.getElementById('LayerFormat').value == "AIG - Arc/Info Binary Grid (.adf),") {
+        } else if (document.getElementById('LayerFormat').value === "AIG - Arc/Info Binary Grid (.adf),") {
 
             document.getElementById('LayerFormat').value = "AIG - Arc/Info Binary Grid (.adf)";
 
-        } else if (document.getElementById('LayerFormat2').value == "AIG - Arc/Info Binary Grid (.adf),") {
+        } else if (document.getElementById('LayerFormat2').value === "AIG - Arc/Info Binary Grid (.adf),") {
 
             document.getElementById('LayerFormat2').value = "AIG - Arc/Info Binary Grid (.adf)";
 
@@ -569,9 +570,7 @@
             $("#sub").html("<option>" + rowSelectedValue[10]+ "</option>")
         }
 
-
         if (UserRole === "Admin") {
-            document.getElementById("msg").innerHTML = "";
             document.getElementById("comment").disabled = false;
             document.getElementById("approve").disabled = false;
             document.getElementById("reject").disabled = false;
@@ -609,9 +608,9 @@
 
         $("#main").change(function () {
             let val = $(this).val();
-            if (val == "") {
+            if (val === "") {
                 $("#sub").html("<option value='Category'>SELECT SUBCATEGORY</option>");
-            }else if(val =="other") {
+            }else if(val ==="other") {
                 $("#sub").html("<option value='other'>Other(Please specify)</option>");
             }
         })
@@ -963,16 +962,6 @@
 
     function submitForm() {
         if (UserRole === "Admin") {
-            let tID = "tID=" + document.getElementById('RID').value;
-            let LUN = "LUN=" + rowSelectedValue[15];
-            let lForm = "lForm=" + rowSelectedValue[14];
-            let fName = "fName=" + rowSelectedValue[12];
-            let data = $("#layer").serialize();
-            console.log(data);
-            console.log(fName);
-            console.log(tID);
-            console.log(LUN);
-            console.log(lForm);
             if (confirm("Are you sure you would like to approve this data?") === true) {
                 let tID = "tID=" + document.getElementById('RID').value;
                 let LUN = "LUN=" + rowSelectedValue[15];
@@ -1007,7 +996,6 @@
                     type: "GET",
                     dataType: 'json',
                     data: tID + '&' + LUN + '&' + lForm + '&' + fName,
-
                 });
                 $.ajax({
                     url: 'replace',

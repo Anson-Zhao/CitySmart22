@@ -160,20 +160,12 @@
             border-radius: 5px;
             border: 1px solid lightgray;
         }
-        #boldboy {
-            color: black;
-        }
-        #bodyboy {
-            text-align: center;
-            font-family: Times New Roman, serif;
-            font-size: large;
-        }
 
     </style>
 
 </head>
 
-<body ononline="onFunction()" onoffline="offFunction()">
+<body>
     <div class="navul" style="height: 150px;
         background: #000000;">
         <a class="navul" href="//aworldbridge.com" style="background: #000000;
@@ -239,7 +231,7 @@
                                     <option value="other">Other(Please specify)</option>
                                 </select>
                                 <div id="other1" style="display:none;">
-                                    <input class="other" type="text" name="FirstOther" spellcheck="true">
+                                    <input class="other" type="text" name="FirstOther">
                                 </div>
                             </div>
                         </div>
@@ -254,7 +246,7 @@
                                     <option value="other" id="secondOther">Other(Please specify)</option>
                                 </select>
                                 <div id="other2" style="display:none;">
-                                    <input class="other" type="text" name="SecondOther" id="inputtwo" spellcheck="true">
+                                    <input class="other" type="text" name="SecondOther" id="inputtwo">
                                 </div>
                             </div>
                         </div>
@@ -263,8 +255,8 @@
                         <label class="col-md-4 control-label">Layer Display Name</label>
                         <div class="col-md-8 inputGroupContainer">
                             <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
-                                <input id="LayerNameInput" name="LayerName" value="" placeholder="Layer Name" class="form-control" required  type="text" spellcheck="true" onchange="SearchLayerName(this.value)"></div>
-                            <p id="LayerName1" style="color: palevioletred;margin-top:15px;">Please enter the layer name. The name you submit is the layer name, after the approval of the admin, your display name may be changed. <br>NOTE: <strong id="boldboy">DO NOT include spaces.</strong></p>
+                                <input id="LayerNameInput" name="LayerName" value="" placeholder="Layer Name" class="form-control" required  type="text" onchange="SearchLayerName(this.value)"></div>
+                            <p id="LayerName1" style="color: palevioletred;margin-top:15px;">Please enter the layer name. The name you submit is the layer name, after the approval of the admin, your display name may be changed. <br>NOTE: <strong>DO NOT </strong>include spaces.</p>
                         </div>
                     </div>
                     <!--<p id="LayerName1" style="color: palevioletred; margin-left:270px;">Please Enter the Layer Name, the Layer Name must be at least 6 characters</p>-->
@@ -295,7 +287,7 @@
                         <div class="col-md-8 inputGroupContainer">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span>
-                                <input name="StateName" value="" placeholder="State Name" class="form-control" required  type="text" id="LayerStateInput" spellcheck="true">
+                                <input name="StateName" value="" placeholder="State Name" class="form-control" required  type="text" id="LayerStateInput">
                             </div>
                             <p style="color:palevioletred;margin-top:15px;">Please enter the full state name, no abbreviations. EXAMPLE: New York</p>
 
@@ -315,7 +307,7 @@
                         <label class="col-md-4 control-label">Layer Description</label>
                         <div class="col-md-8 inputGroupContainer">
                             <div>
-                                <textarea class="form-control" id="message" name="Layer_Description" placeholder="Enter your description here..." required type="text" rows="6" maxlength="400" spellcheck="true"></textarea>
+                                <textarea class="form-control" id="message" name="Layer_Description" placeholder="Enter your description here..." required type="text" rows="6" maxlength="400" ></textarea>
                                 <p style="color:palevioletred;margin-top:15px;">Please include image resolution, drone altitude, date created and other conditions.</p>
                             </div>
                         </div>
@@ -395,10 +387,10 @@
     
     $(document).ready(function() {
 
-        if (userrole === "Admin") {
-            document.getElementsByTagName("BODY")[0].setAttribute("id", "bodyboy");
-            document.getElementById("bodyboy").innerHTML = 'The layer request form is only available for regular users but not for admin users, please register a new regular user if a layer is needed for submission.';
-        }
+        // if (userrole === "Admin") {
+        //     document.getElementsByTagName("BODY")[0].setAttribute("id", "bodyboy");
+        //     document.getElementById("bodyboy").innerHTML = 'The layer request form is only available for regular users but not for admin users, please register a new regular user if a layer is needed for submission.';
+        // }
 
         console.log($("#layer").serialize());
 
@@ -416,44 +408,7 @@
         document.getElementById("date").value=today;
         document.getElementById('User ID').value = username;
         document.getElementById('RID').value = RID;
-
-
-        if (document.getElementById('LayerFormat').value == "GeoTIFF - Tagged Image File Format with Geographic information (.tif),") {
-
-            document.getElementById('LayerFormat').value = "GeoTIFF - Tagged Image File Format with Geographic information (.tif)";
-
-        } else if (document.getElementById('LayerFormat2').value == "Shapefile - ESRI(tm) Shapefiles (.shp),") {
-
-            document.getElementById('LayerFormat2').value = "Shapefile - ESRI(tm) Shapefiles (.shp)";
-
-        } else if (document.getElementById('LayerFormat').value == "Shapefile - ESRI(tm) Shapefiles (.shp),") {
-
-            document.getElementById('LayerFormat').value = "Shapefile - ESRI(tm) Shapefiles (.shp)";
-
-        } else if (document.getElementById('LayerFormat2').value == "Shapefile - ESRI(tm) Shapefiles (.shp),") {
-
-            document.getElementById('LayerFormat2').value = "Shapefile - ESRI(tm) Shapefiles (.shp)";
-
-        } else if (document.getElementById('LayerFormat').value == "JP2ECW - JP2K (.jp2/.j2k),") {
-
-            document.getElementById('LayerFormat').value = "JP2ECW - JP2K (.jp2/.j2k)";
-
-        } else if (document.getElementById('LayerFormat2').value == "JP2ECW - JP2K (.jp2/.j2k),") {
-
-            document.getElementById('LayerFormat2').value = "JP2ECW - JP2K (.jp2/.j2k)";
-
-        } else if (document.getElementById('LayerFormat').value == "AIG - Arc/Info Binary Grid (.adf),") {
-
-            document.getElementById('LayerFormat').value = "AIG - Arc/Info Binary Grid (.adf)";
-
-        } else if (document.getElementById('LayerFormat2').value == "AIG - Arc/Info Binary Grid (.adf),") {
-
-            document.getElementById('LayerFormat2').value = "AIG - Arc/Info Binary Grid (.adf)";
-
-        } else{}
-
-        document.getElementById('LayerFormat2').value = document.getElementById('LayerFormat').value;
-
+        
         $.ajax({
             url: "layerRequestContinent",
             method: 'GET',
@@ -560,46 +515,6 @@
         });
     }
 
-
-    function SearchLayerName (LayerValue){
-
-        let LayersValue = "LayerName="+LayerValue;
-        // let LayerUploaderName = document.getElementById("LayerUploaderName")
-        //
-        // while (countryList.options.length) {
-        //     countryList.remove(0);
-        // }
-        //
-        // if(LayerValue !== 'SAS'){
-        //     countryList.disabled = false;
-        // }
-        //
-        // if(LayerValue === "AL"){
-        //     countryList.disabled = true;
-        //     $("#country").html("<option>SELECT A COUNTRY</option>")
-        // }
-
-        $.ajax({
-            url: "searchlayername",
-            method: 'GET',
-            dataType: 'json',
-            data: LayersValue,
-            success: function (results) {
-                for (let i = 0; i < results.length; i++) {
-                    // let newRes = JSON.stringify(results);
-                    console.log(LayerValue);
-                    console.log(results[i].LayerName);
-                    if (value === results[i].LayerName) {
-                        document.getElementById("pictureStr").innerHTML = "This layer name is already taken. Please use a different one.";
-                        break;
-                    } else {
-                        document.getElementById("pictureStr").innerHTML = "";
-                    }
-                }
-            }
-        });
-    }
-
     function clearForm(){
         if (confirm("Are you sure you want to clear the form? All the data will be reset accordingly!") === true) {
             window.location.reload();
@@ -624,7 +539,6 @@
                 }
             }
         })
-        console.log($("#layer").serialize());
     }
 
     //to check if the current option of main Main-Category is "other" or not
@@ -646,7 +560,8 @@
 
     function submitForm () {
         let data =$("#layer").serialize();
-        console.log(data);
+        let userPost = "requester=" + username;
+        console.log(userPost);
 
         $.ajax({
             url  : 'submitL',
@@ -661,13 +576,6 @@
         window.location.replace('/userHome');
     }
 
-    function onFunction() {
-        alert ("You are now online.");
-    }
-
-    function offFunction() {
-        alert ("Your are offline. Some functionality may be unavailable.");
-    }
 
 //to check that if there are duplicated from the layer name that layer name that you just inserted
 //     function SearchLayerName(value){

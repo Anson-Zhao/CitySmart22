@@ -24,7 +24,8 @@ requirejs(['./newGlobe',
     './CS_wmsLayer',
     './USGS_WT',
     './USGS_MD',
-    './USGS_MR'
+    './USGS_MR',
+    './heat'
 ], function (newGlobe, menuL) {
 
     "use strict";
@@ -76,6 +77,27 @@ requirejs(['./newGlobe',
 
                 let selectedIndex = newGlobe.layers.findIndex(ele => ele.displayName === value);
 
+                console.log("0");
+                console.log(newGlobe.layers);
+                if (value === "heat0"){
+                    (function myLoop (i) {
+                        setTimeout(function () {
+                            console.log("i: " + i);
+                            let newVal = "heat" + (i-1);
+                            newGlobe.layers[selectedIndex+(i-1)].enabled = toggle.checked;
+                            console.log("1");
+                            console.log(newVal);
+                            let layerRequest = 'layername=' + newVal;
+                            newGlobe.redraw();
+                            if (--i) {
+                                myLoop(i);
+                            }
+                        }, 2000)
+                    })(10);
+                }
+
+
+
                 if (newGlobe.layers[selectedIndex] instanceof WorldWind.RenderableLayer) {
                     if (selectedIndex < 0 || !newGlobe.layers[selectedIndex].renderables.length) {
 
@@ -88,7 +110,7 @@ requirejs(['./newGlobe',
                         if (toggle.checked && i === 0) {
                             let layerRequest = 'layername=' + value;
                             globePosition(layerRequest, toggle.checked);
-                            // confirm("Some layers' positions might be incorrect. Please bear with us as our technicians work on it.");
+                            confirm("Some layers' positions might be incorrect. Please bear with us as our technicians work on it.");
                         }
 
                         if (newGlobe.layers[selectedIndex].layerType === 'USGSWT_PKLayer') {
@@ -364,5 +386,13 @@ requirejs(['./newGlobe',
         left.html(config[toggleV].Min);
         right.html(config[toggleV].Max);
 
+    }
+
+    function wait(ms){
+        var start = new Date().getTime();
+        var end = start;
+        while(end < start + ms) {
+            end = new Date().getTime();
+        }
     }
 });

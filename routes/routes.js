@@ -14,6 +14,10 @@ const rimraf = require("rimraf");
 const mkdirp = require("mkdirp");
 const multiparty = require('multiparty');
 const path    = require('path');
+const ExpressBrute = require('express-brute');
+
+const store = new ExpressBrute.MemoryStore(); // stores state locally, don't use this in production
+const bruteforce = new ExpressBrute(store);
 
 const geoServer = serverConfig.geoServer;
 const Download_From = serverConfig.Download_From;
@@ -205,6 +209,45 @@ module.exports = function (app, passport) {
         });
     });
 
+    app.get('/placemarktP', function (req, res) {
+        res.setHeader("Access-Control-Allow-Origin", "*");
+
+        let commodity = req.query.layerName;
+        let commodity2 = commodity.split("_");
+
+        let commName = commodity2[2];
+        console.log(commName);
+
+        //Converts array to string
+        let statement = "SELECT * FROM Mineral_Deposits WHERE commodity LIKE '" + commName +"';";
+
+        con_CS.query(statement, function (err, result) {
+            if (err) throw err;
+            res.json({"error": false, "commN": result});
+        });
+
+    });
+
+    app.get('/placemarkt', function (req, res) {
+        // console.log( "A: " + new Date());
+
+        res.setHeader("Access-Control-Allow-Origin", "*"); // Allow cross domain header
+
+        // let statement = "SELECT p_name, xlong, ylat, p_year_color, p_avgcap_color, t_ttlh_color FROM USWTDB INNER JOIN USWTDB_COLOR ON USWTDB.case_id = USWTDB_COLOR.case_id ORDER BY p_name;";
+        let statement = "SELECT * FROM Mineral_Deposits;";
+
+        con_CS.query(statement, function (err, results, fields) {
+            if (err) {
+                console.log(err);
+                res.json({"error": true, "message": "An unexpected error occurred !"});
+            } else {
+                // console.log("success: " + new Date());
+                // console.log(results);
+                res.json({"error": false, "data": results});
+            }
+        });
+    });
+
 
     app.get('/placemarkt', function (req, res) {
         // console.log("A: " + new Date());
@@ -245,7 +288,7 @@ module.exports = function (app, passport) {
     });
 
     // process the login form
-    app.post('/login', passport.authenticate('local-login', {
+    app.post('/login', bruteforce.prevent, passport.authenticate('local-login', {
             successRedirect: '/loginUpdate', // redirect to the secure profile section
             failureRedirect: '/login', // redirect to the login page if there is an error
             failureFlash: true // allow flash messages
@@ -256,7 +299,7 @@ module.exports = function (app, passport) {
                 req.session.cookie.expires = false;
             }
             //res.redirect('/login');
-        });
+        },);
 
     // Update user login status
     app.get('/loginUpdate', isLoggedIn, function (req, res) {
@@ -289,6 +332,33 @@ module.exports = function (app, passport) {
                 let text = 'the reset of the password for your account.';
                 let url = "http://" + req.headers.host + "/reset/";
                 sendToken(username, subject, text, url, res);
+            }
+        });
+    });
+
+    app.get('/emailRequest', function (req, res) {
+        res.setHeader("Access-Control-Allow-Origin", "*"); // Allow cross domain header
+        let requester = req.query.requester;
+        console.log("got here");
+        console.log(requester);
+
+        let statement = "SELECT * FROM UserLogin WHERE username = '" + requester + "';";
+
+        con_CS.query(statement, function (err, results, fields) {
+            if (err) {
+                console.log(statement + "ERROR");
+                console.log(err);
+                res.json({"error": true, "message": "An unexpected error occurred !"});
+            } else if (results.length === 0) {
+                console.log(statement);
+                res.json({"error": true, "message": "Please verify your email address !"});
+            } else {
+                console.log(requester);
+                let username = 'julial.zhu@g.feitianacademy.org';
+                let subject = "New User Request By " + requester;
+                let text = 'requested to publish a new layer.';
+                let url = "http://" + req.headers.host + "/userhome/";
+                sendToken2(username, subject, text, url, res);
             }
         });
     });
@@ -765,7 +835,7 @@ module.exports = function (app, passport) {
         });
     });
 
-    app.post('/userProfile', isLoggedIn, function (req, res) {
+    app.post('/userProfile', bruteforce.prevent, isLoggedIn, function (req, res) {
         res.setHeader("Access-Control-Allow-Origin", "*"); // Allow cross domain header
 
         // new password (User Login)
@@ -845,7 +915,7 @@ module.exports = function (app, passport) {
     });
 
     // Update user profile page
-    app.post('/newPass', isLoggedIn, function (req, res) {
+    app.post('/newPass', bruteforce.prevent, isLoggedIn, function (req, res) {
         res.setHeader("Access-Control-Allow-Origin", "*"); // Allow cross domain header
         let user = req.user;
         let newPass = {
@@ -1549,24 +1619,26 @@ module.exports = function (app, passport) {
             });
             con_CS.query(myState1, function (err, results) {
                 if (err) throw err;
-                // console.log(results);
+                console.log(results);
 
                 if (format === "Shapefile - ESRI(tm) Shapefiles (.shp)") {
                     console.log("name of file: " + approvepictureStr[0]);
                     let type = "Content-type: application/zip";
                     let datastore = "datastore" + fName;
 
-                    let uploadStat1 = "curl -u julia:123654 -v -XPUT -H '" + type + "' --data-binary @approvedfolder/" + approvepictureStr[0] + " " + geoServer2 + "rest/workspaces/Approved/datastores/" + datastore +"/file.shp";
+                    let uploadStat1 = "curl -u julia:123654 -v -XPUT -H '" + type + "' --data-binary @approvedfolder/" + approvepictureStr[0] + " " + geoServer + "rest/workspaces/Approved/datastores/" + datastore +"/file.shp";
 
                     child = exec(uploadStat1,
                         function (error, stdout, stderr) {
                             console.log(uploadStat1);
                             console.log('stdout: ' + stdout);
                             console.log('stderr: ' + stderr);
+
                             if (error !== null) {
                                 console.log('exec error: ' + error);
                             } else {
-                                let uploadStat2 = "curl -u julia:123654 -v -XGET " + geoServer + "rest/workspaces/Approved/datastores/" + datastore + "/featuretypes.json";
+                                setTimeout( function () {
+                                    let uploadStat2 = "curl -u julia:123654 -v -XGET " + geoServer + "rest/workspaces/Approved/datastores/" + datastore + "/featuretypes.json";
                                 let jsonF;
                                 child = exec(uploadStat2,
                                     function (error, stdout, stderr) {
@@ -1575,11 +1647,13 @@ module.exports = function (app, passport) {
                                         console.log('stderr: ' + stderr);
 
                                         jsonF = JSON.parse(stdout);
+                                        console.log(jsonF);
                                         if (error !== null) {
 
                                             console.log('exec error: ' + error);
                                         } else {
-                                            layerName = "Approved:" + jsonF.featureTypes.featureType[0].name;
+                                            setTimeout( function () {
+                                                layerName = "Approved:" + jsonF.featureTypes.featureType[0].name;
                                             console.log(layerName);
                                             geoName = layerName;
                                             // let lname = jsonF.featureTypes.featureType[0].name;
@@ -1591,10 +1665,11 @@ module.exports = function (app, passport) {
                                                 if (err) {
                                                     throw err;
                                                 } else {
-                                                    //res.json(results);
-                                                    let uploadStat3 = "curl -u julia:123654 -v -H 'Accept: text/xml' -XGET -H 'Content-type: text/json' " + geoServer2 + "rest/workspaces/Approved/datastores/" + datastore + "/featuretypes/"+ geoName +".json";
+                                                    setTimeout( function () {
+                                                        //res.json(results);
+                                                    let uploadStat3 = "curl -u julia:123654 -v -H 'Accept: text/xml' -XGET -H 'Content-type: text/json' " + geoServer + "rest/workspaces/Approved/datastores/" + datastore + "/featuretypes/"+ jsonF.featureTypes.featureType[0].name +".json";
                                                     let jsonL;
-                                                    child = exec(uploadStat3,
+                                                        child = exec(uploadStat3,
                                                         function (error, stdout, stderr) {
                                                             console.log(uploadStat3);
                                                             console.log('stdout: ' + stdout);
@@ -1628,12 +1703,12 @@ module.exports = function (app, passport) {
                                                                         //res.json(results);
                                                                     }
                                                                 });
-                                                            }
+                                                            }}, 5000);
                                                         });
-                                                }
+                                                }}, 5000);
                                             });
 
-                                        }
+                                        }}, 5000);
                                     });
                             }
                         });
@@ -1758,10 +1833,11 @@ module.exports = function (app, passport) {
     });
 
     app.post('/replace', function (req, res) { //puts everything from a request form into LayerMenu once it has been approved
+        console.log("this is it");
         let result = Object.keys(req.body).map(function (key) {
             return [String(key), req.body[key]];
         });
-
+        //
         console.log('results.');
         console.log(result);
         res.setHeader("Access-Control-Allow-Origin", "*");
@@ -1769,16 +1845,16 @@ module.exports = function (app, passport) {
         let update1 = "UPDATE Request_Form SET " ;
         let update3 = " WHERE RID = '" + result[1][1] + "';";
         let update2 = "";
-        let layerName;
-        let datastore = "datastore" + result[7][1];
-
+        // let layerName;
+        // let datastore = "datastore" + result[7][1];
+        //
         console.log(update1);
         console.log(update3);
-        console.log(datastore);
-        console.log(result[6][1]);
-        console.log(result[7][1]);
-        console.log(datastore);
-
+        // console.log(datastore);
+        // console.log(result[6][1]);
+        // console.log(result[7][1]);
+        // console.log(datastore);
+        //
         for (let i = 0; i < result.length; i++) {
             if (i === result.length - 1) {
                 update2 += result[i][0] + " = '" + result[i][1]+ "'";
@@ -1787,20 +1863,22 @@ module.exports = function (app, passport) {
             }
         }
 
+        console.log(update2);
+        //
         let Layer_Uploader = Pending_Dir + "/" + responseDataUuid;
         let Layer_Uploader_name = responseDataUuid;
         let filepathname = Pending_Dir + "/" + responseDataUuid;
         let statement1 = update1+update2+update3;
-        let statement2 = "UPDATE Request_Form SET Layer_Uploader = '" + Layer_Uploader + "', Layer_Uploader_name = '" + result[15][1] + "' WHERE RID = '" + result[1][1] + "';";
+        let statement2 = "UPDATE Request_Form SET Layer_Uploader = '" + Layer_Uploader + "', Layer_Uploader_name = '" + result[14][1] + "' WHERE RID = '" + result[1][1] + "';";
         let statement3 = "UPDATE Request_Form SET ThirdLayer = '" + result[8][1] + "' WHERE RID = '" + result[1][1] + "';";
-
+        //
         console.log('s1');
         console.log(statement1);
         console.log("statement2");
         console.log(statement2);
         console.log(statement3);
         if(result[3][1] === "other"){
-            let statement = " INSERT INTO LayerMenu (LayerName, LayerType, FirstLayer, SecondLayer, ThirdLayer, Picture_Location, ContinentName, CountryName, StateName, CityName, Site_Description, Status, RID) VALUES ('" + result[7][1] + "', 'Wmslayer', '" + result[4][1] + "','" + result[6][1] + "','" + result[8][1] + "','" + result[15][1] + "','" + result[9][1] + "','" + result[10][1] + "','" + result[11][1] + "','" + result[12][1] + "','" + result[13][1] + "', 'Approved', '" + result[1][1] + "') ON DUPLICATE KEY UPDATE LayerName ='" + result[7][1] + "', FirstLayer = '" + result[4][1] + "', SecondLayer = '" + result[6][1] + "', ThirdLayer = '" + result[8][1] + "', Picture_Location = '" + result[15][1] + "', Status = 'Approved'; ";
+            let statement = " INSERT INTO LayerMenu (LayerName, LayerType, FirstLayer, SecondLayer, ThirdLayer, Picture_Location, ContinentName, CountryName, StateName, CityName, Site_Description, Status, RID) VALUES ('" + result[7][1] + "', 'Wmslayer', '" + result[4][1] + "','" + result[6][1] + "','" + result[8][1] + "','" + result[14][1] + "','" + result[9][1] + "','" + result[10][1] + "','" + result[11][1] + "','" + result[12][1] + "','" + result[13][1] + "', 'Approved', '" + result[1][1] + "') ON DUPLICATE KEY UPDATE LayerName ='" + result[7][1] + "', FirstLayer = '" + result[4][1] + "', SecondLayer = '" + result[6][1] + "', ThirdLayer = '" + result[8][1] + "', Picture_Location = '" + result[14][1] + "', Status = 'Approved'; ";
             con_CS.query(statement1 + statement + statement2 + statement3, function (err, result) {
                 console.log(statement);
                 if (err) {
@@ -1810,7 +1888,7 @@ module.exports = function (app, passport) {
                 }
             });
         }else{
-            let statement = " INSERT INTO LayerMenu (LayerName, LayerType, FirstLayer, SecondLayer, ThirdLayer, Picture_Location, ContinentName, CountryName, StateName, CityName, Site_Description, Status, RID) VALUES ('" + result[7][1] + "', 'Wmslayer', '" + result[3][1] + "','" + result[5][1] + "','" + result[8][1] + "','" + result[15][1] + "','" + result[9][1] + "','" + result[10][1] + "','" + result[11][1] + "','" + result[12][1] + "','" + result[13][1] + "', 'Approved', '" + result[1][1] + "') ON DUPLICATE KEY UPDATE LayerName ='" + result[7][1] + "', FirstLayer = '" + result[3][1] + "', SecondLayer = '" + result[5][1] + "', ThirdLayer = '" + result[8][1] + "', Picture_Location = '" + result[15][1] + "', Status = 'Approved'; ";
+            let statement = " INSERT INTO LayerMenu (LayerName, LayerType, FirstLayer, SecondLayer, ThirdLayer, Picture_Location, ContinentName, CountryName, StateName, CityName, Site_Description, Status, RID) VALUES ('" + result[7][1] + "', 'Wmslayer', '" + result[3][1] + "','" + result[5][1] + "','" + result[8][1] + "','" + result[14][1] + "','" + result[9][1] + "','" + result[10][1] + "','" + result[11][1] + "','" + result[12][1] + "','" + result[13][1] + "', 'Approved', '" + result[1][1] + "') ON DUPLICATE KEY UPDATE LayerName ='" + result[7][1] + "', FirstLayer = '" + result[3][1] + "', SecondLayer = '" + result[5][1] + "', ThirdLayer = '" + result[8][1] + "', Picture_Location = '" + result[14][1] + "', Status = 'Approved'; ";
            con_CS.query(statement1 + statement + statement2 + statement3, function (err, result) {
                console.log(statement);
                if (err) {
@@ -2597,6 +2675,40 @@ function QueryStat(myObj, sqlStat, res) {
             res.json({"error": true, "message": "An unexpected error occurred !"});
         });
     }
+
+    function sendToken2(username, subject, text, url, res) {
+        async.waterfall([
+            function(done) {
+                // Message object
+                const message = {
+                    from: 'FTAA <aaaa.zhao@g.northernacademy.org>', // sender info
+                    to: username, // Comma separated list of recipients
+                    subject: subject, // Subject of the message
+
+                    // plaintext body
+                    text: 'This email is sent to inform all admins that user ' + username + ' has ' + text + '\n\n' +
+                        'Please click on the following link, or paste this into your browser to review the new layer:\n\n' +
+                    url + '\n\n'
+                };
+
+                smtpTrans.sendMail(message, function(error){
+                    if(error){
+                        console.log(error.message);
+                        res.json({"error": true, "message": "An unexpected error occurred !"});
+                        // alert('it didnt work :(');
+                    } else {
+                        res.json({"error": false, "message": "Message sent successfully !"});
+                        // alert('An e-mail has been sent to ' + username + ' with further instructions.');
+                    }
+                });
+            }
+        ], function(err) {
+            if (err) return next(err);
+            // res.redirect('/forgot');
+            res.json({"error": true, "message": "An unexpected error occurred !"});
+        });
+    }
+
 
     function sendname(username, subject, text, url, res){
         async.waterfall([
