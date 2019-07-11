@@ -15,6 +15,7 @@ const mkdirp = require("mkdirp");
 const multiparty = require('multiparty');
 const path    = require('path');
 const ExpressBrute = require('express-brute');
+const rateLimit = require("express-rate-limit");
 
 const store = new ExpressBrute.MemoryStore(); // stores state locally, don't use this in production
 const bruteforce = new ExpressBrute(store);
@@ -44,6 +45,11 @@ const smtpTrans = nodemailer.createTransport({
     }
 });
 
+const Limiter = rateLimit({
+    windowMs: 15 * 60 * 1000, // 15 minutes
+    max: 100,
+});
+
 let exec = require('child_process').exec;
 let transactionID, myStat, myVal, myErrMsg, token, errStatus, mylogin;
 let today, date2, date3, time2, time3, dateTime, tokenExpire, child;
@@ -62,6 +68,8 @@ module.exports = function (app, passport) {
         origin: '*',
         credentials: true
     }));
+
+    app.use(Limiter);
 
     // =====================================
     // CS APP Home Section =================
@@ -281,10 +289,7 @@ module.exports = function (app, passport) {
     // show the login form
     app.get('/login', function (req, res) {
         // render the page and pass in any flash data if it exists
-        res.render('login.ejs', {
-            message: req.flash('loginMessage'),
-            error: "Your username and password don't match."
-        })
+        res.render('login.ejs', {})
     });
 
     // process the login form
@@ -300,6 +305,17 @@ module.exports = function (app, passport) {
             }
             //res.redirect('/login');
         },);
+
+
+    // //Detects if user is admin
+    app.get('/admindetector', function (req, res) {
+        dateNtime();
+        if (req.user.userrole === "Admin") {
+            res.render('2step.ejs');
+        } else {
+            res.redirect('/loginUpdate');
+        }
+    });
 
     // Update user login status
     app.get('/loginUpdate', isLoggedIn, function (req, res) {
@@ -335,6 +351,26 @@ module.exports = function (app, passport) {
             }
         });
     });
+
+    // app.post('/email', function (req, res) {
+    //     res.setHeader("Access-Control-Allow-Origin", "*"); // Allow cross domain header
+    //     let statement = "SELECT * FROM UserLogin WHERE username = '" + req.body.username + "';";
+    //
+    //     con_CS.query(statement, function (err, results, fields) {
+    //         if (err) {
+    //             console.log(err);
+    //             res.json({"error": true, "message": "An unexpected error occurred !"});
+    //         } else if (results.length === 0) {
+    //             res.json({"error": true, "message": "Please verify your email address !"});
+    //         } else {
+    //             let username = req.body.username;
+    //             let subject = "Password Reset";
+    //             let text = 'the reset of the password for your account.';
+    //             let url = "http://" + req.headers.host + "/reset/";
+    //             sendToken(username, subject, text, url, res);
+    //         }
+    //     });
+    // });
 
     app.get('/emailRequest', function (req, res) {
         res.setHeader("Access-Control-Allow-Origin", "*"); // Allow cross domain header
@@ -980,7 +1016,7 @@ module.exports = function (app, passport) {
         });
     });
 
-    app.post('/signup', function (req, res) {
+    app.post('/signup', bruteforce.prevent, function (req, res) {
         res.setHeader("Access-Control-Allow-Origin", "*"); // Allow cross domain header
         // con_CS.query('USE ' + serverConfig.Login_db); // Locate Login DB
 
@@ -1025,7 +1061,7 @@ module.exports = function (app, passport) {
         });
     });
 
-    app.post('/addUser', isLoggedIn, function (req, res) {
+    app.post('/addUser', bruteforce.prevent, isLoggedIn, function (req, res) {
 
         res.setHeader("Access-Control-Allow-Origin", "*"); // Allow cross domain header
         // connection.query('USE ' + serverConfig.Login_db); // Locate Login DB
@@ -2657,6 +2693,59 @@ function QueryStat(myObj, sqlStat, res) {
                     'Please click on the following link, or paste this into your browser to complete the process:\n\n' +
                     url + token + '\n\n' +
                     'If you did not request this, please ignore this email.\n'
+                };
+
+                smtpTrans.sendMail(message, function(error){
+                    if(error){
+                        console.log(error.message);
+                        res.json({"error": true, "message": "An unexpected error occurred !"});
+                    } else {
+                        res.json({"error": false, "message": "Message sent successfully !"});
+                        // alert('An e-mail has been sent to ' + req.body.username + ' with further instructions.');
+                    }
+                });
+            }
+        ], function(err) {
+            if (err) return next(err);
+            // res.redirect('/forgot');
+            res.json({"error": true, "message": "An unexpected error occurred !"});
+        });
+    }
+
+    function sendSMTPToken(username, subject, text, url, res) {
+        async.waterfall([
+            function(done) {
+                crypto.randomBytes(20, function(err, buf) {
+                    token = buf.toString('hex');
+                    tokenExpTime();
+                    done(err, token, tokenExpire);
+                });
+            },
+            function (token, tokenExpire, done) {
+                myStat = "UPDATE UserLogin SET resetPasswordToken = ?, resetPasswordExpires = ? WHERE username = '" + username + "' ";
+                myVal = [token, tokenExpire];
+                con_CS.query(myStat, myVal, function (err, rows) {
+
+                    if (err) {
+                        console.log(err);
+                        res.json({"error": true, "message": "Token Insert Fail !"});
+                    } else {
+                        done(err, token);
+                    }
+                });
+            },
+            function(token, done, err) {
+                // Message object
+                const message = {
+                    from: 'FTAA <aaaa.zhao@g.northernacademy.org>', // sender info
+                    to: username, // Comma separated list of recipients
+                    subject: subject, // Subject of the message
+
+                    // plaintext body
+                    text: 'You are receiving this because you (or. someone else) have requested ' + text + '\n\n' +
+                        'Please click on the following link, or paste this into your browser to complete the process:\n\n' +
+                        url + token + '\n\n' +
+                        'If you did not request this, please ignore this email.\n'
                 };
 
                 smtpTrans.sendMail(message, function(error){
