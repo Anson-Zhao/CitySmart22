@@ -52,15 +52,15 @@
 <div class="container" style="width: 500px; padding: 0;">
     <h1 style="margin-top: 30px;"><span class="fa fa-list"></span>  Phone Authentication</h1>
     <!-- show any messages that come back with authentication -->
-    <p id="falldown">In order to continue, click the <i>Send Verification Code</i> button and enter the code consisting of letters, numbers, and symbols sent to your phone. <br>Then click <strong>Submit</strong>.</p>
+    <p id="falldown">In order to continue, enter the code consisting of letters, numbers, and symbols sent to your phone. <br>Then click <strong>Submit</strong>.</p>
 
     <form action="/psubmit" method="post" id="Psubmit">
         <div class="form-group">
-            <input type="text" id="VCode" placeholder="Enter Code Here" class="form-control" name="code" style="height: 50px; margin-bottom: 20px;">
+            <input type="password" id="VCode" placeholder="Enter Code Here" class="form-control" name="code" style="height: 50px; margin-bottom: 20px;" onchange="EnableSubmit ()" disabled hidden>
         </div>
     </form>
     <br>
-    <button id="pauthSubmit" type="submit" class="button1" onclick="submitForm()"> Submit </button>
+    <button id="pauthSubmit" type="submit" class="button1" onclick="submitForm()" disabled style="background-color: grey"> Submit </button>
     <hr style="margin-bottom: 10px;">
     <p style="text-align: center;"> <a href="/pauth">Didn't Receive the code? Send another one.</a></p>
     <p style="text-align: center;"> <a href="/admindetector">Try Another Way</a></p>
@@ -70,6 +70,7 @@
     let username = '<%= user.username %>';
     let userrole = '<%= user.userrole %>';
     let Phone_Number = '<%= Phone_Number %>';
+    let Code = '<%= Code %>';
     let VCode = document.getElementById('VCode');
 
 
@@ -91,8 +92,9 @@
 
         if (VCode.value === "") {
             alert("Please make sure the code has been entered.");
-        } else {
+        } else if (VCode.value === Code) {
             console.log("pass");
+
             $.ajax({
                 type: "post",
                 url: "/psubmit",
@@ -102,25 +104,16 @@
                     console.log(result);
                 }
             })
+        } else {
+            alert("Invalid code.")
         }
     }
 
-    function SendCode () {
-        $.ajax({
-            type: "post",
-            url: "/pcode",
-            dataType: 'json',
-            data: Phone_Number,
-            success: function (result) {
-                console.log(result);
-                alert('Your code has been successfully sent! Please enter the code into the box below.')
-                document.getElementById("pauthSubmit").disabled = false;
-                document.getElementById("Psubmit").hidden = false;
-                document.getElementById("Vcode").disabled = false;
-                document.getElementById("Psubmit").style.display = "block";
-            }
-
-        })
+    function EnableSubmit () {
+        if (VCode.value !== "") {
+            VCode.disabled = false;
+            VCode.hidden = false;
+        }
     }
 
     function onFunction() {

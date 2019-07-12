@@ -420,6 +420,11 @@ module.exports = function (app, passport) {
 
     });
 
+    app.post('/psubmit', function (req, res) {
+        console.log("got here");
+        res.redirect('/loginUpdate');
+    });
+
     // app.post('/pauth', function (req, res) {
     //     res.setHeader("Access-Control-Allow-Origin", "*");
     //
@@ -464,7 +469,7 @@ module.exports = function (app, passport) {
             } else{
                 res.render('PhoneAuthP2.ejs', {
                     user: req.user,
-                    Phone_Number: req[0]
+                    Code: password
                 });
             }
         });
