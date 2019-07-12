@@ -50,8 +50,7 @@
 <div class="container" style="width: 500px; padding: 0px;">
     <h1 style="margin-top: 20px; text-align: center;">Two Step Verification </h1>
     <!-- show any messages that come back with authentication -->
-    <!-- ADD USER FORM -->
-    <p id="falldown">Admin users are <strong>required</strong> to go through a two-step sign in process. To proceed, please choose one of the following three ways to sign in.</p>
+    <p id="falldown">All admin users are <strong>required</strong> to go through a two-step sign in process. To proceed, please choose one of the following three ways to sign in.</p>
     <form onsubmit="return checkForm()" action="/kauth" method="post" id="Kauth">
         <div class="form-group">
             <button type="submit" class="button" id="kBA">Knowledge-Based Authentication</button>
@@ -72,9 +71,6 @@
 </div>
 <br>
 <script>
-    let UsErname = document.getElementById("UsErname");
-    let FiRsTname = document.getElementById("FiRsTname");
-    let LaStname = document.getElementById("LaStname");
 
 
     $(document).ready(function() {

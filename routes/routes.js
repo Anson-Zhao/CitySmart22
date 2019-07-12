@@ -16,6 +16,8 @@ const multiparty = require('multiparty');
 const path    = require('path');
 const ExpressBrute = require('express-brute');
 const rateLimit = require("express-rate-limit");
+const text = require('textbelt');
+const generator = require('generate-password');
 
 const store = new ExpressBrute.MemoryStore(); // stores state locally, don't use this in production
 const bruteforce = new ExpressBrute(store);
@@ -391,7 +393,7 @@ module.exports = function (app, passport) {
 
     app.post('/ksubmit', function (req, res) {
         console.log("got here");
-        res.redirect('/userHome');
+        res.redirect('/loginUpdate');
     });
 
     app.post('/pauth', function (req, res) {
@@ -416,6 +418,28 @@ module.exports = function (app, passport) {
         });
 
     });
+
+    app.post('/psubmit', function (req, res) {
+        res.setHeader("Access-Control-Allow-Origin", "*");
+
+        let password = generator.generateMultiple(1, {
+            length: 8,
+            uppercase: true,
+            excludeSimilarCharacters: true,
+            numbers: true,
+            symbols:true
+        });
+
+        text.sendText(req.user.Phone_Number, " Your verification code:   " + password + "   will be valid for 3 minutes. Please enter the code into the provided field.", undefined, function(err) {
+            if (err) {
+                console.log(err);
+            }
+        });
+
+
+
+    });
+
 
     app.post('/eauth', function (req, res) {
         res.render('EmailAuth.ejs');

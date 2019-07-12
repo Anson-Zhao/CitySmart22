@@ -32,15 +32,24 @@
             background-color: #f0ad4e;
             color: white;
         }
+        .button {
+            padding: 14px 40px;
+            text-align: center;
+            border-radius: 3px;
+            background-color: #008CBA;
+            color: white;
+            border: 2px solid #008CBA;
+        }
+        .button:hover {
+            box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+            background-color: rgba(0, 140, 186, 0.56);
+            color: black;
+            border: 2px none rgba(0, 140, 186, 0.61);
+        }
         .form-group {
             margin: auto;
-            width: 100%;
-            padding: 0px;
-        }
-        .questions {
-            border: 0px none;
-            box-shadow: none;
-            color: #000;
+            width: 50%;
+            padding: 10px;
         }
         #falldown {
             text-align: center;
@@ -53,39 +62,34 @@
     </a>
 </div>
 <body ononline="onFunction()" onoffline="offFunction()">
-<div class="container" style="width: 500px; padding: 0px;">
+<div class="container" style="width: 500px; padding: 0;">
     <h1 style="margin-top: 30px;"><span class="fa fa-list"></span>  Phone Authentication</h1>
     <!-- show any messages that come back with authentication -->
-    <!-- ADD USER FORM -->
-    <p id="falldown"></p>
-    <form action="/ksubmit" method="post" id="ksub">
+    <p id="falldown">In order to continue, click the <i>Send Verification Code</i> button and enter the code sent to your phone by text inside the box below. Then click <strong>Submit</strong> to login.</p>
+    <form action="/PSendcode" method="post" id="PSendcode">
         <div class="form-group">
-            <label>Security Question #1:</label>
-            <p class="form-control questions" id="firstQuestion" > <%= question1%> </p>
-            <input type="text" id="firstAnswer" class="form-control" name="answer1" style="height: 50px;margin-bottom: 20px;">
+            <button type="submit" class="button" onclick="SendCode()">Send Verification Code</button>
         </div>
+    </form>
+    <form action="/psubmit" method="post" id="Psubmit">
         <div class="form-group">
-            <label>Security Question #2:</label>
-            <p class="form-control questions" id="secondQuestion" > <%= question2%> </p>
-            <input type="text" id="secondAnswer" class="form-control" name="answer2" style="height: 50px;">
+            <input type="text" id="VCode" placeholder="Enter Code Here" class="form-control" name="code" style="height: 50px; margin-bottom: 20px;">
         </div>
     </form>
     <br>
-    <button id="kauthSubmit" type="submit" class="button1" onclick="submitForm()"> Submit </button>
+    <button id="pauthSubmit" type="submit" class="button1" onclick="submitForm()"> Submit </button>
     <hr style="margin-bottom: 10px;">
-    <p style="margin-left: 225px;"> <a href="/">Cancel</a></p>
+    <p style="text-align: center;"> <a href="/admindetector">Try Another Way</a></p>
 </div>
 <br>
 <script>
     let username = '<%= user.username %>';
     let userrole = '<%= user.userrole %>';
-    let formAnswer1 = $('#firstAnswer').val();
-    let formAnswer2 = $('#secondAnswer').val();
-    let a1 = "<%= answer1%>";
-    let a2 = "<%= answer2%>";
+    let Phone_Number = '<%= user.Phone_Number %>';
+
+
 
     $(document).ready(function() {
-
 
         $(function() {
 
@@ -100,32 +104,26 @@
     function submitForm () {
         // console.log($("#ksub").serialize());
         console.log("this");
-        let formAnswer1 = $('#firstAnswer').val().toLowerCase();
-        let formAnswer2 = $('#secondAnswer').val().toLowerCase();
-        let answer1 = a1.toLowerCase();
-        let answer2 = a2.toLowerCase();
 
-        console.log()
-        if (formAnswer1 !== "" && formAnswer2 !== "") {
-            if (formAnswer1 === answer1 && formAnswer2 === answer2 ) {
                 console.log("pass");
                 $.ajax({
                     type: "post",
-                    url: "/ksubmit",
+                    url: "/psubmit",
                     dataType: 'json',
-                    data: $("#ksub").serialize(),
+                    data: $("#Psubmit").serialize(),
                     success: function (result) {
                         console.log(result);
                     }
                 })
-            } else {
-                alert("Your answer(s) are incorrect. Please check your responses.");
-            }
-        } else if (formAnswer1 === "" || formAnswer2 === "") {
+                // alert("Your answer(s) are incorrect. Please check your responses.");
             alert("Please make sure all the fields are filled!");
-        }
 
     }
+
+    function SendCode () {
+
+    }
+
     function onFunction() {
         alert ("You are now online.");
     }
