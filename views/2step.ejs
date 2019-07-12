@@ -52,17 +52,17 @@
     <!-- show any messages that come back with authentication -->
     <!-- ADD USER FORM -->
     <p id="falldown">Admin users are required to go through a two-step sign in process. To proceed, please choose one of the following three ways to sign in.</p>
-    <form onsubmit="return checkForm()" action="/kauth" method="post" id="addUser">
+    <form onsubmit="return checkForm()" action="/kauth" method="post" id="Kauth">
         <div class="form-group">
             <button type="submit" class="button" id="kBA">Knowledge-Based Authentication</button>
         </div>
     </form>
-    <form onsubmit="return checkForm()" action="/pauth" method="post" id="addUser">
+    <form onsubmit="return checkForm()" action="/pauth" method="post" id="Pauth">
         <div class="form-group">
             <button type="submit" class="button" id="pA">Phone Authentication</button>
         </div>
     </form>
-    <form onsubmit="return checkForm()" action="/eauth" method="post" id="addUser">
+    <form onsubmit="return checkForm()" action="/eauth" method="post" id="Eauth">
         <div class="form-group">
             <button type="submit" class="button" id="eA">Email Authentication</button>
         </div>
@@ -78,25 +78,6 @@
 
 
     $(document).ready(function() {
-        $(function() {
-            $('#addUser').submit(function(e) {
-                e.preventDefault();
-                $.ajax({
-                    type: "post",
-                    url: "/addUser",
-                    dataType: 'json',
-                    data: $("#addUser").serialize(),
-                    success: function (result) {
-                        if (!result.error) {
-                            alert(result.message);
-                            window.location.replace('/userManagement');
-                        } else {
-                            alert(result.message);
-                        }
-                    }
-                })
-            });
-        });
         let today = new Date();
         let date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
         let time2 = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
