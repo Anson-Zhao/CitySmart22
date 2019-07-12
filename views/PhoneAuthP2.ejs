@@ -2,7 +2,7 @@
 <!doctype html>
 <html>
 <head>
-    <title>CitySmart - User Management - Knowledge Authentication</title>
+    <title>CitySmart - User Management - Phone Authentication</title>
     <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
@@ -34,14 +34,9 @@
         }
         .form-group {
             margin: auto;
-            width: 100%;
-            padding: 0px;
+            width: 50%;
+            padding: 10px;
             text-align: center;
-        }
-        .questions {
-            border: 0px none;
-            box-shadow: none;
-            color: #000;
         }
         #falldown {
             text-align: center;
@@ -54,78 +49,80 @@
     </a>
 </div>
 <body ononline="onFunction()" onoffline="offFunction()">
-<div class="container" style="width: 500px; padding: 0px;">
-    <h1 style="margin-top: 30px;"><span class="fa fa-list"></span>  Knowledge Authentication</h1>
+<div class="container" style="width: 500px; padding: 0;">
+    <h1 style="margin-top: 30px;"><span class="fa fa-list"></span>  Phone Authentication</h1>
     <!-- show any messages that come back with authentication -->
-    <!-- ADD USER FORM -->
-    <p id="falldown"></p>
-    <form action="/ksubmit" method="post" id="ksub">
+    <p id="falldown">In order to continue, click the <i>Send Verification Code</i> button and enter the code consisting of letters, numbers, and symbols sent to your phone. <br>Then click <strong>Submit</strong>.</p>
+
+    <form action="/psubmit" method="post" id="Psubmit">
         <div class="form-group">
-            <label>Security Question #1</label>
-            <p class="form-control questions" id="firstQuestion" > <%= question1%> </p>
-            <input type="text" id="firstAnswer" class="form-control" name="answer1" style="height: 50px;margin-bottom: 20px;">
-        </div>
-        <div class="form-group">
-            <label>Security Question #2</label>
-            <p class="form-control questions" id="secondQuestion" > <%= question2%> </p>
-            <input type="text" id="secondAnswer" class="form-control" name="answer2" style="height: 50px;">
+            <input type="text" id="VCode" placeholder="Enter Code Here" class="form-control" name="code" style="height: 50px; margin-bottom: 20px;">
         </div>
     </form>
     <br>
-    <button id="kauthSubmit" type="submit" class="button1" onclick="submitForm()"> Submit </button>
+    <button id="pauthSubmit" type="submit" class="button1" onclick="submitForm()"> Submit </button>
     <hr style="margin-bottom: 10px;">
+    <p style="text-align: center;"> <a href="/pauth">Didn't Receive the code? Send another one.</a></p>
     <p style="text-align: center;"> <a href="/admindetector">Try Another Way</a></p>
 </div>
 <br>
 <script>
     let username = '<%= user.username %>';
-    let formAnswer1 = $('#firstAnswer').val();
-    let formAnswer2 = $('#secondAnswer').val();
-    let a1 = "<%= answer1%>";
-    let a2 = "<%= answer2%>";
+    let userrole = '<%= user.userrole %>';
+    let Phone_Number = '<%= Phone_Number %>';
+    let VCode = document.getElementById('VCode');
+
 
     $(document).ready(function() {
 
-
-        $(function() {
-
-        });
 
         let today = new Date();
         let date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
         let time2 = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
         let dateTime = date + ' ' + time2;
-        document.getElementById("DATE").value = dateTime;
+        // document.getElementById("DATE").value = dateTime;
+
+
+
     })
     function submitForm () {
         // console.log($("#ksub").serialize());
         console.log("this");
-        let formAnswer1 = $('#firstAnswer').val().toLowerCase();
-        let formAnswer2 = $('#secondAnswer').val().toLowerCase();
-        let answer1 = a1.toLowerCase();
-        let answer2 = a2.toLowerCase();
 
-        console.log()
-        if (formAnswer1 !== "" && formAnswer2 !== "") {
-            if (formAnswer1 === answer1 && formAnswer2 === answer2 ) {
-                console.log("pass");
-                $.ajax({
-                    type: "post",
-                    url: "/ksubmit",
-                    dataType: 'json',
-                    data: $("#ksub").serialize(),
-                    success: function (result) {
-                        console.log(result);
-                    }
-                })
-            } else {
-                alert("Your answer(s) are incorrect. Please check your responses.");
-            }
-        } else if (formAnswer1 === "" || formAnswer2 === "") {
-            alert("Please make sure all the fields are filled!");
+        if (VCode.value === "") {
+            alert("Please make sure the code has been entered.");
+        } else {
+            console.log("pass");
+            $.ajax({
+                type: "post",
+                url: "/psubmit",
+                dataType: 'json',
+                data: $("#Psubmit").serialize(),
+                success: function (result) {
+                    console.log(result);
+                }
+            })
         }
-
     }
+
+    function SendCode () {
+        $.ajax({
+            type: "post",
+            url: "/pcode",
+            dataType: 'json',
+            data: Phone_Number,
+            success: function (result) {
+                console.log(result);
+                alert('Your code has been successfully sent! Please enter the code into the box below.')
+                document.getElementById("pauthSubmit").disabled = false;
+                document.getElementById("Psubmit").hidden = false;
+                document.getElementById("Vcode").disabled = false;
+                document.getElementById("Psubmit").style.display = "block";
+            }
+
+        })
+    }
+
     function onFunction() {
         alert ("You are now online.");
     }

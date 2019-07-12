@@ -374,6 +374,7 @@ module.exports = function (app, passport) {
             if (err) {
                 res.send('There was a big no no.');
             } else {
+                res.send('Pi is yummy.');
                 res.render('KnowledgeAuth.ejs', {
                     user: req.user,
                     question1: result[0].question1,
@@ -409,7 +410,7 @@ module.exports = function (app, passport) {
             if (err) {
                 res.send("There was a big nose nose.");
             } else {
-                res.render('PhoneAuth.ejs', {
+                res.render('PhoneAuthP1.ejs', {
                     user: req.user,
                     Phone_Number: result[0].Phone_Number,
 
@@ -419,8 +420,34 @@ module.exports = function (app, passport) {
 
     });
 
-    app.post('/psubmit', function (req, res) {
+    // app.post('/pauth', function (req, res) {
+    //     res.setHeader("Access-Control-Allow-Origin", "*");
+    //
+    //     myStat = "SELECT Phone_Number FROM UserProfile WHERE username = '" + req.user.username + "'";
+    //
+    //     con_CS.query(myStat, function (err, result) {
+    //         console.log("here is the result:");
+    //         console.log(result);
+    //         console.log(result[0].Phone_Number);
+    //
+    //         if (err) {
+    //             res.send("There was a big nose nose.");
+    //         } else {
+    //             res.render('PhoneAuthP1.ejs', {
+    //                 user: req.user,
+    //                 Phone_Number: result[0].Phone_Number,
+    //
+    //             });
+    //         }
+    //     });
+    //
+    // });
+
+
+    app.post('/pcode', function (req, res) {
         res.setHeader("Access-Control-Allow-Origin", "*");
+
+        console.log(req);
 
         let password = generator.generateMultiple(1, {
             length: 8,
@@ -430,13 +457,17 @@ module.exports = function (app, passport) {
             symbols:true
         });
 
-        text.sendText(req.user.Phone_Number, " Your verification code:   " + password + "   will be valid for 3 minutes. Please enter the code into the provided field.", undefined, function(err) {
+        text.sendText(req, " Your verification code:   " + password + "   will be valid for 3 minutes. Please enter the code into the provided field.", undefined, function(err) {
             if (err) {
                 console.log(err);
+                res.send("An error has occurred.")
+            } else{
+                res.render('PhoneAuthP2.ejs', {
+                    user: req.user,
+                    Phone_Number: req[0]
+                });
             }
         });
-
-
 
     });
 
@@ -446,31 +477,31 @@ module.exports = function (app, passport) {
 
     });
 
-    app.get('/phonenumber', function (req, res) {
-        res.setHeader("Access-Control-Allow-Origin", "*"); // Allow cross domain header
-        let statement = "SELECT * FROM UserLogin WHERE username = '" + req.body.username + "';";
-
-        con_CS.query(statement, function (err, results, fields) {
-            if (err) {
-                console.log(err);
-                res.json({"error": true, "message": "An unexpected error occurred !"});
-            } else if (results.length === 0) {
-                res.json({"error": true, "message": "Please verify your email address !"});
-            } else {
-                let username = req.body.username;
-                let subject = "Password Reset";
-                let text = 'the reset of the password for your account.';
-                let url = "http://" + req.headers.host + "/reset/";
-                sendToken(username, subject, text, url, res);
-            }
-        });
-    });
-
-    app.post('/phonenumber', function (req, res) {
-        res.setHeader("Access-Control-Allow-Origin", "*"); // Allow cross domain header
-        let statement = "SELECT * FROM UserLogin WHERE username = '" + req.body.username + "';";
-
-    });
+    // app.get('/phonenumber', function (req, res) {
+    //     res.setHeader("Access-Control-Allow-Origin", "*"); // Allow cross domain header
+    //     let statement = "SELECT * FROM UserLogin WHERE username = '" + req.body.username + "';";
+    //
+    //     con_CS.query(statement, function (err, results, fields) {
+    //         if (err) {
+    //             console.log(err);
+    //             res.json({"error": true, "message": "An unexpected error occurred !"});
+    //         } else if (results.length === 0) {
+    //             res.json({"error": true, "message": "Please verify your email address !"});
+    //         } else {
+    //             let username = req.body.username;
+    //             let subject = "Password Reset";
+    //             let text = 'the reset of the password for your account.';
+    //             let url = "http://" + req.headers.host + "/reset/";
+    //             sendToken(username, subject, text, url, res);
+    //         }
+    //     });
+    // });
+    //
+    // app.post('/phonenumber', function (req, res) {
+    //     res.setHeader("Access-Control-Allow-Origin", "*"); // Allow cross domain header
+    //     let statement = "SELECT * FROM UserLogin WHERE username = '" + req.body.username + "';";
+    //
+    // });
 
     // app.post('/email', function (req, res) {
     //     res.setHeader("Access-Control-Allow-Origin", "*"); // Allow cross domain header
