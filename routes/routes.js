@@ -313,8 +313,12 @@ module.exports = function (app, passport) {
     // //Detects if user is admin
     app.get('/admindetector', function (req, res) {
         dateNtime();
-        if (req.user.userrole === "Admin") {
-            res.render('2step.ejs');
+        if (req.user.userrole === "Admin" || req.userrole === "Admin") {
+            res.render('2step.ejs',{
+                user:req.user,
+                userrole: req.user.userrole,
+                username: req.user.username
+            });
         } else {
             res.redirect('/loginUpdate');
         }
@@ -356,15 +360,60 @@ module.exports = function (app, passport) {
     });
 
     app.post('/kauth', function (req, res) {
-        res.render('KnowledgeAuth.ejs');
+        res.setHeader("Access-Control-Allow-Origin", "*"); // Allow cross domain header
+
+        myStat = "SELECT question1, question2, answer1, answer2 FROM UserLogin WHERE username = '" + req.user.username + "'";
+
+        con_CS.query(myStat, function (err, result) {
+            console.log("here is the result:");
+            console.log(result);
+            console.log(result[0].question1);
+
+            if (err) {
+                res.send('There was a big no no.');
+            } else {
+                res.render('KnowledgeAuth.ejs', {
+                    user: req.user,
+                    question1: result[0].question1,
+                    question2: result[0].question2,
+                    answer1: result[0].answer1,
+                    answer2: result[0].answer2
+
+                });
+            }
+        });
+        // res.render('KnowledgeAuth.ejs');
     //    res.render('userProfile.ejs', {
         //             user: req.user,
         //         });
 
     });
 
+    app.post('/ksubmit', function (req, res) {
+        console.log("got here");
+        res.redirect('/userHome');
+    });
+
     app.post('/pauth', function (req, res) {
-        res.render('PhoneAuth.ejs');
+        res.setHeader("Access-Control-Allow-Origin", "*");
+
+        myStat = "SELECT Phone_Number FROM UserProfile WHERE username = '" + req.user.username + "'";
+
+        con_CS.query(myStat, function (err, result) {
+            console.log("here is the result:");
+            console.log(result);
+            console.log(result[0].Phone_Number);
+
+            if (err) {
+                res.send("There was a big nose nose.");
+            } else {
+                res.render('PhoneAuth.ejs', {
+                    user: req.user,
+                    Phone_Number: result[0].Phone_Number,
+
+                });
+            }
+        });
 
     });
 
