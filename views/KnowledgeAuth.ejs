@@ -69,9 +69,10 @@
             <p class="form-control questions" id="secondQuestion" > <%= question2%> </p>
             <input type="text" id="secondAnswer" class="form-control" name="answer2" style="height: 50px;">
         </div>
-    </form>
+
     <br>
     <button id="kauthSubmit" type="submit" class="button1" onclick="submitForm()"> Submit </button>
+    </form>
     <hr style="margin-bottom: 10px;">
     <p style="margin-left: 225px;"> <a href="/">Cancel</a></p>
 </div>
@@ -117,6 +118,7 @@
                     data: $("#ksub").serialize(),
                     success: function (result) {
                         console.log(result);
+                        alert("Success!");
                     }, beforeSend: function () {
                         document.getElementById("ksub").setAttribute("action","/ksubmit");
                     }

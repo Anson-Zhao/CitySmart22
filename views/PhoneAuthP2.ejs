@@ -110,6 +110,7 @@
                 data: $("#Psubmit").serialize(),
                 success: function (result) {
                     console.log(result);
+                    alert("Success!");
                 },
                 beforeSend: function () {
                     document.getElementById("Psubmit").setAttribute("action","/psubmit");

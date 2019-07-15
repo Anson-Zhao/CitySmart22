@@ -4,6 +4,7 @@
     <list default="true" id="3b2ba209-e08e-4f77-99ae-d893522cce16" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/KnowledgeAuth.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/KnowledgeAuth.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/PhoneAuthP2.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/PhoneAuthP2.ejs" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -65,8 +66,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/routes.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="356">
-              <caret line="423" column="34" selection-start-line="423" selection-start-column="23" selection-end-line="423" selection-end-column="34" />
+            <state relative-caret-position="490">
+              <caret line="379" column="51" lean-forward="true" selection-start-line="379" selection-start-column="51" selection-end-line="379" selection-end-column="51" />
             </state>
           </provider>
         </entry>
@@ -110,8 +111,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/PhoneAuthP2.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="566">
-              <caret line="116" column="13" lean-forward="true" selection-start-line="116" selection-start-column="13" selection-end-line="116" selection-end-column="13" />
+            <state relative-caret-position="622">
+              <caret line="122" column="5" lean-forward="true" selection-start-line="92" selection-start-column="4" selection-end-line="122" selection-end-column="5" />
               <folding>
                 <element signature="n#style#0;n#img#0;n#a#0;n#div#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#hr#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -135,8 +136,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/KnowledgeAuth.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="627">
-              <caret line="121" column="81" selection-start-line="121" selection-start-column="81" selection-end-line="121" selection-end-column="81" />
+            <state relative-caret-position="348">
+              <caret line="74" column="4" selection-start-line="74" selection-start-column="4" selection-end-line="74" selection-end-column="4" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#a#0;n#div#0;n#html#0;n#!!top" expanded="true" />
@@ -437,28 +438,7 @@
       <workItem from="1562855761107" duration="9766000" />
       <workItem from="1562870520274" duration="461000" />
       <workItem from="1562872281631" duration="17170000" />
-      <workItem from="1563201479070" duration="8587000" />
-    </task>
-    <task id="LOCAL-00056" summary="V2.3">
-      <created>1557354818563</created>
-      <option name="number" value="00056" />
-      <option name="presentableId" value="LOCAL-00056" />
-      <option name="project" value="LOCAL" />
-      <updated>1557354818563</updated>
-    </task>
-    <task id="LOCAL-00057" summary="V2.3">
-      <created>1557412671189</created>
-      <option name="number" value="00057" />
-      <option name="presentableId" value="LOCAL-00057" />
-      <option name="project" value="LOCAL" />
-      <updated>1557412671189</updated>
-    </task>
-    <task id="LOCAL-00058" summary="V2.3">
-      <created>1557429960805</created>
-      <option name="number" value="00058" />
-      <option name="presentableId" value="LOCAL-00058" />
-      <option name="project" value="LOCAL" />
-      <updated>1557429960805</updated>
+      <workItem from="1563201479070" duration="9112000" />
     </task>
     <task id="LOCAL-00059" summary="V2.3">
       <created>1557491781733</created>
@@ -782,11 +762,32 @@
       <option name="project" value="LOCAL" />
       <updated>1563211786583</updated>
     </task>
-    <option name="localTasksCounter" value="105" />
+    <task id="LOCAL-00105" summary="Merge branch 'julia' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;routes/routes.js&#10;#&#9;views/PhoneAuthP1.ejs&#10;#&#9;views/PhoneAuthP2.ejs">
+      <created>1563212329478</created>
+      <option name="number" value="00105" />
+      <option name="presentableId" value="LOCAL-00105" />
+      <option name="project" value="LOCAL" />
+      <updated>1563212329479</updated>
+    </task>
+    <task id="LOCAL-00106" summary="Merge branch 'julia' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;routes/routes.js&#10;#&#9;views/PhoneAuthP1.ejs&#10;#&#9;views/PhoneAuthP2.ejs">
+      <created>1563212422608</created>
+      <option name="number" value="00106" />
+      <option name="presentableId" value="LOCAL-00106" />
+      <option name="project" value="LOCAL" />
+      <updated>1563212422609</updated>
+    </task>
+    <task id="LOCAL-00107" summary="Merge branch 'julia' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;routes/routes.js&#10;#&#9;views/PhoneAuthP1.ejs&#10;#&#9;views/PhoneAuthP2.ejs">
+      <created>1563212589519</created>
+      <option name="number" value="00107" />
+      <option name="presentableId" value="LOCAL-00107" />
+      <option name="project" value="LOCAL" />
+      <updated>1563212589520</updated>
+    </task>
+    <option name="localTasksCounter" value="108" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="346528000" />
+    <option name="totallyTimeSpent" value="347053000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1213,8 +1214,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/PhoneAuthP2.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="566">
-          <caret line="116" column="13" lean-forward="true" selection-start-line="116" selection-start-column="13" selection-end-line="116" selection-end-column="13" />
+        <state relative-caret-position="622">
+          <caret line="122" column="5" lean-forward="true" selection-start-line="92" selection-start-column="4" selection-end-line="122" selection-end-column="5" />
           <folding>
             <element signature="n#style#0;n#img#0;n#a#0;n#div#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#hr#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -1227,15 +1228,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/routes.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="356">
-          <caret line="423" column="34" selection-start-line="423" selection-start-column="23" selection-end-line="423" selection-end-column="34" />
+        <state relative-caret-position="490">
+          <caret line="379" column="51" lean-forward="true" selection-start-line="379" selection-start-column="51" selection-end-line="379" selection-end-column="51" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/KnowledgeAuth.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="627">
-          <caret line="121" column="81" selection-start-line="121" selection-start-column="81" selection-end-line="121" selection-end-column="81" />
+        <state relative-caret-position="348">
+          <caret line="74" column="4" selection-start-line="74" selection-start-column="4" selection-end-line="74" selection-end-column="4" />
           <folding>
             <element signature="n#style#0;n#div#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#a#0;n#div#0;n#html#0;n#!!top" expanded="true" />
