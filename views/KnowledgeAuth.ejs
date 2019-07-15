@@ -83,6 +83,7 @@
     let formAnswer2 = $('#secondAnswer').val();
     let a1 = "<%= answer1%>";
     let a2 = "<%= answer2%>";
+    let clicksfish = 0;
 
     $(document).ready(function() {
 
@@ -100,6 +101,14 @@
     function submitForm () {
         // console.log($("#ksub").serialize());
         console.log("this");
+        clicksfish++;
+
+        if(clicksfish > 3) {
+            window.location.replace("/");
+            alert("Login attempts exceeded!");
+        } else {}
+
+
         let formAnswer1 = $('#firstAnswer').val().toLowerCase();
         let formAnswer2 = $('#secondAnswer').val().toLowerCase();
         let answer1 = a1.toLowerCase();

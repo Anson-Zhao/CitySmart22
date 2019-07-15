@@ -72,6 +72,7 @@
     let userrole = '<%= user.userrole %>';
     let Code = '<%= Code %>';
     let VCode = $('#VCode');
+    let clickscat = 0;
 
 
     $(document).ready(function() {
@@ -86,6 +87,7 @@
         console.log(Code);
 
 
+
     })
 
 
@@ -95,6 +97,13 @@
         console.log("this");
         console.log(VCode.val());
         console.log(Code);
+
+        clickscat++;
+
+        if(clickscat > 3) {
+            window.location.replace("/");
+            alert("Login attempts exceeded!");
+        } else {}
 
         if (VCode.val() === "") {
             alert("Please make sure the code has been entered.");

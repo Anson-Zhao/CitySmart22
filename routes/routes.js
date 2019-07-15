@@ -507,13 +507,10 @@ module.exports = function (app, passport) {
             symbols: false,
         });
 
-        let calmOranges = password.toString();
-        let BananaSplit = calmOranges.toUpperCase();
+        password = password.toString().toUpperCase();
 
         console.log('password');
         console.log(password);
-        console.log(calmOranges);
-        console.log(BananaSplit);
 
         text.sendText(result[0], " Your verification code:   " + password + "   will be valid for 3 minutes. Please enter the code into the provided field.", undefined, function(err) {
             if (err) {
@@ -525,7 +522,7 @@ module.exports = function (app, passport) {
                 console.log(req);
                 res.render('PhoneAuthP2.ejs', {
                     user: req.user,
-                    Code: BananaSplit
+                    Code: password
                 });
             }
         });
