@@ -58,20 +58,34 @@
     <!-- show any messages that come back with authentication -->
     <!-- ADD USER FORM -->
     <p id="falldown"></p>
-    <form method="post" id="ksub">
-        <div class="form-group">
-            <label>Security Question #1:</label>
-            <p class="form-control questions" id="firstQuestion" > <%= question1%> </p>
-            <input type="text" id="firstAnswer" class="form-control" name="answer1" style="height: 50px;margin-bottom: 20px;">
-        </div>
-        <div class="form-group">
-            <label>Security Question #2:</label>
-            <p class="form-control questions" id="secondQuestion" > <%= question2%> </p>
-            <input type="text" id="secondAnswer" class="form-control" name="answer2" style="height: 50px;">
-        </div>
-    </form>
+<!--    <form method="post" id="ksub">-->
+<!--        <div class="form-group">-->
+<!--            <label>Security Question #1:</label>-->
+<!--            <p class="form-control questions" id="firstQuestion" > <%= question1%> </p>-->
+<!--            <input type="text" id="firstAnswer" class="form-control" name="answer1" style="height: 50px;margin-bottom: 20px;" required>-->
+<!--        </div>-->
+<!--        <div class="form-group">-->
+<!--            <label>Security Question #2:</label>-->
+<!--            <p class="form-control questions" id="secondQuestion" > <%= question2%> </p>-->
+<!--            <input type="text" id="secondAnswer" class="form-control" name="answer2" style="height: 50px;" required>-->
+<!--        </div>-->
+
+<!--    <br>-->
+<!--    <button id="kauthSubmit" type="submit" class="button1" onclick="submitForm()"> Submit </button>-->
+<!--    </form>-->
+    <div class="form-group">
+        <label>Security Question #1:</label>
+        <p class="form-control questions" id="firstQuestion" > <%= question1%> </p>
+        <input type="text" id="firstAnswer" class="form-control" name="answer1" style="height: 50px;margin-bottom: 20px;" required>
+    </div>
+    <div class="form-group">
+        <label>Security Question #2:</label>
+        <p class="form-control questions" id="secondQuestion" > <%= question2%> </p>
+        <input type="text" id="secondAnswer" class="form-control" name="answer2" style="height: 50px;" required>
+    </div>
     <br>
     <button id="kauthSubmit" type="submit" class="button1" onclick="submitForm()"> Submit </button>
+    <a href="/ksubmit" hidden> User Profile </a>
     <hr style="margin-bottom: 10px;">
     <p style="margin-left: 225px;"> <a href="/">Cancel</a></p>
 </div>
@@ -94,7 +108,7 @@
         let date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
         let time2 = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
         let dateTime = date + ' ' + time2;
-        document.getElementById("DATE").value = dateTime;
+        // document.getElementById("DATE").value = dateTime;
     })
     function submitForm () {
         // console.log($("#ksub").serialize());
@@ -104,11 +118,10 @@
         let answer1 = a1.toLowerCase();
         let answer2 = a2.toLowerCase();
 
-        console.log()
         if (formAnswer1 !== "" && formAnswer2 !== "") {
             if (formAnswer1 === answer1 && formAnswer2 === answer2 ) {
 
-                document.getElementById("ksub").setAttribute("action","/ksubmit");
+                document.getElementById("kauthSubmit").setAttribute("action","/ksubmit");
 
                 console.log("pass");
                 $.ajax({
@@ -118,8 +131,9 @@
                     data: $("#ksub").serialize(),
                     success: function (result) {
                         console.log(result);
-                    },beforeSend: function () {
-                        document.getElementById("ksubmit").setAttribute("action","/psubmit");
+                        alert("Success!");
+                    }, beforeSend: function () {
+                        document.getElementById("kauthSubmit").setAttribute("action","/ksubmit");
                     }
                 })
             } else {

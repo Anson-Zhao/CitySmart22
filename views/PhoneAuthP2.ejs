@@ -59,7 +59,7 @@
             <input type="password" id="VCode" placeholder="Enter Code Here" class="form-control" name="code" style="height: 50px; margin-bottom: 20px;" required>
         </div>
     <br>
-    <button id="pauthSubmit" type="submit" class="button1" onclick="submitForm()" style="background-color: lightgray;"> Submit </button>
+    <button id="pauthSubmit" type="submit" class="button1" onclick="submitForm()"> Submit </button>
     </form>
     <hr style="margin-bottom: 10px;">
     <p style="text-align: center;"> <a href="/pauth">Didn't receive the code? Send another one.</a></p>
@@ -110,6 +110,7 @@
                 data: $("#Psubmit").serialize(),
                 success: function (result) {
                     console.log(result);
+                    alert("Success!");
                 },
                 beforeSend: function () {
                     document.getElementById("Psubmit").setAttribute("action","/psubmit");
