@@ -160,15 +160,12 @@
             border-radius: 5px;
             border: 1px solid lightgray;
         }
-        #boldboy {
-            color: black;
-        }
 
     </style>
 
 </head>
 
-<body ononline="onFunction()" onoffline="offFunction()">
+<body>
     <div class="navul" style="height: 150px;
         background: #000000;">
         <a class="navul" href="//aworldbridge.com" style="background: #000000;
@@ -258,8 +255,8 @@
                         <label class="col-md-4 control-label">Layer Display Name</label>
                         <div class="col-md-8 inputGroupContainer">
                             <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
-                                <input id="LayerNameInput" name="LayerName" value="" placeholder="Layer Name" class="form-control" required  type="text" spellcheck="true" onchange="SearchLayerName(this.value)"></div>
-                            <p id="LayerName1" style="color: palevioletred;margin-top:15px;">Please enter the layer name. The name you submit is the layer name, after the approval of the admin, your display name may be changed. <br>NOTE: <strong id="boldboy">DO NOT include spaces.</strong></p>
+                                <input id="LayerNameInput" name="LayerName" value="" placeholder="Layer Name" class="form-control" required  type="text" onchange="SearchLayerName(this.value)"></div>
+                            <p id="LayerName1" style="color: palevioletred;margin-top:15px;">Please enter the layer name. The name you submit is the layer name, after the approval of the admin, your display name may be changed. <br>NOTE: <strong>DO NOT </strong>include spaces.</p>
                         </div>
                     </div>
                     <!--<p id="LayerName1" style="color: palevioletred; margin-left:270px;">Please Enter the Layer Name, the Layer Name must be at least 6 characters</p>-->
@@ -310,7 +307,7 @@
                         <label class="col-md-4 control-label">Layer Description</label>
                         <div class="col-md-8 inputGroupContainer">
                             <div>
-                                <textarea class="form-control" id="message" name="Layer_Description" placeholder="Enter your description here..." required type="text" rows="6" maxlength="400" spellcheck="true"></textarea>
+                                <textarea class="form-control" id="message" name="Layer_Description" placeholder="Enter your description here..." required type="text" rows="6" maxlength="400" ></textarea>
                                 <p style="color:palevioletred;margin-top:15px;">Please include image resolution, drone altitude, date created and other conditions.</p>
                             </div>
                         </div>
@@ -412,43 +409,6 @@
         document.getElementById('User ID').value = username;
         document.getElementById('RID').value = RID;
         
-
-        if (document.getElementById('LayerFormat').value == "GeoTIFF - Tagged Image File Format with Geographic information (.tif),") {
-
-            document.getElementById('LayerFormat').value = "GeoTIFF - Tagged Image File Format with Geographic information (.tif)";
-
-        } else if (document.getElementById('LayerFormat2').value == "Shapefile - ESRI(tm) Shapefiles (.shp),") {
-
-            document.getElementById('LayerFormat2').value = "Shapefile - ESRI(tm) Shapefiles (.shp)";
-
-        } else if (document.getElementById('LayerFormat').value == "Shapefile - ESRI(tm) Shapefiles (.shp),") {
-
-            document.getElementById('LayerFormat').value = "Shapefile - ESRI(tm) Shapefiles (.shp)";
-
-        } else if (document.getElementById('LayerFormat2').value == "Shapefile - ESRI(tm) Shapefiles (.shp),") {
-
-            document.getElementById('LayerFormat2').value = "Shapefile - ESRI(tm) Shapefiles (.shp)";
-
-        } else if (document.getElementById('LayerFormat').value == "JP2ECW - JP2K (.jp2/.j2k),") {
-
-            document.getElementById('LayerFormat').value = "JP2ECW - JP2K (.jp2/.j2k)";
-
-        } else if (document.getElementById('LayerFormat2').value == "JP2ECW - JP2K (.jp2/.j2k),") {
-
-            document.getElementById('LayerFormat2').value = "JP2ECW - JP2K (.jp2/.j2k)";
-
-        } else if (document.getElementById('LayerFormat').value == "AIG - Arc/Info Binary Grid (.adf),") {
-
-            document.getElementById('LayerFormat').value = "AIG - Arc/Info Binary Grid (.adf)";
-
-        } else if (document.getElementById('LayerFormat2').value == "AIG - Arc/Info Binary Grid (.adf),") {
-
-            document.getElementById('LayerFormat2').value = "AIG - Arc/Info Binary Grid (.adf)";
-
-        } else{}
-
-        document.getElementById('LayerFormat2').value = document.getElementById('LayerFormat').value;
-
         $.ajax({
             url: "layerRequestContinent",
             method: 'GET',
@@ -613,16 +573,15 @@
                 alert("Submitted!");
             }
         });
-        window.location.replace('/userHome');
+        $.ajax({
+            url  : 'emailRequest',
+            method : "get",
+            data : userPost,
+            dataType: 'json'
+        });
+        // window.location.replace('/userHome');
     }
 
-    function onFunction() {
-        alert ("You are now online.");
-    }
-
-    function offFunction() {
-        alert ("Your are offline. Some functionality may be unavailable.");
-    }
 
 //to check that if there are duplicated from the layer name that layer name that you just inserted
 //     function SearchLayerName(value){

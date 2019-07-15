@@ -374,7 +374,6 @@ module.exports = function (app, passport) {
             if (err) {
                 res.send('There was a big no no.');
             } else {
-                res.send('Pi is yummy.');
                 res.render('KnowledgeAuth.ejs', {
                     user: req.user,
                     question1: result[0].question1,
@@ -495,32 +494,6 @@ module.exports = function (app, passport) {
 
     });
 
-    // app.get('/phonenumber', function (req, res) {
-    //     res.setHeader("Access-Control-Allow-Origin", "*"); // Allow cross domain header
-    //     let statement = "SELECT * FROM UserLogin WHERE username = '" + req.body.username + "';";
-    //
-    //     con_CS.query(statement, function (err, results, fields) {
-    //         if (err) {
-    //             console.log(err);
-    //             res.json({"error": true, "message": "An unexpected error occurred !"});
-    //         } else if (results.length === 0) {
-    //             res.json({"error": true, "message": "Please verify your email address !"});
-    //         } else {
-    //             let username = req.body.username;
-    //             let subject = "Password Reset";
-    //             let text = 'the reset of the password for your account.';
-    //             let url = "http://" + req.headers.host + "/reset/";
-    //             sendToken(username, subject, text, url, res);
-    //         }
-    //     });
-    // });
-    //
-    // app.post('/phonenumber', function (req, res) {
-    //     res.setHeader("Access-Control-Allow-Origin", "*"); // Allow cross domain header
-    //     let statement = "SELECT * FROM UserLogin WHERE username = '" + req.body.username + "';";
-    //
-    // });
-
     // app.post('/email', function (req, res) {
     //     res.setHeader("Access-Control-Allow-Origin", "*"); // Allow cross domain header
     //     let statement = "SELECT * FROM UserLogin WHERE username = '" + req.body.username + "';";
@@ -547,7 +520,7 @@ module.exports = function (app, passport) {
         console.log("got here");
         console.log(requester);
 
-        let statement = "SELECT * FROM UserLogin WHERE username = '" + requester + "';";
+        let statement = "SELECT username FROM UserLogin WHERE userrole = 'Admin';";
 
         con_CS.query(statement, function (err, results, fields) {
             if (err) {
