@@ -58,9 +58,9 @@
         <div class="form-group">
             <input type="password" id="VCode" placeholder="Enter Code Here" class="form-control" name="code" style="height: 50px; margin-bottom: 20px;" required>
         </div>
-    </form>
     <br>
     <button id="pauthSubmit" type="submit" class="button1" onclick="submitForm()" style="background-color: lightgray;"> Submit </button>
+    </form>
     <hr style="margin-bottom: 10px;">
     <p style="text-align: center;"> <a href="/pauth">Didn't Receive the code? Send another one.</a></p>
     <p style="text-align: center;">or</p>
@@ -71,7 +71,7 @@
     let username = '<%= user.username %>';
     let userrole = '<%= user.userrole %>';
     let Code = '<%= Code %>';
-    let VCode = document.getElementById('VCode');
+    let VCode = $('#VCode');
 
 
     $(document).ready(function() {
@@ -83,6 +83,7 @@
         let dateTime = date + ' ' + time2;
         // document.getElementById("DATE").value = dateTime;
 
+        console.log(Code);
 
 
     })
@@ -92,10 +93,12 @@
     function submitForm () {
         // console.log($("#ksub").serialize());
         console.log("this");
+        console.log(VCode.val());
+        console.log(Code);
 
-        if (VCode.value === "") {
+        if (VCode.val() === "") {
             alert("Please make sure the code has been entered.");
-        } else if (VCode.value === Code) {
+        } else if (VCode.val() === Code) {
             console.log("pass");
 
             $.ajax({
