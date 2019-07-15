@@ -56,20 +56,20 @@
 
     <form action="/psubmit" method="post" id="Psubmit">
         <div class="form-group">
-            <input type="password" id="VCode" placeholder="Enter Code Here" class="form-control" name="code" style="height: 50px; margin-bottom: 20px;" onchange="EnableSubmit ()" disabled hidden>
+            <input type="password" id="VCode" placeholder="Enter Code Here" class="form-control" name="code" style="height: 50px; margin-bottom: 20px;" required>
         </div>
     </form>
     <br>
-    <button id="pauthSubmit" type="submit" class="button1" onclick="submitForm()" disabled style="background-color: grey"> Submit </button>
+    <button id="pauthSubmit" type="submit" class="button1" onclick="submitForm()" style="background-color: lightgray;"> Submit </button>
     <hr style="margin-bottom: 10px;">
     <p style="text-align: center;"> <a href="/pauth">Didn't Receive the code? Send another one.</a></p>
+    <p style="text-align: center;">or</p>
     <p style="text-align: center;"> <a href="/admindetector">Try Another Way</a></p>
 </div>
 <br>
 <script>
     let username = '<%= user.username %>';
     let userrole = '<%= user.userrole %>';
-    let Phone_Number = '<%= Phone_Number %>';
     let Code = '<%= Code %>';
     let VCode = document.getElementById('VCode');
 
@@ -86,6 +86,9 @@
 
 
     })
+
+
+
     function submitForm () {
         // console.log($("#ksub").serialize());
         console.log("this");
@@ -105,16 +108,10 @@
                 }
             })
         } else {
-            alert("Invalid code.")
+            alert("Invalid code.");
         }
     }
-
-    function EnableSubmit () {
-        if (VCode.value !== "") {
-            VCode.disabled = false;
-            VCode.hidden = false;
-        }
-    }
+    //document.getElementById("pauthSubmit").disabled = false;
 
     function onFunction() {
         alert ("You are now online.");

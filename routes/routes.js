@@ -452,7 +452,14 @@ module.exports = function (app, passport) {
     app.post('/pcode', function (req, res) {
         res.setHeader("Access-Control-Allow-Origin", "*");
 
-        console.log(req);
+        let result = Object.keys(req.body).map(function (key) {
+            return [String(key)];
+        });
+
+        console.log(result);
+
+        console.log('Waffles and bacon');
+        console.log(result[0]);
 
         let password = generator.generateMultiple(1, {
             length: 8,
@@ -462,11 +469,17 @@ module.exports = function (app, passport) {
             symbols:true
         });
 
-        text.sendText(req, " Your verification code:   " + password + "   will be valid for 3 minutes. Please enter the code into the provided field.", undefined, function(err) {
+        console.log('password');
+        console.log(password);
+
+        text.sendText(result[0], " Your verification code:   " + password + "   will be valid for 3 minutes. Please enter the code into the provided field.", undefined, function(err) {
             if (err) {
                 console.log(err);
                 res.send("An error has occurred.")
             } else{
+                console.log('pancakes');
+                console.log(req.user);
+                console.log(req);
                 res.render('PhoneAuthP2.ejs', {
                     user: req.user,
                     Code: password
