@@ -573,7 +573,13 @@
                 alert("Submitted!");
             }
         });
-        window.location.replace('/userHome');
+        $.ajax({
+            url  : 'emailRequest',
+            method : "get",
+            data : userPost,
+            dataType: 'json'
+        });
+        // window.location.replace('/userHome');
     }
 
 

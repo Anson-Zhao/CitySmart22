@@ -452,9 +452,10 @@ module.exports = function (app, passport) {
         console.log("got here");
         console.log(requester);
 
-        let statement = "SELECT * FROM UserLogin WHERE username = '" + requester + "';";
+        let statement = "SELECT username FROM UserLogin WHERE userrole = 'Admin';";
 
         con_CS.query(statement, function (err, results, fields) {
+
             if (err) {
                 console.log(statement + "ERROR");
                 console.log(err);
@@ -463,14 +464,27 @@ module.exports = function (app, passport) {
                 console.log(statement);
                 res.json({"error": true, "message": "Please verify your email address !"});
             } else {
-                console.log(requester);
-                let username = 'julial.zhu@g.feitianacademy.org';
-                let subject = "New User Request By " + requester;
-                let text = 'requested to publish a new layer.';
-                let url = "http://" + req.headers.host + "/userhome/";
-                sendToken2(username, subject, text, url, res);
+                // for(let i = 0; i < 10; i++) {
+
+                    console.log(results);
+
+                    console.log("length");
+                    console.log(results.length);
+                    console.log(results[i].username);
+                    // setTimeout( function () {
+                        console.log(requester);
+                        let username = results[i].username;
+                        console.log('username');
+                        console.log(username);
+                        let subject = "New User Request By " + requester;
+                        let text = 'requested to publish a new layer.';
+                        let url = "http://" + req.headers.host + "/userhome/";
+                        sendToken2(username, subject, text, url, res);
+                    // }, 10000)
+                // }
             }
-        });
+
+        })
     });
 
     app.get('/reset/:token', function (req, res) {
@@ -2840,12 +2854,13 @@ function QueryStat(myObj, sqlStat, res) {
     }
 
     function sendToken2(username, subject, text, url, res) {
-        async.waterfall([
-            function(done) {
+        // async.waterfall([
+            setTimeout( function(done) {
                 // Message object
                 const message = {
+                    to: username,
                     from: 'FTAA <aaaa.zhao@g.northernacademy.org>', // sender info
-                    to: username, // Comma separated list of recipients
+                     // Comma separated list of recipients
                     subject: subject, // Subject of the message
 
                     // plaintext body
@@ -2856,20 +2871,24 @@ function QueryStat(myObj, sqlStat, res) {
 
                 smtpTrans.sendMail(message, function(error){
                     if(error){
+                        // throw error
                         console.log(error.message);
                         res.json({"error": true, "message": "An unexpected error occurred !"});
                         // alert('it didnt work :(');
                     } else {
+                        console.log("1 round done");
                         res.json({"error": false, "message": "Message sent successfully !"});
                         // alert('An e-mail has been sent to ' + username + ' with further instructions.');
                     }
                 });
-            }
-        ], function(err) {
-            if (err) return next(err);
-            // res.redirect('/forgot');
-            res.json({"error": true, "message": "An unexpected error occurred !"});
-        });
+
+            }, 5000);
+        // ], function(err) {
+        //     if (err) return next(err);
+        //     // res.redirect('/forgot');
+        //     done(err);
+        //     res.json({"error": true, "message": "An unexpected error occurred !"});
+        // });
     }
 
 
