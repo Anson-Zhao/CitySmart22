@@ -86,13 +86,14 @@
 
         console.log(Code);
 
-
+        function timedRefresh() {
+            setTimeout(function(){ window.location.replace("/"); }, 180000);
+        }
+        timedRefresh();
 
     })
 
-    function timedRefresh() {
-        setTimeout(function(){ window.location.replace("/"); }, 180000);
-    }
+
 
     function submitForm (e) {
         // console.log($("#ksub").serialize());

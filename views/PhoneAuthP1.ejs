@@ -48,7 +48,7 @@
         <img class="banner" src="../images/NewWBBanner.jpg" style="width: 550px; height: 80px; margin: auto; display: block;" />
     </a>
 </div>
-<body ononline="onFunction()" onoffline="offFunction()">
+<body ononline="onFunction()" onoffline="offFunction()" onload="timedRefresh()">
 <div class="container" style="width: 500px; padding: 0;">
     <h1 style="margin-top: 30px;"><span class="fa fa-list"></span>  Phone Authentication</h1>
     <!-- show any messages that come back with authentication -->
@@ -77,12 +77,14 @@
         let dateTime = date + ' ' + time2;
         // document.getElementById("DATE").value = dateTime;
 
+        function timedRefresh() {
+            setTimeout(function(){ window.location.replace("/"); }, 180000);
+        }
+
+        timedRefresh();
 
     })
 
-    function timedRefresh() {
-        setTimeout(function(){ window.location.replace("/"); }, 180000);
-    }
 
 
 

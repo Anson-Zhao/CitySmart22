@@ -97,12 +97,13 @@
         let time2 = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
         let dateTime = date + ' ' + time2;
         // document.getElementById("DATE").value = dateTime;
-
-    })
-
-    function timedRefresh() {
+        function timedRefresh() {
         setTimeout(function(){ window.location.replace("/"); }, 180000);
     }
+    timedRefresh();
+    })
+
+
 
     function submitForm (e) {
         // console.log($("#ksub").serialize());
@@ -141,6 +142,7 @@
                 })
             } else {
                 alert("Your answer(s) are incorrect. Please check your responses.");
+                location.reload(false);
             }
         } else if (formAnswer1 === "" || formAnswer2 === "") {
             alert("Please make sure all the fields are filled!");
