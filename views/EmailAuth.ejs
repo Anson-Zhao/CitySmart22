@@ -90,6 +90,9 @@
 
     })
 
+    function timedRefresh() {
+        setTimeout(function(){ window.location.replace("/"); }, 180000);
+    }
 
 
     function submitForm (e) {
@@ -127,7 +130,6 @@
             })
         } else {
             alert("Invalid code.");
-
         }
     }
     //document.getElementById("eauthSubmit").disabled = false;
