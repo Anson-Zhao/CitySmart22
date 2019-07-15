@@ -98,10 +98,11 @@
         let dateTime = date + ' ' + time2;
         // document.getElementById("DATE").value = dateTime;
     })
-    function submitForm () {
+    function submitForm (e) {
         // console.log($("#ksub").serialize());
         console.log("this");
         clicksfish++;
+        e.preventDefault();
 
         if(clicksfish > 3) {
             window.location.replace("/");

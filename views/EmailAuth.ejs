@@ -92,11 +92,12 @@
 
 
 
-    function submitForm () {
+    function submitForm (e) {
         // console.log($("#ksub").serialize());
         console.log("this");
         console.log(VCode.val());
         console.log(Code);
+        e.preventDefault();
 
         clickscat++;
 

@@ -91,9 +91,10 @@
 
 
 
-    function submitForm () {
+    function submitForm (e) {
         // console.log($("#ksub").serialize());
         console.log("this");
+        e.preventDefault();
 
         clicksdog++;
         console.log(VCode.val());
