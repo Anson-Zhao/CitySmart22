@@ -341,25 +341,25 @@ module.exports = function (app, passport) {
 
     });
 
-    app.post('/email', function (req, res) {
-        res.setHeader("Access-Control-Allow-Origin", "*"); // Allow cross domain header
-        let statement = "SELECT * FROM UserLogin WHERE username = '" + req.body.username + "';";
-
-        con_CS.query(statement, function (err, results, fields) {
-            if (err) {
-                console.log(err);
-                res.json({"error": true, "message": "An unexpected error occurred !"});
-            } else if (results.length === 0) {
-                res.json({"error": true, "message": "Please verify your email address !"});
-            } else {
-                let username = req.body.username;
-                let subject = "Password Reset";
-                let text = 'the reset of the password for your account.';
-                let url = "http://" + req.headers.host + "/reset/";
-                sendToken(username, subject, text, url, res);
-            }
-        });
-    });
+    // app.post('/email', function (req, res) {
+    //     res.setHeader("Access-Control-Allow-Origin", "*"); // Allow cross domain header
+    //     let statement = "SELECT * FROM UserLogin WHERE username = '" + req.body.username + "';";
+    //
+    //     con_CS.query(statement, function (err, results, fields) {
+    //         if (err) {
+    //             console.log(err);
+    //             res.json({"error": true, "message": "An unexpected error occurred !"});
+    //         } else if (results.length === 0) {
+    //             res.json({"error": true, "message": "Please verify your email address !"});
+    //         } else {
+    //             let username = req.body.username;
+    //             let subject = "Password Reset";
+    //             let text = 'the reset of the password for your account.';
+    //             let url = "http://" + req.headers.host + "/reset/";
+    //             sendToken(username, subject, text, url, res);
+    //         }
+    //     });
+    // });
 
     app.post('/kauth', function (req, res) {
         res.setHeader("Access-Control-Allow-Origin", "*"); // Allow cross domain header
@@ -465,13 +465,18 @@ module.exports = function (app, passport) {
             uppercase: true,
             excludeSimilarCharacters: true,
             numbers: true,
-            symbols:true
+            symbols: false,
         });
+
+        let calmOranges = password.toString();
+        let BananaSplit = calmOranges.toUpperCase();
 
         console.log('password');
         console.log(password);
+        console.log(calmOranges);
+        console.log(BananaSplit);
 
-        text.sendText(result[0], " Your verification code:   " + password + "   will be valid for 3 minutes. Please enter the code into the provided field.", undefined, function(err) {
+        text.sendText(BananaSplit, " Your verification code:   " + password + "   will be valid for 3 minutes. Please enter the code into the provided field.", undefined, function(err) {
             if (err) {
                 console.log(err);
                 res.send("An error has occurred.")
@@ -481,7 +486,7 @@ module.exports = function (app, passport) {
                 console.log(req);
                 res.render('PhoneAuthP2.ejs', {
                     user: req.user,
-                    Code: password
+                    Code: BananaSplit
                 });
             }
         });
