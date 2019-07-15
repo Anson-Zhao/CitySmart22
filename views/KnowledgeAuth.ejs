@@ -104,7 +104,6 @@
         let answer1 = a1.toLowerCase();
         let answer2 = a2.toLowerCase();
 
-        console.log()
         if (formAnswer1 !== "" && formAnswer2 !== "") {
             if (formAnswer1 === answer1 && formAnswer2 === answer2 ) {
 
@@ -119,7 +118,7 @@
                     success: function (result) {
                         console.log(result);
                     },beforeSend: function () {
-                        document.getElementById("ksubmit").setAttribute("action","/psubmit");
+                        document.getElementById("ksub").setAttribute("action","/ksubmit");
                     }
                 })
             } else {
