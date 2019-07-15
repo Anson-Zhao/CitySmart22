@@ -315,8 +315,12 @@ module.exports = function (app, passport) {
     // //Detects if user is admin
     app.get('/admindetector', function (req, res) {
         dateNtime();
-        if (req.user.userrole === "Admin") {
-            res.render('2step.ejs');
+        if (req.user.userrole === "Admin" || req.userrole === "Admin") {
+            res.render('2step.ejs',{
+                user:req.user,
+                userrole: req.user.userrole,
+                username: req.user.username
+            });
         } else {
             res.redirect('/loginUpdate');
         }
@@ -366,8 +370,10 @@ module.exports = function (app, passport) {
             uppercase: true,
             excludeSimilarCharacters: true,
             numbers: true,
-            symbols:true
+            symbols:false
         });
+
+        password = password.toString().toUpperCase();
 
         con_CS.query(statement, function (err, results, fields) {
             if (err) {
@@ -376,7 +382,10 @@ module.exports = function (app, passport) {
             } else if (results.length === 0) {
                 res.json({"error": true, "message": "Please verify your email address !"});
             } else {
-                res.render('EmailAuth.ejs');
+                res.render('EmailAuth.ejs', {
+                    user: req.user,
+                    Code: password
+                });
                 let username = req.user.username;
                 let subject = "Email Authentication for CitySmart";
                 let text = 'an email authentication for logging in your admin account.';
@@ -419,7 +428,7 @@ module.exports = function (app, passport) {
 
     app.post('/ksubmit', function (req, res) {
         console.log("got here");
-        res.redirect('/userHome');
+        res.redirect('/loginUpdate');
     });
 
     app.post('/pauth', function (req, res) {
@@ -450,8 +459,31 @@ module.exports = function (app, passport) {
         res.redirect('/loginUpdate');
     });
 
-    // app.post('/eauth', function (req, res) {
-    //     res.render('EmailAuth.ejs');
+    app.post('/esubmit', function (req, res) {
+        console.log("got here");
+        res.redirect('/loginUpdate');
+    });
+
+    // app.post('/pauth', function (req, res) {
+    //     res.setHeader("Access-Control-Allow-Origin", "*");
+    //
+    //     myStat = "SELECT Phone_Number FROM UserProfile WHERE username = '" + req.user.username + "'";
+    //
+    //     con_CS.query(myStat, function (err, result) {
+    //         console.log("here is the result:");
+    //         console.log(result);
+    //         console.log(result[0].Phone_Number);
+    //
+    //         if (err) {
+    //             res.send("There was a big nose nose.");
+    //         } else {
+    //             res.render('PhoneAuthP1.ejs', {
+    //                 user: req.user,
+    //                 Phone_Number: result[0].Phone_Number,
+    //
+    //             });
+    //         }
+    //     });
     //
     // });
 
@@ -473,13 +505,18 @@ module.exports = function (app, passport) {
             uppercase: true,
             excludeSimilarCharacters: true,
             numbers: true,
-            symbols:true
+            symbols: false,
         });
+
+        let calmOranges = password.toString();
+        let BananaSplit = calmOranges.toUpperCase();
 
         console.log('password');
         console.log(password);
+        console.log(calmOranges);
+        console.log(BananaSplit);
 
-        text.sendText(result[0], " Your verification code:   " + password + "   will be valid for 3 minutes. Please enter the code into the provided field.", undefined, function(err) {
+        text.sendText(BananaSplit, " Your verification code:   " + password + "   will be valid for 3 minutes. Please enter the code into the provided field.", undefined, function(err) {
             if (err) {
                 console.log(err);
                 res.send("An error has occurred.")
@@ -489,15 +526,16 @@ module.exports = function (app, passport) {
                 console.log(req);
                 res.render('PhoneAuthP2.ejs', {
                     user: req.user,
-                    Code: password
+                    Code: BananaSplit
                 });
             }
         });
+
     });
 
-    app.post('/phonenumber', function (req, res) {
-        res.setHeader("Access-Control-Allow-Origin", "*"); // Allow cross domain header
-        let statement = "SELECT * FROM UserLogin WHERE username = '" + req.body.username + "';";
+
+    app.post('/eauth', function (req, res) {
+        res.render('EmailAuth.ejs');
 
     });
 
@@ -530,7 +568,6 @@ module.exports = function (app, passport) {
         let statement = "SELECT username FROM UserLogin WHERE userrole = 'Admin';";
 
         con_CS.query(statement, function (err, results, fields) {
-
             if (err) {
                 console.log(statement + "ERROR");
                 console.log(err);
@@ -539,27 +576,14 @@ module.exports = function (app, passport) {
                 console.log(statement);
                 res.json({"error": true, "message": "Please verify your email address !"});
             } else {
-                // for(let i = 0; i < 10; i++) {
-
-                    console.log(results);
-
-                    console.log("length");
-                    console.log(results.length);
-                    console.log(results[i].username);
-                    // setTimeout( function () {
-                        console.log(requester);
-                        let username = results[i].username;
-                        console.log('username');
-                        console.log(username);
-                        let subject = "New User Request By " + requester;
-                        let text = 'requested to publish a new layer.';
-                        let url = "http://" + req.headers.host + "/userhome/";
-                        sendToken2(username, subject, text, url, res);
-                    // }, 10000)
-                // }
+                console.log(requester);
+                let username = 'julial.zhu@g.feitianacademy.org';
+                let subject = "New User Request By " + requester;
+                let text = 'requested to publish a new layer.';
+                let url = "http://" + req.headers.host + "/userhome/";
+                sendToken2(username, subject, text, url, res);
             }
-
-        })
+        });
     });
 
     app.get('/reset/:token', function (req, res) {
@@ -2877,27 +2901,8 @@ function QueryStat(myObj, sqlStat, res) {
 
     function sendToken3(username, subject, text, url, res) {
         async.waterfall([
-            function(done) {
-                crypto.randomBytes(20, function(err, buf) {
-                    token = buf.toString('hex');
-                    tokenExpTime();
-                    done(err, token, tokenExpire);
-                });
-            },
-            function (token, tokenExpire, done) {
-                myStat = "UPDATE UserLogin SET emailAuthToken = ?, emailAuthExpires = ? WHERE username = '" + username + "' ";
-                myVal = [token, tokenExpire];
-                con_CS.query(myStat, myVal, function (err, rows) {
 
-                    if (err) {
-                        console.log(err);
-                        res.json({"error": true, "message": "Token Insert Fail !"});
-                    } else {
-                        done(err, token);
-                    }
-                });
-            },
-            function(token, done, err) {
+            function(done) {
                 // Message object
                 const message = {
                     from: 'FTAA <aaaa.zhao@g.northernacademy.org>', // sender info
@@ -2906,8 +2911,8 @@ function QueryStat(myObj, sqlStat, res) {
 
                     // plaintext body
                     text: 'You are receiving this because you (or someone else) have requested ' + text + '\n\n' +
-                        'Please click on the following link, or paste this into your browser to complete the process:\n\n' +
-                        url + token + '\n\n' +
+                        'Please user the following code to complete the authentication:\n\n' +
+                        url +'\n\n' +
                         'If you did not request this, please ignore this email.\n'
                 };
 
@@ -2982,13 +2987,12 @@ function QueryStat(myObj, sqlStat, res) {
     }
 
     function sendToken2(username, subject, text, url, res) {
-        // async.waterfall([
-            setTimeout( function(done) {
+        async.waterfall([
+            function(done) {
                 // Message object
                 const message = {
-                    to: username,
                     from: 'FTAA <aaaa.zhao@g.northernacademy.org>', // sender info
-                     // Comma separated list of recipients
+                    to: username, // Comma separated list of recipients
                     subject: subject, // Subject of the message
 
                     // plaintext body
@@ -2999,24 +3003,20 @@ function QueryStat(myObj, sqlStat, res) {
 
                 smtpTrans.sendMail(message, function(error){
                     if(error){
-                        // throw error
                         console.log(error.message);
                         res.json({"error": true, "message": "An unexpected error occurred !"});
                         // alert('it didnt work :(');
                     } else {
-                        console.log("1 round done");
                         res.json({"error": false, "message": "Message sent successfully !"});
                         // alert('An e-mail has been sent to ' + username + ' with further instructions.');
                     }
                 });
-
-            }, 5000);
-        // ], function(err) {
-        //     if (err) return next(err);
-        //     // res.redirect('/forgot');
-        //     done(err);
-        //     res.json({"error": true, "message": "An unexpected error occurred !"});
-        // });
+            }
+        ], function(err) {
+            if (err) return next(err);
+            // res.redirect('/forgot');
+            res.json({"error": true, "message": "An unexpected error occurred !"});
+        });
     }
 
 
