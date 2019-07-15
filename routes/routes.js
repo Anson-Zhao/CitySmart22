@@ -476,7 +476,7 @@ module.exports = function (app, passport) {
         console.log(calmOranges);
         console.log(BananaSplit);
 
-        text.sendText(BananaSplit, " Your verification code:   " + password + "   will be valid for 3 minutes. Please enter the code into the provided field.", undefined, function(err) {
+        text.sendText(result[0], " Your verification code:   " + password + "   will be valid for 3 minutes. Please enter the code into the provided field.", undefined, function(err) {
             if (err) {
                 console.log(err);
                 res.send("An error has occurred.")
