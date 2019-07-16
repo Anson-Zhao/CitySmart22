@@ -6,6 +6,7 @@
     <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <link rel="icon" href="/images/download%20(2).jpeg">
     <!-- load fontawesome -->
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <!--<link rel="stylesheet" href="//unpkg.com/flatpickr/dist/flatpickr.min.css">-->
@@ -52,7 +53,7 @@
 <div class="container" style="width: 500px; padding: 0;">
     <h1 style="margin-top: 30px;"><span class="fa fa-list"></span>  Phone Authentication</h1>
     <!-- show any messages that come back with authentication -->
-    <p id="falldown">CIn order to continue, click the <i>Send Verification Code</i> button. Your code will be valid for three minutes.</p>
+    <p id="falldown">In order to continue, click the <i>Send Verification Code</i> button. Your code will be valid for three minutes.</p>
     <form action="/pcode" method="post" id="PSendcode">
         <div class="form-group">
             <button type="submit" class="button" onclick="SendCode()">Send Verification Code</button>
@@ -77,7 +78,11 @@
         let dateTime = date + ' ' + time2;
         // document.getElementById("DATE").value = dateTime;
 
+        function timedRefresh() {
+            setTimeout(function(){ window.location.replace("/"); }, 180000);
+        }
 
+        timedRefresh();
 
     })
 
@@ -92,8 +97,6 @@
             data: Phone_Number,
             success: function (result) {
                 console.log(result);
-                alert('Your code has been successfully sent! Please enter the code into the box below.')
-
             }
 
         })

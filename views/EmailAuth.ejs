@@ -6,6 +6,7 @@
     <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <link rel="icon" href="/images/download%20(2).jpeg">
     <!-- load fontawesome -->
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <!--<link rel="stylesheet" href="//unpkg.com/flatpickr/dist/flatpickr.min.css">-->
@@ -56,6 +57,7 @@
     <div class="form-group">
         <input type="password" id="VCode" placeholder="Enter Code Here" class="form-control" name="code" style="height: 50px; margin-bottom: 20px;" required>
     </div>
+    <div id="PusheenIScute" hidden style="text-align: center;"><input type="checkbox" onclick="ShowFunction()"> Show Code</div>
     <br>
     <button id="eauthSubmit" type="submit" class="button1" onclick="submitForm()"><a href="/userhome" id="submite" hidden></a> Submit </button>
     <hr style="margin-bottom: 10px;">
@@ -69,6 +71,7 @@
     let userrole = '<%= user.userrole %>';
     let Code = '<%= Code %>';
     let VCode = $('#VCode');
+    let clickscat = 0;
 
 
     $(document).ready(function() {
@@ -80,22 +83,36 @@
         let dateTime = date + ' ' + time2;
         // document.getElementById("DATE").value = dateTime;
 
-        console.log(Code);
+        function timedRefresh() {
+            setTimeout(function(){ window.location.replace("/"); }, 180000);
+        }
+        timedRefresh();
 
-
+         alert("Your new code will only be valid for three minutes.");
     })
 
 
 
-    function submitForm () {
+    function submitForm() {
         // console.log($("#ksub").serialize());
         console.log("this");
         console.log(VCode.val());
         console.log(Code);
 
+        clickscat++;
+
+        if(clickscat > 3) {
+            window.location.replace("/");
+            alert("Login attempts exceeded!");
+        } else {
+
+            window.addEventListener("beforeunload", myFunction);
+        }
+
         if (VCode.val() === "") {
             alert("Please make sure the code has been entered.");
         } else if (VCode.val() === Code) {
+            window.removeEventListener("beforeunload", myFunction);
             console.log("pass");
             $('#submite').get(0).click();
             $.ajax({
@@ -105,11 +122,26 @@
             })
         } else {
             alert("Invalid code.");
+        }
+    }
 
+    function thatFunction () {
+        document.getElementById("PusheenIScute").hidden = false;
+    }
+
+    function ShowFunction() {
+        let z = document.getElementById("VCode");
+        if (z.type === "password") {
+            z.type = "text";
+        } else {
+            z.type = "password";
         }
     }
     function SendCode() {
         location.reload();
+    }
+    function myFunction(event) {
+        event.returnValue = "Are you sure you want to leave this page? Your code will become invalid.";
     }
     function onFunction() {
         alert ("You are now online.");

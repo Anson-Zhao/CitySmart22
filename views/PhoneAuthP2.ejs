@@ -6,6 +6,7 @@
     <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <link rel="icon" href="/images/download%20(2).jpeg">
     <!-- load fontawesome -->
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <!--<link rel="stylesheet" href="//unpkg.com/flatpickr/dist/flatpickr.min.css">-->
@@ -56,6 +57,7 @@
     <div class="form-group">
         <input type="password" id="VCode" placeholder="Enter Code Here" class="form-control" name="code" style="height: 50px; margin-bottom: 20px;" required>
     </div>
+    <div id="duckiesRcute" hidden style="text-align: center;"><input type="checkbox" onclick="ShowFunction()"> Show Code</div>
     <br>
     <button id="pauthSubmit" type="submit" class="button1" onclick="submitForm()"><a href="/userhome" id="submitp" hidden></a> Submit </button>
 
@@ -71,9 +73,9 @@
     let Phone_Number = '<%= Phone_Number %>';
     let Code = '<%= Code %>';
     let VCode = $('#VCode');
+    let clicksdog = 0;
 
 
-    console.log(Phone_Number);
     $(document).ready(function() {
 
 
@@ -83,19 +85,37 @@
         let dateTime = date + ' ' + time2;
         // document.getElementById("DATE").value = dateTime;
 
-        console.log(Code);
+
+        function timedRefresh() {
+            setTimeout(function(){ window.location.replace("/"); }, 180000);
+        }
+        timedRefresh();
+
+        alert("Your new code will only be valid for three minutes.");
+
     })
+
 
     function submitForm () {
         // console.log($("#ksub").serialize());
         console.log("this");
+
+        clicksdog++;
         console.log(VCode.val());
         console.log(Code);
+
+        if(clicksdog > 3 ) {
+            window.location.replace("/");
+            alert("Login attempts exceeded!");
+        } else {
+            window.addEventListener("beforeunload", myFunction);
+        }
 
         if (VCode.val() === "") {
             alert("Please make sure the code has been entered.");
         } else if (VCode.val() === Code) {
             console.log("pass");
+            window.removeEventListener("beforeunload", myFunction);
             $('#submitp').get(0).click();
             $.ajax({
                 type: "get",
@@ -111,7 +131,19 @@
     function SendCode() {
         location.reload();
     }
-    //document.getElementById("pauthSubmit").disabled = false;
+
+    function thisFunction () {
+        document.getElementById("duckiesRcute").hidden = false;
+    }
+
+    function ShowFunction() {
+        let y = document.getElementById("VCode");
+        if (y.type === "password") {
+            y.type = "text";
+        } else {
+            y.type = "password";
+        }
+    }
 
     function onFunction() {
         alert ("You are now online.");

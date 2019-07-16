@@ -63,9 +63,10 @@
     <h1><span class="fa fa-sign-in"></span> Login</h1>
     <!--show any messages that come back with authentication -->
     <% if (message.length > 0) { %>
-        <div class="alert alert-danger"><%= message %></div>
+        <div class="alert alert-danger" style="text-align: center;"><%= message %></div>
     <% } %>
     <!-- LOGIN FORM -->
+    <p id="capsgirl" hidden><strong>WARNING: Caps lock is enabled.</strong></p>
     <form action="/login" method="post">
         <div class="form-group">
             <label>Username:</label>
@@ -83,13 +84,12 @@
             <label>Status:</label>
             <input type="text" id="status" class="form-control" name="status" value="Active" readonly>
         </div>
-        <button type="submit" class="button1" style="width: 500px;height: 50px;"> Login </button>
+        <button type="submit" class="button1" style="width: 500px;height: 50px;"  onsubmit="loginAttempts ()"> Login </button>
         <div id="showerr" hidden><input type="checkbox" onclick="myFunction()"> Show Password</div>
         <div class="form-group" style="margin-bottom: 0px;margin-top: 10px;">
             <label style="font-weight: normal;">
                 <input type="checkbox" name="remember" value="yes"> Remember me
             </label>
-            <p id="capsgirl" hidden><strong>WARNING: Caps lock is enabled.</strong></p>
             <a href="/forgot" style="float: right;">Forgot Password?</a>
         </div>
     </form>
@@ -104,6 +104,7 @@
     let usergirl = document.getElementById("usergirl");
     let passwordgirl = document.getElementById("passwordgirl");
     let capsgirl = document.getElementById("capsgirl");
+    let aladdin = 0;
 
     usergirl.addEventListener("keydown", function(ebay) {
 
@@ -164,6 +165,16 @@
     function offFunction() {
         alert ("Your are offline. Some functionality may be unavailable.");
     }
+
+    function loginAttempts () {
+        aladdin++;
+
+        if(aladdin > 3) {
+            window.location.replace("/");
+            alert("Too many requests to the server can cause the server to slow down or not function properly.");
+        } else {}
+    }
+
 </script>
 </body>
 </html>
