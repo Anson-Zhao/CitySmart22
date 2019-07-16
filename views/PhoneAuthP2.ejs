@@ -92,10 +92,10 @@
         timedRefresh();
 
 
+    })
 
-    window.onbeforeunload = function() {
-        return "Are you sure you want to leave this page? Your code will become invalid.";
-    };
+
+
 
     function submitForm (e) {
         // console.log($("#ksub").serialize());
@@ -109,7 +109,11 @@
         if(clicksdog > 3 ) {
             window.location.replace("/");
             alert("Login attempts exceeded!");
-        } else {}
+        } else {
+            window.onbeforeunload = function() {
+            return confirm("Are you sure you want to leave this page? Your code will become invalid.");
+        };
+        }
 
         if (VCode.val() === "") {
             alert("Please make sure the code has been entered.");
