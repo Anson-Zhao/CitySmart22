@@ -417,16 +417,7 @@ module.exports = function (app, passport) {
                 });
             }
         });
-        // res.render('KnowledgeAuth.ejs');
-    //    res.render('userProfile.ejs', {
-        //             user: req.user,
-        //         });
 
-    });
-
-    app.post('/ksubmit', function (req, res) {
-        console.log("got here");
-        res.redirect('/loginUpdate');
     });
 
     app.post('/pauth', function (req, res) {
@@ -451,40 +442,6 @@ module.exports = function (app, passport) {
         });
 
     });
-
-    app.post('/psubmit', function (req, res) {
-        console.log("got here");
-        res.redirect('/loginUpdate');
-    });
-
-    app.post('/esubmit', function (req, res) {
-        console.log("got here");
-        res.redirect('/loginUpdate');
-    });
-
-    // app.post('/pauth', function (req, res) {
-    //     res.setHeader("Access-Control-Allow-Origin", "*");
-    //
-    //     myStat = "SELECT Phone_Number FROM UserProfile WHERE username = '" + req.user.username + "'";
-    //
-    //     con_CS.query(myStat, function (err, result) {
-    //         console.log("here is the result:");
-    //         console.log(result);
-    //         console.log(result[0].Phone_Number);
-    //
-    //         if (err) {
-    //             res.send("There was a big nose nose.");
-    //         } else {
-    //             res.render('PhoneAuthP1.ejs', {
-    //                 user: req.user,
-    //                 Phone_Number: result[0].Phone_Number,
-    //
-    //             });
-    //         }
-    //     });
-    //
-    // });
-
 
     app.post('/pcode', function (req, res) {
         res.setHeader("Access-Control-Allow-Origin", "*");
@@ -517,7 +474,8 @@ module.exports = function (app, passport) {
             } else{
                 res.render('PhoneAuthP2.ejs', {
                     user: req.user,
-                    Code: password
+                    Code: password,
+                    Phone_Number: req.body.Phone_Number
                 });
             }
         });
@@ -2315,12 +2273,12 @@ module.exports = function (app, passport) {
         })
     });
 
-    app.get('/EditData', function (req, res) {
-        res.setHeader("Access-Control-Allow-Origin", "*");
-        con_CS.query("SELECT Full Name, Address Line 1, Address Line 2, City, State/Province/Region, Postal Code/ZIP, Country, Email, Phone Number, Layer Name, Layer Category, Layer Description, Layer Uploader FROM GeneralFormDatatable", function (err, results) {
-            if (err) throw err;
-        })
-    });
+    // app.get('/EditData', function (req, res) {
+    //     res.setHeader("Access-Control-Allow-Origin", "*");
+    //     con_CS.query("SELECT Full Name, Address Line 1, Address Line 2, City, State/Province/Region, Postal Code/ZIP, Country, Email, Phone Number, Layer Name, Layer Category, Layer Description, Layer Uploader FROM GeneralFormDatatable", function (err, results) {
+    //         if (err) throw err;
+    //     })
+    // });
 
     app.get('/SearchLayerName', function (req, res) {
         res.setHeader("Access-Control-Allow-Origin", "*");

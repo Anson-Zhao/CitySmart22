@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3b2ba209-e08e-4f77-99ae-d893522cce16" name="Default Changelist" comment="" />
+    <list default="true" id="3b2ba209-e08e-4f77-99ae-d893522cce16" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/serverConfig.js" beforeDir="false" afterPath="$PROJECT_DIR$/config/serverConfig.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/EmailAuth.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/EmailAuth.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/KnowledgeAuth.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/KnowledgeAuth.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/PhoneAuthP2.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/PhoneAuthP2.ejs" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -100,10 +107,6 @@
                 <element signature="n#style#0;n#img#0;n#a#0;n#div#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#h1#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#div#1;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#hr#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -112,16 +115,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/PhoneAuthP2.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="339">
-              <caret line="149" column="30" lean-forward="true" selection-start-line="149" selection-start-column="30" selection-end-line="149" selection-end-column="30" />
-              <folding>
-                <element signature="n#style#0;n#img#0;n#a#0;n#div#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#hr#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="-81">
+              <caret line="132" column="9" lean-forward="true" selection-start-line="132" selection-start-column="9" selection-end-line="132" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -129,11 +124,20 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/EmailAuth.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2010">
-              <caret line="134" column="41" lean-forward="true" selection-start-line="134" selection-start-column="41" selection-end-line="134" selection-end-column="41" />
+            <state relative-caret-position="375">
+              <caret line="26" column="28" lean-forward="true" selection-start-line="26" selection-start-column="28" selection-end-line="26" selection-end-column="28" />
               <folding>
-                <element signature="n#style#0;n#div#1;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#0;n#div#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#a#0;n#div#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#h1#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#hr#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#p#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#p#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -181,8 +185,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>con_CS.query(</find>
-      <find>firstna</find>
       <find>user</find>
       <find>userhome</find>
       <find>submitForm</find>
@@ -194,7 +196,6 @@
       <find>submitForm();</find>
       <find>reset/</find>
       <find>/userhome</find>
-      <find>/loginu</find>
       <find>/userHome</find>
       <find>/ks</find>
       <find>'/login</find>
@@ -204,13 +205,16 @@
       <find>/k</find>
       <find>/reset</find>
       <find>password</find>
-      <find>/login</find>
-      <find>/edit</find>
-      <find>redirec</find>
-      <find>location.replace</find>
-      <find>console.log</find>
-      <find>brute</find>
       <find>bruteforce</find>
+      <find>/login</find>
+      <find>pauthSubmit</find>
+      <find>checkForm</find>
+      <find>/kau</find>
+      <find>/loginu</find>
+      <find>phone_</find>
+      <find>/edit</find>
+      <find>/EditData</find>
+      <find>pcode</find>
     </findStrings>
     <replaceStrings>
       <replace>Name</replace>
@@ -255,10 +259,17 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/scripts/s.js" />
+        <option value="$PROJECT_DIR$/config/clientConfig.js" />
         <option value="$PROJECT_DIR$/scripts/USGS_WT_heatmapLayer.js" />
         <option value="$PROJECT_DIR$/scripts/USGS_WT_placemarkLayer.js" />
         <option value="$PROJECT_DIR$/scripts/All_Layer_Menu.js" />
@@ -299,17 +310,15 @@
         <option value="$PROJECT_DIR$/views/userHome.ejs" />
         <option value="$PROJECT_DIR$/views/rejected.ejs" />
         <option value="$PROJECT_DIR$/views/LayerRequestForm.ejs" />
+        <option value="$PROJECT_DIR$/views/login.ejs" />
         <option value="$PROJECT_DIR$/routes/passport.js" />
+        <option value="$PROJECT_DIR$/views/2step.ejs" />
         <option value="$PROJECT_DIR$/views/LayerRequestForm_edit.ejs" />
         <option value="$PROJECT_DIR$/config/serverConfig.js" />
-        <option value="$PROJECT_DIR$/views/2step.ejs" />
         <option value="$PROJECT_DIR$/views/KnowledgeAuth.ejs" />
-        <option value="$PROJECT_DIR$/views/PhoneAuthP1.ejs" />
-        <option value="$PROJECT_DIR$/views/signup.ejs" />
-        <option value="$PROJECT_DIR$/routes/routes.js" />
-        <option value="$PROJECT_DIR$/views/login.ejs" />
         <option value="$PROJECT_DIR$/views/PhoneAuthP2.ejs" />
         <option value="$PROJECT_DIR$/views/EmailAuth.ejs" />
+        <option value="$PROJECT_DIR$/routes/routes.js" />
       </list>
     </option>
   </component>
@@ -320,10 +329,9 @@
     <auto-save>true</auto-save>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1362" />
-    <option name="y" value="34" />
-    <option name="width" value="945" />
-    <option name="height" value="1302" />
+    <option name="y" value="23" />
+    <option name="width" value="2409" />
+    <option name="height" value="1296" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -341,11 +349,6 @@
             <path>
               <item name="CitySmart22" type="b2602c69:ProjectViewProjectNode" />
               <item name="CitySmart22" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CitySmart22" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CitySmart22" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -358,7 +361,6 @@
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="DatabaseDriversLRU" value="mysql" />
-    <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
     <property name="JavaScriptWeakerCompletionTypeGuess" value="false" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -368,7 +370,7 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
     <property name="database.console.LAST_STATE" value="true" />
-    <property name="javascript.nodejs.core.library.configured.version" value="9.2.0" />
+    <property name="javascript.nodejs.core.library.configured.version" value="10.14.1" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/views" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -460,7 +462,133 @@
       <workItem from="1562855761107" duration="9766000" />
       <workItem from="1562870520274" duration="461000" />
       <workItem from="1562872281631" duration="17170000" />
-      <workItem from="1563201479070" duration="17213000" />
+      <workItem from="1563201479070" duration="10165000" />
+    </task>
+    <task id="LOCAL-00063" summary="V2.3">
+      <created>1557503096135</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1557503096135</updated>
+    </task>
+    <task id="LOCAL-00064" summary="Merge branch 'Amy' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;config/geoCapacity/2019_5_10_11_25_32.xml&#10;#&#9;config/mainconf.js&#10;#&#9;routes/routes.js">
+      <created>1557503693948</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1557503693948</updated>
+    </task>
+    <task id="LOCAL-00065" summary="Merge branch 'Amy' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;config/geoCapacity/2019_5_10_11_25_32.xml&#10;#&#9;config/mainconf.js&#10;#&#9;routes/routes.js">
+      <created>1557504897103</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1557504897104</updated>
+    </task>
+    <task id="LOCAL-00066" summary="Merge branch 'Amy' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;config/geoCapacity/2019_5_10_11_25_32.xml&#10;#&#9;config/mainconf.js&#10;#&#9;routes/routes.js">
+      <created>1557518788256</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1557518788256</updated>
+    </task>
+    <task id="LOCAL-00067" summary="Merge branch 'Amy' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;config/geoCapacity/2019_5_10_11_25_32.xml&#10;#&#9;config/mainconf.js&#10;#&#9;routes/routes.js">
+      <created>1557519617277</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1557519617277</updated>
+    </task>
+    <task id="LOCAL-00068" summary="fix option list classes">
+      <created>1557522459361</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1557522459361</updated>
+    </task>
+    <task id="LOCAL-00069" summary="fix option list classes">
+      <created>1557587684655</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1557587684655</updated>
+    </task>
+    <task id="LOCAL-00070" summary="fix option list classes">
+      <created>1557588031599</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1557588031599</updated>
+    </task>
+    <task id="LOCAL-00071" summary="Merge branch 'IV3' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
+      <created>1557952008037</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1557952008037</updated>
+    </task>
+    <task id="LOCAL-00072" summary="Merge branch 'IV3' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
+      <created>1557952038034</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1557952038034</updated>
+    </task>
+    <task id="LOCAL-00073" summary="Merge branch 'IanNew' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;scripts/USGS_MD.js">
+      <created>1557952206936</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1557952206936</updated>
+    </task>
+    <task id="LOCAL-00074" summary="Merge branch 'IanNew' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;scripts/USGS_MD.js">
+      <created>1558708377511</created>
+      <option name="number" value="00074" />
+      <option name="presentableId" value="LOCAL-00074" />
+      <option name="project" value="LOCAL" />
+      <updated>1558708377511</updated>
+    </task>
+    <task id="LOCAL-00075" summary="Merge branch 'IanNew' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;scripts/USGS_MD.js">
+      <created>1558708386710</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1558708386711</updated>
+    </task>
+    <task id="LOCAL-00076" summary="Merge branch 'IV3' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;scripts/Home.js">
+      <created>1558709920696</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1558709920696</updated>
+    </task>
+    <task id="LOCAL-00077" summary="Merge branch 'IV3' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;scripts/Home.js">
+      <created>1560182269585</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1560182269585</updated>
+    </task>
+    <task id="LOCAL-00078" summary="Merge branch 'Yiyang' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
+      <created>1560182306444</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1560182306444</updated>
+    </task>
+    <task id="LOCAL-00079" summary="Merge branch 'Yiyang' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
+      <created>1562268491525</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1562268491526</updated>
+    </task>
+    <task id="LOCAL-00080" summary="Merge branch 'Yiyang' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
+      <created>1562270515905</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1562270515905</updated>
     </task>
     <task id="LOCAL-00081" summary="Merge branch 'Yiyang' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
       <created>1562334324166</created>
@@ -665,151 +793,25 @@
       <option name="project" value="LOCAL" />
       <updated>1563213128463</updated>
     </task>
-    <task id="LOCAL-00110" summary="Merge branch 'julia' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;routes/routes.js&#10;#&#9;views/PhoneAuthP1.ejs&#10;#&#9;views/PhoneAuthP2.ejs">
-      <created>1563214012494</created>
+    <task id="LOCAL-00110" summary="authentication">
+      <created>1563220593331</created>
       <option name="number" value="00110" />
       <option name="presentableId" value="LOCAL-00110" />
       <option name="project" value="LOCAL" />
-      <updated>1563214012494</updated>
+      <updated>1563220593331</updated>
     </task>
-    <task id="LOCAL-00111" summary="Merge branch 'julia' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
-      <created>1563216862381</created>
+    <task id="LOCAL-00111" summary="authentication simplified">
+      <created>1563287377335</created>
       <option name="number" value="00111" />
       <option name="presentableId" value="LOCAL-00111" />
       <option name="project" value="LOCAL" />
-      <updated>1563216862381</updated>
+      <updated>1563287377335</updated>
     </task>
-    <task id="LOCAL-00112" summary="Merge branch 'julia' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
-      <created>1563218827702</created>
-      <option name="number" value="00112" />
-      <option name="presentableId" value="LOCAL-00112" />
-      <option name="project" value="LOCAL" />
-      <updated>1563218827702</updated>
-    </task>
-    <task id="LOCAL-00113" summary="Merge branch 'julia' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
-      <created>1563218975439</created>
-      <option name="number" value="00113" />
-      <option name="presentableId" value="LOCAL-00113" />
-      <option name="project" value="LOCAL" />
-      <updated>1563218975440</updated>
-    </task>
-    <task id="LOCAL-00114" summary="Merge branch 'julia' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
-      <created>1563219594836</created>
-      <option name="number" value="00114" />
-      <option name="presentableId" value="LOCAL-00114" />
-      <option name="project" value="LOCAL" />
-      <updated>1563219594836</updated>
-    </task>
-    <task id="LOCAL-00115" summary="Merge branch 'julia' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
-      <created>1563219907208</created>
-      <option name="number" value="00115" />
-      <option name="presentableId" value="LOCAL-00115" />
-      <option name="project" value="LOCAL" />
-      <updated>1563219907208</updated>
-    </task>
-    <task id="LOCAL-00116" summary="Merge branch 'julia' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
-      <created>1563220284399</created>
-      <option name="number" value="00116" />
-      <option name="presentableId" value="LOCAL-00116" />
-      <option name="project" value="LOCAL" />
-      <updated>1563220284399</updated>
-    </task>
-    <task id="LOCAL-00117" summary="Merge branch 'julia' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
-      <created>1563283673082</created>
-      <option name="number" value="00117" />
-      <option name="presentableId" value="LOCAL-00117" />
-      <option name="project" value="LOCAL" />
-      <updated>1563283673083</updated>
-    </task>
-    <task id="LOCAL-00118" summary="Merge branch 'julia' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
-      <created>1563283724901</created>
-      <option name="number" value="00118" />
-      <option name="presentableId" value="LOCAL-00118" />
-      <option name="project" value="LOCAL" />
-      <updated>1563283724901</updated>
-    </task>
-    <task id="LOCAL-00119" summary="Merge branch 'julia' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
-      <created>1563284006647</created>
-      <option name="number" value="00119" />
-      <option name="presentableId" value="LOCAL-00119" />
-      <option name="project" value="LOCAL" />
-      <updated>1563284006647</updated>
-    </task>
-    <task id="LOCAL-00120" summary="Merge branch 'julia' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
-      <created>1563284431699</created>
-      <option name="number" value="00120" />
-      <option name="presentableId" value="LOCAL-00120" />
-      <option name="project" value="LOCAL" />
-      <updated>1563284431699</updated>
-    </task>
-    <task id="LOCAL-00121" summary="Merge branch 'julia' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
-      <created>1563284615575</created>
-      <option name="number" value="00121" />
-      <option name="presentableId" value="LOCAL-00121" />
-      <option name="project" value="LOCAL" />
-      <updated>1563284615575</updated>
-    </task>
-    <task id="LOCAL-00122" summary="Merge branch 'julia' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
-      <created>1563284794223</created>
-      <option name="number" value="00122" />
-      <option name="presentableId" value="LOCAL-00122" />
-      <option name="project" value="LOCAL" />
-      <updated>1563284794223</updated>
-    </task>
-    <task id="LOCAL-00123" summary="Merge branch 'julia' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
-      <created>1563285242317</created>
-      <option name="number" value="00123" />
-      <option name="presentableId" value="LOCAL-00123" />
-      <option name="project" value="LOCAL" />
-      <updated>1563285242317</updated>
-    </task>
-    <task id="LOCAL-00124" summary="Merge branch 'julia' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
-      <created>1563285329047</created>
-      <option name="number" value="00124" />
-      <option name="presentableId" value="LOCAL-00124" />
-      <option name="project" value="LOCAL" />
-      <updated>1563285329047</updated>
-    </task>
-    <task id="LOCAL-00125" summary="Merge branch 'julia' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
-      <created>1563285512092</created>
-      <option name="number" value="00125" />
-      <option name="presentableId" value="LOCAL-00125" />
-      <option name="project" value="LOCAL" />
-      <updated>1563285512092</updated>
-    </task>
-    <task id="LOCAL-00126" summary="Merge branch 'julia' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
-      <created>1563285702330</created>
-      <option name="number" value="00126" />
-      <option name="presentableId" value="LOCAL-00126" />
-      <option name="project" value="LOCAL" />
-      <updated>1563285702330</updated>
-    </task>
-    <task id="LOCAL-00127" summary="Merge branch 'julia' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
-      <created>1563286373249</created>
-      <option name="number" value="00127" />
-      <option name="presentableId" value="LOCAL-00127" />
-      <option name="project" value="LOCAL" />
-      <updated>1563286373250</updated>
-    </task>
-    <task id="LOCAL-00128" summary="Merge branch 'julia' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
-      <created>1563286949856</created>
-      <option name="number" value="00128" />
-      <option name="presentableId" value="LOCAL-00128" />
-      <option name="project" value="LOCAL" />
-      <updated>1563286949856</updated>
-    </task>
-    <task id="LOCAL-00129" summary="Merge branch 'julia' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
-      <created>1563287133224</created>
-      <option name="number" value="00129" />
-      <option name="presentableId" value="LOCAL-00129" />
-      <option name="project" value="LOCAL" />
-      <updated>1563287133224</updated>
-    </task>
-    <option name="localTasksCounter" value="130" />
+    <option name="localTasksCounter" value="112" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="359083000" />
+    <option name="totallyTimeSpent" value="354635000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -824,21 +826,21 @@
     <frame x="0" y="23" width="2560" height="1313" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2319811" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.121307604" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49837133" weight="0.32975206" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.91768414" visible="true" weight="0.33742833" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.3983471" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.91421765" visible="true" weight="0.33692947" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49960285" weight="0.39834026" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32975206" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
-      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49718222" weight="0.32923833" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49625838" weight="0.32841933" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.08231587" side_tool="true" weight="0.33742833" />
+      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49718222" weight="0.3294606" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.4960286" weight="0.32863072" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.085782364" side_tool="true" weight="0.33692947" />
       <window_info anchor="bottom" id="File Transfer" order="12" sideWeight="0.4989142" weight="0.3299748" />
       <window_info anchor="bottom" id="Database Console" order="13" weight="0.3299748" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -910,7 +912,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Merge branch 'Ian' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;scripts/MainMenu.js" />
     <MESSAGE value="V2.2" />
     <MESSAGE value="V2.2 WT_Placemark layer" />
     <MESSAGE value="V2.2 AutoMenu restructure" />
@@ -919,6 +920,7 @@
     <MESSAGE value="V2.2 Improve Globe Loading" />
     <MESSAGE value="Merge with Julia's Branch" />
     <MESSAGE value="Merge branch 'master' of https://github.com/Anson-Zhao/CitySmart22 into julia&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;config/geoCapacity/2019_5_2_11_46_2.xml&#10;#&#9;config/geoCapacity/2019_5_3_10_11_38.xml&#10;#&#9;config/geoCapacity/2019_5_3_12_38_12.xml&#10;#&#9;config/geoCapacity/2019_5_3_12_5_18.xml&#10;#&#9;config/geoCapacity/2019_5_3_13_5_18.xml&#10;#&#9;scripts/Home.js" />
+    <MESSAGE value="Merge branch 'julia' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
     <MESSAGE value="AutoMenu bugs fix" />
     <MESSAGE value="Merge branch 'Amy' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;routes/routes.js" />
     <MESSAGE value="V2.3" />
@@ -933,8 +935,9 @@
     <MESSAGE value="Merge branches 'Carrots' and 'julia' of https://github.com/Anson-Zhao/CitySmart22 into julia&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
     <MESSAGE value="Knowledge authentication complete" />
     <MESSAGE value="Merge branch 'julia' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;routes/routes.js&#10;#&#9;views/PhoneAuthP1.ejs&#10;#&#9;views/PhoneAuthP2.ejs" />
-    <MESSAGE value="Merge branch 'julia' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge branch 'julia' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
+    <MESSAGE value="authentication" />
+    <MESSAGE value="authentication simplified" />
+    <option name="LAST_COMMIT_MESSAGE" value="authentication simplified" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/scripts/CS_placemarkLayer.js">
@@ -1079,6 +1082,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/views/login.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="331">
+          <caret line="139" column="16" lean-forward="true" selection-start-line="139" selection-start-column="16" selection-end-line="139" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/views/dataHistory.ejs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="6165">
@@ -1100,20 +1110,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CS2_MainSvr.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="45" column="15" lean-forward="true" selection-start-line="45" selection-start-column="15" selection-end-line="45" selection-end-column="15" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/LayerRequestForm.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="449">
-          <caret line="409" column="51" lean-forward="true" selection-start-line="383" selection-start-column="4" selection-end-line="409" selection-end-column="51" />
+        <state relative-caret-position="301">
+          <caret line="575" column="16" selection-start-line="575" selection-start-column="16" selection-end-line="575" selection-end-column="16" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#a#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h3#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#0;n#div#0;n#div#1;n#fieldset#0;n#form#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#0;n#div#0;n#div#2;n#fieldset#0;n#form#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#3;n#fieldset#0;n#form#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#3;n#fieldset#0;n#form#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#4;n#fieldset#0;n#form#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#4;n#fieldset#0;n#form#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#0;n#div#5;n#fieldset#0;n#form#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#0;n#div#8;n#fieldset#0;n#form#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#9;n#fieldset#0;n#form#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#0;n#div#0;n#div#10;n#fieldset#0;n#form#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#11;n#fieldset#0;n#form#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#12;n#fieldset#0;n#form#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#0;n#div#13;n#fieldset#0;n#form#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1131,6 +1151,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/views/adduser.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="294">
+          <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/views/success.ejs">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -1142,38 +1169,82 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/userManagement.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2512">
-          <caret line="172" column="8" lean-forward="true" selection-start-line="172" selection-start-column="8" selection-end-line="172" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/userHome.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="537">
-          <caret line="167" column="27" lean-forward="true" selection-start-line="167" selection-start-column="27" selection-end-line="167" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/reset.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="750">
+        <state relative-caret-position="324">
           <caret line="52" column="49" selection-start-line="52" selection-start-column="49" selection-end-line="52" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/LayerRequestForm_edit.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="356">
-          <caret line="786" column="30" lean-forward="true" selection-start-line="786" selection-start-column="30" selection-end-line="786" selection-end-column="30" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/homepage.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="7" column="33" lean-forward="true" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
+        <state relative-caret-position="729">
+          <caret line="520" column="56" selection-start-line="520" selection-start-column="56" selection-end-line="520" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CS2_MainSvr.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="81">
+          <caret line="45" column="15" selection-start-line="45" selection-start-column="15" selection-end-line="45" selection-end-column="15" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/serverConfig.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="292">
+          <caret line="24" column="21" selection-start-line="24" selection-start-column="21" selection-end-line="24" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/signup.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="367">
+          <caret line="73" column="87" lean-forward="true" selection-start-line="73" selection-start-column="87" selection-end-line="73" selection-end-column="87" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/LayerRequestForm_edit.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="395">
+          <caret line="1012" column="22" selection-start-line="1012" selection-start-column="18" selection-end-line="1012" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/userHome.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="257">
+          <caret line="171" column="53" selection-start-line="171" selection-start-column="12" selection-end-line="171" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/KnowledgeAuth.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="56" selection-start-line="8" selection-start-column="56" selection-end-line="8" selection-end-column="56" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#div#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#a#0;n#div#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h1#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/2step.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="56" selection-start-line="7" selection-start-column="56" selection-end-line="7" selection-end-column="56" />
+          <folding>
+            <element signature="n#style#0;n#h1#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1191,79 +1262,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/serverConfig.js">
+    <entry file="file://$PROJECT_DIR$/views/userManagement.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="30" column="49" selection-start-line="30" selection-start-column="49" selection-end-line="30" selection-end-column="49" />
+        <state relative-caret-position="240">
+          <caret line="396" column="50" selection-start-line="396" selection-start-column="45" selection-end-line="396" selection-end-column="50" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/routes.js">
+    <entry file="file://$PROJECT_DIR$/views/PhoneAuthP2.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4395">
-          <caret line="293" column="60" lean-forward="true" selection-start-line="293" selection-start-column="60" selection-end-line="293" selection-end-column="60" />
+        <state relative-caret-position="-81">
+          <caret line="132" column="9" lean-forward="true" selection-start-line="132" selection-start-column="9" selection-end-line="132" selection-end-column="9" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/2step.ejs">
+    <entry file="file://$PROJECT_DIR$/views/EmailAuth.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="56" selection-start-line="7" selection-start-column="56" selection-end-line="7" selection-end-column="56" />
-          <folding>
-            <element signature="n#style#0;n#h1#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/adduser.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="34" lean-forward="true" selection-start-line="34" selection-end-line="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/KnowledgeAuth.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="56" selection-start-line="8" selection-start-column="56" selection-end-line="8" selection-end-column="56" />
+        <state relative-caret-position="375">
+          <caret line="26" column="28" lean-forward="true" selection-start-line="26" selection-start-column="28" selection-end-line="26" selection-end-column="28" />
           <folding>
             <element signature="n#style#0;n#div#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#a#0;n#div#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#0;n#a#0;n#div#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#h1#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#div#1;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#hr#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/signup.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="367">
-          <caret line="73" column="87" lean-forward="true" selection-start-line="73" selection-start-column="87" selection-end-line="73" selection-end-column="87" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/login.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
-          <caret line="139" column="16" lean-forward="true" selection-start-line="139" selection-start-column="16" selection-end-line="139" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/PhoneAuthP2.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="339">
-          <caret line="149" column="30" lean-forward="true" selection-start-line="149" selection-start-column="30" selection-end-line="149" selection-end-column="30" />
-          <folding>
-            <element signature="n#style#0;n#img#0;n#a#0;n#div#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#hr#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#p#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#p#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -1272,14 +1296,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/EmailAuth.ejs">
+    <entry file="file://$PROJECT_DIR$/routes/routes.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2010">
-          <caret line="134" column="41" lean-forward="true" selection-start-line="134" selection-start-column="41" selection-end-line="134" selection-end-column="41" />
-          <folding>
-            <element signature="n#style#0;n#div#1;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="4395">
+          <caret line="293" column="60" lean-forward="true" selection-start-line="293" selection-start-column="60" selection-end-line="293" selection-end-column="60" />
         </state>
       </provider>
     </entry>
