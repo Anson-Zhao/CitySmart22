@@ -420,6 +420,8 @@ module.exports = function (app, passport) {
             }
         });
 
+    });
+
     app.post('/pauth', function (req, res) {
         res.setHeader("Access-Control-Allow-Origin", "*");
 
