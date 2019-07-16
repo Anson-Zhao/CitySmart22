@@ -75,6 +75,7 @@
     let VCode = $('#VCode');
     let input = document.getElementById("VCode");
     let clicksdog = 0;
+    console.log(Phone_Number);
 
 
     $(document).ready(function() {
@@ -129,14 +130,22 @@
         }
     }
 
-    function SendCode() {
-        location.reload();
+    function SendCode () {
+        $.ajax({
+            type: "post",
+            url: "/pcode",
+            dataType: 'json',
+            data: Phone_Number,
+            success: function (result) {
+                console.log(result);
+            }
+
+        })
     }
 
     function thisFunction () {
         document.getElementById("duckiesRcute").hidden = false;
     }
-
     function myFunction(event) {
         event.returnValue = "Are you sure you want to leave this page? Your code will become invalid.";
     }

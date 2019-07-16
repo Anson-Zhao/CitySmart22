@@ -466,6 +466,7 @@ module.exports = function (app, passport) {
 
         console.log('password');
         console.log(password);
+        console.log(req.user.Phone_Number);
 
         text.sendText(result[0], " Your verification code:   " + password + "   will be valid for 3 minutes. Please enter the code into the provided field.", undefined, function(err) {
             if (err) {

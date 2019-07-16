@@ -57,6 +57,7 @@
     <form action="/pcode" method="post" id="PSendcode">
         <div class="form-group">
             <button type="submit" class="button" onclick="SendCode()">Send Verification Code</button>
+            <input type="text" name="Phone_Number" value="<%= Phone_Number %>" hidden>
         </div>
     </form>
     <hr style="margin-bottom: 10px;">
@@ -67,6 +68,7 @@
     let username = '<%= user.username %>';
     let userrole = '<%= user.userrole %>';
     let Phone_Number = '<%= Phone_Number %>';
+    console.log(Phone_Number);
 
 
     $(document).ready(function() {
@@ -93,7 +95,7 @@
         $.ajax({
             type: "post",
             url: "/pcode",
-            dataType: 'string',
+            dataType: 'json',
             data: Phone_Number,
             success: function (result) {
                 console.log(result);
