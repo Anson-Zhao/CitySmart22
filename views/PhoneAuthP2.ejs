@@ -97,7 +97,7 @@
 
     })
 
-    $(window).bind('beforeunload', SendCode);
+    $(window).on('beforeunload', SendCode);
 
 
     function submitForm () {
@@ -120,7 +120,7 @@
         } else if (VCode.val() === Code) {
             console.log("pass");
             window.removeEventListener("beforeunload", myFunction);
-            $(window).unbind('beforeunload', SendCode);
+            $(window).off('beforeunload', SendCode);
             $('#submitp').get(0).click();
             $.ajax({
                 type: "get",
