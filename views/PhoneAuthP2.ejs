@@ -110,18 +110,14 @@
             window.location.replace("/");
             alert("Login attempts exceeded!");
         } else {
-            window.onbeforeunload = function() {
-            return confirm("Are you sure you want to leave this page? Your code will become invalid.");
-        };
-            window.addEventListener("beforeunload", function(event) {
-                event.returnValue = "Are you sure you want to leave this page? Your code will become invalid.";
-            });
+            window.addEventListener("beforeunload", myFunction);
         }
 
         if (VCode.val() === "") {
             alert("Please make sure the code has been entered.");
         } else if (VCode.val() === Code) {
             console.log("pass");
+            window.removeEventListener("beforeunload", myFunction);
             $('#submitp').get(0).click();
             $.ajax({
                 type: "get",
