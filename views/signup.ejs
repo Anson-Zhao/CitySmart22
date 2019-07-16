@@ -174,9 +174,6 @@
 			<label>Status:</label>
 			<input type="text" id="status" class="form-control" name="status" value="Pending" readonly>
 		</div>
-		<br>
-		<div class="container" style="width: 500px;
-    padding: 0px;">
 		<div id="WreckitRalph" style="text-align: center;" hidden><input type="checkbox" onclick="Porsche ()"> Show Password</div>
 		<br>
 		<div class="container" style="width: 500px;padding: 0px;">
@@ -194,6 +191,8 @@
 	let Mulan = document.getElementById("Mulan");
 	let TheIncredibles = document.getElementById("TheIncredibles");
 	let WreckitRalph = document.getElementById("WreckitRalph");
+	let answer1 = document.getElementById("answer1");
+	let answer2 = document.getElementById("answer2");
 
 	BobtheBuilder.addEventListener("keydown", function(ebay) {
 
@@ -202,6 +201,34 @@
 		} else {}
 	});
 	BobtheBuilder.addEventListener("keyup", function(ebay) {
+
+		if (ebay.getModifierState("CapsLock")) {}
+		else {
+			TheIncredibles.hidden = true;
+		}
+	});
+
+	answer1.addEventListener("keydown", function(ebay) {
+
+		if (ebay.getModifierState("CapsLock")) {
+			TheIncredibles.hidden = false;
+		} else {}
+	});
+	answer1.addEventListener("keyup", function(ebay) {
+
+		if (ebay.getModifierState("CapsLock")) {}
+		else {
+			TheIncredibles.hidden = true;
+		}
+	});
+
+	answer2.addEventListener("keydown", function(ebay) {
+
+		if (ebay.getModifierState("CapsLock")) {
+			TheIncredibles.hidden = false;
+		} else {}
+	});
+	answer2.addEventListener("keyup", function(ebay) {
 
 		if (ebay.getModifierState("CapsLock")) {}
 		else {
@@ -263,7 +290,7 @@
 		WreckitRalph.hidden = false;
 	}
 
-	$(document).ready(function() {
+    $(document).ready(function() {
         $(function() {
             flatpickr(".date", {
                 enableTime: true,
@@ -276,12 +303,6 @@
             $('#signup').submit(function(e) {
                 console.log($("#signup").serialize());
 				console.log($('#signup'));
-				// let a1 = $('#answer1').val();
-				// a1 =
-						$('input[name=answer1]').replace("\'", "\\'");
-				// let a2 = $('#answer2').val();
-				// a2 =
-						$('input[name=answer2]').replace("\'", "\\'");
                 e.preventDefault();
                 $.ajax({
                     type: "post",
@@ -308,20 +329,6 @@
         let dateTime = date + ' ' + time2;
         document.getElementById("DATE").value = dateTime;
     });
-
-	$('select[name=question1]').on('change', function() {
-		var self = this;
-		$('select[name=question2]').find('option').prop('disabled', function() {
-			return this.value === self.value
-		});
-	});
-
-	$('select[name=question2]').on('change', function() {
-		var self = this;
-		$('select[name=question1]').find('option').prop('disabled', function() {
-			return this.value === self.value
-		});
-	});
 
 	function SearchUsername(value) {
 		$.ajax({
