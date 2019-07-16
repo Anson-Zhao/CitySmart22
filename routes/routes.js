@@ -19,8 +19,6 @@ const rateLimit = require("express-rate-limit");
 const text = require('textbelt');
 const generator = require('generate-password');
 
-const store = new ExpressBrute.MemoryStore(); // stores state locally, don't use this in production
-const bruteforce = new ExpressBrute(store);
 
 const geoServer = serverConfig.geoServer;
 const Download_From = serverConfig.Download_From;
@@ -298,7 +296,7 @@ module.exports = function (app, passport) {
     });
 
     // process the login form
-    app.post('/login', bruteforce.prevent, passport.authenticate('local-login', {
+    app.post('/login', passport.authenticate('local-login', {
             successRedirect: '/admindetector', // redirect to the secure profile section
             failureRedirect: '/login', // redirect to the login page if there is an error
             failureFlash: true // allow flash messages
@@ -1029,7 +1027,7 @@ module.exports = function (app, passport) {
         });
     });
 
-    app.post('/userProfile', bruteforce.prevent, isLoggedIn, function (req, res) {
+    app.post('/userProfile', isLoggedIn, function (req, res) {
         res.setHeader("Access-Control-Allow-Origin", "*"); // Allow cross domain header
 
         // new password (User Login)
@@ -1109,7 +1107,7 @@ module.exports = function (app, passport) {
     });
 
     // Update user profile page
-    app.post('/newPass', bruteforce.prevent, isLoggedIn, function (req, res) {
+    app.post('/newPass', isLoggedIn, function (req, res) {
         res.setHeader("Access-Control-Allow-Origin", "*"); // Allow cross domain header
         let user = req.user;
         let newPass = {
@@ -1174,7 +1172,7 @@ module.exports = function (app, passport) {
         });
     });
 
-    app.post('/signup', bruteforce.prevent, function (req, res) {
+    app.post('/signup', function (req, res) {
         res.setHeader("Access-Control-Allow-Origin", "*"); // Allow cross domain header
         // con_CS.query('USE ' + serverConfig.Login_db); // Locate Login DB
 
@@ -1219,7 +1217,7 @@ module.exports = function (app, passport) {
         });
     });
 
-    app.post('/addUser', bruteforce.prevent, isLoggedIn, function (req, res) {
+    app.post('/addUser', isLoggedIn, function (req, res) {
 
         res.setHeader("Access-Control-Allow-Origin", "*"); // Allow cross domain header
         // connection.query('USE ' + serverConfig.Login_db); // Locate Login DB
