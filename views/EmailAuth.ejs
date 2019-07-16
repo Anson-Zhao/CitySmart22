@@ -57,8 +57,9 @@
 
     <form method="post" id="esubmit" novalidate>
         <div class="form-group">
-            <input type="password" id="VCode" placeholder="Enter Code Here" class="form-control" name="code" style="height: 50px; margin-bottom: 20px;" required>
+            <input type="password" id="VCode" placeholder="Enter Code Here" class="form-control" name="code" style="height: 50px; margin-bottom: 20px;" onfocus ="thatFunction()" required>
         </div>
+        <div id="PusheenIScute" hidden style="text-align: center;"><input type="checkbox" onclick="ShowFunction()"> Show Code</div>
         <br>
         <button id="eauthSubmit" type="submit" class="button1" onclick="submitForm()"> Submit </button>
     </form>
@@ -139,7 +140,19 @@
             alert("Invalid code.");
         }
     }
-    //document.getElementById("eauthSubmit").disabled = false;
+
+    function thatFunction () {
+        document.getElementById("PusheenIScute").hidden = false;
+    }
+
+    function ShowFunction() {
+        let z = document.getElementById("VCode");
+        if (z.type === "password") {
+            z.type = "text";
+        } else {
+            z.type = "password";
+        }
+    }
 
     function onFunction() {
         alert ("You are now online.");
