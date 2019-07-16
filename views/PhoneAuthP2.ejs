@@ -113,6 +113,9 @@
             window.onbeforeunload = function() {
             return confirm("Are you sure you want to leave this page? Your code will become invalid.");
         };
+            window.addEventListener("beforeunload", function(event) {
+                event.returnValue = "Are you sure you want to leave this page? Your code will become invalid.";
+            });
         }
 
         if (VCode.val() === "") {
