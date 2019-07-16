@@ -105,15 +105,14 @@
         console.log(VCode.val());
         console.log(Code);
 
-
-
-        if (VCode.val() === "") {
-            if(clicksdog > 3 ) {
+        if(clicksdog > 3 ) {
             window.location.replace("/");
             alert("Login attempts exceeded!");
         } else {
             window.addEventListener("beforeunload", myFunction);
         }
+
+        if (VCode.val() === "") {
             alert("Please make sure the code has been entered.");
         } else if (VCode.val() === Code) {
             console.log("pass");
@@ -125,12 +124,6 @@
                 dataType: 'json'
             })
         } else {
-            if(clicksdog > 3 ) {
-                window.location.replace("/");
-                alert("Login attempts exceeded!");
-            } else {
-                window.addEventListener("beforeunload", myFunction);
-            }
             alert("Invalid code.");
 
         }
