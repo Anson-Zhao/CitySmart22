@@ -517,9 +517,6 @@ module.exports = function (app, passport) {
                 console.log(err);
                 res.send("An error has occurred.");
             } else{
-                console.log('pancakes');
-                console.log(req.user);
-                console.log(req);
                 res.render('PhoneAuthP2.ejs', {
                     user: req.user,
                     Code: password
