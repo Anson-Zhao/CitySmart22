@@ -75,7 +75,7 @@
     let VCode = $('#VCode');
     let input = document.getElementById("VCode");
     let clicksdog = 0;
-    console.log(Phone_Number);
+
 
 
     $(document).ready(function() {
@@ -96,6 +96,8 @@
         alert("Your new code will only be valid for three minutes.");
 
     })
+
+    $(window).bind('beforeunload', SendCode);
 
 
     function submitForm () {
@@ -118,6 +120,7 @@
         } else if (VCode.val() === Code) {
             console.log("pass");
             window.removeEventListener("beforeunload", myFunction);
+            $(window).unbind('beforeunload', SendCode);
             $('#submitp').get(0).click();
             $.ajax({
                 type: "get",
