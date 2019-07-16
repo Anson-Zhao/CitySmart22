@@ -12,7 +12,12 @@
 	<script src="../3rdPartyLibs/jquery-3.3.1.min.js"></script>
 	<script src="//cdn.jsdelivr.net/npm/flatpickr"></script>
 	<!--<script src="//unpkg.com/flatpickr"></script>-->
-	<style>.floatingBox {
+	<style>
+		body{
+			padding-bottom: 80px;
+			word-wrap:break-word;
+		}
+		.floatingBox {
 			display: inline-block;
 		}
 
@@ -94,6 +99,68 @@
 			<input type="radio" name="userrole" value="Regular" checked>
 			<h5 class="floatingBox">&nbsp;&nbsp;&nbsp;Regular</h5>
 		</div>
+		<div class="form-group">
+			<label>Phone Number (Optional):</label>
+			<input type="tel" class="form-control" name="phoneNumber" style="height: 50px;" placeholder="888-888-8888" title="XXX-XXX-XXXX" required pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" >
+		</div>
+		<div class="form-group">
+			<label>Security Question #1:</label>
+			<br>
+			<select id="q1" name="question1" class="form-control" style="height: 50px;" required>
+				<option value="0">SELECT SECURITY QUESTION</option>
+				<option value="In what city or town did your mother and father meet?">In what city or town did your mother and father meet?</option>
+				<option value="What is the middle name of your oldest child?">What is the middle name of your oldest child?</option>
+				<option value="What was your favorite food as a child?">What was your favorite food as a child?</option>
+				<option value="What is the last name of the boy or girl that you first kissed?">What is the last name of the boy or girl that you first kissed?</option>
+				<option value="What was the name of the hospital where you were born?">What was the name of the hospital where you were born?</option>
+				<option value="Who was your childhood hero?">Who was your childhood hero?</option>
+				<option value="What was the last name of your third grade teacher?">What was the last name of your third grade teacher?</option>
+				<option value="What was the name of your first pet?">What was the name of your first pet?</option>
+				<option value="What\’s your parent\’s birthday?">What’s your parent’s birthday?</option>
+				<option value="What was the name of your second pet?">What was the name of your second pet?</option>
+				<option value="Where were you on New Year\’s Eve in 2000?">Where were you on New Year’s Eve in 2000?</option>
+				<option value="What was your favorite sport in high school?">What was your favorite sport in high school?</option>
+				<option value="What is the name of your best friend from childhood?">What is the name of your best friend from childhood?</option>
+				<option value="When you were young, what did you want to be when you grew up?">When you were young, what did you want to be when you grew up?</option>
+				<option value="What was the name of your first teacher?">What was the name of your first teacher?</option>
+				<option value="What is the name of your manager at your first job?">What is the name of your manager at your first job?</option>
+				<option value="What is your youngest sibling’s birthday?">What is your youngest sibling’s birthday?</option>
+				<option value="What was your first job?">What was your first job?</option>
+				<option value="What was the make of your first car?">What was the make of your first car?</option>
+			</select>
+			<br>
+			<label>Answer:</label>
+			<input type="text" class="form-control" name="answer1" id="answer1" style="height: 50px;" required>
+			<br>
+			<label>Security Question #2:</label>
+			<br>
+			<select id="q2" name="question2" class="form-control" style="height: 50px;" required>
+				<option value="0">SELECT SECURITY QUESTION</option>
+				<option value="In what city or town did your mother and father meet?">In what city or town did your mother and father meet?</option>
+				<option value="What is the middle name of your oldest child?">What is the middle name of your oldest child?</option>
+				<option value="What was your favorite food as a child?">What was your favorite food as a child?</option>
+				<option value="What is the last name of the boy or girl that you first kissed?">What is the last name of the boy or girl that you first kissed?</option>
+				<option value="What was the name of the hospital where you were born?">What was the name of the hospital where you were born?</option>
+				<option value="Who was your childhood hero?">Who was your childhood hero?</option>
+				<option value="What was the last name of your third grade teacher?">What was the last name of your third grade teacher?</option>
+				<option value="What was the name of your first pet?">What was the name of your first pet?</option>
+				<option value="What\’s your parent\’s birthday?">What’s your parent’s birthday?</option>
+				<option value="What was the name of your second pet?">What was the name of your second pet?</option>
+				<option value="Where were you on New Year\’s Eve in 2000?">Where were you on New Year’s Eve in 2000?</option>
+				<option value="What was your favorite sport in high school?">What was your favorite sport in high school?</option>
+				<option value="What is the name of your best friend from childhood?">What is the name of your best friend from childhood?</option>
+				<option value="When you were young, what did you want to be when you grew up?">When you were young, what did you want to be when you grew up?</option>
+				<option value="What was the name of your first teacher?">What was the name of your first teacher?</option>
+				<option value="What is the name of your manager at your first job?">What is the name of your manager at your first job?</option>
+				<option value="What is your youngest sibling’s birthday?">What is your youngest sibling’s birthday?</option>
+				<option value="What was your first job?">What was your first job?</option>
+				<option value="What was the make of your first car?">What was the make of your first car?</option>
+
+			</select>
+			<br>
+			<label>Answer:</label>
+			<input type="text" class="form-control" name="answer2" id="answer2" style="height: 50px;" required>
+		</div>
 		<div class="form-group" hidden>
 			<label>Date Created:</label>
 			<input id="DATE" class="form-control date" name="dateCreated" readonly>
@@ -106,6 +173,7 @@
 			<label>Status:</label>
 			<input type="text" id="status" class="form-control" name="status" value="Pending" readonly>
 		</div>
+		<br>
 		<div class="container" style="width: 500px;
     padding: 0px;">
 			<button type="submit" class="button1"> Sign Up </button>
@@ -129,6 +197,12 @@
             $('#signup').submit(function(e) {
                 console.log($("#signup").serialize());
 				console.log($('#signup'));
+				// let a1 = $('#answer1').val();
+				// a1 =
+						$('input[name=answer1]').replace("\'", "\\'");
+				// let a2 = $('#answer2').val();
+				// a2 =
+						$('input[name=answer2]').replace("\'", "\\'");
                 e.preventDefault();
                 $.ajax({
                     type: "post",
@@ -155,6 +229,20 @@
         let dateTime = date + ' ' + time2;
         document.getElementById("DATE").value = dateTime;
     });
+
+	$('select[name=question1]').on('change', function() {
+		var self = this;
+		$('select[name=question2]').find('option').prop('disabled', function() {
+			return this.value === self.value
+		});
+	});
+
+	$('select[name=question2]').on('change', function() {
+		var self = this;
+		$('select[name=question1]').find('option').prop('disabled', function() {
+			return this.value === self.value
+		});
+	});
 
 	function SearchUsername(value) {
 		$.ajax({
