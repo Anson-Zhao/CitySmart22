@@ -136,6 +136,10 @@
         document.getElementById("duckiesRcute").hidden = false;
     }
 
+    function myFunction(event) {
+        event.returnValue = "Are you sure you want to leave this page? Your code will become invalid.";
+    }
+
     function ShowFunction() {
         let y = document.getElementById("VCode");
         if (y.type === "password") {
