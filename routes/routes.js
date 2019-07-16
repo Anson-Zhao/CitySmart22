@@ -525,7 +525,8 @@ module.exports = function (app, passport) {
                 console.log(req);
                 res.render('PhoneAuthP2.ejs', {
                     user: req.user,
-                    Code: BananaSplit
+                    Code: BananaSplit,
+                    Phone_Number: req.body.Phone_Number
                 });
             }
         });
@@ -2323,12 +2324,12 @@ module.exports = function (app, passport) {
         })
     });
 
-    app.get('/EditData', function (req, res) {
-        res.setHeader("Access-Control-Allow-Origin", "*");
-        con_CS.query("SELECT Full Name, Address Line 1, Address Line 2, City, State/Province/Region, Postal Code/ZIP, Country, Email, Phone Number, Layer Name, Layer Category, Layer Description, Layer Uploader FROM GeneralFormDatatable", function (err, results) {
-            if (err) throw err;
-        })
-    });
+    // app.get('/EditData', function (req, res) {
+    //     res.setHeader("Access-Control-Allow-Origin", "*");
+    //     con_CS.query("SELECT Full Name, Address Line 1, Address Line 2, City, State/Province/Region, Postal Code/ZIP, Country, Email, Phone Number, Layer Name, Layer Category, Layer Description, Layer Uploader FROM GeneralFormDatatable", function (err, results) {
+    //         if (err) throw err;
+    //     })
+    // });
 
     app.get('/SearchLayerName', function (req, res) {
         res.setHeader("Access-Control-Allow-Origin", "*");

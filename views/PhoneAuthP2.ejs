@@ -53,16 +53,14 @@
     <h1 style="margin-top: 30px;"><span class="fa fa-list"></span>  Phone Authentication</h1>
     <!-- show any messages that come back with authentication -->
     <p id="falldown">In order to continue, enter the code consisting of letters, numbers, and symbols sent to your phone. <br>Then click <strong>Submit</strong>.</p>
-
-    <form method="post" id="Psubmit" novalidate>
-        <div class="form-group">
-            <input type="password" id="VCode" placeholder="Enter Code Here" class="form-control" name="code" style="height: 50px; margin-bottom: 20px;" required>
-        </div>
+    <div class="form-group">
+        <input type="password" id="VCode" placeholder="Enter Code Here" class="form-control" name="code" style="height: 50px; margin-bottom: 20px;" required>
+    </div>
     <br>
-    <button id="pauthSubmit" type="submit" class="button1" onclick="submitForm()"> Submit </button>
-    </form>
+    <button id="pauthSubmit" type="submit" class="button1" onclick="submitForm()"><a href="/userhome" id="submitp" hidden></a> Submit </button>
+
     <hr style="margin-bottom: 10px;">
-    <p style="text-align: center;"> <a href="/pauth">Didn't receive the code? Send another one.</a></p>
+    <p style="text-align: center;"> <a onclick="SendCode()">Didn't receive the code? Send another one.</a></p>
     <p style="text-align: center;">or</p>
     <p style="text-align: center;"> <a href="/admindetector">Try Another Way</a></p>
 </div>
@@ -70,10 +68,12 @@
 <script>
     let username = '<%= user.username %>';
     let userrole = '<%= user.userrole %>';
+    let Phone_Number = '<%= Phone_Number %>';
     let Code = '<%= Code %>';
     let VCode = $('#VCode');
 
 
+    console.log(Phone_Number);
     $(document).ready(function() {
 
 
@@ -84,11 +84,7 @@
         // document.getElementById("DATE").value = dateTime;
 
         console.log(Code);
-
-
     })
-
-
 
     function submitForm () {
         // console.log($("#ksub").serialize());
@@ -100,26 +96,20 @@
             alert("Please make sure the code has been entered.");
         } else if (VCode.val() === Code) {
             console.log("pass");
-
-            document.getElementById("Psubmit").setAttribute("action","/psubmit");
-
+            $('#submitp').get(0).click();
             $.ajax({
-                type: "post",
-                url: "/psubmit",
-                dataType: 'json',
-                data: $("#Psubmit").serialize(),
-                success: function (result) {
-                    console.log(result);
-                    alert("Success!");
-                },
-                beforeSend: function () {
-                    document.getElementById("Psubmit").setAttribute("action","/psubmit");
-                }
+                type: "get",
+                url: "/loginUpdate",
+                dataType: 'json'
             })
         } else {
             alert("Invalid code.");
 
         }
+    }
+
+    function SendCode() {
+        location.reload();
     }
     //document.getElementById("pauthSubmit").disabled = false;
 

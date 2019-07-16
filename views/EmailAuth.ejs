@@ -53,16 +53,13 @@
     <h1 style="margin-top: 30px;"><span class="fa fa-list"></span>  Email Authentication</h1>
     <!-- show any messages that come back with authentication -->
     <p id="falldown">In order to continue, enter the code consisting of letters, numbers, and symbols sent to your email. <br>Then click <strong>Submit</strong>.</p>
-
-    <form method="post" id="esubmit" novalidate>
-        <div class="form-group">
-            <input type="password" id="VCode" placeholder="Enter Code Here" class="form-control" name="code" style="height: 50px; margin-bottom: 20px;" required>
-        </div>
-        <br>
-        <button id="eauthSubmit" type="submit" class="button1" onclick="submitForm()"> Submit </button>
-    </form>
+    <div class="form-group">
+        <input type="password" id="VCode" placeholder="Enter Code Here" class="form-control" name="code" style="height: 50px; margin-bottom: 20px;" required>
+    </div>
+    <br>
+    <button id="eauthSubmit" type="submit" class="button1" onclick="submitForm()"><a href="/userhome" id="submite" hidden></a> Submit </button>
     <hr style="margin-bottom: 10px;">
-    <p style="text-align: center;"> <a href="/eauth">Didn't receive the code? Send another one.</a></p>
+    <p style="text-align: center;"> <a onclick="SendCode()">Didn't receive the code? Send another one.</a></p>
     <p style="text-align: center;">or</p>
     <p style="text-align: center;"> <a href="/admindetector">Try Another Way</a></p>
 </div>
@@ -100,28 +97,20 @@
             alert("Please make sure the code has been entered.");
         } else if (VCode.val() === Code) {
             console.log("pass");
-
-            document.getElementById("esubmit").setAttribute("action","/esubmit");
-
+            $('#submite').get(0).click();
             $.ajax({
-                type: "post",
-                url: "/esubmit",
-                dataType: 'json',
-                data: $("#esubmit").serialize(),
-                success: function (result) {
-                    console.log(result);
-                },
-                beforeSend: function () {
-                    document.getElementById("esubmit").setAttribute("action","/esubmit");
-                }
+                type: "get",
+                url: "/loginUpdate",
+                dataType: 'json'
             })
         } else {
             alert("Invalid code.");
 
         }
     }
-    //document.getElementById("eauthSubmit").disabled = false;
-
+    function SendCode() {
+        location.reload();
+    }
     function onFunction() {
         alert ("You are now online.");
     }
