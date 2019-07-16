@@ -52,7 +52,7 @@
 <div class="container" style="width: 500px; padding: 0;">
     <h1 style="margin-top: 30px;"><span class="fa fa-list"></span>  Phone Authentication</h1>
     <!-- show any messages that come back with authentication -->
-    <p id="falldown">CIn order to continue, click the <i>Send Verification Code</i> button. Your code will be valid for three minutes.</p>
+    <p id="falldown">In order to continue, click the <i>Send Verification Code</i> button. Your code will be valid for three minutes.</p>
     <form action="/pcode" method="post" id="PSendcode">
         <div class="form-group">
             <button type="submit" class="button" onclick="SendCode()">Send Verification Code</button>
@@ -96,8 +96,6 @@
             data: Phone_Number,
             success: function (result) {
                 console.log(result);
-                alert('Your code has been successfully sent! Please enter the code into the box below.');
-                alert("Your code will only be valid for three minutes.");
             }
 
         })
