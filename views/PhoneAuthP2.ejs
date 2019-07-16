@@ -94,6 +94,9 @@
     })
 
 
+    window.onbeforeunload = function() {
+        return "Are you sure you want to leave this page? Your code will be invalid.";
+    };
 
     function submitForm (e) {
         // console.log($("#ksub").serialize());
