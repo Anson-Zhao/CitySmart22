@@ -176,7 +176,7 @@
 		</div>
 		<div id="WreckitRalph" style="text-align: center;" hidden><input type="checkbox" onclick="Porsche ()"> Show Password</div>
 		<br>
-		<div class="container" style="width: 500px;padding: 0px;">
+		<div class="container" style="width: 500px; padding: 0px;">
 			<button type="submit" class="button1"> Sign Up </button>
 		</div>
 	</form>
@@ -303,6 +303,12 @@
             $('#signup').submit(function(e) {
                 console.log($("#signup").serialize());
 				console.log($('#signup'));
+				// let a1 = $('#answer1').val();
+				// a1 =
+						$('input[name=answer1]').replace("\'", "\\'");
+				// let a2 = $('#answer2').val();
+				// a2 =
+						$('input[name=answer2]').replace("\'", "\\'");
                 e.preventDefault();
                 $.ajax({
                     type: "post",
@@ -329,6 +335,20 @@
         let dateTime = date + ' ' + time2;
         document.getElementById("DATE").value = dateTime;
     });
+
+	$('select[name=question1]').on('change', function() {
+		var self = this;
+		$('select[name=question2]').find('option').prop('disabled', function() {
+			return this.value === self.value
+		});
+	});
+
+	$('select[name=question2]').on('change', function() {
+		var self = this;
+		$('select[name=question1]').find('option').prop('disabled', function() {
+			return this.value === self.value
+		});
+	});
 
 	function SearchUsername(value) {
 		$.ajax({
