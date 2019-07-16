@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3b2ba209-e08e-4f77-99ae-d893522cce16" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/routes/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/routes.js" afterDir="false" />
-    </list>
+    <list default="true" id="3b2ba209-e08e-4f77-99ae-d893522cce16" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -142,8 +140,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/routes/routes.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-692">
-              <caret line="443" column="7" selection-start-line="443" selection-start-column="7" selection-end-line="443" selection-end-column="7" />
+            <state relative-caret-position="125">
+              <caret line="449" lean-forward="true" selection-start-line="449" selection-end-line="449" />
             </state>
           </provider>
         </entry>
@@ -489,20 +487,6 @@
       <workItem from="1562872281631" duration="17170000" />
       <workItem from="1563201479070" duration="10165000" />
     </task>
-    <task id="LOCAL-00063" summary="V2.3">
-      <created>1557503096135</created>
-      <option name="number" value="00063" />
-      <option name="presentableId" value="LOCAL-00063" />
-      <option name="project" value="LOCAL" />
-      <updated>1557503096135</updated>
-    </task>
-    <task id="LOCAL-00064" summary="Merge branch 'Amy' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;config/geoCapacity/2019_5_10_11_25_32.xml&#10;#&#9;config/mainconf.js&#10;#&#9;routes/routes.js">
-      <created>1557503693948</created>
-      <option name="number" value="00064" />
-      <option name="presentableId" value="LOCAL-00064" />
-      <option name="project" value="LOCAL" />
-      <updated>1557503693948</updated>
-    </task>
     <task id="LOCAL-00065" summary="Merge branch 'Amy' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;config/geoCapacity/2019_5_10_11_25_32.xml&#10;#&#9;config/mainconf.js&#10;#&#9;routes/routes.js">
       <created>1557504897103</created>
       <option name="number" value="00065" />
@@ -832,11 +816,25 @@
       <option name="project" value="LOCAL" />
       <updated>1563287377335</updated>
     </task>
-    <option name="localTasksCounter" value="112" />
+    <task id="LOCAL-00112" summary="authentication simplified">
+      <created>1563287446095</created>
+      <option name="number" value="00112" />
+      <option name="presentableId" value="LOCAL-00112" />
+      <option name="project" value="LOCAL" />
+      <updated>1563287446095</updated>
+    </task>
+    <task id="LOCAL-00113" summary="fixed red line">
+      <created>1563287497919</created>
+      <option name="number" value="00113" />
+      <option name="presentableId" value="LOCAL-00113" />
+      <option name="project" value="LOCAL" />
+      <updated>1563287497919</updated>
+    </task>
+    <option name="localTasksCounter" value="114" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="354626000" />
+    <option name="totallyTimeSpent" value="355126000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -849,7 +847,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-3" y="23" width="2560" height="1297" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.085782364" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -937,7 +934,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="V2.2" />
     <MESSAGE value="V2.2 WT_Placemark layer" />
     <MESSAGE value="V2.2 AutoMenu restructure" />
     <MESSAGE value="V2.2 WT_Placemark" />
@@ -962,7 +958,8 @@
     <MESSAGE value="Merge branch 'julia' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;routes/routes.js&#10;#&#9;views/PhoneAuthP1.ejs&#10;#&#9;views/PhoneAuthP2.ejs" />
     <MESSAGE value="authentication" />
     <MESSAGE value="authentication simplified" />
-    <option name="LAST_COMMIT_MESSAGE" value="authentication simplified" />
+    <MESSAGE value="fixed red line" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed red line" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/scripts/CS_placemarkLayer.js">
@@ -1336,8 +1333,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/routes.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-692">
-          <caret line="443" column="7" selection-start-line="443" selection-start-column="7" selection-end-line="443" selection-end-column="7" />
+        <state relative-caret-position="125">
+          <caret line="449" lean-forward="true" selection-start-line="449" selection-end-line="449" />
         </state>
       </provider>
     </entry>
