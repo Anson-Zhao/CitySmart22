@@ -83,6 +83,8 @@
     let a1 = "<%= answer1%>";
     let a2 = "<%= answer2%>";
     let clicksfish = 0;
+    let input1 = document.getElementById("firstAnswer");
+    let input2 = document.getElementById("secondAnswer");
 
     $(document).ready(function() {
 
@@ -108,6 +110,7 @@
         // console.log($("#ksub").serialize());
         console.log("this");
         clicksfish++;
+
 
         if(clicksfish > 3) {
             window.location.replace("/");
@@ -137,6 +140,21 @@
         }
 
     }
+
+    input1.addEventListener("keyup", function(event) {
+        if (event.keyCode === 13) {
+            event.preventDefault();
+            submitForm();
+        }
+    });
+
+    input2.addEventListener("keyup", function(event) {
+        if (event.keyCode === 13) {
+            event.preventDefault();
+            submitForm();
+        }
+    });
+
     function onFunction() {
         alert ("You are now online.");
     }

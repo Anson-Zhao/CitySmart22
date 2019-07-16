@@ -55,7 +55,7 @@
     <!-- show any messages that come back with authentication -->
     <p id="falldown">In order to continue, enter the code consisting of letters, numbers, and symbols sent to your phone. <br>Then click <strong>Submit</strong>.</p>
     <div class="form-group">
-        <input type="password" id="VCode" placeholder="Enter Code Here" class="form-control" name="code" style="height: 50px; margin-bottom: 20px;" required>
+        <input type="password" id="VCode" placeholder="Enter Code Here" class="form-control" name="code" style="height: 50px; margin-bottom: 20px;" onfocus="thisFunction()" required>
     </div>
     <div id="duckiesRcute" hidden style="text-align: center;"><input type="checkbox" onclick="ShowFunction()"> Show Code</div>
     <br>
@@ -73,6 +73,7 @@
     let Phone_Number = '<%= Phone_Number %>';
     let Code = '<%= Code %>';
     let VCode = $('#VCode');
+    let input = document.getElementById("VCode");
     let clicksdog = 0;
 
 
@@ -148,6 +149,13 @@
             y.type = "password";
         }
     }
+
+    input.addEventListener("keyup", function(event) {
+        if (event.keyCode === 13) {
+            event.preventDefault();
+            submitForm();
+        }
+    });
 
     function onFunction() {
         alert ("You are now online.");
