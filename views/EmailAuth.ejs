@@ -71,6 +71,7 @@
     let userrole = '<%= user.userrole %>';
     let Code = '<%= Code %>';
     let VCode = $('#VCode');
+    let input = document.getElementById("VCode");
     let clickscat = 0;
 
 
@@ -93,12 +94,12 @@
 
 
 
-    function submitForm (e) {
+    function submitForm () {
         // console.log($("#ksub").serialize());
         console.log("this");
         console.log(VCode.val());
         console.log(Code);
-        e.preventDefault();
+
 
         clickscat++;
 
@@ -144,6 +145,14 @@
     function SendCode() {
         location.reload();
     }
+
+    input.addEventListener("keyup", function(event) {
+        if (event.keyCode === 13) {
+            event.preventDefault();
+            submitForm();
+        }
+    });
+
     function onFunction() {
         alert ("You are now online.");
     }

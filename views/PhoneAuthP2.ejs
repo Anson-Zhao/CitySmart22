@@ -73,6 +73,7 @@
     let Phone_Number = '<%= Phone_Number %>';
     let Code = '<%= Code %>';
     let VCode = $('#VCode');
+    let input = document.getElementById("VCode");
     let clicksdog = 0;
 
 
@@ -96,10 +97,10 @@
     })
 
 
-    function submitForm (e) {
+    function submitForm () {
         // console.log($("#ksub").serialize());
         console.log("this");
-        e.preventDefault();
+
 
         clicksdog++;
         console.log(VCode.val());
@@ -149,6 +150,13 @@
             y.type = "password";
         }
     }
+
+    input.addEventListener("keyup", function(event) {
+        if (event.keyCode === 13) {
+            event.preventDefault();
+            submitForm();
+        }
+    });
 
     function onFunction() {
         alert ("You are now online.");
