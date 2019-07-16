@@ -1141,14 +1141,19 @@ module.exports = function (app, passport) {
             lastName: req.body.lastName,
             password: bcrypt.hashSync(req.body.password, null, null),  // use the generateHash function
             userrole: req.body.userrole,
+            phoneNumber: req.body.phoneNumber,
+            question1: req.body.question1,
+            question2: req.body.question2,
+            answer1: req.body.answer1,
+            answer2: req.body.answer2,
             dateCreated: req.body.dateCreated,
             createdUser: req.body.createdUser,
             dateModified: req.body.dateCreated,
             status: req.body.status
         };
 
-        myStat = "INSERT INTO UserLogin ( username, password, userrole, dateCreated, dateModified, createdUser, status) VALUES ( '" + newUser.username + "','" + newUser.password+ "','" + newUser.userrole+ "','" + newUser.dateCreated+ "','" + newUser.dateModified+ "','" + newUser.createdUser + "','" + newUser.status + "');";
-        mylogin = "INSERT INTO UserProfile ( username, firstName, lastName) VALUES ('"+ newUser.username + "','" + newUser.firstName+ "','" + newUser.lastName + "');";
+        myStat = "INSERT INTO UserLogin ( username, password, userrole, question1, question2, answer1, answer2, dateCreated, dateModified, createdUser, status) VALUES ( '" + newUser.username + "','" + newUser.password+ "','" + newUser.userrole+ "','" + newUser.question1+ "','" + newUser.question2+ "','" + newUser.answer1+ "','" + newUser.answer2+ "','" + newUser.dateCreated+ "','" + newUser.dateModified+ "','" + newUser.createdUser + "','" + newUser.status + "');";
+        mylogin = "INSERT INTO UserProfile ( username, firstName, lastName, Phone_Number) VALUES ('"+ newUser.username + "','" + newUser.firstName+ "','" + newUser.lastName + "','" + newUser.phoneNumber + "');";
         console.log("mystat");
         console.log(myStat);
         console.log(mylogin);
@@ -1163,6 +1168,16 @@ module.exports = function (app, passport) {
                 let text = 'to sign up an account with this email.';
                 let url = "http://" + req.headers.host + "/verify/";
                 sendToken(username, subject, text, url, res);
+                let newStat = "UPDATE UserProfile SET Phone_Number = replace(Phone_Number, '-', '');";
+                con_CS.query(newStat, function (err, rows) {
+                    if (err) {
+                        console.log(err);
+                        res.json({"error": true, "message": "An unexpected error occurred!"});
+                    } else {
+                        console.log("donezo");
+                    }
+
+                });
             }
         });
     });
