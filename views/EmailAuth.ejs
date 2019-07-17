@@ -105,6 +105,7 @@
 
         if(clickscat > 3) {
             window.location.replace("/");
+            window.removeEventListener("beforeunload", myFunction);
             alert("Login attempts exceeded!");
         } else {
 

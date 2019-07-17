@@ -108,6 +108,7 @@
         console.log(Code);
 
         if(clicksdog > 3 ) {
+            window.removeEventListener("beforeunload", myFunction);
             window.location.replace("/");
             alert("Login attempts exceeded!");
         } else {
