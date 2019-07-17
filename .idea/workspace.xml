@@ -6810,8 +6810,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/signup.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="209" column="77" selection-start-line="209" selection-start-column="77" selection-end-line="209" selection-end-column="77" />
+            <state relative-caret-position="243">
+              <caret line="194" column="35" lean-forward="true" selection-start-line="194" selection-start-column="35" selection-end-line="194" selection-end-column="35" />
               <folding>
                 <element signature="e#6173#6198#0#HTML" />
               </folding>
@@ -7173,13 +7173,6 @@
       <workItem from="1562872281631" duration="17170000" />
       <workItem from="1563201479070" duration="10165000" />
     </task>
-    <task id="LOCAL-00072" summary="Merge branch 'IV3' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
-      <created>1557952038034</created>
-      <option name="number" value="00072" />
-      <option name="presentableId" value="LOCAL-00072" />
-      <option name="project" value="LOCAL" />
-      <updated>1557952038034</updated>
-    </task>
     <task id="LOCAL-00073" summary="Merge branch 'IanNew' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;scripts/USGS_MD.js">
       <created>1557952206936</created>
       <option name="number" value="00073" />
@@ -7516,11 +7509,18 @@
       <option name="project" value="LOCAL" />
       <updated>1563304777835</updated>
     </task>
-    <option name="localTasksCounter" value="121" />
+    <task id="LOCAL-00121" summary="sign up fix">
+      <created>1563368502520</created>
+      <option name="number" value="00121" />
+      <option name="presentableId" value="LOCAL-00121" />
+      <option name="project" value="LOCAL" />
+      <updated>1563368502520</updated>
+    </task>
+    <option name="localTasksCounter" value="122" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="375563000" />
+    <option name="totallyTimeSpent" value="375778000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -7555,7 +7555,7 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Database" order="3" weight="0.7286296" />
-      <window_info anchor="right" id="Remote Host" order="4" visible="true" weight="0.2839555" />
+      <window_info active="true" anchor="right" id="Remote Host" order="4" visible="true" weight="0.2839555" />
     </layout>
     <layout-to-restore>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23231058" />
@@ -7620,7 +7620,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="V2.2 WT_Placemark" />
     <MESSAGE value="V2.2 Home.js" />
     <MESSAGE value="V2.2 Improve Globe Loading" />
     <MESSAGE value="Merge with Julia's Branch" />
@@ -7645,7 +7644,8 @@
     <MESSAGE value="Merge branch 'julia' of https://github.com/Anson-Zhao/CitySmart22 into Carrots&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;views/EmailAuth.ejs&#10;#&#9;views/KnowledgeAuth.ejs&#10;#&#9;views/PhoneAuthP2.ejs" />
     <MESSAGE value="Merge branch 'Carrots' of https://github.com/Anson-Zhao/CitySmart22 into julia&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
     <MESSAGE value="new signup" />
-    <option name="LAST_COMMIT_MESSAGE" value="new signup" />
+    <MESSAGE value="sign up fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="sign up fix" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/scripts/LayerNameSearch.js">
@@ -8006,8 +8006,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/signup.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="209" column="77" selection-start-line="209" selection-start-column="77" selection-end-line="209" selection-end-column="77" />
+        <state relative-caret-position="243">
+          <caret line="194" column="35" lean-forward="true" selection-start-line="194" selection-start-column="35" selection-end-line="194" selection-end-column="35" />
           <folding>
             <element signature="e#6173#6198#0#HTML" />
           </folding>
