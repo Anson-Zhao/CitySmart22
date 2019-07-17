@@ -299,7 +299,7 @@ module.exports = function (app, passport) {
 
     // process the login form
     app.post('/login', bruteforce.prevent, passport.authenticate('local-login', {
-            successRedirect: '/admindetector', // redirect to the secure profile section
+            successRedirect: '/authentication', // redirect to the secure profile section
             failureRedirect: '/login', // redirect to the login page if there is an error
             failureFlash: true // allow flash messages
         }),
@@ -313,17 +313,14 @@ module.exports = function (app, passport) {
 
 
     // //Detects if user is admin
-    app.get('/admindetector', function (req, res) {
+    app.get('/authentication', function (req, res) {
         dateNtime();
-        if (req.user.userrole === "Admin" || req.userrole === "Admin") {
-            res.render('2step.ejs',{
-                user:req.user,
-                userrole: req.user.userrole,
-                username: req.user.username
-            });
-        } else {
-            res.redirect('/loginUpdate');
-        }
+
+        res.render('2step.ejs',{
+            user:req.user,
+            userrole: req.user.userrole,
+            username: req.user.username
+        });
     });
 
     // Update user login status
