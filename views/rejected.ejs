@@ -1,8 +1,8 @@
-<!-- views/user_home.ejs -->
+<!-- views/rejected.ejs -->
 <!doctype html>
 <html>
 <head>
-    <title>CitySmart - User Home</title>
+    <title>CitySmart - Rejected Request(s)</title>
     <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -151,6 +151,9 @@
     <a href="/homepageLI" style="width:110px;">
         <button class="navbutton1"> Homepage </button>
     </a>
+    <a href="/userHome" style="width:110px;">
+        <button class="navbutton1" style="width: 160px"> User Home </button>
+    </a>
     <a href="/newRequest" id= "Request" style="width:110px;">
         <button class="navbutton1" style="width: 140px"> New Request </button>
     </a>
@@ -159,9 +162,6 @@
     </a>
     <a href="/dataHistory" style="width:110px;">
         <button class="navbutton1" style="width: 160px"> Approved Requests </button>
-    </a>
-    <a href="/rejected" style="width:110px;">
-        <button class="navbutton1" style="width: 160px"> Rejected Requests </button>
     </a>
     <div class="dropdown" style="height: 80px; width: 200px; float: right; margin: 0;">
         <button onclick="dropDown()" class="dropbutton" id="Username">
@@ -183,7 +183,7 @@
 
 <div class="container center">
     <div class="page-header text-center header">
-        <h1><span class="fa fa-home"></span><strong> CitySmart - User Home </strong></h1><h4><span class="fa fa-user"></span>
+        <h1><span class="fa fa-home"></span><strong> CitySmart - Rejected Request(s)</strong></h1><h4><span class="fa fa-user"></span>
             <strong>Account Name</strong>: <%= user.username %></h4><br>
     </div>
 </div>
@@ -243,7 +243,7 @@
     </div>
     <br>
     <div class="center" style="width: 850px;">
-        <h4 id="subtitles"><strong>Most Recent Pending Records </strong></h4>
+        <h4 id="subtitles"><strong>Most Recent Rejected Records </strong></h4>
         <h5>Continent Key</h5>
         <p>SA: South America <br> NA: North America <br> OC: Oceania <br> EU: Europe <br> AS: Asia <br> AF: Africa <br> AN: Antarctica</p>
         <div id="dvData">
@@ -315,7 +315,7 @@
 
     $(document).ready(function() {
 
-        $(function () {
+        $(function() {
 
             flatpickr(".date", {
                 dateFormat: "Y-m-d",
@@ -326,14 +326,14 @@
             table.draw();
 
             if (UserRole === "Regular") {
-                document.getElementById('searchname').style.display = "none"; //disables username search for regular members
-                queryStr = "Current_Status=Pending&UID=" + username;
+                document.getElementById('searchname').disabled = true;
+                document.getElementById('searchname').style.display = "none";//disables username search for regular members
+                queryStr = "Current_Status=Rejected&UID=" + username;
             } else {
-                queryStr = "Current_Status=Pending";
+                queryStr = "Current_Status=Rejected";
             }
             console.log(queryStr);
             queryAndDisplay(queryStr);
-
             //the console below refers to the above as querystr
             // just for the Pending table
             //By changing this we allow the initial table to only show pending records
@@ -341,7 +341,7 @@
 
         });
 
-        $('#dataDisplay tbody').on('click', 'tr', function () {
+        $('#dataDisplay tbody').on('click', 'tr', function() {
             transactionID = [];
             picPath = [];
             $(this).toggleClass('selected');    //toggle class for the rows selected
@@ -350,7 +350,7 @@
 
             rowSelected = table.rows('.selected').data();    //Store all the data for selected rows'
 
-            // $('#dataDisplay > thead > tr > th').each(function () {
+            // $('#dataDisplay > thead > tr > th').each(function() {
             //     thArray.push($(this).text())
             // })
 
@@ -362,7 +362,7 @@
             }
         });
 
-        $("#editButton").on("click", function () {
+        $("#editButton").on("click", function() {
             // console.log(transactionID);
             if (transactionID.length >= 2) {
                 confirm("Please make sure to only select ONE entry to edit.")
@@ -378,7 +378,7 @@
             console.log(rowSelectedValue = table.rows('.selected').data());
         });
 
-        $("#deleteButton").on("click", function () {
+        $("#deleteButton").on("click", function() {
             if (confirm("Are you sure you would like to trashfolder the row(s) you selected?") === true) {
                 // console.log(transactionID); //provides the associated values of the element(record) in the array
 
@@ -405,7 +405,7 @@
             }
         });
 
-        $("#showButton").on("click", function () {
+        $("#showButton").on("click", function() {
             let qStr;
             table.clear();
             table.draw();
@@ -457,14 +457,12 @@
         let endDate = document.getElementsByClassName("date")[1].value;
 
         queryStr = "firstName=" + firstName + "&lastName=" + lastName + "&startDate=" + startDate + "&endDate=" + endDate;
-        queryStr2 = "firstName=" + firstName + "&lastName=" + lastName + "&startDate=" + startDate + "&endDate=" + endDate;
 //This queryStr is for the admin's filtering options, that's why you need first and last names
         table.clear();
         table.draw();
         // trapTable.clear();
         // trapTable.draw();
         queryAndDisplay(queryStr);
-        queryAndDisplay(queryStr2);
     }
 
     let queryAndDisplay = function (query) {
@@ -477,7 +475,7 @@
             success: function (results) {
                 console.log(results);
                 if (results.errMsg === "no data") {
-                    alert("You currently have no pending data entries!");//this right here will let users know that they currently have no pending records;
+                    alert("You currently have no rejected data entries!");//this right here will let users know that they currently have no pending records;
                     //clarifies that it is not an error
                     table.draw();
                 } else if (results.errMsg === "fail") {
@@ -519,11 +517,11 @@
     }
 
     function onFunction() {
-        alert ("You are now online.");
+        alert("You are now online.");
     }
 
     function offFunction() {
-        alert ("Your are offline. Some functionality may be unavailable.");
+        alert("Your are offline. Some functionality may be unavailable.");
     }
 
 </script>

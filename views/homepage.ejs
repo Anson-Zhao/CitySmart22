@@ -134,7 +134,7 @@
             }
         }
 
-        .egg {
+        .highlight {
             border: 1px solid blue;
         }
 
@@ -169,11 +169,11 @@
             font-weight: bold;
         }
         .popup-Body {padding: 2px 16px;}
-        #browserpar {
+        #browserWarning {
             text-align: center;
             font-family: serif;
         }
-        #capsboy {
+        #capsWarning {
             color: red;
             text-align: center;
         }
@@ -189,22 +189,23 @@
 </div>
 <body>
 <div class="container">
-    <p id="browserpar"> This page works best on the most recent version of <strong>Chrome</strong>.</p>
+    <br>
+    <p id="browserWarning"> This page works best on the most recent version of <strong>Chrome</strong>.</p>
     <div class="page-header text-center header">
         <h1><span class="fa fa-globe"></span> City Smart V2 </h1>
         <div class="log-form">
             <% if (message.length > 0) { %>
                 <div class="alert alert-danger"><%= message %></div>
             <% } %>
-                <p id="capsboy" hidden><strong>WARNING: Caps lock is enabled.</strong></p>
+                <p id="capsWarning" hidden><strong>WARNING: Caps lock is enabled.</strong></p>
             <form action="/login" method="post">
-                <input type="text" autofocus class="egg" id = "userboy" name="username" title="Username" autocomplete="off" placeholder="Username" />
-                <input type="Password" class="egg" onfocus ="herFunction()" id = "passwordboy" name="password" title="Username" autocomplete="off" placeholder="Password" />
-                <button type="submit" class="button1">Login>></button>  <!--Temporary link to login page, supposed to work automatically-->
+                <input type="text" autofocus class="highlight" id = "username" name="username" title="Username" autocomplete="off" placeholder="Username" />
+                <input type="Password" class="highlight" onfocus ="showPassCheck()" id = "password" name="password" title="Password" autocomplete="off" placeholder="Password" />
+                <button type="submit" class="button1" onsubmit="loginAttempts()">Login>></button>  <!--Temporary link to login page, supposed to work automatically-->
                 <button type="button" class="button1" onclick="window.location='/signup'" >Signup>></button>
             </form>
         </div>
-        <div id="shower" hidden><input type="checkbox" onclick="myFunction()"> Show Password</div>
+        <div id="showPassword" hidden><input type="checkbox" onclick="showPass()"> Show Password</div>
     </div>
 
     <div>
@@ -513,44 +514,45 @@
 </div>
 <div id="popover" style="border-style: solid; opacity: 0;" hidden></div>
 <script>
-    let userboy = document.getElementById("userboy");
-    let passwordboy = document.getElementById("passwordboy");
-    let capsboy = document.getElementById("capsboy");
+    let username = document.getElementById("username");
+    let password = document.getElementById("password");
+    let capsWarning = document.getElementById("capsWarning");
+    let numClicks = 0;
 
 
-    userboy.addEventListener("keydown", function(ebay) {
+    username.addEventListener("keydown", function(e) {
 
-        if (ebay.getModifierState("CapsLock")) {
-            capsboy.style.display = "block";
-            capsboy.hidden = false;
+        if (e.getModifierState("CapsLock")) {
+            capsWarning.style.display = "block";
+            capsWarning.hidden = false;
         } else {}
     });
-    userboy.addEventListener("keyup", function(ebay) {
+    username.addEventListener("keyup", function(e) {
 
-        if (ebay.getModifierState("CapsLock")) {}
+        if (e.getModifierState("CapsLock")) {}
         else {
-            capsboy.style.display = "none";
-            capsboy.hidden = true;
+            capsWarning.style.display = "none";
+            capsWarning.hidden = true;
         }
     });
-    passwordboy.addEventListener("keydown", function(amazon) {
+    password.addEventListener("keydown", function(e) {
 
-        if (amazon.getModifierState("CapsLock")) {
-            capsboy.style.display = "block";
-            capsboy.hidden = false;
+        if (e.getModifierState("CapsLock")) {
+            capsWarning.style.display = "block";
+            capsWarning.hidden = false;
         } else {}
     });
-    passwordboy.addEventListener("keyup", function(amazon) {
+    password.addEventListener("keyup", function(e) {
 
-        if (amazon.getModifierState("CapsLock")) {}
+        if (e.getModifierState("CapsLock")) {}
         else {
-            capsboy.style.display = "none";
-            capsboy.hidden = true;
+            capsWarning.style.display = "none";
+            capsWarning.hidden = true;
         }
     });
 
-    function myFunction() {
-        let x = document.getElementById("passwordboy");
+    function showPass() {
+        let x = document.getElementById("password");
         if (x.type === "password") {
             x.type = "text";
         } else {
@@ -558,8 +560,8 @@
         }
     }
 
-    function herFunction() {
-        document.getElementById("shower").hidden = false;
+    function showPassCheck() {
+        document.getElementById("showPassword").hidden = false;
     }
 
     function onFunction() {
@@ -568,6 +570,15 @@
 
     function offFunction() {
         alert ("Your are offline. Some functionality may be unavailable.");
+    }
+
+    function loginAttempts() {
+        numClicks++;
+
+        if(numClicks > 3) {
+            window.location.replace("/");
+            alert("Too many requests to the server can cause the server to slow down or not function properly.");
+        } else {}
     }
 </script>
 </body>

@@ -12,7 +12,12 @@
 	<script src="../3rdPartyLibs/jquery-3.3.1.min.js"></script>
 	<script src="//cdn.jsdelivr.net/npm/flatpickr"></script>
 	<!--<script src="//unpkg.com/flatpickr"></script>-->
-	<style>.floatingBox {
+	<style>
+		body{
+			padding-bottom: 80px;
+			word-wrap:break-word;
+		}
+		.floatingBox {
 			display: inline-block;
 		}
 
@@ -57,8 +62,7 @@
 	</a>
 </div>
 <body ononline="onFunction()" onoffline="offFunction()">
-<div class="container" style="width: 500px;
-    padding: 0px;">
+<div class="container" style="width: 500px; padding: 0px;">
 
 	<h1 style="margin-top: 30px"><span class="fa fa-sign-in"></span> Sign Up </h1>
 	<!-- show any messages that come back with authentication -->
@@ -69,23 +73,24 @@
 	<% } %>
 	<!-- LOGIN FORM -->
 	<!--<form onsubmit="return checkForm()" action="/signup" method="post" id="signup">-->
+	<p id="capsWarning" style="color:red; text-align: center;" hidden><strong>WARNING: Caps lock is enabled.</strong></p>
 	<form  onsubmit="return checkForm()" action="/signup" method="post" id="signup">
 		<div class="form-group">
 			<label>Username (email address):</label>
-			<input type="email" class="form-control" name="username" onchange="SearchUsername(this.value)" style="height: 50px;" required>
+			<input type="email" id="username" class="form-control" name="username" onchange="SearchUsername(this.value)" style="height: 50px;" required>
 			<p id="emailUser" style="color: palevioletred;margin-top:15px;"></p>
 		</div>
 		<div class="form-group">
 			<label>First Name:</label>
-			<input type="text" class="form-control" name="firstName" style="height: 50px;" required>
+			<input type="text" id="firstname" class="form-control" name="firstName" style="height: 50px;" required>
 		</div>
 		<div class="form-group">
 			<label>Last Name:</label>
-			<input type="text" class="form-control" name="lastName" style="height: 50px;" required>
+			<input type="text" id="lastname" class="form-control" name="lastName" style="height: 50px;" required>
 		</div>
 		<div class="form-group">
 			<label>Password:</label>
-			<input type="password" class="form-control" name="password" style="height: 50px;" required>
+			<input type="password" id="password" class="form-control" name="password" style="height: 50px;" onfocus ="showPassCheck()" required>
 		</div>
 		<div class="form-group" hidden>
 			<label>User Role:</label>
@@ -94,6 +99,67 @@
 			<h5 class="floatingBox">&nbsp;&nbsp;&nbsp;Admin</h5>&nbsp;&nbsp;&nbsp;&nbsp;
 			<input type="radio" name="userrole" value="Regular" checked>
 			<h5 class="floatingBox">&nbsp;&nbsp;&nbsp;Regular</h5>
+		</div>
+		<div class="form-group">
+			<label>Phone Number (Optional):</label>
+			<input type="tel" class="form-control" name="phoneNumber" style="height: 50px;" placeholder="888-888-8888" title="XXX-XXX-XXXX" required pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" >
+		</div>
+		<div class="form-group">
+			<label>Security Question #1:</label>
+			<br>
+			<select id="q1" name="question1" class="form-control" style="height: 50px;" required>
+				<option value="0">SELECT SECURITY QUESTION</option>
+				<option value="In what city or town did your mother and father meet?">In what city or town did your mother and father meet?</option>
+				<option value="What is the middle name of your oldest child?">What is the middle name of your oldest child?</option>
+				<option value="What was your favorite food as a child?">What was your favorite food as a child?</option>
+				<option value="What is the last name of the boy or girl that you first kissed?">What is the last name of the boy or girl that you first kissed?</option>
+				<option value="What was the name of the hospital where you were born?">What was the name of the hospital where you were born?</option>
+				<option value="Who was your childhood hero?">Who was your childhood hero?</option>
+				<option value="What was the last name of your third grade teacher?">What was the last name of your third grade teacher?</option>
+				<option value="What was the name of your first pet?">What was the name of your first pet?</option>
+				<option value="What\’s your parent\’s birthday?">What’s your parent’s birthday?</option>
+				<option value="What was the name of your second pet?">What was the name of your second pet?</option>
+				<option value="Where were you on New Year\’s Eve in 2000?">Where were you on New Year’s Eve in 2000?</option>
+				<option value="What was your favorite sport in high school?">What was your favorite sport in high school?</option>
+				<option value="What is the name of your best friend from childhood?">What is the name of your best friend from childhood?</option>
+				<option value="When you were young, what did you want to be when you grew up?">When you were young, what did you want to be when you grew up?</option>
+				<option value="What was the name of your first teacher?">What was the name of your first teacher?</option>
+				<option value="What is the name of your manager at your first job?">What is the name of your manager at your first job?</option>
+				<option value="What is your youngest sibling’s birthday?">What is your youngest sibling’s birthday?</option>
+				<option value="What was your first job?">What was your first job?</option>
+				<option value="What was the make of your first car?">What was the make of your first car?</option>
+			</select>
+			<br>
+			<label>Answer:</label>
+			<input type="text" class="form-control" id="answer1" style="height: 50px;" required>
+			<br>
+			<label>Security Question #2:</label>
+			<br>
+			<select id="q2" name="question2" class="form-control" style="height: 50px;" required>
+				<option value="0">SELECT SECURITY QUESTION</option>
+				<option value="In what city or town did your mother and father meet?">In what city or town did your mother and father meet?</option>
+				<option value="What is the middle name of your oldest child?">What is the middle name of your oldest child?</option>
+				<option value="What was your favorite food as a child?">What was your favorite food as a child?</option>
+				<option value="What is the last name of the boy or girl that you first kissed?">What is the last name of the boy or girl that you first kissed?</option>
+				<option value="What was the name of the hospital where you were born?">What was the name of the hospital where you were born?</option>
+				<option value="Who was your childhood hero?">Who was your childhood hero?</option>
+				<option value="What was the last name of your third grade teacher?">What was the last name of your third grade teacher?</option>
+				<option value="What was the name of your first pet?">What was the name of your first pet?</option>
+				<option value="What\’s your parent\’s birthday?">What’s your parent’s birthday?</option>
+				<option value="What was the name of your second pet?">What was the name of your second pet?</option>
+				<option value="Where were you on New Year\’s Eve in 2000?">Where were you on New Year’s Eve in 2000?</option>
+				<option value="What was your favorite sport in high school?">What was your favorite sport in high school?</option>
+				<option value="What is the name of your best friend from childhood?">What is the name of your best friend from childhood?</option>
+				<option value="When you were young, what did you want to be when you grew up?">When you were young, what did you want to be when you grew up?</option>
+				<option value="What was the name of your first teacher?">What was the name of your first teacher?</option>
+				<option value="What is the name of your manager at your first job?">What is the name of your manager at your first job?</option>
+				<option value="What is your youngest sibling’s birthday?">What is your youngest sibling’s birthday?</option>
+				<option value="What was your first job?">What was your first job?</option>
+				<option value="What was the make of your first car?">What was the make of your first car?</option>
+			</select>
+			<br>
+			<label>Answer:</label>
+			<input type="text" class="form-control" id="answer2" style="height: 50px;" required>
 		</div>
 		<div class="form-group" hidden>
 			<label>Date Created:</label>
@@ -107,8 +173,9 @@
 			<label>Status:</label>
 			<input type="text" id="status" class="form-control" name="status" value="Pending" readonly>
 		</div>
-		<div class="container" style="width: 500px;
-    padding: 0px;">
+		<div id="showPassword" style="text-align: center;" hidden><input type="checkbox" onclick="showPass()"> Show Password</div>
+		<br>
+		<div class="container" style="width: 500px; padding: 0px;">
 			<button type="submit" class="button1"> Sign Up </button>
 		</div>
 	</form>
@@ -117,6 +184,83 @@
 		Or go back to <a href="/login">Log In</a></p>
 </div>
 <script>
+	let username = document.getElementById("username");
+	let firstname = document.getElementById("firstname");
+	let lastname = document.getElementById("lastname");
+	let password = document.getElementById("password");
+	let capsWarning = document.getElementById("capsWarning");
+	let showPassword = document.getElementById("showPassword");
+	let answer1 = document.getElementById("answer1");
+	let answer2 = document.getElementById("answer2");
+
+	username.addEventListener("keydown", function(e) {
+
+		if (e.getModifierState("CapsLock")) {
+			capsWarning.hidden = false;
+		} else {}
+	});
+	username.addEventListener("keyup", function(e) {
+
+		if (e.getModifierState("CapsLock")) {}
+		else {
+			capsWarning.hidden = true;
+		}
+	});
+
+	firstname.addEventListener("keydown", function(e) {
+
+		if (e.getModifierState("CapsLock")) {
+			capsWarning.hidden = false;
+		} else {}
+	});
+	firstname.addEventListener("keyup", function(e) {
+
+		if (e.getModifierState("CapsLock")) {}
+		else {
+			capsWarning.hidden = true;
+		}
+	});
+
+	lastname.addEventListener("keydown", function(e) {
+
+		if (e.getModifierState("CapsLock")) {
+			capsWarning.hidden = false;
+		} else {}
+	});
+	lastname.addEventListener("keyup", function(e) {
+
+		if (e.getModifierState("CapsLock")) {}
+		else {
+			capsWarning.hidden = true;
+		}
+	});
+
+	password.addEventListener("keydown", function(e) {
+
+		if (e.getModifierState("CapsLock")) {
+			capsWarning.hidden = false;
+		} else {}
+	});
+	password.addEventListener("keyup", function(e) {
+
+		if (e.getModifierState("CapsLock")) {}
+		else {
+			capsWarning.hidden = true;
+		}
+	});
+
+    function showPass() {
+		if (password.type === "password") {
+			password.type = "text";
+		} else {
+			password.type = "password";
+		}
+	}
+
+	function showPassCheck() {
+		showPassword.hidden = false;
+	}
+
     $(document).ready(function() {
         $(function() {
             flatpickr(".date", {
@@ -124,18 +268,23 @@
                 dateFormat: "Y-m-d H:i:S",
                 time_24hr: true
             });
-		console.log($('#signup'));
-		console.log($("#signup").serialize());
+		// console.log($('#signup'));
+		// console.log($("#signup").serialize());
 
             $('#signup').submit(function(e) {
-                console.log($("#signup").serialize());
-				console.log($('#signup'));
+                // console.log($("#signup").serialize());
+				// console.log($('#signup'));
+				let a1 = $('#answer1').val().replace("\'", "\\'");
+				let a2 = $('#answer2').val().replace("\'", "\\'");
+				let answer1 = "answer1=" + a1;
+				let answer2 = "answer2=" + a2;
+
                 e.preventDefault();
                 $.ajax({
                     type: "post",
                     url: "/signup",
                     dataType: 'json',
-                    data: $("#signup").serialize(),
+                    data: $("#signup").serialize() + "&" + answer1 + "&" + answer2,
                     success: function (result) {
                     	console.log(result);
                         if (!result.error) {
@@ -157,6 +306,20 @@
         document.getElementById("DATE").value = dateTime;
     });
 
+	$('select[name=question1]').on('change', function() {
+		var self = this;
+		$('select[name=question2]').find('option').prop('disabled', function() {
+			return this.value === self.value
+		});
+	});
+
+	$('select[name=question2]').on('change', function() {
+		var self = this;
+		$('select[name=question1]').find('option').prop('disabled', function() {
+			return this.value === self.value
+		});
+	});
+
 	function SearchUsername(value) {
 		$.ajax({
 			url: "SearchUsername",
@@ -177,55 +340,6 @@
 			}
 		})
 	}
-
-	// function checkForm() {
-	// 	let xyj = document.getElementById("updateForm");
-	// 	let oldP = document.getElementById("currentPassword").value;
-	// 	let newP = document.getElementById("newPassword").value;
-	// 	let confirmP = document.getElementById("confirmPassword").value;
-	// 	let userEditData = "username=" + getvalue[0] + "&pass=" + document.getElementById("currentPassword").value;
-	// 	if (LoginUser !== getvalue[0]) {
-	// 		if (confirmP !== "" && newP !== "") {
-	// 			if (newP === confirmP) {
-	// 				alert("Your new passwords match!");
-	// 				document.getElementById("updateForm").removeAttribute("disabled");
-	// 				xyj.style.display === "none";
-	// 			} else {
-	// 				alert("New passwords do not match! Please try again.");
-	// 			}
-	// 		}
-	// 	} else {
-	// 		$.ajax({
-	// 			url  : '/checkpassword',
-	// 			method : "POST",
-	// 			data : userEditData,
-	// 			dataType: 'json',
-	// 			success : function(d){
-	// 				if (d === true) {
-	// 					alert("Please make sure you typed your current password correctly.");
-	// 				}else if(d === false){
-	// 					if (oldP !== "" && confirmP !== "" && newP !== "") {
-	// 						if (oldP !== newP) {
-	// 							if (newP === confirmP) {
-	// 								alert("You can submit now!");
-	// 								document.getElementById("updateForm").removeAttribute("disabled");
-	// 							} else {
-	// 								alert("New passwords do not match!");
-	// 							}
-	// 						} else {
-	// 							alert("Your new password should be different from your current password.");
-	// 						}
-	// 					} else {
-	// 						alert("All password fields are required.");
-	// 					}
-	// 				}
-	// 			}
-	// 		});
-	// 	}
-	//
-	//
-	// }
-
 
 	function onFunction() {
 		alert ("You are now online.");

@@ -62,7 +62,7 @@
         input[type="password"] {
             height: 60px;
         }
-        #caps {
+        #capsWarning {
             color: red;
             text-align: center;
         }
@@ -195,7 +195,7 @@
         </div>
         <p style="font-size:15px">
             <label for="password" >Do you want to change your password?</label>
-            <input type="checkbox" id="password" name="password" onclick="myFunction()">
+            <input type="checkbox" id="password" name="password" onclick="changePass()">
         </p>
         <div class="generalForm">
             <form id="pswchange" style="display:none;" class="well form-horizontal">
@@ -203,29 +203,29 @@
                     <div>
                         <label style="font-size:18px;">Password Change</label>
                     </div>
-                    <p id="caps" hidden><strong>WARNING: Caps lock is enabled.</strong></p>
+                    <p id="capsWarning" hidden><strong>WARNING: Caps lock is enabled.</strong></p>
                     <div class="form-group">
                         <label class="col-md-4 control-label">Current Password</label>
                         <div class="col-md-8 inputGroupContainer">
-                            <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span><input id="currentPassword" name="CurrentPassword"  class="form-control"  onfocus ="thisFunction()" value="" type="password"></div>
+                            <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span><input id="currentPassword" name="CurrentPassword"  class="form-control"  onfocus ="showPassword()" value="" type="password"></div>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-md-4 control-label">New Password</label>
                         <div class="col-md-8 inputGroupContainer">
-                            <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span><input id="newPassword" name="NewPassword" class="form-control" onfocus ="thisFunction()" value="" type="password"></div>
+                            <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span><input id="newPassword" name="NewPassword" class="form-control" onfocus ="showPassword()" value="" type="password"></div>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-md-4 control-label">Confirm New Password</label>
                         <div class="col-md-8 inputGroupContainer">
-                            <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span><input id="confirmPassword" name="ConfirmNewPassword" class="form-control"  onfocus ="thisFunction()" value="" type="password"></div>
+                            <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span><input id="confirmPassword" name="ConfirmNewPassword" class="form-control"  onfocus ="showPassword()" value="" type="password"></div>
                         </div>
                     </div>
                 <br>
                 <br>
             </fieldset>
-                <div id="shower" hidden><input type="checkbox" onclick="yourFunction()"> Show Passwords</div>
+                <div id="showPassword" hidden><input type="checkbox" onclick="yourFunction()"> Show Passwords</div>
             </form>
             <button id="checkit" class="btn-primary" style="display:none; margin-top:-85px; margin-left:550px;" onclick="check()">Check</button>
         </div>
@@ -244,51 +244,51 @@
     let CurrPassword = document.getElementById("currentPassword");
     let NewPassword = document.getElementById("newPassword");
     let ConfirmPassword = document.getElementById("confirmPassword");
-    let caps = document.getElementById("caps");
+    let capsWarning = document.getElementById("capsWarning");
 
-    CurrPassword.addEventListener("keydown", function(ebay) {
+    CurrPassword.addEventListener("keydown", function(e) {
 
-        if (ebay.getModifierState("CapsLock")) {
-            caps.style.display = "block";
-            caps.hidden = false;
+        if (e.getModifierState("CapsLock")) {
+            capsWarning.style.display = "block";
+            capsWarning.hidden = false;
         } else {}
     });
-    CurrPassword.addEventListener("keyup", function(ebay) {
+    CurrPassword.addEventListener("keyup", function(e) {
 
-        if (ebay.getModifierState("CapsLock")) {}
+        if (e.getModifierState("CapsLock")) {}
         else {
-            caps.style.display = "none";
-            caps.hidden = true;
+            capsWarning.style.display = "none";
+            capsWarning.hidden = true;
         }
     });
-    NewPassword.addEventListener("keydown", function(amazon) {
+    NewPassword.addEventListener("keydown", function(e) {
 
-        if (amazon.getModifierState("CapsLock")) {
-            caps.style.display = "block";
-            caps.hidden = false;
+        if (e.getModifierState("CapsLock")) {
+            capsWarning.style.display = "block";
+            capsWarning.hidden = false;
         } else {}
     });
-    NewPassword.addEventListener("keyup", function(amazon) {
+    NewPassword.addEventListener("keyup", function(e) {
 
-        if (amazon.getModifierState("CapsLock")) {}
+        if (e.getModifierState("CapsLock")) {}
         else {
-            caps.style.display = "none";
-            caps.hidden = true;
+            capsWarning.style.display = "none";
+            capsWarning.hidden = true;
         }
     });
-    ConfirmPassword.addEventListener("keydown", function(amazon) {
+    ConfirmPassword.addEventListener("keydown", function(e) {
 
-        if (amazon.getModifierState("CapsLock")) {
-            caps.style.display = "block";
-            caps.hidden = false;
+        if (e.getModifierState("CapsLock")) {
+            capsWarning.style.display = "block";
+            capsWarning.hidden = false;
         } else {}
     });
-    ConfirmPassword.addEventListener("keyup", function(amazon) {
+    ConfirmPassword.addEventListener("keyup", function(e) {
 
-        if (amazon.getModifierState("CapsLock")) {}
+        if (e.getModifierState("CapsLock")) {}
         else {
-            caps.style.display = "none";
-            caps.hidden = true;
+            capsWarning.style.display = "none";
+            capsWarning.hidden = true;
         }
     });
 
@@ -310,8 +310,8 @@
         }
     }
 
-    function thisFunction() {
-        document.getElementById("shower").hidden = false;
+    function showPassword() {
+        document.getElementById("showPassword").hidden = false;
     }
 
 
@@ -419,7 +419,7 @@
         changeInputs.attr("disabled", !this.checked);
     });
 
-    function myFunction(){
+    function changePass(){
         let checkbox = document.getElementById("password");
         let text = document.getElementById("pswchange");
         if (checkbox.checked === true){
