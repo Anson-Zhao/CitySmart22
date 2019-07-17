@@ -55,9 +55,9 @@
     <!-- show any messages that come back with authentication -->
     <p id="falldown">In order to continue, enter the code consisting of letters, numbers, and symbols sent to your phone. <br>Then click <strong>Submit</strong>.</p>
     <div class="form-group">
-        <input type="password" id="VCode" placeholder="Enter Code Here" class="form-control" name="code" style="height: 50px; margin-bottom: 20px;" onfocus="thisFunction()" required>
+        <input type="password" id="enterCode" placeholder="Enter Code Here" class="form-control" name="code" style="height: 50px; margin-bottom: 20px;" onfocus="showPassword()" required>
     </div>
-    <div id="duckiesRcute" hidden style="text-align: center;"><input type="checkbox" onclick="ShowFunction()"> Show Code</div>
+    <div id="showCode" hidden style="text-align: center;"><input type="checkbox" onclick="ShowFunction()"> Show Code</div>
     <br>
     <button id="pauthSubmit" type="submit" class="button1" onclick="submitForm()"><a href="/userhome" id="submitp" hidden></a> Submit </button>
 
@@ -72,9 +72,9 @@
     let userrole = '<%= user.userrole %>';
     let Phone_Number = '<%= Phone_Number %>';
     let Code = '<%= Code %>';
-    let VCode = $('#VCode');
-    let input = document.getElementById("VCode");
-    let clicksdog = 0;
+    let enterCode = $('#enterCode');
+    let input = document.getElementById("enterCode");
+    let numClicks = 0;
 
 
     $(document).ready(function() {
@@ -99,26 +99,26 @@
     $(window).on('beforeunload', SendCode);
 
 
-    function submitForm () {
+    function submitForm() {
         // console.log($("#ksub").serialize());
         console.log("this");
 
-        clicksdog++;
-        console.log(VCode.val());
+        numClicks++;
+        console.log(enterCode.val());
         console.log(Code);
 
-        if(clicksdog > 3 ) {
+        if(numClicks > 3 ) {
             window.location.replace("/");
             alert("Login attempts exceeded!");
         } else {
-            window.addEventListener("beforeunload", myFunction);
+            window.addEventListener("beforeunload", confirmLeave);
         }
 
-        if (VCode.val() === "") {
+        if (enterCode.val() === "") {
             alert("Please make sure the code has been entered.");
-        } else if (VCode.val() === Code) {
+        } else if (enterCode.val() === Code) {
             console.log("pass");
-            window.removeEventListener("beforeunload", myFunction);
+            window.removeEventListener("beforeunload", confirmLeave);
             $(window).off('beforeunload', SendCode);
             $('#submitp').get(0).click();
             $.ajax({
@@ -132,7 +132,7 @@
         }
     }
 
-    function SendCode () {
+    function SendCode() {
         $.ajax({
             type: "post",
             url: "/pcode",
@@ -145,16 +145,16 @@
         })
     }
 
-    function thisFunction () {
-        document.getElementById("duckiesRcute").hidden = false;
+    function showPassword() {
+        document.getElementById("showCode").hidden = false;
     }
 
-    function myFunction(event) {
+    function confirmLeave(event) {
         event.returnValue = "Are you sure you want to leave this page? Your code will become invalid.";
     }
 
     function ShowFunction() {
-        let y = document.getElementById("VCode");
+        let y = document.getElementById("enterCode");
         if (y.type === "password") {
             y.type = "text";
         } else {
@@ -170,11 +170,11 @@
     });
 
     function onFunction() {
-        alert ("You are now online.");
+        alert("You are now online.");
     }
 
     function offFunction() {
-        alert ("Your are offline. Some functionality may be unavailable.");
+        alert("Your are offline. Some functionality may be unavailable.");
     }
 </script>
 </body>

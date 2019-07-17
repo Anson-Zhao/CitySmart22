@@ -99,10 +99,7 @@
 
     <style>
         body      { padding-bottom:80px; word-wrap:break-word; }
-        /*#hide { display: none; }*/
-        /*.FAW        { display: none; }*/
-        /*#stay, #cancel {  position: relative;  width: 20%;  left: 20%;  }*/
-        /*#leave, #clear {  position: relative;  width: 20%;  left: 60%;  }*/
+
         .banner{
             position:relative;
             width:100%;
@@ -393,10 +390,10 @@
                                 <span class="input-group-addon" style="max-width: 100%;"><i class="glyphicon glyphicon-list"></i></span>
                                 <select required class="selectpicker form-control" name="LayerFormat" id="LayerFormat">
                                     <option value="">SELECT LAYER FORMAT</option>
-                                    <option label = "GeoTIFF - Tagged Image File Format with Geographic information (.tif)" id="GeoBoy">GeoTIFF - Tagged Image File Format with Geographic information (.tif)</option>
-                                    <option label="Shapefile - ESRI(tm) Shapefiles (.shp)" id="ShapeBoy">Shapefile - ESRI(tm) Shapefiles (.shp)</option>
-                                    <option label = "JP2ECW - JP2K (.jp2/.j2k)" id="J2kBoy">JP2ECW - JP2K (.jp2/.j2k)</option>
-                                    <option label = "AIG - Arc/Info Binary Grid (.adf)" id="AdfBoy">AIG - Arc/Info Binary Grid (.adf)</option>
+                                    <option value="GeoTIFF">GeoTIFF - Tagged Image File Format with Geographic information (.tif)</option>
+                                    <option value="ShapeFile">Shapefile - ESRI(tm) Shapefiles (.shp)</option>
+                                    <option value="JPEG">JP2ECW - JP2K (.jp2/.j2k)</option>
+                                    <option value="ArcBinary">AIG - Arc/Info Binary Grid (.adf)</option>
                                 </select>
                             </div>
                         </div>
@@ -408,10 +405,10 @@
                                 <span class="input-group-addon" style="max-width: 100%;"><i class="glyphicon glyphicon-list"></i></span>
                                 <select required class="selectpicker form-control" id="LayerFormat2">
                                     <option value="">SELECT LAYER FORMAT</option>
-                                    <option>GeoTIFF - Tagged Image File Format with Geographic information (.tif)</option>
-                                    <option>Shapefile - ESRI(tm) Shapefiles (.shp)</option>
-                                    <option>JP2ECW - JP2K (.jp2/.j2k)</option>
-                                    <option>AIG - Arc/Info Binary Grid (.adf)</option>
+                                    <option value="GeoTIFF">GeoTIFF - Tagged Image File Format with Geographic information (.tif)</option>
+                                    <option value="ShapeFile">Shapefile - ESRI(tm) Shapefiles (.shp)</option>
+                                    <option value="JPEG">JP2ECW - JP2K (.jp2/.j2k)</option>
+                                    <option value="ArcBinary">AIG - Arc/Info Binary Grid (.adf)</option>
                                 </select>
                             </div>
                         </div>
@@ -500,63 +497,10 @@
         console.log(rowSelectedValue[15]);
         console.log(document.getElementById('pictureStr').value);
 
-        if (rowSelectedValue[14] == "GeoTIFF - Tagged Image File Format with Geographic information (.tif)" || rowSelectedValue[14] == "GeoTIFF - Tagged Image File Format with Geographic information (.tif),") {
-             layerformat = 'GeoBoy';
-        } else if (rowSelectedValue[14] == "Shapefile - ESRI(tm) Shapefiles (.shp)" || rowSelectedValue[14] == "Shapefile - ESRI(tm) Shapefiles (.shp),") {
-            layerformat = 'ShapeBoy';
-        } else if (rowSelectedValue[14] == "JP2ECW - JP2K (.jp2/.j2k)" || rowSelectedValue[14] == "JP2ECW - JP2K (.jp2/.j2k),") {
-            layerformat = 'J2kBoy';
-        } else if (rowSelectedValue[14] == "AIG - Arc/Info Binary Grid (.adf)" || rowSelectedValue[14] == "AIG - Arc/Info Binary Grid (.adf),") {
-            layerformat = 'AdfBoy';
-        } else {
-            document.getElementById('LayerFormat').value = rowSelectedValue[14];
-        }
-
-        document.getElementById(layerformat).selected = true;
-        document.getElementById('LayerFormat2').value = document.getElementById('LayerFormat').value;
-        console.log(document.getElementById('LayerFormat2').value);
-        console.log(document.getElementById('LayerFormat2'));
-        console.log(document.getElementById('Adfboy'));
-        console.log('Big Nose');
-
-
-        if (document.getElementById('LayerFormat').value === "GeoTIFF - Tagged Image File Format with Geographic information (.tif),") {
-
-            document.getElementById('LayerFormat').value = "GeoTIFF - Tagged Image File Format with Geographic information (.tif)";
-
-        } else if (document.getElementById('LayerFormat2').value === "Shapefile - ESRI(tm) Shapefiles (.shp),") {
-
-            document.getElementById('LayerFormat2').value = "Shapefile - ESRI(tm) Shapefiles (.shp)";
-
-        } else if (document.getElementById('LayerFormat').value === "Shapefile - ESRI(tm) Shapefiles (.shp),") {
-
-            document.getElementById('LayerFormat').value = "Shapefile - ESRI(tm) Shapefiles (.shp)";
-
-        } else if (document.getElementById('LayerFormat2').value === "Shapefile - ESRI(tm) Shapefiles (.shp),") {
-
-            document.getElementById('LayerFormat2').value = "Shapefile - ESRI(tm) Shapefiles (.shp)";
-
-        } else if (document.getElementById('LayerFormat').value === "JP2ECW - JP2K (.jp2/.j2k),") {
-
-            document.getElementById('LayerFormat').value = "JP2ECW - JP2K (.jp2/.j2k)";
-
-        } else if (document.getElementById('LayerFormat2').value === "JP2ECW - JP2K (.jp2/.j2k),") {
-
-            document.getElementById('LayerFormat2').value = "JP2ECW - JP2K (.jp2/.j2k)";
-
-        } else if (document.getElementById('LayerFormat').value === "AIG - Arc/Info Binary Grid (.adf),") {
-
-            document.getElementById('LayerFormat').value = "AIG - Arc/Info Binary Grid (.adf)";
-
-        } else if (document.getElementById('LayerFormat2').value === "AIG - Arc/Info Binary Grid (.adf),") {
-
-            document.getElementById('LayerFormat2').value = "AIG - Arc/Info Binary Grid (.adf)";
-
-        } else{}
-
+        document.getElementById('LayerFormat').value = rowSelectedValue[14];
+        document.getElementById('LayerFormat2').value = rowSelectedValue[14];
 
         //getAttributeNode("value").value
-
 
         if(rowSelectedValue[8] === "other" || rowSelectedValue[10] === "other"){
             document.getElementById("other1").style.display = "block";
@@ -606,7 +550,7 @@
             document.getElementById("reject").style.backgroundColor = "lightgray";
         }
 
-        $("#main").change(function () {
+        $("#main").change(function() {
             let val = $(this).val();
             if (val === "") {
                 $("#sub").html("<option value='Category'>SELECT SUBCATEGORY</option>");
@@ -615,9 +559,9 @@
             }
         })
 
-        $("#City").change(function () {
+        $("#City").change(function() {
             let val = $(this).val();
-            if (val == "select") {
+            if (val === "select") {
                 $("#country2").html("<option value='select'>SELECT SUBCATEGORY</option>");
             }
         })
@@ -638,7 +582,7 @@
                     // } else {}
                     // continentList.className = results[i].Continent;
                     // console.log(continentList.className);
-                    if (results[i].Continent != rowSelectedValue[4]) {
+                    if (results[i].Continent !== rowSelectedValue[4]) {
                         continentList.add(new Option(results[i].Continent_name, results[i].Continent));//Continent name refers to the actual name while the continent just refers to the abbreviation of the continent
                     } else {}
 
@@ -760,21 +704,6 @@
             }
         });
 
-        // $("#testButton").click(function () {
-        //     let data = $("#layer").serialize();
-        //     console.log(data);
-        //     $.ajax({
-        //         url: 'testB',
-        //         method: "post",
-        //         data: data,
-        //         dataType: 'json',
-        //         success: function (d) {
-        //             console.log(data);
-        //         }
-        //     });
-        // })
-
-
         // Wait for the DOM to be ready
         $('#layer').validate({
             // Specify validation rules
@@ -813,23 +742,7 @@
             }
         });
 
-        // ("#myform").validate({
-        //     invalidHandler: function(event, validator) {
-        //         // 'this' refers to the form
-        //         var errors = validator.numberOfInvalids();
-        //         if (errors) {
-        //             var message = errors == 1
-        //                 ? 'You missed 1 field. It has been highlighted'
-        //                 : 'You missed ' + errors + ' fields. They have been highlighted';
-        //             $("div.error span").html(message);
-        //             $("div.error").show();
-        //         } else {
-        //             $("div.error").hide();
-        //         }
-        //     }
-        // });
-
-        $("#City").click(function () {
+        $("#City").click(function() {
             new dgCitysCountries({
                 CityVal: document.getElementById("City").val,
                 countryVal: document.getElementById("country2").val,
@@ -839,7 +752,7 @@
             });
         });
 
-        $("#reject").click(function () {
+        $("#reject").click(function() {
             if (confirm("Are you sure you would like to reject this request?") === true) {
                 let tID = "reject=" + document.getElementById('RID').value;
                 let Comment = "comment=" + document.getElementById('comment').value;
@@ -974,23 +887,6 @@
                 console.log(LUN);
                 console.log(lForm);
 
-                if (lForm == "lForm=GeoTIFF - Tagged Image File Format with Geographic information (.tif),") {
-
-                    lForm = "lForm=GeoTIFF - Tagged Image File Format with Geographic information (.tif)";
-
-                } else if (lForm == "lForm=Shapefile - ESRI(tm) Shapefiles (.shp),") {
-
-                    lForm = "lForm=Shapefile - ESRI(tm) Shapefiles (.shp)";
-
-                } else if (lForm == "lForm=JP2ECW - JP2K (.jp2/.j2k),") {
-
-                    lForm = "lForm=JP2ECW - JP2K (.jp2/.j2k)";
-
-                } else if (lForm == "lForm=AIG - Arc/Info Binary Grid (.adf),") {
-
-                    lForm = "lForm=AIG - Arc/Info Binary Grid (.adf)";
-
-                } else{}
                 $.ajax({
                     url: 'approve',
                     type: "GET",
@@ -1081,64 +977,64 @@
     }
 
     function onFunction() {
-        alert ("You are now online.");
+        alert("You are now online.");
     }
 
     function offFunction() {
-        alert ("Your are offline. Some functionality may be unavailable.");
+        alert("Your are offline. Some functionality may be unavailable.");
     }
-    // function SearchLayerName(value){
-    //     $.ajax({
-    //         url: "SearchLayerName",
-    //         dataType:"json",
-    //         success: function (results) {
-    //             for(let i = 0; i < results.length; i++) {
-    //                 if (value === results[i].LayerName) {
-    //                     document.getElementById("LayerName1").innerHTML = "The Layer Name has already been used";
-    //                     document.addEventListener("keyup", function (e) {
-    //                         if (event.keyCode === 8) {
-    //                             document.getElementById("LayerName1").innerHTML = "Please enter the layer name. NOTE: Do not include spaces.";
-    //                         }
-    //                     }, false);
-    //                     break;
-    //                 } else{
-    //                     document.getElementById("LayerName1").innerHTML = "This Layer Name is available";
-    //                 }
-    //             }
-    //             if(value.length === 0){
-    //                 document.getElementById("LayerName1").innerHTML = "Please enter the layer name. NOTE: Do not include spaces.";
-    //             }
-    //         }
-    //     })
-    //     //use if to check
-    //     //false replace the <p> to the Layer Name is duplicated
-    //     //ture --> nothing
-    // }
+    function SearchLayerName(value){
+        $.ajax({
+            url: "SearchLayerName",
+            dataType:"json",
+            success: function (results) {
+                for(let i = 0; i < results.length; i++) {
+                    if (value === results[i].LayerName) {
+                        document.getElementById("LayerName1").innerHTML = "The Layer Name has already been used";
+                        document.addEventListener("keyup", function (e) {
+                            if (event.keyCode === 8) {
+                                document.getElementById("LayerName1").innerHTML = "Please enter the layer name. NOTE: Do not include spaces.";
+                            }
+                        }, false);
+                        break;
+                    } else{
+                        document.getElementById("LayerName1").innerHTML = "This Layer Name is available";
+                    }
+                }
+                if(value.length === 0){
+                    document.getElementById("LayerName1").innerHTML = "Please enter the layer name. NOTE: Do not include spaces.";
+                }
+            }
+        })
+        //use if to check
+        //false replace the <p> to the Layer Name is duplicated
+        //ture --> nothing
+    }
 
-    // function SearchThirdLayer(thisvalue){
-    //     $.ajax({
-    //         url: "SearchThirdLayer",
-    //         dataType:"json",
-    //         success: function (results) {
-    //             for(let i = 0; i < results.length; i++) {
-    //                 if (thisvalue === results[i].ThirdLayer) {
-    //                     document.getElementById("LayerName2").innerHTML = "The ThirdLayer Name has already been used";
-    //                     document.addEventListener("keyup", function (e) {
-    //                         if (event.keyCode === 8) {
-    //                             document.getElementById("LayerName2").innerHTML = "Please enter the ThirdLayer name. NOTE: Do not include spaces.";
-    //                         }
-    //                     }, false);
-    //                     break;
-    //                 } else{
-    //                     document.getElementById("LayerName2").innerHTML = "This ThirdLayer Name is available";
-    //                 }
-    //             }
-    //             if(value.length === 0){
-    //                 document.getElementById("LayerName2").innerHTML = "Please enter the ThirdLayer name. NOTE: Do not include spaces.";
-    //             }
-    //         }
-    //     })
-    // }
+    function SearchThirdLayer(thisvalue){
+        $.ajax({
+            url: "SearchThirdLayer",
+            dataType:"json",
+            success: function (results) {
+                for(let i = 0; i < results.length; i++) {
+                    if (thisvalue === results[i].ThirdLayer) {
+                        document.getElementById("LayerName2").innerHTML = "The ThirdLayer Name has already been used";
+                        document.addEventListener("keyup", function (e) {
+                            if (event.keyCode === 8) {
+                                document.getElementById("LayerName2").innerHTML = "Please enter the ThirdLayer name. NOTE: Do not include spaces.";
+                            }
+                        }, false);
+                        break;
+                    } else{
+                        document.getElementById("LayerName2").innerHTML = "This ThirdLayer Name is available";
+                    }
+                }
+                if(value.length === 0){
+                    document.getElementById("LayerName2").innerHTML = "Please enter the ThirdLayer name. NOTE: Do not include spaces.";
+                }
+            }
+        })
+    }
 
 </script>
 </body>

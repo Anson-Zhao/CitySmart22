@@ -310,7 +310,7 @@
 
     $(document).ready(function() {
 
-        $(function () {
+        $(function() {
             flatpickr(".date", {
                 dateFormat: "Y-m-d",
                 time_24hr: true
@@ -324,7 +324,7 @@
             queryAndDisplay("statusDel=" + "Active" + "&firstName=" + "<%= user.firstName %>" + "&lastName=" + "<%= user.lastName %>");
         });
 
-        $('#dataDisplay tbody').on('click', 'tr', function () {
+        $('#dataDisplay tbody').on('click', 'tr', function() {
             scoutingTransactionID = [];
             transactionpicturename = [];
             $(this).toggleClass('selected');    //toggle class for the rows selected
@@ -333,7 +333,7 @@
 
             scoutingRowSelected = table.rows('.selected').data();    //Store all the data for selected rows'
 
-            // $('#dataDisplay > thead > tr > th').each(function () {
+            // $('#dataDisplay > thead > tr > th').each(function() {
             //     thArray.push($(this).text())
             // })
 
@@ -351,11 +351,11 @@
             }
         });
 
-        // $("#Request").on("click", function () {
+        // $("#Request").on("click", function() {
         //     location.replace('../bak/Layer Request form.html');
         // });
 
-        $("#editButton").on("click", function () {
+        $("#editButton").on("click", function() {
             let transactionID = scoutingTransactionID.concat(trapTransactionID);
             // console.log(transactionID);
             if (transactionID.length >= 2) {
@@ -372,7 +372,7 @@
             }
         });
 
-        $("#deleteButton").on("click", function () {
+        $("#deleteButton").on("click", function() {
             if (confirm("Are you sure you would like to trashfolder this row(s)?") === true) {
                 console.log(trapTransactionID);
                 console.log(scoutingTransactionID); //provides the associated values of the element(record) in the array
@@ -396,7 +396,7 @@
             }
         });
 
-        $("#showButton").on("click", function () {
+        $("#showButton").on("click", function() {
             table.clear();
             table.draw();
             // queryAndDisplay(hjkhjkhk);

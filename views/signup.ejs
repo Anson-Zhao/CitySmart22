@@ -73,24 +73,24 @@
 	<% } %>
 	<!-- LOGIN FORM -->
 	<!--<form onsubmit="return checkForm()" action="/signup" method="post" id="signup">-->
-	<p id="TheIncredibles" style="color:red; text-align: center;" hidden><strong>WARNING: Caps lock is enabled.</strong></p>
+	<p id="capsWarning" style="color:red; text-align: center;" hidden><strong>WARNING: Caps lock is enabled.</strong></p>
 	<form onsubmit="return checkForm()" action="/signup" method="post" id="signup">
 		<div class="form-group">
 			<label>Username (email address):</label>
-			<input type="email" id="BobtheBuilder" class="form-control" name="username" onchange="SearchUsername(this.value)" style="height: 50px;" required>
+			<input type="email" id="username" class="form-control" name="username" onchange="SearchUsername(this.value)" style="height: 50px;" required>
 			<p id="emailUser" style="color: palevioletred; margin-top:15px;"></p>
 		</div>
 		<div class="form-group">
 			<label>First Name:</label>
-			<input type="text" id="Moana" class="form-control" name="firstName" style="height: 50px;" required>
+			<input type="text" id="firstname" class="form-control" name="firstName" style="height: 50px;" required>
 		</div>
 		<div class="form-group">
 			<label>Last Name:</label>
-			<input type="text" id="LetItGo" class="form-control" name="lastName" style="height: 50px;" required>
+			<input type="text" id="lastname" class="form-control" name="lastName" style="height: 50px;" required>
 		</div>
 		<div class="form-group">
 			<label>Password:</label>
-			<input type="password" id="Mulan" class="form-control" name="password" style="height: 50px;" onfocus ="BMW ()" required>
+			<input type="password" id="password" class="form-control" name="password" style="height: 50px;" onfocus ="showPassCheck()" required>
 		</div>
 		<div class="form-group" hidden>
 			<label>User Role:</label>
@@ -156,7 +156,6 @@
 				<option value="What is your youngest sibling’s birthday?">What is your youngest sibling’s birthday?</option>
 				<option value="What was your first job?">What was your first job?</option>
 				<option value="What was the make of your first car?">What was the make of your first car?</option>
-
 			</select>
 			<br>
 			<label>Answer:</label>
@@ -174,7 +173,7 @@
 			<label>Status:</label>
 			<input type="text" id="status" class="form-control" name="status" value="Pending" readonly>
 		</div>
-		<div id="WreckitRalph" style="text-align: center;" hidden><input type="checkbox" onclick="Porsche ()"> Show Password</div>
+		<div id="showPassword" style="text-align: center;" hidden><input type="checkbox" onclick="showPass()"> Show Password</div>
 		<br>
 		<div class="container" style="width: 500px; padding: 0px;">
 			<button type="submit" class="button1"> Sign Up </button>
@@ -185,109 +184,81 @@
 		Or go back to <a href="/login">Log In</a></p>
 </div>
 <script>
-	let BobtheBuilder = document.getElementById("BobtheBuilder");
-	let Moana = document.getElementById("Moana");
-	let LetItGo = document.getElementById("LetItGo");
-	let Mulan = document.getElementById("Mulan");
-	let TheIncredibles = document.getElementById("TheIncredibles");
-	let WreckitRalph = document.getElementById("WreckitRalph");
+	let username = document.getElementById("username");
+	let firstname = document.getElementById("firstname");
+	let lastname = document.getElementById("lastname");
+	let password = document.getElementById("password");
+	let capsWarning = document.getElementById("capsWarning");
+	let showPassword = document.getElementById("showPassword");
 	let answer1 = document.getElementById("answer1");
 	let answer2 = document.getElementById("answer2");
 
-	BobtheBuilder.addEventListener("keydown", function(ebay) {
+	username.addEventListener("keydown", function(e) {
 
-		if (ebay.getModifierState("CapsLock")) {
-			TheIncredibles.hidden = false;
+		if (e.getModifierState("CapsLock")) {
+			capsWarning.hidden = false;
 		} else {}
 	});
-	BobtheBuilder.addEventListener("keyup", function(ebay) {
+	username.addEventListener("keyup", function(e) {
 
-		if (ebay.getModifierState("CapsLock")) {}
+		if (e.getModifierState("CapsLock")) {}
 		else {
-			TheIncredibles.hidden = true;
+			capsWarning.hidden = true;
 		}
 	});
 
-	answer1.addEventListener("keydown", function(ebay) {
+	firstname.addEventListener("keydown", function(e) {
 
-		if (ebay.getModifierState("CapsLock")) {
-			TheIncredibles.hidden = false;
+		if (e.getModifierState("CapsLock")) {
+			capsWarning.hidden = false;
 		} else {}
 	});
-	answer1.addEventListener("keyup", function(ebay) {
+	firstname.addEventListener("keyup", function(e) {
 
-		if (ebay.getModifierState("CapsLock")) {}
+		if (e.getModifierState("CapsLock")) {}
 		else {
-			TheIncredibles.hidden = true;
+			capsWarning.hidden = true;
 		}
 	});
 
-	answer2.addEventListener("keydown", function(ebay) {
+	lastname.addEventListener("keydown", function(e) {
 
-		if (ebay.getModifierState("CapsLock")) {
-			TheIncredibles.hidden = false;
+		if (e.getModifierState("CapsLock")) {
+			capsWarning.hidden = false;
 		} else {}
 	});
-	answer2.addEventListener("keyup", function(ebay) {
+	lastname.addEventListener("keyup", function(e) {
 
-		if (ebay.getModifierState("CapsLock")) {}
+		if (e.getModifierState("CapsLock")) {}
 		else {
-			TheIncredibles.hidden = true;
+			capsWarning.hidden = true;
 		}
 	});
 
-	Moana.addEventListener("keydown", function(ebay) {
+	password.addEventListener("keydown", function(e) {
 
-		if (ebay.getModifierState("CapsLock")) {
-			TheIncredibles.hidden = false;
+		if (e.getModifierState("CapsLock")) {
+			capsWarning.hidden = false;
 		} else {}
 	});
-	Moana.addEventListener("keyup", function(ebay) {
+	password.addEventListener("keyup", function(e) {
 
-		if (ebay.getModifierState("CapsLock")) {}
+		if (e.getModifierState("CapsLock")) {}
 		else {
-			TheIncredibles.hidden = true;
+			capsWarning.hidden = true;
 		}
 	});
 
-	LetItGo.addEventListener("keydown", function(ebay) {
-
-		if (ebay.getModifierState("CapsLock")) {
-			TheIncredibles.hidden = false;
-		} else {}
-	});
-	LetItGo.addEventListener("keyup", function(ebay) {
-
-		if (ebay.getModifierState("CapsLock")) {}
-		else {
-			TheIncredibles.hidden = true;
-		}
-	});
-
-	Mulan.addEventListener("keydown", function(ebay) {
-
-		if (ebay.getModifierState("CapsLock")) {
-			TheIncredibles.hidden = false;
-		} else {}
-	});
-	Mulan.addEventListener("keyup", function(ebay) {
-
-		if (ebay.getModifierState("CapsLock")) {}
-		else {
-			TheIncredibles.hidden = true;
-		}
-	});
-
-    function Porsche () {
-		if (Mulan.type === "password") {
-			Mulan.type = "text";
+    function showPass() {
+		if (password.type === "password") {
+			password.type = "text";
 		} else {
-			Mulan.type = "password";
+			password.type = "password";
 		}
 	}
 
-	function BMW () {
-		WreckitRalph.hidden = false;
+	function showPassCheck() {
+		showPassword.hidden = false;
 	}
 
     $(document).ready(function() {
@@ -297,12 +268,12 @@
                 dateFormat: "Y-m-d H:i:S",
                 time_24hr: true
             });
-		console.log($('#signup'));
-		console.log($("#signup").serialize());
+		// console.log($('#signup'));
+		// console.log($("#signup").serialize());
 
             $('#signup').submit(function(e) {
-                console.log($("#signup").serialize());
-				console.log($('#signup'));
+                // console.log($("#signup").serialize());
+				// console.log($('#signup'));
 				let a1 = $('#answer1').val().replace("\'", "\\'");
 				let a2 = $('#answer2').val().replace("\'", "\\'");
 				let answer1 = "answer1=" + a1;
@@ -370,61 +341,12 @@
 		})
 	}
 
-	// function checkForm() {
-	// 	let xyj = document.getElementById("updateForm");
-	// 	let oldP = document.getElementById("currentPassword").value;
-	// 	let newP = document.getElementById("newPassword").value;
-	// 	let confirmP = document.getElementById("confirmPassword").value;
-	// 	let userEditData = "username=" + getvalue[0] + "&pass=" + document.getElementById("currentPassword").value;
-	// 	if (LoginUser !== getvalue[0]) {
-	// 		if (confirmP !== "" && newP !== "") {
-	// 			if (newP === confirmP) {
-	// 				alert("Your new passwords match!");
-	// 				document.getElementById("updateForm").removeAttribute("disabled");
-	// 				xyj.style.display === "none";
-	// 			} else {
-	// 				alert("New passwords do not match! Please try again.");
-	// 			}
-	// 		}
-	// 	} else {
-	// 		$.ajax({
-	// 			url  : '/checkpassword',
-	// 			method : "POST",
-	// 			data : userEditData,
-	// 			dataType: 'json',
-	// 			success : function(d){
-	// 				if (d === true) {
-	// 					alert("Please make sure you typed your current password correctly.");
-	// 				}else if(d === false){
-	// 					if (oldP !== "" && confirmP !== "" && newP !== "") {
-	// 						if (oldP !== newP) {
-	// 							if (newP === confirmP) {
-	// 								alert("You can submit now!");
-	// 								document.getElementById("updateForm").removeAttribute("disabled");
-	// 							} else {
-	// 								alert("New passwords do not match!");
-	// 							}
-	// 						} else {
-	// 							alert("Your new password should be different from your current password.");
-	// 						}
-	// 					} else {
-	// 						alert("All password fields are required.");
-	// 					}
-	// 				}
-	// 			}
-	// 		});
-	// 	}
-	//
-	//
-	// }
-
-
 	function onFunction() {
-		alert ("You are now online.");
+		alert("You are now online.");
 	}
 
 	function offFunction() {
-		alert ("Your are offline. Some functionality may be unavailable.");
+		alert("Your are offline. Some functionality may be unavailable.");
 	}
 
 </script>

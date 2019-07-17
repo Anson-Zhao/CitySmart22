@@ -82,7 +82,7 @@
     let formAnswer2 = $('#secondAnswer').val();
     let a1 = "<%= answer1%>";
     let a2 = "<%= answer2%>";
-    let clicksfish = 0;
+    let numClicks = 0;
     let input1 = document.getElementById("firstAnswer");
     let input2 = document.getElementById("secondAnswer");
 
@@ -106,13 +106,13 @@
 
 
 
-    function submitForm () {
+    function submitForm() {
         // console.log($("#ksub").serialize());
         console.log("this");
-        clicksfish++;
+        numClicks++;
 
 
-        if(clicksfish > 3) {
+        if(numClicks > 3) {
             window.location.replace("/");
             alert("Login attempts exceeded!");
         } else {}
@@ -156,11 +156,11 @@
     });
 
     function onFunction() {
-        alert ("You are now online.");
+        alert("You are now online.");
     }
 
     function offFunction() {
-        alert ("Your are offline. Some functionality may be unavailable.");
+        alert("Your are offline. Some functionality may be unavailable.");
     }
 </script>
 </body>

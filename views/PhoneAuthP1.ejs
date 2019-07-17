@@ -70,9 +70,7 @@
     let Phone_Number = '<%= Phone_Number %>';
     console.log(Phone_Number);
 
-
     $(document).ready(function() {
-
 
         let today = new Date();
         let date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
@@ -88,10 +86,7 @@
 
     })
 
-
-
-
-    function SendCode () {
+    function SendCode() {
         $.ajax({
             type: "post",
             url: "/pcode",
@@ -104,11 +99,11 @@
     }
 
     function onFunction() {
-        alert ("You are now online.");
+        alert("You are now online.");
     }
 
     function offFunction() {
-        alert ("Your are offline. Some functionality may be unavailable.");
+        alert("Your are offline. Some functionality may be unavailable.");
     }
 </script>
 </body>

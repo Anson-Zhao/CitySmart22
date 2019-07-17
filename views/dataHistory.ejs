@@ -433,17 +433,16 @@
             }
         });
 
-        $('#dataDisplay tbody').on('click', 'tr', function () {
+        $('#dataDisplay tbody').on('click', 'tr', function() {
             thArray = [];
             transactionID = [];
 
             $(this).toggleClass('selected');    //toggle class for the rows selected
             $(this).toggleClass('change');    //toggle class change color
-            // changeColor();
 
             rowSelected = table.rows('.selected').data();    //Store all the data for selected rows'
 
-            $('#dataDisplay > thead > tr > th').each(function () {
+            $('#dataDisplay > thead > tr > th').each(function() {
                 thArray.push($(this).text())
             })
             // console.log(rowSelected);
@@ -457,7 +456,7 @@
         });
 
 
-        $("#deleteButton").on("click", function () {
+        $("#deleteButton").on("click", function() {
             if (confirm("Are you sure you would like to reject this row(s)?") === true) {
                 let transactionIDStr = "transactionIDStr=" + transactionID.toString();
                 let pictureStr = "pictureStr=" + transactionpicturename.toString();
@@ -477,7 +476,7 @@
             } else { return false;}
         });
 
-        $("#showButton").on("click", function () {
+        $("#showButton").on("click", function() {
             table.clear();
             table.draw();
             queryAndDisplay();
@@ -676,52 +675,12 @@
     }
 
     function onFunction() {
-        alert ("You are now online.");
+        alert("You are now online.");
     }
 
     function offFunction() {
-        alert ("Your are offline. Some functionality may be unavailable.");
+        alert("Your are offline. Some functionality may be unavailable.");
     }
-
-
-//     function exportTableToCSV2(filename) {
-//         let csv = [];
-// //        let table = document.querySelector('#trapDisplay');
-//         let rows = document.querySelector("#trapDisplay").querySelectorAll(".selected, thead");
-//
-//         for (let i = 0; i < rows.length; i++) {
-//             let row = [], cols = rows[i].querySelectorAll("td, th");
-//
-//             for (let j = 0; j < cols.length; j++)
-//                 row.push(cols[j].innerText);
-//
-//             csv.push(row.join(","));
-//         }
-//
-//         // Download CSV file
-//         downloadCSV2(csv.join("\n"), filename);
-//
-//     }
-
-    // function changeColor() {
-    //     let row = document.getElementsByClassName("change")[0].innerHTML.trim().split("</td>");
-    //
-    //     let latiLong = row[3].substring(4, row[3].length) + "; " + row[4].substring(4, row[4].length);
-    //
-    //     for (let i = 0; i < markers.length; i++) {
-    //         if (markers[i].DMS === latiLong) {
-    //             if (document.getElementsByClassName("change")[0].classList.contains("selected") && document.getElementsByClassName("change")[0].classList.contains("change")) {
-    //                 document.getElementsByClassName("change")[0].classList.remove("change");
-    //                 markers[i].setMap(map);
-    //             } else if (document.getElementsByClassName("change")[0].classList.contains("change")) {
-    //                 document.getElementsByClassName("change")[0].classList.remove("change");
-    //                 markers[i].setMap(null);
-    //             }
-    //             break
-    //         }
-    //     }
-    //     //alert(markers.length)
-    // }
 
 </script>
 </body>

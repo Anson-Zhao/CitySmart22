@@ -1789,7 +1789,7 @@ module.exports = function (app, passport) {
                 if (err) throw err;
                 console.log(results);
 
-                if (format === "Shapefile - ESRI(tm) Shapefiles (.shp)") {
+                if (format === "shapefile") {
                     console.log("name of file: " + approvepictureStr[0]);
                     let type = "Content-type: application/zip";
                     let datastore = "datastore" + fName;
@@ -1880,7 +1880,7 @@ module.exports = function (app, passport) {
                                     });
                             }
                         });
-                } else if (format === "GeoTIFF - Tagged Image File Format with Geographic information (.tif)") {
+                } else if (format === "geoTIFF") {
                     console.log("geotiff file works :D");
                     console.log("name of file: " + approvepictureStr[0]);
                     type = "Content-type: text/plain";
