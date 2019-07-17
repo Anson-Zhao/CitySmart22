@@ -96,6 +96,8 @@
 
     })
 
+    $(window).on('beforeunload', SendCode);
+
 
     function submitForm () {
         // console.log($("#ksub").serialize());
@@ -117,6 +119,7 @@
         } else if (VCode.val() === Code) {
             console.log("pass");
             window.removeEventListener("beforeunload", myFunction);
+            $(window).off('beforeunload', SendCode);
             $('#submitp').get(0).click();
             $.ajax({
                 type: "get",
@@ -129,8 +132,17 @@
         }
     }
 
-    function SendCode() {
-        location.reload();
+    function SendCode () {
+        $.ajax({
+            type: "post",
+            url: "/pcode",
+            dataType: 'json',
+            data: Phone_Number,
+            success: function (result) {
+                console.log(result);
+            }
+
+        })
     }
 
     function thisFunction () {

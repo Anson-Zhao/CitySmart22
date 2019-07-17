@@ -73,23 +73,24 @@
 	<% } %>
 	<!-- LOGIN FORM -->
 	<!--<form onsubmit="return checkForm()" action="/signup" method="post" id="signup">-->
-	<form  onsubmit="return checkForm()" action="/signup" method="post" id="signup">
+	<p id="TheIncredibles" style="color:red; text-align: center;" hidden><strong>WARNING: Caps lock is enabled.</strong></p>
+	<form onsubmit="return checkForm()" action="/signup" method="post" id="signup">
 		<div class="form-group">
 			<label>Username (email address):</label>
-			<input type="email" class="form-control" name="username" onchange="SearchUsername(this.value)" style="height: 50px;" required>
-			<p id="emailUser" style="color: palevioletred;margin-top:15px;"></p>
+			<input type="email" id="BobtheBuilder" class="form-control" name="username" onchange="SearchUsername(this.value)" style="height: 50px;" required>
+			<p id="emailUser" style="color: palevioletred; margin-top:15px;"></p>
 		</div>
 		<div class="form-group">
 			<label>First Name:</label>
-			<input type="text" class="form-control" name="firstName" style="height: 50px;" required>
+			<input type="text" id="Moana" class="form-control" name="firstName" style="height: 50px;" required>
 		</div>
 		<div class="form-group">
 			<label>Last Name:</label>
-			<input type="text" class="form-control" name="lastName" style="height: 50px;" required>
+			<input type="text" id="LetItGo" class="form-control" name="lastName" style="height: 50px;" required>
 		</div>
 		<div class="form-group">
 			<label>Password:</label>
-			<input type="password" class="form-control" name="password" style="height: 50px;" required>
+			<input type="password" id="Mulan" class="form-control" name="password" style="height: 50px;" onfocus ="BMW ()" required>
 		</div>
 		<div class="form-group" hidden>
 			<label>User Role:</label>
@@ -173,9 +174,9 @@
 			<label>Status:</label>
 			<input type="text" id="status" class="form-control" name="status" value="Pending" readonly>
 		</div>
+		<div id="WreckitRalph" style="text-align: center;" hidden><input type="checkbox" onclick="Porsche ()"> Show Password</div>
 		<br>
-		<div class="container" style="width: 500px;
-    padding: 0px;">
+		<div class="container" style="width: 500px; padding: 0px;">
 			<button type="submit" class="button1"> Sign Up </button>
 		</div>
 	</form>
@@ -184,6 +185,111 @@
 		Or go back to <a href="/login">Log In</a></p>
 </div>
 <script>
+	let BobtheBuilder = document.getElementById("BobtheBuilder");
+	let Moana = document.getElementById("Moana");
+	let LetItGo = document.getElementById("LetItGo");
+	let Mulan = document.getElementById("Mulan");
+	let TheIncredibles = document.getElementById("TheIncredibles");
+	let WreckitRalph = document.getElementById("WreckitRalph");
+	let answer1 = document.getElementById("answer1");
+	let answer2 = document.getElementById("answer2");
+
+	BobtheBuilder.addEventListener("keydown", function(ebay) {
+
+		if (ebay.getModifierState("CapsLock")) {
+			TheIncredibles.hidden = false;
+		} else {}
+	});
+	BobtheBuilder.addEventListener("keyup", function(ebay) {
+
+		if (ebay.getModifierState("CapsLock")) {}
+		else {
+			TheIncredibles.hidden = true;
+		}
+	});
+
+	answer1.addEventListener("keydown", function(ebay) {
+
+		if (ebay.getModifierState("CapsLock")) {
+			TheIncredibles.hidden = false;
+		} else {}
+	});
+	answer1.addEventListener("keyup", function(ebay) {
+
+		if (ebay.getModifierState("CapsLock")) {}
+		else {
+			TheIncredibles.hidden = true;
+		}
+	});
+
+	answer2.addEventListener("keydown", function(ebay) {
+
+		if (ebay.getModifierState("CapsLock")) {
+			TheIncredibles.hidden = false;
+		} else {}
+	});
+	answer2.addEventListener("keyup", function(ebay) {
+
+		if (ebay.getModifierState("CapsLock")) {}
+		else {
+			TheIncredibles.hidden = true;
+		}
+	});
+
+	Moana.addEventListener("keydown", function(ebay) {
+
+		if (ebay.getModifierState("CapsLock")) {
+			TheIncredibles.hidden = false;
+		} else {}
+	});
+	Moana.addEventListener("keyup", function(ebay) {
+
+		if (ebay.getModifierState("CapsLock")) {}
+		else {
+			TheIncredibles.hidden = true;
+		}
+	});
+
+	LetItGo.addEventListener("keydown", function(ebay) {
+
+		if (ebay.getModifierState("CapsLock")) {
+			TheIncredibles.hidden = false;
+		} else {}
+	});
+	LetItGo.addEventListener("keyup", function(ebay) {
+
+		if (ebay.getModifierState("CapsLock")) {}
+		else {
+			TheIncredibles.hidden = true;
+		}
+	});
+
+	Mulan.addEventListener("keydown", function(ebay) {
+
+		if (ebay.getModifierState("CapsLock")) {
+			TheIncredibles.hidden = false;
+		} else {}
+	});
+	Mulan.addEventListener("keyup", function(ebay) {
+
+		if (ebay.getModifierState("CapsLock")) {}
+		else {
+			TheIncredibles.hidden = true;
+		}
+	});
+
+    function Porsche () {
+		if (Mulan.type === "password") {
+			Mulan.type = "text";
+		} else {
+			Mulan.type = "password";
+		}
+	}
+
+	function BMW () {
+		WreckitRalph.hidden = false;
+	}
+
     $(document).ready(function() {
         $(function() {
             flatpickr(".date", {
