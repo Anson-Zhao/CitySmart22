@@ -253,12 +253,7 @@
     border-radius: 5px;
     border: 1px solid #c8c8c8;">
             <h5 class="floatingBox">Phone Number:</h5>
-            <input class="inputBoxDate select" type="text" id="Phone_Number" placeholder="Enter Phone Number" style="width: 210px;
-    height: 40px;
-    padding-left: 10px;
-    margin: 5px;
-    border-radius: 5px;
-    border: 1px solid #c8c8c8;">
+            <input class="inputBoxDate select" type="tel" id="Phone_Number" placeholder="Enter Phone Number" onkeypress="isInputNumber (event)" maxlength="10" style="width: 210px; height: 40px; padding-left: 10px; margin: 5px; border-radius: 5px;border: 1px solid #c8c8c8;">
         </div>
         <div class="container floatingBox" style="width: 100px;
     padding: 0px;">
@@ -528,45 +523,53 @@
             });
         }
 
-        // Format the phone number as the user types it
-        document.getElementById('Phone_Number').addEventListener('keyup',function(evt){
-            let phoneNumber = document.getElementById('Phone_Number');
-            let charCode = (evt.which) ? evt.which : evt.keyCode;
-            phoneNumber.value = phoneFormat(phoneNumber.value);
-        });
+        // // Format the phone number as the user types it
+        // document.getElementById('Phone_Number').addEventListener('keyup',function(evt){
+        //     let phoneNumber = document.getElementById('Phone_Number');
+        //     let charCode = (evt.which) ? evt.which : evt.keyCode;
+        //     // phoneNumber.value = phoneFormat(phoneNumber.value);
+        // });
+        //
+        // // We need to manually format the phone number on page load
+        // // document.getElementById('Phone_Number').value = phoneFormat(document.getElementById('Phone_Number').value);
+        //
+        // // A function to determine if the pressed key is an integer
+        // function numberPressed(evt){
+        //     let charCode = (evt.which) ? evt.which : evt.keyCode;
+        //     if(charCode > 31 && (charCode < 48 || charCode > 57) && (charCode < 36 || charCode > 40)){
+        //         return false;
+        //     }
+        //     return true;
+        // }
+        //
+        // // A function to format text to look like a phone number
+        // function phoneFormat(input){
+        //     // Strip all characters from the input except digits
+        //     input = input.replace(/\D/g,'');
+        //
+        //     // Trim the remaining input to ten characters, to preserve phone number format
+        //     input = input.substring(0,10);
+        //
+        //     // Based upon the length of the string, we add formatting as necessary
+        //     let size = input.length;
+        //     if(size == 0){
+        //         input = input;
+        //     }else if(size < 4){
+        //         input = '('+input;
+        //     }else if(size < 7){
+        //         input = '('+input.substring(0,3)+') '+input.substring(3,6);
+        //     }else{
+        //         input = '('+input.substring(0,3)+') '+input.substring(3,6)+' - '+input.substring(6,10);
+        //     }
+        //     return input;
+        // }
 
-        // We need to manually format the phone number on page load
-        document.getElementById('Phone_Number').value = phoneFormat(document.getElementById('Phone_Number').value);
+        function isInputNumber (evt) {
+            var char = String.fromCharCode(evt.which);
 
-        // A function to determine if the pressed key is an integer
-        function numberPressed(evt){
-            let charCode = (evt.which) ? evt.which : evt.keyCode;
-            if(charCode > 31 && (charCode < 48 || charCode > 57) && (charCode < 36 || charCode > 40)){
-                return false;
+            if(!(/[0-9]/.test(char))) {
+                evt.preventDefault();
             }
-            return true;
-        }
-
-        // A function to format text to look like a phone number
-        function phoneFormat(input){
-            // Strip all characters from the input except digits
-            input = input.replace(/\D/g,'');
-
-            // Trim the remaining input to ten characters, to preserve phone number format
-            input = input.substring(0,10);
-
-            // Based upon the length of the string, we add formatting as necessary
-            let size = input.length;
-            if(size == 0){
-                input = input;
-            }else if(size < 4){
-                input = '('+input;
-            }else if(size < 7){
-                input = '('+input.substring(0,3)+') '+input.substring(3,6);
-            }else{
-                input = '('+input.substring(0,3)+') '+input.substring(3,6)+' - '+input.substring(6,10);
-            }
-            return input;
         }
 
         function onFunction() {

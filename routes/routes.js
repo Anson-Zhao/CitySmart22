@@ -1167,16 +1167,16 @@ module.exports = function (app, passport) {
                 let text = 'to sign up an account with this email.';
                 let url = "http://" + req.headers.host + "/verify/";
                 sendToken(username, subject, text, url, res);
-                let newStat = "UPDATE UserProfile SET Phone_Number = replace(Phone_Number, '-', '');";
-                con_CS.query(newStat, function (err, rows) {
-                    if (err) {
-                        console.log(err);
-                        res.json({"error": true, "message": "An unexpected error occurred!"});
-                    } else {
-                        console.log("donezo");
-                    }
-
-                });
+                // let newStat = "UPDATE UserProfile SET Phone_Number = replace(Phone_Number, '-', '');";
+                // con_CS.query(newStat, function (err, rows) {
+                //     if (err) {
+                //         console.log(err);
+                //         res.json({"error": true, "message": "An unexpected error occurred!"});
+                //     } else {
+                //         console.log("donezo");
+                //     }
+                //
+                // });
             }
         });
     });
@@ -1387,6 +1387,11 @@ module.exports = function (app, passport) {
         let editingUser = req.user.username;
         let editingUserPassword = req.user.password;
 
+        let phoneNumber = {
+            phoneNumber: req.body.phoneNumber,
+        };
+
+
 
         if(user === editingUser) {
             let newEditPass = {
@@ -1438,6 +1443,16 @@ module.exports = function (app, passport) {
                 basicInformation();
             }
         }
+        //let newStat = "UPDATE UserProfile SET Phone_Number = replace(Phone_Number, '-', '');";
+        //                 con_CS.query(newStat, function (err, rows) {
+        //                     if (err) {
+        //                         console.log(err);
+        //                         res.json({"error": true, "message": "An unexpected error occurred!"});
+        //                     } else {
+        //                         console.log("donezo");
+        //                     }
+        //
+        //                 });
 
         function basicInformation() {
             let result = Object.keys(req.body).map(function (key) {
@@ -1446,7 +1461,7 @@ module.exports = function (app, passport) {
 
             // let update3 = " WHERE username = '" + req.user.username + "'";
             let statement1 = "UPDATE UserLogin SET userrole = '" + result[3][1] + "',   status = '" + result[4][1] + "' WHERE username = '" + result[0][1]+ "';";
-            let statement2 = "UPDATE UserProfile SET firstName = '" + result[1][1] + "', lastName = '" + result[2][1] + "' WHERE username = '" + result[0][1] + "';";
+            let statement2 = "UPDATE UserProfile SET firstName = '" + result[1][1] + "', lastName = '" + result[2][1] + ", Phone_Number = '"+ phoneNumber.phoneNumber + "' WHERE username = '" + result[0][1] + "';";
             con_CS.query(statement1 + statement2, function (err, result) {
                 if (err) throw err;
                 res.json(result);

@@ -101,6 +101,10 @@
                 </select>
             </div>
             <div class="form-group">
+                <label>Phone Number (Optional):</label>
+                <input type="tel" class="form-control" name="phoneNumber" style="height: 50px;" maxlength="10" placeholder="XXXXXXXXXX" onkeypress="isInputNumber (event)" title="XXXXXXXXXX" required pattern="[0-9]{10}" >
+            </div>
+            <div class="form-group">
                 <label>Status:</label>
                 <select id="StAtUs" name="Status" class="form-control" style="height: 50px;">
                     <option class="active" value="Active">Active</option>
@@ -367,6 +371,15 @@
             // return false;
         }
 
+     function isInputNumber (evt) {
+         let char = String.fromCharCode(evt.which);
+
+
+
+         if(!(/[0-9]/.test(char))) {
+             evt.preventDefault();
+         }
+     }
 
      function onFunction() {
          alert ("You are now online.");
