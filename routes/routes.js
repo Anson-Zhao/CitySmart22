@@ -399,12 +399,12 @@ module.exports = function (app, passport) {
         myStat = "SELECT question1, question2, answer1, answer2 FROM UserLogin WHERE username = '" + req.user.username + "'";
 
         con_CS.query(myStat, function (err, result) {
-            console.log("here is the result:");
+            console.log("Here is the result:");
             console.log(result);
             console.log(result[0].question1);
 
             if (err) {
-                res.send('There was a big no no.');
+                res.send('An unexpected error occurred.');
             } else {
                 res.render('KnowledgeAuth.ejs', {
                     user: req.user,
@@ -425,12 +425,12 @@ module.exports = function (app, passport) {
         myStat = "SELECT Phone_Number FROM UserProfile WHERE username = '" + req.user.username + "'";
 
         con_CS.query(myStat, function (err, result) {
-            console.log("here is the result:");
+            console.log("Here is the result:");
             console.log(result);
             console.log(result[0].Phone_Number);
 
             if (err) {
-                res.send("There was a big nose nose.");
+                res.send("There was an error retrieving the phone number.");
             } else {
                 res.render('PhoneAuthP1.ejs', {
                     user: req.user,
@@ -450,7 +450,7 @@ module.exports = function (app, passport) {
         });
 
 
-        console.log('Waffles and bacon');
+        console.log('The code was successfully generated');
         console.log(result[0]);
 
         let password = generator.generateMultiple(1, {
@@ -489,7 +489,7 @@ module.exports = function (app, passport) {
     app.get('/emailRequest', function (req, res) {
         res.setHeader("Access-Control-Allow-Origin", "*"); // Allow cross domain header
         let requester = req.query.requester;
-        console.log("got here");
+        console.log("Email request initiated");
         console.log(requester);
 
         let statement = "SELECT username FROM UserLogin WHERE userrole = 'Admin';";
@@ -741,7 +741,7 @@ module.exports = function (app, passport) {
                 let statement1 = "UPDATE Request_Form SET Layer_Uploader = 'approvedfolder/',Current_Status = 'Approved' WHERE ThirdLayer ='"+ layerNameStr[i] +"';";
                 let statement2 = "UPDATE LayerMenu SET Status = 'Approved' WHERE ThirdLayer = '" + layerNameStr[i]  + "';";
                 console.log(statement2);
-                console.log('statement:D'+statement1+statement2);
+                console.log('statement: '+statement1+statement2);
                 console.log(i);
                 console.log(pictureStr.length);
                 con_CS.query(statement1+statement2, function (err, results) {
@@ -896,7 +896,7 @@ module.exports = function (app, passport) {
     });
 
     app.get('/layerReqQuery', isLoggedIn, function (req, res) {
-        console.log('queryboy');
+        console.log('Layer query: ');
         console.log(req.query);
         let iniStat = "SELECT * FROM Request_Form";
         let myQueryObj = [ //change everything because we need to make sure it matches what we want to happen in client side
@@ -1863,7 +1863,6 @@ module.exports = function (app, passport) {
                             }
                         });
                 } else if (format === "geoTIFF") {
-                    console.log("geotiff file works :D");
                     console.log("name of file: " + approvepictureStr[0]);
                     type = "Content-type: text/plain";
                     let coveragestore = "coveragestore" + fName;
@@ -2142,12 +2141,12 @@ module.exports = function (app, passport) {
         let LayerName = req.query.LayerName.split(',');
 
         for (let i = 0; i < transactionID.length; i++) {
-            console.log('hh');
+            // console.log('hh');
             console.log(LayerName[i]);
             let statement = "UPDATE Request_Form SET Layer_Uploader = 'trashfolder/', Prior_Status = Current_Status, Current_Status = 'Deleted'  WHERE RID = '" + transactionID[i] + "';";
             let statement1 = "UPDATE LayerMenu SET Status = 'Deleted' WHERE ThirdLayer = '" + LayerName[i] + "';";
 
-            console.log("WOW " + statement1);
+            console.log("Statement1:  " + statement1);
             // let statement1 = "DELETE FROM LayerMenu WHERE ThirdLayer = '" + LayerName[i]  + "';"; // the [i] is converting the array back to string so it can be used
         ////transferred value from client side to server side and then be used in SQL
             fs.rename(''+ Pending_Dir + '/' + pictureStr[i] + '' , ''  + Delete_Dir + '/' + pictureStr[i] + '',  function (err) {
