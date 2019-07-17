@@ -131,7 +131,7 @@
 			</select>
 			<br>
 			<label>Answer:</label>
-			<input type="text" class="form-control" name="answer1" id="answer1" style="height: 50px;" required>
+			<input type="text" class="form-control" id="answer1" style="height: 50px;" required>
 			<br>
 			<label>Security Question #2:</label>
 			<br>
@@ -160,7 +160,7 @@
 			</select>
 			<br>
 			<label>Answer:</label>
-			<input type="text" class="form-control" name="answer2" id="answer2" style="height: 50px;" required>
+			<input type="text" class="form-control" id="answer2" style="height: 50px;" required>
 		</div>
 		<div class="form-group" hidden>
 			<label>Date Created:</label>
@@ -303,18 +303,17 @@
             $('#signup').submit(function(e) {
                 console.log($("#signup").serialize());
 				console.log($('#signup'));
-				// let a1 = $('#answer1').val();
-				// a1 =
-						$('input[name=answer1]').replace("\'", "\\'");
-				// let a2 = $('#answer2').val();
-				// a2 =
-						$('input[name=answer2]').replace("\'", "\\'");
+				let a1 = $('#answer1').val().replace("\'", "\\'");
+				let a2 = $('#answer2').val().replace("\'", "\\'");
+				let answer1 = "answer1=" + a1;
+				let answer2 = "answer2=" + a2;
+
                 e.preventDefault();
                 $.ajax({
                     type: "post",
                     url: "/signup",
                     dataType: 'json',
-                    data: $("#signup").serialize(),
+                    data: $("#signup").serialize() + "&" + answer1 + "&" + answer2,
                     success: function (result) {
                     	console.log(result);
                         if (!result.error) {
