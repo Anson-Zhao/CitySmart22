@@ -268,8 +268,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/routes/routes.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="128">
-              <caret line="2988" column="21" selection-start-line="2988" selection-start-column="21" selection-end-line="2988" selection-end-column="21" />
+            <state relative-caret-position="503">
+              <caret line="3013" lean-forward="true" selection-start-line="3013" selection-end-line="3013" />
             </state>
           </provider>
         </entry>
@@ -549,21 +549,7 @@
       <workItem from="1559311388756" duration="13000" />
       <workItem from="1559311414670" duration="2271000" />
       <workItem from="1560168590379" duration="5311000" />
-      <workItem from="1563384545083" duration="2197000" />
-    </task>
-    <task id="LOCAL-00031" summary="V2.2 Home.js">
-      <created>1556652153654</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1556652153654</updated>
-    </task>
-    <task id="LOCAL-00032" summary="V2.2 Home.js">
-      <created>1556652256939</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1556652256939</updated>
+      <workItem from="1563384545083" duration="2765000" />
     </task>
     <task id="LOCAL-00033" summary="V2.2 Home.js">
       <created>1556718065625</created>
@@ -894,15 +880,28 @@
       <option name="project" value="LOCAL" />
       <updated>1563386123903</updated>
     </task>
-    <option name="localTasksCounter" value="80" />
+    <task id="LOCAL-00080" summary="Merge branch 'Yiyang' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
+      <created>1563386801975</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1563386801975</updated>
+    </task>
+    <task id="LOCAL-00081" summary="Merge branch 'Yiyang' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
+      <created>1563386984758</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1563386984758</updated>
+    </task>
+    <option name="localTasksCounter" value="82" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="253747000" />
+    <option name="totallyTimeSpent" value="254315000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="843" y="23" width="1410" height="1302" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26709864" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -1370,8 +1369,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/routes.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="2988" column="21" selection-start-line="2988" selection-start-column="21" selection-end-line="2988" selection-end-column="21" />
+        <state relative-caret-position="503">
+          <caret line="3013" lean-forward="true" selection-start-line="3013" selection-end-line="3013" />
         </state>
       </provider>
     </entry>
