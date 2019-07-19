@@ -79,6 +79,8 @@ requirejs(['./newGlobe',
 
                 console.log("0");
                 console.log(newGlobe.layers);
+                console.log(value);
+                console.log(i);
                 if (value === "heat0"){
                     (function myLoop (i) {
                         setTimeout(function () {
@@ -101,6 +103,8 @@ requirejs(['./newGlobe',
                 if (newGlobe.layers[selectedIndex] instanceof WorldWind.RenderableLayer) {
                     if (selectedIndex < 0 || !newGlobe.layers[selectedIndex].renderables.length) {
 
+                        console.log("1");
+                        console.log(newGlobe.layers[selectedIndex]);
                         confirm("The layer you selected is tentatively not available. Please try it later.");
                         $(toggle).prop('checked', false);
 
@@ -119,7 +123,9 @@ requirejs(['./newGlobe',
                     }
                 } else {
                     if (selectedIndex < 0) {
-
+                        console.log("2");
+                        console.log(value);
+                        console.log(newGlobe.layers[selectedIndex]);
                         confirm("The layer you selected is tentatively not available. Please try it later.");
                         $(toggle).prop('checked', false);
 

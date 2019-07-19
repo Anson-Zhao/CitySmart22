@@ -24,6 +24,8 @@ requirejs([
         $(".WmsLayer").each(function (i) {
             preloadWmsLayers[i] = $(this).val();
 
+            console.log(preloadWmsLayers[i]);
+
             if (!preloadWmsLayers[i]) return true;
             let wmsLayerCapability = wms.getNamedLayer(preloadWmsLayers[i]);
 
