@@ -24,8 +24,7 @@ requirejs(['./newGlobe',
     './CS_wmsLayer',
     './USGS_WT',
     './USGS_MD',
-    './USGS_MR',
-    './heat'
+    './USGS_MR'
 ], function (newGlobe, menuL) {
 
     "use strict";
@@ -36,11 +35,15 @@ requirejs(['./newGlobe',
 
     let arrMenu = [];
     let firstTime = true;
+    let toggleCheck = false;
     let layerSelected, Altitude;
     let j = 0;
     const nextL = $(".next");
     const previousL = $("#previousL");
     const currentSelectedLayer = $("#currentSelectedLayer");
+    const checkbox = document.getElementById("inpLock");
+    let array=[];
+
 
     //All the event listeners
     $(document).ready(function () {
@@ -53,97 +56,188 @@ requirejs(['./newGlobe',
         nextL.prop('disabled', true);
         previousL.prop('disabled', true);
 
-        $("#popover").popover({html: true, placement: "top", trigger: "hover"});
+        // $("#popover").popover({html: true, placement: "top", trigger: "hover"});
 
         //turn on/off layers
         $(menuL.arrType.toString()).click(function () {
-            if (firstTime) {
+            console.log(array);
+            //if the box is not checked initially
+
+            let toggle = this;
+            let arrToggle = toggle.value.split(",");
+            // array.push(toggle.value);
+            // console.log(array);
+
+            if(firstTime) {
                 confirm("Some layers may take awhile to load. Please be patient.");
                 firstTime = false; //alert (only appear at the first time)
             }
 
-            //if the there is already one toggle switch is turned on, as another toggle is clicked then close the last button
-            if (arrMenu.length> 0 ) {
-                var clickedClass = '.'+arrMenu[arrMenu.length-1];
-                $(clickedClass).prop('checked',false);
-                var lastIndex = newGlobe.layers.findIndex(ele => ele.displayName === arrMenu[arrMenu.length-1]);
-                newGlobe.layers[lastIndex].enabled = clickedClass.checked;
-            }
+            if(!toggleCheck){
 
-            let toggle = this;
-            let arrToggle = toggle.value.split(",");
 
-            arrToggle.forEach(function (value, i) {
 
-                let selectedIndex = newGlobe.layers.findIndex(ele => ele.displayName === value);
+                arrToggle.forEach(function (value, i) {
 
-                console.log("0");
-                console.log(newGlobe.layers);
-                console.log(value);
-                console.log(i);
-                if (value === "heat0"){
-                    (function myLoop (i) {
-                        setTimeout(function () {
-                            console.log("i: " + i);
-                            let newVal = "heat" + (i-1);
-                            newGlobe.layers[selectedIndex+(i-1)].enabled = toggle.checked;
-                            console.log("1");
-                            console.log(newVal);
-                            let layerRequest = 'layername=' + newVal;
-                            newGlobe.redraw();
-                            if (--i) {
-                                myLoop(i);
+                    let selectedIndex = newGlobe.layers.findIndex(ele => ele.displayName === value);
+
+                    if(selectedIndex>=0){
+                        if(toggle.checked){
+                            array.push(toggle.value);
+                            console.log('push')
+                        }
+                    }
+                    if (newGlobe.layers[selectedIndex] instanceof WorldWind.RenderableLayer) {
+
+                        if (selectedIndex < 0 || !newGlobe.layers[selectedIndex].renderables.length) {
+
+                            confirm("The layer you selected is tentatively not available. Please try it later.");
+                            $(toggle).prop('checked', false);
+
+                        } else {
+
+                            newGlobe.layers[selectedIndex].enabled = toggle.checked;
+
+                            if(!toggle.checked){
+                                console.log('close');
+                                array.splice(array.length-1,1);
+                                console.log(array)
                             }
-                        }, 2000)
-                    })(10);
-                }
 
+                            if (toggle.checked && i === 0) {
+                                let layerRequest = 'layername=' + value;
+                                globePosition(layerRequest);
+                            }
+                            buttonControl(toggle.checked);
 
-
-                if (newGlobe.layers[selectedIndex] instanceof WorldWind.RenderableLayer) {
-                    if (selectedIndex < 0 || !newGlobe.layers[selectedIndex].renderables.length) {
-
-                        console.log("1");
-                        console.log(newGlobe.layers[selectedIndex]);
-                        confirm("The layer you selected is tentatively not available. Please try it later.");
-                        $(toggle).prop('checked', false);
-
-                    } else {
-                        newGlobe.layers[selectedIndex].enabled = toggle.checked;
-
-                        if (toggle.checked && i === 0) {
-                            let layerRequest = 'layername=' + value;
-                            globePosition(layerRequest, toggle.checked);
-                            confirm("Some layers' positions might be incorrect. Please bear with us as our technicians work on it.");
+                            if (newGlobe.layers[selectedIndex].layerType === 'USGSWT_PKLayer') {
+                                barChange(value)
+                            }
                         }
+                    } else { // turn on the lock to select only one layer
+                        if (selectedIndex < 0) {
 
-                        if (newGlobe.layers[selectedIndex].layerType === 'USGSWT_PKLayer') {
-                            barChange(value)
-                        }
-                    }
-                } else {
-                    if (selectedIndex < 0) {
-                        console.log("2");
-                        console.log(value);
-                        console.log(newGlobe.layers[selectedIndex]);
-                        confirm("The layer you selected is tentatively not available. Please try it later.");
-                        $(toggle).prop('checked', false);
+                            confirm("The layer you selected is tentatively not available. Please try it later.");
+                            $(toggle).prop('checked', false);
+                            // array.splice(-1,1)
 
-                    } else {
-                        newGlobe.layers[selectedIndex].enabled = toggle.checked;
+                        } else {
 
-                        if (toggle.checked && i === 0) {
-                            let layerRequest = 'layername=' + value;
-                            globePosition(layerRequest, toggle.checked);
-                        }
+                            newGlobe.layers[selectedIndex].enabled = toggle.checked;
 
-                        if (newGlobe.layers[selectedIndex].layerType === 'USGSWT_PKLayer') {
-                            barChange(value)
+                            if(!toggle.checked){
+                                console.log('close');
+                                array.splice(array.length-1,1);
+                                console.log(array)
+                            }
+
+                            if (toggle.checked && i === 0) {
+                                let layerRequest = 'layername=' + value;
+                                globePosition(layerRequest);
+                            }
+                            buttonControl(toggle.checked);
+
+                            if (newGlobe.layers[selectedIndex].layerType === 'USGSWT_PKLayer') {
+                                barChange(value)
+                            }
                         }
                     }
-                }
-            });
+                });
+
+            }else{
+                console.log('only on layer');
+
+                arrToggle.forEach(function (value, i) {
+
+                    let selectedIndex = newGlobe.layers.findIndex(ele => ele.displayName === value);
+
+                    if(selectedIndex>=0){
+                        if(toggle.checked){
+                            array.push(toggle.value);
+                            console.log('open')
+                        }
+                    }
+                    console.log(array);
+
+                    if (newGlobe.layers[selectedIndex] instanceof WorldWind.RenderableLayer) {
+                        if (selectedIndex < 0 || !newGlobe.layers[selectedIndex].renderables.length) {
+
+                            confirm("The layer you selected is tentatively not available. Please try it later.");
+                            $(toggle).prop('checked', false);
+
+                        } else {
+                            newGlobe.layers[selectedIndex].enabled = toggle.checked;
+
+                            if (toggle.checked && i === 0) {
+                                let layerRequest = 'layername=' + value;
+                                globePosition(layerRequest);
+                            }
+                            closeToggle(array);
+
+                            if(!toggle.checked){
+                                console.log('close');
+                                array.splice(array.length-1,1);
+                                console.log(array)
+                            }
+
+                            buttonControl(toggle.checked);
+
+                            if (newGlobe.layers[selectedIndex].layerType === 'USGSWT_PKLayer') {
+                                barChange(value)
+                            }
+                        }
+                    } else {
+                        if (selectedIndex < 0) {
+
+                            confirm("The layer you selected is tentatively not available. Please try it later.");
+                            $(toggle).prop('checked', false);
+                            array.splice(-1,1)
+
+                        } else {
+
+                            newGlobe.layers[selectedIndex].enabled = toggle.checked;
+
+                            if (toggle.checked && i === 0) {
+                                let layerRequest = 'layername=' + value;
+                                globePosition(layerRequest);
+                            }
+
+                            closeToggle(array);
+
+                            if(toggle.checked===false){
+                                console.log('hh');
+                                array.splice(-1,1);
+                                console.log(array)
+                            }
+
+                            buttonControl(toggle.checked);
+
+                            if (newGlobe.layers[selectedIndex].layerType === 'USGSWT_PKLayer') {
+                                barChange(value)
+                            }
+                        }
+                    }
+                });
+            }
         });
+
+        $(".btn-lock").click(function () {
+            if(checkbox.checked){
+                toggleCheck=false;
+
+            }else { //lock the lock to select only one layer
+                console.log('hh');
+
+                toggleCheck=true;
+
+                if(confirm("all the layers is going to be closed except the most recent one")){
+                    if(arrMenu.length>1){
+                        closeAllToggle()
+                    }
+                }
+            }
+        });
+
 
         $('#previousL').click(function () {
             nextL.prop('disabled', false);
@@ -202,6 +296,54 @@ requirejs(['./newGlobe',
         newGlobe.addEventListener("click", handleMouseCLK);
     });
 
+
+    function closeToggle(array){
+
+        if (arrMenu.length> 0 ) {
+            // var clickedClass = '.'+arrMenu[arrMenu.length-1] + ':input[value="' + array[array.length-1] + '"]';
+            var clickedClass = array[0];
+            $( "input[value= "+ clickedClass+"]" ).prop('checked',false);
+
+
+            var lastIndex = newGlobe.layers.findIndex(ele => ele.displayName === array[0]);
+
+            newGlobe.layers[lastIndex].enabled = false;
+
+
+            arrMenu.splice(-1,1);
+            array.splice(0,1);
+
+        }
+
+    }
+
+
+
+    function closeAllToggle() {
+        console.log('>0');
+            for(var i =0; i <arrMenu.length; i++){
+                var clickedClass =array[i];
+                $( "input[value= "+ clickedClass+"]" ).prop('checked',false);
+                var lastIndex = newGlobe.layers.findIndex(ele => ele.displayName === array[i]);
+                console.log(lastIndex);
+                newGlobe.layers[lastIndex].enabled = false;
+            }
+
+        arrMenu[0]=arrMenu[arrMenu.length-1];
+        arrMenu.splice(1);
+        array[0]=array[array.length-1];
+        array.splice(1);
+
+        console.log(arrMenu);
+
+        var name= array[0];
+        $( "input[value= "+ name+"]" ).prop('checked',true);
+        var Index = newGlobe.layers.findIndex(ele => ele.displayName === array[0]);
+        console.log(Index);
+        newGlobe.layers[Index].enabled =true;
+
+    }
+
     function handleMouseCLK(e) {
         let x = e.clientX,
             y = e.clientY;
@@ -249,7 +391,7 @@ requirejs(['./newGlobe',
         }
     }
 
-    function globePosition(request, toggleB) {
+    function globePosition(request) {
         $.ajax({
             url: '/position',
             type: 'GET',
@@ -261,7 +403,7 @@ requirejs(['./newGlobe',
                 Altitude = layerSelected.Altitude * 1000;
                 newGlobe.goTo(new WorldWind.Position(layerSelected.Latitude, layerSelected.Longitude, Altitude));
 
-                buttonControl(toggleB);
+                // console.log('globePosition');
             }
         })
     }
@@ -392,13 +534,5 @@ requirejs(['./newGlobe',
         left.html(config[toggleV].Min);
         right.html(config[toggleV].Max);
 
-    }
-
-    function wait(ms){
-        var start = new Date().getTime();
-        var end = start;
-        while(end < start + ms) {
-            end = new Date().getTime();
-        }
     }
 });
