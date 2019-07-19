@@ -102,13 +102,13 @@
 		</div>
 		<div class="form-group">
 			<label>Phone Number (Optional):</label>
-			<input type="tel" class="form-control" name="phoneNumber" style="height: 50px;" placeholder="888-888-8888" title="XXX-XXX-XXXX" required pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" >
+			<input type="tel" class="form-control" name="phoneNumber" style="height: 50px;" placeholder="8888888888" title="XXXXXXXXXX" pattern="[0-9]{10}" >
 		</div>
 		<div class="form-group">
 			<label>Security Question #1:</label>
 			<br>
 			<select id="q1" name="question1" class="form-control" style="height: 50px;" required>
-				<option value="0">SELECT SECURITY QUESTION</option>
+				<option value="" disabled selected>SELECT SECURITY QUESTION</option>
 				<option value="In what city or town did your mother and father meet?">In what city or town did your mother and father meet?</option>
 				<option value="What is the middle name of your oldest child?">What is the middle name of your oldest child?</option>
 				<option value="What was your favorite food as a child?">What was your favorite food as a child?</option>
@@ -136,7 +136,7 @@
 			<label>Security Question #2:</label>
 			<br>
 			<select id="q2" name="question2" class="form-control" style="height: 50px;" required>
-				<option value="0">SELECT SECURITY QUESTION</option>
+				<option value="" disabled selected>SELECT SECURITY QUESTION</option>
 				<option value="In what city or town did your mother and father meet?">In what city or town did your mother and father meet?</option>
 				<option value="What is the middle name of your oldest child?">What is the middle name of your oldest child?</option>
 				<option value="What was your favorite food as a child?">What was your favorite food as a child?</option>
@@ -279,24 +279,32 @@
 				let answer1 = "answer1=" + a1;
 				let answer2 = "answer2=" + a2;
 
+				if( $('#q1').val() === '' ) {
+					alert('You are required to choose two security questions. Your Security Question #1 seems to be empty.')
+				} else if( $('#q2').val() === '' ) {
+					alert('You are required to choose two security questions. Your Security Question #2 seems to be empty.')
+				} else {
+					$.ajax({
+						type: "post",
+						url: "/signup",
+						dataType: 'json',
+						data: $("#signup").serialize() + "&" + answer1 + "&" + answer2,
+						success: function (result) {
+							console.log(result);
+							if (!result.error) {
+								// alert(result.message);
+								alert("We are sending you the email verification. Please check it before login to your account.");
+								window.location.replace('/login');
+								console.log(("#signup").serialize);
+							} else {
+								alert(result.message);
+							}
+						}
+					})
+				}
+
                 e.preventDefault();
-                $.ajax({
-                    type: "post",
-                    url: "/signup",
-                    dataType: 'json',
-                    data: $("#signup").serialize() + "&" + answer1 + "&" + answer2,
-                    success: function (result) {
-                    	console.log(result);
-                        if (!result.error) {
-                            // alert(result.message);
-                            alert("We are sending you the email verification. Please check it before login to your account.");
-                            window.location.replace('/login');
-                            console.log(("#signup").serialize);
-                        } else {
-                            alert(result.message);
-                        }
-                    }
-                })
+
             });
         });
         let today = new Date();
