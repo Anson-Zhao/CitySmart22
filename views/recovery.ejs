@@ -160,6 +160,9 @@
     <a href="/dataHistory" style="width:110px;">
         <button class="navbutton1" style="width: 160px"> Approved Requests </button>
     </a>
+    <a href="/rejected" style="width:110px;">
+        <button class="navbutton1" style="width: 160px"> Rejected Requests </button>
+    </a>
     <div class="dropdown" style="height: 80px; width: 200px; float: right; margin: 0;">
         <button onclick="dropDown()" class="dropbutton" id="Username">
             <%= firstName%>
@@ -176,7 +179,7 @@
         </div>
     </div>
 </div>
-<body>
+<body ononline="onFunction()" onoffline="offFunction()">
     <div class="container center">
         <div id="pageHeader" class="page-header text-center">
             <h1><span class="fa fa-trash-o"></span><strong> CitySmart Data Visualization - Restore </strong></h1><h4><span class="fa fa-user"></span>&nbsp;<strong>Account Name</strong>: <%= user.username %></h4><br>
@@ -481,6 +484,14 @@
                 }
             }
         });
+    }
+
+    function onFunction() {
+        alert ("You are now online.");
+    }
+
+    function offFunction() {
+        alert ("Your are offline. Some functionality may be unavailable.");
     }
 
 </script>

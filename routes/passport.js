@@ -92,19 +92,19 @@ module.exports = function(passport) {
                         return done(err);
                     if (!rows.length) {
 
-                        return done(null, false, req.flash('loginMessage', 'No user found.')); // req.flash is the way to set flashdata using connect-flash
+                        return done(null, false, req.flash('loginMessage', 'Incorrect username or password.')); // req.flash is the way to set flashdata using connect-flash
                     }
 
                     if (rows[0].status !== "Suspended" && rows[0].status !== "Pending") {
 
                         // if the user is found but the password is wrong
                         if (!bcrypt.compareSync(password, rows[0].password))
-                            return done(null, false, req.flash('loginMessage', 'Oops! Wrong password.')); // create the loginMessage and save it to session as flashdata
+                            return done(null, false, req.flash('loginMessage', 'Incorrect username or password.')); // create the loginMessage and save it to session as flashdata
 
                         // all is well, return successful user
                         return done(null, rows[0]);
                     } else {
-                        return done(null, false, req.flash('loginMessage', 'Your account may be suspended or still Pending. Please check with your Administrator or check your email box.'));
+                        return done(null, false, req.flash('loginMessage', 'Your account may be suspended or still pending. Please check with your Administrator or check your email.'));
                     }
                 });
             })

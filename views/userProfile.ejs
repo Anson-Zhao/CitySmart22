@@ -62,6 +62,10 @@
         input[type="password"] {
             height: 60px;
         }
+        #capsWarning {
+            color: red;
+            text-align: center;
+        }
     </style>
 
 </head>
@@ -75,7 +79,7 @@
     margin: auto; display: block;" />
     </a>
 </div>
-<body>
+<body ononline="onFunction()" onoffline="offFunction()">
 
 <div class="container" style="width: 850px;">
     <h1 class="text-center page-header"><strong>User Profile</strong></h1>
@@ -191,7 +195,7 @@
         </div>
         <p style="font-size:15px">
             <label for="password" >Do you want to change your password?</label>
-            <input type="checkbox" id="password" name="password" onclick="myFunction()">
+            <input type="checkbox" id="password" name="password" onclick="changePass()">
         </p>
         <div class="generalForm">
             <form id="pswchange" style="display:none;" class="well form-horizontal">
@@ -199,27 +203,29 @@
                     <div>
                         <label style="font-size:18px;">Password Change</label>
                     </div>
+                    <p id="capsWarning" hidden><strong>WARNING: Caps lock is enabled.</strong></p>
                     <div class="form-group">
                         <label class="col-md-4 control-label">Current Password</label>
                         <div class="col-md-8 inputGroupContainer">
-                            <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span><input id="currentPassword" name="CurrentPassword"  class="form-control"  value="" type="password"></div>
+                            <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span><input id="currentPassword" name="CurrentPassword"  class="form-control"  onfocus ="showPassword()" value="" type="password"></div>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-md-4 control-label">New Password</label>
                         <div class="col-md-8 inputGroupContainer">
-                            <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span><input id="newPassword" name="NewPassword" class="form-control" value="" type="password"></div>
+                            <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span><input id="newPassword" name="NewPassword" class="form-control" onfocus ="showPassword()" value="" type="password"></div>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-md-4 control-label">Confirm New Password</label>
                         <div class="col-md-8 inputGroupContainer">
-                            <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span><input id="confirmPassword" name="ConfirmNewPassword" class="form-control"  value="" type="password"></div>
+                            <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span><input id="confirmPassword" name="ConfirmNewPassword" class="form-control"  onfocus ="showPassword()" value="" type="password"></div>
                         </div>
                     </div>
                 <br>
                 <br>
             </fieldset>
+                <div id="showPassword" hidden><input type="checkbox" onclick="yourFunction()"> Show Passwords</div>
             </form>
             <button id="checkit" class="btn-primary" style="display:none; margin-top:-85px; margin-left:550px;" onclick="check()">Check</button>
         </div>
@@ -235,6 +241,78 @@
     let UserName = "<%= user.username %>";
     let passwordC = "<%= user.password %>";
     let newusername;
+    let CurrPassword = document.getElementById("currentPassword");
+    let NewPassword = document.getElementById("newPassword");
+    let ConfirmPassword = document.getElementById("confirmPassword");
+    let capsWarning = document.getElementById("capsWarning");
+
+    CurrPassword.addEventListener("keydown", function(e) {
+
+        if (e.getModifierState("CapsLock")) {
+            capsWarning.style.display = "block";
+            capsWarning.hidden = false;
+        } else {}
+    });
+    CurrPassword.addEventListener("keyup", function(e) {
+
+        if (e.getModifierState("CapsLock")) {}
+        else {
+            capsWarning.style.display = "none";
+            capsWarning.hidden = true;
+        }
+    });
+    NewPassword.addEventListener("keydown", function(e) {
+
+        if (e.getModifierState("CapsLock")) {
+            capsWarning.style.display = "block";
+            capsWarning.hidden = false;
+        } else {}
+    });
+    NewPassword.addEventListener("keyup", function(e) {
+
+        if (e.getModifierState("CapsLock")) {}
+        else {
+            capsWarning.style.display = "none";
+            capsWarning.hidden = true;
+        }
+    });
+    ConfirmPassword.addEventListener("keydown", function(e) {
+
+        if (e.getModifierState("CapsLock")) {
+            capsWarning.style.display = "block";
+            capsWarning.hidden = false;
+        } else {}
+    });
+    ConfirmPassword.addEventListener("keyup", function(e) {
+
+        if (e.getModifierState("CapsLock")) {}
+        else {
+            capsWarning.style.display = "none";
+            capsWarning.hidden = true;
+        }
+    });
+
+    function yourFunction() {
+        if (CurrPassword.type === "password") {
+            CurrPassword.type = "text";
+        } else {
+            CurrPassword.type = "password";
+        }
+        if (NewPassword.type === "password") {
+            NewPassword.type = "text";
+        } else {
+            NewPassword.type = "password";
+        }
+        if (ConfirmPassword.type === "password") {
+            ConfirmPassword.type = "text";
+        } else {
+            ConfirmPassword.type = "password";
+        }
+    }
+
+    function showPassword() {
+        document.getElementById("showPassword").hidden = false;
+    }
 
 
     let getvalue = JSON.parse(localStorage.getItem("getvalue"));
@@ -341,7 +419,7 @@
         changeInputs.attr("disabled", !this.checked);
     });
 
-    function myFunction(){
+    function changePass(){
         let checkbox = document.getElementById("password");
         let text = document.getElementById("pswchange");
         if (checkbox.checked === true){
@@ -462,6 +540,16 @@
         }
         return input;
     }
+
+
+    function onFunction() {
+        alert ("You are now online.");
+    }
+
+    function offFunction() {
+        alert ("Your are offline. Some functionality may be unavailable.");
+    }
+
 </script>
 </body>
 </html>

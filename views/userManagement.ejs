@@ -187,7 +187,7 @@
         </div>
     </div>
 </div>
-<body>
+<body ononline="onFunction()" onoffline="offFunction()">
 <div class="container" style="width: 900px">
     <div class="container" style="width: 850px">
         <div class="page-header text-center">
@@ -569,6 +569,13 @@
             return input;
         }
 
+        function onFunction() {
+            alert ("You are now online.");
+        }
+
+        function offFunction() {
+            alert ("Your are offline. Some functionality may be unavailable.");
+        }
 
 </script>
 </div>

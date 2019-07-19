@@ -167,11 +167,6 @@
             }
         }
 
-        .egg {
-            border: 1px solid blue;
-        }
-
-
         .navul {
             list-style-type: none;
             margin: 0;
@@ -260,7 +255,7 @@
     </style>
 </head>
 
-<body>
+<body ononline="onFunction()" onoffline="offFunction()">
 <div class="navul" style="height:80px;background:#000000;">
     <a class="navul" style="background:#000000;" href="http://aworldbridge.com">
         <img class="banner" src="/images/NewWBBanner.jpg" style="width: 500px;height:76px;"/>
@@ -621,6 +616,14 @@
                 }
             }
         }
+    }
+
+    function onFunction() {
+        alert ("You are now online.");
+    }
+
+    function offFunction() {
+        alert ("Your are offline. Some functionality may be unavailable.");
     }
 </script>
 </html>
