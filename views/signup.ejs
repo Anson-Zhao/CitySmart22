@@ -279,11 +279,11 @@
 				let answer1 = "answer1=" + a1;
 				let answer2 = "answer2=" + a2;
 
-				if( $('#q1').val() === '' ) {
-					alert('You are required to choose two security questions. Your Security Question #1 seems to be empty.')
-				} else if( $('#q2').val() === '' ) {
-					alert('You are required to choose two security questions. Your Security Question #2 seems to be empty.')
-				} else {
+				// if( $('#q1').val() === '' ) {
+				// 	alert('You are required to choose two security questions. Your Security Question #1 seems to be empty.')
+				// } else if( $('#q2').val() === '' ) {
+				// 	alert('You are required to choose two security questions. Your Security Question #2 seems to be empty.')
+				// } else {
 					$.ajax({
 						type: "post",
 						url: "/signup",
@@ -301,7 +301,7 @@
 							}
 						}
 					})
-				}
+				// }
 
                 e.preventDefault();
 
