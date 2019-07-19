@@ -1833,10 +1833,10 @@ module.exports = function (app, passport) {
                                                                 console.log('exec error: ' + error);
                                                             } else {
                                                                 let minx, maxx, miny, maxy, avgx, avgy;
-                                                                minx = jsonL.featureType.nativeBoundingBox.minx;
-                                                                maxx = jsonL.featureType.nativeBoundingBox.maxx;
-                                                                miny = jsonL.featureType.nativeBoundingBox.miny;
-                                                                maxy = jsonL.featureType.nativeBoundingBox.maxy;
+                                                                minx = jsonL.featureType.latLonBoundingBox.minx;
+                                                                maxx = jsonL.featureType.latLonBoundingBox.maxx;
+                                                                miny = jsonL.featureType.latLonBoundingBox.miny;
+                                                                maxy = jsonL.featureType.latLonBoundingBox.maxy;
                                                                 avgx = (minx + maxx)/2;
                                                                 avgy = (miny + maxy)/2;
                                                                 console.log(minx);
