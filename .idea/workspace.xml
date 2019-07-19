@@ -1,41 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3b2ba209-e08e-4f77-99ae-d893522cce16" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/3rdPartyLibs/build/WorldWind-built.js" beforeDir="false" afterPath="$PROJECT_DIR$/3rdPartyLibs/build/WorldWind-built.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_6_10_13_34_21.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_6_10_14_34_21.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_6_10_15_34_21.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_6_9_0_49_23.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_6_9_10_49_24.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_6_9_11_49_24.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_6_9_12_49_24.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_6_9_13_49_24.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_6_9_14_49_24.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_6_9_15_49_24.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_6_9_16_49_24.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_6_9_17_49_24.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_6_9_18_49_24.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_6_9_19_49_24.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_6_9_1_49_23.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_6_9_20_49_24.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_6_9_21_49_24.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_6_9_22_49_24.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_6_9_23_49_24.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_6_9_2_49_23.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_6_9_3_49_23.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_6_9_4_49_23.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_6_9_5_49_23.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_6_9_6_49_23.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_6_9_7_49_23.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_6_9_8_49_23.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_6_9_9_49_24.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/ows.xml" beforeDir="false" afterPath="$PROJECT_DIR$/config/ows.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/CS_wmsLayer.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/CS_wmsLayer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/Home.js" afterDir="false" />
-    </list>
+    <list default="true" id="3b2ba209-e08e-4f77-99ae-d893522cce16" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -110,8 +76,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/ows.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="19">
-              <caret line="7418" column="1" selection-start-line="7418" selection-start-column="1" selection-end-line="7418" selection-end-column="1" />
+            <state relative-caret-position="15447">
+              <caret line="8230" column="1" selection-start-line="8230" selection-start-column="1" selection-end-line="8230" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -128,8 +94,17 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/routes/routes.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="680">
-              <caret line="1851" column="78" lean-forward="true" selection-start-line="1851" selection-start-column="78" selection-end-line="1851" selection-end-column="78" />
+            <state relative-caret-position="331">
+              <caret line="1843" column="82" selection-start-line="1843" selection-start-column="82" selection-end-line="1843" selection-end-column="82" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/serverConfig.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="278">
+              <caret line="23" selection-start-line="23" selection-end-line="23" />
             </state>
           </provider>
         </entry>
@@ -183,7 +158,6 @@
       <find>/authenticate</find>
       <find>console.log('</find>
       <find>console.log(&quot;</find>
-      <find>/approve</find>
       <find>searchth</find>
       <find>wmsla</find>
       <find>wmslayer</find>
@@ -193,6 +167,7 @@
       <find>lat</find>
       <find>approved:2019</find>
       <find>true</find>
+      <find>/approve</find>
     </findStrings>
     <replaceStrings>
       <replace>Layer</replace>
@@ -289,13 +264,13 @@
         <option value="$PROJECT_DIR$/routes/passport.js" />
         <option value="$PROJECT_DIR$/scripts/OptionList.js" />
         <option value="$PROJECT_DIR$/scripts/USGS_MR.js" />
-        <option value="$PROJECT_DIR$/config/serverConfig.js" />
         <option value="$PROJECT_DIR$/node_modules/passport/lib/framework/connect.js" />
         <option value="$PROJECT_DIR$/b.js" />
         <option value="$PROJECT_DIR$/views/LayerRequestForm_edit.ejs" />
         <option value="$PROJECT_DIR$/scripts/Home.js" />
         <option value="$PROJECT_DIR$/3rdPartyLibs/build/WorldWind-built.js" />
         <option value="$PROJECT_DIR$/scripts/CS_wmsLayer.js" />
+        <option value="$PROJECT_DIR$/config/serverConfig.js" />
         <option value="$PROJECT_DIR$/routes/routes.js" />
       </list>
     </option>
@@ -436,21 +411,7 @@
       <workItem from="1559311414670" duration="2271000" />
       <workItem from="1560168590379" duration="5311000" />
       <workItem from="1563386340103" duration="16226000" />
-      <workItem from="1563476758566" duration="3864000" />
-    </task>
-    <task id="LOCAL-00035" summary="V2.2 Improve Globe Loading">
-      <created>1556808083095</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1556808083095</updated>
-    </task>
-    <task id="LOCAL-00036" summary="Merge with Julia's Branch">
-      <created>1556808330510</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1556808330510</updated>
+      <workItem from="1563476758566" duration="6176000" />
     </task>
     <task id="LOCAL-00037" summary="Merge with Julia's Branch">
       <created>1556809245945</created>
@@ -781,11 +742,25 @@
       <option name="project" value="LOCAL" />
       <updated>1563392957788</updated>
     </task>
-    <option name="localTasksCounter" value="84" />
+    <task id="LOCAL-00084" summary="geoTIFF upload">
+      <created>1563541846679</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1563541846681</updated>
+    </task>
+    <task id="LOCAL-00085" summary="final version">
+      <created>1563550411688</created>
+      <option name="number" value="00085" />
+      <option name="presentableId" value="LOCAL-00085" />
+      <option name="project" value="LOCAL" />
+      <updated>1563550411689</updated>
+    </task>
+    <option name="localTasksCounter" value="86" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="271640000" />
+    <option name="totallyTimeSpent" value="273952000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="2560" height="1310" extended-state="6" />
@@ -873,7 +848,9 @@
     <MESSAGE value="Merge branch 'IV3' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;scripts/Home.js" />
     <MESSAGE value="Merge branch 'Yiyang' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
     <MESSAGE value="new" />
-    <option name="LAST_COMMIT_MESSAGE" value="new" />
+    <MESSAGE value="geoTIFF upload" />
+    <MESSAGE value="final version" />
+    <option name="LAST_COMMIT_MESSAGE" value="final version" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/package-lock.json">
@@ -1057,13 +1034,6 @@
         <state relative-caret-position="-1081" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/serverConfig.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="8" column="25" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/EmailAuth.ejs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1009" />
@@ -1156,8 +1126,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/config/ows.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="7418" column="1" selection-start-line="7418" selection-start-column="1" selection-end-line="7418" selection-end-column="1" />
+        <state relative-caret-position="15447">
+          <caret line="8230" column="1" selection-start-line="8230" selection-start-column="1" selection-end-line="8230" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -1171,10 +1141,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/config/serverConfig.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="278">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/routes/routes.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
-          <caret line="1851" column="78" lean-forward="true" selection-start-line="1851" selection-start-column="78" selection-end-line="1851" selection-end-column="78" />
+        <state relative-caret-position="331">
+          <caret line="1843" column="82" selection-start-line="1843" selection-start-column="82" selection-end-line="1843" selection-end-column="82" />
         </state>
       </provider>
     </entry>
