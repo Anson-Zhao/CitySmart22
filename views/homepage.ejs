@@ -329,13 +329,13 @@
     margin: auto; display: block;" />
     </a>
 </div>
-<body>
+<body ononline="onFunction()" onoffline="offFunction()">
 
 <div class="container">
     <br>
-    <p id="browserWarning"> This page works best on the most recent version of <strong>Chrome</strong>.</p>
+    <p id="browserWarning"> Our application works best on the most recent version of <strong>Chrome</strong>.</p>
     <div class="text-center header">
-        <h1><span class="fa fa-globe"></span><strong> City Smart V2 </strong></h1>
+        <h1><span class="fa fa-globe"></span><strong> City Smart V2 </strong> </h1>
         <div class="log-form">
             <% if (message.length > 0) { %>
                 <div class="alert alert-danger"><%= message %></div>
@@ -566,7 +566,7 @@
         </ul>
     </div>
 
-    <div class="row" ">
+    <div class="row">
         <div class="box1 floating-Box" style="padding-top: 20px;">
                 <div>
                     <h4><strong>Select Location:</strong></h4>
@@ -725,13 +725,6 @@
         }
     });
 
-    function onFunction() {
-        alert ("You are now online.");
-    }
-
-    function offFunction() {
-        alert ("Your are offline. Some functionality may be unavailable.");
-    }
 
     function loginAttempts() {
         numClicks++;
@@ -740,6 +733,13 @@
             window.location.replace("/");
             alert("Too many requests to the server can cause the server to slow down or not function properly.");
         } else {}
+    }
+    function onFunction() {
+        alert ("You are now online.");
+    }
+
+    function offFunction() {
+        alert ("Your are offline. Some functionality may be unavailable.");
     }
 </script>
 </body>

@@ -1377,11 +1377,6 @@ module.exports = function (app, passport) {
         let editingUser = req.user.username;
         let editingUserPassword = req.user.password;
 
-        let phoneNumber = {
-            phoneNumber: req.body.phoneNumber,
-        };
-
-
 
         if(user === editingUser) {
             let newEditPass = {
@@ -1441,7 +1436,7 @@ module.exports = function (app, passport) {
 
             // let update3 = " WHERE username = '" + req.user.username + "'";
             let statement1 = "UPDATE UserLogin SET userrole = '" + result[3][1] + "',   status = '" + result[4][1] + "' WHERE username = '" + result[0][1]+ "';";
-            let statement2 = "UPDATE UserProfile SET firstName = '" + result[1][1] + "', lastName = '" + result[2][1] + ", Phone_Number = '"+ phoneNumber.phoneNumber + "' WHERE username = '" + result[0][1] + "';";
+            let statement2 = "UPDATE UserProfile SET firstName = '" + result[1][1] + "', lastName = '" + result[2][1] + "' WHERE username = '" + result[0][1] + "';";
             con_CS.query(statement1 + statement2, function (err, result) {
                 if (err) throw err;
                 res.json(result);
