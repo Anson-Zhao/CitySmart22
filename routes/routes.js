@@ -1460,20 +1460,20 @@ module.exports = function (app, passport) {
             res.render('userEdit.ejs', {
                 user: req.user, // get the user out of session and pass to template
                 username: req.body.username,
-                password: results[1][0].password,
+                password: results[0][1].password,
                 message: req.flash('Data Entry Message')
             });
 
         });
-        res.render('userEdit.ejs', {
-            user: req.user, // get the user out of session and pass to template
-            username: req.body.username,
-            // firstName: edit_firstName,
-            // lastName: edit_lastName,
-            // userrole: edit_userrole,
-            // status: edit_status,
-            message: req.flash('Data Entry Message')
-        });
+        // res.render('userEdit.ejs', {
+        //     user: req.user, // get the user out of session and pass to template
+        //     username: req.body.username,
+        //     // firstName: edit_firstName,
+        //     // lastName: edit_lastName,
+        //     // userrole: edit_userrole,
+        //     // status: edit_status,
+        //     message: req.flash('Data Entry Message')
+        // });
     });
 
     app.post('/editUser', isLoggedIn, function (req, res) {
