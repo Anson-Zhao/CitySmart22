@@ -466,8 +466,8 @@
     let rowSelectedValue = JSON.parse(localStorage.getItem("rowSelectedValue"));
     let continentList = document.getElementById("continent2");
     let layerformat;
-    // let continentabbrvalue;
-    // let valueboy;
+    let continentabbrvalue;
+    let valueboy;
     // let countryList = document.getElementById("country2");
     // let obedientvalue = countryList[countryList.selectedIndex].value;
 
@@ -573,14 +573,6 @@
             dataType: 'json',
             success: function (results) {
                 for (let i = 0; i < results.length; i++) {
-
-                    // if (results[i].Continent_name = rowSelectedValue[4]) {
-                    //     continentList.remove(results[i].Continent_name, results[i].Continent);
-                    // } else if (results[i].Continent = rowSelectedValue[4]) {
-                    //     continentList.remove(results[i].Continent_name, results[i].Continent);
-                    // } else {}
-                    // continentList.className = results[i].Continent;
-                    // console.log(continentList.className);
                     if (results[i].Continent !== rowSelectedValue[4]) {
                         continentList.add(new Option(results[i].Continent_name, results[i].Continent));//Continent name refers to the actual name while the continent just refers to the abbreviation of the continent
                     } else {}
