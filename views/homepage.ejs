@@ -322,11 +322,11 @@
         <img class="banner" src="../images/NewWBBanner.jpg" style="width: 950px;height: 150px; margin: auto; display: block;" />
     </a>
 </div>
-<body>
+<body ononline="onFunction()" onoffline="offFunction()">
 
 <div class="container">
     <br>
-    <p id="browserWarning"> This page works best on the most recent version of <strong>Chrome</strong>.</p>
+    <p id="browserWarning"> Our application works best on the most recent version of <strong>Chrome</strong>.</p>
     <div class="page-header text-center header">
         <h1><span class="fa fa-globe"></span> City Smart V2 </h1>
         <div class="log-form">
@@ -720,13 +720,6 @@
         document.getElementById("showPassword").hidden = false;
     }
 
-    function onFunction() {
-        alert ("You are now online.");
-    }
-
-    function offFunction() {
-        alert ("Your are offline. Some functionality may be unavailable.");
-    }
 
     function loginAttempts() {
         numClicks++;
@@ -735,6 +728,13 @@
             window.location.replace("/");
             alert("Too many requests to the server can cause the server to slow down or not function properly.");
         } else {}
+    }
+    function onFunction() {
+        alert ("You are now online.");
+    }
+
+    function offFunction() {
+        alert ("Your are offline. Some functionality may be unavailable.");
     }
 </script>
 </body>
