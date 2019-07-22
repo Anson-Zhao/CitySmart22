@@ -295,93 +295,35 @@
 
          if (checkbox.checked === true){
             text.style.display = "block";
-            document.getElementById("checkit").style.display = "block";
-             document.getElementById("updateForm").setAttribute("disabled", "");
-             document.getElementById("checkit").style.backgroundColor =  "#4183c4";
                 alert("Please verify your password(s) by clicking \"Check\" before clicking update.");
                 alert("Please also verify that your current password is correct and your two new passwords match before submitting.");
 
         } else{
             text.style.display = "none";
-            document.getElementById("checkit").style.display = "none";
-            document.getElementById("checkit").style.backgroundColor =  "lightgray";
-            document.getElementById("updateForm").removeAttribute("disabled");
          }
     }
 
-
-    // function checkForm() {
-    //     let xyj = document.getElementById("updateForm");
-    //     let oldP = document.getElementById("currentPassword").value;
-    //     let newP = document.getElementById("newPassword").value;
-    //     let confirmP = document.getElementById("confirmPassword").value;
-    //     let userEditData = "username=" + getvalue[0] + "&pass=" + document.getElementById("currentPassword").value;
-    //      if (LoginUser !== getvalue[0]) {
-    //          if (confirmP !== "" && newP !== "") {
-    //              if (newP === confirmP) {
-    //                  alert("Your new passwords match!");
-    //                  document.getElementById("updateForm").removeAttribute("disabled");
-    //                  xyj.style.display === "none";
-    //              } else {
-    //                  alert("New passwords do not match! Please try again.");
-    //              }
-    //          }
-    //      } else {
-    //          $.ajax({
-    //              url  : '/checkpassword',
-    //              method : "POST",
-    //              data : userEditData,
-    //              dataType: 'json',
-    //              success : function(d){
-    //                  if (d === true) {
-    //                      alert("Please make sure you typed your current password correctly.");
-    //                  } else if(d === false){
-    //                      if (oldP !== "" && confirmP !== "" && newP !== "") {
-    //                          if (oldP !== newP) {
-    //                              if (newP === confirmP) {
-    //                                  alert("You can submit now!");
-    //                                  document.getElementById("updateForm").removeAttribute("disabled");
-    //                                  document.getElementById("updateForm").disabled = false;
-    //                              } else {
-    //                                  alert("New passwords do not match!");
-    //                              }
-    //                          } else {
-    //                              alert("Your new password should be different from your current password.");
-    //                          }
-    //                      } else {
-    //                          alert("All password fields are required.");
-    //                      }
-    //                  }
-    //              }
-    //          });
-    //      }
-    //
-    //
-    // }
-
     function submitForm () {
         let checkbox = document.getElementById("password");
-        let text = document.getElementById("pswchange");
         let data = $("#editForm").serialize() + "&" + $("#pswchange").serialize();
 
         if (checkbox.checked === true) {
-            let xyj = document.getElementById("updateForm");
             let oldP = document.getElementById("currentPassword").value;
             let newP = document.getElementById("newPassword").value;
             let confirmP = document.getElementById("confirmPassword").value;
+            console.log("pass:" + newP);
 
             let userEditData = "username=" + getvalue[0] + "&pass=" + document.getElementById("currentPassword").value;
             if (LoginUser !== getvalue[0]) {
                 if (confirmP !== "" && newP !== "") {
                     if (newP === confirmP) {
                         alert("Your new passwords match!");
-                        document.getElementById("updateForm").removeAttribute("disabled");
-                        xyj.style.display === "none";
+                        // document.getElementById("updateForm").removeAttribute("disabled");
                     } else if (newP !== confirmP) {
                         alert("New passwords do not match! Please try again.");
-                    } else {
-                        alert("All password fields are required.");
                     }
+                } else {
+                    alert("All password fields are required.");
                 }
             } else {
                 $.ajax({
