@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3b2ba209-e08e-4f77-99ae-d893522cce16" name="Default Changelist" comment="" />
+    <list default="true" id="3b2ba209-e08e-4f77-99ae-d893522cce16" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -55,20 +57,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/routes/routes.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="421">
-              <caret line="93" column="53" lean-forward="true" selection-start-line="93" selection-start-column="53" selection-end-line="93" selection-end-column="53" />
+            <state relative-caret-position="391">
+              <caret line="91" column="46" selection-start-line="91" selection-start-column="42" selection-end-line="91" selection-end-column="46" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/LayerRequestForm_edit.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="249">
-              <caret line="622" column="61" lean-forward="true" selection-start-line="622" selection-start-column="61" selection-end-line="622" selection-end-column="61" />
+            <state relative-caret-position="99">
+              <caret line="604" column="43" lean-forward="true" selection-start-line="604" selection-start-column="43" selection-end-line="604" selection-end-column="43" />
             </state>
           </provider>
         </entry>
@@ -408,21 +410,7 @@
       <workItem from="1563556645193" duration="203000" />
       <workItem from="1563558196372" duration="4336000" />
       <workItem from="1563800553847" duration="1039000" />
-      <workItem from="1563802745835" duration="10151000" />
-    </task>
-    <task id="LOCAL-00050" summary="V2.3">
-      <created>1557255646132</created>
-      <option name="number" value="00050" />
-      <option name="presentableId" value="LOCAL-00050" />
-      <option name="project" value="LOCAL" />
-      <updated>1557255646132</updated>
-    </task>
-    <task id="LOCAL-00051" summary="V2.3">
-      <created>1557261792504</created>
-      <option name="number" value="00051" />
-      <option name="presentableId" value="LOCAL-00051" />
-      <option name="project" value="LOCAL" />
-      <updated>1557261792504</updated>
+      <workItem from="1563802745835" duration="10900000" />
     </task>
     <task id="LOCAL-00052" summary="V2.3">
       <created>1557266362905</created>
@@ -753,32 +741,45 @@
       <option name="project" value="LOCAL" />
       <updated>1563818567350</updated>
     </task>
-    <option name="localTasksCounter" value="99" />
+    <task id="LOCAL-00099" summary="Merge branch 'julia2' of https://github.com/Anson-Zhao/CitySmart22 into Carrots&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;views/homepage.ejs">
+      <created>1563818910018</created>
+      <option name="number" value="00099" />
+      <option name="presentableId" value="LOCAL-00099" />
+      <option name="project" value="LOCAL" />
+      <updated>1563818910018</updated>
+    </task>
+    <task id="LOCAL-00100" summary="Merge branch 'julia2' of https://github.com/Anson-Zhao/CitySmart22 into Carrots&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;routes/routes.js&#10;#&#9;views/homepage.ejs">
+      <created>1563819108107</created>
+      <option name="number" value="00100" />
+      <option name="presentableId" value="LOCAL-00100" />
+      <option name="project" value="LOCAL" />
+      <updated>1563819108107</updated>
+    </task>
+    <option name="localTasksCounter" value="101" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="270902000" />
+    <option name="totallyTimeSpent" value="271651000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="16" y="23" width="2132" height="1302" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.184689" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49837133" weight="0.3299748" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49282297" weight="0.31570247" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4923445" visible="true" weight="0.31570247" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3988245" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
-      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49617225" weight="0.32975206" />
+      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49569377" weight="0.32975206" />
       <window_info anchor="bottom" id="Terminal" order="10" weight="0.32975206" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50717705" side_tool="true" weight="0.31570247" />
-      <window_info anchor="bottom" id="File Transfer" order="12" sideWeight="0.4989142" visible="true" weight="0.32975206" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5076555" side_tool="true" weight="0.31570247" />
+      <window_info anchor="bottom" id="File Transfer" order="12" sideWeight="0.4952153" weight="0.32975206" />
       <window_info anchor="bottom" id="Database Console" order="13" weight="0.3299748" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -846,7 +847,8 @@
     <MESSAGE value="Merge branch 'Yiyang' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
     <MESSAGE value="Merge branch 'julia2' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
     <MESSAGE value="Merge branch 'julia2' of https://github.com/Anson-Zhao/CitySmart22 into Carrots&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;views/homepage.ejs" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge branch 'julia2' of https://github.com/Anson-Zhao/CitySmart22 into Carrots&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;views/homepage.ejs" />
+    <MESSAGE value="Merge branch 'julia2' of https://github.com/Anson-Zhao/CitySmart22 into Carrots&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;routes/routes.js&#10;#&#9;views/homepage.ejs" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge branch 'julia2' of https://github.com/Anson-Zhao/CitySmart22 into Carrots&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;routes/routes.js&#10;#&#9;views/homepage.ejs" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/scripts/USGS_WT_heatmapLayer.js" />
@@ -1172,17 +1174,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/routes.js">
+    <entry file="file://$PROJECT_DIR$/views/LayerRequestForm_edit.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="421">
-          <caret line="93" column="53" lean-forward="true" selection-start-line="93" selection-start-column="53" selection-end-line="93" selection-end-column="53" />
+        <state relative-caret-position="99">
+          <caret line="604" column="43" lean-forward="true" selection-start-line="604" selection-start-column="43" selection-end-line="604" selection-end-column="43" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/LayerRequestForm_edit.ejs">
+    <entry file="file://$PROJECT_DIR$/routes/routes.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="622" column="61" lean-forward="true" selection-start-line="622" selection-start-column="61" selection-end-line="622" selection-end-column="61" />
+        <state relative-caret-position="391">
+          <caret line="91" column="46" selection-start-line="91" selection-start-column="42" selection-end-line="91" selection-end-column="46" />
         </state>
       </provider>
     </entry>
