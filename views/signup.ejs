@@ -102,7 +102,7 @@
 		</div>
 		<div class="form-group">
 			<label>Phone Number (Optional):</label>
-			<input type="tel" class="form-control" name="phoneNumber" style="height: 50px;" placeholder="8888888888" title="XXXXXXXXXX" pattern="[0-9]{10}" >
+			<input type="tel" class="form-control" name="phoneNumber" style="height: 50px;" onkeypress="isInputNumber (event)" placeholder="0000000000" title="XXXXXXXXXX" maxlength="10" pattern="[0-9]{10}" >
 		</div>
 		<div class="form-group">
 			<label>Security Question #1:</label>
@@ -347,6 +347,14 @@
 				}
 			}
 		})
+	}
+
+	function isInputNumber (evt) {
+		var char = String.fromCharCode(evt.which);
+
+		if(!(/[0-9]/.test(char))) {
+			evt.preventDefault();
+		}
 	}
 
 	function onFunction() {
