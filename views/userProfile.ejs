@@ -69,13 +69,13 @@
     </style>
 
 </head>
-<div class="navul" style="height: 150px;
+<div class="navul" style="height: 80px;
     background: #000000;">
     <a class="navul" href="//aworldbridge.com" style="background: #000000;
     width: 500px;
-    height: 60px;">
-        <img class="banner" src="../images/NewWBBanner.jpg" style="width: 950px;
-    height: 150px;
+    height: 80px;">
+        <img class="banner" src="../images/NewWBBanner.jpg" style="width: 550px;
+    height: 80px;
     margin: auto; display: block;" />
     </a>
 </div>
@@ -207,25 +207,27 @@
                     <div class="form-group">
                         <label class="col-md-4 control-label">Current Password</label>
                         <div class="col-md-8 inputGroupContainer">
-                            <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span><input id="currentPassword" name="CurrentPassword"  class="form-control"  onfocus ="showPassword()" value="" type="password"></div>
+                            <span toggle="#currentPassword" class="fa fa-fw fa-eye-slash field-icon toggle-password" style="float: right; margin-top: 20px"></span>
+                            <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span><input id="currentPassword" name="CurrentPassword"  class="form-control" value="" type="password"></div>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-md-4 control-label">New Password</label>
                         <div class="col-md-8 inputGroupContainer">
-                            <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span><input id="newPassword" name="NewPassword" class="form-control" onfocus ="showPassword()" value="" type="password"></div>
+                            <span toggle="#newPassword" class="fa fa-fw fa-eye-slash field-icon toggle-password" style="float: right; margin-top: 20px"></span>
+                            <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span><input id="newPassword" name="NewPassword" class="form-control" value="" type="password"></div>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-md-4 control-label">Confirm New Password</label>
                         <div class="col-md-8 inputGroupContainer">
-                            <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span><input id="confirmPassword" name="ConfirmNewPassword" class="form-control"  onfocus ="showPassword()" value="" type="password"></div>
+                            <span toggle="#confirmPassword" class="fa fa-fw fa-eye-slash field-icon toggle-password" style="float: right; margin-top: 20px"></span>
+                            <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span><input id="confirmPassword" name="ConfirmNewPassword" class="form-control" value="" type="password"></div>
                         </div>
                     </div>
                 <br>
                 <br>
             </fieldset>
-                <div id="showPassword" hidden><input type="checkbox" onclick="yourFunction()"> Show Passwords</div>
             </form>
             <button id="checkit" class="btn-primary" style="display:none; margin-top:-85px; margin-left:550px;" onclick="check()">Check</button>
         </div>
@@ -292,27 +294,15 @@
         }
     });
 
-    function yourFunction() {
-        if (CurrPassword.type === "password") {
-            CurrPassword.type = "text";
+    $(".toggle-password").click(function() {
+        $(this).toggleClass("fa-eye-slash fa-eye");
+        var input = $($(this).attr("toggle"));
+        if (input.attr("type") == "password") {
+            input.attr("type", "text");
         } else {
-            CurrPassword.type = "password";
+            input.attr("type", "password");
         }
-        if (NewPassword.type === "password") {
-            NewPassword.type = "text";
-        } else {
-            NewPassword.type = "password";
-        }
-        if (ConfirmPassword.type === "password") {
-            ConfirmPassword.type = "text";
-        } else {
-            ConfirmPassword.type = "password";
-        }
-    }
-
-    function showPassword() {
-        document.getElementById("showPassword").hidden = false;
-    }
+    });
 
 
     let getvalue = JSON.parse(localStorage.getItem("getvalue"));

@@ -53,6 +53,7 @@
 
         .box1 {
             /*margin-left: -30px;*/
+            padding: 30px;
             position: absolute;
             width: 380px;
             height: 930px;
@@ -92,6 +93,7 @@
         }
 
         #currentSelectedLayer{
+            width: 236px;
             background-color: #66ccff;
             color:white;
             border-radius: 10px;
@@ -317,9 +319,14 @@
     </style>
 
 </head>
-<div class="navul" style="height: 150px; background: #000000;">
-    <a class="navul" href="http://aworldbridge.com" style="background: #000000; width: 500px;height: 60px;">
-        <img class="banner" src="../images/NewWBBanner.jpg" style="width: 950px;height: 150px; margin: auto; display: block;" />
+<div class="navul" style="height: 80px;
+    background: #000000;">
+    <a class="navul" href="//aworldbridge.com" style="background: #000000;
+    width: 500px;
+    height: 80px;">
+        <img class="banner" src="../images/NewWBBanner.jpg" style="width: 550px;
+    height: 80px;
+    margin: auto; display: block;" />
     </a>
 </div>
 <body ononline="onFunction()" onoffline="offFunction()">
@@ -327,8 +334,8 @@
 <div class="container">
     <br>
     <p id="browserWarning"> Our application works best on the most recent version of <strong>Chrome</strong>.</p>
-    <div class="page-header text-center header">
-        <h1><span class="fa fa-globe"></span> City Smart V2 </h1>
+    <div class="text-center header">
+        <h1><span class="fa fa-globe"></span><strong> City Smart V2 </strong></h1>
         <div class="log-form">
             <% if (message.length > 0) { %>
                 <div class="alert alert-danger"><%= message %></div>
@@ -336,13 +343,14 @@
                 <p id="capsWarning" hidden><strong>WARNING: Caps lock is enabled.</strong></p>
             <form action="/login" method="post">
                 <input type="text" autofocus class="highlight" id = "username" name="username" title="Username" autocomplete="off" placeholder="Username" />
-                <input type="Password" class="highlight" onfocus ="showPassCheck()" id = "password" name="password" title="Password" autocomplete="off" placeholder="Password" />
+                <input type="password" class="highlight" id = "password" name="password" title="Password" autocomplete="off" placeholder="Password" />
+                <span toggle="#password" class="fa fa-fw fa-eye-slash field-icon toggle-password"></span>
                 <button type="submit" class="button1" onsubmit="loginAttempts()">Login>></button>  <!--Temporary link to login page, supposed to work automatically-->
                 <button type="button" class="button1" onclick="window.location='/signup'" >Signup>></button>
             </form>
         </div>
-        <div id="showPassword" hidden><input type="checkbox" onclick="showPass()"> Show Password</div>
     </div>
+    <hr style="margin-bottom: 10px;">
 
     <div>
         <!-- Menu -->
@@ -558,9 +566,9 @@
         </ul>
     </div>
 
-    <div class="row" style="margin-left:-30px;">
+    <div class="row">
         <div class="box1 floating-Box" style="padding-top: 20px;">
-                <div style="margin-left: 15px">
+                <div>
                     <h4><strong>Select Location:</strong></h4>
                 <h5 class="note"> NOTE: Default is set to ALL LAYERS. Select the continent, country, and state (or province)/city. </h5>
                 <!--<div>-->
@@ -572,7 +580,7 @@
                 <!--</div>-->
                 <div>
                     <p>
-                        <select id="myListCountry"  style="width:320px; height:50px; background:white; padding-left: 15px" onchange="ChangeCountryList(this.value)">
+                        <select id="myListCountry"  style="width: 100%; height:50px; background:white; padding-left: 15px" onchange="ChangeCountryList(this.value)">
                             <option selected="selected" value="AL">-Select A Country List-</option>
                             <!--<option>-Select a State-</option>-->
                         </select>
@@ -580,27 +588,27 @@
                 </div>
                 <div>
                     <p>
-                        <select id="myListState"  style="width:320px; height:50px; background:lightgray; padding-left: 15px" onchange="ChangeStateList(this.value)" disabled>
+                        <select id="myListState"  style="width:100%; height:50px; background:lightgray; padding-left: 15px" onchange="ChangeStateList(this.value)" disabled>
                             <option selected="selected" value="AL">-Select A State/Province List-</option>
                         </select>
                     </p>
                 </div>
                     <div>
                         <p>
-                            <select id="myListCity"  style="width:320px; height:50px; background:lightgray; padding-left: 15px" onchange="ChangeCityList(this.value)" disabled>
+                            <select id="myListCity"  style="width:100%; height:50px; background:lightgray; padding-left: 15px" onchange="ChangeCityList(this.value)" disabled>
                                 <option selected="selected" value="AL">-Select A City List-</option>
                             </select>
                         </p>
                     </div>
                 </div>
             <br>
-            <div style="margin-left: 15px;">
-                <h4><strong>Layer Menu*:</strong></h4>
+            <div>
+                <h4><strong>Layer Menu:</strong></h4>
                 <!--<h5 class="note">*TBD stands for "To Be Developed"</h5>-->
                 <!--<h5 class="note" style="width:320px;"> NOTE: Some layers may take a while to load, please be patient. Selecting a layer will direct the globe to its location.</h5>-->
 
                 <input id="inpLock" type="checkbox"/>
-                <label class="btn-lock" for="inpLock">
+                <label class="btn-lock" for="inpLock" style="margin-left: 20px">
                     <svg width="20" height="25" viewBox="0 0 36 40">
                         <path class="lockb" d="M27 27C27 34.1797 21.1797 40 14 40C6.8203 40 1 34.1797 1 27C1 19.8203 6.8203 14 14 14C21.1797 14 27 19.8203 27 27ZM15.6298 26.5191C16.4544 25.9845 17 25.056 17 24C17 22.3431 15.6569 21 14 21C12.3431 21 11 22.3431 11 24C11 25.056 11.5456 25.9845 12.3702 26.5191L11 32H17L15.6298 26.5191Z"></path>
                         <path class="lock" d="M6 21V10C6 5.58172 9.58172 2 14 2V2C18.4183 2 22 5.58172 22 10V21"></path>
@@ -610,21 +618,21 @@
                     </svg>
                 </label>
 
-                    <div id="text" style="margin-left: 50px; margin-bottom: 25px; margin-top: 25px; color:#0077b3;">
-                        <strong>click to activate the single layer selection</strong>
+                    <div id="text" style="margin-left: 55px; margin-bottom: 25px; margin-top: 25px; color:#0077b3;">
+                        <strong>Click to activate the single layer selection</strong>
                     </div>
 
-
-                <div style="width: 240px; height: 15px; background: linear-gradient(to right, rgba(0, 0, 255, 0.75), rgba(0, 255, 0, 0.75), rgba(255, 255, 0, 0.75), rgba(255, 127.5, 0, 0.75), rgba(255, 0, 0, 0.75));"></div>
-
-                <div style="width: 240px; height: 30px; ">
-                    <p id="leftScale" style="float: left; font-size:13px;">&lt;1MW</p>
-                    <p id="rightScale" style="float: right; font-size:13px;">&gt;3 MW</p>
-                </div>
 
                 <div style="margin-bottom:10px;">
                     <button id="globeOrigin"><i class="fa fa-globe"></i></button>
                     <h5 style="display:inline-block;color:#0077b3;"> &#8668; Click me to back to start position!</h5>
+                </div>
+
+                <div style="width: 100%; height: 15px; background: linear-gradient(to right, rgba(0, 0, 255, 0.75), rgba(0, 255, 0, 0.75), rgba(255, 255, 0, 0.75), rgba(255, 127.5, 0, 0.75), rgba(255, 0, 0, 0.75));"></div>
+
+                <div style="width: 100%; height: 30px; ">
+                    <p id="leftScale" style="float: left; font-size:13px;">&lt;1MW</p>
+                    <p id="rightScale" style="float: right; font-size:13px;">&gt;3 MW</p>
                 </div>
                 <div style="margin-bottom:10px;">
                     <button class="previous arrow" id="previousL">&#8249;</button>
@@ -635,7 +643,7 @@
                     <!--<input type="checkbox" id="layers-switch">-->
                 <!--</div>-->
 
-                <div class="panel-group" id="accordion" style="width: 340px; height: 380px; overflow: scroll"></div>
+                <div class="panel-group" id="accordion" style="width: 100%; height: 350px; overflow: scroll"></div>
             </div><!-- /.panel-group -->
         </div>
 
@@ -707,18 +715,15 @@
         }
     });
 
-    function showPass() {
-        let x = document.getElementById("password");
-        if (x.type === "password") {
-            x.type = "text";
+    $(".toggle-password").click(function() {
+        $(this).toggleClass("fa-eye-slash fa-eye");
+        var input = $($(this).attr("toggle"));
+        if (input.attr("type") == "password") {
+            input.attr("type", "text");
         } else {
-            x.type = "password";
+            input.attr("type", "password");
         }
-    }
-
-    function showPassCheck() {
-        document.getElementById("showPassword").hidden = false;
-    }
+    });
 
 
     function loginAttempts() {

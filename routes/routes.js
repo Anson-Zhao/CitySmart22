@@ -1446,15 +1446,15 @@ module.exports = function (app, passport) {
 
     // Show user edit form
     app.get('/editUser', isLoggedIn, function (req, res) {
-        res.render('userEdit.ejs', {
-            user: req.user, // get the user out of session and pass to template
-            username: req.body.username,
+            res.render('userEdit.ejs', {
+                user: req.user, // get the user out of session and pass to template
+                username: req.body.username,
             // firstName: edit_firstName,
             // lastName: edit_lastName,
             // userrole: edit_userrole,
             // status: edit_status,
-            message: req.flash('Data Entry Message')
-        });
+                message: req.flash('Data Entry Message')
+            });
     });
 
     app.post('/editUser', isLoggedIn, function (req, res) {
