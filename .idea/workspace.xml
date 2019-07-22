@@ -1,60 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3b2ba209-e08e-4f77-99ae-d893522cce16" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_6_11_15_36_24.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_6_11_8_36_23.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_6_11_8_52_59.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_6_14_14_45_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_6_14_15_45_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_6_14_16_45_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_6_14_2_45_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_6_14_3_45_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_6_14_4_45_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_6_14_5_45_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_6_14_6_45_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_6_14_7_45_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_6_14_8_45_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_6_14_9_45_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_6_17_10_29_57.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_6_17_11_29_57.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_6_17_12_29_57.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_6_17_13_29_57.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_6_17_14_29_57.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_6_17_15_29_57.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_6_17_16_29_57.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_6_17_17_29_57.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_6_17_18_29_57.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_6_17_19_29_57.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_6_17_20_29_57.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_6_17_21_29_57.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_6_17_22_29_57.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_6_17_23_29_57.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_6_17_9_29_57.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_6_18_0_29_57.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_6_18_14_9_23.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_6_18_15_9_23.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_6_18_16_9_24.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_6_18_17_9_24.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/ows.xml" beforeDir="false" afterPath="$PROJECT_DIR$/config/ows.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/2step.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/2step.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/EmailAuth.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/EmailAuth.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/KnowledgeAuth.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/KnowledgeAuth.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/LayerRequestForm.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/LayerRequestForm.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/LayerRequestForm_edit.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/LayerRequestForm_edit.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/PhoneAuthP1.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/PhoneAuthP1.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/PhoneAuthP2.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/PhoneAuthP2.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/adduser.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/adduser.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/homepage.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/homepage.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/homepageUSER.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/homepageUSER.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/login.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/login.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/signup.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/signup.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/userEdit.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/userEdit.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/userManagement.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/userManagement.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/userProfile.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/userProfile.ejs" afterDir="false" />
-    </list>
+    <list default="true" id="3b2ba209-e08e-4f77-99ae-d893522cce16" name="Default Changelist" comment="eye password" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -120,7 +67,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/userManagement.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="557">
+            <state relative-caret-position="1002">
               <caret line="408" column="42" lean-forward="true" selection-start-line="408" selection-start-column="42" selection-end-line="408" selection-end-column="42" />
             </state>
           </provider>
@@ -431,14 +378,7 @@
       <workItem from="1559311414670" duration="2271000" />
       <workItem from="1560168590379" duration="5311000" />
       <workItem from="1563386340103" duration="16226000" />
-      <workItem from="1563476758566" duration="27478000" />
-    </task>
-    <task id="LOCAL-00039" summary="Merge branch 'master' of https://github.com/Anson-Zhao/CitySmart22 into julia&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;config/geoCapacity/2019_5_2_11_46_2.xml&#10;#&#9;config/geoCapacity/2019_5_3_10_11_38.xml&#10;#&#9;config/geoCapacity/2019_5_3_12_38_12.xml&#10;#&#9;config/geoCapacity/2019_5_3_12_5_18.xml&#10;#&#9;config/geoCapacity/2019_5_3_13_5_18.xml&#10;#&#9;scripts/Home.js">
-      <created>1556916397301</created>
-      <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL-00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1556916397301</updated>
+      <workItem from="1563476758566" duration="27767000" />
     </task>
     <task id="LOCAL-00040" summary="Merge branch 'julia' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
       <created>1556918608480</created>
@@ -776,15 +716,21 @@
       <option name="project" value="LOCAL" />
       <updated>1563553691248</updated>
     </task>
-    <option name="localTasksCounter" value="88" />
+    <task id="LOCAL-00088" summary="eye password">
+      <created>1563810682025</created>
+      <option name="number" value="00088" />
+      <option name="presentableId" value="LOCAL-00088" />
+      <option name="project" value="LOCAL" />
+      <updated>1563810682025</updated>
+    </task>
+    <option name="localTasksCounter" value="89" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="295254000" />
+    <option name="totallyTimeSpent" value="295543000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="2561" height="1310" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14807463" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -871,7 +817,8 @@
     <MESSAGE value="geoTIFF upload" />
     <MESSAGE value="final version" />
     <MESSAGE value="Merge branch 'master' of https://github.com/Anson-Zhao/CitySmart22 into julia2&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge branch 'master' of https://github.com/Anson-Zhao/CitySmart22 into julia2&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
+    <MESSAGE value="eye password" />
+    <option name="LAST_COMMIT_MESSAGE" value="eye password" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/3rdPartyLibs/build/r-2.3.6.js">
@@ -1215,7 +1162,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/userManagement.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="557">
+        <state relative-caret-position="1002">
           <caret line="408" column="42" lean-forward="true" selection-start-line="408" selection-start-column="42" selection-end-line="408" selection-end-column="42" />
         </state>
       </provider>
