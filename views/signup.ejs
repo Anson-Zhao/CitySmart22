@@ -277,28 +277,23 @@
 				let answer1 = "answer1=" + a1;
 				let answer2 = "answer2=" + a2;
 
-				// if( $('#q1').val() === '' ) {
-				// 	alert('You are required to choose two security questions. Your Security Question #1 seems to be empty.')
-				// } else if( $('#q2').val() === '' ) {
-				// 	alert('You are required to choose two security questions. Your Security Question #2 seems to be empty.')
-				// } else {
-					$.ajax({
-						type: "post",
-						url: "/signup",
-						dataType: 'json',
-						data: $("#signup").serialize() + "&" + answer1 + "&" + answer2,
-						success: function (result) {
-							console.log(result);
-							if (!result.error) {
-								// alert(result.message);
-								alert("We are sending you the email verification. Please check it before login to your account.");
-								window.location.replace('/login');
-								console.log(("#signup").serialize);
-							} else {
-								alert(result.message);
-							}
+				$.ajax({
+					type: "post",
+					url: "/signup",
+					dataType: 'json',
+					data: $("#signup").serialize() + "&" + answer1 + "&" + answer2,
+					success: function (result) {
+						console.log(result);
+						if (!result.error) {
+							// alert(result.message);
+							alert("We are sending you the email verification. Please check it before login to your account.");
+							window.location.replace('/login');
+							console.log(("#signup").serialize);
+						} else {
+							alert(result.message);
 						}
-					})
+					}
+				})
             });
         });
         let today = new Date();

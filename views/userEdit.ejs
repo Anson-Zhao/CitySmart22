@@ -130,11 +130,11 @@
                             <label style="font-size:18px;">Password Change</label>
                         </div>
                         <p id="capsWarning" hidden><strong>WARNING: Caps lock is enabled.</strong></p>
-                        <div class="form-group">
+                        <div class="form-group currPass" style="display: none">
                             <label id="displayCurrentPassword" class="col-md-4 control-label">Current Password</label>
                             <div class="col-md-8 inputGroupContainer">
                                 <span toggle="#currentPassword" class="fa fa-fw fa-eye-slash field-icon toggle-password" style="float: right; margin-top: 20px"></span>
-                                <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span><input id="currentPassword" name="CurrentPassword" class="form-control"   value="<%= password %>" type="password"></div>
+                                <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span><input id="currentPassword" name="CurrentPassword" class="form-control"   value="" type="password"></div>
                             </div>
                         </div>
                         <div class="form-group">
@@ -233,13 +233,10 @@
     document.getElementById('userrole').value = getvalue[3];
     document.getElementById('status').value = getvalue[12];
 
-    if (LoginUser !== getvalue[0]) {
+    if (LoginUser === getvalue[0]) {
         //Verifies if the current login user is different from the one that is being edited
-        document.getElementById("currentPassword").setAttribute("disabled", "");
-        document.getElementById("currentPassword").setAttribute("readonly", "");
-        document.getElementById("currentPassword").setAttribute("display", "none");
+        document.getElementById("currentPassword").setAttribute("display", "block");
         document.getElementById("displayCurrentPassword").innerHTML = "User Current Password";//Changes the value "Current Password" to "User Current Password"
-    } else {
     }
 
 
