@@ -1451,6 +1451,20 @@ module.exports = function (app, passport) {
 
     // Show user edit form
     app.get('/editUser', isLoggedIn, function (req, res) {
+
+        myStat = "SELECT password FROM UserLogin WHERE username = '" + req.user.username + "';"; //define last name
+
+        con_CS.query(myStat, function (err, results) {
+            // console.log("Users: ");
+            console.log(results);
+            res.render('userEdit.ejs', {
+                user: req.user, // get the user out of session and pass to template
+                username: req.body.username,
+                password: results[1][0].password,
+                message: req.flash('Data Entry Message')
+            });
+
+        });
         res.render('userEdit.ejs', {
             user: req.user, // get the user out of session and pass to template
             username: req.body.username,

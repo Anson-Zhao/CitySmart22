@@ -42,18 +42,15 @@
             color: red;
             text-align: center;
         }
-        #showPassword {
-            text-align: center;
-        }
     </style>
 </head>
-<div class="navul" style="height: 150px;
+<div class="navul" style="height: 80px;
     background: #000000;">
-    <a class="navul" href="http://aworldbridge.com" style="background: #000000;
+    <a class="navul" href="//aworldbridge.com" style="background: #000000;
     width: 500px;
-    height: 60px;">
-        <img class="banner" src="../images/NewWBBanner.jpg" style="width: 950px;
-    height: 150px;
+    height: 80px;">
+        <img class="banner" src="../images/NewWBBanner.jpg" style="width: 550px;
+    height: 80px;
     margin: auto; display: block;" />
     </a>
 </div>
@@ -74,7 +71,8 @@
         </div>
         <div class="form-group">
             <label>Password:</label>
-            <input type="password" class="form-control" id="password" autocomplete="off" name="password" onfocus ="showPassCheck()" style="height: 50px;">
+            <input type="password" id="password" class="form-control" name="password" style="width: 95%; height: 50px;  display: inline-block" required>
+            <span toggle="#password" class="fa fa-fw fa-eye-slash field-icon toggle-password" style="float: right; margin-top: 15px; display: inline-block"></span>
         </div>
         <div class="form-group" hidden>
             <label>Login Time:</label>
@@ -85,7 +83,6 @@
             <input type="text" id="status" class="form-control" name="status" value="Active" readonly>
         </div>
         <button type="submit" class="button1" style="width: 500px;height: 50px;"  onsubmit="loginAttempts()"> Login </button>
-        <div id="showPassword" hidden><input type="checkbox" onclick="showPass()"> Show Password</div>
         <div class="form-group" style="margin-bottom: 0px;margin-top: 10px;">
             <label style="font-weight: normal;">
                 <input type="checkbox" name="remember" value="yes"> Remember me
@@ -133,18 +130,15 @@
         }
     });
 
-    function showPass() {
-        let x = document.getElementById("password");
-        if (x.type === "password") {
-            x.type = "text";
+    $(".toggle-password").click(function() {
+        $(this).toggleClass("fa-eye-slash fa-eye");
+        var input = $($(this).attr("toggle"));
+        if (input.attr("type") == "password") {
+            input.attr("type", "text");
         } else {
-            x.type = "password";
+            input.attr("type", "password");
         }
-    }
-
-    function showPassCheck() {
-        document.getElementById("showPassword").hidden = false;
-    }
+    });
 
     $(function () {
         flatpickr(".date", {

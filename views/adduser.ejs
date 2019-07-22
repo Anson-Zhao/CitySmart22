@@ -41,9 +41,7 @@
             color: red;
             text-align: center;
         }
-        #showPassword {
-            text-align: center;
-        }
+
     </style>
 </head>
 <div class="navul" style="height: 80px;
@@ -82,10 +80,10 @@
         </div>
         <div class="form-group">
             <label>Password:</label>
-            <input type="password" class="form-control" id="password" name="password" onfocus ="showPassCheck()"style="height: 50px;">
+            <span toggle="#password" class="fa fa-fw fa-eye-slash field-icon toggle-password" style="float: right"></span>
+            <input type="password" class="form-control" id="password" name="password" style="height: 50px;">
         </div>
         <p id="capsWarning" hidden><strong>WARNING: Caps lock is enabled.</strong></p>
-        <div id="showPassword" hidden><input type="checkbox" onclick="showPass()"> Show Password</div>
         <div class="form-group">
             <label>User Role:</label>
             <br>
@@ -183,16 +181,15 @@
         }
     });
 
-    function showPassCheck() {
-        document.getElementById("showPassword").hidden = false;
-    }
-    function showPass() {
-        if (password.type === "password") {
-            password.type = "text";
+    $(".toggle-password").click(function() {
+        $(this).toggleClass("fa-eye-slash fa-eye");
+        var input = $($(this).attr("toggle"));
+        if (input.attr("type") == "password") {
+            input.attr("type", "text");
         } else {
-            password.type = "password";
+            input.attr("type", "password");
         }
-    }
+    });
 
     $(document).ready(function() {
         $(function() {
