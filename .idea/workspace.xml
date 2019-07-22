@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3b2ba209-e08e-4f77-99ae-d893522cce16" name="Default Changelist" comment="Merge branch 'julia2' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
+    <list default="true" id="3b2ba209-e08e-4f77-99ae-d893522cce16" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_6_17_10_29_57.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/PhoneAuthP1.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/PhoneAuthP1.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/routes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/homepageUSER.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/homepageUSER.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/signup.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/signup.ejs" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -89,8 +90,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/PhoneAuthP1.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
-              <caret line="76" column="37" lean-forward="true" selection-start-line="76" selection-start-column="37" selection-end-line="76" selection-end-column="37" />
+            <state relative-caret-position="283">
+              <caret line="85" column="23" lean-forward="true" selection-start-line="85" selection-start-column="23" selection-end-line="85" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -99,7 +100,7 @@
         <entry file="file://$PROJECT_DIR$/views/homepageUSER.ejs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="440">
-              <caret line="789" column="6" selection-start-line="789" selection-start-column="6" selection-end-line="789" selection-end-column="6" />
+              <caret line="778" column="6" selection-start-line="778" selection-start-column="6" selection-end-line="778" selection-end-column="6" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -257,8 +258,8 @@
         <option value="$PROJECT_DIR$/views/userManagement.ejs" />
         <option value="$PROJECT_DIR$/views/userProfile.ejs" />
         <option value="$PROJECT_DIR$/views/homepage.ejs" />
-        <option value="$PROJECT_DIR$/views/homepageUSER.ejs" />
         <option value="$PROJECT_DIR$/views/PhoneAuthP1.ejs" />
+        <option value="$PROJECT_DIR$/views/homepageUSER.ejs" />
       </list>
     </option>
   </component>
@@ -307,6 +308,7 @@
   <component name="PropertiesComponent">
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
     <property name="JavaScriptWeakerCompletionTypeGuess" value="false" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
@@ -397,14 +399,7 @@
       <workItem from="1563556645193" duration="203000" />
       <workItem from="1563558196372" duration="4336000" />
       <workItem from="1563800553847" duration="1039000" />
-      <workItem from="1563802745835" duration="7123000" />
-    </task>
-    <task id="LOCAL-00046" summary="V2.3">
-      <created>1557170411420</created>
-      <option name="number" value="00046" />
-      <option name="presentableId" value="LOCAL-00046" />
-      <option name="project" value="LOCAL" />
-      <updated>1557170411420</updated>
+      <workItem from="1563802745835" duration="7544000" />
     </task>
     <task id="LOCAL-00047" summary="V2.3">
       <created>1557250979347</created>
@@ -742,11 +737,18 @@
       <option name="project" value="LOCAL" />
       <updated>1563811528359</updated>
     </task>
-    <option name="localTasksCounter" value="95" />
+    <task id="LOCAL-00095" summary="Merge branch 'julia2' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
+      <created>1563815698766</created>
+      <option name="number" value="00095" />
+      <option name="presentableId" value="LOCAL-00095" />
+      <option name="project" value="LOCAL" />
+      <updated>1563815698766</updated>
+    </task>
+    <option name="localTasksCounter" value="96" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="267874000" />
+    <option name="totallyTimeSpent" value="268295000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="16" y="23" width="2132" height="1302" extended-state="0" />
@@ -1120,7 +1122,7 @@
     <entry file="file://$PROJECT_DIR$/views/homepageUSER.ejs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="440">
-          <caret line="789" column="6" selection-start-line="789" selection-start-column="6" selection-end-line="789" selection-end-column="6" />
+          <caret line="778" column="6" selection-start-line="778" selection-start-column="6" selection-end-line="778" selection-end-column="6" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -1160,8 +1162,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/PhoneAuthP1.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="76" column="37" lean-forward="true" selection-start-line="76" selection-start-column="37" selection-end-line="76" selection-end-column="37" />
+        <state relative-caret-position="283">
+          <caret line="85" column="23" lean-forward="true" selection-start-line="85" selection-start-column="23" selection-end-line="85" selection-end-column="23" />
         </state>
       </provider>
     </entry>
