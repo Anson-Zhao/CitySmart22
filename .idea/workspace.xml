@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3b2ba209-e08e-4f77-99ae-d893522cce16" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/userEdit.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/userEdit.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/userProfile.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/userProfile.ejs" afterDir="false" />
-    </list>
+    <list default="true" id="3b2ba209-e08e-4f77-99ae-d893522cce16" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -384,13 +380,6 @@
       <workItem from="1563386340103" duration="16226000" />
       <workItem from="1563476758566" duration="29166000" />
     </task>
-    <task id="LOCAL-00048" summary="V2.3">
-      <created>1557251009242</created>
-      <option name="number" value="00048" />
-      <option name="presentableId" value="LOCAL-00048" />
-      <option name="project" value="LOCAL" />
-      <updated>1557251009242</updated>
-    </task>
     <task id="LOCAL-00049" summary="V2.3">
       <created>1557254310618</created>
       <option name="number" value="00049" />
@@ -727,31 +716,37 @@
       <option name="project" value="LOCAL" />
       <updated>1563826092572</updated>
     </task>
-    <option name="localTasksCounter" value="97" />
+    <task id="LOCAL-00097" summary="check passwords integrated to update form">
+      <created>1563827745035</created>
+      <option name="number" value="00097" />
+      <option name="presentableId" value="LOCAL-00097" />
+      <option name="project" value="LOCAL" />
+      <updated>1563827745035</updated>
+    </task>
+    <option name="localTasksCounter" value="98" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="307933000" />
+    <option name="totallyTimeSpent" value="308551000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="23" width="2561" height="1310" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14807463" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49761716" weight="0.32975206" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.48352522" visible="true" weight="0.36124796" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.48352522" weight="0.36124796" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4982136" weight="0.39737275" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
-      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49722" weight="0.32922825" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="9" sideWeight="0.49702263" visible="true" weight="0.32922825" />
       <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.4954347" weight="0.32922825" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5164748" side_tool="true" visible="true" weight="0.36124796" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5029774" side_tool="true" visible="true" weight="0.32922825" />
       <window_info anchor="bottom" id="File Transfer" order="12" sideWeight="0.4980143" weight="0.32922825" />
       <window_info anchor="bottom" id="Database Console" order="13" weight="0.3299748" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -807,7 +802,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="V2.2" />
     <MESSAGE value="V2.2 WT_Placemark layer" />
     <MESSAGE value="V2.2 AutoMenu restructure" />
     <MESSAGE value="V2.2 WT_Placemark" />
@@ -832,7 +826,8 @@
     <MESSAGE value="eye password" />
     <MESSAGE value="Merge branch 'Carrots' of https://github.com/Anson-Zhao/CitySmart22 into julia2&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;views/homepage.ejs" />
     <MESSAGE value="password" />
-    <option name="LAST_COMMIT_MESSAGE" value="password" />
+    <MESSAGE value="check passwords integrated to update form" />
+    <option name="LAST_COMMIT_MESSAGE" value="check passwords integrated to update form" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/3rdPartyLibs/build/r-2.3.6.js">
