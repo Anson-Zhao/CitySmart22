@@ -2,41 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3b2ba209-e08e-4f77-99ae-d893522cce16" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_6_17_11_29_57.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_6_17_12_29_57.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_6_17_13_29_57.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_6_17_14_29_57.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_6_17_15_29_57.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_6_17_16_29_57.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_6_17_17_29_57.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_6_17_18_29_57.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_6_17_19_29_57.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_6_17_20_29_57.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_6_17_21_29_57.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_6_17_22_29_57.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_6_17_23_29_57.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_6_17_9_29_57.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_6_18_0_29_57.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_6_18_14_9_23.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_6_18_15_9_23.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_6_18_16_9_24.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/geoCapacity/2019_6_18_17_9_24.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/2step.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/2step.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/EmailAuth.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/EmailAuth.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/KnowledgeAuth.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/KnowledgeAuth.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/LayerRequestForm.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/LayerRequestForm.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/LayerRequestForm_edit.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/LayerRequestForm_edit.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/PhoneAuthP1.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/PhoneAuthP1.ejs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/PhoneAuthP2.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/PhoneAuthP2.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/adduser.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/adduser.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/homepage.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/homepage.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/homepageUSER.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/homepageUSER.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/login.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/login.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/signup.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/signup.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/userEdit.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/userEdit.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/userManagement.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/userManagement.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/userProfile.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/userProfile.ejs" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -91,11 +59,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/routes.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="24">
-              <caret line="70" column="25" lean-forward="true" selection-start-line="70" selection-start-column="25" selection-end-line="70" selection-end-column="25" />
+            <state relative-caret-position="421">
+              <caret line="93" column="53" lean-forward="true" selection-start-line="93" selection-start-column="53" selection-end-line="93" selection-end-column="53" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/views/LayerRequestForm_edit.ejs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="249">
+              <caret line="622" column="42" selection-start-line="622" selection-start-column="42" selection-end-line="622" selection-end-column="42" />
             </state>
           </provider>
         </entry>
@@ -162,8 +139,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>State</find>
-      <find>passport</find>
       <find>auto</find>
       <find>bear</find>
       <find>globePosition</find>
@@ -188,10 +163,12 @@
       <find>userprofile</find>
       <find>/userprofile</find>
       <find>phone</find>
-      <find>/homepage</find>
       <find>body</find>
       <find>navul</find>
       <find>The layer you selected is tentatively not available. Please try it later.</find>
+      <find>boy</find>
+      <find>/homepage</find>
+      <find>valueboy</find>
     </findStrings>
     <replaceStrings>
       <replace>userP</replace>
@@ -230,8 +207,8 @@
       <dir>$PROJECT_DIR$/routes</dir>
       <dir>$PROJECT_DIR$/src</dir>
       <dir>$PROJECT_DIR$/scripts</dir>
-      <dir>$PROJECT_DIR$</dir>
       <dir>$PROJECT_DIR$/views</dir>
+      <dir>$PROJECT_DIR$</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -245,8 +222,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/scripts/WWConf.js" />
-        <option value="$PROJECT_DIR$/examples/HeatMap.js" />
         <option value="&lt;6f32712d-a060-4679-8019-b4cec0c93bb5&gt;/cs/v2/scripts/Home.js" />
         <option value="$PROJECT_DIR$/3rdPartyLibs/popper-1.14.0.min.js" />
         <option value="$PROJECT_DIR$/3rdPartyLibs/bootstrap-3.3.4.min.js" />
@@ -296,6 +271,8 @@
         <option value="$PROJECT_DIR$/views/homepageUSER.ejs" />
         <option value="$PROJECT_DIR$/views/homepage.ejs" />
         <option value="$PROJECT_DIR$/routes/routes.js" />
+        <option value="$PROJECT_DIR$/views/PhoneAuthP2.ejs" />
+        <option value="$PROJECT_DIR$/views/LayerRequestForm_edit.ejs" />
       </list>
     </option>
   </component>
@@ -435,14 +412,7 @@
       <workItem from="1563556645193" duration="203000" />
       <workItem from="1563558196372" duration="4336000" />
       <workItem from="1563800553847" duration="1039000" />
-      <workItem from="1563802745835" duration="8180000" />
-    </task>
-    <task id="LOCAL-00048" summary="V2.3">
-      <created>1557251009242</created>
-      <option name="number" value="00048" />
-      <option name="presentableId" value="LOCAL-00048" />
-      <option name="project" value="LOCAL" />
-      <updated>1557251009242</updated>
+      <workItem from="1563802745835" duration="9941000" />
     </task>
     <task id="LOCAL-00049" summary="V2.3">
       <created>1557254310618</created>
@@ -780,17 +750,24 @@
       <option name="project" value="LOCAL" />
       <updated>1563816113344</updated>
     </task>
-    <option name="localTasksCounter" value="97" />
+    <task id="LOCAL-00097" summary="Merge branch 'julia2' of https://github.com/Anson-Zhao/CitySmart22 into Carrots&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;views/homepage.ejs">
+      <created>1563816762707</created>
+      <option name="number" value="00097" />
+      <option name="presentableId" value="LOCAL-00097" />
+      <option name="project" value="LOCAL" />
+      <updated>1563816762707</updated>
+    </task>
+    <option name="localTasksCounter" value="98" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="268931000" />
+    <option name="totallyTimeSpent" value="270692000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="16" y="23" width="2132" height="1302" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.184689" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.184689" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -811,7 +788,7 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Database" order="3" weight="0.28175896" />
-      <window_info active="true" anchor="right" id="Remote Host" order="4" visible="true" weight="0.107177034" />
+      <window_info anchor="right" id="Remote Host" order="4" visible="true" weight="0.107177034" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -872,7 +849,8 @@
     <MESSAGE value="Merge branch 'IV3' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;scripts/Home.js" />
     <MESSAGE value="Merge branch 'Yiyang' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
     <MESSAGE value="Merge branch 'julia2' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge branch 'julia2' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
+    <MESSAGE value="Merge branch 'julia2' of https://github.com/Anson-Zhao/CitySmart22 into Carrots&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;views/homepage.ejs" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge branch 'julia2' of https://github.com/Anson-Zhao/CitySmart22 into Carrots&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;views/homepage.ejs" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/scripts/USGS_WT_heatmapLayer.js" />
@@ -1104,9 +1082,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/LayerRequestForm_edit.ejs">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/userHome.ejs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -1203,8 +1178,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/routes.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="24">
-          <caret line="70" column="25" lean-forward="true" selection-start-line="70" selection-start-column="25" selection-end-line="70" selection-end-column="25" />
+        <state relative-caret-position="421">
+          <caret line="93" column="53" lean-forward="true" selection-start-line="93" selection-start-column="53" selection-end-line="93" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/LayerRequestForm_edit.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="249">
+          <caret line="622" column="42" selection-start-line="622" selection-start-column="42" selection-end-line="622" selection-end-column="42" />
         </state>
       </provider>
     </entry>
