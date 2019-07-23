@@ -93,9 +93,10 @@
             document.getElementsByTagName("BODY").innerHTML = "It appears that your phone number has not been registered for phone authentication. In order to login, please choose one of the other two verification methods. ";
             alert("It appears that your phone number has not been registered for phone authentication. In order to login, please choose one of the other two verification methods. ");
             window.location.replace("/authentication");
-        } else {}
+        } else {
+            alert("Our phone authentication uses the free service Textbelt to send messages to US phone numbers. However, this service does not work on all mobile carriers. For a list of mobile carriers that work with oour phone authentication, please visit Textbelt's site.");
+        }
 
-        alert("Our phone authentication uses the free service Textbelt to send messages to US phone numbers. However, this service does not work on all mobile carriers. For a list of mobile carriers that work with oour phone authentication, please visit Textbelt's site.");
 
     })
 
