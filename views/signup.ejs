@@ -177,7 +177,7 @@
 		</div>
 		<br>
 		<div class="container" style="width: 500px; padding: 0px;">
-			<button type="submit" class="button1" onsubmit="show_alert()"> Sign Up </button>
+			<button type="submit" class="button1"> Sign Up </button>
 		</div>
 	</form>
 	<hr>
@@ -303,11 +303,7 @@
         document.getElementById("DATE").value = dateTime;
     });
 
-	function show_alert() {
-		alert("Are you sure you want to submit? You will not be able to change your security questions after submission. ");
-	}
-
-    $('select[name=question1]').on('change', function() {
+	$('select[name=question1]').on('change', function() {
 		var self = this;
 		$('select[name=question2]').find('option').prop('disabled', function() {
 			return this.value === self.value
