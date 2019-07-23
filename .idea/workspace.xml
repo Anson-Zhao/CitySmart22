@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="3b2ba209-e08e-4f77-99ae-d893522cce16" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/signup.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/signup.ejs" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -48,8 +49,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/PhoneAuthP2.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="338">
-              <caret line="94" column="33" lean-forward="true" selection-start-line="94" selection-start-column="33" selection-end-line="94" selection-end-column="33" />
+            <state relative-caret-position="448">
+              <caret line="100" column="69" lean-forward="true" selection-start-line="100" selection-start-column="69" selection-end-line="100" selection-end-column="69" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/PhoneAuthP1.ejs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="459">
+              <caret line="63" column="61" selection-start-line="63" selection-start-column="61" selection-end-line="63" selection-end-column="61" />
             </state>
           </provider>
         </entry>
@@ -63,29 +73,14 @@
           </provider>
         </entry>
       </file>
-      <file pinned="true" current-in-tab="true">
-        <entry file="remoteDeploymentFS://&lt;6f32712d-a060-4679-8019-b4cec0c93bb5&gt;/routes/routes.js">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/views/signup.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="193">
-              <caret line="379" column="77" selection-start-line="379" selection-start-column="77" selection-end-line="379" selection-end-column="77" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="true" current-in-tab="false">
-        <entry file="remoteDeploymentFS://&lt;6f32712d-a060-4679-8019-b4cec0c93bb5&gt;/views/PhoneAuthP2.ejs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="185">
-              <caret line="82" column="28" selection-start-line="82" selection-start-column="16" selection-end-line="82" selection-end-column="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="true" current-in-tab="false">
-        <entry file="remoteDeploymentFS://&lt;6f32712d-a060-4679-8019-b4cec0c93bb5&gt;/views/PhoneAuthP1.ejs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="257">
-              <caret line="75" column="30" lean-forward="true" selection-start-line="75" selection-start-column="30" selection-end-line="75" selection-end-column="30" />
+            <state relative-caret-position="367">
+              <caret line="306" column="93" selection-start-line="306" selection-start-column="93" selection-end-line="306" selection-end-column="93" />
+              <folding>
+                <element signature="n#style#0;n#div#10;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -93,8 +88,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/LayerRequestForm.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="621">
-              <caret line="422" lean-forward="true" selection-start-line="422" selection-end-line="422" />
+            <state relative-caret-position="81">
+              <caret line="386" column="42" lean-forward="true" selection-start-line="386" selection-start-column="42" selection-end-line="386" selection-end-column="42" />
             </state>
           </provider>
         </entry>
@@ -271,10 +266,8 @@
         <option value="$PROJECT_DIR$/scripts/Home.js" />
         <option value="$PROJECT_DIR$/config/serverConfig.js" />
         <option value="$PROJECT_DIR$/views/recovery.ejs" />
-        <option value="$PROJECT_DIR$/views/signup.ejs" />
         <option value="$PROJECT_DIR$/views/userManagement.ejs" />
         <option value="$PROJECT_DIR$/views/userProfile.ejs" />
-        <option value="$PROJECT_DIR$/views/PhoneAuthP1.ejs" />
         <option value="$PROJECT_DIR$/views/homepageUSER.ejs" />
         <option value="$PROJECT_DIR$/views/homepage.ejs" />
         <option value="$PROJECT_DIR$/routes/routes.js" />
@@ -284,6 +277,8 @@
         <option value="&lt;6f32712d-a060-4679-8019-b4cec0c93bb5&gt;/routes/routes.js" />
         <option value="&lt;6f32712d-a060-4679-8019-b4cec0c93bb5&gt;/node_modules/textbelt/package.json" />
         <option value="&lt;6f32712d-a060-4679-8019-b4cec0c93bb5&gt;/views/PhoneAuthP2.ejs" />
+        <option value="$PROJECT_DIR$/views/PhoneAuthP1.ejs" />
+        <option value="$PROJECT_DIR$/views/signup.ejs" />
       </list>
     </option>
   </component>
@@ -423,21 +418,7 @@
       <workItem from="1563556645193" duration="203000" />
       <workItem from="1563558196372" duration="4336000" />
       <workItem from="1563800553847" duration="1039000" />
-      <workItem from="1563802745835" duration="19711000" />
-    </task>
-    <task id="LOCAL-00058" summary="V2.3">
-      <created>1557429960805</created>
-      <option name="number" value="00058" />
-      <option name="presentableId" value="LOCAL-00058" />
-      <option name="project" value="LOCAL" />
-      <updated>1557429960805</updated>
-    </task>
-    <task id="LOCAL-00059" summary="V2.3">
-      <created>1557491781733</created>
-      <option name="number" value="00059" />
-      <option name="presentableId" value="LOCAL-00059" />
-      <option name="project" value="LOCAL" />
-      <updated>1557491781733</updated>
+      <workItem from="1563802745835" duration="20197000" />
     </task>
     <task id="LOCAL-00060" summary="V2.3">
       <created>1557494608659</created>
@@ -768,14 +749,28 @@
       <option name="project" value="LOCAL" />
       <updated>1563890090867</updated>
     </task>
-    <option name="localTasksCounter" value="107" />
+    <task id="LOCAL-00107" summary="Merge branch 'julia2' of https://github.com/Anson-Zhao/CitySmart22 into Carrots&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
+      <created>1563891265706</created>
+      <option name="number" value="00107" />
+      <option name="presentableId" value="LOCAL-00107" />
+      <option name="project" value="LOCAL" />
+      <updated>1563891265706</updated>
+    </task>
+    <task id="LOCAL-00108" summary="Merge branch 'julia2' of https://github.com/Anson-Zhao/CitySmart22 into Carrots&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
+      <created>1563891466964</created>
+      <option name="number" value="00108" />
+      <option name="presentableId" value="LOCAL-00108" />
+      <option name="project" value="LOCAL" />
+      <updated>1563891466964</updated>
+    </task>
+    <option name="localTasksCounter" value="109" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="280462000" />
+    <option name="totallyTimeSpent" value="280948000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="22" y="23" width="2132" height="1302" extended-state="0" />
+    <frame x="22" y="32" width="2132" height="1302" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.184689" />
@@ -783,7 +778,7 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49837133" weight="0.3299748" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4923445" visible="true" weight="0.31570247" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4923445" visible="true" weight="0.31570247" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3988245" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -799,7 +794,7 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Database" order="3" weight="0.28175896" />
-      <window_info active="true" anchor="right" id="Remote Host" order="4" visible="true" weight="0.107177034" />
+      <window_info anchor="right" id="Remote Host" order="4" visible="true" weight="0.107177034" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -866,13 +861,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="Merge branch 'julia2' of https://github.com/Anson-Zhao/CitySmart22 into Carrots&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/3rdPartyLibs/build/almond.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3788">
-          <caret line="433" column="5" selection-start-line="433" selection-start-column="5" selection-end-line="433" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/3rdPartyLibs/build/r-2.3.6.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="705">
@@ -1081,16 +1069,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/signup.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3287">
-          <caret line="104" column="186" selection-start-line="104" selection-start-column="186" selection-end-line="104" selection-end-column="186" />
-          <folding>
-            <element signature="n#style#0;n#input#0;n#div#5;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/adduser.ejs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="582">
@@ -1180,25 +1158,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/PhoneAuthP1.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="553">
-          <caret line="108" column="37" selection-start-line="108" selection-start-column="37" selection-end-line="108" selection-end-column="37" />
-          <folding>
-            <element signature="n#style#0;n#a#0;n#div#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#a#0;n#div#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/PhoneAuthP2.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="94" column="33" lean-forward="true" selection-start-line="94" selection-start-column="33" selection-end-line="94" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/userHome.ejs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-685">
@@ -1207,13 +1166,6 @@
             <element signature="n#style#0;n#a#2;n#div#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#button#0;n#a#2;n#div#0;n#html#0;n#!!top" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/LayerRequestForm.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="621">
-          <caret line="422" lean-forward="true" selection-start-line="422" selection-end-line="422" />
         </state>
       </provider>
     </entry>
@@ -1231,13 +1183,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/KnowledgeAuth.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="14" column="56" lean-forward="true" selection-start-line="14" selection-start-column="56" selection-end-line="14" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/2step.ejs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="83">
@@ -1245,10 +1190,51 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/views/LayerRequestForm.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="81">
+          <caret line="386" column="42" lean-forward="true" selection-start-line="386" selection-start-column="42" selection-end-line="386" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/KnowledgeAuth.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="14" column="56" lean-forward="true" selection-start-line="14" selection-start-column="56" selection-end-line="14" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/routes/routes.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="696">
           <caret line="317" lean-forward="true" selection-start-line="317" selection-end-line="317" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/PhoneAuthP2.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="448">
+          <caret line="100" column="69" lean-forward="true" selection-start-line="100" selection-start-column="69" selection-end-line="100" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/success.ejs">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/PhoneAuthP1.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="63" column="61" selection-start-line="63" selection-start-column="61" selection-end-line="63" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/signup.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="367">
+          <caret line="306" column="93" selection-start-line="306" selection-start-column="93" selection-end-line="306" selection-end-column="93" />
+          <folding>
+            <element signature="n#style#0;n#div#10;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
