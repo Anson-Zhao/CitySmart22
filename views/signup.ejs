@@ -53,13 +53,13 @@
 </head>
 <div class="navul" style="height: 80px;
     background: #000000;">
-    <a class="navul" href="//aworldbridge.com" style="background: #000000;
+	<a class="navul" href="//aworldbridge.com" style="background: #000000;
     width: 500px;
     height: 80px;">
-        <img class="banner" src="../images/NewWBBanner.jpg" style="width: 550px;
+		<img class="banner" src="../images/NewWBBanner.jpg" style="width: 550px;
     height: 80px;
     margin: auto; display: block;" />
-    </a>
+	</a>
 </div>
 <body ononline="onFunction()" onoffline="offFunction()">
 <div class="container" style="width: 500px; padding: 0px;">
@@ -67,9 +67,9 @@
 	<h1 style="margin-top: 30px"><span class="fa fa-sign-in"></span> Sign Up </h1>
 	<!-- show any messages that come back with authentication -->
 	<% if (message.length > 0) { %>
-	<div class="alert alert-danger">
-		<%= message %>
-	</div>
+		<div class="alert alert-danger">
+			<%= message %>
+		</div>
 	<% } %>
 	<!-- LOGIN FORM -->
 	<!--<form onsubmit="return checkForm()" action="/signup" method="post" id="signup">-->
@@ -259,24 +259,24 @@
 		}
 	});
 
-    $(document).ready(function() {
-        $(function() {
-            flatpickr(".date", {
-                enableTime: true,
-                dateFormat: "Y-m-d H:i:S",
-                time_24hr: true
-            });
-		// console.log($('#signup'));
-		// console.log($("#signup").serialize());
+	$(document).ready(function() {
+		$(function() {
+			flatpickr(".date", {
+				enableTime: true,
+				dateFormat: "Y-m-d H:i:S",
+				time_24hr: true
+			});
+			// console.log($('#signup'));
+			// console.log($("#signup").serialize());
 
 
 
-        });
-        let today = new Date();
-        let date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
-        let time2 = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-        let dateTime = date + ' ' + time2;
-        document.getElementById("DATE").value = dateTime;
+		});
+		let today = new Date();
+		let date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+		let time2 = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+		let dateTime = date + ' ' + time2;
+		document.getElementById("DATE").value = dateTime;
 
 
 
@@ -309,12 +309,11 @@
 					console.log(results[i].username);
 					if (value === results[i].username) {
 						document.getElementById("emailUser").innerHTML = "This username is already taken. Please use a different one.";
-							// document.getElementById("signupsubmit").disabled = true;
+						// document.getElementById("signupsubmit").disabled = true;
 
-						break;
-					} else {
+						// break;
+					} else if (value !== results[i].username) {
 						document.getElementById("emailUser").innerHTML = "";
-							// document.getElementById("signupsubmit").disabled = false;
 						$('#signup').submit(function(e) {
 							// console.log($("#signup").serialize());
 							// console.log($('#signup'));
@@ -345,7 +344,7 @@
 								})
 							} else {}
 						});
-
+						// document.getElementById("signupsubmit").disabled = false;
 					}
 				}
 			}
