@@ -436,15 +436,12 @@ module.exports = function (app, passport) {
                 phoneNumber = result[0].Phone_Number;
             }
 
-            if (err) {
-                res.send("There was an error retrieving the phone number.");
-            } else {
                 res.render('PhoneAuthP1.ejs', {
                     user: req.user,
                     Phone_Number: phoneNumber,
 
                 });
-            }
+
         });
 
     });

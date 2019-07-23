@@ -89,8 +89,7 @@
 
         timedRefresh();
 
-        if(Phone_Number === "NULL") {
-            document.getElementById("sendCode").disabled = true;
+        if(Phone_Number === "NULL" || Phone_Number === "") {
             document.getElementsByTagName("BODY").innerHTML = "It appears that your phone number has not been registered for phone authentication. In order to login, please choose one of the other two verification methods. ";
             alert("It appears that your phone number has not been registered for phone authentication. In order to login, please choose one of the other two verification methods. ");
             window.location.replace("/authentication");
