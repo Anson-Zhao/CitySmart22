@@ -269,11 +269,7 @@
 		// console.log($('#signup'));
 		// console.log($("#signup").serialize());
 
-			if(document.getElementById("emailUser").innerHTML === "This username is already taken. Please use a different one.") {
-				document.getElementById("signupsubmit").disabled = true;
-			} else {
-				document.getElementById("signupsubmit").disabled = false;
-			}
+			document.getElementById("signupsubmit").disabled = document.getElementById("emailUser").innerHTML === "This username is already taken. Please use a different one.";
 
             $('#signup').submit(function(e) {
                 // console.log($("#signup").serialize());
