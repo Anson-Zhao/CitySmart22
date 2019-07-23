@@ -430,7 +430,7 @@ module.exports = function (app, passport) {
             console.log(result);
             console.log(result[0].Phone_Number);
 
-            if(result[0].Phone_Number === "" || result[0].Phone_Number === "null" || result[0].Phone_Number === "NULL" || result[0].Phone_Number === "0000000000") {
+            if(result[0].Phone_Number === "" || result[0].Phone_Number === "null" || result[0].Phone_Number === "NULL") {
                 phoneNumber = "NULL";
             } else {
                 phoneNumber = result[0].Phone_Number;
