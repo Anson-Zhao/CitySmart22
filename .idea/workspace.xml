@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3b2ba209-e08e-4f77-99ae-d893522cce16" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scripts/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/Home.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -46,6 +45,18 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/scripts/Home.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1620">
+              <caret line="194" column="25" lean-forward="true" selection-start-line="194" selection-start-column="25" selection-end-line="194" selection-end-column="25" />
+              <folding>
+                <element signature="n#style#0;n#img#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/PhoneAuthP2.ejs">
           <provider selected="true" editor-type-id="text-editor">
@@ -64,11 +75,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/PhoneAuthP1.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="258">
-              <caret line="90" lean-forward="true" selection-start-line="90" selection-end-line="90" />
+            <state relative-caret-position="348">
+              <caret line="96" lean-forward="true" selection-start-line="96" selection-end-line="96" />
             </state>
           </provider>
         </entry>
@@ -126,19 +137,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="464">
               <caret line="60" column="41" selection-start-line="60" selection-start-column="41" selection-end-line="60" selection-end-column="41" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/userHome.ejs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-685">
-              <caret line="154" column="64" selection-start-line="154" selection-start-column="64" selection-end-line="154" selection-end-column="64" />
-              <folding>
-                <element signature="n#style#0;n#a#2;n#div#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#button#0;n#a#2;n#div#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -272,7 +270,6 @@
         <option value="$PROJECT_DIR$/routes/passport.js" />
         <option value="$PROJECT_DIR$/scripts/OptionList.js" />
         <option value="$PROJECT_DIR$/scripts/USGS_MR.js" />
-        <option value="$PROJECT_DIR$/scripts/Home.js" />
         <option value="$PROJECT_DIR$/config/serverConfig.js" />
         <option value="$PROJECT_DIR$/views/recovery.ejs" />
         <option value="$PROJECT_DIR$/views/userManagement.ejs" />
@@ -288,6 +285,7 @@
         <option value="$PROJECT_DIR$/views/signup.ejs" />
         <option value="$PROJECT_DIR$/views/PhoneAuthP1.ejs" />
         <option value="$PROJECT_DIR$/routes/routes.js" />
+        <option value="$PROJECT_DIR$/scripts/Home.js" />
       </list>
     </option>
   </component>
@@ -321,6 +319,11 @@
               <item name="CitySmart22" type="b2602c69:ProjectViewProjectNode" />
               <item name="CitySmart22" type="462c0819:PsiDirectoryNode" />
               <item name="routes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CitySmart22" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CitySmart22" type="462c0819:PsiDirectoryNode" />
+              <item name="scripts" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="CitySmart22" type="b2602c69:ProjectViewProjectNode" />
@@ -428,14 +431,7 @@
       <workItem from="1563556645193" duration="203000" />
       <workItem from="1563558196372" duration="4336000" />
       <workItem from="1563800553847" duration="1039000" />
-      <workItem from="1563802745835" duration="25049000" />
-    </task>
-    <task id="LOCAL-00069" summary="fix option list classes">
-      <created>1557587684655</created>
-      <option name="number" value="00069" />
-      <option name="presentableId" value="LOCAL-00069" />
-      <option name="project" value="LOCAL" />
-      <updated>1557587684655</updated>
+      <workItem from="1563802745835" duration="25473000" />
     </task>
     <task id="LOCAL-00070" summary="fix option list classes">
       <created>1557588031599</created>
@@ -773,21 +769,29 @@
       <option name="project" value="LOCAL" />
       <updated>1563895751530</updated>
     </task>
-    <option name="localTasksCounter" value="118" />
+    <task id="LOCAL-00118" summary="Merge branch 'julia2' of https://github.com/Anson-Zhao/CitySmart22 into Carrots&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
+      <created>1563896995078</created>
+      <option name="number" value="00118" />
+      <option name="presentableId" value="LOCAL-00118" />
+      <option name="project" value="LOCAL" />
+      <updated>1563896995078</updated>
+    </task>
+    <option name="localTasksCounter" value="119" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="285800000" />
+    <option name="totallyTimeSpent" value="286224000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="23" y="32" width="2132" height="1302" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.184689" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.184689" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49837133" weight="0.3299748" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4923445" visible="true" weight="0.26198348" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4923445" visible="true" weight="0.26198348" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3988245" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -1109,16 +1113,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/Home.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="93" column="110" selection-start-line="93" selection-start-column="37" selection-end-line="93" selection-end-column="110" />
-          <folding>
-            <element signature="n#style#0;n#img#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/userProfile.ejs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="403">
@@ -1242,8 +1236,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/PhoneAuthP1.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="90" lean-forward="true" selection-start-line="90" selection-end-line="90" />
+        <state relative-caret-position="348">
+          <caret line="96" lean-forward="true" selection-start-line="96" selection-end-line="96" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/Home.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1620">
+          <caret line="194" column="25" lean-forward="true" selection-start-line="194" selection-start-column="25" selection-end-line="194" selection-end-column="25" />
+          <folding>
+            <element signature="n#style#0;n#img#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
