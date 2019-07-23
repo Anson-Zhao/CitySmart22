@@ -269,11 +269,6 @@
 		// console.log($('#signup'));
 		// console.log($("#signup").serialize());
 
-			if(document.getElementById("emailUser").innerHTML === "This username is already taken. Please use a different one.") {
-				document.getElementById("signupsubmit").disabled = true;
-			} else {
-				document.getElementById("signupsubmit").disabled = false;
-			}
 
             $('#signup').submit(function(e) {
                 // console.log($("#signup").serialize());
@@ -312,7 +307,11 @@
         let time2 = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
         let dateTime = date + ' ' + time2;
         document.getElementById("DATE").value = dateTime;
-    });
+
+
+
+
+	});
 
 	$('select[name=question1]').on('change', function() {
 		var self = this;
@@ -340,10 +339,13 @@
 					console.log(results[i].username);
 					if (value === results[i].username) {
 						document.getElementById("emailUser").innerHTML = "This username is already taken. Please use a different one.";
+							document.getElementById("signupsubmit").disabled = true;
 
 						break;
 					} else {
 						document.getElementById("emailUser").innerHTML = "";
+							document.getElementById("signupsubmit").disabled = false;
+
 					}
 				}
 			}
