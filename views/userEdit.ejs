@@ -156,7 +156,7 @@
                 <input type="checkbox" id="password" name="password" onclick="changePass()" autofocus>
                 <!---<br><br><input type="checkbox" onclick="changePass()">Show Password---->
             </p>
-            <h3 class="text-center page-header">Password Change</h3>
+            <h3 id="passTitle" class="text-center page-header" style="display: none">Password Change</h3>
             <div class="generalForm">
                 <form id="pswchange" style="display:none;" class="well form-horizontal">
                     <fieldset>
@@ -291,15 +291,18 @@
      function changePass(){
         let checkbox = document.getElementById("password");
         let text = document.getElementById("pswchange");
+        let title = document.getElementById("passTitle");
 
 
          if (checkbox.checked === true){
             text.style.display = "block";
+            title.style.display = "block";
                 alert("Please verify your password(s) by clicking \"Check\" before clicking update.");
                 alert("Please also verify that your current password is correct and your two new passwords match before submitting.");
 
         } else{
             text.style.display = "none";
+            title.style.display = "none";
          }
     }
 

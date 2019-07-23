@@ -83,12 +83,11 @@
 
 <div class="container" style="width: 850px;">
     <h1 class="text-center page-header"><strong>User Profile</strong></h1>
-    <h3 class="text-center" style="margin:30px;">Basic Form</h3>
         <div class="generalForm">
             <form id="basic"  class="well form-horizontal">
                 <fieldset>
                     <div class="form-group">
-                        <label class="col-md-4 control-label">User Name(Email)</label>
+                        <label class="col-md-4 control-label">User Name(Email):</label>
                         <div class="col-md-8 inputGroupContainer">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span><input id="username" name="username" class="form-control" value="<%= user.username %>" type="text" onchange="verifyemail()">
@@ -97,7 +96,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-md-4 control-label">First Name</label>
+                        <label class="col-md-4 control-label">First Name:</label>
                         <div class="col-md-8 inputGroupContainer">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span><input id="firstName" name="firstName" class="form-control" value="" type="text">
@@ -105,7 +104,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-md-4 control-label">Last Name</label>
+                        <label class="col-md-4 control-label">Last Name:</label>
                         <div class="col-md-8 inputGroupContainer">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span><input id="lastName" name="lastName" class="form-control"  value="" type="text">
@@ -113,7 +112,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-md-4 control-label">Address Line 1</label>
+                        <label class="col-md-4 control-label">Address Line 1:</label>
                         <div class="col-md-8 inputGroupContainer">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input id="addressLine1" name="Address_Line1" placeholder="Street address, P.O. box, company name, c/o" class="form-control" value="" type="text">
@@ -121,45 +120,45 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-md-4 control-label">Address Line 2</label>
+                        <label class="col-md-4 control-label">Address Line 2:</label>
                         <div class="col-md-8 inputGroupContainer">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input id="addressLine2" name="Address_Line2" placeholder="Apartment, suite, unit, building, floor, etc." class="form-control" value="" type="text"></div>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-md-4 control-label">City</label>
+                        <label class="col-md-4 control-label">City:</label>
                         <div class="col-md-8 inputGroupContainer">
                             <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input id="city" name="City" class="form-control" value="" type="text"></div>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-md-4 control-label">State/Province/Region</label>
+                        <label class="col-md-4 control-label">State/Province/Region:</label>
                         <div class="col-md-8 inputGroupContainer">
                             <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input id="state" name="State_Province_Region" class="form-control" value="" type="text"></div>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-md-4 control-label">Postal Code/ZIP</label>
+                        <label class="col-md-4 control-label">Postal Code/ZIP:</label>
                         <div class="col-md-8 inputGroupContainer">
                             <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input id="postcode" name="PostalCode_ZIP" class="form-control" value="" type="text" maxlength="5"></div>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-md-4 control-label">Country</label>
+                        <label class="col-md-4 control-label">Country:</label>
                         <div class="col-md-8 inputGroupContainer">
                             <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input id="country" name="Country" class="form-control" value="" type="text"></div>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-md-4 control-label">Phone Number</label>
+                        <label class="col-md-4 control-label">Phone Number:</label>
                         <div class="col-md-8 inputGroupContainer">
                             <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
                                 <input id="phoneNumber" name="Phone_Number" class="form-control" value="" type="text" onkeypress="isInputNumber (event)" placeholder="0000000000" maxlength="10" pattern="[0-9]{10}"></div>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-md-4 control-label">User Role</label>
+                        <label class="col-md-4 control-label">User Role:</label>
                         <div class="col-md-8 inputGroupContainer">
                             <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
                                 <input class="form-control" type="text" style="background:#e6e6e6;" value="<%= user.userrole%>" readonly></div>
@@ -167,7 +166,7 @@
                         </div>
                     </div>
                     <div class="form-group" id="dateCreated">
-                        <label class="col-md-4 control-label">Date Created</label>
+                        <label class="col-md-4 control-label">Date Created:</label>
                         <div class="col-md-8 inputGroupContainer">
                             <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
                                 <input class="form-control" type="text" style="background:#e6e6e6;" value="<%= user.dateCreated %>" readonly></div>
@@ -175,7 +174,7 @@
                         </div>
                     </div>
                     <div class="form-group" id="lastModification">
-                        <label class="col-md-4 control-label">Last Modification</label>
+                        <label class="col-md-4 control-label">Last Modification:</label>
                         <div class="col-md-8 inputGroupContainer">
                             <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
                                 <input class="form-control" type="text" style="background:#e6e6e6;" value="<%= user.dateModified %>" readonly></div>
@@ -183,7 +182,7 @@
                         </div>
                     </div>
                     <div class="form-group" id="lastModified">
-                        <label class="col-md-4 control-label">Last Modified by</label>
+                        <label class="col-md-4 control-label">Last Modified by:</label>
                         <div class="col-md-8 inputGroupContainer">
                             <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-star"></i></span>
                                 <input class="form-control" type="text" style="background:#e6e6e6;" value="<%= user.username%>" readonly></div>
@@ -197,36 +196,32 @@
             <label for="password" >Do you want to change your password?</label>
             <input type="checkbox" id="password" name="password" onclick="changePass()">
         </p>
+        <h3 id="passTitle" class="text-center page-header" style="display: none">Password Change</h3>
         <div class="generalForm">
             <form id="pswchange" style="display:none;" class="well form-horizontal">
                 <fieldset>
-                    <div>
-                        <label style="font-size:18px;">Password Change</label>
-                    </div>
                     <p id="capsWarning" hidden><strong>WARNING: Caps lock is enabled.</strong></p>
                     <div class="form-group">
-                        <label class="col-md-4 control-label">Current Password</label>
+                        <label class="col-md-4 control-label">Current Password:</label>
                         <div class="col-md-8 inputGroupContainer">
                             <span toggle="#currentPassword" class="fa fa-fw fa-eye-slash field-icon toggle-password" style="float: right; margin-top: 20px"></span>
                             <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span><input id="currentPassword" name="CurrentPassword"  class="form-control" value="" type="password"></div>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-md-4 control-label">New Password</label>
+                        <label class="col-md-4 control-label">New Password:</label>
                         <div class="col-md-8 inputGroupContainer">
                             <span toggle="#newPassword" class="fa fa-fw fa-eye-slash field-icon toggle-password" style="float: right; margin-top: 20px"></span>
                             <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span><input id="newPassword" name="NewPassword" class="form-control" value="" type="password"></div>
                         </div>
                     </div>
                     <div class="form-group">
-                        <label class="col-md-4 control-label">Confirm New Password</label>
+                        <label class="col-md-4 control-label">Confirm New Password:</label>
                         <div class="col-md-8 inputGroupContainer">
                             <span toggle="#confirmPassword" class="fa fa-fw fa-eye-slash field-icon toggle-password" style="float: right; margin-top: 20px"></span>
                             <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span><input id="confirmPassword" name="ConfirmNewPassword" class="form-control" value="" type="password"></div>
                         </div>
                     </div>
-                <br>
-                <br>
             </fieldset>
             </form>
 <!--            <button id="checkit" class="btn-primary" style="display:none; margin-top:-85px; margin-left:550px;" onclick="check()">Check</button>-->
@@ -377,15 +372,17 @@
     function changePass(){
         let checkbox = document.getElementById("password");
         let text = document.getElementById("pswchange");
-
+        let title = document.getElementById("passTitle");
 
         if (checkbox.checked === true){
             text.style.display = "block";
+            title.style.display = "block";
             alert("Please verify your password(s) by clicking \"Check\" before clicking update.");
             alert("Please also verify that your current password is correct and your two new passwords match before submitting.");
 
         } else{
             text.style.display = "none";
+            title.style.display = "none";
         }
     }
 
