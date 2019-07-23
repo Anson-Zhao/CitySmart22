@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3b2ba209-e08e-4f77-99ae-d893522cce16" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/routes.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/PhoneAuthP1.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/PhoneAuthP1.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/signup.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/signup.ejs" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -69,26 +67,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/PhoneAuthP1.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="318">
-              <caret line="93" column="60" selection-start-line="93" selection-start-column="60" selection-end-line="93" selection-end-column="60" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/routes.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="695">
-              <caret line="336" column="44" lean-forward="true" selection-start-line="336" selection-start-column="44" selection-end-line="336" selection-end-column="44" />
+            <state relative-caret-position="377">
+              <caret line="79" column="31" lean-forward="true" selection-start-line="79" selection-start-column="31" selection-end-line="79" selection-end-column="31" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/routes/routes.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="121">
+              <caret line="432" column="136" selection-start-line="432" selection-start-column="136" selection-end-line="432" selection-end-column="136" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/signup.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
-              <caret line="101" column="60" selection-start-line="101" selection-start-column="60" selection-end-line="101" selection-end-column="60" />
+            <state relative-caret-position="450">
+              <caret line="110" column="16" lean-forward="true" selection-start-line="110" selection-start-column="16" selection-end-line="110" selection-end-column="16" />
               <folding>
                 <element signature="n#style#0;n#div#10;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -287,9 +285,9 @@
         <option value="&lt;6f32712d-a060-4679-8019-b4cec0c93bb5&gt;/routes/routes.js" />
         <option value="&lt;6f32712d-a060-4679-8019-b4cec0c93bb5&gt;/node_modules/textbelt/package.json" />
         <option value="&lt;6f32712d-a060-4679-8019-b4cec0c93bb5&gt;/views/PhoneAuthP2.ejs" />
-        <option value="$PROJECT_DIR$/routes/routes.js" />
-        <option value="$PROJECT_DIR$/views/PhoneAuthP1.ejs" />
         <option value="$PROJECT_DIR$/views/signup.ejs" />
+        <option value="$PROJECT_DIR$/views/PhoneAuthP1.ejs" />
+        <option value="$PROJECT_DIR$/routes/routes.js" />
       </list>
     </option>
   </component>
@@ -429,14 +427,7 @@
       <workItem from="1563556645193" duration="203000" />
       <workItem from="1563558196372" duration="4336000" />
       <workItem from="1563800553847" duration="1039000" />
-      <workItem from="1563802745835" duration="22848000" />
-    </task>
-    <task id="LOCAL-00063" summary="V2.3">
-      <created>1557503096135</created>
-      <option name="number" value="00063" />
-      <option name="presentableId" value="LOCAL-00063" />
-      <option name="project" value="LOCAL" />
-      <updated>1557503096135</updated>
+      <workItem from="1563802745835" duration="23239000" />
     </task>
     <task id="LOCAL-00064" summary="Merge branch 'Amy' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;config/geoCapacity/2019_5_10_11_25_32.xml&#10;#&#9;config/mainconf.js&#10;#&#9;routes/routes.js">
       <created>1557503693948</created>
@@ -774,17 +765,23 @@
       <option name="project" value="LOCAL" />
       <updated>1563892399105</updated>
     </task>
-    <option name="localTasksCounter" value="112" />
+    <task id="LOCAL-00112" summary="Merge branch 'julia2' of https://github.com/Anson-Zhao/CitySmart22 into Carrots&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
+      <created>1563894387397</created>
+      <option name="number" value="00112" />
+      <option name="presentableId" value="LOCAL-00112" />
+      <option name="project" value="LOCAL" />
+      <updated>1563894387397</updated>
+    </task>
+    <option name="localTasksCounter" value="113" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="283599000" />
+    <option name="totallyTimeSpent" value="283990000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="23" y="32" width="2132" height="1302" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.184689" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.184689" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -805,7 +802,7 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Database" order="3" weight="0.28175896" />
-      <window_info anchor="right" id="Remote Host" order="4" visible="true" weight="0.107177034" />
+      <window_info active="true" anchor="right" id="Remote Host" order="4" visible="true" weight="0.107177034" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1218,6 +1215,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/views/signup.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="110" column="16" lean-forward="true" selection-start-line="110" selection-start-column="16" selection-end-line="110" selection-end-column="16" />
+          <folding>
+            <element signature="n#style#0;n#div#10;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/views/2step.ejs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="392">
@@ -1225,27 +1232,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/routes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="695">
-          <caret line="336" column="44" lean-forward="true" selection-start-line="336" selection-start-column="44" selection-end-line="336" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/PhoneAuthP1.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="318">
-          <caret line="93" column="60" selection-start-line="93" selection-start-column="60" selection-end-line="93" selection-end-column="60" />
+        <state relative-caret-position="377">
+          <caret line="79" column="31" lean-forward="true" selection-start-line="79" selection-start-column="31" selection-end-line="79" selection-end-column="31" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/signup.ejs">
+    <entry file="file://$PROJECT_DIR$/routes/routes.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="101" column="60" selection-start-line="101" selection-start-column="60" selection-end-line="101" selection-end-column="60" />
-          <folding>
-            <element signature="n#style#0;n#div#10;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="121">
+          <caret line="432" column="136" selection-start-line="432" selection-start-column="136" selection-end-line="432" selection-end-column="136" />
         </state>
       </provider>
     </entry>
