@@ -56,7 +56,7 @@ requirejs(['./newGlobe',
         nextL.prop('disabled', true);
         previousL.prop('disabled', true);
 
-        // $("#popover").popover({html: true, placement: "top", trigger: "hover"});
+        $("#popover").popover({html: true, placement: "top", trigger: "hover"});
 
         //turn on/off layers
         $(menuL.arrType.toString()).click(function () {
