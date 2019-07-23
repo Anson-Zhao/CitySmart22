@@ -272,28 +272,33 @@
             $('#signup').submit(function(e) {
                 // console.log($("#signup").serialize());
 				// console.log($('#signup'));
+
+
 				let a1 = $('#answer1').val().replace("\'", "\\'");
 				let a2 = $('#answer2').val().replace("\'", "\\'");
 				let answer1 = "answer1=" + a1;
 				let answer2 = "answer2=" + a2;
 
-				$.ajax({
-					type: "post",
-					url: "/signup",
-					dataType: 'json',
-					data: $("#signup").serialize() + "&" + answer1 + "&" + answer2,
-					success: function (result) {
-						console.log(result);
-						if (!result.error) {
-							// alert(result.message);
-							alert("We are sending you the email verification. Please check it before login to your account.");
-							window.location.replace('/login');
-							console.log(("#signup").serialize);
-						} else {
-							alert(result.message);
+				let r = confirm("You will not be able to change your security question upon submission. Please be cautious.");
+				if (r === true) {
+					$.ajax({
+						type: "post",
+						url: "/signup",
+						dataType: 'json',
+						data: $("#signup").serialize() + "&" + answer1 + "&" + answer2,
+						success: function (result) {
+							console.log(result);
+							if (!result.error) {
+								// alert(result.message);
+								alert("We are sending you the email verification. Please check it before login to your account.");
+								window.location.replace('/login');
+								console.log(("#signup").serialize);
+							} else {
+								alert(result.message);
+							}
 						}
-					}
-				})
+					})
+				} else {}
             });
         });
         let today = new Date();
@@ -337,6 +342,7 @@
 			}
 		})
 	}
+
 
 	function isInputNumber (evt) {
 		var char = String.fromCharCode(evt.which);
