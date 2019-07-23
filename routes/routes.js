@@ -315,11 +315,31 @@ module.exports = function (app, passport) {
     // //Detects if user is admin
     app.get('/authentication', function (req, res) {
         dateNtime();
+        let phoneNumber;
+
+        res.setHeader("Access-Control-Allow-Origin", "*");
+
+        myStat = "SELECT Phone_Number FROM UserProfile WHERE username = '" + req.user.username + "'";
+
+        con_CS.query(myStat, function (err, result) {
+            console.log("Here is the result:");
+            console.log(result);
+            console.log(result[0].Phone_Number);
+
+            if(result[0].Phone_Number === "" || result[0].Phone_Number === "NULL" || result[0].Phone_Number === "0000000000") {
+                phoneNumber = "NULL";
+            } else {
+                phoneNumber = result[0].Phone_Number;
+            }
 
             res.render('2step.ejs',{
                 user:req.user,
                 userrole: req.user.userrole,
+                Phone_Number: phoneNumber,
                 username: req.user.username
+
+            });
+
             });
         });
 
