@@ -90,7 +90,7 @@
                         <label class="col-md-4 control-label">User Name(Email):</label>
                         <div class="col-md-8 inputGroupContainer">
                             <div class="input-group">
-                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span><input id="username" name="username" class="form-control" value="<%= user.username %>" type="text" onchange="verifyemail()">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span><input id="username" name="username" class="form-control" value="<%= user.username %>" type="text" onchange="verifyemail()" minlength="2" maxlength="99" >
                             </div>
                             <p style="margin-top:8px;color:#0088d8;" id="emailc"></p>
                         </div>
@@ -99,7 +99,7 @@
                         <label class="col-md-4 control-label">First Name:</label>
                         <div class="col-md-8 inputGroupContainer">
                             <div class="input-group">
-                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span><input id="firstName" name="firstName" class="form-control" value="" type="text">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span><input id="firstName" name="firstName" class="form-control" value="" type="text" minlength="1" maxlength="99">
                             </div>
                         </div>
                     </div>
@@ -107,7 +107,7 @@
                         <label class="col-md-4 control-label">Last Name:</label>
                         <div class="col-md-8 inputGroupContainer">
                             <div class="input-group">
-                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span><input id="lastName" name="lastName" class="form-control"  value="" type="text">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span><input id="lastName" name="lastName" class="form-control"  value="" type="text" minlength="1" maxlength="99">
                             </div>
                         </div>
                     </div>
@@ -115,7 +115,7 @@
                         <label class="col-md-4 control-label">Address Line 1:</label>
                         <div class="col-md-8 inputGroupContainer">
                             <div class="input-group">
-                                <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input id="addressLine1" name="Address_Line1" placeholder="Street address, P.O. box, company name, c/o" class="form-control" value="" type="text">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input id="addressLine1" name="Address_Line1" placeholder="Street address, P.O. box, company name, c/o" class="form-control" value="" type="text" maxlength="42">>
                             </div>
                         </div>
                     </div>
@@ -123,19 +123,19 @@
                         <label class="col-md-4 control-label">Address Line 2:</label>
                         <div class="col-md-8 inputGroupContainer">
                             <div class="input-group">
-                                <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input id="addressLine2" name="Address_Line2" placeholder="Apartment, suite, unit, building, floor, etc." class="form-control" value="" type="text"></div>
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input id="addressLine2" name="Address_Line2" placeholder="Apartment, suite, unit, building, floor, etc." class="form-control" value="" type="text" maxlength="42"></div>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-md-4 control-label">City:</label>
                         <div class="col-md-8 inputGroupContainer">
-                            <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input id="city" name="City" class="form-control" value="" type="text"></div>
+                            <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input id="city" name="City" class="form-control" value="" type="text" maxlength="42"></div>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-md-4 control-label">State/Province/Region:</label>
                         <div class="col-md-8 inputGroupContainer">
-                            <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input id="state" name="State_Province_Region" class="form-control" value="" type="text"></div>
+                            <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input id="state" name="State_Province_Region" class="form-control" value="" type="text" maxlength="42"></div>
                         </div>
                     </div>
                     <div class="form-group">
@@ -147,7 +147,7 @@
                     <div class="form-group">
                         <label class="col-md-4 control-label">Country:</label>
                         <div class="col-md-8 inputGroupContainer">
-                            <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input id="country" name="Country" class="form-control" value="" type="text"></div>
+                            <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input id="country" name="Country" class="form-control" value="" type="text" maxlength="42"></div>
                         </div>
                     </div>
                     <div class="form-group">
@@ -212,14 +212,14 @@
                         <label class="col-md-4 control-label">New Password:</label>
                         <div class="col-md-8 inputGroupContainer">
                             <span toggle="#newPassword" class="fa fa-fw fa-eye-slash field-icon toggle-password" style="float: right; margin-top: 20px"></span>
-                            <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span><input id="newPassword" name="NewPassword" class="form-control" value="" type="password"></div>
+                            <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span><input id="newPassword" name="NewPassword" class="form-control" value="" type="password" minlength="8" maxlength="20" ></div>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-md-4 control-label">Confirm New Password:</label>
                         <div class="col-md-8 inputGroupContainer">
                             <span toggle="#confirmPassword" class="fa fa-fw fa-eye-slash field-icon toggle-password" style="float: right; margin-top: 20px"></span>
-                            <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span><input id="confirmPassword" name="ConfirmNewPassword" class="form-control" value="" type="password"></div>
+                            <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span><input id="confirmPassword" name="ConfirmNewPassword" class="form-control" value="" type="password" minlength="8" maxlength="20" ></div>
                         </div>
                     </div>
             </fieldset>
