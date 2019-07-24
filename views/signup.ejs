@@ -104,7 +104,7 @@
 		</div>
 		<div class="form-group">
 			<label>Phone Number (Optional):</label>
-			<input type="tel" class="form-control" name="phoneNumber" style="height: 50px;" onkeypress="isInputNumber (event)" placeholder="0000000000" title="XXXXXXXXXX" maxlength="10" pattern="[0-9]{10}" >
+			<input type="tel" id="PhoneNumber" class="form-control" name="phoneNumber" style="height: 50px;" onkeypress="isInputNumber (event)" placeholder="0000000000" title="XXXXXXXXXX" maxlength="10" pattern="[0-9]{10}" >
 		</div>
 		<div class="form-group">
 			<label>Security Question #1:</label>
@@ -192,6 +192,7 @@
 	let capsWarning = document.getElementById("capsWarning");
 	let answer1 = document.getElementById("answer1");
 	let answer2 = document.getElementById("answer2");
+	let PhoneNumber = document.getElementById("PhoneNumber");
 
 	username.addEventListener("keydown", function(e) {
 
@@ -281,23 +282,57 @@
 					let answer1 = "answer1=" + a1;
 					let answer2 = "answer2=" + a2;
 
-					$.ajax({
-						type: "post",
-						url: "/signup",
-						dataType: 'json',
-						data: $("#signup").serialize() + "&" + answer1 + "&" + answer2,
-						success: function (result) {
-							console.log(result);
-							if (!result.error) {
-								// alert(result.message);
-								alert("We are sending you the email verification. Please check it before login to your account.");
-								window.location.replace('/login');
-								console.log(("#signup").serialize);
+					if (confirm("You will not be able to change your security question upon submission. Are you sure you would like to proceed?") === true) {
+						// if (inputtx.value.length == 0)
+						// {
+						// 	alert("message");
+						// 	return false;
+						// }
+						if (PhoneNumber.value.length === 0) {
+							if (confirm("Registering your phone number will allow phone authentication.") === true) {
+								$.ajax({
+									type: "post",
+									url: "/signup",
+									dataType: 'json',
+									data: $("#signup").serialize() + "&" + answer1 + "&" + answer2,
+									success: function (result) {
+										console.log(result);
+										if (!result.error) {
+											// alert(result.message);
+											alert("We are sending you the email verification. Please check it before login to your account.");
+											window.location.replace('/login');
+											console.log(("#signup").serialize);
+										} else {
+											alert(result.message);
+										}
+									}
+								});
 							} else {
-								alert(result.message);
+								return false;
 							}
+						} else {
+							$.ajax({
+								type: "post",
+								url: "/signup",
+								dataType: 'json',
+								data: $("#signup").serialize() + "&" + answer1 + "&" + answer2,
+								success: function (result) {
+									console.log(result);
+									if (!result.error) {
+										// alert(result.message);
+										alert("We are sending you the email verification. Please check it before login to your account.");
+										window.location.replace('/login');
+										console.log(("#signup").serialize);
+									} else {
+										alert(result.message);
+									}
+								}
+							});
 						}
-					})
+
+					} else {
+						return false;
+					}
 				});
 			}
 
