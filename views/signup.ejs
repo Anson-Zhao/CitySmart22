@@ -104,7 +104,7 @@
 		</div>
 		<div class="form-group">
 			<label>Phone Number (Optional):</label>
-			<input type="tel" id="PhoneNumber" class="form-control" name="phoneNumber" style="height: 50px;" onkeypress="isInputNumber (event)" placeholder="1233211234" title="XXXXXXXXXX" maxlength="10" pattern="[0-9]{10}" >
+			<input type="tel" id="PhoneNumber" class="form-control" name="phoneNumber" style="height: 50px;" onkeypress="isInputNumber (event)" placeholder="1233211234" title="XXXXXXXXXX" minlength="8" maxlength="10" pattern="[0-9]{10}" >
 		</div>
 		<div class="form-group">
 			<label>Security Question #1:</label>
@@ -375,6 +375,7 @@
 						break;
 					} else {
 						document.getElementById("emailUser").innerHTML = "";
+						document.getElementById("submitButton").disabled = false;
 					}
 				}
 			}
