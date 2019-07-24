@@ -53,13 +53,13 @@
 </head>
 <div class="navul" style="height: 80px;
     background: #000000;">
-	<a class="navul" href="//aworldbridge.com" style="background: #000000;
+    <a class="navul" href="//aworldbridge.com" style="background: #000000;
     width: 500px;
     height: 80px;">
-		<img class="banner" src="../images/NewWBBanner.jpg" style="width: 550px;
+        <img class="banner" src="../images/NewWBBanner.jpg" style="width: 550px;
     height: 80px;
     margin: auto; display: block;" />
-	</a>
+    </a>
 </div>
 <body ononline="onFunction()" onoffline="offFunction()">
 <div class="container" style="width: 500px; padding: 0px;">
@@ -67,9 +67,9 @@
 	<h1 style="margin-top: 30px"><span class="fa fa-sign-in"></span> Sign Up </h1>
 	<!-- show any messages that come back with authentication -->
 	<% if (message.length > 0) { %>
-		<div class="alert alert-danger">
-			<%= message %>
-		</div>
+	<div class="alert alert-danger">
+		<%= message %>
+	</div>
 	<% } %>
 	<!-- LOGIN FORM -->
 	<!--<form onsubmit="return checkForm()" action="/signup" method="post" id="signup">-->
@@ -103,7 +103,7 @@
 			<h5 class="floatingBox">&nbsp;&nbsp;&nbsp;Regular</h5>
 		</div>
 		<div class="form-group">
-			<label>(Optional) Phone Number (Enables Phone Authentication):</label>
+			<label>Phone Number (Optional):</label>
 			<input type="tel" class="form-control" name="phoneNumber" style="height: 50px;" onkeypress="isInputNumber (event)" placeholder="0000000000" title="XXXXXXXXXX" maxlength="10" pattern="[0-9]{10}" >
 		</div>
 		<div class="form-group">
@@ -177,7 +177,7 @@
 		</div>
 		<br>
 		<div class="container" style="width: 500px; padding: 0px;">
-			<button id="signupsubmit" type="submit" class="button1"> Sign Up </button>
+			<button type="submit" class="button1"> Sign Up </button>
 		</div>
 	</form>
 	<hr>
@@ -259,29 +259,55 @@
 		}
 	});
 
-	$(document).ready(function() {
-		$(function() {
-			flatpickr(".date", {
-				enableTime: true,
-				dateFormat: "Y-m-d H:i:S",
-				time_24hr: true
-			});
-			// console.log($('#signup'));
-			// console.log($("#signup").serialize());
+    $(document).ready(function() {
+        $(function() {
+            flatpickr(".date", {
+                enableTime: true,
+                dateFormat: "Y-m-d H:i:S",
+                time_24hr: true
+            });
+		// console.log($('#signup'));
+		// console.log($("#signup").serialize());
 
+			if (document.getElementById("emailUser").innerHTML === "This username is already taken. Please use a different one.") {
+				$(".button1").prop("disabled", true);
+			} else {
+				$(".button1").prop("disabled", false);
+				$('#signup').submit(function(e) {
+					// console.log($("#signup").serialize());
+					// console.log($('#signup'));
+					let a1 = $('#answer1').val().replace("\'", "\\'");
+					let a2 = $('#answer2').val().replace("\'", "\\'");
+					let answer1 = "answer1=" + a1;
+					let answer2 = "answer2=" + a2;
 
+					$.ajax({
+						type: "post",
+						url: "/signup",
+						dataType: 'json',
+						data: $("#signup").serialize() + "&" + answer1 + "&" + answer2,
+						success: function (result) {
+							console.log(result);
+							if (!result.error) {
+								// alert(result.message);
+								alert("We are sending you the email verification. Please check it before login to your account.");
+								window.location.replace('/login');
+								console.log(("#signup").serialize);
+							} else {
+								alert(result.message);
+							}
+						}
+					})
+				});
+			}
 
-		});
-		let today = new Date();
-		let date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
-		let time2 = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-		let dateTime = date + ' ' + time2;
-		document.getElementById("DATE").value = dateTime;
-
-
-
-
-	});
+        });
+        let today = new Date();
+        let date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+        let time2 = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+        let dateTime = date + ' ' + time2;
+        document.getElementById("DATE").value = dateTime;
+    });
 
 	$('select[name=question1]').on('change', function() {
 		var self = this;
@@ -309,48 +335,15 @@
 					console.log(results[i].username);
 					if (value === results[i].username) {
 						document.getElementById("emailUser").innerHTML = "This username is already taken. Please use a different one.";
-						// document.getElementById("signupsubmit").disabled = true;
 
-						// break;
-					} else if (value !== results[i].username) {
+						break;
+					} else {
 						document.getElementById("emailUser").innerHTML = "";
-						$('#signup').submit(function(e) {
-							// console.log($("#signup").serialize());
-							// console.log($('#signup'));
-
-
-							let a1 = $('#answer1').val().replace("\'", "\\'");
-							let a2 = $('#answer2').val().replace("\'", "\\'");
-							let answer1 = "answer1=" + a1;
-							let answer2 = "answer2=" + a2;
-							let r = confirm("You will not be able to change your security question upon submission. Please be cautious.");
-							if (r === true) {
-								$.ajax({
-									type: "post",
-									url: "/signup",
-									dataType: 'json',
-									data: $("#signup").serialize() + "&" + answer1 + "&" + answer2,
-									success: function (result) {
-										console.log(result);
-										if (!result.error) {
-											// alert(result.message);
-											alert("We are sending you the email verification. Please check it before login to your account.");
-											window.location.replace('/login');
-											console.log(("#signup").serialize);
-										} else {
-											alert(result.message);
-										}
-									}
-								})
-							} else {}
-						});
-						// document.getElementById("signupsubmit").disabled = false;
 					}
 				}
 			}
 		})
 	}
-
 
 	function isInputNumber (evt) {
 		var char = String.fromCharCode(evt.which);
