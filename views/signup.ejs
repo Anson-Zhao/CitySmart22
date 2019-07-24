@@ -77,20 +77,20 @@
 	<form  onsubmit="return checkForm()" action="/signup" method="post" id="signup">
 		<div class="form-group">
 			<label>Username (email address):</label>
-			<input type="email" id="username" class="form-control" name="username" onchange="SearchUsername(this.value)" style="height: 50px;" required>
+			<input type="email" id="username" class="form-control" name="username" onchange="SearchUsername(this.value)" style="height: 50px;" maxlength="99" required>
 			<p id="emailUser" style="color: palevioletred;margin-top:15px;"></p>
 		</div>
 		<div class="form-group">
 			<label>First Name:</label>
-			<input type="text" id="firstname" class="form-control" name="firstName" style="height: 50px;" required>
+			<input type="text" id="firstname" class="form-control" name="firstName" style="height: 50px;" maxlength="99" required>
 		</div>
 		<div class="form-group">
 			<label>Last Name:</label>
-			<input type="text" id="lastname" class="form-control" name="lastName" style="height: 50px;" required>
+			<input type="text" id="lastname" class="form-control" name="lastName" style="height: 50px;" maxlength="99" required>
 		</div>
 		<div class="form-group">
-			<label>Password:</label>
-			<input type="password" id="password" class="form-control" name="password" style="width: 95%; height: 50px;  display: inline-block" required>
+			<label>Password (8-20 Characters):</label>
+			<input type="password" id="password" class="form-control" name="password" style="width: 95%; height: 50px;  display: inline-block" minlength="8" maxlength="20" required>
 			<span toggle="#password" class="fa fa-fw fa-eye-slash field-icon toggle-password" style="float: right; margin-top: 15px; display: inline-block"></span>
 
 		</div>
@@ -288,7 +288,7 @@
 						// 	alert("message");
 						// 	return false;
 						// }
-						if (PhoneNumber.value.length === 0) {
+						if (PhoneNumber.value.length !== 0) {
 							if (confirm("Registering your phone number will allow phone authentication.") === true) {
 								$.ajax({
 									type: "post",
