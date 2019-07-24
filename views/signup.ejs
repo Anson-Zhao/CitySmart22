@@ -49,6 +49,16 @@
 			background-color: #f0ad4e;
 			color: white;
 		}
+		.button2 {
+			width: 500px;
+			height: 50px;
+			border-radius: 15px;
+			-webkit-transition-duration: 0.4s;
+			transition-duration: 0.4s;
+			cursor: pointer;
+			background-color: lightgray;
+			color: #ffffff;
+		}
 	</style>
 </head>
 <div class="navul" style="height: 80px;
@@ -77,7 +87,7 @@
 	<form  onsubmit="return checkForm()" action="/signup" method="post" id="signup">
 		<div class="form-group">
 			<label>Username (email address):</label>
-			<input type="email" id="username" class="form-control" name="username" onchange="SearchUsername(this.value)" style="height: 50px;" minlength="2" maxlength="99" required>
+			<input type="email" id="username" class="form-control" name="username" onchange="SearchUsername(this.value)" style="height: 50px;" minlength="2" maxlength="99" autofocus required>
 			<p id="emailUser" style="color: palevioletred;margin-top:15px;"></p>
 		</div>
 		<div class="form-group">
@@ -372,10 +382,14 @@
 						alert("This username is already taken. Please use a different one.");
 						document.getElementById("emailUser").innerHTML = "This username is already taken. Please use a different one.";
 						document.getElementById("submitButton").disabled = true;
+						document.getElementById("submitButton").classList.remove("button1");
+						document.getElementById("submitButton").classList.add("button2");
 						break;
 					} else {
 						document.getElementById("emailUser").innerHTML = "";
 						document.getElementById("submitButton").disabled = false;
+						document.getElementById("submitButton").classList.add("button1");
+						document.getElementById("submitButton").classList.remove("button2");
 					}
 				}
 			}
