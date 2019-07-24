@@ -77,16 +77,16 @@
 	<form  onsubmit="return checkForm()" action="/signup" method="post" id="signup">
 		<div class="form-group">
 			<label>Username (email address):</label>
-			<input type="email" id="username" class="form-control" name="username" onchange="SearchUsername(this.value)" style="height: 50px;" maxlength="99" required>
+			<input type="email" id="username" class="form-control" name="username" onchange="SearchUsername(this.value)" style="height: 50px;" minlength="2" maxlength="99" required>
 			<p id="emailUser" style="color: palevioletred;margin-top:15px;"></p>
 		</div>
 		<div class="form-group">
 			<label>First Name:</label>
-			<input type="text" id="firstname" class="form-control" name="firstName" style="height: 50px;" maxlength="99" required>
+			<input type="text" id="firstname" class="form-control" name="firstName" style="height: 50px;" minlength="1" maxlength="99" required>
 		</div>
 		<div class="form-group">
 			<label>Last Name:</label>
-			<input type="text" id="lastname" class="form-control" name="lastName" style="height: 50px;" maxlength="99" required>
+			<input type="text" id="lastname" class="form-control" name="lastName" style="height: 50px;" minlength="1" maxlength="99" required>
 		</div>
 		<div class="form-group">
 			<label>Password (8-20 Characters):</label>
@@ -104,7 +104,7 @@
 		</div>
 		<div class="form-group">
 			<label>Phone Number (Optional):</label>
-			<input type="tel" id="PhoneNumber" class="form-control" name="phoneNumber" style="height: 50px;" onkeypress="isInputNumber (event)" placeholder="0000000000" title="XXXXXXXXXX" maxlength="10" pattern="[0-9]{10}" >
+			<input type="tel" id="PhoneNumber" class="form-control" name="phoneNumber" style="height: 50px;" onkeypress="isInputNumber (event)" placeholder="1233211234" title="XXXXXXXXXX" maxlength="10" pattern="[0-9]{10}" >
 		</div>
 		<div class="form-group">
 			<label>Security Question #1:</label>
@@ -133,7 +133,7 @@
 			</select>
 			<br>
 			<label>Answer:</label>
-			<input type="text" class="form-control" id="answer1" style="height: 50px;" required>
+			<input type="text" class="form-control" id="answer1" style="height: 50px;" minlength="1" maxlength="200" required>
 			<br>
 			<label>Security Question #2:</label>
 			<br>
@@ -161,7 +161,7 @@
 			</select>
 			<br>
 			<label>Answer:</label>
-			<input type="text" class="form-control" id="answer2" style="height: 50px;" required>
+			<input type="text" class="form-control" id="answer2" style="height: 50px;" minlength="1" maxlength="200" required>
 		</div>
 		<div class="form-group" hidden>
 			<label>Date Created:</label>
@@ -177,7 +177,7 @@
 		</div>
 		<br>
 		<div class="container" style="width: 500px; padding: 0px;">
-			<button type="submit" class="button1"> Sign Up </button>
+			<button type="submit" id="submitButton" class="button1"> Sign Up </button>
 		</div>
 	</form>
 	<hr>
@@ -369,8 +369,9 @@
 					console.log(value);
 					console.log(results[i].username);
 					if (value === results[i].username) {
+						alert("This username is already taken. Please use a different one.");
 						document.getElementById("emailUser").innerHTML = "This username is already taken. Please use a different one.";
-
+						document.getElementById("submitButton").disabled = true;
 						break;
 					} else {
 						document.getElementById("emailUser").innerHTML = "";
