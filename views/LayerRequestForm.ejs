@@ -463,7 +463,7 @@
 
         let uploader = new qq.FineUploader({
             element: document.getElementById("uploader"),
-            // debug: true,
+            debug: true,
             request: {
                 endpoint: 'upload'
             },
@@ -478,6 +478,11 @@
                 endpoint: 'deleteFiles'
             },
             callbacks: {
+                onDeleteComplete: function(id, xhr, isError) {
+                    if (isError) {
+                     console.log(isError);
+                    }
+                },
                 onError: function(id, name, errorReason, xhrOrXdr) {
                     alert(qq.format("Error on file number {} - {}.  Reason: {}", id, name, errorReason));
                 },
@@ -487,6 +492,13 @@
             },
             validation:{
                 allowedExtensions: ['tif', 'shp','jp2','adf','j2k', 'zip']
+            },
+            resume: {
+                enabled: true
+            },
+            retry: {
+                enableAuto: true,
+                showButton: true
             }
         });
     });
