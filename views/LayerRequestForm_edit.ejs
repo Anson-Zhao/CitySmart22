@@ -684,9 +684,13 @@
             },
             deleteFile: {
                 enabled: true, // defaults to false
+                forceConfirm: true,
                 endpoint: 'deleteFiles'
             },
             callbacks: {
+                onError: function(id, name, errorReason, xhrOrXdr) {
+                    alert(qq.format("Error on file number {} - {}.  Reason: {}", id, name, errorReason));
+                },
                 onComplete: function (id, name, responseJSON) {
                     uploader.setUuid(id, responseJSON.newuuid);
                 }
