@@ -2651,7 +2651,7 @@ function QueryStat(myObj, sqlStat, res) {
         res.setHeader("Access-Control-Allow-Origin", "*"); // Allow cross domain header
         //console.log("result=" + req.params.uuid);
         let uuid = req.params.uuid,
-            dirToDelete = Pending_Dir + '/' + uuid;
+            dirToDelete = Delete_Dir + '/' + uuid;
         rimraf(dirToDelete, function(error) {
             if (error) {
                 console.error("Problem deleting file! " + error);

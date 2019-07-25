@@ -334,7 +334,7 @@
                             <div class="input-group">
                                 <span class="input-group-addon" style="max-width: 100%;"><i class="glyphicon glyphicon-list"></i></span>
                                 <select required class="selectpicker form-control"  id="LayerFormat2">
-                                    <option value="">SELECT LAYER FORMAT</option>
+                                    <option value="" disabled selected>SELECT LAYER FORMAT</option>
                                     <option value="GeoTIFF">GeoTIFF - Tagged Image File Format with Geographic information (.tif)</option>
                                     <option value="ShapeFile">Shapefile - ESRI(tm) Shapefiles (.shp)</option>
                                     <option value="JPEG">JP2ECW - JP2K (.jp2/.j2k)</option>
@@ -382,6 +382,7 @@
     <script>
     // import {SearchLayerName, SearchThirdLayer} from "../scripts/LayerNameSearch";
 
+    const qq = require("../3rdPartyLibs/fine-uploader/fine-uploader");
     let RID = '<%= RID %>';
     let username = '<%= user.username %>';
     let userrole = '<%= user.userrole %>';
@@ -472,9 +473,13 @@
             },
             deleteFile: {
                 enabled: true, // defaults to false
+                forceConfirm: true,
                 endpoint: 'deleteFiles'
             },
             callbacks: {
+                onError: function(id, name, errorReason, xhrOrXdr) {
+                    alert(qq.format("Error on file number {} - {}.  Reason: {}", id, name, errorReason));
+                },
                 onComplete: function (id, name, responseJSON) {
                     uploader.setUuid(id, responseJSON.newuuid);
                 }
