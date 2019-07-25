@@ -741,43 +741,6 @@
             alert("Too many requests to the server can cause the server to slow down or not function properly.");
         } else {}
     }
-    //
-    // let nl = getNewLine()
-    //
-    // function getNewLine() {
-    //     var agent = navigator.userAgent
-    //
-    //     if (agent.indexOf("Win") >= 0)
-    //         return "\r\n"
-    //     else
-    //     if (agent.indexOf("Mac") >= 0)
-    //         return "\r"
-    //
-    //     return "\r"
-    //
-    // }
-    //
-    // pagecode = '<?php'+nl+
-    //     '	if(isset($_POST[\'post\'])) {'+nl+
-    //     '		$url = "https://www.google.com/recaptcha/api/siteverify";'+nl+
-    //     '		$data = ['+nl+
-    //     '			\'secret\'=>"6Ld7fq8UAAAAAB3tukZhkQrvQyUNFa1Hsv0geq4X",'+nl+
-    //     '\'response\'=>$_POST[\'token\']'+nl+
-    //     '];'+nl+nl+
-    //     '$options = array('+nl+
-    //     '\'http\' => array('+nl+
-    //     '\'header\'=>"Content-type: application/x-www-form-urlencoded\\r\\n",'+nl+
-    //     '\'method\'=>\'POST\','+nl+
-    //     '\'content\'=>http_build_query($data)'+nl+
-    //     ') );'+nl+nl+
-    //     '$context  = stream_context_create($options);'+nl+
-    //     '$response = file_get_contents($url, false, $context);'+nl+
-    //     '$res = json_decode($response, true);'+nl+
-    //     '}'+nl+
-    //     '?>'
-    //
-    // document.write(pagecode);
-
 
     grecaptcha.ready(function() {
         grecaptcha.execute('6Ld7fq8UAAAAAOv8ZEiVj6P972pR_Vf3ko5R0JB_', {action: 'homepage'}.then(function (token) {
