@@ -49,8 +49,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scripts/Home.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="466">
-              <caret line="373" column="57" selection-start-line="373" selection-start-column="57" selection-end-line="373" selection-end-column="57" />
+            <state relative-caret-position="270">
+              <caret line="239" column="18" selection-start-line="239" selection-start-column="18" selection-end-line="239" selection-end-column="18" />
               <folding>
                 <element signature="n#style#0;n#img#0;n#!!top" expanded="true" />
               </folding>
@@ -58,98 +58,65 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/views/signup.ejs">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/serverConfig.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="620">
-              <caret line="89" column="83" selection-start-line="89" selection-start-column="83" selection-end-line="89" selection-end-column="83" />
+            <state relative-caret-position="420">
+              <caret line="28" selection-start-line="28" selection-end-line="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/homepage.ejs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1004">
+              <caret line="744" column="7" selection-start-line="744" selection-start-column="7" selection-end-line="744" selection-end-column="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="true" current-in-tab="true">
+        <entry file="remoteDeploymentFS://&lt;6f32712d-a060-4679-8019-b4cec0c93bb5&gt;/views/dataHistory.ejs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="55" column="18" selection-start-line="55" selection-start-column="18" selection-end-line="55" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="true" current-in-tab="false">
+        <entry file="remoteDeploymentFS://&lt;6f32712d-a060-4679-8019-b4cec0c93bb5&gt;/views/homepage.ejs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="821">
+              <caret line="770" column="17" selection-start-line="770" selection-start-column="17" selection-end-line="770" selection-end-column="17" />
               <folding>
-                <element signature="n#style#0;n#a#0;n#div#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#img#0;n#a#0;n#div#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#h1#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#0;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#div#1;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#div#2;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#div#3;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#div#3;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="e#3514#3520#0#HTML" expanded="true" />
-                <element signature="e#3520#3526#0#HTML" expanded="true" />
-                <element signature="e#3526#3532#0#HTML" expanded="true" />
-                <element signature="e#3542#3548#0#HTML" expanded="true" />
-                <element signature="e#3548#3554#0#HTML" expanded="true" />
-                <element signature="e#3554#3560#0#HTML" expanded="true" />
-                <element signature="e#3560#3566#0#HTML" expanded="true" />
-                <element signature="e#3658#3664#0#HTML" expanded="true" />
-                <element signature="e#3664#3670#0#HTML" expanded="true" />
-                <element signature="e#3670#3676#0#HTML" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#div#5;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#select#0;n#div#6;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#div#6;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#select#1;n#div#6;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#1;n#div#6;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#10;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="e#10136#10182#0#HTML" expanded="true" />
+                <element signature="e#10231#10295#0#HTML" expanded="true" />
+                <element signature="e#10357#10430#0#HTML" expanded="true" />
+                <element signature="e#11885#11913#0#HTML" expanded="true" />
+                <element signature="e#28690#28716#0#HTML" expanded="true" />
+                <element signature="e#29424#29494#0#HTML" expanded="true" />
+                <element signature="e#29884#29957#0#HTML" expanded="true" />
+                <element signature="e#30291#30364#0#HTML" expanded="true" />
+                <element signature="e#31075#31100#0#HTML" expanded="true" />
+                <element signature="e#31926#32006#0#HTML" expanded="true" />
+                <element signature="e#32136#32163#0#HTML" expanded="true" />
+                <element signature="e#32271#32314#0#HTML" expanded="true" />
+                <element signature="e#32410#32604#0#HTML" expanded="true" />
+                <element signature="e#32634#32669#0#HTML" expanded="true" />
+                <element signature="e#32709#32745#0#HTML" expanded="true" />
+                <element signature="e#32746#32750#0#HTML" expanded="true" />
+                <element signature="e#32797#32834#0#HTML" expanded="true" />
+                <element signature="e#32835#32839#0#HTML" expanded="true" />
+                <element signature="e#32892#32919#0#HTML" expanded="true" />
+                <element signature="e#33374#33426#0#HTML" expanded="true" />
+                <element signature="e#33532#33558#0#HTML" expanded="true" />
+                <element signature="e#33622#33653#0#HTML" expanded="true" />
+                <element signature="e#33859#33893#0#HTML" expanded="true" />
+                <element signature="e#34222#34229#1#HTML" expanded="true" />
+                <element signature="e#34554#34594#0#HTML" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/PhoneAuthP2.ejs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="212">
-              <caret line="60" column="61" selection-start-line="60" selection-start-column="61" selection-end-line="60" selection-end-column="61" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/adduser.ejs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="359">
-              <caret line="79" column="14" selection-start-line="79" selection-start-column="14" selection-end-line="79" selection-end-column="14" />
-              <folding>
-                <element signature="n#style#0;n#input#0;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/userProfile.ejs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="649">
-              <caret line="405" column="37" lean-forward="true" selection-start-line="405" selection-start-column="37" selection-end-line="405" selection-end-column="37" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/2step.ejs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1380">
-              <caret line="97" column="23" lean-forward="true" selection-start-line="97" selection-start-column="23" selection-end-line="97" selection-end-column="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/CS_placemarkLayer.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="25" column="74" selection-start-line="25" selection-start-column="74" selection-end-line="25" selection-end-column="74" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/customPK.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="30" selection-start-line="30" selection-end-line="30" />
             </state>
           </provider>
         </entry>
@@ -331,17 +298,12 @@
             <path>
               <item name="CitySmart22" type="b2602c69:ProjectViewProjectNode" />
               <item name="CitySmart22" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CitySmart22" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CitySmart22" type="462c0819:PsiDirectoryNode" />
               <item name="routes" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CitySmart22" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CitySmart22" type="462c0819:PsiDirectoryNode" />
-              <item name="scripts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CitySmart22" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CitySmart22" type="462c0819:PsiDirectoryNode" />
-              <item name="uploadfolder" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="CitySmart22" type="b2602c69:ProjectViewProjectNode" />
@@ -411,9 +373,6 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration name="CS2_MainSvr.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="CS2_MainSvr.js" working-dir="$PROJECT_DIR$">
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Node.js.CS2_MainSvr.js" />
@@ -801,10 +760,9 @@
     <option name="totallyTimeSpent" value="307009000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="23" y="32" width="2135" height="1302" extended-state="0" />
-    <editor active="true" />
+    <frame x="249" y="23" width="1919" height="1302" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18442427" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16728823" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -825,7 +783,7 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Database" order="3" weight="0.28175896" />
-      <window_info anchor="right" id="Remote Host" order="4" visible="true" weight="0.20162447" />
+      <window_info anchor="right" id="Remote Host" order="4" visible="true" weight="0.13532232" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1064,35 +1022,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/homepage.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="44" selection-start-line="8" selection-start-column="44" selection-end-line="8" selection-end-column="44" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#div#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#a#0;n#div#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#hr#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#select#0;n#p#0;n#div#0;n#div#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#select#0;n#p#0;n#div#1;n#div#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#select#0;n#p#0;n#div#2;n#div#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#label#0;n#div#1;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h5#0;n#div#1;n#div#1;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#div#1;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#3;n#div#1;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#div#3;n#div#1;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="e#31774#31778#0#HTML" expanded="true" />
-            <element signature="n#style#0;n#p#1;n#div#3;n#div#1;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="e#31863#31867#0#HTML" expanded="true" />
-            <element signature="n#style#0;n#div#4;n#div#1;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#5;n#div#1;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#canvas#0;n#div#1;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#canvas#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="e#33254#33261#1#HTML" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="1004">
+          <caret line="744" column="7" selection-start-line="744" selection-start-column="7" selection-end-line="744" selection-end-column="7" />
         </state>
       </provider>
     </entry>
@@ -1147,8 +1078,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/config/serverConfig.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="29" column="44" selection-start-line="29" selection-start-column="44" selection-end-line="29" selection-end-column="44" />
+        <state relative-caret-position="420">
+          <caret line="28" selection-start-line="28" selection-end-line="28" />
         </state>
       </provider>
     </entry>
@@ -1244,8 +1175,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/scripts/Home.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="466">
-          <caret line="373" column="57" selection-start-line="373" selection-start-column="57" selection-end-line="373" selection-end-column="57" />
+        <state relative-caret-position="270">
+          <caret line="239" column="18" selection-start-line="239" selection-start-column="18" selection-end-line="239" selection-end-column="18" />
           <folding>
             <element signature="n#style#0;n#img#0;n#!!top" expanded="true" />
           </folding>
