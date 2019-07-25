@@ -15,6 +15,7 @@
     <link href='//fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="../css/menu.css"/>
     <script src="../3rdPartyLibs/jquery-3.3.1.min.js" type="text/javascript"></script>
+    <script src="https://www.google.com/recaptcha/api.js?render=6Ld7fq8UAAAAAOv8ZEiVj6P972pR_Vf3ko5R0JB_"></script>
     <script src="../3rdPartyLibs/build/WorldWind-built.js"></script>
     <script src="../scripts/AutoMenu.js"></script>
     <script src="../scripts/OptionList.js"></script>
@@ -347,6 +348,7 @@
                 <span toggle="#password" class="fa fa-fw fa-eye-slash field-icon toggle-password"></span>
                 <button type="submit" class="button1" onsubmit="loginAttempts()">Login>></button>  <!--Temporary link to login page, supposed to work automatically-->
                 <button type="button" class="button1" onclick="window.location='/signup'" >Signup>></button>
+                <input type="hidden" id="token" name="token">
             </form>
         </div>
     </div>
@@ -684,6 +686,10 @@
     let numClicks = 0;
 
 
+    $(document).ready(function() {
+        alert('Please wait for our application to finish loading before attempting to login.');
+    })
+
     username.addEventListener("keydown", function(e) {
 
         if (e.getModifierState("CapsLock")) {
@@ -718,7 +724,7 @@
     $(".toggle-password").click(function() {
         $(this).toggleClass("fa-eye-slash fa-eye");
         var input = $($(this).attr("toggle"));
-        if (input.attr("type") == "password") {
+        if (input.attr("type") === "password") {
             input.attr("type", "text");
         } else {
             input.attr("type", "password");
@@ -734,6 +740,22 @@
             alert("Too many requests to the server can cause the server to slow down or not function properly.");
         } else {}
     }
+
+
+    grecaptcha.ready(function() {
+        grecaptcha.execute('6Ld7fq8UAAAAAOv8ZEiVj6P972pR_Vf3ko5R0JB_', {action: 'homepage'}.then(function (token) {
+            console.log(token);
+            document.getElementById("token").value = token;
+        }));
+    });
+
+    grecaptcha.ready(function() {
+        grecaptcha.execute('6Ld7fq8UAAAAAOv8ZEiVj6P972pR_Vf3ko5R0JB_', {action: '/login'}.then(function (token) {
+            console.log(token);
+            document.getElementById("token").value = token;
+        }));
+    });
+
     function onFunction() {
         alert ("You are now online.");
     }
@@ -742,5 +764,27 @@
         alert ("Your are offline. Some functionality may be unavailable.");
     }
 </script>
+<!--<?php-->
+<!--	if(isset($_POST['post'])) {-->
+<!--		$url = "https://www.google.com/recaptcha/api/siteverify";-->
+<!--		$data = [-->
+<!--			'secret' => "6Ld7fq8UAAAAAB3tukZhkQrvQyUNFa1Hsv0geq4X",-->
+<!--'response' => $_POST['token']-->
+<!--];-->
+<!--?>-->
+<!--<?php-->
+<!--$options = array(-->
+<!--'http' => array(-->
+<!--'header'  => "Content-type: application/x-www-form-urlencoded\r\n",-->
+<!--'method'  => 'POST',-->
+<!--'content' => http_build_query($data)-->
+<!--) );-->
+<!--?>-->
+<!--<?php-->
+<!--$context  = stream_context_create($options);-->
+<!--$response = file_get_contents($url, false, $context);-->
+<!--$res = json_decode($response, true);-->
+<!--}-->
+<!--?>-->
 </body>
 </html>
