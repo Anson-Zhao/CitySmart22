@@ -239,7 +239,7 @@ requirejs(['./newGlobe',
 
                 toggleCheck=true;
 
-                if(confirm("All the layers is going to be closed except the most recent one")){
+                if(confirm("All the layers are going to be closed except for the most recent one.")){
                     if(arrMenu.length>1){
                         closeAllToggle()
                     }
