@@ -10,6 +10,7 @@
     <!--<link rel="stylesheet" href="//unpkg.com/flatpickr/dist/flatpickr.min.css">-->
     <script src="../3rdPartyLibs/jquery-3.3.1.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/flatpickr"></script>
+    <?php include 'reCaptcha.php';?>
     <!--<script src="//unpkg.com/flatpickr"></script>-->
     <style>.floating-Box {
             display: inline-block;
@@ -151,6 +152,20 @@
     let time2 = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
     let dateTime = date + ' ' + time2;
     document.getElementById("date").value = dateTime;
+
+    grecaptcha.ready(function() {
+        grecaptcha.execute('6Ld7fq8UAAAAAOv8ZEiVj6P972pR_Vf3ko5R0JB_', {action: 'homepage'}.then(function (token) {
+            console.log(token);
+            document.getElementById("token").value = token;
+        }));
+    });
+
+    grecaptcha.ready(function() {
+        grecaptcha.execute('6Ld7fq8UAAAAAOv8ZEiVj6P972pR_Vf3ko5R0JB_', {action: '/login'}.then(function (token) {
+            console.log(token);
+            document.getElementById("token").value = token;
+        }));
+    });
 
     function onFunction() {
         alert ("You are now online.");
