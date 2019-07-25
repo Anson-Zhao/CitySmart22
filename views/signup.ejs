@@ -11,6 +11,7 @@
 	<!--<link rel="stylesheet" href="//unpkg.com/flatpickr/dist/flatpickr.min.css">-->
 	<script src="../3rdPartyLibs/jquery-3.3.1.min.js"></script>
 	<script src="//cdn.jsdelivr.net/npm/flatpickr"></script>
+	<script src="https://www.google.com/recaptcha/api.js?render=6Ld7fq8UAAAAAOv8ZEiVj6P972pR_Vf3ko5R0JB_"></script>
 	<?php include 'reCaptcha.php';?>
 	<!--<script src="//unpkg.com/flatpickr"></script>-->
 	<style>
@@ -264,7 +265,7 @@
 	$(".toggle-password").click(function() {
 		$(this).toggleClass("fa-eye-slash fa-eye");
 		var input = $($(this).attr("toggle"));
-		if (input.attr("type") == "password") {
+		if (input.attr("type") === "password") {
 			input.attr("type", "text");
 		} else {
 			input.attr("type", "password");
