@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3b2ba209-e08e-4f77-99ae-d893522cce16" name="Default Changelist" comment="Merge branch 'julia2' of https://github.com/Anson-Zhao/CitySmart22 into Carrots&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
+    <list default="true" id="3b2ba209-e08e-4f77-99ae-d893522cce16" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/3rdPartyLibs/fine-uploader/fine-uploader-new.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/LayerRequestForm.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/LayerRequestForm.ejs" afterDir="false" />
     </list>
@@ -76,8 +77,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/LayerRequestForm.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="317">
-              <caret line="476" column="33" selection-start-line="476" selection-start-column="33" selection-end-line="476" selection-end-column="33" />
+            <state relative-caret-position="-3257">
+              <caret line="100" column="3" selection-start-line="100" selection-start-column="3" selection-end-line="100" selection-end-column="3" />
             </state>
           </provider>
         </entry>
@@ -121,9 +122,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>kauth</find>
-      <find>/kauth</find>
-      <find>textbelt</find>
       <find>console.log(selectedIndex);</find>
       <find>button1</find>
       <find>This wind farm was estimated to be $24,000,000 and is run by Kodiak Electrical Association (KEA). It provides 18% of Kodiak's 100% renewable energy grid with its counterpart being the hydro power supplied by Terror Lake.</find>
@@ -151,6 +149,9 @@
       <find>qq-upload-delete</find>
       <find>delete</find>
       <find>fine-uploader.core.min.js</find>
+      <find>.css</find>
+      <find>ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js&quot;</find>
+      <find>qq</find>
     </findStrings>
     <replaceStrings>
       <replace>userP</replace>
@@ -204,7 +205,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/scripts/All_Layer_Menu.js" />
         <option value="$PROJECT_DIR$/scripts/USGS_MR_heatmapLayer.js" />
         <option value="$PROJECT_DIR$/scripts/USGS_MR_placemarkLayer.js" />
         <option value="&lt;6f32712d-a060-4679-8019-b4cec0c93bb5&gt;/config/serverConfig.js" />
@@ -254,6 +254,7 @@
         <option value="$PROJECT_DIR$/views/signup.ejs" />
         <option value="$PROJECT_DIR$/routes/routes.js" />
         <option value="$PROJECT_DIR$/views/LayerRequestForm_edit.ejs" />
+        <option value="$PROJECT_DIR$/3rdPartyLibs/fine-uploader/fine-uploader-new.css" />
         <option value="$PROJECT_DIR$/views/LayerRequestForm.ejs" />
       </list>
     </option>
@@ -293,6 +294,13 @@
               <item name="CitySmart22" type="462c0819:PsiDirectoryNode" />
               <item name="3rdPartyLibs" type="462c0819:PsiDirectoryNode" />
               <item name="fine-uploader" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CitySmart22" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CitySmart22" type="462c0819:PsiDirectoryNode" />
+              <item name="3rdPartyLibs" type="462c0819:PsiDirectoryNode" />
+              <item name="fine-uploader" type="462c0819:PsiDirectoryNode" />
+              <item name="fine-uploader-new.css" type="620a8d5e:NestingTreeNode" />
             </path>
             <path>
               <item name="CitySmart22" type="b2602c69:ProjectViewProjectNode" />
@@ -408,14 +416,7 @@
       <workItem from="1563558196372" duration="4336000" />
       <workItem from="1563800553847" duration="1039000" />
       <workItem from="1563802745835" duration="46258000" />
-      <workItem from="1564080665755" duration="545000" />
-    </task>
-    <task id="LOCAL-00106" summary="Merge branch 'julia2' of https://github.com/Anson-Zhao/CitySmart22 into Carrots&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
-      <created>1563890090867</created>
-      <option name="number" value="00106" />
-      <option name="presentableId" value="LOCAL-00106" />
-      <option name="project" value="LOCAL" />
-      <updated>1563890090867</updated>
+      <workItem from="1564080665755" duration="2163000" />
     </task>
     <task id="LOCAL-00107" summary="Merge branch 'julia2' of https://github.com/Anson-Zhao/CitySmart22 into Carrots&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
       <created>1563891265706</created>
@@ -753,16 +754,24 @@
       <option name="project" value="LOCAL" />
       <updated>1564079103167</updated>
     </task>
-    <option name="localTasksCounter" value="155" />
+    <task id="LOCAL-00155" summary="Merge branch 'julia2' of https://github.com/Anson-Zhao/CitySmart22 into Carrots&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
+      <created>1564081586737</created>
+      <option name="number" value="00155" />
+      <option name="presentableId" value="LOCAL-00155" />
+      <option name="project" value="LOCAL" />
+      <updated>1564081586737</updated>
+    </task>
+    <option name="localTasksCounter" value="156" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="314971000" />
+    <option name="totallyTimeSpent" value="316589000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="593" y="23" width="1919" height="1302" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17314865" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17314865" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -770,7 +779,7 @@
       <window_info anchor="bottom" id="Debug" order="2" weight="0.3988245" />
       <window_info anchor="bottom" id="Cvs" order="3" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
-      <window_info active="true" anchor="bottom" id="Run" order="5" sideWeight="0.4912094" visible="true" weight="0.36363637" />
+      <window_info anchor="bottom" id="Run" order="5" sideWeight="0.4912094" visible="true" weight="0.36363637" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49866807" weight="0.20330578" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
@@ -853,20 +862,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="Merge branch 'julia2' of https://github.com/Anson-Zhao/CitySmart22 into Carrots&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/scripts/newGlobe.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="22" column="52" lean-forward="true" selection-start-line="22" selection-start-column="52" selection-end-line="22" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/WorldWindShim.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/LayerNameSearch.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -1163,10 +1158,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/3rdPartyLibs/fine-uploader/fine-uploader.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="28" lean-forward="true" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/3rdPartyLibs/fine-uploader/fine-uploader-new.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4755">
+          <caret line="317" column="1" lean-forward="true" selection-start-line="317" selection-start-column="1" selection-end-line="317" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/views/LayerRequestForm.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="317">
-          <caret line="476" column="33" selection-start-line="476" selection-start-column="33" selection-end-line="476" selection-end-column="33" />
+        <state relative-caret-position="-3257">
+          <caret line="100" column="3" selection-start-line="100" selection-start-column="3" selection-end-line="100" selection-end-column="3" />
         </state>
       </provider>
     </entry>
