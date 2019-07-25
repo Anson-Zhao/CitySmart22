@@ -742,19 +742,19 @@
     }
 
 
-    grecaptcha.ready(function() {
-        grecaptcha.execute('6Ld7fq8UAAAAAOv8ZEiVj6P972pR_Vf3ko5R0JB_', {action: 'homepage'}.then(function (token) {
-            console.log(token);
-            document.getElementById("token").value = token;
-        }));
-    });
-
-    grecaptcha.ready(function() {
-        grecaptcha.execute('6Ld7fq8UAAAAAOv8ZEiVj6P972pR_Vf3ko5R0JB_', {action: '/login'}.then(function (token) {
-            console.log(token);
-            document.getElementById("token").value = token;
-        }));
-    });
+    // grecaptcha.ready(function() {
+    //     grecaptcha.execute('6Ld7fq8UAAAAAOv8ZEiVj6P972pR_Vf3ko5R0JB_', {action: 'homepage'}.then(function (token) {
+    //         console.log(token);
+    //         document.getElementById("token").value = token;
+    //     }));
+    // });
+    //
+    // grecaptcha.ready(function() {
+    //     grecaptcha.execute('6Ld7fq8UAAAAAOv8ZEiVj6P972pR_Vf3ko5R0JB_', {action: '/login'}.then(function (token) {
+    //         console.log(token);
+    //         document.getElementById("token").value = token;
+    //     }));
+    // });
 
     function onFunction() {
         alert ("You are now online.");
