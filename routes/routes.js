@@ -989,7 +989,7 @@ module.exports = function (app, passport) {
         });
     });
 
-    app.post('/userProfile', bruteforce.prevent, isLoggedIn, function (req, res) {
+    app.post('/userProfile', isLoggedIn, function (req, res) {
         res.setHeader("Access-Control-Allow-Origin", "*"); // Allow cross domain header
 
         // new password (User Login)
@@ -1069,7 +1069,7 @@ module.exports = function (app, passport) {
     });
 
     // Update user profile page
-    app.post('/newPass', bruteforce.prevent, isLoggedIn, function (req, res) {
+    app.post('/newPass', isLoggedIn, function (req, res) {
         res.setHeader("Access-Control-Allow-Origin", "*"); // Allow cross domain header
         let user = req.user;
         let newPass = {
@@ -1592,7 +1592,7 @@ module.exports = function (app, passport) {
     });
 
     //Submit Request form//
-    app.post('/submitL', bruteforce.prevent, function (req, res) {
+    app.post('/submitL', function (req, res) {
         let result = Object.keys(req.body).map(function (key) {
             return [String(key), req.body[key]];
         });
