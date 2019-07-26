@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3b2ba209-e08e-4f77-99ae-d893522cce16" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/LayerRequestForm_edit.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/LayerRequestForm_edit.ejs" afterDir="false" />
-    </list>
+    <list default="true" id="3b2ba209-e08e-4f77-99ae-d893522cce16" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -94,8 +91,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/LayerRequestForm_edit.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="671" column="30" lean-forward="true" selection-start-line="671" selection-start-column="30" selection-end-line="671" selection-end-column="30" />
+            <state relative-caret-position="321">
+              <caret line="673" column="25" lean-forward="true" selection-start-line="673" selection-start-column="25" selection-end-line="673" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -307,7 +304,27 @@
             <path>
               <item name="CitySmart22" type="b2602c69:ProjectViewProjectNode" />
               <item name="CitySmart22" type="462c0819:PsiDirectoryNode" />
-              <item name="routes" type="462c0819:PsiDirectoryNode" />
+              <item name="3rdPartyLibs" type="462c0819:PsiDirectoryNode" />
+              <item name="fine-uploader" type="462c0819:PsiDirectoryNode" />
+              <item name="placeholders" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CitySmart22" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CitySmart22" type="462c0819:PsiDirectoryNode" />
+              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CitySmart22" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CitySmart22" type="462c0819:PsiDirectoryNode" />
+              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
+              <item name="fine-uploader" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CitySmart22" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CitySmart22" type="462c0819:PsiDirectoryNode" />
+              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
+              <item name="fine-uploader" type="462c0819:PsiDirectoryNode" />
+              <item name="jquery.fine-uploader" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="CitySmart22" type="b2602c69:ProjectViewProjectNode" />
@@ -336,7 +353,7 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
     <property name="database.console.LAST_STATE" value="true" />
     <property name="javascript.nodejs.core.library.configured.version" value="9.2.0" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/config" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/3rdPartyLibs/fine-uploader/placeholders" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -418,14 +435,7 @@
       <workItem from="1563558196372" duration="4336000" />
       <workItem from="1563800553847" duration="1039000" />
       <workItem from="1563802745835" duration="46258000" />
-      <workItem from="1564080665755" duration="4592000" />
-    </task>
-    <task id="LOCAL-00110" summary="Merge branch 'julia2' of https://github.com/Anson-Zhao/CitySmart22 into Carrots&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
-      <created>1563891955138</created>
-      <option name="number" value="00110" />
-      <option name="presentableId" value="LOCAL-00110" />
-      <option name="project" value="LOCAL" />
-      <updated>1563891955138</updated>
+      <workItem from="1564080665755" duration="4848000" />
     </task>
     <task id="LOCAL-00111" summary="Merge branch 'julia2' of https://github.com/Anson-Zhao/CitySmart22 into Carrots&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
       <created>1563892399105</created>
@@ -763,17 +773,23 @@
       <option name="project" value="LOCAL" />
       <updated>1564146811968</updated>
     </task>
-    <option name="localTasksCounter" value="159" />
+    <task id="LOCAL-00159" summary="Merge branch 'julia2' of https://github.com/Anson-Zhao/CitySmart22 into Carrots&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
+      <created>1564147250887</created>
+      <option name="number" value="00159" />
+      <option name="presentableId" value="LOCAL-00159" />
+      <option name="project" value="LOCAL" />
+      <updated>1564147250887</updated>
+    </task>
+    <option name="localTasksCounter" value="160" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="319018000" />
+    <option name="totallyTimeSpent" value="319274000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="593" y="23" width="1919" height="1302" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17314865" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17314865" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -794,7 +810,7 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Database" order="3" weight="0.28175896" />
-      <window_info active="true" anchor="right" id="Remote Host" order="4" visible="true" weight="0.17474693" />
+      <window_info anchor="right" id="Remote Host" order="4" visible="true" weight="0.17474693" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1180,8 +1196,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/LayerRequestForm_edit.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="671" column="30" lean-forward="true" selection-start-line="671" selection-start-column="30" selection-end-line="671" selection-end-column="30" />
+        <state relative-caret-position="321">
+          <caret line="673" column="25" lean-forward="true" selection-start-line="673" selection-start-column="25" selection-end-line="673" selection-end-column="25" />
         </state>
       </provider>
     </entry>
