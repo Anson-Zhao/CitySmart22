@@ -9829,6 +9829,62 @@ The NHD is a national framework for assigning reach addresses to water-related e
         <BoundingBox CRS="EPSG:4326" minx="-90.0" miny="-180.0" maxx="90.0" maxy="180.0"/>
       </Layer>
       <Layer queryable="1" opaque="0">
+        <Name>Approved:Drain</Name>
+        <Title>Drain</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>Drain</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-74.43431582826717</westBoundLongitude>
+          <eastBoundLongitude>-74.43411582826717</eastBoundLongitude>
+          <southBoundLatitude>41.45708414266029</southBoundLatitude>
+          <northBoundLatitude>41.4572841426603</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-74.43431582826717" miny="41.45708414266029" maxx="-74.43411582826717" maxy="41.4572841426603"/>
+        <BoundingBox CRS="EPSG:4326" minx="41.457184142660296" miny="-74.43421582826717" maxx="41.457184142660296" maxy="-74.43421582826717"/>
+        <Style>
+          <Name>point</Name>
+          <Title>Default Point</Title>
+          <Abstract>A sample style that draws a point</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=Approved%3ADrain"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>Approved:Electricgrid</Name>
+        <Title>Electricgrid</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>Electricgrid</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-74.43940200844526</westBoundLongitude>
+          <eastBoundLongitude>-74.43887842067531</eastBoundLongitude>
+          <southBoundLatitude>41.451906609950605</southBoundLatitude>
+          <northBoundLatitude>41.452331015341585</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-74.43940200844526" miny="41.451906609950605" maxx="-74.43887842067531" maxy="41.452331015341585"/>
+        <BoundingBox CRS="EPSG:4326" minx="41.451906609950605" miny="-74.43940200844526" maxx="41.452331015341585" maxy="-74.43887842067531"/>
+        <Style>
+          <Name>point</Name>
+          <Title>Default Point</Title>
+          <Abstract>A sample style that draws a point</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=Approved%3AElectricgrid"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
         <Name>City_Smart:FTAA_Campus</Name>
         <Title>FTAA_Campus</Title>
         <Abstract>FTAA Campus</Abstract>
@@ -10338,6 +10394,34 @@ The NHD is a national framework for assigning reach addresses to water-related e
         </Style>
       </Layer>
       <Layer queryable="1" opaque="0">
+        <Name>Approved:Manhole_Cover</Name>
+        <Title>Manhole_Cover</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>Manhole_Cover</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-74.43387422827743</westBoundLongitude>
+          <eastBoundLongitude>-74.43367422827743</eastBoundLongitude>
+          <southBoundLatitude>41.45672216654159</southBoundLatitude>
+          <northBoundLatitude>41.456922166541595</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-74.43387422827743" miny="41.45672216654159" maxx="-74.43367422827743" maxy="41.456922166541595"/>
+        <BoundingBox CRS="EPSG:4326" minx="41.45682216654159" miny="-74.43377422827743" maxx="41.45682216654159" maxy="-74.43377422827743"/>
+        <Style>
+          <Name>point</Name>
+          <Title>Default Point</Title>
+          <Abstract>A sample style that draws a point</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=Approved%3AManhole_Cover"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
         <Name>Approved:NBarrow25Oct17_transparent_mosaic_group1</Name>
         <Title>NBarrow25Oct17_transparent_mosaic_group1</Title>
         <Abstract/>
@@ -10722,6 +10806,34 @@ The NHD is a national framework for assigning reach addresses to water-related e
         <BoundingBox CRS="CRS:84" minx="-180.0" miny="-90.0" maxx="180.0" maxy="90.0"/>
         <BoundingBox CRS="EPSG:4326" minx="-90.0" miny="-180.0" maxx="90.0" maxy="180.0"/>
       </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>Approved:Streets</Name>
+        <Title>Streets</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>Streets</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-74.44039542354555</westBoundLongitude>
+          <eastBoundLongitude>-74.43502442540189</eastBoundLongitude>
+          <southBoundLatitude>41.44931255024605</southBoundLatitude>
+          <northBoundLatitude>41.454165875770784</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-74.44039542354555" miny="41.44931255024605" maxx="-74.43502442540189" maxy="41.454165875770784"/>
+        <BoundingBox CRS="EPSG:4326" minx="41.44931255024605" miny="-74.44039542354555" maxx="41.454165875770784" maxy="-74.43502442540189"/>
+        <Style>
+          <Name>line</Name>
+          <Title>Default Line</Title>
+          <Abstract>A sample style that draws a line</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=Approved%3AStreets"/>
+          </LegendURL>
+        </Style>
+      </Layer>
       <Layer queryable="0" opaque="0" cascaded="1">
         <Name>mrdata:Thorium</Name>
         <Title>Thorium</Title>
@@ -11104,6 +11216,34 @@ The NHD is a national framework for assigning reach addresses to water-related e
         </EX_GeographicBoundingBox>
         <BoundingBox CRS="CRS:84" minx="-180.0" miny="51.0" maxx="180.0" maxy="72.0"/>
         <BoundingBox CRS="EPSG:4267" minx="50.9999" miny="-179.997" maxx="72.001" maxy="180.0"/>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>Approved:fire_hydrants</Name>
+        <Title>fire_hydrants</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>fire_hydrants</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-74.4402292361062</westBoundLongitude>
+          <eastBoundLongitude>-74.43630337478483</eastBoundLongitude>
+          <southBoundLatitude>41.45100074252088</southBoundLatitude>
+          <northBoundLatitude>41.45391414581876</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-74.4402292361062" miny="41.45100074252088" maxx="-74.43630337478483" maxy="41.45391414581876"/>
+        <BoundingBox CRS="EPSG:4326" minx="41.45100074252088" miny="-74.4402292361062" maxx="41.45391414581876" maxy="-74.43630337478483"/>
+        <Style>
+          <Name>point</Name>
+          <Title>Default Point</Title>
+          <Abstract>A sample style that draws a point</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=Approved%3Afire_hydrants"/>
+          </LegendURL>
+        </Style>
       </Layer>
       <Layer queryable="1" opaque="0">
         <Name>tiger:giant_polygon</Name>
