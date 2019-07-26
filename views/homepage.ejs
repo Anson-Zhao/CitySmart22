@@ -173,10 +173,10 @@
             font-weight: bold;
         }
         .popup-Body {padding: 2px 16px;}
-        #browserWarning {
-            text-align: center;
-            font-family: serif;
-        }
+        /*#browserWarning {*/
+        /*    text-align: center;*/
+        /*    font-family: serif;*/
+        /*}*/
         #capsWarning {
             color: red;
             text-align: center;
@@ -335,7 +335,7 @@
 
 <div class="container">
     <br>
-    <p id="browserWarning"> Our application works best on the most recent version of <strong>Chrome</strong>.</p>
+<!--    <p id="browserWarning"> Our application works best on the most recent version of <strong>Chrome</strong>.</p>-->
     <div class="text-center header">
         <h1><span class="fa fa-globe"></span><strong> City Smart V2 </strong></h1>
         <div class="log-form">
@@ -689,7 +689,8 @@
 
     $(document).ready(function() {
         alert('Please wait for our application to finish loading before attempting to login.');
-    })
+        alert('Our application works best on the most recent version of Chrome. If you are experiencing any problems, try switching a browser.');
+    });
 
     username.addEventListener("keydown", function(e) {
 
