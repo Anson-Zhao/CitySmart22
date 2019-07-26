@@ -273,15 +273,15 @@
 		}
 	});
 
-    $(document).ready(function() {
-        $(function() {
-            flatpickr(".date", {
-                enableTime: true,
-                dateFormat: "Y-m-d H:i:S",
-                time_24hr: true
-            });
-		// console.log($('#signup'));
-		// console.log($("#signup").serialize());
+	$(document).ready(function() {
+		$(function() {
+			flatpickr(".date", {
+				enableTime: true,
+				dateFormat: "Y-m-d H:i:S",
+				time_24hr: true
+			});
+			// console.log($('#signup'));
+			// console.log($("#signup").serialize());
 
 			if (document.getElementById("emailUser").innerHTML === "This username is already taken. Please use a different one.") {
 				$(".button1").prop("disabled", true);
