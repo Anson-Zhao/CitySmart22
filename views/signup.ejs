@@ -294,15 +294,18 @@
 					let a2 = $('#answer2').val().replace("\'", "\\'");
 					let answer1 = "answer1=" + a1;
 					let answer2 = "answer2=" + a2;
+					console.log($("#signup").serialize());
+					console.log(answer1);
+					console.log(answer2);
 
-					if (confirm("You will not be able to change your security question upon submission. Are you sure you would like to proceed?") === true) {
+					confirm("You will not be able to change your security question upon submission. Are you sure you would like to proceed?")
 						// if (inputtx.value.length == 0)
 						// {
 						// 	alert("message");
 						// 	return false;
 						// }
-						if (PhoneNumber.value.length !== 0) {
-							if (confirm("Registering your phone number will allow phone authentication.") === true) {
+						// if (PhoneNumber.value.length !== 0) {
+						// 	if (confirm("Registering your phone number will allow phone authentication.") === true) {
 								$.ajax({
 									type: "post",
 									url: "/signup",
@@ -312,40 +315,38 @@
 										console.log(result);
 										if (!result.error) {
 											// alert(result.message);
+											console.log(result.error);
 											alert("We are sending you the email verification. Please check it before login to your account.");
 											window.location.replace('/login');
 											console.log(("#signup").serialize);
 										} else {
+											console.log(result.error);
 											alert(result.message);
 										}
 									}
 								});
-							} else {
-								return false;
-							}
-						} else {
-							$.ajax({
-								type: "post",
-								url: "/signup",
-								dataType: 'json',
-								data: $("#signup").serialize() + "&" + answer1 + "&" + answer2,
-								success: function (result) {
-									console.log(result);
-									if (!result.error) {
+						// 	} else {
+						// 		return false;
+						// 	}
+						// } else {
+						// 	$.ajax({
+						// 		type: "post",
+						// 		url: "/signup",
+						// 		dataType: 'json',
+						// 		data: $("#signup").serialize() + "&" + answer1 + "&" + answer2,
+						// 		success: function (result) {
+						// 			console.log(result);
+						// 			if (!result.error) {
 										// alert(result.message);
-										alert("We are sending you the email verification. Please check it before login to your account.");
-										window.location.replace('/login');
-										console.log(("#signup").serialize);
-									} else {
-										alert(result.message);
-									}
-								}
-							});
-						}
-
-					} else {
-						return false;
-					}
+										// alert("We are sending you the email verification. Please check it before login to your account.");
+										// window.location.replace('/login');
+							// 			console.log(("#signup").serialize);
+							// 		} else {
+							// 			alert(result.message);
+							// 		}
+							// 	}
+							// });
+						// }
 				});
 			}
 
