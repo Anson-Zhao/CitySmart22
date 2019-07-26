@@ -2649,7 +2649,6 @@ function QueryStat(myObj, sqlStat, res) {
     //delete new photo
     function onDeleteFile1(req, res) {
         res.setHeader("Access-Control-Allow-Origin", "*"); // Allow cross domain header
-        console.log("Delete");
         //console.log("result=" + req.params.uuid);
         let uuid = req.params.uuid,
             dirToDelete = Delete_Dir + '/' + uuid;
@@ -2664,7 +2663,6 @@ function QueryStat(myObj, sqlStat, res) {
     //delete old photo
     function onDeleteFile2(req, res) {
         res.setHeader("Access-Control-Allow-Origin", "*"); // Allow cross domain header
-        console.log("Delete");
         let dirToDelete = Pending_Dir + '/' + olduuid[0].Layer_Uploader_name;
         rimraf(dirToDelete, function(error) {
             if (error) {
