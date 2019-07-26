@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3b2ba209-e08e-4f77-99ae-d893522cce16" name="Default Changelist" comment="" />
+    <list default="true" id="3c115c91-9fd2-4ea9-af92-40dbd2eef16b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/homepage.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/homepage.ejs" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -64,17 +67,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/serverConfig.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="45" selection-start-line="45" selection-end-line="45" />
+            <state relative-caret-position="240">
+              <caret line="16" column="24" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/LayerRequestForm.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="590">
-              <caret line="228" column="53" lean-forward="true" selection-start-line="228" selection-start-column="53" selection-end-line="228" selection-end-column="53" />
+            <state relative-caret-position="209">
+              <caret line="329" column="88" selection-start-line="329" selection-start-column="88" selection-end-line="329" selection-end-column="88" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/LayerRequestForm_edit.ejs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="468">
+              <caret line="699" column="24" selection-start-line="699" selection-start-column="24" selection-end-line="699" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -83,7 +95,7 @@
         <entry file="file://$PROJECT_DIR$/views/login.ejs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="399">
-              <caret line="57" column="6" lean-forward="true" selection-start-line="57" selection-start-column="6" selection-end-line="57" selection-end-column="6" />
+              <caret line="57" column="6" selection-start-line="57" selection-start-column="6" selection-end-line="57" selection-end-column="6" />
               <folding>
                 <element signature="n#style#0;n#h1#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -91,13 +103,12 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/homepage.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="570">
-              <caret line="369" column="35" selection-start-line="369" selection-start-column="35" selection-end-line="369" selection-end-column="35" />
+            <state relative-caret-position="219">
+              <caret line="336" column="4" selection-start-line="336" selection-start-column="4" selection-end-line="336" selection-end-column="4" />
               <folding>
-                <element signature="n#style#0;n#h1#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#hr#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
@@ -249,8 +260,8 @@
         <option value="$PROJECT_DIR$/views/adduser.ejs" />
         <option value="$PROJECT_DIR$/views/forgotPassword.ejs" />
         <option value="$PROJECT_DIR$/routes/routes.js" />
-        <option value="$PROJECT_DIR$/views/homepage.ejs" />
         <option value="$PROJECT_DIR$/views/LayerRequestForm.ejs" />
+        <option value="$PROJECT_DIR$/views/homepage.ejs" />
       </list>
     </option>
   </component>
@@ -278,11 +289,6 @@
             <path>
               <item name="CitySmart22" type="b2602c69:ProjectViewProjectNode" />
               <item name="CitySmart22" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CitySmart22" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CitySmart22" type="462c0819:PsiDirectoryNode" />
-              <item name="routes" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="CitySmart22" type="b2602c69:ProjectViewProjectNode" />
@@ -326,19 +332,19 @@
     <property name="two.files.diff.last.used.folder" value="$USER_HOME$/Downloads/CitySmart22" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/3rdPartyLibs/build" />
-      <recent name="$PROJECT_DIR$/3rdPartyLibs" />
-      <recent name="$PROJECT_DIR$/approvedfolder" />
-      <recent name="$PROJECT_DIR$/src" />
-      <recent name="$PROJECT_DIR$/config" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/3rdPartyLibs/fine-uploader/placeholders" />
       <recent name="$PROJECT_DIR$/config" />
       <recent name="$PROJECT_DIR$/scripts" />
       <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/examples" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/3rdPartyLibs/build" />
+      <recent name="$PROJECT_DIR$/3rdPartyLibs" />
+      <recent name="$PROJECT_DIR$/approvedfolder" />
+      <recent name="$PROJECT_DIR$/src" />
+      <recent name="$PROJECT_DIR$/config" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -394,13 +400,6 @@
       <workItem from="1563800553847" duration="1039000" />
       <workItem from="1563802745835" duration="46258000" />
       <workItem from="1564080665755" duration="9865000" />
-    </task>
-    <task id="LOCAL-00123" summary="Merge branch 'julia2' of https://github.com/Anson-Zhao/CitySmart22 into Carrots&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
-      <created>1563905809795</created>
-      <option name="number" value="00123" />
-      <option name="presentableId" value="LOCAL-00123" />
-      <option name="project" value="LOCAL" />
-      <updated>1563905809795</updated>
     </task>
     <task id="LOCAL-00124" summary="Merge branch 'julia2' of https://github.com/Anson-Zhao/CitySmart22 into Carrots&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
       <created>1563905912370</created>
@@ -738,11 +737,18 @@
       <option name="project" value="LOCAL" />
       <updated>1564151640380</updated>
     </task>
-    <option name="localTasksCounter" value="172" />
+    <task id="LOCAL-00172" summary="Merge branch 'julia2' of https://github.com/Anson-Zhao/CitySmart22 into Cucumbers&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;config/ows.xml&#10;#&#9;views/signup.ejs">
+      <created>1564154036121</created>
+      <option name="number" value="00172" />
+      <option name="presentableId" value="LOCAL-00172" />
+      <option name="project" value="LOCAL" />
+      <updated>1564154036121</updated>
+    </task>
+    <option name="localTasksCounter" value="173" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="324291000" />
+    <option name="totallyTimeSpent" value="324869000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="593" y="23" width="1919" height="1302" extended-state="0" />
@@ -756,13 +762,13 @@
       <window_info anchor="bottom" id="Debug" order="2" weight="0.3988245" />
       <window_info anchor="bottom" id="Cvs" order="3" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
-      <window_info active="true" anchor="bottom" id="Run" order="5" sideWeight="0.4912094" visible="true" weight="0.36363637" />
+      <window_info anchor="bottom" id="Run" order="5" sideWeight="0.4906766" weight="0.27933884" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49866807" weight="0.20330578" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
-      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49440596" weight="0.32975206" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="9" sideWeight="0.49440596" visible="true" weight="0.32975206" />
       <window_info anchor="bottom" id="Terminal" order="10" weight="0.32975206" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5013319" side_tool="true" weight="0.20330578" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5093234" side_tool="true" weight="0.36363637" />
       <window_info anchor="bottom" id="File Transfer" order="12" sideWeight="0.49440596" weight="0.32975206" />
       <window_info anchor="bottom" id="Database Console" order="13" weight="0.3299748" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -836,7 +842,8 @@
     <MESSAGE value="Merge branch 'julia2' of https://github.com/Anson-Zhao/CitySmart22 into Carrots&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;views/homepage.ejs" />
     <MESSAGE value="Merge branch 'julia2' of https://github.com/Anson-Zhao/CitySmart22 into Carrots&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;routes/routes.js&#10;#&#9;views/homepage.ejs" />
     <MESSAGE value="Merge branch 'julia2' of https://github.com/Anson-Zhao/CitySmart22 into Carrots&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge branch 'julia2' of https://github.com/Anson-Zhao/CitySmart22 into Carrots&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
+    <MESSAGE value="Merge branch 'julia2' of https://github.com/Anson-Zhao/CitySmart22 into Cucumbers&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;config/ows.xml&#10;#&#9;views/signup.ejs" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge branch 'julia2' of https://github.com/Anson-Zhao/CitySmart22 into Cucumbers&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;config/ows.xml&#10;#&#9;views/signup.ejs" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/scripts/USGS_WT.js">
@@ -994,13 +1001,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/homepageUSER.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="783" column="6" selection-start-line="783" selection-start-column="6" selection-end-line="783" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/layerMenuAll.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="186">
@@ -1038,13 +1038,7 @@
     <entry file="file://$PROJECT_DIR$/3rdPartyLibs/fine-uploader/pause.gif">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/test.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1717">
-          <caret line="119" column="45" selection-start-line="119" selection-start-column="45" selection-end-line="119" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/views/test.html" />
     <entry file="file://$PROJECT_DIR$/3rdPartyLibs/fine-uploader/fine-uploader.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -1066,13 +1060,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/signup.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="115" lean-forward="true" selection-start-line="13" selection-start-column="115" selection-end-line="13" selection-end-column="115" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/reCaptcha.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -1082,15 +1069,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/LayerRequestForm_edit.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-663">
-          <caret line="83" column="22" lean-forward="true" selection-start-line="83" selection-start-column="22" selection-end-line="83" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/serverConfig.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="45" selection-start-line="45" selection-end-line="45" />
+        <state relative-caret-position="468">
+          <caret line="699" column="24" selection-start-line="699" selection-start-column="24" selection-end-line="699" selection-end-column="24" />
         </state>
       </provider>
     </entry>
@@ -1162,28 +1142,48 @@
     <entry file="file://$PROJECT_DIR$/views/login.ejs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="399">
-          <caret line="57" column="6" lean-forward="true" selection-start-line="57" selection-start-column="6" selection-end-line="57" selection-end-column="6" />
+          <caret line="57" column="6" selection-start-line="57" selection-start-column="6" selection-end-line="57" selection-end-column="6" />
           <folding>
             <element signature="n#style#0;n#h1#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/homepage.ejs">
+    <entry file="file://$PROJECT_DIR$/views/LayerRequestForm.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="369" column="35" selection-start-line="369" selection-start-column="35" selection-end-line="369" selection-end-column="35" />
-          <folding>
-            <element signature="n#style#0;n#h1#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#hr#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="209">
+          <caret line="329" column="88" selection-start-line="329" selection-start-column="88" selection-end-line="329" selection-end-column="88" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/LayerRequestForm.ejs">
+    <entry file="file://$PROJECT_DIR$/views/signup.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="590">
-          <caret line="228" column="53" lean-forward="true" selection-start-line="228" selection-start-column="53" selection-end-line="228" selection-end-column="53" />
+        <state relative-caret-position="-4211">
+          <caret line="13" column="115" lean-forward="true" selection-start-line="13" selection-start-column="115" selection-end-line="13" selection-end-column="115" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/serverConfig.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="24" selection-start-line="16" selection-start-column="24" selection-end-line="16" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/homepageUSER.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="783" column="6" selection-start-line="783" selection-start-column="6" selection-end-line="783" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/homepage.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="219">
+          <caret line="336" column="4" selection-start-line="336" selection-start-column="4" selection-end-line="336" selection-end-column="4" />
+          <folding>
+            <element signature="n#style#0;n#hr#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
