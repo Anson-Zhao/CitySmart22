@@ -135,7 +135,7 @@
     $(".toggle-password").click(function() {
         $(this).toggleClass("fa-eye-slash fa-eye");
         var input = $($(this).attr("toggle"));
-        if (input.attr("type") == "password") {
+        if (input.attr("type") === "password") {
             input.attr("type", "text");
         } else {
             input.attr("type", "password");
@@ -155,7 +155,7 @@
     document.getElementById("date").value = dateTime;
 
     grecaptcha.ready(function() {
-        grecaptcha.execute('6Ld7fq8UAAAAAOv8ZEiVj6P972pR_Vf3ko5R0JB_', {action: 'homepage'}.then(function (token) {
+        grecaptcha.execute('6Ld7fq8UAAAAAOv8ZEiVj6P972pR_Vf3ko5R0JB_', {action: '/'}.then(function (token) {
             console.log(token);
             document.getElementById("token").value = token;
         }));

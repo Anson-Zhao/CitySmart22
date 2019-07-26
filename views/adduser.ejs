@@ -10,7 +10,9 @@
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <!--<link rel="stylesheet" href="//unpkg.com/flatpickr/dist/flatpickr.min.css">-->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js?render=6Ld7fq8UAAAAAOv8ZEiVj6P972pR_Vf3ko5R0JB_"></script>
     <script src="//cdn.jsdelivr.net/npm/flatpickr"></script>
+    <?php include 'reCaptcha.php';?>
     <!--<script src="//unpkg.com/flatpickr"></script>-->
     <style>.floatingBox {
             display: inline-block;
@@ -108,6 +110,7 @@
     padding: 0px;">
             <button type="submit" class="button1"> Add User </button>
         </div>
+        <input type="hidden" id="token" name="token">
     </form>
     <hr style="margin-bottom: 10px;">
     <p style="margin-left: 225px;"> <a href="/userManagement">Cancel</a></p>
@@ -184,7 +187,7 @@
     $(".toggle-password").click(function() {
         $(this).toggleClass("fa-eye-slash fa-eye");
         var input = $($(this).attr("toggle"));
-        if (input.attr("type") == "password") {
+        if (input.attr("type") === "password") {
             input.attr("type", "text");
         } else {
             input.attr("type", "password");
@@ -216,6 +219,13 @@
         let time2 = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
         let dateTime = date + ' ' + time2;
         document.getElementById("DATE").value = dateTime;
+    });
+
+    grecaptcha.ready(function() {
+        grecaptcha.execute('6Ld7fq8UAAAAAOv8ZEiVj6P972pR_Vf3ko5R0JB_', {action: '/addUser'}.then(function (token) {
+            console.log(token);
+            document.getElementById("token").value = token;
+        }));
     });
 
     function onFunction() {
