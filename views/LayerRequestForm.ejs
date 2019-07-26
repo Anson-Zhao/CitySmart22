@@ -53,9 +53,9 @@
                     <span class="qq-edit-filename-icon-selector qq-edit-filename-icon" aria-label="Edit filename"></span>
                     <input class="qq-edit-filename-selector qq-edit-filename" tabindex="0" type="text">
                     <span class="qq-upload-size-selector qq-upload-size"></span>
-                    <button type="button" class="qq-btn qq-upload-cancel-selector qq-upload-cancel">Cancel</button>
+                    <button type="button" class="qq-btn qq-upload-cancel-selector qq-upload-cancel">Delete</button>
                     <button type="button" class="qq-btn qq-upload-retry-selector qq-upload-retry">Retry</button>
-                    <button type="button" class="qq-btn qq-upload-delete-selector qq-upload-delete">Delete</button>
+<!--                    <button type="button" class="qq-btn qq-upload-delete-selector qq-upload-delete">Delete</button>-->
                     <span role="status" class="qq-upload-status-text-selector qq-upload-status-text"></span>
                 </li>
             </ul>
@@ -330,8 +330,8 @@
                                     <option value="" disabled selected>SELECT LAYER FORMAT</option>
                                     <option value="GeoTIFF">GeoTIFF - Tagged Image File Format with Geographic information (.tif)</option>
                                     <option value="ShapeFile">Shapefile - ESRI(tm) Shapefiles (.shp)</option>
-                                    <option value="JPEG">JP2ECW - JP2K (.jp2/.j2k)</option>
-                                    <option value="ArcBinary">AIG - Arc/Info Binary Grid (.adf)</option>
+<!--                                    <option value="JPEG">JP2ECW - JP2K (.jp2/.j2k)</option>-->
+<!--                                    <option value="ArcBinary">AIG - Arc/Info Binary Grid (.adf)</option>-->
                                 </select>
                             </div>
                         </div>
@@ -345,8 +345,8 @@
                                     <option value="" disabled selected>SELECT LAYER FORMAT</option>
                                     <option value="GeoTIFF">GeoTIFF - Tagged Image File Format with Geographic information (.tif)</option>
                                     <option value="ShapeFile">Shapefile - ESRI(tm) Shapefiles (.shp)</option>
-                                    <option value="JPEG">JP2ECW - JP2K (.jp2/.j2k)</option>
-                                    <option value="ArcBinary">AIG - Arc/Info Binary Grid (.adf)</option>
+<!--                                    <option value="JPEG">JP2ECW - JP2K (.jp2/.j2k)</option>-->
+<!--                                    <option value="ArcBinary">AIG - Arc/Info Binary Grid (.adf)</option>-->
                                 </select>
                             </div>
                         </div>
@@ -502,16 +502,15 @@
                 },
                 onComplete: function (id, name, responseJSON) {
                     manualUploader.setUuid(id, responseJSON.newuuid);
-                },
+                }
             },
             autoUpload: false,
             validation:{
-                allowedExtensions: ['tif', 'shp','jp2','adf','j2k', 'zip'],
+                allowedExtensions: ['tif', 'shp','zip'],
                 itemLimit: 1
             },
             resume: {
-                enabled: true,
-                showButton: true
+                enabled: true
             },
             retry: {
                 enableAuto: true,
@@ -519,7 +518,6 @@
             },
             debug: false
         });
-
 
         qq(document.getElementById("trigger-upload")).attach("click", function() {
             manualUploader.uploadStoredFiles();
@@ -631,15 +629,9 @@
     function offFunction() {
         alert ("Your are offline. Some functionality may be unavailable.");
     }
-
-    function uploadAlert(){
-        if( alert('You cannot undo this process!') === false) {
-
-        }
+    function uploadAlert() {
+        alert("This process cannot be undo!");
     }
-
-
-
 
 //to check that if there are duplicated from the layer name that layer name that you just inserted
     function SearchLayerName(value){

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><WMS_Capabilities version="1.3.0" updateSequence="1210" xmlns="http://www.opengis.net/wms" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opengis.net/wms http://cs.aworldbridgelabs.com:8080/geoserver/schemas/wms/1.3.0/capabilities_1_3_0.xsd">
+<?xml version="1.0" encoding="UTF-8"?><WMS_Capabilities version="1.3.0" updateSequence="1427" xmlns="http://www.opengis.net/wms" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opengis.net/wms http://cs.aworldbridgelabs.com:8080/geoserver/schemas/wms/1.3.0/capabilities_1_3_0.xsd">
   <Service>
     <Name>WMS</Name>
     <Title>GeoServer Web Map Service</Title>
@@ -7328,6 +7328,93 @@ The NHD is a national framework for assigning reach addresses to water-related e
         <BoundingBox CRS="CRS:84" minx="-179.999989" miny="4.744348" maxx="179.999996" maxy="89.0"/>
         <BoundingBox CRS="EPSG:4326" minx="4.744348" miny="-179.999989" maxx="89.0" maxy="179.999996"/>
       </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>Approved:2019-07-19T20:02:34Z_NAA_Campus_modified</Name>
+        <Title>2019-07-19T20:02:34Z_NAA_Campus_modified</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>2019-07-19T20:02:34Z_NAA_Campus_modified</Keyword>
+          <Keyword>WCS</Keyword>
+          <Keyword>GeoTIFF</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-74.44131799769004</westBoundLongitude>
+          <eastBoundLongitude>-74.43421100838725</eastBoundLongitude>
+          <southBoundLatitude>41.44814029964428</southBoundLatitude>
+          <northBoundLatitude>41.454497254240835</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-74.44131799769004" miny="41.44814029964428" maxx="-74.43421100838725" maxy="41.454497254240835"/>
+        <BoundingBox CRS="EPSG:4326" minx="41.44814029964428" miny="-74.44131799769004" maxx="41.454497254240835" maxy="-74.43421100838725"/>
+        <Style>
+          <Name>raster</Name>
+          <Title>Default Raster</Title>
+          <Abstract>A sample style that draws a raster, good for displaying imagery</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=Approved%3A2019-07-19T20%3A02%3A34Z_NAA_Campus_modified"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>Approved:2019-07-25T14:15:46Z_Thermal_Infrared</Name>
+        <Title>2019-07-25T14:15:46Z_Thermal_Infrared</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>2019-07-25T14:15:46Z_Thermal_Infrared</Keyword>
+          <Keyword>WCS</Keyword>
+          <Keyword>GeoTIFF</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-74.434776306</westBoundLongitude>
+          <eastBoundLongitude>-74.431858195</eastBoundLongitude>
+          <southBoundLatitude>41.454306913</southBoundLatitude>
+          <northBoundLatitude>41.457651588</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-74.434776306" miny="41.454306913" maxx="-74.431858195" maxy="41.457651588"/>
+        <BoundingBox CRS="EPSG:4326" minx="41.454306913" miny="-74.434776306" maxx="41.457651588" maxy="-74.431858195"/>
+        <Style>
+          <Name>raster</Name>
+          <Title>Default Raster</Title>
+          <Abstract>A sample style that draws a raster, good for displaying imagery</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=Approved%3A2019-07-25T14%3A15%3A46Z_Thermal_Infrared"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>Approved:2019-07-25T15:29:15Z_Orthomosaic</Name>
+        <Title>2019-07-25T15:29:15Z_Orthomosaic</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>2019-07-25T15:29:15Z_Orthomosaic</Keyword>
+          <Keyword>WCS</Keyword>
+          <Keyword>GeoTIFF</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-74.434862137</westBoundLongitude>
+          <eastBoundLongitude>-74.432029727</eastBoundLongitude>
+          <southBoundLatitude>41.454274385</southBoundLatitude>
+          <northBoundLatitude>41.458037539</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-74.434862137" miny="41.454274385" maxx="-74.432029727" maxy="41.458037539"/>
+        <BoundingBox CRS="EPSG:4326" minx="41.454274385" miny="-74.434862137" maxx="41.458037539" maxy="-74.432029727"/>
+        <Style>
+          <Name>raster</Name>
+          <Title>Default Raster</Title>
+          <Abstract>A sample style that draws a raster, good for displaying imagery</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=Approved%3A2019-07-25T15%3A29%3A15Z_Orthomosaic"/>
+          </LegendURL>
+        </Style>
+      </Layer>
       <Layer queryable="0" opaque="0" cascaded="1">
         <Name>USGS:20_Contours</Name>
         <Title>Index Contours</Title>
@@ -8306,6 +8393,35 @@ Includes general medical and surgical hospitals, psychiatric, substance abuse an
         </EX_GeographicBoundingBox>
         <BoundingBox CRS="CRS:84" minx="-179.150082" miny="-14.559753" maxx="179.775112" maxy="71.214644"/>
         <BoundingBox CRS="EPSG:4326" minx="-14.559753" miny="-179.150082" maxx="71.214644" maxy="179.775112"/>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>Approved:3320C_2010_314_RGB_LATLNG</Name>
+        <Title>3320C_2010_314_RGB_LATLNG</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>3320C_2010_314_RGB_LATLNG</Keyword>
+          <Keyword>WCS</Keyword>
+          <Keyword>GeoTIFF</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>20.407915746356107</westBoundLongitude>
+          <eastBoundLongitude>20.50044074401873</eastBoundLongitude>
+          <southBoundLatitude>-34.0006943600521</southBoundLatitude>
+          <northBoundLatitude>-33.97324436074555</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="20.407915746356107" miny="-34.0006943600521" maxx="20.50044074401873" maxy="-33.97324436074555"/>
+        <BoundingBox CRS="EPSG:4326" minx="-34.0006943600521" miny="20.407915746356107" maxx="-33.97324436074555" maxy="20.50044074401873"/>
+        <Style>
+          <Name>raster</Name>
+          <Title>Default Raster</Title>
+          <Abstract>A sample style that draws a raster, good for displaying imagery</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=Approved%3A3320C_2010_314_RGB_LATLNG"/>
+          </LegendURL>
+        </Style>
       </Layer>
       <Layer queryable="0" opaque="0" cascaded="1">
         <Name>USGS:33_Contours</Name>
@@ -9786,6 +9902,34 @@ The NHD is a national framework for assigning reach addresses to water-related e
         </Style>
       </Layer>
       <Layer queryable="1" opaque="0">
+        <Name>Approved:Buildings</Name>
+        <Title>Buildings</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>Buildings</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-74.4396949722951</westBoundLongitude>
+          <eastBoundLongitude>-74.43654599024579</eastBoundLongitude>
+          <southBoundLatitude>41.451206738241886</southBoundLatitude>
+          <northBoundLatitude>41.45340882593196</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-74.4396949722951" miny="41.451206738241886" maxx="-74.43654599024579" maxy="41.45340882593196"/>
+        <BoundingBox CRS="EPSG:4326" minx="41.451206738241886" miny="-74.4396949722951" maxx="41.45340882593196" maxy="-74.43654599024579"/>
+        <Style>
+          <Name>polygon</Name>
+          <Title>Default Polygon</Title>
+          <Abstract>A sample style that draws a polygon</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=Approved%3ABuildings"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
         <Name>City_Smart:Circuit_Direction</Name>
         <Title>Circuit_Direction</Title>
         <Abstract/>
@@ -11096,6 +11240,34 @@ The NHD is a national framework for assigning reach addresses to water-related e
         <BoundingBox CRS="EPSG:4267" minx="23.9995" miny="-165.0" maxx="73.0006" maxy="-66.0005"/>
       </Layer>
       <Layer queryable="1" opaque="0">
+        <Name>Approved:box</Name>
+        <Title>box</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>box</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-74.43943337965244</westBoundLongitude>
+          <eastBoundLongitude>-74.43709427127271</eastBoundLongitude>
+          <southBoundLatitude>41.45173575136111</southBoundLatitude>
+          <northBoundLatitude>41.452918762595914</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-74.43943337965244" miny="41.45173575136111" maxx="-74.43709427127271" maxy="41.452918762595914"/>
+        <BoundingBox CRS="EPSG:4326" minx="41.45173575136111" miny="-74.43943337965244" maxx="41.452918762595914" maxy="-74.43709427127271"/>
+        <Style>
+          <Name>polygon</Name>
+          <Title>Default Polygon</Title>
+          <Abstract>A sample style that draws a polygon</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=Approved%3Abox"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
         <Name>sf:bugsites</Name>
         <Title>Spearfish bug locations</Title>
         <Abstract>Sample data from GRASS, bug sites location, Spearfish, South Dakota, USA</Abstract>
@@ -11274,30 +11446,30 @@ The NHD is a national framework for assigning reach addresses to water-related e
         </Style>
       </Layer>
       <Layer queryable="1" opaque="0">
-        <Name>Approved:hydrant</Name>
-        <Title>hydrant</Title>
+        <Name>Approved:hydrants</Name>
+        <Title>hydrants</Title>
         <Abstract/>
         <KeywordList>
-          <Keyword>hydrant</Keyword>
           <Keyword>features</Keyword>
+          <Keyword>hydrants</Keyword>
         </KeywordList>
-        <CRS>EPSG:32618</CRS>
+        <CRS>EPSG:4326</CRS>
         <CRS>CRS:84</CRS>
         <EX_GeographicBoundingBox>
-          <westBoundLongitude>-74.43370572014514</westBoundLongitude>
-          <eastBoundLongitude>-74.43296255019311</eastBoundLongitude>
-          <southBoundLatitude>41.45534461510857</southBoundLatitude>
-          <northBoundLatitude>41.45655513333069</northBoundLatitude>
+          <westBoundLongitude>-74.43369603887602</westBoundLongitude>
+          <eastBoundLongitude>-74.43297300653362</eastBoundLongitude>
+          <southBoundLatitude>41.455344596585086</southBoundLatitude>
+          <northBoundLatitude>41.45655493254612</northBoundLatitude>
         </EX_GeographicBoundingBox>
-        <BoundingBox CRS="CRS:84" minx="-74.43370572014514" miny="41.45534461510857" maxx="-74.43296255019311" maxy="41.45655513333069"/>
-        <BoundingBox CRS="EPSG:32618" minx="547297.0369812418" miny="4589461.782629184" maxx="547358.2316628174" maxy="4589595.778198767"/>
+        <BoundingBox CRS="CRS:84" minx="-74.43369603887602" miny="41.455344596585086" maxx="-74.43297300653362" maxy="41.45655493254612"/>
+        <BoundingBox CRS="EPSG:4326" minx="41.455344596585086" miny="-74.43369603887602" maxx="41.45655493254612" maxy="-74.43297300653362"/>
         <Style>
           <Name>point</Name>
           <Title>Default Point</Title>
           <Abstract>A sample style that draws a point</Abstract>
           <LegendURL width="20" height="20">
             <Format>image/png</Format>
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=Approved%3Ahydrant"/>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=Approved%3Ahydrants"/>
           </LegendURL>
         </Style>
       </Layer>
@@ -11430,64 +11602,6 @@ The NHD is a national framework for assigning reach addresses to water-related e
         </EX_GeographicBoundingBox>
         <BoundingBox CRS="CRS:84" minx="-179.0" miny="6.0" maxx="159.0" maxy="72.0"/>
         <BoundingBox CRS="EPSG:4267" minx="6.0" miny="-179.0" maxx="72.0" maxy="159.0"/>
-      </Layer>
-      <Layer queryable="1" opaque="0">
-        <Name>Approved:newCov</Name>
-        <Title>newCov</Title>
-        <Abstract/>
-        <KeywordList>
-          <Keyword>newCov</Keyword>
-          <Keyword>WCS</Keyword>
-          <Keyword>GeoTIFF</Keyword>
-        </KeywordList>
-        <CRS>EPSG:4326</CRS>
-        <CRS>CRS:84</CRS>
-        <EX_GeographicBoundingBox>
-          <westBoundLongitude>-74.44131799769004</westBoundLongitude>
-          <eastBoundLongitude>-74.43421100838725</eastBoundLongitude>
-          <southBoundLatitude>41.44814029964428</southBoundLatitude>
-          <northBoundLatitude>41.454497254240835</northBoundLatitude>
-        </EX_GeographicBoundingBox>
-        <BoundingBox CRS="CRS:84" minx="-74.44131799769004" miny="41.44814029964428" maxx="-74.43421100838725" maxy="41.454497254240835"/>
-        <BoundingBox CRS="EPSG:4326" minx="41.44814029964428" miny="-74.44131799769004" maxx="41.454497254240835" maxy="-74.43421100838725"/>
-        <Style>
-          <Name>raster</Name>
-          <Title>Default Raster</Title>
-          <Abstract>A sample style that draws a raster, good for displaying imagery</Abstract>
-          <LegendURL width="20" height="20">
-            <Format>image/png</Format>
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=Approved%3AnewCov"/>
-          </LegendURL>
-        </Style>
-      </Layer>
-      <Layer queryable="1" opaque="0">
-        <Name>Approved:newCov2</Name>
-        <Title>newCov2</Title>
-        <Abstract/>
-        <KeywordList>
-          <Keyword>newCov2</Keyword>
-          <Keyword>WCS</Keyword>
-          <Keyword>GeoTIFF</Keyword>
-        </KeywordList>
-        <CRS>EPSG:4326</CRS>
-        <CRS>CRS:84</CRS>
-        <EX_GeographicBoundingBox>
-          <westBoundLongitude>-74.44131799769004</westBoundLongitude>
-          <eastBoundLongitude>-74.43421100838725</eastBoundLongitude>
-          <southBoundLatitude>41.44814029964428</southBoundLatitude>
-          <northBoundLatitude>41.454497254240835</northBoundLatitude>
-        </EX_GeographicBoundingBox>
-        <BoundingBox CRS="CRS:84" minx="-74.44131799769004" miny="41.44814029964428" maxx="-74.43421100838725" maxy="41.454497254240835"/>
-        <BoundingBox CRS="EPSG:4326" minx="41.44814029964428" miny="-74.44131799769004" maxx="41.454497254240835" maxy="-74.43421100838725"/>
-        <Style>
-          <Name>raster</Name>
-          <Title>Default Raster</Title>
-          <Abstract>A sample style that draws a raster, good for displaying imagery</Abstract>
-          <LegendURL width="20" height="20">
-            <Format>image/png</Format>
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=Approved%3AnewCov2"/>
-          </LegendURL>
-        </Style>
       </Layer>
       <Layer queryable="1" opaque="0" cascaded="1">
         <Name>mrdata:ngdbconc</Name>
@@ -11870,6 +11984,34 @@ The NHD is a national framework for assigning reach addresses to water-related e
           <LegendURL width="20" height="20">
             <Format>image/png</Format>
             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=sf%3Aroads&amp;style=line"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>Approved:sRoads</Name>
+        <Title>sRoads</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>sRoads</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-74.44040447075649</westBoundLongitude>
+          <eastBoundLongitude>-74.43642397196845</eastBoundLongitude>
+          <southBoundLatitude>41.45124768542291</southBoundLatitude>
+          <northBoundLatitude>41.453097205229454</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-74.44040447075649" miny="41.45124768542291" maxx="-74.43642397196845" maxy="41.453097205229454"/>
+        <BoundingBox CRS="EPSG:4326" minx="41.45124768542291" miny="-74.44040447075649" maxx="41.453097205229454" maxy="-74.43642397196845"/>
+        <Style>
+          <Name>line</Name>
+          <Title>Default Line</Title>
+          <Abstract>A sample style that draws a line</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=Approved%3AsRoads"/>
           </LegendURL>
         </Style>
       </Layer>
@@ -12417,6 +12559,62 @@ sfdem is a Tagged Image File Format with Geographic information</Abstract>
           <LegendURL width="20" height="20">
             <Format>image/png</Format>
             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3Awater3c_FTAA&amp;style=Dark%20Orange%20Line"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>Approved:water_pipe</Name>
+        <Title>water_pipe</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>water_pipe</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-74.43437994481636</westBoundLongitude>
+          <eastBoundLongitude>-74.43212865223241</eastBoundLongitude>
+          <southBoundLatitude>41.45449785284462</southBoundLatitude>
+          <northBoundLatitude>41.457309790962455</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-74.43437994481636" miny="41.45449785284462" maxx="-74.43212865223241" maxy="41.457309790962455"/>
+        <BoundingBox CRS="EPSG:4326" minx="41.45449785284462" miny="-74.43437994481636" maxx="41.457309790962455" maxy="-74.43212865223241"/>
+        <Style>
+          <Name>line</Name>
+          <Title>Default Line</Title>
+          <Abstract>A sample style that draws a line</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=Approved%3Awater_pipe"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>Approved:water_pipe1</Name>
+        <Title>water_pipe</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>water_pipe</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-74.43439759961676</westBoundLongitude>
+          <eastBoundLongitude>-74.4321553931513</eastBoundLongitude>
+          <southBoundLatitude>41.45447613584286</southBoundLatitude>
+          <northBoundLatitude>41.45729887243835</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-74.43439759961676" miny="41.45447613584286" maxx="-74.4321553931513" maxy="41.45729887243835"/>
+        <BoundingBox CRS="EPSG:4326" minx="41.45447613584286" miny="-74.43439759961676" maxx="41.45729887243835" maxy="-74.4321553931513"/>
+        <Style>
+          <Name>line</Name>
+          <Title>Default Line</Title>
+          <Abstract>A sample style that draws a line</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=Approved%3Awater_pipe1"/>
           </LegendURL>
         </Style>
       </Layer>

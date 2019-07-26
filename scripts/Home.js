@@ -56,7 +56,7 @@ requirejs(['./newGlobe',
         nextL.prop('disabled', true);
         previousL.prop('disabled', true);
 
-        // $("#popover").popover({html: true, placement: "top", trigger: "hover"});
+        $("#popover").popover({html: true, placement: "top", trigger: "hover"});
 
         //turn on/off layers
         $(menuL.arrType.toString()).click(function () {
@@ -90,6 +90,9 @@ requirejs(['./newGlobe',
                     if (newGlobe.layers[selectedIndex] instanceof WorldWind.RenderableLayer) {
 
                         if (selectedIndex < 0 || !newGlobe.layers[selectedIndex].renderables.length) {
+                            // console.log("1");
+                            // console.log(selectedIndex);
+                            // console.log(newGlobe.layers[selectedIndex].renderables.length);
 
                             confirm("The layer you selected is tentatively not available. Please try it later.");
                             $(toggle).prop('checked', false);
@@ -116,7 +119,9 @@ requirejs(['./newGlobe',
                         }
                     } else { // turn on the lock to select only one layer
                         if (selectedIndex < 0) {
-
+                            // console.log("2");
+                            // console.log(selectedIndex);
+                            // console.log(newGlobe.layers[selectedIndex].renderables.length);
                             confirm("The layer you selected is tentatively not available. Please try it later.");
                             $(toggle).prop('checked', false);
                             // array.splice(-1,1)
@@ -161,7 +166,9 @@ requirejs(['./newGlobe',
 
                     if (newGlobe.layers[selectedIndex] instanceof WorldWind.RenderableLayer) {
                         if (selectedIndex < 0 || !newGlobe.layers[selectedIndex].renderables.length) {
-
+                            // console.log("3");
+                            // console.log(selectedIndex);
+                            // console.log(newGlobe.layers[selectedIndex].renderables.length);
                             confirm("The layer you selected is tentatively not available. Please try it later.");
                             $(toggle).prop('checked', false);
 
@@ -188,7 +195,9 @@ requirejs(['./newGlobe',
                         }
                     } else {
                         if (selectedIndex < 0) {
-
+                            // console.log("4");
+                            // console.log(selectedIndex);
+                            // console.log(newGlobe.layers[selectedIndex].renderables.length);
                             confirm("The layer you selected is tentatively not available. Please try it later.");
                             $(toggle).prop('checked', false);
                             array.splice(-1,1)
@@ -230,7 +239,7 @@ requirejs(['./newGlobe',
 
                 toggleCheck=true;
 
-                if(confirm("all the layers is going to be closed except the most recent one")){
+                if(confirm("All the layers are going to be closed except for the most recent one.")){
                     if(arrMenu.length>1){
                         closeAllToggle()
                     }

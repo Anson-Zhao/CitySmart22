@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" serverName="cs2_Live">
+  <component name="PublishConfigData" serverName="cs2_Live" showNewOnSourceInSync="false" showNewOnTargetInSync="false" showExcludedInSync="true">
     <serverData>
       <paths name="cs2_Live">
         <serverdata>
