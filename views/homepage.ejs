@@ -21,6 +21,7 @@
     <script src="../scripts/OptionList.js"></script>
     <script src="../3rdPartyLibs/popper-1.14.0.min.js"></script>
     <script src="../3rdPartyLibs/bootstrap-3.3.4.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Cinzel&display=swap" rel="stylesheet">
     <script data-main="../scripts/Home" src="../3rdPartyLibs/requirejs-2.3.6.min.js"></script>
     <?php include 'reCaptcha.php';?>
     <style>
@@ -336,8 +337,8 @@
 <div class="container">
     <br>
 <!--    <p id="browserWarning"> Our application works best on the most recent version of <strong>Chrome</strong>.</p>-->
-    <div class="text-center header">
-        <h1><span class="fa fa-globe"></span><strong> City Smart V2 </strong></h1>
+    <div class="text-center header"><span class="fa fa-globe"></span>
+        <h1 style="font-family: 'Cinzel', serif;"><strong> City Smart V2 </strong></h1>
         <div class="log-form">
             <% if (message.length > 0) { %>
                 <div class="alert alert-danger"><%= message %></div>
@@ -347,8 +348,8 @@
                 <input type="text" autofocus class="highlight" id = "username" name="username" title="Username" autocomplete="off" placeholder="Username" />
                 <input type="password" class="highlight" id = "password" name="password" title="Password" autocomplete="off" placeholder="Password" />
                 <span toggle="#password" class="fa fa-fw fa-eye-slash field-icon toggle-password"></span>
-                <button type="submit" class="button1" onsubmit="loginAttempts()">Login>></button>  <!--Temporary link to login page, supposed to work automatically-->
-                <button type="button" class="button1" onclick="window.location='/signup'" >Signup>></button>
+                <button type="submit" class="button1" onsubmit="loginAttempts()">Login</button>  <!--Temporary link to login page, supposed to work automatically-->
+                <button type="button" class="button1" onclick="window.location='/signup'" >Signup</button>
                 <input type="hidden" id="token" name="token">
             </form>
         </div>
