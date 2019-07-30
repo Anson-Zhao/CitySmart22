@@ -265,7 +265,7 @@
 
 	$(".toggle-password").click(function() {
 		$(this).toggleClass("fa-eye-slash fa-eye");
-		var input = $($(this).attr("toggle"));
+		let input = $($(this).attr("toggle"));
 		if (input.attr("type") === "password") {
 			input.attr("type", "text");
 		} else {
@@ -358,14 +358,14 @@
     });
 
 	$('select[name=question1]').on('change', function() {
-		var self = this;
+		let self = this;
 		$('select[name=question2]').find('option').prop('disabled', function() {
 			return this.value === self.value
 		});
 	});
 
 	$('select[name=question2]').on('change', function() {
-		var self = this;
+		let self = this;
 		$('select[name=question1]').find('option').prop('disabled', function() {
 			return this.value === self.value
 		});
@@ -404,7 +404,7 @@
 			$(".button1").prop("disabled", true);
 		} else {
 			$(".button1").prop("disabled", false);
-			// $('#signup').submit(function(e) {
+			$('#signup').submit(function(e) {
 				// console.log($("#signup").serialize());
 				// console.log($('#signup'));
 				let a1 = $('#answer1').val().replace("\'", "\\'");
@@ -465,12 +465,12 @@
 				// 	}
 				// });
 				// }
-			// });
+			});
 		}
 	}
 
 	function isInputNumber (evt) {
-		var char = String.fromCharCode(evt.which);
+		let char = String.fromCharCode(evt.which);
 
 		if(!(/[0-9]/.test(char))) {
 			evt.preventDefault();
