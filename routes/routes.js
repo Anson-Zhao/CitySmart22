@@ -14,13 +14,13 @@ const rimraf = require("rimraf");
 const mkdirp = require("mkdirp");
 const multiparty = require('multiparty');
 const path    = require('path');
-const ExpressBrute = require('express-brute');
+// const ExpressBrute = require('express-brute');
 const rateLimit = require("express-rate-limit");
 const text = require('textbelt');
 const generator = require('generate-password');
 
-const store = new ExpressBrute.MemoryStore(); // stores state locally, don't use this in production
-const bruteforce = new ExpressBrute(store);
+// const store = new ExpressBrute.MemoryStore(); // stores state locally, don't use this in production
+// const bruteforce = new ExpressBrute(store);
 
 const geoServer = serverConfig.geoServer;
 const Download_From = serverConfig.Download_From;
@@ -298,7 +298,7 @@ module.exports = function (app, passport) {
     });
 
     // process the login form
-    app.post('/login', bruteforce.prevent, passport.authenticate('local-login', {
+    app.post('/login', passport.authenticate('local-login', {
             successRedirect: '/authentication', // redirect to the secure profile section
             failureRedirect: '/login', // redirect to the login page if there is an error
             failureFlash: true // allow flash messages
@@ -420,6 +420,7 @@ module.exports = function (app, passport) {
     });
 
     app.post('/pauth', function (req, res) {
+        let phoneNumber;
         res.setHeader("Access-Control-Allow-Origin", "*");
 
         myStat = "SELECT Phone_Number FROM UserProfile WHERE username = '" + req.user.username + "'";
@@ -429,15 +430,18 @@ module.exports = function (app, passport) {
             console.log(result);
             console.log(result[0].Phone_Number);
 
-            if (err) {
-                res.send("There was an error retrieving the phone number.");
+            if(result[0].Phone_Number === "" || result[0].Phone_Number === "null" || result[0].Phone_Number === "NULL") {
+                phoneNumber = "NULL";
             } else {
+                phoneNumber = result[0].Phone_Number;
+            }
+
                 res.render('PhoneAuthP1.ejs', {
                     user: req.user,
-                    Phone_Number: result[0].Phone_Number,
+                    Phone_Number: phoneNumber,
 
                 });
-            }
+
         });
 
     });
@@ -961,7 +965,8 @@ module.exports = function (app, passport) {
     // Show user profile page
     app.get('/profile', function (req, res) {
         res.setHeader("Access-Control-Allow-Origin", "*");
-        con_CS.query("SELECT * FROM UserProfile", function (err, results) {
+        let userN = req.query.userN;
+        con_CS.query("SELECT * FROM UserProfile WHERE username = '" + userN + "'; SELECT question1, answer1, question2, answer2 FROM UserLogin WHERE username = '" + userN + "';", function (err, results) {
             if (err) throw err;
             res.json(results);
         })
@@ -985,7 +990,7 @@ module.exports = function (app, passport) {
         });
     });
 
-    app.post('/userProfile', bruteforce.prevent, isLoggedIn, function (req, res) {
+    app.post('/userProfile', isLoggedIn, function (req, res) {
         res.setHeader("Access-Control-Allow-Origin", "*"); // Allow cross domain header
 
         // new password (User Login)
@@ -1065,7 +1070,7 @@ module.exports = function (app, passport) {
     });
 
     // Update user profile page
-    app.post('/newPass', bruteforce.prevent, isLoggedIn, function (req, res) {
+    app.post('/newPass', isLoggedIn, function (req, res) {
         res.setHeader("Access-Control-Allow-Origin", "*"); // Allow cross domain header
         let user = req.user;
         let newPass = {
@@ -1130,7 +1135,7 @@ module.exports = function (app, passport) {
         });
     });
 
-    app.post('/signup', bruteforce.prevent, function (req, res) {
+    app.post('/signup', function (req, res) {
         res.setHeader("Access-Control-Allow-Origin", "*"); // Allow cross domain header
         // con_CS.query('USE ' + serverConfig.Login_db); // Locate Login DB
 
@@ -1180,7 +1185,7 @@ module.exports = function (app, passport) {
         });
     });
 
-    app.post('/addUser', bruteforce.prevent, isLoggedIn, function (req, res) {
+    app.post('/addUser', isLoggedIn, function (req, res) {
 
         res.setHeader("Access-Control-Allow-Origin", "*"); // Allow cross domain header
         // connection.query('USE ' + serverConfig.Login_db); // Locate Login DB
@@ -1588,7 +1593,7 @@ module.exports = function (app, passport) {
     });
 
     //Submit Request form//
-    app.post('/submitL', bruteforce.prevent, function (req, res) {
+    app.post('/submitL', function (req, res) {
         let result = Object.keys(req.body).map(function (key) {
             return [String(key), req.body[key]];
         });
@@ -2647,7 +2652,7 @@ function QueryStat(myObj, sqlStat, res) {
         res.setHeader("Access-Control-Allow-Origin", "*"); // Allow cross domain header
         //console.log("result=" + req.params.uuid);
         let uuid = req.params.uuid,
-            dirToDelete = Pending_Dir + '/' + uuid;
+            dirToDelete = Delete_Dir + '/' + uuid;
         rimraf(dirToDelete, function(error) {
             if (error) {
                 console.error("Problem deleting file! " + error);

@@ -61,7 +61,7 @@
     <p id="falldown">In order to continue, click the <i>Send Verification Code</i> button. Your code will be valid for three minutes.</p>
     <form action="/pcode" method="post" id="PSendcode">
         <div class="form-group">
-            <button type="submit" class="button" onclick="SendCode()">Send Verification Code</button>
+            <button type="submit" id="sendCode" class="button" onclick="SendCode()">Send Verification Code</button>
             <input type="text" name="Phone_Number" value="<%= Phone_Number %>" hidden>
         </div>
     </form>
@@ -73,7 +73,7 @@
     let username = '<%= user.username %>';
     let userrole = '<%= user.userrole %>';
     let Phone_Number = '<%= Phone_Number %>';
-    console.log(Phone_Number);
+
 
     $(document).ready(function() {
 
@@ -86,9 +86,16 @@
         function timedRefresh() {
             setTimeout(function(){ window.location.replace("/"); }, 180000);
         }
-        confirm("Our phone authentication uses the free service Textbelt to send messages to US phone numbers. However, this service does not work on all mobile carriers. For a list of mobile carriers that work with oour phone authentication, please visit Textbelt's site.");
 
         timedRefresh();
+
+        if(Phone_Number === "NULL" || Phone_Number === "") {
+            document.getElementsByTagName("BODY").innerHTML = "It appears that your phone number has not been registered for phone authentication. In order to login, please choose one of the other two verification methods. ";
+            alert("It appears that your phone number has not been registered for phone authentication. In order to login, please choose one of the other two verification methods. ");
+            window.location.replace("/authentication");
+        } else {
+            alert("Our phone authentication uses the free service Textbelt to send messages to US phone numbers. However, this service does not work on all mobile carriers. For a list of mobile carriers that work with oour phone authentication, please visit Textbelt's site.");
+        }
 
 
     })
