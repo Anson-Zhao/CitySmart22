@@ -1171,6 +1171,10 @@ module.exports = function (app, passport) {
                 let text = 'to sign up an account with this email.';
                 let url = "http://" + req.headers.host + "/verify/";
                 sendToken(username, subject, text, url, res);
+                // res.render('login.ejs', {
+                //     message: req.flash('loginMessage'),
+                //     error: "Your username and password don't match."
+                // });
             }
         });
     });
