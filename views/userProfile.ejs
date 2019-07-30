@@ -57,9 +57,12 @@
             color:white;
         }
         input[type="text"] {
-             height: 60px;
+            height: 60px;
         }
         input[type="password"] {
+            height: 60px;
+        }
+        select {
             height: 60px;
         }
         #capsWarning {
@@ -83,156 +86,216 @@
 
 <div class="container" style="width: 850px;">
     <h1 class="text-center page-header"><strong>User Profile</strong></h1>
-        <div class="generalForm">
-            <form id="basic"  class="well form-horizontal">
-                <fieldset>
-                    <div class="form-group">
-                        <label class="col-md-4 control-label">User Name(Email):</label>
-                        <div class="col-md-8 inputGroupContainer">
-                            <div class="input-group">
-                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span><input id="username" name="username" class="form-control" value="<%= user.username %>" type="text" onchange="verifyemail()">
-                            </div>
-                            <p style="margin-top:8px;color:#0088d8;" id="emailc"></p>
+    <div class="generalForm">
+        <form id="basic"  class="well form-horizontal">
+            <fieldset>
+                <div class="form-group">
+                    <label class="col-md-4 control-label">User Name(Email):</label>
+                    <div class="col-md-8 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span><input id="username" name="username" class="form-control" value="<%= user.username %>" type="text" onchange="verifyemail()" minlength="2" maxlength="99" >
+                        </div>
+                        <p style="margin-top:8px;color:#0088d8;" id="emailc"></p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label">First Name:</label>
+                    <div class="col-md-8 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span><input id="firstName" name="firstName" class="form-control" value="" type="text" minlength="1" maxlength="99">
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label class="col-md-4 control-label">First Name:</label>
-                        <div class="col-md-8 inputGroupContainer">
-                            <div class="input-group">
-                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span><input id="firstName" name="firstName" class="form-control" value="" type="text">
-                            </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Last Name:</label>
+                    <div class="col-md-8 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span><input id="lastName" name="lastName" class="form-control"  value="" type="text" minlength="1" maxlength="99">
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label class="col-md-4 control-label">Last Name:</label>
-                        <div class="col-md-8 inputGroupContainer">
-                            <div class="input-group">
-                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span><input id="lastName" name="lastName" class="form-control"  value="" type="text">
-                            </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Address Line 1:</label>
+                    <div class="col-md-8 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input id="addressLine1" name="Address_Line1" placeholder="Street address, P.O. box, company name, c/o" class="form-control" value="" type="text" maxlength="42">
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label class="col-md-4 control-label">Address Line 1:</label>
-                        <div class="col-md-8 inputGroupContainer">
-                            <div class="input-group">
-                                <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input id="addressLine1" name="Address_Line1" placeholder="Street address, P.O. box, company name, c/o" class="form-control" value="" type="text">
-                            </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Address Line 2:</label>
+                    <div class="col-md-8 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input id="addressLine2" name="Address_Line2" placeholder="Apartment, suite, unit, building, floor, etc." class="form-control" value="" type="text" maxlength="42"></div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label">City:</label>
+                    <div class="col-md-8 inputGroupContainer">
+                        <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input id="city" name="City" class="form-control" value="" type="text" maxlength="42"></div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label">State/Province/Region:</label>
+                    <div class="col-md-8 inputGroupContainer">
+                        <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input id="state" name="State_Province_Region" class="form-control" value="" type="text" maxlength="42"></div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Postal Code/ZIP:</label>
+                    <div class="col-md-8 inputGroupContainer">
+                        <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input id="postcode" name="PostalCode_ZIP" class="form-control" value="" type="text" maxlength="5"></div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Country:</label>
+                    <div class="col-md-8 inputGroupContainer">
+                        <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input id="country" name="Country" class="form-control" value="" type="text" maxlength="42"></div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Phone Number:</label>
+                    <div class="col-md-8 inputGroupContainer">
+                        <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+                            <input id="phoneNumber" name="Phone_Number" class="form-control" value="" type="text" onkeypress="isInputNumber (event)" placeholder="0000000000" maxlength="10" pattern="[0-9]{10}"></div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Security Question #1:</label>
+                    <div class="col-md-8 inputGroupContainer">
+                        <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+                            <select id="q1" name="question1" class="form-control" style="height: 60px;" required>
+                                <option value="" disabled selected>SELECT SECURITY QUESTION</option>
+                                <option value="In what city or town did your mother and father meet?">In what city or town did your mother and father meet?</option>
+                                <option value="What is the middle name of your oldest child?">What is the middle name of your oldest child?</option>
+                                <option value="What was your favorite food as a child?">What was your favorite food as a child?</option>
+                                <option value="What is the last name of the boy or girl that you first kissed?">What is the last name of the boy or girl that you first kissed?</option>
+                                <option value="What was the name of the hospital where you were born?">What was the name of the hospital where you were born?</option>
+                                <option value="Who was your childhood hero?">Who was your childhood hero?</option>
+                                <option value="What was the last name of your third grade teacher?">What was the last name of your third grade teacher?</option>
+                                <option value="What was the name of your first pet?">What was the name of your first pet?</option>
+                                <option value="What\’s your parent\’s birthday?">What’s your parent’s birthday?</option>
+                                <option value="What was the name of your second pet?">What was the name of your second pet?</option>
+                                <option value="Where were you on New Year\’s Eve in 2000?">Where were you on New Year’s Eve in 2000?</option>
+                                <option value="What was your favorite sport in high school?">What was your favorite sport in high school?</option>
+                                <option value="What is the name of your best friend from childhood?">What is the name of your best friend from childhood?</option>
+                                <option value="When you were young, what did you want to be when you grew up?">When you were young, what did you want to be when you grew up?</option>
+                                <option value="What was the name of your first teacher?">What was the name of your first teacher?</option>
+                                <option value="What is the name of your manager at your first job?">What is the name of your manager at your first job?</option>
+                                <option value="What is your youngest sibling’s birthday?">What is your youngest sibling’s birthday?</option>
+                                <option value="What was your first job?">What was your first job?</option>
+                                <option value="What was the make of your first car?">What was the make of your first car?</option>
+                            </select>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label class="col-md-4 control-label">Address Line 2:</label>
-                        <div class="col-md-8 inputGroupContainer">
-                            <div class="input-group">
-                                <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input id="addressLine2" name="Address_Line2" placeholder="Apartment, suite, unit, building, floor, etc." class="form-control" value="" type="text"></div>
-                        </div>
+                    <br>
+                    <label>Answer:</label>
+                    <input type="text" class="form-control" id="answer1" minlength="1" maxlength="200" required>
+                    <br>
+                    <label>Security Question #2:</label>
+                    <br>
+                    <select id="q2" name="question2" class="form-control" style="height: 60px;" required>
+                        <option value="" disabled selected>SELECT SECURITY QUESTION</option>
+                        <option value="In what city or town did your mother and father meet?">In what city or town did your mother and father meet?</option>
+                        <option value="What is the middle name of your oldest child?">What is the middle name of your oldest child?</option>
+                        <option value="What was your favorite food as a child?">What was your favorite food as a child?</option>
+                        <option value="What is the last name of the boy or girl that you first kissed?">What is the last name of the boy or girl that you first kissed?</option>
+                        <option value="What was the name of the hospital where you were born?">What was the name of the hospital where you were born?</option>
+                        <option value="Who was your childhood hero?">Who was your childhood hero?</option>
+                        <option value="What was the last name of your third grade teacher?">What was the last name of your third grade teacher?</option>
+                        <option value="What was the name of your first pet?">What was the name of your first pet?</option>
+                        <option value="What\’s your parent\’s birthday?">What’s your parent’s birthday?</option>
+                        <option value="What was the name of your second pet?">What was the name of your second pet?</option>
+                        <option value="Where were you on New Year\’s Eve in 2000?">Where were you on New Year’s Eve in 2000?</option>
+                        <option value="What was your favorite sport in high school?">What was your favorite sport in high school?</option>
+                        <option value="What is the name of your best friend from childhood?">What is the name of your best friend from childhood?</option>
+                        <option value="When you were young, what did you want to be when you grew up?">When you were young, what did you want to be when you grew up?</option>
+                        <option value="What was the name of your first teacher?">What was the name of your first teacher?</option>
+                        <option value="What is the name of your manager at your first job?">What is the name of your manager at your first job?</option>
+                        <option value="What is your youngest sibling’s birthday?">What is your youngest sibling’s birthday?</option>
+                        <option value="What was your first job?">What was your first job?</option>
+                        <option value="What was the make of your first car?">What was the make of your first car?</option>
+                    </select>
+                    <br>
+                    <label>Answer:</label>
+                    <input type="text" class="form-control" id="answer2" minlength="1" maxlength="200" required>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label">User Role:</label>
+                    <div class="col-md-8 inputGroupContainer">
+                        <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                            <input class="form-control" type="text" style="background:#e6e6e6;" value="<%= user.userrole%>" readonly></div>
+                        <!--<h4 id="userrole" class="floating-Box"><strong>User Role:&nbsp;&nbsp;</strong></h4>-->
                     </div>
-                    <div class="form-group">
-                        <label class="col-md-4 control-label">City:</label>
-                        <div class="col-md-8 inputGroupContainer">
-                            <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input id="city" name="City" class="form-control" value="" type="text"></div>
-                        </div>
+                </div>
+                <div class="form-group" id="dateCreated">
+                    <label class="col-md-4 control-label">Date Created:</label>
+                    <div class="col-md-8 inputGroupContainer">
+                        <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+                            <input class="form-control" type="text" style="background:#e6e6e6;" value="<%= user.dateCreated %>" readonly></div>
+                        <!--<h4 id="userrole" class="floating-Box"><strong>User Role:&nbsp;&nbsp;</strong></h4>-->
                     </div>
-                    <div class="form-group">
-                        <label class="col-md-4 control-label">State/Province/Region:</label>
-                        <div class="col-md-8 inputGroupContainer">
-                            <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input id="state" name="State_Province_Region" class="form-control" value="" type="text"></div>
-                        </div>
+                </div>
+                <div class="form-group" id="lastModification">
+                    <label class="col-md-4 control-label">Last Modification:</label>
+                    <div class="col-md-8 inputGroupContainer">
+                        <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+                            <input class="form-control" type="text" style="background:#e6e6e6;" value="<%= user.dateModified %>" readonly></div>
+                        <!--<h4 id="userrole" class="floating-Box"><strong>User Role:&nbsp;&nbsp;</strong></h4>-->
                     </div>
-                    <div class="form-group">
-                        <label class="col-md-4 control-label">Postal Code/ZIP:</label>
-                        <div class="col-md-8 inputGroupContainer">
-                            <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input id="postcode" name="PostalCode_ZIP" class="form-control" value="" type="text" maxlength="5"></div>
-                        </div>
+                </div>
+                <div class="form-group" id="lastModified">
+                    <label class="col-md-4 control-label">Last Modified by:</label>
+                    <div class="col-md-8 inputGroupContainer">
+                        <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-star"></i></span>
+                            <input class="form-control" type="text" style="background:#e6e6e6;" value="<%= user.username%>" readonly></div>
+                        <!--<h4 id="userrole" class="floating-Box"><strong>User Role:&nbsp;&nbsp;</strong></h4>-->
                     </div>
-                    <div class="form-group">
-                        <label class="col-md-4 control-label">Country:</label>
-                        <div class="col-md-8 inputGroupContainer">
-                            <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input id="country" name="Country" class="form-control" value="" type="text"></div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-md-4 control-label">Phone Number:</label>
-                        <div class="col-md-8 inputGroupContainer">
-                            <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-                                <input id="phoneNumber" name="Phone_Number" class="form-control" value="" type="text" onkeypress="isInputNumber (event)" placeholder="0000000000" maxlength="10" pattern="[0-9]{10}"></div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-md-4 control-label">User Role:</label>
-                        <div class="col-md-8 inputGroupContainer">
-                            <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                                <input class="form-control" type="text" style="background:#e6e6e6;" value="<%= user.userrole%>" readonly></div>
-                            <!--<h4 id="userrole" class="floating-Box"><strong>User Role:&nbsp;&nbsp;</strong></h4>-->
-                        </div>
-                    </div>
-                    <div class="form-group" id="dateCreated">
-                        <label class="col-md-4 control-label">Date Created:</label>
-                        <div class="col-md-8 inputGroupContainer">
-                            <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
-                                <input class="form-control" type="text" style="background:#e6e6e6;" value="<%= user.dateCreated %>" readonly></div>
-                            <!--<h4 id="userrole" class="floating-Box"><strong>User Role:&nbsp;&nbsp;</strong></h4>-->
-                        </div>
-                    </div>
-                    <div class="form-group" id="lastModification">
-                        <label class="col-md-4 control-label">Last Modification:</label>
-                        <div class="col-md-8 inputGroupContainer">
-                            <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
-                                <input class="form-control" type="text" style="background:#e6e6e6;" value="<%= user.dateModified %>" readonly></div>
-                            <!--<h4 id="userrole" class="floating-Box"><strong>User Role:&nbsp;&nbsp;</strong></h4>-->
-                        </div>
-                    </div>
-                    <div class="form-group" id="lastModified">
-                        <label class="col-md-4 control-label">Last Modified by:</label>
-                        <div class="col-md-8 inputGroupContainer">
-                            <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-star"></i></span>
-                                <input class="form-control" type="text" style="background:#e6e6e6;" value="<%= user.username%>" readonly></div>
-                            <!--<h4 id="userrole" class="floating-Box"><strong>User Role:&nbsp;&nbsp;</strong></h4>-->
-                        </div>
-                    </div>
-                </fieldset>
-            </form>
-        </div>
-        <p style="font-size:15px">
-            <label for="password" >Do you want to change your password?</label>
-            <input type="checkbox" id="password" name="password" onclick="changePass()">
-        </p>
-        <h3 id="passTitle" class="text-center page-header" style="display: none">Password Change</h3>
-        <div class="generalForm">
-            <form id="pswchange" style="display:none;" class="well form-horizontal">
-                <fieldset>
-                    <p id="capsWarning" hidden><strong>WARNING: Caps lock is enabled.</strong></p>
-                    <div class="form-group">
-                        <label class="col-md-4 control-label">Current Password:</label>
-                        <div class="col-md-8 inputGroupContainer">
-                            <span toggle="#currentPassword" class="fa fa-fw fa-eye-slash field-icon toggle-password" style="float: right; margin-top: 20px"></span>
-                            <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span><input id="currentPassword" name="CurrentPassword"  class="form-control" value="" type="password"></div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-md-4 control-label">New Password:</label>
-                        <div class="col-md-8 inputGroupContainer">
-                            <span toggle="#newPassword" class="fa fa-fw fa-eye-slash field-icon toggle-password" style="float: right; margin-top: 20px"></span>
-                            <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span><input id="newPassword" name="NewPassword" class="form-control" value="" type="password"></div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-md-4 control-label">Confirm New Password:</label>
-                        <div class="col-md-8 inputGroupContainer">
-                            <span toggle="#confirmPassword" class="fa fa-fw fa-eye-slash field-icon toggle-password" style="float: right; margin-top: 20px"></span>
-                            <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span><input id="confirmPassword" name="ConfirmNewPassword" class="form-control" value="" type="password"></div>
-                        </div>
-                    </div>
+                </div>
             </fieldset>
-            </form>
-<!--            <button id="checkit" class="btn-primary" style="display:none; margin-top:-85px; margin-left:550px;" onclick="check()">Check</button>-->
-        </div>
+        </form>
+    </div>
+    <p style="font-size:15px">
+        <label for="password" >Do you want to change your password?</label>
+        <input type="checkbox" id="password" name="password" onclick="changePass()">
+    </p>
+    <h3 id="passTitle" class="text-center page-header" style="display: none">Password Change</h3>
+    <div class="generalForm">
+        <form id="pswchange" style="display:none;" class="well form-horizontal">
+            <fieldset>
+                <p id="capsWarning" hidden><strong>WARNING: Caps lock is enabled.</strong></p>
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Current Password:</label>
+                    <div class="col-md-8 inputGroupContainer">
+                        <span toggle="#currentPassword" class="fa fa-fw fa-eye-slash field-icon toggle-password" style="float: right; margin-top: 20px"></span>
+                        <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span><input id="currentPassword" name="CurrentPassword"  class="form-control" value="" type="password"></div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label">New Password:</label>
+                    <div class="col-md-8 inputGroupContainer">
+                        <span toggle="#newPassword" class="fa fa-fw fa-eye-slash field-icon toggle-password" style="float: right; margin-top: 20px"></span>
+                        <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span><input id="newPassword" name="NewPassword" class="form-control" value="" type="password" minlength="8" maxlength="20" ></div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Confirm New Password:</label>
+                    <div class="col-md-8 inputGroupContainer">
+                        <span toggle="#confirmPassword" class="fa fa-fw fa-eye-slash field-icon toggle-password" style="float: right; margin-top: 20px"></span>
+                        <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span><input id="confirmPassword" name="ConfirmNewPassword" class="form-control" value="" type="password" minlength="8" maxlength="20" ></div>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+        <!--            <button id="checkit" class="btn-primary" style="display:none; margin-top:-85px; margin-left:550px;" onclick="check()">Check</button>-->
+    </div>
 
-        <div>
-            <button id="submit" type="submit" value="Submit" onclick="submitForm();">Save Changes</button>
-            <button id="clear" type="button" onclick="clearForm();" value="Clear">Clear</button>
-            <hr>
-            <p class="text-center"><a id="cancel" onclick="userHome();">Cancel</a></p>
-        </div>
+    <div>
+        <button id="submit" type="submit" value="Submit" onclick="submitForm();">Save Changes</button>
+        <button id="clear" type="button" onclick="clearForm();" value="Clear">Clear</button>
+        <hr>
+        <p class="text-center"><a id="cancel" onclick="userHome();">Cancel</a></p>
+    </div>
 </div>
 <script>
     let UserName = "<%= user.username %>";
@@ -292,7 +355,7 @@
     $(".toggle-password").click(function() {
         $(this).toggleClass("fa-eye-slash fa-eye");
         var input = $($(this).attr("toggle"));
-        if (input.attr("type") == "password") {
+        if (input.attr("type") === "password") {
             input.attr("type", "text");
         } else {
             input.attr("type", "password");
@@ -300,33 +363,38 @@
     });
 
 
-    let getvalue = JSON.parse(localStorage.getItem("getvalue"));
-    document.getElementById('username').value = getvalue[0];
-    document.getElementById('firstName').value = getvalue[1];
-    document.getElementById('lastName').value = getvalue[2];
+    // let getvalue = JSON.parse(localStorage.getItem("getvalue"));
+    // document.getElementById('username').value = getvalue[0];
+    // document.getElementById('firstName').value = getvalue[1];
+    // document.getElementById('lastName').value = getvalue[2];
 
-
+    let userN = "userN=" + UserName;
 
     $.ajax({
         url: "/profile",
         dataType: 'json',
+        data: userN,
         success: function (results) {
-            // console.log(results);
+            console.log(results);
             newusername = results;
-            for(let i =0; i< results.length; i++) {
-                // console.log(results[i].username);
-                if (results[i].username === UserName) {
-                    document.getElementById('firstName').value = results[i].firstName;
-                    document.getElementById('lastName').value = results[i].lastName;
-                    document.getElementById('addressLine1').value = results[i].Address_Line1;
-                    document.getElementById('addressLine2').value = results[i].Address_Line2;
-                    document.getElementById('city').value = results[i].City;
-                    document.getElementById('state').value = results[i].State_Province_Region;
-                    document.getElementById('postcode').value = results[i].PostalCode_ZIP;
-                    document.getElementById('country').value = results[i].Country;
-                    document.getElementById('phoneNumber').value = results[i].Phone_Number;
-                }
-            }
+            // for(let i =0; i< results.length; i++) {
+            // console.log(results[i].username);
+            // if (results[i].username === UserName) {
+            document.getElementById('firstName').value = results[0][0].firstName;
+            document.getElementById('lastName').value = results[0][0].lastName;
+            document.getElementById('addressLine1').value = results[0][0].Address_Line1;
+            document.getElementById('addressLine2').value = results[0][0].Address_Line2;
+            document.getElementById('city').value = results[0][0].City;
+            document.getElementById('state').value = results[0][0].State_Province_Region;
+            document.getElementById('postcode').value = results[0][0].PostalCode_ZIP;
+            document.getElementById('country').value = results[0][0].Country;
+            document.getElementById('phoneNumber').value = results[0][0].Phone_Number;
+            document.getElementById('q1').value = results[1][0].question1;
+            document.getElementById('q2').value = results[1][0].question2;
+            document.getElementById('answer1').value = results[1][0].answer1;
+            document.getElementById('answer2').value = results[1][0].answer2;
+            // }
+            // }
         }
     })
 
