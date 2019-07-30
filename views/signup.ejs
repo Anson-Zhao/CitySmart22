@@ -86,7 +86,7 @@
 	<!-- LOGIN FORM -->
 	<!--<form onsubmit="return checkForm()" action="/signup" method="post" id="signup">-->
 	<p id="capsWarning" style="color:red; text-align: center;" hidden><strong>WARNING: Caps lock is enabled.</strong></p>
-	<form  onsubmit="return checkForm()" action="/signup" method="post" id="signup">
+	<form onsubmit="return checkForm()" action="/signup" method="post" id="signup">
 		<div class="form-group">
 			<label>Username (email address):</label>
 			<input type="email" id="username" class="form-control" name="username" onchange="SearchUsername(this.value)" style="height: 50px;" minlength="2" maxlength="99" autofocus required>
@@ -303,6 +303,7 @@
 			let answer2 = "answer2=" + a2;
 
 			if (confirm("You will not be able to change your security question upon submission. Are you sure you would like to proceed?")=== true) {
+				alert("We are sending you the email verification. Please check your email before logging in");
 				$.ajax({
 					type: "post",
 					url: "/signup",
@@ -312,14 +313,14 @@
 						console.log(result);
 						if (!result.error) {
 							// alert(result.message);
-							alert("We are sending you the email verification. Please check it before logging in to your account.");
-							window.location.replace('/login');
+							alert("We are sending you the email verification. Please check your email before logging in");
 							console.log(("#signup").serialize);
 						} else {
 							alert(result.message);
 						}
 					}
 				});
+				window.location.replace('/login');
 			} else {
 				return false;
 			}
