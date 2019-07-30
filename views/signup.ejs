@@ -116,7 +116,7 @@
 		</div>
 		<div class="form-group">
 			<label>Phone Number (Optional):</label>
-			<input type="tel" id="PhoneNumber" class="form-control" name="phoneNumber" style="height: 50px;" onkeypress="isInputNumber (event)" placeholder="1233211234" title="XXXXXXXXXX" minlength="8" maxlength="10" pattern="[0-9]{10}" >
+			<input type="tel" id="PhoneNumber" class="form-control" name="phoneNumber" style="height: 50px;" onkeypress="isInputNumber (event)" oninput="alert('Registering your phone number will allow phone authentication.')" placeholder="1233211234" title="XXXXXXXXXX" minlength="8" maxlength="10" pattern="[0-9]{10}" >
 		</div>
 		<div class="form-group">
 			<label>Security Question #1:</label>
@@ -283,71 +283,6 @@
 			// console.log($('#signup'));
 			// console.log($("#signup").serialize());
 
-			if (document.getElementById("emailUser").innerHTML === "This username is already taken. Please use a different one.") {
-				$(".button1").prop("disabled", true);
-			} else {
-				$(".button1").prop("disabled", false);
-			// 	$('#signup').submit(function(e) {
-			// // 		console.log($("#signup").serialize());
-			// 		// console.log($('#signup'));
-			// 		let a1 = $('#answer1').val().replace("\'", "\\'");
-			// 		let a2 = $('#answer2').val().replace("\'", "\\'");
-			// 		let answer1 = "answer1=" + a1;
-			// 		let answer2 = "answer2=" + a2;
-			// //
-			// // 		if (confirm("You will not be able to change your security question upon submission. Are you sure you would like to proceed?") === true) {
-			// // 			// if (inputtx.value.length == 0)
-			// // 			// {
-			// // 			// 	alert("message");
-			// // 			// 	return false;
-			// // 			// }
-			// // 			if (PhoneNumber.value.length !== 0) {
-			// // 				if (confirm("Registering your phone number will allow phone authentication.") === true) {
-			// // 					$.ajax({
-			// // 						type: "post",
-			// // 						url: "/signup",
-			// // 						dataType: 'json',
-			// // 						data: $("#signup").serialize() + "&" + answer1 + "&" + answer2,
-			// // 						success: function (result) {
-			// // 							console.log(result);
-			// // 							if (!result.error) {
-			// // // 								alert(result.message);
-			// // 								alert("We are sending you the email verification. Please check it before login to your account.");
-			// // 								window.location.replace('/login');
-			// // 								console.log(("#signup").serialize);
-			// // 							} else {
-			// // 								alert(result.message);
-			// // 							}
-			// // 						}
-			// // 					});
-			// // 				} else {
-			// // 					return false;
-			// // 				}
-			// // 			} else {
-			// // 				$.ajax({
-			// // 					type: "post",
-			// // 					url: "/signup",
-			// // 					dataType: 'json',
-			// // 					data: $("#signup").serialize() + "&" + answer1 + "&" + answer2,
-			// // 					success: function (result) {
-			// // 						console.log(result);
-			// // 						if (!result.error) {
-			// // 							// alert(result.message);
-			// // 							alert("We are sending you the email verification. Please check it before login to your account.");
-			// // 							window.location.replace('/login');
-			// // 							console.log(("#signup").serialize);
-			// // 						} else {
-			// // 							alert(result.message);
-			// // 						}
-			// // 					}
-			// // 				});
-			// // 			}
-			// //
-			// // 		} else {
-			// // 			return false;
-			// // 		}
-			// 	});
-			}
 
         });
         let today = new Date();
@@ -355,6 +290,40 @@
         let time2 = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
         let dateTime = date + ' ' + time2;
         document.getElementById("DATE").value = dateTime;
+
+
+        $('#signup').submit(function(e) {
+			// console.log($("#signup").serialize());
+			// console.log($('#signup'));
+			//
+			e.preventDefault();
+			let a1 = $('#answer1').val().replace("\'", "\\'");
+			let a2 = $('#answer2').val().replace("\'", "\\'");
+			let answer1 = "answer1=" + a1;
+			let answer2 = "answer2=" + a2;
+
+			if (confirm("You will not be able to change your security question upon submission. Are you sure you would like to proceed?")=== true) {
+				$.ajax({
+					type: "post",
+					url: "/signup",
+					dataType: 'json',
+					data: $("#signup").serialize() + "&" + answer1 + "&" + answer2,
+					success: function (result) {
+						console.log(result);
+						if (!result.error) {
+							// alert(result.message);
+							alert("We are sending you the email verification. Please check it before login to your account.");
+							window.location.replace('/login');
+							console.log(("#signup").serialize);
+						} else {
+							alert(result.message);
+						}
+					}
+				});
+			} else {
+				return false;
+			}
+		});
     });
 
 	$('select[name=question1]').on('change', function() {
@@ -399,21 +368,21 @@
 		})
 	}
 
-	function submit () {
-		if (document.getElementById("emailUser").innerHTML === "This username is already taken. Please use a different one.") {
-			$(".button1").prop("disabled", true);
-		} else {
-			$(".button1").prop("disabled", false);
-			$('#signup').submit(function(e) {
+	// function submit () {
+		// if (document.getElementById("emailUser").innerHTML === "This username is already taken. Please use a different one.") {
+		// 	$(".button1").prop("disabled", true);
+		// } else {
+		// 	$(".button1").prop("disabled", false);
+		// 	$('#signup').submit(function(e) {
 				// console.log($("#signup").serialize());
 				// console.log($('#signup'));
-				let a1 = $('#answer1').val().replace("\'", "\\'");
-				let a2 = $('#answer2').val().replace("\'", "\\'");
-				let answer1 = "answer1=" + a1;
-				let answer2 = "answer2=" + a2;
-				console.log($("#signup").serialize());
-				console.log(answer1);
-				console.log(answer2);
+				// let a1 = $('#answer1').val().replace("\'", "\\'");
+				// let a2 = $('#answer2').val().replace("\'", "\\'");
+				// let answer1 = "answer1=" + a1;
+				// let answer2 = "answer2=" + a2;
+				// console.log($("#signup").serialize());
+				// console.log(answer1);
+				// console.log(answer2);
 
 				// if (confirm("You will not be able to change your security question upon submission. Are you sure you would like to proceed?")=== true) {
 				// if (inputtx.value.length == 0)
@@ -423,26 +392,26 @@
 				// }
 				// if (PhoneNumber.value.length !== 0) {
 				// 	if (confirm("Registering your phone number will allow phone authentication.") === true) {
-				$.ajax({
-					type: "post",
-					url: "/signup",
-					dataType: 'json',
-					data: $("#signup").serialize() + "&" + answer1 + "&" + answer2,
-					success: function (result) {
-						console.log(result);
-						if (!result.error) {
-							// alert(result.message);
-							console.log(result.error);
-							alert("We are sending you the email verification. Please check it before login to your account.");
-							window.location.replace('/login');
-							console.log(("#signup").serialize);
-						} else {
-							console.log(result.error);
-							alert(result.message);
-							console.log(("#signup").serialize);
-						}
-					}
-				});
+				// $.ajax({
+				// 	type: "post",
+				// 	url: "/signup",
+				// 	dataType: 'json',
+				// 	data: $("#signup").serialize() + "&" + answer1 + "&" + answer2,
+				// 	success: function (result) {
+				// 		console.log(result);
+				// 		if (!result.error) {
+				// 			// alert(result.message);
+				// 			console.log(result.error);
+				// 			alert("We are sending you the email verification. Please check it before login to your account.");
+				// 			window.location.replace('/login');
+				// 			console.log(("#signup").serialize);
+				// 		} else {
+				// 			console.log(result.error);
+				// 			alert(result.message);
+				// 			console.log(("#signup").serialize);
+				// 		}
+				// 	}
+				// });
 				// } else {
 				// 	return false;
 				// }
@@ -465,9 +434,9 @@
 				// 	}
 				// });
 				// }
-			});
-		}
-	}
+			// });
+		// }
+	// }
 
 	function isInputNumber (evt) {
 		let char = String.fromCharCode(evt.which);
