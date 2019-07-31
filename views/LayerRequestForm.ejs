@@ -19,6 +19,8 @@
 <!--    <script src="../3rdPartyLibs/fine-uploader/fine-uploader.min.js"></script>-->
     <script src="../3rdPartyLibs/fine-uploader/fine-uploader.js"></script>
     <link href="../3rdPartyLibs/fine-uploader/fine-uploader-new.css" rel="stylesheet">
+    <script src="https://www.google.com/recaptcha/api.js?render=6Ld7fq8UAAAAAOv8ZEiVj6P972pR_Vf3ko5R0JB_"></script>
+    <?php include 'reCaptcha.php';?>
     <!--    <script src="//cdnjs.cloudflare.com/ajax/libs/file-uploader/5.16.2/all.fine-uploader/all.fine-uploader.min.js"></script>-->
     <!--    <script src="../src/country/dist/country.js"></script>-->
 
@@ -377,6 +379,7 @@
                         </div>
                     </div>
                 </fieldset>
+                <input type="hidden" id="token" name="token">
             </form>
         </div>
         <div>
@@ -632,6 +635,19 @@
     function uploadAlert() {
         alert("This process cannot be undo!");
     }
+
+    grecaptcha.ready(function() {
+        grecaptcha.execute('6Ld7fq8UAAAAAOv8ZEiVj6P972pR_Vf3ko5R0JB_', {action: '/submitL'}.then(function (token) {
+            console.log(token);
+            document.getElementById("token").value = token;
+        }));
+    });
+    grecaptcha.ready(function() {
+        grecaptcha.execute('6Ld7fq8UAAAAAOv8ZEiVj6P972pR_Vf3ko5R0JB_', {action: '/emailRequest'}.then(function (token) {
+            console.log(token);
+            document.getElementById("token").value = token;
+        }));
+    });
 
 //to check that if there are duplicated from the layer name that layer name that you just inserted
     function SearchLayerName(value){
