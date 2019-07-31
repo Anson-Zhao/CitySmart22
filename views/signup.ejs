@@ -96,7 +96,7 @@
 		<div class="form-group">
 			<label>Username (email address):</label>
 			<input type="email" id="username" class="form-control" name="username" onchange="SearchUsername(this.value)" style="height: 50px;" minlength="2" maxlength="99" autofocus required>
-			<p id="emailUser" style="color: palevioletred;margin-top:15px;"></p>
+			<p id="emailUser" style="text-align: center; color: palevioletred; margin-top:15px;"></p>
 		</div>
 		<div class="form-group">
 			<label>First Name:</label>
@@ -314,7 +314,7 @@
 			let a2 = $('#answer2').val().replace("\'", "\\'");
 			let answer1 = "answer1=" + a1;
 			let answer2 = "answer2=" + a2;
-			console.log("here");
+			// console.log("here");
 
 			if (confirm("Are you sure you would like to proceed?")=== true) {
 				alert("We are sending you the email verification. Please check your email before logging in");
@@ -380,7 +380,7 @@
                     }
                 }
             }
-        })
+        });
     }
 
     function isInputNumber (evt) {

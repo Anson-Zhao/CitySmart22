@@ -44,6 +44,17 @@
             text-align: center;
         }
 
+        .button2 {
+            width: 500px;
+            height: 50px;
+            border-radius: 15px;
+            -webkit-transition-duration: 0.4s;
+            transition-duration: 0.4s;
+            cursor: pointer;
+            background-color: lightgray;
+            color: #ffffff;
+        }
+
     </style>
 </head>
 <div class="navul" style="height: 80px;
@@ -70,7 +81,8 @@
     <form onsubmit="return checkForm()" action="/addUser" method="post" id="addUser">
         <div class="form-group">
             <label>Username (email address):</label>
-            <input type="email" class="form-control" id="username" name="username" style="height: 50px;" minlength="2" maxlength="99" >
+            <input type="email" class="form-control" id="username" name="username" onchange="SearchUsername(this.value)" style="height: 50px;" minlength="2" maxlength="99" >
+            <p id="emailUser" style="text-align: center; color: palevioletred; margin-top:15px;"></p>
         </div>
         <div class="form-group">
             <label>First Name:</label>
@@ -108,7 +120,7 @@
         </div>
         <div class="container" style="width: 500px;
     padding: 0px;">
-            <button type="submit" class="button1"> Add User </button>
+            <button type="submit" id="addUser" class="button1"> Add User </button>
         </div>
         <input type="hidden" id="token" name="token">
     </form>
@@ -227,6 +239,34 @@
             document.getElementById("token").value = token;
         }));
     });
+
+    function SearchUsername(value) {
+        $.ajax({
+            url: "SearchUsername",
+            method: 'GET',
+            dataType: "json",
+            success: function (results) {
+                for (let i = 0; i < results.length; i++) {
+                    // let newRes = JSON.stringify(results);
+                    console.log(value);
+                    console.log(results[i].username);
+                    if (value === results[i].username) {
+                        alert("This username is already taken. Please use a different one.");
+                        document.getElementById("emailUser").innerHTML = "This username is already taken. Please use a different one.";
+                        document.getElementById("addUser").disabled = true;
+                        document.getElementById("addUser").classList.remove("button1");
+                        document.getElementById("addUser").classList.add("button2");
+                        break;
+                    } else {
+                        document.getElementById("emailUser").innerHTML = "";
+                        document.getElementById("addUser").disabled = false;
+                        document.getElementById("addUser").classList.add("button1");
+                        document.getElementById("addUser").classList.remove("button2");
+                    }
+                }
+            }
+        });
+    }
 
     function onFunction() {
         alert ("You are now online.");
