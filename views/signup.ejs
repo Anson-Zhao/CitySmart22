@@ -305,7 +305,7 @@
             }
         })
 
-		$('#signup').submit(function(e) {
+		$('#submitButton').click(function(e) {
 			// console.log($("#signup").serialize());
 			// console.log($('#signup'));
 			//
@@ -314,6 +314,7 @@
 			let a2 = $('#answer2').val().replace("\'", "\\'");
 			let answer1 = "answer1=" + a1;
 			let answer2 = "answer2=" + a2;
+			// console.log("here");
 
 			if (confirm("Are you sure you would like to proceed?")=== true) {
 				alert("We are sending you the email verification. Please check your email before logging in");
