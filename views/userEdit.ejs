@@ -444,7 +444,7 @@
                      // let newRes = JSON.stringify(results);
                      console.log(value);
                      console.log(results[i].username);
-                     if (value === results[i].username) {
+                     if (value === results[i].username && value !== LoginUser) {
                          alert("This username is already taken. Please use a different one.");
                          document.getElementById("emailUser").innerHTML = "This username is already taken. Please use a different one.";
                          document.getElementById("updateForm").disabled = true;
