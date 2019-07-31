@@ -62,9 +62,6 @@
         input[type="password"] {
             height: 60px;
         }
-        select {
-            height: 60px;
-        }
         #capsWarning {
             color: red;
             text-align: center;
@@ -275,14 +272,14 @@
                         <label class="col-md-4 control-label">New Password:</label>
                         <div class="col-md-8 inputGroupContainer">
                             <span toggle="#newPassword" class="fa fa-fw fa-eye-slash field-icon toggle-password" style="float: right; margin-top: 20px"></span>
-                            <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span><input id="newPassword" name="NewPassword" class="form-control" value="" type="password" minlength="8" maxlength="20" ></div>
+                            <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span><input id="newPassword" name="NewPassword" class="form-control" value="" type="password" minlength="8"></div>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-md-4 control-label">Confirm New Password:</label>
                         <div class="col-md-8 inputGroupContainer">
                             <span toggle="#confirmPassword" class="fa fa-fw fa-eye-slash field-icon toggle-password" style="float: right; margin-top: 20px"></span>
-                            <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span><input id="confirmPassword" name="ConfirmNewPassword" class="form-control" value="" type="password" minlength="8" maxlength="20" ></div>
+                            <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span><input id="confirmPassword" name="ConfirmNewPassword" class="form-control" value="" type="password" minlength="8"></div>
                         </div>
                     </div>
             </fieldset>
@@ -354,7 +351,7 @@
 
     $(".toggle-password").click(function() {
         $(this).toggleClass("fa-eye-slash fa-eye");
-        var input = $($(this).attr("toggle"));
+        let input = $($(this).attr("toggle"));
         if (input.attr("type") === "password") {
             input.attr("type", "text");
         } else {
@@ -445,7 +442,7 @@
         if (checkbox.checked === true){
             text.style.display = "block";
             title.style.display = "block";
-            alert("Please verify your password(s) by clicking \"Check\" before clicking update.");
+            // alert("Please verify your password(s) by clicking \"Check\" before clicking update.");
             alert("Please also verify that your current password is correct and your two new passwords match before submitting.");
 
         } else{
@@ -546,7 +543,7 @@
     }
 
     function isInputNumber (evt) {
-        var char = String.fromCharCode(evt.which);
+        let char = String.fromCharCode(evt.which);
 
         if(!(/[0-9]/.test(char))) {
             evt.preventDefault();

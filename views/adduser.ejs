@@ -81,9 +81,9 @@
             <input type="text" class="form-control" id="lastname" name="lastName" style="height: 50px;" minlength="1" maxlength="99">
         </div>
         <div class="form-group">
-            <label>Password (8-20 Characters):</label>
+            <label>Password:</label>
             <span toggle="#password" class="fa fa-fw fa-eye-slash field-icon toggle-password" style="float: right"></span>
-            <input type="password" class="form-control" id="password" name="password" style="height: 50px;" minlength="8" maxlength="20">
+            <input type="password" class="form-control" id="password" name="password" style="height: 50px;" minlength="8">
         </div>
         <p id="capsWarning" hidden><strong>WARNING: Caps lock is enabled.</strong></p>
         <div class="form-group">
@@ -186,7 +186,7 @@
 
     $(".toggle-password").click(function() {
         $(this).toggleClass("fa-eye-slash fa-eye");
-        var input = $($(this).attr("toggle"));
+        let input = $($(this).attr("toggle"));
         if (input.attr("type") === "password") {
             input.attr("type", "text");
         } else {
