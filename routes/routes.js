@@ -1385,59 +1385,62 @@ module.exports = function (app, passport) {
         let user = req.body.Username;
         //Converts array to string
         let editingUser = req.user.username;
-        let editingUserPassword = req.user.password;
+        // let editingUserPassword = req.user.password;
+
+        basicInformation();
 
 
-        if(user === editingUser) {
-            let newEditPass = {
-                currentpassword: req.body.CurrentPassword,
-                Newpassword: bcrypt.hashSync(req.body.NewPassword, null, null),
-                confirmPassword: bcrypt.hashSync(req.body.ConfirmNewPassword, null, null)
-            };
+        // if(user === editingUser) {
+        //     let newEditPass = {
+        //         currentpassword: req.body.CurrentPassword,
+        //         Newpassword: bcrypt.hashSync(req.body.NewPassword, null, null),
+        //         confirmPassword: bcrypt.hashSync(req.body.ConfirmNewPassword, null, null)
+        //     };
+        //
+        //
+        //     let passComp = bcrypt.compareSync(newEditPass.currentpassword, editingUserPassword);
+        //
+
+        //
+        //     // if (!!req.body.NewPassword) {
+        //         let passAdminReset = "UPDATE UserLogin SET password = '" + newEditPass.Newpassword + "' WHERE username = '" + user + "'";
+        //
+        //         con_CS.query(passAdminReset, function (err, rows) {
+        //             if (err) {
+        //                 console.log(err);
+        //                 res.json({"error": true, "message": "Fail !"});
+        //             } else {
+        //                 // res.json({"error": false, "message": "Success !"});
+        //                 basicInformation();
+        //             }
+        //         });
+        //     } else {
+        //         basicInformation();
+        //     }
+        // } else {
+        //     let newPass = {
+        //         Newpassword: bcrypt.hashSync(req.body.NewPassword, null, null),
+        //         confirmPassword: bcrypt.hashSync(req.body.ConfirmNewPassword, null, null)
+            // };
 
 
-            let passComp = bcrypt.compareSync(newEditPass.currentpassword, editingUserPassword);
-
-
-            if (!!req.body.NewPassword) {
-                let passAdminReset = "UPDATE UserLogin SET password = '" + newEditPass.Newpassword + "' WHERE username = '" + user + "'";
-
-                con_CS.query(passAdminReset, function (err, rows) {
-                    if (err) {
-                        console.log(err);
-                        res.json({"error": true, "message": "Fail !"});
-                    } else {
-                        // res.json({"error": false, "message": "Success !"});
-                        basicInformation();
-                    }
-                });
-            } else {
-                basicInformation();
-            }
-        } else {
-            let newPass = {
-                Newpassword: bcrypt.hashSync(req.body.NewPassword, null, null),
-                confirmPassword: bcrypt.hashSync(req.body.ConfirmNewPassword, null, null)
-            };
-
-
-            if (!!req.body.NewPassword) {
-                let passReset = "UPDATE UserLogin SET password = '" + newPass.Newpassword + "' WHERE username = '" + user + "'";
-
-                con_CS.query(passReset, function (err, rows) {
-                    if (err) {
-                        console.log(err);
-                        res.json({"error": true, "message": "Fail !"});
-                        res.json({"error": true, "message": err});
-                    } else {
-                        // res.json({"error": false, "message": "Success !"});
-                        basicInformation();
-                    }
-                });
-            } else {
-                basicInformation();
-            }
-        }
+            // if (!!req.body.NewPassword) {
+            //     let passReset = "UPDATE UserLogin SET password = '" + newPass.Newpassword + "' WHERE username = '" + user + "'";
+            //
+            //     con_CS.query(passReset, function (err, rows) {
+            //         if (err) {
+            //             console.log(err);
+            //             res.json({"error": true, "message": "Fail !"});
+            //             res.json({"error": true, "message": err});
+            //         } else {
+            //             // res.json({"error": false, "message": "Success !"});
+            //             basicInformation();
+            //         }
+            //     });
+            // } else {
+            //     basicInformation();
+            // }
+        // }
 
         function basicInformation() {
             let result = Object.keys(req.body).map(function (key) {
