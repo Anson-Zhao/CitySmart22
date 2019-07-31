@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3c115c91-9fd2-4ea9-af92-40dbd2eef16b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/LayerRequestForm.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/LayerRequestForm.ejs" afterDir="false" />
-    </list>
+    <list default="true" id="3c115c91-9fd2-4ea9-af92-40dbd2eef16b" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -357,14 +354,7 @@
       <workItem from="1564155048985" duration="25000" />
       <workItem from="1564155868635" duration="22289000" />
       <workItem from="1564492099266" duration="12013000" />
-      <workItem from="1564578099849" duration="10600000" />
-    </task>
-    <task id="LOCAL-00145" summary="Merge branch 'julia2' of https://github.com/Anson-Zhao/CitySmart22 into Carrots&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
-      <created>1564069203096</created>
-      <option name="number" value="00145" />
-      <option name="presentableId" value="LOCAL-00145" />
-      <option name="project" value="LOCAL" />
-      <updated>1564069203096</updated>
+      <workItem from="1564578099849" duration="10870000" />
     </task>
     <task id="LOCAL-00146" summary="Merge branch 'julia2' of https://github.com/Anson-Zhao/CitySmart22 into Carrots&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
       <created>1564069281563</created>
@@ -702,11 +692,18 @@
       <option name="project" value="LOCAL" />
       <updated>1564588981962</updated>
     </task>
-    <option name="localTasksCounter" value="194" />
+    <task id="LOCAL-00194" summary="Merge branch 'julia2' of https://github.com/Anson-Zhao/CitySmart22 into Cucumbers&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;config/serverConfig.js&#10;#&#9;views/EmailAuth.ejs&#10;#&#9;views/LayerRequestForm.ejs&#10;#&#9;views/LayerRequestForm_edit.ejs&#10;#&#9;views/PhoneAuthP2.ejs&#10;#&#9;views/adduser.ejs&#10;#&#9;views/homepage.ejs&#10;#&#9;views/login.ejs&#10;#&#9;views/reCaptcha.php&#10;#&#9;views/signup.ejs&#10;#&#9;views/userEdit.ejs&#10;#&#9;views/userProfile.ejs">
+      <created>1564593746293</created>
+      <option name="number" value="00194" />
+      <option name="presentableId" value="LOCAL-00194" />
+      <option name="project" value="LOCAL" />
+      <updated>1564593746293</updated>
+    </task>
+    <option name="localTasksCounter" value="195" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="369937000" />
+    <option name="totallyTimeSpent" value="370207000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -719,9 +716,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="593" y="23" width="1919" height="1302" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4988532" visible="true" weight="0.17954183" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4988532" visible="true" weight="0.17954183" />
       <window_info id="Structure" order="1" sideWeight="0.5011468" side_tool="true" weight="0.17954183" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -733,9 +729,9 @@
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49866807" weight="0.20330578" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
-      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49440596" visible="true" weight="0.25785124" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="9" sideWeight="0.49174213" visible="true" weight="0.25785124" />
       <window_info anchor="bottom" id="Terminal" order="10" weight="0.32975206" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50985616" side_tool="true" weight="0.27933884" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50825787" side_tool="true" visible="true" weight="0.25785124" />
       <window_info anchor="bottom" id="File Transfer" order="12" sideWeight="0.49440596" weight="0.32975206" />
       <window_info anchor="bottom" id="Database Console" order="13" weight="0.3299748" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
