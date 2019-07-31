@@ -1,4 +1,4 @@
-<!-- views/addUser.ejs -->
+<!-- views/PhoneAuthP1.ejs -->
 <!doctype html>
 <html>
 <head>
@@ -12,6 +12,8 @@
     <!--<link rel="stylesheet" href="//unpkg.com/flatpickr/dist/flatpickr.min.css">-->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://www.google.com/recaptcha/api.js?render=6Ld7fq8UAAAAAOv8ZEiVj6P972pR_Vf3ko5R0JB_"></script>
+    <?php include 'reCaptcha.php';?>
     <!--<script src="//unpkg.com/flatpickr"></script>-->
     <style>
         .banner {
@@ -64,6 +66,7 @@
             <button type="submit" id="sendCode" class="button" onclick="SendCode()">Send Verification Code</button>
             <input type="text" name="Phone_Number" value="<%= Phone_Number %>" hidden>
         </div>
+        <input type="hidden" id="token" name="token">
     </form>
     <hr style="margin-bottom: 10px;">
     <p style="text-align: center;"> <a href="/authentication">Try Another Way</a></p>
@@ -111,6 +114,13 @@
 
         })
     }
+
+    grecaptcha.ready(function() {
+        grecaptcha.execute('6Ld7fq8UAAAAAOv8ZEiVj6P972pR_Vf3ko5R0JB_', {action: '/pcode'}.then(function (token) {
+            console.log(token);
+            document.getElementById("token").value = token;
+        }));
+    });
 
     function onFunction() {
         alert("You are now online.");
