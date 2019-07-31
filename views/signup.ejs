@@ -12,7 +12,7 @@
 	<script src="../3rdPartyLibs/jquery-3.3.1.min.js"></script>
 	<script src="//cdn.jsdelivr.net/npm/flatpickr"></script>
 	<script src="https://www.google.com/recaptcha/api.js?render=6Ld7fq8UAAAAAOv8ZEiVj6P972pR_Vf3ko5R0JB_"></script>
-			<!--	<?php include 'reCaptcha.php';?>-->
+	<!--   <?php include 'reCaptcha.php';?>-->
 	<!--<script src="//unpkg.com/flatpickr"></script>-->
 	<style>
 		body{
@@ -65,13 +65,13 @@
 </head>
 <div class="navul" style="height: 80px;
     background: #000000;">
-    <a class="navul" href="//aworldbridge.com" style="background: #000000;
+	<a class="navul" href="//aworldbridge.com" style="background: #000000;
     width: 500px;
     height: 80px;">
-        <img class="banner" src="../images/NewWBBanner.jpg" style="width: 550px;
+		<img class="banner" src="../images/NewWBBanner.jpg" style="width: 550px;
     height: 80px;
     margin: auto; display: block;" />
-    </a>
+	</a>
 </div>
 <body ononline="onFunction()" onoffline="offFunction()">
 <div class="container" style="width: 500px; padding: 0px;">
@@ -79,14 +79,14 @@
 	<h1 style="margin-top: 30px"><span class="fa fa-sign-in"></span> Sign Up </h1>
 	<!-- show any messages that come back with authentication -->
 	<% if (message.length > 0) { %>
-	<div class="alert alert-danger">
-		<%= message %>
-	</div>
+		<div class="alert alert-danger">
+			<%= message %>
+		</div>
 	<% } %>
 	<!-- LOGIN FORM -->
 	<!--<form onsubmit="return checkForm()" action="/signup" method="post" id="signup">-->
 	<p id="capsWarning" style="color:red; text-align: center;" hidden><strong>WARNING: Caps lock is enabled.</strong></p>
-	<form  onsubmit="submit ()" method="post" id="signup">
+	<form onsubmit="return checkForm()" action="/signup" method="post" id="signup">
 		<div class="form-group">
 			<label>Username (email address):</label>
 			<input type="email" id="username" class="form-control" name="username" onchange="SearchUsername(this.value)" style="height: 50px;" minlength="2" maxlength="99" autofocus required>
@@ -116,7 +116,7 @@
 		</div>
 		<div class="form-group">
 			<label>Phone Number (Optional):</label>
-			<input type="tel" id="PhoneNumber" class="form-control" name="phoneNumber" style="height: 50px;" onkeypress="isInputNumber (event)" placeholder="1233211234" title="XXXXXXXXXX" minlength="8" maxlength="10" pattern="[0-9]{10}" >
+			<input type="tel" id="PhoneNumber" class="form-control" name="phoneNumber" style="height: 50px;" onkeypress="isInputNumber (event)" placeholder="1233211234" title="XXXXXXXXXX" minlength="10" maxlength="10" pattern="[0-9]{10}" >
 		</div>
 		<div class="form-group">
 			<label>Security Question #1:</label>
@@ -265,7 +265,7 @@
 
 	$(".toggle-password").click(function() {
 		$(this).toggleClass("fa-eye-slash fa-eye");
-		var input = $($(this).attr("toggle"));
+		let input = $($(this).attr("toggle"));
 		if (input.attr("type") === "password") {
 			input.attr("type", "text");
 		} else {
@@ -283,89 +283,59 @@
 			// console.log($('#signup'));
 			// console.log($("#signup").serialize());
 
-			if (document.getElementById("emailUser").innerHTML === "This username is already taken. Please use a different one.") {
-				$(".button1").prop("disabled", true);
-			} else {
-				$(".button1").prop("disabled", false);
-			// 	$('#signup').submit(function(e) {
-			// // 		console.log($("#signup").serialize());
-			// 		// console.log($('#signup'));
-			// 		let a1 = $('#answer1').val().replace("\'", "\\'");
-			// 		let a2 = $('#answer2').val().replace("\'", "\\'");
-			// 		let answer1 = "answer1=" + a1;
-			// 		let answer2 = "answer2=" + a2;
-			// //
-			// // 		if (confirm("You will not be able to change your security question upon submission. Are you sure you would like to proceed?") === true) {
-			// // 			// if (inputtx.value.length == 0)
-			// // 			// {
-			// // 			// 	alert("message");
-			// // 			// 	return false;
-			// // 			// }
-			// // 			if (PhoneNumber.value.length !== 0) {
-			// // 				if (confirm("Registering your phone number will allow phone authentication.") === true) {
-			// // 					$.ajax({
-			// // 						type: "post",
-			// // 						url: "/signup",
-			// // 						dataType: 'json',
-			// // 						data: $("#signup").serialize() + "&" + answer1 + "&" + answer2,
-			// // 						success: function (result) {
-			// // 							console.log(result);
-			// // 							if (!result.error) {
-			// // // 								alert(result.message);
-			// // 								alert("We are sending you the email verification. Please check it before login to your account.");
-			// // 								window.location.replace('/login');
-			// // 								console.log(("#signup").serialize);
-			// // 							} else {
-			// // 								alert(result.message);
-			// // 							}
-			// // 						}
-			// // 					});
-			// // 				} else {
-			// // 					return false;
-			// // 				}
-			// // 			} else {
-			// // 				$.ajax({
-			// // 					type: "post",
-			// // 					url: "/signup",
-			// // 					dataType: 'json',
-			// // 					data: $("#signup").serialize() + "&" + answer1 + "&" + answer2,
-			// // 					success: function (result) {
-			// // 						console.log(result);
-			// // 						if (!result.error) {
-			// // 							// alert(result.message);
-			// // 							alert("We are sending you the email verification. Please check it before login to your account.");
-			// // 							window.location.replace('/login');
-			// // 							console.log(("#signup").serialize);
-			// // 						} else {
-			// // 							alert(result.message);
-			// // 						}
-			// // 					}
-			// // 				});
-			// // 			}
-			// //
-			// // 		} else {
-			// // 			return false;
-			// // 		}
-			// 	});
-			}
 
-        });
-        let today = new Date();
-        let date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
-        let time2 = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-        let dateTime = date + ' ' + time2;
-        document.getElementById("DATE").value = dateTime;
-    });
+		});
+		let today = new Date();
+		let date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+		let time2 = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+		let dateTime = date + ' ' + time2;
+		document.getElementById("DATE").value = dateTime;
+
+
+		$('#signup').submit(function(e) {
+			// console.log($("#signup").serialize());
+			// console.log($('#signup'));
+			//
+			e.preventDefault();
+			let a1 = $('#answer1').val().replace("\'", "\\'");
+			let a2 = $('#answer2').val().replace("\'", "\\'");
+			let answer1 = "answer1=" + a1;
+			let answer2 = "answer2=" + a2;
+
+			if (confirm("Are you sure you would like to proceed?")=== true) {
+				alert("We are sending you the email verification. Please check your email before logging in");
+				$.ajax({
+					type: "post",
+					url: "/signup",
+					dataType: 'json',
+					data: $("#signup").serialize() + "&" + answer1 + "&" + answer2,
+					success: function (result) {
+						console.log(result);
+						if (!result.error) {
+							// alert(result.message);
+							alert("We are sending you the email verification. Please check your email before logging in");
+							console.log(("#signup").serialize);
+						} else {
+							alert(result.message);
+						}
+					}
+				});
+				window.location.replace('/login');
+			} else {
+				return false;
+			}
+		});
+	});
 
 	$('select[name=question1]').on('change', function() {
-		var self = this;
+		let self = this;
 		$('select[name=question2]').find('option').prop('disabled', function() {
 			return this.value === self.value
 		});
 	});
 
 	$('select[name=question2]').on('change', function() {
-		var self = this;
+		let self = this;
 		$('select[name=question1]').find('option').prop('disabled', function() {
 			return this.value === self.value
 		});
@@ -399,78 +369,8 @@
 		})
 	}
 
-	function submit () {
-		if (document.getElementById("emailUser").innerHTML === "This username is already taken. Please use a different one.") {
-			$(".button1").prop("disabled", true);
-		} else {
-			$(".button1").prop("disabled", false);
-			// $('#signup').submit(function(e) {
-				// console.log($("#signup").serialize());
-				// console.log($('#signup'));
-				let a1 = $('#answer1').val().replace("\'", "\\'");
-				let a2 = $('#answer2').val().replace("\'", "\\'");
-				let answer1 = "answer1=" + a1;
-				let answer2 = "answer2=" + a2;
-				console.log($("#signup").serialize());
-				console.log(answer1);
-				console.log(answer2);
-
-				// if (confirm("You will not be able to change your security question upon submission. Are you sure you would like to proceed?")=== true) {
-				// if (inputtx.value.length == 0)
-				// {
-				// 	alert("message");
-				// 	return false;
-				// }
-				// if (PhoneNumber.value.length !== 0) {
-				// 	if (confirm("Registering your phone number will allow phone authentication.") === true) {
-				$.ajax({
-					type: "post",
-					url: "/signup",
-					dataType: 'json',
-					data: $("#signup").serialize() + "&" + answer1 + "&" + answer2,
-					success: function (result) {
-						console.log(result);
-						if (!result.error) {
-							// alert(result.message);
-							console.log(result.error);
-							alert("We are sending you the email verification. Please check it before login to your account.");
-							window.location.replace('/login');
-							console.log(("#signup").serialize);
-						} else {
-							console.log(result.error);
-							alert(result.message);
-							console.log(("#signup").serialize);
-						}
-					}
-				});
-				// } else {
-				// 	return false;
-				// }
-				// } else {
-				// 	$.ajax({
-				// 		type: "post",
-				// 		url: "/signup",
-				// 		dataType: 'json',
-				// 		data: $("#signup").serialize() + "&" + answer1 + "&" + answer2,
-				// 		success: function (result) {
-				// 			console.log(result);
-				// 			if (!result.error) {
-				// alert(result.message);
-				// alert("We are sending you the email verification. Please check it before login to your account.");
-				// window.location.replace('/login');
-				// 			console.log(("#signup").serialize);
-				// 		} else {
-				// 			alert(result.message);
-				// 		}
-				// 	}
-				// });
-				// }
-			// });
-		}
-	}
-
 	function isInputNumber (evt) {
-		var char = String.fromCharCode(evt.which);
+		let char = String.fromCharCode(evt.which);
 
 		if(!(/[0-9]/.test(char))) {
 			evt.preventDefault();
@@ -478,10 +378,10 @@
 	}
 
 	grecaptcha.ready(function() {
-		grecaptcha.execute('6Ld7fq8UAAAAAOv8ZEiVj6P972pR_Vf3ko5R0JB_', {action: '/signup'}.then(function (token) {
+		grecaptcha.execute('6Ld7fq8UAAAAAOv8ZEiVj6P972pR_Vf3ko5R0JB_', function (token) {
 			console.log(token);
 			document.getElementById("token").value = token;
-		}));
+		});
 	});
 
 	function onFunction() {
