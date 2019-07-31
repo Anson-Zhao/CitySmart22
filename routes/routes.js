@@ -988,7 +988,7 @@ module.exports = function (app, passport) {
         res.render('userProfile.ejs', {
             user: req.user,
         });
-        console.log(req.user);
+        // console.log(req.user);
     });
 
     app.post('/userProfile', isLoggedIn, function (req, res) {
