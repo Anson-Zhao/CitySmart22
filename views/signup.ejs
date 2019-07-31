@@ -198,98 +198,98 @@
 		Or go back to <a href="/login">Log In</a></p>
 </div>
 <script>
-	let username = document.getElementById("username");
-	let firstname = document.getElementById("firstname");
-	let lastname = document.getElementById("lastname");
-	let password = document.getElementById("password");
-	let capsWarning = document.getElementById("capsWarning");
-	let answer1 = document.getElementById("answer1");
-	let answer2 = document.getElementById("answer2");
+    let username = document.getElementById("username");
+    let firstname = document.getElementById("firstname");
+    let lastname = document.getElementById("lastname");
+    let password = document.getElementById("password");
+    let capsWarning = document.getElementById("capsWarning");
+    let answer1 = document.getElementById("answer1");
+    let answer2 = document.getElementById("answer2");
 	let PhoneNumber = document.getElementById("PhoneNumber");
 
-	username.addEventListener("keydown", function(e) {
+    username.addEventListener("keydown", function(e) {
 
-		if (e.getModifierState("CapsLock")) {
-			capsWarning.hidden = false;
-		} else {}
-	});
-	username.addEventListener("keyup", function(e) {
+        if (e.getModifierState("CapsLock")) {
+            capsWarning.hidden = false;
+        } else {}
+    });
+    username.addEventListener("keyup", function(e) {
 
-		if (e.getModifierState("CapsLock")) {}
-		else {
-			capsWarning.hidden = true;
-		}
-	});
+        if (e.getModifierState("CapsLock")) {}
+        else {
+            capsWarning.hidden = true;
+        }
+    });
 
-	firstname.addEventListener("keydown", function(e) {
+    firstname.addEventListener("keydown", function(e) {
 
-		if (e.getModifierState("CapsLock")) {
-			capsWarning.hidden = false;
-		} else {}
-	});
-	firstname.addEventListener("keyup", function(e) {
+        if (e.getModifierState("CapsLock")) {
+            capsWarning.hidden = false;
+        } else {}
+    });
+    firstname.addEventListener("keyup", function(e) {
 
-		if (e.getModifierState("CapsLock")) {}
-		else {
-			capsWarning.hidden = true;
-		}
-	});
+        if (e.getModifierState("CapsLock")) {}
+        else {
+            capsWarning.hidden = true;
+        }
+    });
 
-	lastname.addEventListener("keydown", function(e) {
+    lastname.addEventListener("keydown", function(e) {
 
-		if (e.getModifierState("CapsLock")) {
-			capsWarning.hidden = false;
-		} else {}
-	});
-	lastname.addEventListener("keyup", function(e) {
+        if (e.getModifierState("CapsLock")) {
+            capsWarning.hidden = false;
+        } else {}
+    });
+    lastname.addEventListener("keyup", function(e) {
 
-		if (e.getModifierState("CapsLock")) {}
-		else {
-			capsWarning.hidden = true;
-		}
-	});
+        if (e.getModifierState("CapsLock")) {}
+        else {
+            capsWarning.hidden = true;
+        }
+    });
 
-	password.addEventListener("keydown", function(e) {
+    password.addEventListener("keydown", function(e) {
 
-		if (e.getModifierState("CapsLock")) {
-			capsWarning.hidden = false;
-		} else {}
-	});
-	password.addEventListener("keyup", function(e) {
+        if (e.getModifierState("CapsLock")) {
+            capsWarning.hidden = false;
+        } else {}
+    });
+    password.addEventListener("keyup", function(e) {
 
-		if (e.getModifierState("CapsLock")) {}
-		else {
-			capsWarning.hidden = true;
-		}
-	});
+        if (e.getModifierState("CapsLock")) {}
+        else {
+            capsWarning.hidden = true;
+        }
+    });
 
-	$(".toggle-password").click(function() {
-		$(this).toggleClass("fa-eye-slash fa-eye");
+    $(".toggle-password").click(function() {
+        $(this).toggleClass("fa-eye-slash fa-eye");
 		let input = $($(this).attr("toggle"));
 		if (input.attr("type") === "password") {
-			input.attr("type", "text");
-		} else {
-			input.attr("type", "password");
-		}
-	});
+            input.attr("type", "text");
+        } else {
+            input.attr("type", "password");
+        }
+    });
 
-	$(document).ready(function() {
-		$(function() {
-			flatpickr(".date", {
-				enableTime: true,
-				dateFormat: "Y-m-d H:i:S",
-				time_24hr: true
-			});
-			// console.log($('#signup'));
-			// console.log($("#signup").serialize());
+    $(document).ready(function() {
+        $(function() {
+            flatpickr(".date", {
+                enableTime: true,
+                dateFormat: "Y-m-d H:i:S",
+                time_24hr: true
+            });
+            // console.log($('#signup'));
+            // console.log($("#signup").serialize());
 
 
-		});
-		let today = new Date();
-		let date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
-		let time2 = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-		let dateTime = date + ' ' + time2;
-		document.getElementById("DATE").value = dateTime;
+        });
+        let today = new Date();
+        let date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+        let time2 = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+        let dateTime = date + ' ' + time2;
+        document.getElementById("DATE").value = dateTime;
 
 
 		$('#signup').submit(function(e) {
@@ -325,35 +325,35 @@
 				return false;
 			}
 		});
-	});
+    });
 
-	$('select[name=question1]').on('change', function() {
+    $('select[name=question1]').on('change', function() {
 		let self = this;
-		$('select[name=question2]').find('option').prop('disabled', function() {
-			return this.value === self.value
-		});
-	});
+        $('select[name=question2]').find('option').prop('disabled', function() {
+            return this.value === self.value
+        });
+    });
 
-	$('select[name=question2]').on('change', function() {
+    $('select[name=question2]').on('change', function() {
 		let self = this;
-		$('select[name=question1]').find('option').prop('disabled', function() {
-			return this.value === self.value
-		});
-	});
+        $('select[name=question1]').find('option').prop('disabled', function() {
+            return this.value === self.value
+        });
+    });
 
-	function SearchUsername(value) {
-		$.ajax({
-			url: "SearchUsername",
-			method: 'GET',
-			dataType: "json",
-			success: function (results) {
-				for (let i = 0; i < results.length; i++) {
-					// let newRes = JSON.stringify(results);
-					console.log(value);
-					console.log(results[i].username);
-					if (value === results[i].username) {
+    function SearchUsername(value) {
+        $.ajax({
+            url: "SearchUsername",
+            method: 'GET',
+            dataType: "json",
+            success: function (results) {
+                for (let i = 0; i < results.length; i++) {
+                    // let newRes = JSON.stringify(results);
+                    console.log(value);
+                    console.log(results[i].username);
+                    if (value === results[i].username) {
 						alert("This username is already taken. Please use a different one.");
-						document.getElementById("emailUser").innerHTML = "This username is already taken. Please use a different one.";
+                        document.getElementById("emailUser").innerHTML = "This username is already taken. Please use a different one.";
 						document.getElementById("submitButton").disabled = true;
 						document.getElementById("submitButton").classList.remove("button1");
 						document.getElementById("submitButton").classList.add("button2");
@@ -363,19 +363,19 @@
 						document.getElementById("submitButton").disabled = false;
 						document.getElementById("submitButton").classList.add("button1");
 						document.getElementById("submitButton").classList.remove("button2");
-					}
-				}
-			}
-		})
-	}
+                    }
+                }
+            }
+        })
+    }
 
-	function isInputNumber (evt) {
+    function isInputNumber (evt) {
 		let char = String.fromCharCode(evt.which);
 
-		if(!(/[0-9]/.test(char))) {
-			evt.preventDefault();
-		}
-	}
+        if(!(/[0-9]/.test(char))) {
+            evt.preventDefault();
+        }
+    }
 
 	grecaptcha.ready(function() {
 		grecaptcha.execute('6Ld7fq8UAAAAAOv8ZEiVj6P972pR_Vf3ko5R0JB_', {action: '/signup'}.then(function (token) {

@@ -16,6 +16,7 @@
     <script src="../3rdPartyLibs/jquery.form.min.js"></script>
     <script src="../3rdPartyLibs/jquery-validation-1.17.0/dist/jquery.validate.js"></script>
     <script src="../scripts/LayerNameSearch.js"></script>
+<!--    <script src="../3rdPartyLibs/fine-uploader/fine-uploader.min.js"></script>-->
     <script src="https://www.google.com/recaptcha/api.js?render=6Ld7fq8UAAAAAOv8ZEiVj6P972pR_Vf3ko5R0JB_"></script>
     <?php include 'reCaptcha.php';?>
 <!--    <script src="../3rdPartyLibs/fine-uploader/fine-uploader.min.js"></script>-->
@@ -529,7 +530,7 @@
             // document.getElementsByClassName('qq-upload-button')[0].disabled = true;
             // document.getElementById('upload-button').disabled = true;
             document.getElementById("approve").disabled = false;
-            document.getElementById("uploader").hidden = true;
+            // document.getElementById("uploader").hidden = true;
             document.getElementById('LayerFormat').value = rowSelectedValue[14];
             // $('#upload-button').prop('disabled',true);
         } else if (UserRole === "Regular") {
@@ -655,7 +656,7 @@
                             };
                             list.push(first);
                         }
-                        uploader.addInitialFiles(list);
+                        // uploader.addInitialFiles(list);
                     } else {
                         console.log("didn't work :(");
                     }

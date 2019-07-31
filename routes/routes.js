@@ -965,7 +965,8 @@ module.exports = function (app, passport) {
     // Show user profile page
     app.get('/profile', function (req, res) {
         res.setHeader("Access-Control-Allow-Origin", "*");
-        con_CS.query("SELECT * FROM UserProfile", function (err, results) {
+        let userN = req.query.userN;
+        con_CS.query("SELECT * FROM UserProfile WHERE username = '" + userN + "'; SELECT question1, answer1, question2, answer2 FROM UserLogin WHERE username = '" + userN + "';", function (err, results) {
             if (err) throw err;
             res.json(results);
         })
