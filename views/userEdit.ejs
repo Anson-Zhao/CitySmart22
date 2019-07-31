@@ -418,21 +418,21 @@
          }));
      });
 
-     function verifyemail(){
-         for (let i =0; i< newusername.length; i++){
-             console.log(document.getElementById("username").value);
-             console.log(newusername[i].username);
-             if(document.getElementById("username").value === newusername[i].username && document.getElementById("username").value !== UserName){
-                 document.getElementById("emailc").innerHTML = "This user name does exist!";
-                 break;
-             } else if(document.getElementById("username").value === UserName) {
-                 document.getElementById("emailc").innerHTML = "";
-             }  else{
-                 document.getElementById("emailc").innerHTML = "The user name will not change until you verify the new username in your email.";
-             }
-         }
-         // document.getElementById("emailc").innerHTML = "The User Name will not change until you verify the new username in your email.";
-     }
+     // function verifyemail(){
+     //     for (let i =0; i< newusername.length; i++){
+     //         console.log(document.getElementById("username").value);
+     //         console.log(newusername[i].username);
+     //         if(document.getElementById("username").value === newusername[i].username && document.getElementById("username").value !== UserName){
+     //             document.getElementById("emailc").innerHTML = "This user name does exist!";
+     //             break;
+     //         } else if(document.getElementById("username").value === UserName) {
+     //             document.getElementById("emailc").innerHTML = "";
+     //         }  else{
+     //             document.getElementById("emailc").innerHTML = "The user name will not change until you verify the new username in your email.";
+     //         }
+     //     }
+     //     // document.getElementById("emailc").innerHTML = "The User Name will not change until you verify the new username in your email.";
+     // }
 
      function SearchUsername(value) {
          $.ajax({
@@ -459,7 +459,20 @@
                      }
                  }
              }
-         })
+         });
+
+         for (let i =0; i< newusername.length; i++){
+             console.log(document.getElementById("username").value);
+             console.log(newusername[i].username);
+             if(document.getElementById("username").value === newusername[i].username && document.getElementById("username").value !== UserName){
+                 document.getElementById("emailc").innerHTML = "This user name does exist!";
+                 break;
+             } else if(document.getElementById("username").value === UserName) {
+                 document.getElementById("emailc").innerHTML = "";
+             }  else{
+                 document.getElementById("emailc").innerHTML = "The user name will not change until you verify the new username in your email.";
+             }
+         }
      }
 
      function onFunction() {

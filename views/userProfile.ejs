@@ -49,6 +49,17 @@
             background-color: #ff758f;
             color:white;
         }
+        .button2 {
+            width: 500px;
+            height: 50px;
+            border-radius: 15px;
+            -webkit-transition-duration: 0.4s;
+            transition-duration: 0.4s;
+            cursor: pointer;
+            background-color: lightgray;
+            color: #ffffff;
+        }
+
         #checkit{
             width: 250px;
             height: 50px;
@@ -92,9 +103,11 @@
                         <label class="col-md-4 control-label">User Name(Email):</label>
                         <div class="col-md-8 inputGroupContainer">
                             <div class="input-group">
-                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span><input id="username" name="username" class="form-control" value="<%= user.username %>" placeholder="<%= user.username %>" type="text" onchange="verifyemail()" minlength="2" maxlength="99" >
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span><input id="username" name="username" class="form-control" value="<%= user.username %>" placeholder="<%= user.username %>" type="text" onchange="SearchUsername(this.value)" minlength="2" maxlength="99" >
                             </div>
                             <p style="margin-top:8px;color:#0088d8;" id="emailc"></p>
+                            <br>
+                            <p id="emailUser" style="text-align: center; color: palevioletred; margin-top:15px;"></p>
                         </div>
                     </div>
                     <div class="form-group">
@@ -544,7 +557,49 @@
         }
     }
 
-    function verifyemail(){
+    // function verifyemail(){
+    //     for (let i =0; i< newusername.length; i++){
+    //         console.log(document.getElementById("username").value);
+    //         console.log(newusername[i].username);
+    //         if(document.getElementById("username").value === newusername[i].username && document.getElementById("username").value !== UserName){
+    //             document.getElementById("emailc").innerHTML = "This user name already exist!";
+    //             break;
+    //         } else if(document.getElementById("username").value === UserName) {
+    //             document.getElementById("emailc").innerHTML = "";
+    //         }  else{
+    //             document.getElementById("emailc").innerHTML = "The user name will not change until you verify the new username in your email.";
+    //         }
+    //     }
+    //     // document.getElementById("emailc").innerHTML = "The User Name will not change until you verify the new username in your email.";
+    // }
+
+    function SearchUsername(value) {
+        $.ajax({
+            url: "SearchUsername",
+            method: 'GET',
+            dataType: "json",
+            success: function (results) {
+                for (let i = 0; i < results.length; i++) {
+                    // let newRes = JSON.stringify(results);
+                    console.log(value);
+                    console.log(results[i].username);
+                    if (value === results[i].username && value !== LoginUser) {
+                        alert("This username is already taken. Please use a different one.");
+                        document.getElementById("emailUser").innerHTML = "This username is already taken. Please use a different one.";
+                        document.getElementById("submit").disabled = true;
+                        document.getElementById("submit").classList.remove("button1");
+                        document.getElementById("submit").classList.add("button2");
+                        break;
+                    } else {
+                        document.getElementById("emailUser").innerHTML = "";
+                        document.getElementById("submit").disabled = false;
+                        document.getElementById("submit").classList.add("button1");
+                        document.getElementById("submit").classList.remove("button2");
+                    }
+                }
+            }
+        });
+
         for (let i =0; i< newusername.length; i++){
             console.log(document.getElementById("username").value);
             console.log(newusername[i].username);
@@ -557,7 +612,6 @@
                 document.getElementById("emailc").innerHTML = "The user name will not change until you verify the new username in your email.";
             }
         }
-        // document.getElementById("emailc").innerHTML = "The User Name will not change until you verify the new username in your email.";
     }
 
     function isInputNumber (evt) {
