@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="3c115c91-9fd2-4ea9-af92-40dbd2eef16b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/homepage.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/homepage.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/reCaptcha.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/reCaptcha.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/signup.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/signup.ejs" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -49,48 +51,44 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/routes.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="448">
-              <caret line="1163" column="39" lean-forward="true" selection-start-line="1163" selection-start-column="39" selection-end-line="1163" selection-end-column="39" />
+            <state relative-caret-position="17445">
+              <caret line="1163" column="39" selection-start-line="1163" selection-start-column="39" selection-end-line="1163" selection-end-column="39" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/signup.ejs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="14" column="36" lean-forward="true" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/login.ejs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="163" column="33" lean-forward="true" selection-start-line="163" selection-start-column="33" selection-end-line="163" selection-end-column="33" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/views/signup.ejs">
+        <entry file="file://$PROJECT_DIR$/views/homepage.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="371" column="34" lean-forward="true" selection-start-line="371" selection-start-column="34" selection-end-line="371" selection-end-column="34" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#a#0;n#div#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#img#0;n#a#0;n#div#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#h1#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#0;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#div#1;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#div#2;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#div#3;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#div#3;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="e#4019#4025#0#HTML" expanded="true" />
-                <element signature="e#4025#4031#0#HTML" expanded="true" />
-                <element signature="e#4031#4037#0#HTML" expanded="true" />
-                <element signature="e#4047#4053#0#HTML" expanded="true" />
-                <element signature="e#4053#4059#0#HTML" expanded="true" />
-                <element signature="e#4059#4065#0#HTML" expanded="true" />
-                <element signature="e#4065#4071#0#HTML" expanded="true" />
-                <element signature="e#4163#4169#0#HTML" expanded="true" />
-                <element signature="e#4169#4175#0#HTML" expanded="true" />
-                <element signature="e#4175#4181#0#HTML" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#div#5;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#select#0;n#div#6;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#div#6;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#select#1;n#div#6;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#1;n#div#6;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#10;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#p#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="360">
+              <caret line="24" column="36" lean-forward="true" selection-start-line="24" selection-start-column="36" selection-end-line="24" selection-end-column="36" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/reCaptcha.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" selection-start-line="2" selection-end-line="2" />
             </state>
           </provider>
         </entry>
@@ -228,7 +226,6 @@
         <option value="$PROJECT_DIR$/views/success.ejs" />
         <option value="&lt;6f32712d-a060-4679-8019-b4cec0c93bb5&gt;/3rdPartyLibs/fine-uploader/fine-uploader-new.css" />
         <option value="$PROJECT_DIR$/views/LayerRequestForm_edit.ejs" />
-        <option value="$PROJECT_DIR$/views/reCaptcha.php" />
         <option value="$PROJECT_DIR$/views/LayerRequestForm.ejs" />
         <option value="$PROJECT_DIR$/config/serverConfig.js" />
         <option value="$PROJECT_DIR$/views/forgotPassword.ejs" />
@@ -236,12 +233,13 @@
         <option value="$PROJECT_DIR$/views/userEdit.ejs" />
         <option value="$PROJECT_DIR$/views/userProfile.ejs" />
         <option value="$PROJECT_DIR$/views/userManagement.ejs" />
-        <option value="$PROJECT_DIR$/views/homepage.ejs" />
         <option value="$PROJECT_DIR$/views/EmailAuth.ejs" />
         <option value="$PROJECT_DIR$/views/PhoneAuthP2.ejs" />
         <option value="$PROJECT_DIR$/views/adduser.ejs" />
         <option value="$PROJECT_DIR$/routes/routes.js" />
         <option value="$PROJECT_DIR$/views/signup.ejs" />
+        <option value="$PROJECT_DIR$/views/reCaptcha.php" />
+        <option value="$PROJECT_DIR$/views/homepage.ejs" />
       </list>
     </option>
   </component>
@@ -392,14 +390,8 @@
       <workItem from="1564080665755" duration="9865000" />
       <workItem from="1564155048985" duration="25000" />
       <workItem from="1564155868635" duration="22289000" />
-      <workItem from="1564492099266" duration="11496000" />
-    </task>
-    <task id="LOCAL-00136" summary="Merge branch 'julia2' of https://github.com/Anson-Zhao/CitySmart22 into Carrots&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
-      <created>1563980117572</created>
-      <option name="number" value="00136" />
-      <option name="presentableId" value="LOCAL-00136" />
-      <option name="project" value="LOCAL" />
-      <updated>1563980117573</updated>
+      <workItem from="1564492099266" duration="12013000" />
+      <workItem from="1564578099849" duration="1287000" />
     </task>
     <task id="LOCAL-00137" summary="Merge branch 'julia2' of https://github.com/Anson-Zhao/CitySmart22 into Carrots&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
       <created>1563980280803</created>
@@ -737,38 +729,54 @@
       <option name="project" value="LOCAL" />
       <updated>1564514986944</updated>
     </task>
-    <option name="localTasksCounter" value="185" />
+    <task id="LOCAL-00185" summary="Merge branch 'julia2' of https://github.com/Anson-Zhao/CitySmart22 into Cucumbers&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;config/ows.xml&#10;#&#9;views/signup.ejs">
+      <created>1564516376723</created>
+      <option name="number" value="00185" />
+      <option name="presentableId" value="LOCAL-00185" />
+      <option name="project" value="LOCAL" />
+      <updated>1564516376723</updated>
+    </task>
+    <option name="localTasksCounter" value="186" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="358820000" />
+    <option name="totallyTimeSpent" value="360624000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="593" y="23" width="1919" height="1302" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17794353" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49896264" visible="true" weight="0.17954183" />
+      <window_info id="Structure" order="1" sideWeight="0.50103736" side_tool="true" weight="0.17954183" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.4970698" weight="0.32975206" />
       <window_info anchor="bottom" id="Debug" order="2" weight="0.3988245" />
       <window_info anchor="bottom" id="Cvs" order="3" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
-      <window_info anchor="bottom" id="Run" order="5" sideWeight="0.4906766" visible="true" weight="0.27933884" />
+      <window_info active="true" anchor="bottom" id="Run" order="5" sideWeight="0.4906766" visible="true" weight="0.27933884" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49866807" weight="0.20330578" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49440596" weight="0.32975206" />
       <window_info anchor="bottom" id="Terminal" order="10" weight="0.32975206" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5093234" side_tool="true" weight="0.36363637" />
-      <window_info anchor="bottom" id="File Transfer" order="12" sideWeight="0.49440596" weight="0.32975206" />
+      <window_info anchor="bottom" id="File Transfer" order="12" sideWeight="0.49440596" visible="true" weight="0.32975206" />
       <window_info anchor="bottom" id="Database Console" order="13" weight="0.3299748" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Database" order="3" weight="0.28175896" />
-      <window_info active="true" anchor="right" id="Remote Host" order="4" visible="true" weight="0.13745338" />
+      <window_info anchor="right" id="Remote Host" order="4" visible="true" weight="0.13745338" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -972,24 +980,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/reCaptcha.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/EmailAuth.ejs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-186">
           <caret line="63" column="123" selection-start-line="63" selection-start-column="123" selection-end-line="63" selection-end-column="123" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/PhoneAuthP2.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1060">
-          <caret line="151" column="41" selection-start-line="151" selection-start-column="41" selection-end-line="151" selection-end-column="41" />
         </state>
       </provider>
     </entry>
@@ -1018,13 +1012,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-456">
           <caret line="174" column="39" lean-forward="true" selection-start-line="174" selection-start-column="39" selection-end-line="174" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/homepage.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="327" column="19" selection-start-line="327" selection-start-column="19" selection-end-line="327" selection-end-column="19" />
         </state>
       </provider>
     </entry>
@@ -1142,13 +1129,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/login.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="792">
-          <caret line="133" lean-forward="true" selection-start-line="133" selection-end-line="133" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/Home.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
@@ -1161,46 +1141,43 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/routes.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="448">
-          <caret line="1163" column="39" lean-forward="true" selection-start-line="1163" selection-start-column="39" selection-end-line="1163" selection-end-column="39" />
+        <state relative-caret-position="17445">
+          <caret line="1163" column="39" selection-start-line="1163" selection-start-column="39" selection-end-line="1163" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/PhoneAuthP2.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1060">
+          <caret line="151" column="41" selection-start-line="151" selection-start-column="41" selection-end-line="151" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/reCaptcha.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/signup.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="371" column="34" lean-forward="true" selection-start-line="371" selection-start-column="34" selection-end-line="371" selection-end-column="34" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#div#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#a#0;n#div#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h1#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#div#1;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#div#2;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#div#3;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#div#3;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="e#4019#4025#0#HTML" expanded="true" />
-            <element signature="e#4025#4031#0#HTML" expanded="true" />
-            <element signature="e#4031#4037#0#HTML" expanded="true" />
-            <element signature="e#4047#4053#0#HTML" expanded="true" />
-            <element signature="e#4053#4059#0#HTML" expanded="true" />
-            <element signature="e#4059#4065#0#HTML" expanded="true" />
-            <element signature="e#4065#4071#0#HTML" expanded="true" />
-            <element signature="e#4163#4169#0#HTML" expanded="true" />
-            <element signature="e#4169#4175#0#HTML" expanded="true" />
-            <element signature="e#4175#4181#0#HTML" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#div#5;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#select#0;n#div#6;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#div#6;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#select#1;n#div#6;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#1;n#div#6;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#10;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="210">
+          <caret line="14" column="36" lean-forward="true" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/login.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="163" column="33" lean-forward="true" selection-start-line="163" selection-start-column="33" selection-end-line="163" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/homepage.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="36" lean-forward="true" selection-start-line="24" selection-start-column="36" selection-end-line="24" selection-end-column="36" />
         </state>
       </provider>
     </entry>
