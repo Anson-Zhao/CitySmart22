@@ -12,6 +12,7 @@
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 
     <script src="../3rdPartyLibs/jquery-3.3.1.min.js"></script>
+    <script src="../3rdPartyLibs/jquery-validation-1.17.0/dist/jquery.validate.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/file-uploader/5.16.2/all.fine-uploader/all.fine-uploader.min.js"></script>
     <script src="../3rdPartyLibs/jquery.multi-select.js"></script>
     <script src="../3rdPartyLibs/jquery-validation-1.17.0/dist/jquery.validate.js"></script>
@@ -450,6 +451,15 @@
     password.click(function(){
         change[this.checked ? "removeClass" : "addClass"]("gray");
         changeInputs.attr("disabled", !this.checked);
+    });
+
+    $('#pswchange').validate({
+        'newPassword': {
+            presence: true,
+            length: {
+                minimum: 8
+            }
+        }
     });
 
     function changePass(){
