@@ -15,6 +15,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/file-uploader/5.16.2/all.fine-uploader/all.fine-uploader.min.js"></script>
     <script src="../3rdPartyLibs/jquery.multi-select.js"></script>
     <script src="../3rdPartyLibs/jquery-validation-1.17.0/dist/jquery.validate.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js?render=6Ld7fq8UAAAAAOv8ZEiVj6P972pR_Vf3ko5R0JB_"></script>
+    <?php include 'reCaptcha.php';?>
     <style>
         body { padding-bottom:80px; word-wrap:break-word; }
         #clear{
@@ -190,6 +192,7 @@
                         </div>
                     </div>
                 </fieldset>
+                <input type="hidden" id="token" name="token">
             </form>
         </div>
         <p style="font-size:15px">
@@ -223,6 +226,7 @@
                         </div>
                     </div>
             </fieldset>
+                <input type="hidden" id="token" name="token">
             </form>
 <!--            <button id="checkit" class="btn-primary" style="display:none; margin-top:-85px; margin-left:550px;" onclick="check()">Check</button>-->
         </div>
@@ -484,6 +488,20 @@
             evt.preventDefault();
         }
     }
+
+    grecaptcha.ready(function() {
+        grecaptcha.execute('6Ld7fq8UAAAAAOv8ZEiVj6P972pR_Vf3ko5R0JB_', {action: '/userProfile'}.then(function (token) {
+            console.log(token);
+            document.getElementById("token").value = token;
+        }));
+    });
+
+    grecaptcha.ready(function() {
+        grecaptcha.execute('6Ld7fq8UAAAAAOv8ZEiVj6P972pR_Vf3ko5R0JB_', {action: '/checkpassword'}.then(function (token) {
+            console.log(token);
+            document.getElementById("token").value = token;
+        }));
+    });
 
     function onFunction() {
         alert ("You are now online.");

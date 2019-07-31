@@ -12,6 +12,8 @@
     <!--<link rel="stylesheet" href="//unpkg.com/flatpickr/dist/flatpickr.min.css">-->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://www.google.com/recaptcha/api.js?render=6Ld7fq8UAAAAAOv8ZEiVj6P972pR_Vf3ko5R0JB_"></script>
+    <?php include 'reCaptcha.php';?>
     <!--<script src="//unpkg.com/flatpickr"></script>-->
     <style>
         .banner {
@@ -65,16 +67,19 @@
         <div class="form-group">
             <button type="submit" class="button" id="kBA">Knowledge-Based Authentication</button>
         </div>
+        <input type="hidden" id="token" name="token">
     </form>
     <form onsubmit="return checkForm()" action="/pauth" method="post" id="Pauth">
         <div class="form-group">
             <button type="submit" class="button" id="pA">Phone Authentication</button>
         </div>
+        <input type="hidden" id="token" name="token">
     </form>
     <form onsubmit="return checkForm()" action="/eauth" method="post" id="Eauth">
         <div class="form-group">
             <button type="submit" class="button" id="eA">Email Authentication</button>
         </div>
+        <input type="hidden" id="token" name="token">
     </form>
     <hr style="margin-bottom: 10px;">
     <p style="text-align: center;"> <a href="/">Cancel</a></p>
@@ -99,6 +104,27 @@
 
     });
 
+    grecaptcha.ready(function() {
+        grecaptcha.execute('6Ld7fq8UAAAAAOv8ZEiVj6P972pR_Vf3ko5R0JB_', {action: '/kauth'}.then(function (token) {
+            console.log(token);
+            document.getElementById("token").value = token;
+        }));
+    });
+
+    grecaptcha.ready(function() {
+        grecaptcha.execute('6Ld7fq8UAAAAAOv8ZEiVj6P972pR_Vf3ko5R0JB_', {action: '/pauth'}.then(function (token) {
+            console.log(token);
+            document.getElementById("token").value = token;
+        }));
+    });
+
+    grecaptcha.ready(function() {
+        grecaptcha.execute('6Ld7fq8UAAAAAOv8ZEiVj6P972pR_Vf3ko5R0JB_', {action: '/eauth'}.then(function (token) {
+            console.log(token);
+            document.getElementById("token").value = token;
+        }));
+    });
+
     function onFunction() {
         alert("You are now online.");
     }
@@ -106,6 +132,7 @@
     function offFunction() {
         alert("Your are offline. Some functionality may be unavailable.");
     }
+
 </script>
 </body>
 </html>
