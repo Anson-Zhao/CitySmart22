@@ -64,9 +64,6 @@
         input[type="password"] {
             height: 60px;
         }
-        select {
-            height: 60px;
-        }
         #capsWarning {
             color: red;
             text-align: center;
@@ -165,7 +162,7 @@
                     <div class="form-group">
                         <label class="col-md-4 control-label">Security Question #1:</label>
                         <div class="col-md-8 inputGroupContainer">
-                            <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+                            <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
                                 <select id="q1" name="question1" class="form-control" style="height: 60px;" required>
                                     <option value="" disabled selected>SELECT SECURITY QUESTION</option>
                                     <option value="In what city or town did your mother and father meet?">In what city or town did your mother and father meet?</option>
@@ -190,37 +187,51 @@
                                 </select>
                             </div>
                         </div>
-                        <br>
-                        <label>Answer:</label>
-                        <input type="text" class="form-control" id="answer1" minlength="1" maxlength="200" required>
-                        <br>
-                        <label>Security Question #2:</label>
-                        <br>
-                        <select id="q2" name="question2" class="form-control" style="height: 60px;" required>
-                            <option value="" disabled selected>SELECT SECURITY QUESTION</option>
-                            <option value="In what city or town did your mother and father meet?">In what city or town did your mother and father meet?</option>
-                            <option value="What is the middle name of your oldest child?">What is the middle name of your oldest child?</option>
-                            <option value="What was your favorite food as a child?">What was your favorite food as a child?</option>
-                            <option value="What is the last name of the boy or girl that you first kissed?">What is the last name of the boy or girl that you first kissed?</option>
-                            <option value="What was the name of the hospital where you were born?">What was the name of the hospital where you were born?</option>
-                            <option value="Who was your childhood hero?">Who was your childhood hero?</option>
-                            <option value="What was the last name of your third grade teacher?">What was the last name of your third grade teacher?</option>
-                            <option value="What was the name of your first pet?">What was the name of your first pet?</option>
-                            <option value="What\’s your parent\’s birthday?">What’s your parent’s birthday?</option>
-                            <option value="What was the name of your second pet?">What was the name of your second pet?</option>
-                            <option value="Where were you on New Year\’s Eve in 2000?">Where were you on New Year’s Eve in 2000?</option>
-                            <option value="What was your favorite sport in high school?">What was your favorite sport in high school?</option>
-                            <option value="What is the name of your best friend from childhood?">What is the name of your best friend from childhood?</option>
-                            <option value="When you were young, what did you want to be when you grew up?">When you were young, what did you want to be when you grew up?</option>
-                            <option value="What was the name of your first teacher?">What was the name of your first teacher?</option>
-                            <option value="What is the name of your manager at your first job?">What is the name of your manager at your first job?</option>
-                            <option value="What is your youngest sibling’s birthday?">What is your youngest sibling’s birthday?</option>
-                            <option value="What was your first job?">What was your first job?</option>
-                            <option value="What was the make of your first car?">What was the make of your first car?</option>
-                        </select>
-                        <br>
-                        <label>Answer:</label>
-                        <input type="text" class="form-control" id="answer2" minlength="1" maxlength="200" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">Answer:</label>
+                        <div class="col-md-8 inputGroupContainer">
+                            <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                <input type="text" class="form-control" name="answer1" id="answer1" minlength="1" maxlength="200" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">Security Question #2:</label>
+                        <div class="col-md-8 inputGroupContainer">
+                            <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                <select id="q2" name="question2" class="form-control" style="height: 60px;" required>
+                                    <option value="" disabled selected>SELECT SECURITY QUESTION</option>
+                                    <option value="In what city or town did your mother and father meet?">In what city or town did your mother and father meet?</option>
+                                    <option value="What is the middle name of your oldest child?">What is the middle name of your oldest child?</option>
+                                    <option value="What was your favorite food as a child?">What was your favorite food as a child?</option>
+                                    <option value="What is the last name of the boy or girl that you first kissed?">What is the last name of the boy or girl that you first kissed?</option>
+                                    <option value="What was the name of the hospital where you were born?">What was the name of the hospital where you were born?</option>
+                                    <option value="Who was your childhood hero?">Who was your childhood hero?</option>
+                                    <option value="What was the last name of your third grade teacher?">What was the last name of your third grade teacher?</option>
+                                    <option value="What was the name of your first pet?">What was the name of your first pet?</option>
+                                    <option value="What\’s your parent\’s birthday?">What’s your parent’s birthday?</option>
+                                    <option value="What was the name of your second pet?">What was the name of your second pet?</option>
+                                    <option value="Where were you on New Year\’s Eve in 2000?">Where were you on New Year’s Eve in 2000?</option>
+                                    <option value="What was your favorite sport in high school?">What was your favorite sport in high school?</option>
+                                    <option value="What is the name of your best friend from childhood?">What is the name of your best friend from childhood?</option>
+                                    <option value="When you were young, what did you want to be when you grew up?">When you were young, what did you want to be when you grew up?</option>
+                                    <option value="What was the name of your first teacher?">What was the name of your first teacher?</option>
+                                    <option value="What is the name of your manager at your first job?">What is the name of your manager at your first job?</option>
+                                    <option value="What is your youngest sibling’s birthday?">What is your youngest sibling’s birthday?</option>
+                                    <option value="What was your first job?">What was your first job?</option>
+                                    <option value="What was the make of your first car?">What was the make of your first car?</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">Answer:</label>
+                        <div class="col-md-8 inputGroupContainer">
+                            <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                <input type="text" class="form-control" id="answer2" name="answer2" minlength="1" maxlength="200" required>
+                            </div>
+                        </div>
                     </div>
                     <div class="form-group">
                         <label class="col-md-4 control-label">User Role:</label>
@@ -255,7 +266,7 @@
                         </div>
                     </div>
                 </fieldset>
-                <input type="hidden" id="token" name="token">
+                <input type="hidden" id="token">
             </form>
         </div>
         <p style="font-size:15px">
@@ -278,18 +289,18 @@
                         <label class="col-md-4 control-label">New Password:</label>
                         <div class="col-md-8 inputGroupContainer">
                             <span toggle="#newPassword" class="fa fa-fw fa-eye-slash field-icon toggle-password" style="float: right; margin-top: 20px"></span>
-                            <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span><input id="newPassword" name="NewPassword" class="form-control" value="" type="password" minlength="8" maxlength="20" ></div>
+                            <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span><input id="newPassword" name="NewPassword" class="form-control" value="" type="password" minlength="8"></div>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-md-4 control-label">Confirm New Password:</label>
                         <div class="col-md-8 inputGroupContainer">
                             <span toggle="#confirmPassword" class="fa fa-fw fa-eye-slash field-icon toggle-password" style="float: right; margin-top: 20px"></span>
-                            <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span><input id="confirmPassword" name="ConfirmNewPassword" class="form-control" value="" type="password" minlength="8" maxlength="20" ></div>
+                            <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span><input id="confirmPassword" name="ConfirmNewPassword" class="form-control" value="" type="password" minlength="8"></div>
                         </div>
                     </div>
             </fieldset>
-                <input type="hidden" id="token" name="token">
+                <input type="hidden" id="token">
             </form>
 <!--            <button id="checkit" class="btn-primary" style="display:none; margin-top:-85px; margin-left:550px;" onclick="check()">Check</button>-->
         </div>
