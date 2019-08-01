@@ -111,6 +111,11 @@
 			<input type="password" id="password" class="form-control" name="password" style="width: 95%; height: 50px;  display: inline-block" minlength="8" maxlength="99" required>
 			<span toggle="#password" class="fa fa-fw fa-eye-slash field-icon toggle-password" style="float: right; margin-top: 15px; display: inline-block"></span>
 		</div>
+<!--		<div class="form-group">-->
+<!--			<label>Confirm New Password: </label>-->
+<!--			<input type="password" class="form-control" id="Confirmpassword" name="Confirmpassword" maxlength="99" style="width: 95%; height: 50px;  display: inline-block" required>-->
+<!--			<span toggle="#password" class="fa fa-fw fa-eye-slash field-icon toggle-password" style="float: right; margin-top: 15px; display: inline-block"></span>-->
+<!--		</div>-->
 		<div class="form-group" hidden>
 			<label>User Role:</label>
 			<br>
@@ -194,7 +199,7 @@
 		</div>
 		<br>
 		<div class="container" style="width: 500px; padding: 0px;">
-			<button type="submit" form="signup" id="submitButton" class="button1"> Sign Up </button>
+			<button type="submit" form="signup" id="submitButton" class="button1" onclick="checkForm()"> Sign Up </button>
 		</div>
 		<input type="hidden" id="token">
 	</form>
@@ -422,6 +427,18 @@
 			document.getElementById("token").value = token;
 		}));
 	});
+
+	// function checkForm() {
+	// 	let newP=document.getElementById("password").value;
+	// 	let confirmP =document.getElementById("Confirmpassword").value;
+	//
+	// 	if (newP === confirmP) {
+	// 		return true;
+	// 	} else {
+	// 		alert("Passwords don't match!");
+	// 		return false;
+	// 	}
+	// }
 
 	function onFunction() {
 		alert ("You are now online.");
