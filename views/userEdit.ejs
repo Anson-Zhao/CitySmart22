@@ -53,6 +53,17 @@
             background-color: #f0ad4e;
             color: white;
         }
+        .button2 {
+            width: 500px;
+            height: 50px;
+            border-radius: 15px;
+            -webkit-transition-duration: 0.4s;
+            transition-duration: 0.4s;
+            cursor: pointer;
+            background-color: lightgray;
+            color: #ffffff;
+        }
+
         /*#checkit{*/
         /*    width: 250px;*/
         /*    height: 50px;*/
@@ -106,9 +117,11 @@
                     <label class="col-md-4 control-label">Username:</label>
                     <div class="col-md-8 inputGroupContainer">
                         <div class="input-group">
-                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span><input id="username" name="username" class="form-control" value="<%= user.username %>" type="email">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span><input id="username" name="username" onchange="SearchUsername(this.value)" class="form-control" placeholder="<%= user.username %>" value="<%= user.username %>" type="email">
                         </div>
                         <p style="margin-top:8px;color:#0088d8;" id="emailc"></p>
+                        <br>
+                        <p id="emailUser" style="text-align: center; color: palevioletred; margin-top:15px;"></p>
                     </div>
                 </div>
                 <div class="form-group">
@@ -189,7 +202,7 @@
 <!--                    </fieldset>-->
 <!--                </form>-->
 <!--                <button id="checkit" class="btn-primary text-center" style="display:none; margin-top:-57px; margin-left: 410px;" onclick="checkForm()">Check</button>-->
-            </div>
+            <!--</div>-->
             <br>
             <button id="updateForm" type="submit" class="button1" onclick="submitForm();" > Update </button>
             <hr>
@@ -197,7 +210,7 @@
             <a href="/userManagement" >Cancel</a>
         </div>
 
-    </div>
+    <!--</div>-->
 </div>
 <script>
      let LoginUser = "<%= user.username %>";
@@ -405,6 +418,50 @@
          }));
      });
 
+     function verifyemail(){
+         for (let i =0; i< newusername.length; i++){
+             console.log(document.getElementById("username").value);
+             console.log(newusername[i].username);
+             if(document.getElementById("username").value === newusername[i].username && document.getElementById("username").value !== UserName){
+                 document.getElementById("emailc").innerHTML = "This user name already exists!";
+                 break;
+             } else if(document.getElementById("username").value === UserName) {
+                 document.getElementById("emailc").innerHTML = "";
+             }  else{
+                 document.getElementById("emailc").innerHTML = "The user name will not change until you verify the new username in your email.";
+             }
+         }
+         // document.getElementById("emailc").innerHTML = "The User Name will not change until you verify the new username in your email.";
+     }
+
+     function SearchUsername(value) {
+         $.ajax({
+             url: "SearchUsername",
+             method: 'GET',
+             dataType: "json",
+             success: function (results) {
+                 for (let i = 0; i < results.length; i++) {
+                     // let newRes = JSON.stringify(results);
+                     console.log(value);
+                     console.log(results[i].username);
+                     if (value === results[i].username && value !== LoginUser) {
+                         alert("This username is already taken. Please use a different one.");
+                         document.getElementById("emailUser").innerHTML = "This username is already taken. Please use a different one.";
+                         document.getElementById("updateForm").disabled = true;
+                         document.getElementById("updateForm").classList.remove("button1");
+                         document.getElementById("updateForm").classList.add("button2");
+                         break;
+                     } else {
+                         document.getElementById("emailUser").innerHTML = "";
+                         document.getElementById("updateForm").disabled = false;
+                         document.getElementById("updateForm").classList.add("button1");
+                         document.getElementById("updateForm").classList.remove("button2");
+                     }
+                 }
+             }
+         });
+         verifyemail();
+     }
 
      function onFunction() {
          alert ("You are now online.");

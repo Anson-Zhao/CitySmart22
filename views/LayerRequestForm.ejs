@@ -429,7 +429,8 @@
 
         if (userrole === "Admin") {
             document.getElementById("body").innerHTML = "The layer request form is only available for regular users. If a new layer request form is needed, please register a new regular user via sign up or add user.";
-            confirm("The layer request form is only available for regular users. If a new layer request form is needed, please register a new regular user via sign up or add user.");
+            alert("The layer request form is only available for regular users. If a new layer request form is needed, please register a new regular user via sign up or add user.");
+            window.location.replace('/userHome');
         }
 
         // Wait for the DOM to be ready

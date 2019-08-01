@@ -988,6 +988,7 @@ module.exports = function (app, passport) {
         res.render('userProfile.ejs', {
             user: req.user,
         });
+        // console.log(req.user);
     });
 
     app.post('/userProfile', isLoggedIn, function (req, res) {
@@ -1027,18 +1028,29 @@ module.exports = function (app, passport) {
 
             let update1 = "UPDATE UserProfile SET ";
             let update2 = "";
-            let update3 = " WHERE username = '" + req.user.username + "'";
-            for (let i = 1; i < result.length - 3; i++) {
-                if (i === result.length - 4) {
+            let update3 = " WHERE username = '" + req.user.username + "';";
+            let update4 = "UPDATE UserLogin SET ";
+            let update5 = "";
+            let update6 = " WHERE username = '" + req.user.username + "';";
+            for (let i = 1; i < result.length - 7; i++) {
+                if (i === result.length - 8) {
                     update2 += result[i][0] + " = '" + result[i][1] + "'";
                 } else {
                     update2 += result[i][0] + " = '" + result[i][1] + "', ";
                 }
             }
-            let statement1 = update1 + update2 + update3;
+            for (let i = result.length - 7; i < result.length - 3; i++) {
+                if (i === result.length - 4) {
+                    update5 += result[i][0] + " = '" + result[i][1] + "'";
+                } else {
+                    update5 += result[i][0] + " = '" + result[i][1] + "', ";
+                }
+            }
+            let statement1 = update1 + update2 + update3 + update4 + update5 + update6;
 
             con_CS.query(statement1, function (err, result) {
                 if (err) {
+
                     res.json({"error": true, "message": "Fail !"});
                 } else {
                     // res.json({"error": false, "message": "Success !"});
@@ -1739,8 +1751,10 @@ module.exports = function (app, passport) {
 
     app.get('/SearchUsername', function (req, res) {
         res.setHeader("Access-Control-Allow-Origin", "*");
-        con_CS.query("SELECT username FROM UserLogin", function (err, results) {
+        con_CS.query("SELECT username FROM CitySmart2.UserLogin", function (err, results) {
             if (err) throw err;
+            console.log("results:");
+            console.log(results);
             res.json(results);
         });
     });

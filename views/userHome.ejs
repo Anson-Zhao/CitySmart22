@@ -198,14 +198,14 @@
     padding-left: 10px;
     margin: 5px 5px 5px 0px;
     border-radius: 5px;
-    border: 1px solid #c8c8c8;">
+    border: 1px solid #c8c8c8;" >
             <h5 class="floating-Box" style="width: 50px;">To:&nbsp;</h5>&nbsp;
             <input class="date floating-Box" type="text" placeholder="Select Date" style="width: 280px;
     height: 40px;
     padding-left: 10px;
     margin: 5px 5px 5px 0px;
     border-radius: 5px;
-    border: 1px solid #c8c8c8;">
+    border: 1px solid #c8c8c8;" >
         </div>
     </div>
     <div class="floating-Box clearForm" id="searchname" style="width: 350px;">
@@ -234,12 +234,12 @@
     <div class="center" style="width: 850px;
     padding: 0px;
     height: 40px;">
-        <button id="submitButton" class="button1" type="button" onclick="query()">Filter</button>
+        <button id="submitButton" class="button1" type="button"  onclick="query(), showAll()">Filter</button>
         <button id="editButton" class="btn btn-primary btn-sm button" type="button" style="height: 40px; width: 110px; float: left;margin-right: 5px;">Edit</button>
         <button id="deleteButton" class="btn btn-primary btn-sm button" type="button" style="height: 40px;
     width: 110px; float: left; margin-right: 5px;">Delete</button>
         <button id="showButton" class="btn btn-primary btn-sm button" type="button" style="height: 40px;
-    width: 110px; float: left">Show All</button>
+    width: 110px; float: left" onclick="donTShowAll()" disabled hidden>Show All</button>
     </div>
     <br>
     <div class="center" style="width: 850px;">
@@ -516,6 +516,16 @@
 
             }
         })
+    }
+
+    function showAll() {
+        document.getElementById("showButton").disabled = false;
+        document.getElementById("showButton").hidden = false;
+    }
+
+    function donTShowAll() {
+        document.getElementById("showButton").disabled = true;
+        document.getElementById("showButton").hidden = true;
     }
 
     function onFunction() {

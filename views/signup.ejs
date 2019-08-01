@@ -10,7 +10,8 @@
 	<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 	<!--<link rel="stylesheet" href="//unpkg.com/flatpickr/dist/flatpickr.min.css">-->
 	<script src="../3rdPartyLibs/jquery-3.3.1.min.js"></script>
-	<script src="//cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="../3rdPartyLibs/jquery-validation-1.17.0/dist/jquery.validate.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/flatpickr"></script>
 	<script src="https://www.google.com/recaptcha/api.js?render=6Ld7fq8UAAAAAOv8ZEiVj6P972pR_Vf3ko5R0JB_"></script>
 	   <?php include 'reCaptcha.php';?>
 	<!--<script src="//unpkg.com/flatpickr"></script>-->
@@ -61,6 +62,11 @@
 			background-color: lightgray;
 			color: #ffffff;
 		}
+        .error {
+            color: palevioletred;
+            margin-top:15px;
+            font-weight: 400;
+        }
 	</style>
 </head>
 <div class="navul" style="height: 80px;
@@ -86,11 +92,11 @@
 	<!-- LOGIN FORM -->
 	<!--<form onsubmit="return checkForm()" action="/signup" method="post" id="signup">-->
 	<p id="capsWarning" style="color:red; text-align: center;" hidden><strong>WARNING: Caps lock is enabled.</strong></p>
-	<form onsubmit="return checkForm()" action="/signup" method="post" id="signup">
+	<form action="/signup" method="post" id="signup">
 		<div class="form-group">
 			<label>Username (email address):</label>
 			<input type="email" id="username" class="form-control" name="username" onchange="SearchUsername(this.value)" style="height: 50px;" minlength="2" maxlength="99" autofocus required>
-			<p id="emailUser" style="color: palevioletred;margin-top:15px;"></p>
+			<p id="emailUser" style="text-align: center; color: palevioletred; margin-top:15px;"></p>
 		</div>
 		<div class="form-group">
 			<label>First Name:</label>
@@ -101,10 +107,9 @@
 			<input type="text" id="lastname" class="form-control" name="lastName" style="height: 50px;" minlength="1" maxlength="99" required>
 		</div>
 		<div class="form-group">
-			<label>Password (8-20 Characters):</label>
-			<input type="password" id="password" class="form-control" name="password" style="width: 95%; height: 50px;  display: inline-block" minlength="8" maxlength="20" required>
+			<label>Password:</label>
+			<input type="password" id="password" class="form-control" name="password" style="width: 95%; height: 50px;  display: inline-block" minlength="8" required>
 			<span toggle="#password" class="fa fa-fw fa-eye-slash field-icon toggle-password" style="float: right; margin-top: 15px; display: inline-block"></span>
-
 		</div>
 		<div class="form-group" hidden>
 			<label>User Role:</label>
@@ -189,9 +194,9 @@
 		</div>
 		<br>
 		<div class="container" style="width: 500px; padding: 0px;">
-			<button type="submit" id="submitButton" class="button1"> Sign Up </button>
+			<button type="submit" form="signup" id="submitButton" class="button1"> Sign Up </button>
 		</div>
-		<input type="hidden" id="token" name="token">
+		<input type="hidden" id="token">
 	</form>
 	<hr>
 	<p style="margin-left: 190px;">
@@ -284,46 +289,80 @@
             // console.log($("#signup").serialize());
 
 
-        });
-        let today = new Date();
-        let date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
-        let time2 = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-        let dateTime = date + ' ' + time2;
-        document.getElementById("DATE").value = dateTime;
+		});
+		let today = new Date();
+		let date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+		let time2 = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+		let dateTime = date + ' ' + time2;
+		document.getElementById("DATE").value = dateTime;
 
+        $('#signup').validate({
+            password: {
+                presence: true,
+                length: {
+                    minimum: 8
+                }
+            }
+        })
 
 		$('#signup').submit(function(e) {
 			// console.log($("#signup").serialize());
 			// console.log($('#signup'));
 			//
 			e.preventDefault();
-			let a1 = $('#answer1').val().replace("\'", "\\'");
-			let a2 = $('#answer2').val().replace("\'", "\\'");
-			let answer1 = "answer1=" + a1;
-			let answer2 = "answer2=" + a2;
+            var fail = false;
+            var fail_log = '';
+            var name;
+            $( '#signup' ).find( 'select, textarea, input' ).each(function(){
+                if( ! $( this ).prop( 'required' )){
 
-			if (confirm("Are you sure you would like to proceed?")=== true) {
-				alert("We are sending you the email verification. Please check your email before logging in");
-				$.ajax({
-					type: "post",
-					url: "/signup",
-					dataType: 'json',
-					data: $("#signup").serialize() + "&" + answer1 + "&" + answer2,
-					success: function (result) {
-						console.log(result);
-						if (!result.error) {
-							// alert(result.message);
-							alert("We are sending you the email verification. Please check your email before logging in");
-							console.log(("#signup").serialize);
-						} else {
-							alert(result.message);
-						}
-					}
-				});
-				window.location.replace('/login');
-			} else {
-				return false;
-			}
+                } else {
+                    if ( ! $( this ).val() ) {
+                        fail = true;
+                        fail_log = "All fields are required to be filled before submitting!";
+                        // name = $( this ).attr( 'name' );
+                        // fail_log += name + " is required \n";
+                    } else {
+
+                    }
+
+                }
+            });
+
+            if (!fail) {
+
+                let a1 = $('#answer1').val().replace("\'", "\\'");
+                let a2 = $('#answer2').val().replace("\'", "\\'");
+                let answer1 = "answer1=" + a1;
+                let answer2 = "answer2=" + a2;
+                // console.log("here");
+
+                if (confirm("Are you sure you would like to proceed?")=== true) {
+                    alert("We are sending you the email verification. Please check your email before logging in");
+                    $.ajax({
+                        type: "post",
+                        url: "/signup",
+                        dataType: 'json',
+                        data: $("#signup").serialize() + "&" + answer1 + "&" + answer2,
+                        success: function (result) {
+                            console.log(result);
+                            if (!result.error) {
+                                // alert(result.message);
+                                alert("We are sending you the email verification. Please check your email before logging in");
+                                console.log(("#signup").serialize);
+                            } else {
+                                alert(result.message);
+                            }
+                        }
+                    });
+                    window.location.replace('/login');
+                } else {
+                    return false;
+                }
+            } else {
+                alert(fail_log);
+            }
+
 		});
     });
 
@@ -366,7 +405,7 @@
                     }
                 }
             }
-        })
+        });
     }
 
     function isInputNumber (evt) {
