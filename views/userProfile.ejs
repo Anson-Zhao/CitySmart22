@@ -101,7 +101,7 @@
             <form id="basic"  class="well form-horizontal">
                 <fieldset>
                     <div class="form-group">
-                        <label class="col-md-4 control-label">Username (email address):</label>
+                        <label class="col-md-4 control-label">Username (Email Address):</label>
                         <div class="col-md-8 inputGroupContainer">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span><input id="username" name="username" class="form-control" value="<%= user.username %>" placeholder="<%= user.username %>" type="text" onchange="SearchUsername(this.value)" minlength="2" maxlength="99" required>
@@ -296,21 +296,21 @@
                         <label class="col-md-4 control-label">Current Password:</label>
                         <div class="col-md-8 inputGroupContainer">
                             <span toggle="#currentPassword" class="fa fa-fw fa-eye-slash field-icon toggle-password" style="float: right; margin-top: 20px"></span>
-                            <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span><input id="currentPassword" name="CurrentPassword"  class="form-control" value="" type="password"></div>
+                            <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span><input id="currentPassword" name="CurrentPassword"  class="form-control" value="" type="password" maxlength="99"></div>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-md-4 control-label">New Password:</label>
                         <div class="col-md-8 inputGroupContainer">
                             <span toggle="#newPassword" class="fa fa-fw fa-eye-slash field-icon toggle-password" style="float: right; margin-top: 20px"></span>
-                            <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span><input id="newPassword" name="NewPassword" class="form-control" value="" type="password" minlength="8"></div>
+                            <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span><input id="newPassword" name="NewPassword" class="form-control" value="" type="password" minlength="8" maxlength="99"></div>
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-md-4 control-label">Confirm New Password:</label>
                         <div class="col-md-8 inputGroupContainer">
                             <span toggle="#confirmPassword" class="fa fa-fw fa-eye-slash field-icon toggle-password" style="float: right; margin-top: 20px"></span>
-                            <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span><input id="confirmPassword" name="ConfirmNewPassword" class="form-control" value="" type="password" minlength="8"></div>
+                            <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span><input id="confirmPassword" name="ConfirmNewPassword" class="form-control" value="" type="password" minlength="8" maxlength="99"></div>
                         </div>
                     </div>
             </fieldset>
