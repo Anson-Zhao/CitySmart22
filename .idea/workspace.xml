@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3b2ba209-e08e-4f77-99ae-d893522cce16" name="Default Changelist" comment="" />
+    <list default="true" id="3b2ba209-e08e-4f77-99ae-d893522cce16" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/images/YellowFireHydrant.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/CS_InvisPK.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scripts/transparentPK.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/Home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/layerMenuAll.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/layerMenuAll.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/login.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/login.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/reset.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/reset.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/signup.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/signup.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/userProfile.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/userProfile.ejs" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -43,11 +54,62 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/routes.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4">
-              <caret line="1025" column="37" selection-start-line="1025" selection-start-column="37" selection-end-line="1025" selection-end-column="37" />
+            <state relative-caret-position="1139">
+              <caret line="1084" column="58" selection-start-line="1084" selection-start-column="58" selection-end-line="1084" selection-end-column="58" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/transparentPK.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="360">
+              <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/Home.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="35">
+              <caret line="113" column="29" lean-forward="true" selection-start-line="113" selection-start-column="29" selection-end-line="113" selection-end-column="29" />
+              <folding>
+                <element signature="n#style#0;n#img#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/views/userProfile.ejs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="95">
+              <caret line="298" column="235" selection-start-line="298" selection-start-column="235" selection-end-line="298" selection-end-column="235" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/layerMenuAll.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="690">
+              <caret line="104" column="71" selection-start-line="104" selection-start-column="57" selection-end-line="104" selection-end-column="71" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/scripts/CS_InvisPK.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="360">
+              <caret line="24" column="47" lean-forward="true" selection-start-line="24" selection-start-column="47" selection-end-line="24" selection-end-column="47" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -63,12 +125,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>table</find>
-      <find>verifye</find>
-      <find>verifyemail</find>
-      <find>newusername</find>
-      <find>th</find>
-      <find>button1</find>
       <find>checkit</find>
       <find>changePass</find>
       <find>currentPassword</find>
@@ -93,6 +149,12 @@
       <find>user</find>
       <find>userProfile</find>
       <find>token</find>
+      <find>addUser</find>
+      <find>WmsLayer</find>
+      <find>some layers may</find>
+      <find>some lay</find>
+      <find>some layers</find>
+      <find>confirm</find>
     </findStrings>
     <replaceStrings>
       <replace>Layer</replace>
@@ -130,8 +192,8 @@
       <dir>$PROJECT_DIR$/config</dir>
       <dir>$PROJECT_DIR$/routes</dir>
       <dir>$PROJECT_DIR$/views</dir>
-      <dir>$PROJECT_DIR$/scripts</dir>
       <dir>$PROJECT_DIR$/src</dir>
+      <dir>$PROJECT_DIR$/scripts</dir>
       <dir>$PROJECT_DIR$</dir>
     </dirStrings>
   </component>
@@ -146,9 +208,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/scripts/s.js" />
-        <option value="$PROJECT_DIR$/config/clientConfig.js" />
-        <option value="$PROJECT_DIR$/scripts/USGS_WT_heatmapLayer.js" />
         <option value="$PROJECT_DIR$/scripts/USGS_WT_placemarkLayer.js" />
         <option value="$PROJECT_DIR$/scripts/All_Layer_Menu.js" />
         <option value="$PROJECT_DIR$/scripts/USGS_MR_heatmapLayer.js" />
@@ -179,8 +238,6 @@
         <option value="$PROJECT_DIR$/node_modules/passport/lib/framework/connect.js" />
         <option value="$PROJECT_DIR$/b.js" />
         <option value="$PROJECT_DIR$/3rdPartyLibs/build/WorldWind-built.js" />
-        <option value="$PROJECT_DIR$/views/adduser.ejs" />
-        <option value="$PROJECT_DIR$/views/login.ejs" />
         <option value="$PROJECT_DIR$/views/PhoneAuthP1.ejs" />
         <option value="$PROJECT_DIR$/views/homepage.ejs" />
         <option value="$PROJECT_DIR$/views/2step.ejs" />
@@ -188,15 +245,20 @@
         <option value="$PROJECT_DIR$/views/EmailAuth.ejs" />
         <option value="$PROJECT_DIR$/views/PhoneAuthP2.ejs" />
         <option value="$PROJECT_DIR$/views/homepageUSER.ejs" />
-        <option value="$PROJECT_DIR$/scripts/Home.js" />
         <option value="$PROJECT_DIR$/scripts/CS_wmsLayer.js" />
         <option value="$PROJECT_DIR$/config/serverConfig.js" />
         <option value="$PROJECT_DIR$/views/LayerRequestForm_edit.ejs" />
         <option value="$PROJECT_DIR$/views/userEdit.ejs" />
         <option value="$PROJECT_DIR$/views/LayerRequestForm.ejs" />
         <option value="$PROJECT_DIR$/routes/routes.js" />
-        <option value="$PROJECT_DIR$/views/userProfile.ejs" />
+        <option value="$PROJECT_DIR$/views/adduser.ejs" />
+        <option value="$PROJECT_DIR$/scripts/CS_InvisPK.js" />
+        <option value="$PROJECT_DIR$/scripts/transparentPK.js" />
+        <option value="$PROJECT_DIR$/scripts/Home.js" />
         <option value="$PROJECT_DIR$/views/signup.ejs" />
+        <option value="$PROJECT_DIR$/views/reset.ejs" />
+        <option value="$PROJECT_DIR$/views/login.ejs" />
+        <option value="$PROJECT_DIR$/views/userProfile.ejs" />
       </list>
     </option>
   </component>
@@ -233,6 +295,11 @@
             <path>
               <item name="CitySmart22" type="b2602c69:ProjectViewProjectNode" />
               <item name="CitySmart22" type="462c0819:PsiDirectoryNode" />
+              <item name="scripts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CitySmart22" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CitySmart22" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -254,7 +321,7 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
     <property name="database.console.LAST_STATE" value="true" />
-    <property name="javascript.nodejs.core.library.configured.version" value="10.14.1" />
+    <property name="javascript.nodejs.core.library.configured.version" value="9.2.0" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/config" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -271,19 +338,19 @@
     <property name="two.files.diff.last.used.folder" value="$PROJECT_DIR$/../CitySmart22.0" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/images" />
+      <recent name="$PROJECT_DIR$/config" />
+      <recent name="$PROJECT_DIR$/approvedfolder" />
+      <recent name="$PROJECT_DIR$/3rdPartyLibs/build" />
+      <recent name="$PROJECT_DIR$/3rdPartyLibs" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/config" />
       <recent name="$PROJECT_DIR$/scripts" />
       <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$/examples" />
       <recent name="$PROJECT_DIR$/src/layer" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/config" />
-      <recent name="$PROJECT_DIR$/approvedfolder" />
-      <recent name="$PROJECT_DIR$/3rdPartyLibs/build" />
-      <recent name="$PROJECT_DIR$/3rdPartyLibs" />
-      <recent name="$PROJECT_DIR$/src" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -334,13 +401,6 @@
       <workItem from="1560168590379" duration="5311000" />
       <workItem from="1563386340103" duration="16226000" />
       <workItem from="1563476758566" duration="29166000" />
-    </task>
-    <task id="LOCAL-00065" summary="Merge branch 'Amy' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;config/geoCapacity/2019_5_10_11_25_32.xml&#10;#&#9;config/mainconf.js&#10;#&#9;routes/routes.js">
-      <created>1557504897103</created>
-      <option name="number" value="00065" />
-      <option name="presentableId" value="LOCAL-00065" />
-      <option name="project" value="LOCAL" />
-      <updated>1557504897104</updated>
     </task>
     <task id="LOCAL-00066" summary="Merge branch 'Amy' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;config/geoCapacity/2019_5_10_11_25_32.xml&#10;#&#9;config/mainconf.js&#10;#&#9;routes/routes.js">
       <created>1557518788256</created>
@@ -678,11 +738,18 @@
       <option name="project" value="LOCAL" />
       <updated>1564666358238</updated>
     </task>
-    <option name="localTasksCounter" value="114" />
+    <task id="LOCAL-00114" summary="Merge branch 'julia2' of https://github.com/Anson-Zhao/CitySmart22 into Cucumbers&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
+      <created>1564667078029</created>
+      <option name="number" value="00114" />
+      <option name="presentableId" value="LOCAL-00114" />
+      <option name="project" value="LOCAL" />
+      <updated>1564667078029</updated>
+    </task>
+    <option name="localTasksCounter" value="115" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="345512000" />
+    <option name="totallyTimeSpent" value="349873000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -695,14 +762,15 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="4" y="23" width="2556" height="1300" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.111774065" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.111774065" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49761716" weight="0.32975206" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4807074" weight="0.35994586" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4982136" weight="0.39737275" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.4972156" weight="0.3294702" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4801114" visible="true" weight="0.35927153" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49801114" weight="0.397351" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49005568" weight="0.22433774" />
@@ -710,7 +778,7 @@
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49702263" weight="0.32922825" />
       <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49284694" weight="0.32882273" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5099443" side_tool="true" weight="0.22433774" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.51988864" side_tool="true" visible="true" weight="0.35927153" />
       <window_info anchor="bottom" id="File Transfer" order="12" sideWeight="0.4980143" weight="0.32922825" />
       <window_info anchor="bottom" id="Database Console" order="13" weight="0.3299748" />
       <window_info anchor="bottom" id="Messages" order="14" />
@@ -795,45 +863,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="Merge branch 'julia2' of https://github.com/Anson-Zhao/CitySmart22 into Cucumbers&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/Downloads/worldwind.js" />
-    <entry file="file://$PROJECT_DIR$/3rdPartyLibs/build/worldwind1690.js" />
-    <entry file="file://$PROJECT_DIR$/3rdPartyLibs/build/end.frag">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" column="20" selection-start-line="4" selection-start-column="20" selection-end-line="4" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/3rdPartyLibs/build/start.frag">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="13" column="51" lean-forward="true" selection-start-line="13" selection-start-column="51" selection-end-line="13" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/3rdPartyLibs/build/build.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/WorldWind.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-20828" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/WorldWindShim.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="247">
           <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/layerMenuAll.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="268">
-          <caret line="73" column="81" selection-start-line="73" selection-start-column="81" selection-end-line="73" selection-end-column="81" />
         </state>
       </provider>
     </entry>
@@ -936,13 +969,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/b.js" />
-    <entry file="file://$PROJECT_DIR$/views/adduser.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="433">
-          <caret line="46" selection-start-line="46" selection-end-line="55" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/PhoneAuthP1.ejs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="302">
@@ -995,20 +1021,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/login.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-259">
-          <caret line="26" column="25" lean-forward="true" selection-start-line="26" selection-start-column="25" selection-end-line="26" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/homepage.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="605">
-          <caret line="353" selection-start-line="353" selection-end-line="353" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/homepageUSER.ejs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-6233">
@@ -1020,13 +1032,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="232">
           <caret line="36" column="57" selection-start-line="36" selection-start-column="57" selection-end-line="36" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scripts/Home.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
-          <caret line="53" column="33" selection-start-line="53" selection-start-column="33" selection-end-line="53" selection-end-column="33" />
         </state>
       </provider>
     </entry>
@@ -1065,16 +1070,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/userEdit.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="40" column="23" selection-start-line="40" selection-start-column="23" selection-end-line="40" selection-end-column="23" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/3rdPartyLibs/jquery-validation-1.17.0/demo/marketo/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
@@ -1096,55 +1091,104 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/views/adduser.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="538">
+          <caret line="53" column="37" selection-start-line="53" selection-start-column="37" selection-end-line="53" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/routes/routes.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4">
-          <caret line="1025" column="37" selection-start-line="1025" selection-start-column="37" selection-end-line="1025" selection-end-column="37" />
+        <state relative-caret-position="1139">
+          <caret line="1084" column="58" selection-start-line="1084" selection-start-column="58" selection-end-line="1084" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/CS_InvisPK.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" column="47" lean-forward="true" selection-start-line="24" selection-start-column="47" selection-end-line="24" selection-end-column="47" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/images/YellowFireHydrant.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/homepage.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="613" column="73" selection-start-line="613" selection-start-column="65" selection-end-line="613" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/transparentPK.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/layerMenuAll.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="690">
+          <caret line="104" column="71" selection-start-line="104" selection-start-column="57" selection-end-line="104" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/forgotPassword.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1777" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/signup.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="109" column="36" lean-forward="true" selection-start-line="109" selection-start-column="36" selection-end-line="109" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/reset.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="314">
+          <caret line="59" column="14" lean-forward="true" selection-start-line="59" selection-start-column="14" selection-end-line="59" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/userEdit.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1417">
+          <caret line="40" column="23" selection-start-line="40" selection-start-column="23" selection-end-line="40" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/login.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="75" column="158" selection-start-line="75" selection-start-column="158" selection-end-line="75" selection-end-column="158" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/rejected.ejs">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scripts/Home.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="35">
+          <caret line="113" column="29" lean-forward="true" selection-start-line="113" selection-start-column="29" selection-end-line="113" selection-end-column="29" />
+          <folding>
+            <element signature="n#style#0;n#img#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/userProfile.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2628">
-          <caret line="455" column="17" selection-start-line="455" selection-start-column="17" selection-end-line="455" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/signup.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="316" column="32" selection-start-line="316" selection-start-column="32" selection-end-line="316" selection-end-column="32" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#div#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#a#0;n#div#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#h1#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#div#1;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#div#2;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#div#3;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#div#3;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="e#3979#3985#0#HTML" expanded="true" />
-            <element signature="e#3985#3991#0#HTML" expanded="true" />
-            <element signature="e#3991#3997#0#HTML" expanded="true" />
-            <element signature="e#4007#4013#0#HTML" expanded="true" />
-            <element signature="e#4013#4019#0#HTML" expanded="true" />
-            <element signature="e#4019#4025#0#HTML" expanded="true" />
-            <element signature="e#4025#4031#0#HTML" expanded="true" />
-            <element signature="e#4123#4129#0#HTML" expanded="true" />
-            <element signature="e#4129#4135#0#HTML" expanded="true" />
-            <element signature="e#4135#4141#0#HTML" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#div#5;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#select#0;n#div#6;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#0;n#div#6;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#select#1;n#div#6;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#input#1;n#div#6;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#10;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="95">
+          <caret line="298" column="235" selection-start-line="298" selection-start-column="235" selection-end-line="298" selection-end-column="235" />
         </state>
       </provider>
     </entry>
