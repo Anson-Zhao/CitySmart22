@@ -423,7 +423,7 @@
              console.log(document.getElementById("username").value);
              console.log(newusername[i].username);
              if(document.getElementById("username").value === newusername[i].username && document.getElementById("username").value !== UserName){
-                 document.getElementById("emailc").innerHTML = "This user name does exist!";
+                 document.getElementById("emailc").innerHTML = "This user name already exists!";
                  break;
              } else if(document.getElementById("username").value === UserName) {
                  document.getElementById("emailc").innerHTML = "";

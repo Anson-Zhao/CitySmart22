@@ -101,7 +101,7 @@
             <form id="basic"  class="well form-horizontal">
                 <fieldset>
                     <div class="form-group">
-                        <label class="col-md-4 control-label">User Name(Email):</label>
+                        <label class="col-md-4 control-label">Username (email address):</label>
                         <div class="col-md-8 inputGroupContainer">
                             <div class="input-group">
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span><input id="username" name="username" class="form-control" value="<%= user.username %>" placeholder="<%= user.username %>" type="text" onchange="SearchUsername(this.value)" minlength="2" maxlength="99" required>
@@ -572,7 +572,7 @@
             console.log(document.getElementById("username").value);
             console.log(newusername[i].username);
             if(document.getElementById("username").value === newusername[i].username && document.getElementById("username").value !== UserName){
-                document.getElementById("emailc").innerHTML = "This user name already exist!";
+                document.getElementById("emailc").innerHTML = "This user name already exists!";
                 break;
             } else if(document.getElementById("username").value === UserName) {
                 document.getElementById("emailc").innerHTML = "";
