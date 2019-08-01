@@ -6,6 +6,7 @@ define([], function () {
     let arrMR = [];
     let arrMD = [];
     let arrCS = [];
+    let arrCS_InvisiPK = [];
     let categoryN = [];
     let arrColor = [];
     let category, index;
@@ -88,6 +89,11 @@ define([], function () {
                         } else {
                             arrMD[index].hlName = ele.LayerName
                         }
+                    } else if (ele.LayerType === 'CS_InvisPK') {
+                        console.log(ele);
+
+                        arrCS_InvisiPK.push({Row: ele, wLayer: new WorldWind.RenderableLayer(ele.LayerName)});
+
                     }
                 })
             } else {
@@ -96,5 +102,5 @@ define([], function () {
         }
     });
 
-    return {arrAll, arrType, arrWT, arrMR, arrCS, arrMD}
+    return {arrAll, arrType, arrWT, arrMR, arrCS, arrMD, arrCS_InvisiPK}
 });
