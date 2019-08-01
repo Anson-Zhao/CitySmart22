@@ -1753,8 +1753,6 @@ module.exports = function (app, passport) {
         res.setHeader("Access-Control-Allow-Origin", "*");
         con_CS.query("SELECT username FROM CitySmart2.UserLogin", function (err, results) {
             if (err) throw err;
-            console.log("results:");
-            console.log(results);
             res.json(results);
         });
     });
