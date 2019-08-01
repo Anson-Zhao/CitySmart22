@@ -64,6 +64,9 @@
         input[type="password"] {
             height: 60px;
         }
+        select {
+            height: 60px;
+        }
         #capsWarning {
             color: red;
             text-align: center;
@@ -117,7 +120,7 @@
                         <label class="col-md-4 control-label">Address Line 1:</label>
                         <div class="col-md-8 inputGroupContainer">
                             <div class="input-group">
-                                <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input id="addressLine1" name="Address_Line1" placeholder="Street address, P.O. box, company name, c/o" class="form-control" value="" type="text" maxlength="42">>
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input id="addressLine1" name="Address_Line1" placeholder="Street address, P.O. box, company name, c/o" class="form-control" value="" type="text" maxlength="42">
                             </div>
                         </div>
                     </div>
@@ -158,6 +161,66 @@
                             <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
                                 <input id="phoneNumber" name="Phone_Number" class="form-control" value="" type="text" onkeypress="isInputNumber (event)" placeholder="0000000000" maxlength="10" pattern="[0-9]{10}"></div>
                         </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-4 control-label">Security Question #1:</label>
+                        <div class="col-md-8 inputGroupContainer">
+                            <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+                                <select id="q1" name="question1" class="form-control" style="height: 60px;" required>
+                                    <option value="" disabled selected>SELECT SECURITY QUESTION</option>
+                                    <option value="In what city or town did your mother and father meet?">In what city or town did your mother and father meet?</option>
+                                    <option value="What is the middle name of your oldest child?">What is the middle name of your oldest child?</option>
+                                    <option value="What was your favorite food as a child?">What was your favorite food as a child?</option>
+                                    <option value="What is the last name of the boy or girl that you first kissed?">What is the last name of the boy or girl that you first kissed?</option>
+                                    <option value="What was the name of the hospital where you were born?">What was the name of the hospital where you were born?</option>
+                                    <option value="Who was your childhood hero?">Who was your childhood hero?</option>
+                                    <option value="What was the last name of your third grade teacher?">What was the last name of your third grade teacher?</option>
+                                    <option value="What was the name of your first pet?">What was the name of your first pet?</option>
+                                    <option value="What\’s your parent\’s birthday?">What’s your parent’s birthday?</option>
+                                    <option value="What was the name of your second pet?">What was the name of your second pet?</option>
+                                    <option value="Where were you on New Year\’s Eve in 2000?">Where were you on New Year’s Eve in 2000?</option>
+                                    <option value="What was your favorite sport in high school?">What was your favorite sport in high school?</option>
+                                    <option value="What is the name of your best friend from childhood?">What is the name of your best friend from childhood?</option>
+                                    <option value="When you were young, what did you want to be when you grew up?">When you were young, what did you want to be when you grew up?</option>
+                                    <option value="What was the name of your first teacher?">What was the name of your first teacher?</option>
+                                    <option value="What is the name of your manager at your first job?">What is the name of your manager at your first job?</option>
+                                    <option value="What is your youngest sibling’s birthday?">What is your youngest sibling’s birthday?</option>
+                                    <option value="What was your first job?">What was your first job?</option>
+                                    <option value="What was the make of your first car?">What was the make of your first car?</option>
+                                </select>
+                            </div>
+                        </div>
+                        <br>
+                        <label>Answer:</label>
+                        <input type="text" class="form-control" id="answer1" minlength="1" maxlength="200" required>
+                        <br>
+                        <label>Security Question #2:</label>
+                        <br>
+                        <select id="q2" name="question2" class="form-control" style="height: 60px;" required>
+                            <option value="" disabled selected>SELECT SECURITY QUESTION</option>
+                            <option value="In what city or town did your mother and father meet?">In what city or town did your mother and father meet?</option>
+                            <option value="What is the middle name of your oldest child?">What is the middle name of your oldest child?</option>
+                            <option value="What was your favorite food as a child?">What was your favorite food as a child?</option>
+                            <option value="What is the last name of the boy or girl that you first kissed?">What is the last name of the boy or girl that you first kissed?</option>
+                            <option value="What was the name of the hospital where you were born?">What was the name of the hospital where you were born?</option>
+                            <option value="Who was your childhood hero?">Who was your childhood hero?</option>
+                            <option value="What was the last name of your third grade teacher?">What was the last name of your third grade teacher?</option>
+                            <option value="What was the name of your first pet?">What was the name of your first pet?</option>
+                            <option value="What\’s your parent\’s birthday?">What’s your parent’s birthday?</option>
+                            <option value="What was the name of your second pet?">What was the name of your second pet?</option>
+                            <option value="Where were you on New Year\’s Eve in 2000?">Where were you on New Year’s Eve in 2000?</option>
+                            <option value="What was your favorite sport in high school?">What was your favorite sport in high school?</option>
+                            <option value="What is the name of your best friend from childhood?">What is the name of your best friend from childhood?</option>
+                            <option value="When you were young, what did you want to be when you grew up?">When you were young, what did you want to be when you grew up?</option>
+                            <option value="What was the name of your first teacher?">What was the name of your first teacher?</option>
+                            <option value="What is the name of your manager at your first job?">What is the name of your manager at your first job?</option>
+                            <option value="What is your youngest sibling’s birthday?">What is your youngest sibling’s birthday?</option>
+                            <option value="What was your first job?">What was your first job?</option>
+                            <option value="What was the make of your first car?">What was the make of your first car?</option>
+                        </select>
+                        <br>
+                        <label>Answer:</label>
+                        <input type="text" class="form-control" id="answer2" minlength="1" maxlength="200" required>
                     </div>
                     <div class="form-group">
                         <label class="col-md-4 control-label">User Role:</label>
@@ -304,33 +367,38 @@
     });
 
 
-    let getvalue = JSON.parse(localStorage.getItem("getvalue"));
-    document.getElementById('username').value = getvalue[0];
-    document.getElementById('firstName').value = getvalue[1];
-    document.getElementById('lastName').value = getvalue[2];
+    // let getvalue = JSON.parse(localStorage.getItem("getvalue"));
+    // document.getElementById('username').value = getvalue[0];
+    // document.getElementById('firstName').value = getvalue[1];
+    // document.getElementById('lastName').value = getvalue[2];
 
-
+    let userN = "userN=" + UserName;
 
     $.ajax({
         url: "/profile",
         dataType: 'json',
+        data: userN,
         success: function (results) {
             // console.log(results);
             newusername = results;
-            for(let i =0; i< results.length; i++) {
+            // for(let i =0; i< results.length; i++) {
                 // console.log(results[i].username);
-                if (results[i].username === UserName) {
-                    document.getElementById('firstName').value = results[i].firstName;
-                    document.getElementById('lastName').value = results[i].lastName;
-                    document.getElementById('addressLine1').value = results[i].Address_Line1;
-                    document.getElementById('addressLine2').value = results[i].Address_Line2;
-                    document.getElementById('city').value = results[i].City;
-                    document.getElementById('state').value = results[i].State_Province_Region;
-                    document.getElementById('postcode').value = results[i].PostalCode_ZIP;
-                    document.getElementById('country').value = results[i].Country;
-                    document.getElementById('phoneNumber').value = results[i].Phone_Number;
-                }
-            }
+                // if (results[i].username === UserName) {
+                    document.getElementById('firstName').value = results[0][0].firstName;
+                    document.getElementById('lastName').value = results[0][0].lastName;
+                    document.getElementById('addressLine1').value = results[0][0].Address_Line1;
+                    document.getElementById('addressLine2').value = results[0][0].Address_Line2;
+                    document.getElementById('city').value = results[0][0].City;
+                    document.getElementById('state').value = results[0][0].State_Province_Region;
+                    document.getElementById('postcode').value = results[0][0].PostalCode_ZIP;
+                    document.getElementById('country').value = results[0][0].Country;
+                    document.getElementById('phoneNumber').value = results[0][0].Phone_Number;
+                    document.getElementById('q1').value = results[1][0].question1;
+                    document.getElementById('q2').value = results[1][0].question2;
+                    document.getElementById('answer1').value = results[1][0].answer1;
+                    document.getElementById('answer2').value = results[1][0].answer2;
+                // }
+            // }
         }
     })
 
