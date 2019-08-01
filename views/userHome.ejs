@@ -457,14 +457,14 @@
         let endDate = document.getElementsByClassName("date")[1].value;
 
         queryStr = "firstName=" + firstName + "&lastName=" + lastName + "&startDate=" + startDate + "&endDate=" + endDate;
-        queryStr2 = "firstName=" + firstName + "&lastName=" + lastName + "&startDate=" + startDate + "&endDate=" + endDate;
+        // queryStr2 = "firstName=" + firstName + "&lastName=" + lastName + "&startDate=" + startDate + "&endDate=" + endDate;
 //This queryStr is for the admin's filtering options, that's why you need first and last names
         table.clear();
         table.draw();
         // trapTable.clear();
         // trapTable.draw();
         queryAndDisplay(queryStr);
-        queryAndDisplay(queryStr2);
+        // queryAndDisplay(queryStr2);
     }
 
     let queryAndDisplay = function (query) {
