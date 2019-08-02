@@ -36,7 +36,7 @@
                 <div class="qq-upload-button-selector qq-upload-button">
                     <div>Select files</div>
                 </div>
-                <button type="button" id="trigger-upload" class="btn btn-primary">
+                <button onclick="uploadAlert()" type="button" id="trigger-upload" class="btn btn-primary">
                     <i class="icon-upload icon-white"></i> Upload
                 </button>
             </div>
@@ -631,6 +631,9 @@
 
     function offFunction() {
         alert ("Your are offline. Some functionality may be unavailable.");
+    }
+    function uploadAlert() {
+        alert("This process cannot be undone!");
     }
 
     grecaptcha.ready(function() {

@@ -98,6 +98,11 @@
             <input type="password" class="form-control" id="password" name="password" style="height: 50px;" minlength="8" maxlength="99" required>
         </div>
         <p id="capsWarning" hidden><strong>WARNING: Caps lock is enabled.</strong></p>
+<!--        <div class="form-group">-->
+<!--            <label>Confirm New Password: </label>-->
+<!--            <input type="password" class="form-control" id="Confirmpassword" name="Confirmpassword" maxlength="99" style="height: 50px;">-->
+<!--        </div>-->
+<!--        <p id="capsWarning" hidden><strong>WARNING: Caps lock is enabled.</strong></p>-->
         <div class="form-group">
             <label>User Role:</label>
             <br>
@@ -290,6 +295,17 @@
             }
         });
     }
+    // function checkForm() {
+    //     let newP=document.getElementById("password").value;
+    //     let confirmP =document.getElementById("Confirmpassword").value;
+    //
+    //     if (newP === confirmP) {
+    //         return true;
+    //     } else {
+    //         alert("Passwords don't match!");
+    //         return false;
+    //     }
+    // }
 
     function onFunction() {
         alert ("You are now online.");

@@ -193,19 +193,19 @@
         <h4 class="floating-Box" style="width: 220px;"><strong>Date Range:&nbsp;</strong></h4>
         <div style="width: 350px;">
             <h5 class="floating-Box" style="width: 50px;">From:&nbsp;</h5>&nbsp;
-            <input class="date floating-Box" type="text" placeholder="Select Date" style="width: 280px;
+            <input class="date floating-Box" id= "From" type="text" placeholder="Select Date" style="width: 280px;
     height: 40px;
     padding-left: 10px;
     margin: 5px 5px 5px 0px;
     border-radius: 5px;
-    border: 1px solid #c8c8c8;">
+    border: 1px solid #c8c8c8;" onchange="showFilter()">
             <h5 class="floating-Box" style="width: 50px;">To:&nbsp;</h5>&nbsp;
-            <input class="date floating-Box" type="text" placeholder="Select Date" style="width: 280px;
+            <input class="date floating-Box" id= "To" type="text" placeholder="Select Date" style="width: 280px;
     height: 40px;
     padding-left: 10px;
     margin: 5px 5px 5px 0px;
     border-radius: 5px;
-    border: 1px solid #c8c8c8;">
+    border: 1px solid #c8c8c8;" onchange="showFilter()">
         </div>
     </div>
     <div class="floating-Box clearForm" id="searchname" style="width: 350px;">
@@ -218,7 +218,7 @@
     padding-left: 10px;
     margin: 5px 0px;
     border-radius: 5px;
-    border: 1px solid #c8c8c8;" value="">
+    border: 1px solid #c8c8c8;" value="" onchange="showFilter()">
             <h5 class="floating-Box">Last Name:</h5>
             <input class="floating-Box" id="lastName" type="text" name="first name" style="background: WhiteSmoke;
     width: 275px;
@@ -226,7 +226,7 @@
     padding-left: 10px;
     margin: 5px 0px;
     border-radius: 5px;
-    border: 1px solid #c8c8c8;" value="">
+    border: 1px solid #c8c8c8;" value="" onchange="showFilter()">
         </div>
     </div>
     <br>
@@ -234,12 +234,12 @@
     <div class="center" style="width: 850px;
     padding: 0px;
     height: 40px;">
-        <button id="submitButton" class="button1" type="button" onclick="query()">Filter</button>
+        <button id="submitButton" class="button1" type="button"  onclick="query(), showAll()" hidden disabled>Filter</button>
         <button id="editButton" class="btn btn-primary btn-sm button" type="button" style="height: 40px; width: 110px; float: left;margin-right: 5px;">Edit</button>
         <button id="deleteButton" class="btn btn-primary btn-sm button" type="button" style="height: 40px;
     width: 110px; float: left; margin-right: 5px;">Delete</button>
         <button id="showButton" class="btn btn-primary btn-sm button" type="button" style="height: 40px;
-    width: 110px; float: left">Show All</button>
+    width: 110px; float: left" onclick="donTShowAll()" disabled hidden>Show All</button>
     </div>
     <br>
     <div class="center" style="width: 850px;">
@@ -457,14 +457,14 @@
         let endDate = document.getElementsByClassName("date")[1].value;
 
         queryStr = "firstName=" + firstName + "&lastName=" + lastName + "&startDate=" + startDate + "&endDate=" + endDate;
-        queryStr2 = "firstName=" + firstName + "&lastName=" + lastName + "&startDate=" + startDate + "&endDate=" + endDate;
+        // queryStr2 = "firstName=" + firstName + "&lastName=" + lastName + "&startDate=" + startDate + "&endDate=" + endDate;
 //This queryStr is for the admin's filtering options, that's why you need first and last names
         table.clear();
         table.draw();
         // trapTable.clear();
         // trapTable.draw();
         queryAndDisplay(queryStr);
-        queryAndDisplay(queryStr2);
+        // queryAndDisplay(queryStr2);
     }
 
     let queryAndDisplay = function (query) {
@@ -516,6 +516,31 @@
 
             }
         })
+    }
+
+    function showFilter(){
+        if (document.getElementById("From").length === 0  && document.getElementById("To").length === 0  && document.getElementById("firstName").value !== '' && document.getElementById("lastName").value === '') {
+            document.getElementById("submitButton").disabled = true;
+            document.getElementById("submitButton").hidden = true;
+        } else {
+            document.getElementById("submitButton").disabled = false;
+            document.getElementById("submitButton").hidden = false;
+        }
+    }
+
+    // function donTShowFilter() {
+    //     document.getElementById("submitButton").disabled = true;
+    //     document.getElementById("submitButton").hidden = true;
+    // }
+
+    function showAll() {
+            document.getElementById("showButton").disabled = false;
+            document.getElementById("showButton").hidden = false;
+    }
+
+    function donTShowAll() {
+        document.getElementById("showButton").disabled = true;
+        document.getElementById("showButton").hidden = true;
     }
 
     function onFunction() {

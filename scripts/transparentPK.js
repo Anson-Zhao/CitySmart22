@@ -5,7 +5,7 @@ define([],function () {
         let placemarkAttributes = new WorldWind.PlacemarkAttributes(null);
         placemarkAttributes.imageSource = WorldWind.configuration.baseUrl + "images/YellowFireHydrant.png";
 
-        placemarkAttributes.imageScale = 0.007; //placemark size!
+        placemarkAttributes.imageScale = 0.005; //placemark size!
 
         // if (Array.isArray(color)) {
         //     placemarkAttributes.imageSource = new WorldWind.ImageSource(imagePK(color, 5, 15));

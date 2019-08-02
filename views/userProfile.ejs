@@ -107,8 +107,8 @@
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span><input id="username" name="username" class="form-control" value="<%= user.username %>" placeholder="<%= user.username %>" type="text" onchange="SearchUsername(this.value)" minlength="2" maxlength="99" required>
                             </div>
                             <p style="margin-top:8px;color:#0088d8;" id="emailc"></p>
-                            <br>
                             <p id="emailUser" style="text-align: center; color: palevioletred; margin-top:15px;"></p>
+                            <br>
                         </div>
                     </div>
                     <div class="form-group">
@@ -422,6 +422,12 @@
                     document.getElementById('q2').value = results[1][0].question2;
                     document.getElementById('answer1').value = results[1][0].answer1;
                     document.getElementById('answer2').value = results[1][0].answer2;
+
+                    document.getElementById('firstName').placeholder = results[0][0].firstName;
+                    document.getElementById('lastName').placeholder = results[0][0].lastName;
+                    document.getElementById('answer1').placeholder = results[1][0].answer1;
+                    document.getElementById('answer2').placeholder = results[1][0].answer2;
+
                 // }
             // }
         }
