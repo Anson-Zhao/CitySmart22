@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3b2ba209-e08e-4f77-99ae-d893522cce16" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/images/Pics/Fire Hydrant Oliver St Close.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/images/Pics/Fire Hydrant2 Close.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -107,7 +109,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/config/serverConfig.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="43">
+            <state relative-caret-position="42">
               <caret line="11" column="35" selection-start-line="11" selection-start-column="35" selection-end-line="11" selection-end-column="35" />
             </state>
           </provider>
@@ -1100,6 +1102,17 @@
             <path>
               <item name="CitySmart22.1" type="b2602c69:ProjectViewProjectNode" />
               <item name="CitySmart22.1" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CitySmart22.1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CitySmart22.1" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
+              <item name="Pics" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CitySmart22.1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CitySmart22.1" type="462c0819:PsiDirectoryNode" />
               <item name="uploadfolder" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -1206,13 +1219,6 @@
       <workItem from="1560168590379" duration="5311000" />
       <workItem from="1563386340103" duration="16226000" />
       <workItem from="1563476758566" duration="29166000" />
-    </task>
-    <task id="LOCAL-00069" summary="fix option list classes">
-      <created>1557587684655</created>
-      <option name="number" value="00069" />
-      <option name="presentableId" value="LOCAL-00069" />
-      <option name="project" value="LOCAL" />
-      <updated>1557587684655</updated>
     </task>
     <task id="LOCAL-00070" summary="fix option list classes">
       <created>1557588031599</created>
@@ -1550,11 +1556,18 @@
       <option name="project" value="LOCAL" />
       <updated>1564686214107</updated>
     </task>
-    <option name="localTasksCounter" value="118" />
+    <task id="LOCAL-00118" summary="Merge branch 'Cucumbers' of https://github.com/Anson-Zhao/CitySmart22 into julia2&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
+      <created>1564763203324</created>
+      <option name="number" value="00118" />
+      <option name="presentableId" value="LOCAL-00118" />
+      <option name="project" value="LOCAL" />
+      <updated>1564763203324</updated>
+    </task>
+    <option name="localTasksCounter" value="119" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="369201000" />
+    <option name="totallyTimeSpent" value="371016000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1567,13 +1580,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="831" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4989429" visible="true" weight="0.2081545" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4989429" visible="true" weight="0.2081545" />
       <window_info id="Structure" order="1" sideWeight="0.5010571" side_tool="true" weight="0.30397728" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49761716" weight="0.32975206" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4807074" visible="true" weight="0.7780785" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4807074" visible="true" weight="0.270636" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4982136" weight="0.39737275" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -2011,7 +2025,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/config/serverConfig.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="43">
+        <state relative-caret-position="42">
           <caret line="11" column="35" selection-start-line="11" selection-start-column="35" selection-end-line="11" selection-end-column="35" />
         </state>
       </provider>
