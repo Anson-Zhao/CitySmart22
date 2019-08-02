@@ -564,6 +564,27 @@
             }
         }
 
+        function showFilter(){
+            document.getElementById("submitButton").disabled = false;
+            document.getElementById("submitButton").hidden = false;
+        }
+
+        function donTShowFilter() {
+            document.getElementById("submitButton").disabled = true;
+            document.getElementById("submitButton").hidden = true;
+        }
+
+        function showAll() {
+            document.getElementById("showButton").disabled = false;
+            document.getElementById("showButton").hidden = false;
+        }
+
+        function donTShowAll() {
+            document.getElementById("showButton").disabled = true;
+            document.getElementById("showButton").hidden = true;
+        }
+
+
         function onFunction() {
             alert ("You are now online.");
         }

@@ -239,7 +239,7 @@
         <button id="deleteButton" class="btn btn-primary btn-sm button" type="button" style="height: 40px;
     width: 110px; float: left; margin-right: 5px;">Delete</button>
         <button id="showButton" class="btn btn-primary btn-sm button" type="button" style="height: 40px;
-    width: 110px; float: left" onclick="donTShowAll()" hidden disabled>Show All</button>
+    width: 110px; float: left" onclick="donTShowAll(), donTShowFilter()" hidden disabled>Show All</button>
     </div>
     <br>
     <div class="center" style="width: 850px;">
@@ -514,6 +514,16 @@
 
             }
         })
+    }
+
+    function showFilter(){
+        document.getElementById("submitButton").disabled = false;
+        document.getElementById("submitButton").hidden = false;
+    }
+
+    function donTShowFilter() {
+        document.getElementById("submitButton").disabled = true;
+        document.getElementById("submitButton").hidden = true;
     }
 
     function showAll() {
