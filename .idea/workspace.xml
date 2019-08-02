@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3b2ba209-e08e-4f77-99ae-d893522cce16" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/scripts/customPK.js" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/customPK.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/dataHistory.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/dataHistory.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/rejected.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/rejected.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/userHome.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/userHome.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/userManagement.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/userManagement.ejs" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -44,84 +48,44 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/transparentPK.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="28" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/BasicWorldWindowController.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="177">
-              <caret line="31" column="34" selection-start-line="31" selection-start-column="34" selection-end-line="31" selection-end-column="34" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/WorldWindShim.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scripts/CS_InvisPK.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="50" selection-start-line="12" selection-start-column="50" selection-end-line="12" selection-end-column="50" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/serverConfig.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
+    <leaf>
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/userHome.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="61" selection-start-line="11" selection-start-column="61" selection-end-line="11" selection-end-column="61" />
-              <folding>
-                <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/views/homepage.ejs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="684" column="72" lean-forward="true" selection-start-line="684" selection-start-column="72" selection-end-line="684" selection-end-column="72" />
+            <state relative-caret-position="472">
+              <caret line="521" column="40" selection-start-line="521" selection-start-column="40" selection-end-line="521" selection-end-column="40" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CS2_MainSvr.js">
+        <entry file="file://$PROJECT_DIR$/views/userManagement.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="25" column="33" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
+            <state relative-caret-position="731">
+              <caret line="575" selection-start-line="575" selection-end-line="575" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/dataHistory.ejs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="296">
+              <caret line="634" column="61" selection-start-line="634" selection-start-column="61" selection-end-line="634" selection-end-column="61" />
               <folding>
-                <element signature="n#!!doc" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/rejected.ejs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="291">
+              <caret line="241" column="71" selection-start-line="241" selection-start-column="71" selection-end-line="241" selection-end-column="71" />
             </state>
           </provider>
         </entry>
@@ -137,12 +101,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>newusername</find>
-      <find>th</find>
-      <find>button1</find>
-      <find>checkit</find>
-      <find>changePass</find>
-      <find>currentPassword</find>
       <find>updateForm</find>
       <find>getNamedLayers</find>
       <find>changeContinent</find>
@@ -167,6 +125,12 @@
       <find>submit(</find>
       <find>default</find>
       <find>submit</find>
+      <find>filter</find>
+      <find>input</find>
+      <find>showAllAll</find>
+      <find>showFilter</find>
+      <find>submitButton</find>
+      <find>From</find>
     </findStrings>
     <replaceStrings>
       <replace>Layer</replace>
@@ -220,8 +184,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/config/clientConfig.js" />
-        <option value="$PROJECT_DIR$/scripts/USGS_WT_heatmapLayer.js" />
         <option value="$PROJECT_DIR$/scripts/USGS_WT_placemarkLayer.js" />
         <option value="$PROJECT_DIR$/scripts/All_Layer_Menu.js" />
         <option value="$PROJECT_DIR$/scripts/USGS_MR_heatmapLayer.js" />
@@ -255,7 +217,6 @@
         <option value="$PROJECT_DIR$/views/login.ejs" />
         <option value="$PROJECT_DIR$/views/PhoneAuthP1.ejs" />
         <option value="$PROJECT_DIR$/views/2step.ejs" />
-        <option value="$PROJECT_DIR$/views/userManagement.ejs" />
         <option value="$PROJECT_DIR$/views/EmailAuth.ejs" />
         <option value="$PROJECT_DIR$/views/PhoneAuthP2.ejs" />
         <option value="$PROJECT_DIR$/views/homepageUSER.ejs" />
@@ -269,8 +230,11 @@
         <option value="$PROJECT_DIR$/config/serverConfig.js" />
         <option value="$PROJECT_DIR$/views/LayerRequestForm.ejs" />
         <option value="$PROJECT_DIR$/views/signup.ejs" />
-        <option value="$PROJECT_DIR$/views/userHome.ejs" />
         <option value="$PROJECT_DIR$/views/homepage.ejs" />
+        <option value="$PROJECT_DIR$/views/userManagement.ejs" />
+        <option value="$PROJECT_DIR$/views/rejected.ejs" />
+        <option value="$PROJECT_DIR$/views/dataHistory.ejs" />
+        <option value="$PROJECT_DIR$/views/userHome.ejs" />
       </list>
     </option>
   </component>
@@ -292,6 +256,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -302,7 +267,12 @@
             <path>
               <item name="CitySmart22" type="b2602c69:ProjectViewProjectNode" />
               <item name="CitySmart22" type="462c0819:PsiDirectoryNode" />
-              <item name="scripts" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CitySmart22" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CitySmart22" type="462c0819:PsiDirectoryNode" />
+              <item name="routes" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="CitySmart22" type="b2602c69:ProjectViewProjectNode" />
@@ -313,7 +283,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -373,6 +342,9 @@
     </option>
   </component>
   <component name="RunManager">
+    <configuration name="CS2_MainSvr.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="CS2_MainSvr.js" working-dir="$PROJECT_DIR$">
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Node.js.CS2_MainSvr.js" />
@@ -405,13 +377,6 @@
       <workItem from="1560168590379" duration="5311000" />
       <workItem from="1563386340103" duration="16226000" />
       <workItem from="1563476758566" duration="29166000" />
-    </task>
-    <task id="LOCAL-00068" summary="fix option list classes">
-      <created>1557522459361</created>
-      <option name="number" value="00068" />
-      <option name="presentableId" value="LOCAL-00068" />
-      <option name="project" value="LOCAL" />
-      <updated>1557522459361</updated>
     </task>
     <task id="LOCAL-00069" summary="fix option list classes">
       <created>1557587684655</created>
@@ -749,11 +714,18 @@
       <option name="project" value="LOCAL" />
       <updated>1564680828565</updated>
     </task>
-    <option name="localTasksCounter" value="117" />
+    <task id="LOCAL-00117" summary="Merge branch 'Cucumbers' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
+      <created>1564755913786</created>
+      <option name="number" value="00117" />
+      <option name="presentableId" value="LOCAL-00117" />
+      <option name="project" value="LOCAL" />
+      <updated>1564755913786</updated>
+    </task>
+    <option name="localTasksCounter" value="118" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="361564000" />
+    <option name="totallyTimeSpent" value="365571000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -765,15 +737,15 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="4" y="23" width="2556" height="1300" extended-state="0" />
+    <frame x="0" y="23" width="2560" height="1372" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.111774065" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15350877" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49761716" weight="0.32975206" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4807074" weight="0.35994586" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.48046252" visible="true" weight="0.3592387" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4982136" weight="0.39737275" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -782,7 +754,7 @@
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.48904538" weight="0.32872254" />
       <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49284694" weight="0.32882273" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5109546" side_tool="true" weight="0.32872254" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5195375" side_tool="true" weight="0.3592387" />
       <window_info anchor="bottom" id="File Transfer" order="12" sideWeight="0.4980143" weight="0.32922825" />
       <window_info anchor="bottom" id="Database Console" order="13" weight="0.3299748" />
       <window_info anchor="bottom" id="Messages" order="14" />
@@ -839,7 +811,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="fix option list classes" />
     <MESSAGE value="Merge branch 'IV3' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
     <MESSAGE value="Merge branch 'IanNew' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;scripts/USGS_MD.js" />
     <MESSAGE value="Merge branch 'IV3' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;scripts/Home.js" />
@@ -864,17 +835,10 @@
     <MESSAGE value="user profile and sign up fix" />
     <MESSAGE value="Merge branch 'Cucumbers' of https://github.com/Anson-Zhao/CitySmart22 into julia2&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
     <MESSAGE value="Merge branch 'julia2' of https://github.com/Anson-Zhao/CitySmart22 into Cucumbers&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge branch 'julia2' of https://github.com/Anson-Zhao/CitySmart22 into Cucumbers&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
+    <MESSAGE value="Merge branch 'Cucumbers' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge branch 'Cucumbers' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="das://c48d83a6-e379-4929-b3de-4319e482d0fe/schema/CitySmart2/table/LayerMenu" />
-    <entry file="file://$PROJECT_DIR$/node_modules/passport/lib/framework/connect.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="23" selection-start-line="1" selection-start-column="23" selection-end-line="1" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/approvedfolder/2019-07-18T13:14:24Z_NAA_Campus_modified.tif" />
     <entry file="file://$PROJECT_DIR$/scripts/CS_placemarkLayer.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -922,13 +886,6 @@
     <entry file="file://$PROJECT_DIR$/views/KnowledgeAuth.ejs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-667" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/userManagement.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1518">
-          <caret line="392" selection-start-line="392" selection-end-line="392" />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/EmailAuth.ejs">
@@ -1197,16 +1154,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/userHome.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="61" selection-start-line="11" selection-start-column="61" selection-end-line="11" selection-end-column="61" />
-          <folding>
-            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/css/menu.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -1214,6 +1161,39 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
           <caret line="684" column="72" lean-forward="true" selection-start-line="684" selection-start-column="72" selection-end-line="684" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/rejected.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="291">
+          <caret line="241" column="71" selection-start-line="241" selection-start-column="71" selection-end-line="241" selection-end-column="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/dataHistory.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="296">
+          <caret line="634" column="61" selection-start-line="634" selection-start-column="61" selection-end-line="634" selection-end-column="61" />
+          <folding>
+            <element signature="n#style#0;n#input#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/userManagement.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="731">
+          <caret line="575" selection-start-line="575" selection-end-line="575" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/userHome.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="472">
+          <caret line="521" column="40" selection-start-line="521" selection-start-column="40" selection-end-line="521" selection-end-column="40" />
         </state>
       </provider>
     </entry>
