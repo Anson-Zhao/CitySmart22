@@ -3,10 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="3b2ba209-e08e-4f77-99ae-d893522cce16" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/dataHistory.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/dataHistory.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/rejected.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/rejected.ejs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/userHome.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/userHome.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/userManagement.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/userManagement.ejs" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -48,21 +45,12 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/views/userHome.ejs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="472">
-              <caret line="521" column="40" selection-start-line="521" selection-start-column="40" selection-end-line="521" selection-end-column="40" />
-            </state>
-          </provider>
-        </entry>
-      </file>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/userManagement.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="731">
-              <caret line="575" selection-start-line="575" selection-end-line="575" />
+            <state relative-caret-position="5783">
+              <caret line="537" column="39" lean-forward="true" selection-start-line="537" selection-start-column="39" selection-end-line="537" selection-end-column="39" />
             </state>
           </provider>
         </entry>
@@ -72,11 +60,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="296">
               <caret line="634" column="61" selection-start-line="634" selection-start-column="61" selection-end-line="634" selection-end-column="61" />
-              <folding>
-                <element signature="n#style#0;n#input#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -86,6 +69,15 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="291">
               <caret line="241" column="71" selection-start-line="241" selection-start-column="71" selection-end-line="241" selection-end-column="71" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/views/userHome.ejs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="222">
+              <caret line="230" column="13" selection-start-line="230" selection-start-column="13" selection-end-line="230" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -245,10 +237,10 @@
     <auto-save>true</auto-save>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="777" />
+    <option name="x" value="988" />
     <option name="y" value="23" />
-    <option name="width" value="663" />
-    <option name="height" value="831" />
+    <option name="width" value="1565" />
+    <option name="height" value="1372" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -297,7 +289,7 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
     <property name="database.console.LAST_STATE" value="true" />
-    <property name="javascript.nodejs.core.library.configured.version" value="10.14.1" />
+    <property name="javascript.nodejs.core.library.configured.version" value="9.2.0" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/config" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -377,13 +369,7 @@
       <workItem from="1560168590379" duration="5311000" />
       <workItem from="1563386340103" duration="16226000" />
       <workItem from="1563476758566" duration="29166000" />
-    </task>
-    <task id="LOCAL-00069" summary="fix option list classes">
-      <created>1557587684655</created>
-      <option name="number" value="00069" />
-      <option name="presentableId" value="LOCAL-00069" />
-      <option name="project" value="LOCAL" />
-      <updated>1557587684655</updated>
+      <workItem from="1564764292409" duration="1661000" />
     </task>
     <task id="LOCAL-00070" summary="fix option list classes">
       <created>1557588031599</created>
@@ -721,11 +707,18 @@
       <option name="project" value="LOCAL" />
       <updated>1564755913786</updated>
     </task>
-    <option name="localTasksCounter" value="118" />
+    <task id="LOCAL-00118" summary="Merge branch 'Cucumbers' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
+      <created>1564762405146</created>
+      <option name="number" value="00118" />
+      <option name="presentableId" value="LOCAL-00118" />
+      <option name="project" value="LOCAL" />
+      <updated>1564762405146</updated>
+    </task>
+    <option name="localTasksCounter" value="119" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="365571000" />
+    <option name="totallyTimeSpent" value="367371000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -740,12 +733,12 @@
     <frame x="0" y="23" width="2560" height="1372" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15350877" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15590112" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49761716" weight="0.32975206" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.48046252" visible="true" weight="0.3592387" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.48046252" weight="0.3592387" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4982136" weight="0.39737275" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -1175,25 +1168,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="296">
           <caret line="634" column="61" selection-start-line="634" selection-start-column="61" selection-end-line="634" selection-end-column="61" />
-          <folding>
-            <element signature="n#style#0;n#input#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/userManagement.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="731">
-          <caret line="575" selection-start-line="575" selection-end-line="575" />
+        <state relative-caret-position="5783">
+          <caret line="537" column="39" lean-forward="true" selection-start-line="537" selection-start-column="39" selection-end-line="537" selection-end-column="39" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/userHome.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="472">
-          <caret line="521" column="40" selection-start-line="521" selection-start-column="40" selection-end-line="521" selection-end-column="40" />
+        <state relative-caret-position="222">
+          <caret line="230" column="13" selection-start-line="230" selection-start-column="13" selection-end-line="230" selection-end-column="13" />
         </state>
       </provider>
     </entry>
