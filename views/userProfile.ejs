@@ -104,7 +104,7 @@
                         <label class="col-md-4 control-label">Username (Email Address):</label>
                         <div class="col-md-8 inputGroupContainer">
                             <div class="input-group">
-                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span><input id="username" name="username" class="form-control" value="<%= user.username %>" placeholder="<%= user.username %>" type="text" onchange="SearchUsername(this.value)" minlength="2" maxlength="99" required>
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span><input id="username" name="username" class="form-control" value="<%= user.username %>" placeholder="<%= user.username %>" type="text" onchange="SearchUsername(this.value)" minlength="2" maxlength="99" autofocus required>
                             </div>
                             <p style="margin-top:8px;color:#0088d8;" id="emailc"></p>
                             <p id="emailUser" style="text-align: center; color: palevioletred; margin-top:15px;"></p>
