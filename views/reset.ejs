@@ -57,15 +57,15 @@
     <form id="submit" onsubmit="return checkForm()" action="" method="post" id="resetForm">
         <div class="form-group">
             <label>New Password:</label>
-            <input type="password" id="NewPassword" class="form-control" name="NewPassword" minlength="8" maxlength="99" style="height: 50px;">
+            <input type="password" id="NewPassword" class="form-control" name="NewPassword" minlength="8" maxlength="99" style="height: 50px;" autofocus required>
         </div>
         <div class="form-group">
             <label>Confirm New Password: </label>
-            <input type="password" class="form-control" id="Confirmpassword" name="Confirmpassword" maxlength="99" style="height: 50px;">
+            <input type="password" class="form-control" id="Confirmpassword" name="Confirmpassword" minlength="8" maxlength="99" style="height: 50px;" required>
         </div>
         <div class="form-group">
             <label>Username (email): </label>
-            <input type="email" name="username" class="form-control" maxlength="2000px" value="<%= user.username %>" readonly style="height: 50px;">
+            <input type="email" name="username" class="form-control" minlength="2" maxlength="99" value="<%= user.username %>" readonly style="height: 50px;" required>
         </div>
         <button id="SS" type="submit" class="button1"> Submit </button>
         <input type="hidden" id="token">
