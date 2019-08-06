@@ -3118,7 +3118,7 @@ function QueryStat(myObj, sqlStat, res) {
                         console.log('download file failed, removed copy successfully')
                     })
                 }
-            }else {
+            } else {
                 //if the file number is less than num_backups, and download failed
                 if (files.length > 0) {
                     if (downloadFalse === null) {
