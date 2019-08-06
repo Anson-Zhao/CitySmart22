@@ -1322,8 +1322,9 @@ module.exports = function (app, passport) {
     // Filter by search criteria
     app.get('/filterUser', isLoggedIn, function (req, res) {
         // res.setHeader("Access-Control-Allow-Origin", "*"); // Allow cross domain header
+        let userN = req.query.UserN;
 
-        myStat = "SELECT UserProfile.*, UserLogin.* FROM UserLogin INNER JOIN UserProfile ON UserLogin.username = UserProfile.username";
+        myStat = "SELECT UserProfile.*, UserLogin.* FROM UserLogin INNER JOIN UserProfile ON UserLogin.username = UserProfile.username WHERE NOT (UserProfile.username = '"+ userN +"');";
 
         let myQuery = [
             {

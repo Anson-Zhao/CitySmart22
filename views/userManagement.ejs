@@ -341,6 +341,7 @@
         let querystr = "";
         let userrole = "";
         let UserRole = "<%= user.userrole %>";
+        let UserName = "<%= user.username %>";
         let rowUserName = [];
 
         $(document).ready(function() {
@@ -490,7 +491,7 @@
                 type: 'GET',
                 dataType: 'json',
                 async: false,
-                data: querystr,
+                data: querystr + "&UserN=" + UserName,
                 success: function (resp) {
                     console.log(resp)
                     for (let i = 0; i < resp.length; i++) {
