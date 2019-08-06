@@ -1229,6 +1229,12 @@ module.exports = function (app, passport) {
                 res.json({"error": true, "message": "An unexpected error occurred !"});
             } else {
                 res.json({"error": false, "message": "Success"});
+                let username = newUser.username;
+                let subject = "Sign Up";
+                let text = 'to sign up an account with this email.';
+                let url = "http://" + req.headers.host + "/verify/";
+                sendToken(username, subject, text, url, res);
+                res.redirect('/login');
             }
         });
     });
@@ -1241,7 +1247,9 @@ module.exports = function (app, passport) {
                 con_CS.query(myStat, function(err, results) {
                     dateNtime();
 
-                    if (results.length === 0 || dateTime > results[0].expires) {
+                    if (results === undefined || results.length == 0) {
+                        res.send('Password reset token is invalid or has expired. Please contact Administrator.');
+                    } else if (results.length === 0 || dateTime > results[0].expires) {
                         res.send('Password reset token is invalid or has expired. Please contact Administrator.');
                     } else {
                         done(err, results[0].username);
