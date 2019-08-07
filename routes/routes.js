@@ -596,9 +596,12 @@ module.exports = function (app, passport) {
 
     //show the signout form
     app.get('/signout', function (req, res) {
-        req.session.destroy();
-        req.logout();
-        res.redirect('/');
+        // req.session.destroy();
+        // req.logout();
+        // res.redirect('/');
+        req.session.destroy(function (err) {
+            res.redirect('/'); //Inside a callback… bulletproof!
+        });
     });
 
     // =====================================
