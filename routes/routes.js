@@ -523,9 +523,10 @@ module.exports = function (app, passport) {
 
         con_CS.query(myStat, function (err, user) {
             dateNtime();
-            // console.log(user);
-
-            if (!user || dateTime > user[0].resetPasswordExpires) {
+            console.log(user);
+            if (user === undefined || user.length == 0) {
+                res.send('Password reset token is invalid or has expired. Please contact Administrator.');
+            } else if (!user || dateTime > user[0].resetPasswordExpires) {
                 res.send('Password reset token is invalid or has expired. Please contact Administrator.');
             } else {
                 res.render('reset.ejs', {
@@ -1227,6 +1228,12 @@ module.exports = function (app, passport) {
                 res.json({"error": true, "message": "An unexpected error occurred !"});
             } else {
                 res.json({"error": false, "message": "Success"});
+                let username = newUser.username;
+                let subject = "Sign Up";
+                let text = 'to sign up an account with this email.';
+                let url = "http://" + req.headers.host + "/verify/";
+                sendToken(username, subject, text, url, res);
+                res.redirect('/login');
             }
         });
     });
@@ -1239,7 +1246,9 @@ module.exports = function (app, passport) {
                 con_CS.query(myStat, function(err, results) {
                     dateNtime();
 
-                    if (results.length === 0 || dateTime > results[0].expires) {
+                    if (results === undefined || results.length == 0) {
+                        res.send('Password reset token is invalid or has expired. Please contact Administrator.');
+                    } else if (results.length === 0 || dateTime > results[0].expires) {
                         res.send('Password reset token is invalid or has expired. Please contact Administrator.');
                     } else {
                         done(err, results[0].username);
@@ -1312,8 +1321,9 @@ module.exports = function (app, passport) {
     // Filter by search criteria
     app.get('/filterUser', isLoggedIn, function (req, res) {
         // res.setHeader("Access-Control-Allow-Origin", "*"); // Allow cross domain header
+        let userN = req.query.UserN;
 
-        myStat = "SELECT UserProfile.*, UserLogin.* FROM UserLogin INNER JOIN UserProfile ON UserLogin.username = UserProfile.username";
+        myStat = "SELECT UserProfile.*, UserLogin.* FROM UserLogin INNER JOIN UserProfile ON UserLogin.username = UserProfile.username WHERE NOT (UserProfile.username = '"+ userN +"');";
 
         let myQuery = [
             {
