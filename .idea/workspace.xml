@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="3b2ba209-e08e-4f77-99ae-d893522cce16" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/forgotPassword.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/forgotPassword.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/reset.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/reset.ejs" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -50,8 +48,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/routes.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="7695">
-              <caret line="513" column="34" selection-start-line="513" selection-start-column="34" selection-end-line="513" selection-end-column="34" />
+            <state relative-caret-position="795">
+              <caret line="53" selection-start-line="53" selection-end-line="53" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/homepageUSER.ejs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="31" selection-start-column="31" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -59,8 +66,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/login.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1020">
-              <caret line="74" column="36" selection-start-line="74" selection-start-column="36" selection-end-line="74" selection-end-column="36" />
+            <state relative-caret-position="885">
+              <caret line="65" column="11" selection-start-line="65" selection-start-column="11" selection-end-line="65" selection-end-column="11" />
             </state>
           </provider>
         </entry>
@@ -68,29 +75,56 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/reset.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="151">
-              <caret line="38" column="38" lean-forward="true" selection-start-line="38" selection-start-column="38" selection-end-line="38" selection-end-column="38" />
+            <state relative-caret-position="570">
+              <caret line="38" column="38" selection-start-line="38" selection-start-column="38" selection-end-line="38" selection-end-column="38" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/forgotPassword.ejs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2775">
+              <caret line="192" column="44" selection-start-line="192" selection-start-column="44" selection-end-line="192" selection-end-column="44" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/userHome.ejs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2070">
+              <caret line="138" column="27" selection-start-line="138" selection-start-column="27" selection-end-line="138" selection-end-column="27" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/views/forgotPassword.ejs">
+        <entry file="file://$PROJECT_DIR$/views/LayerRequestForm_edit.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="564">
-              <caret line="176" column="106" lean-forward="true" selection-start-line="176" selection-start-column="106" selection-end-line="176" selection-end-column="106" />
+            <state relative-caret-position="379">
+              <caret line="629" column="61" lean-forward="true" selection-start-line="629" selection-start-column="61" selection-end-line="629" selection-end-column="61" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CS2_MainSvr.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="14" column="58" selection-start-line="14" selection-start-column="58" selection-end-line="14" selection-end-column="58" />
               <folding>
-                <element signature="n#style#0;n#input#0;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#!!doc" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/homepage.ejs">
+        <entry file="file://$PROJECT_DIR$/views/dataHistory.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1965">
-              <caret line="131" column="13" selection-start-line="131" selection-start-column="13" selection-end-line="131" selection-end-column="13" />
+            <state relative-caret-position="2910">
+              <caret line="194" column="57" selection-start-line="194" selection-start-column="57" selection-end-line="194" selection-end-column="57" />
             </state>
           </provider>
         </entry>
@@ -106,22 +140,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>currentPassword</find>
-      <find>updateForm</find>
-      <find>getNamedLayers</find>
-      <find>changeContinent</find>
-      <find>h1</find>
-      <find>delete</find>
-      <find>drain</find>
-      <find>Manhole</find>
-      <find>ManholeC</find>
-      <find>approve</find>
-      <find>TIF</find>
-      <find>TIR</find>
-      <find />
-      <find>User Name (Email)</find>
-      <find>User Name(Email)</find>
-      <find>email</find>
       <find>password:&lt;</find>
       <find>maxlength=&quot;20&quot;</find>
       <find>user</find>
@@ -136,6 +154,22 @@
       <find>alert</find>
       <find>disabled</find>
       <find>button2</find>
+      <find>removeFile</find>
+      <find>con_CS</find>
+      <find>nav</find>
+      <find>navul</find>
+      <find>floating-Box</find>
+      <find>searchusername</find>
+      <find>queryAndDisplay</find>
+      <find>query</find>
+      <find>/approve</find>
+      <find>SELECT</find>
+      <find>for</find>
+      <find>button</find>
+      <find>edit</find>
+      <find>btn</find>
+      <find>clear</find>
+      <find>html</find>
     </findStrings>
     <replaceStrings>
       <replace>Layer</replace>
@@ -226,7 +260,6 @@
         <option value="$PROJECT_DIR$/scripts/CS_InvisPK.js" />
         <option value="$PROJECT_DIR$/scripts/transparentPK.js" />
         <option value="$PROJECT_DIR$/views/homepage.ejs" />
-        <option value="$PROJECT_DIR$/routes/routes.js" />
         <option value="$PROJECT_DIR$/views/2step.ejs" />
         <option value="$PROJECT_DIR$/views/adduser.ejs" />
         <option value="$PROJECT_DIR$/views/PhoneAuthP2.ejs" />
@@ -240,6 +273,7 @@
         <option value="$PROJECT_DIR$/views/login.ejs" />
         <option value="$PROJECT_DIR$/views/reset.ejs" />
         <option value="$PROJECT_DIR$/views/forgotPassword.ejs" />
+        <option value="$PROJECT_DIR$/routes/routes.js" />
       </list>
     </option>
   </component>
@@ -249,11 +283,10 @@
     <other-services-enabled>true</other-services-enabled>
     <auto-save>true</auto-save>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="35" />
-    <option name="y" value="23" />
-    <option name="width" value="2503" />
-    <option name="height" value="1262" />
+  <component name="ProjectFrameBounds">
+    <option name="y" value="58" />
+    <option name="width" value="2560" />
+    <option name="height" value="1310" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -380,21 +413,8 @@
       <workItem from="1564750998053" duration="7437000" />
       <workItem from="1564775843175" duration="298000" />
       <workItem from="1565010286063" duration="9242000" />
-      <workItem from="1565096691025" duration="726000" />
-    </task>
-    <task id="LOCAL-00086" summary="final version">
-      <created>1563552066843</created>
-      <option name="number" value="00086" />
-      <option name="presentableId" value="LOCAL-00086" />
-      <option name="project" value="LOCAL" />
-      <updated>1563552066843</updated>
-    </task>
-    <task id="LOCAL-00087" summary="Merge branch 'master' of https://github.com/Anson-Zhao/CitySmart22 into julia2&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
-      <created>1563553691248</created>
-      <option name="number" value="00087" />
-      <option name="presentableId" value="LOCAL-00087" />
-      <option name="project" value="LOCAL" />
-      <updated>1563553691248</updated>
+      <workItem from="1565096691025" duration="13072000" />
+      <workItem from="1565183372286" duration="243000" />
     </task>
     <task id="LOCAL-00088" summary="eye password">
       <created>1563810682025</created>
@@ -725,11 +745,25 @@
       <option name="project" value="LOCAL" />
       <updated>1565034953307</updated>
     </task>
-    <option name="localTasksCounter" value="135" />
+    <task id="LOCAL-00135" summary="...">
+      <created>1565099083462</created>
+      <option name="number" value="00135" />
+      <option name="presentableId" value="LOCAL-00135" />
+      <option name="project" value="LOCAL" />
+      <updated>1565099083462</updated>
+    </task>
+    <task id="LOCAL-00136" summary="...">
+      <created>1565103551074</created>
+      <option name="number" value="00136" />
+      <option name="presentableId" value="LOCAL-00136" />
+      <option name="project" value="LOCAL" />
+      <updated>1565103551074</updated>
+    </task>
+    <option name="localTasksCounter" value="137" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="380566000" />
+    <option name="totallyTimeSpent" value="393155000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -741,15 +775,15 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="2560" height="1345" extended-state="6" />
+    <frame x="0" y="58" width="2560" height="1310" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.11477363" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.11556791" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49761716" weight="0.32975206" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.48411438" weight="0.20271349" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.48411438" weight="0.20853859" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4982136" weight="0.39737275" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -759,14 +793,14 @@
       <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.4884646" weight="0.2529928" />
       <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49284694" weight="0.32881084" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.51588565" side_tool="true" weight="0.20271349" />
-      <window_info anchor="bottom" id="File Transfer" order="12" sideWeight="0.4980143" weight="0.32922825" />
+      <window_info anchor="bottom" id="File Transfer" order="12" sideWeight="0.4980143" weight="0.32881084" />
       <window_info anchor="bottom" id="Database Console" order="13" weight="0.3299748" />
       <window_info anchor="bottom" id="Messages" order="14" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Database" order="3" weight="0.28175896" />
-      <window_info anchor="right" id="Remote Host" order="4" weight="0.096260935" />
+      <window_info anchor="right" id="Remote Host" order="4" weight="0.09610802" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -858,13 +892,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/b.js" />
-    <entry file="file://$PROJECT_DIR$/views/homepageUSER.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-6233">
-          <caret line="293" column="36" selection-start-line="293" selection-start-column="36" selection-end-line="293" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scripts/CS_wmsLayer.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="232">
@@ -904,13 +931,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="3" column="47" lean-forward="true" selection-start-line="3" selection-start-column="47" selection-end-line="3" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/clientConfig.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
-          <caret line="48" column="32" selection-start-line="48" selection-start-column="32" selection-end-line="48" selection-end-column="32" />
         </state>
       </provider>
     </entry>
@@ -1002,30 +1022,6 @@
     <entry file="file://$PROJECT_DIR$/scripts/transparentPK.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/userHome.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
-          <caret line="39" column="11" selection-start-line="39" selection-start-column="11" selection-end-line="39" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CS2_MainSvr.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="25" column="33" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/passport.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="604">
-          <caret line="94" column="79" selection-start-line="94" selection-start-column="79" selection-end-line="94" selection-end-column="79" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/2step.ejs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="761">
@@ -1061,31 +1057,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/dataHistory.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="196" column="59" lean-forward="true" selection-start-line="196" selection-start-column="59" selection-end-line="196" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/LayerRequestForm_edit.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="588">
-          <caret line="249" column="136" lean-forward="true" selection-start-line="249" selection-start-column="136" selection-end-line="249" selection-end-column="136" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/LayerRequestForm.ejs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="730">
           <caret line="222" column="66" lean-forward="true" selection-start-line="222" selection-start-column="66" selection-end-line="222" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/adduser.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="88" column="135" selection-start-line="88" selection-start-column="135" selection-end-line="88" selection-end-column="135" />
         </state>
       </provider>
     </entry>
@@ -1098,20 +1073,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/success.ejs">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/serverConfig.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="28" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/signup.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="859">
-          <caret line="142" column="59" lean-forward="true" selection-start-line="142" selection-start-column="59" selection-end-line="142" selection-end-column="59" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/userEdit.ejs">
       <provider selected="true" editor-type-id="text-editor">
@@ -1127,41 +1088,111 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/views/homepage.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-10396">
+          <caret line="18" column="31" lean-forward="true" selection-start-line="18" selection-start-column="31" selection-end-line="18" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/signup.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="642">
+          <caret line="126" column="48" lean-forward="true" selection-start-line="126" selection-start-column="48" selection-end-line="126" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/adduser.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="88" column="135" selection-start-line="88" selection-start-column="135" selection-end-line="88" selection-end-column="135" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/clientConfig.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/serverConfig.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="6" lean-forward="true" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/passport.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="494">
+          <caret line="33" column="80" lean-forward="true" selection-start-line="33" selection-start-column="80" selection-end-line="33" selection-end-column="80" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/routes/routes.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7695">
-          <caret line="513" column="34" selection-start-line="513" selection-start-column="34" selection-end-line="513" selection-end-column="34" />
+        <state relative-caret-position="795">
+          <caret line="53" selection-start-line="53" selection-end-line="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/homepageUSER.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="31" selection-start-column="31" selection-end-column="31" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/login.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1020">
-          <caret line="74" column="36" selection-start-line="74" selection-start-column="36" selection-end-line="74" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/homepage.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1965">
-          <caret line="131" column="13" selection-start-line="131" selection-start-column="13" selection-end-line="131" selection-end-column="13" />
+        <state relative-caret-position="885">
+          <caret line="65" column="11" selection-start-line="65" selection-start-column="11" selection-end-line="65" selection-end-column="11" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/reset.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="151">
-          <caret line="38" column="38" lean-forward="true" selection-start-line="38" selection-start-column="38" selection-end-line="38" selection-end-column="38" />
+        <state relative-caret-position="570">
+          <caret line="38" column="38" selection-start-line="38" selection-start-column="38" selection-end-line="38" selection-end-column="38" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/forgotPassword.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="564">
-          <caret line="176" column="106" lean-forward="true" selection-start-line="176" selection-start-column="106" selection-end-line="176" selection-end-column="106" />
+        <state relative-caret-position="2775">
+          <caret line="192" column="44" selection-start-line="192" selection-start-column="44" selection-end-line="192" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/userHome.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2070">
+          <caret line="138" column="27" selection-start-line="138" selection-start-column="27" selection-end-line="138" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CS2_MainSvr.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="14" column="58" selection-start-line="14" selection-start-column="58" selection-end-line="14" selection-end-column="58" />
           <folding>
-            <element signature="n#style#0;n#input#0;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#!!doc" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/dataHistory.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2910">
+          <caret line="194" column="57" selection-start-line="194" selection-start-column="57" selection-end-line="194" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/LayerRequestForm_edit.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="379">
+          <caret line="629" column="61" lean-forward="true" selection-start-line="629" selection-start-column="61" selection-end-line="629" selection-end-column="61" />
         </state>
       </provider>
     </entry>
