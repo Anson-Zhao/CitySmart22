@@ -318,7 +318,6 @@ module.exports = function (app, passport) {
 
             res.render('2step.ejs',{
                 user:req.user,
-                userrole: req.user.userrole,
                 username: req.user.username
             });
         });

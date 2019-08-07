@@ -67,22 +67,22 @@
         <div class="form-group">
             <button type="submit" class="button" id="kBA">Knowledge-Based Authentication</button>
         </div>
-        <input type="hidden" id="token" name="token">
+        <input type="hidden" id="token">
     </form>
     <form onsubmit="return checkForm()" action="/pauth" method="post" id="Pauth">
         <div class="form-group">
             <button type="submit" class="button" id="pA">Phone Authentication</button>
         </div>
-        <input type="hidden" id="token" name="token">
+        <input type="hidden" id="token">
     </form>
     <form onsubmit="return checkForm()" action="/eauth" method="post" id="Eauth">
         <div class="form-group">
             <button type="submit" class="button" id="eA">Email Authentication</button>
         </div>
-        <input type="hidden" id="token" name="token">
+        <input type="hidden" id="token">
     </form>
     <hr style="margin-bottom: 10px;">
-    <p style="text-align: center;"> <a href="/">Cancel</a></p>
+    <p style="text-align: center;"> <a href="/">Cancel Login</a></p>
 </div>
 <br>
 <script>
@@ -101,6 +101,13 @@
             setTimeout(function(){ window.location.replace("/"); }, 180000);
         }
         timedRefresh();
+
+        // window.onload = function() {
+        //     if(!window.location.hash) {
+        //         window.location = window.location + '#loaded';
+        //         window.location.reload();
+        //     }
+        // }
 
     });
 
