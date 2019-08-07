@@ -111,6 +111,11 @@
 			<input type="password" id="password" class="form-control" name="password" style="width: 95%; height: 50px;  display: inline-block" minlength="8" maxlength="99" required>
 			<span toggle="#password" class="fa fa-fw fa-eye-slash field-icon toggle-password" style="float: right; margin-top: 15px; display: inline-block"></span>
 		</div>
+        <div class="form-group">
+            <label>Confirm Password:</label>
+            <input type="password" id="confirmPassword" class="form-control" data-rule-equalTo="#password" style="width: 95%; height: 50px;  display: inline-block" minlength="8" maxlength="99" required>
+            <span toggle="#confirmPassword" class="fa fa-fw fa-eye-slash field-icon toggle-password" style="float: right; margin-top: 15px; display: inline-block"></span>
+        </div>
 		<div class="form-group" hidden>
 			<label>User Role:</label>
 			<br>
@@ -304,6 +309,9 @@
                 }
             }
         })
+        jQuery.extend(jQuery.validator.messages, {
+            equalTo:"Password fields do not match."
+        });
 
 		$('#signup').submit(function(e) {
 			// console.log($("#signup").serialize());
@@ -364,6 +372,14 @@
             }
 
 		});
+    });
+
+    $('#PhoneNumber').on("cut copy paste",function(e) {
+        e.preventDefault();
+    });
+
+    $('#confirmPassword').on("cut copy paste",function(e) {
+        e.preventDefault();
     });
 
     $('select[name=question1]').on('change', function() {
