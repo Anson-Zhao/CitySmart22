@@ -979,10 +979,12 @@
     function clearForm(){
         if (confirm("Are you sure to clear the form? All the data will be reset accordingly!") === true) {
            $('input,select,textarea').not('[readonly],[disabled],:button').val('');
+            changeContinent("AL");
+            $('#continent2').prop('selectedIndex',0);
            $("#main").value = "Category";
             $("#sub").html("<option>SELECT SUBCATEGORY</option>");
             $("#City").html("<option>SELECT CONTINENT</option>");
-            $("#country2").html("<option>SELECT COUNTRY</option>");
+            // $("#country2").html("<option>SELECT COUNTRY</option>");
         }
     }
 
