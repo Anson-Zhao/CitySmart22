@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="3b2ba209-e08e-4f77-99ae-d893522cce16" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/adduser.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/adduser.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/LayerRequestForm_edit.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/LayerRequestForm_edit.ejs" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -59,21 +59,21 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="ejs" value="1776" />
+          <entry key="ejs" value="1847" />
           <entry key="js" value="1075" />
-          <entry key="txt" value="362" />
+          <entry key="txt" value="370" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="EJS" value="1776" />
+          <entry key="EJS" value="1847" />
           <entry key="JavaScript" value="1075" />
-          <entry key="PLAIN_TEXT" value="362" />
+          <entry key="PLAIN_TEXT" value="370" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="ejs" value="25" />
+          <entry key="ejs" value="27" />
           <entry key="html" value="1" />
           <entry key="jpg" value="7" />
           <entry key="js" value="19" />
@@ -82,7 +82,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="EJS" value="25" />
+          <entry key="EJS" value="27" />
           <entry key="HTML" value="1" />
           <entry key="Image" value="7" />
           <entry key="JavaScript" value="19" />
@@ -96,8 +96,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/routes.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="1198" column="21" selection-start-line="1198" selection-start-column="13" selection-end-line="1198" selection-end-column="21" />
+            <state relative-caret-position="3946">
+              <caret line="2167" column="18" selection-start-line="2167" selection-start-column="13" selection-end-line="2167" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -120,11 +120,35 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/adduser.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-576">
-              <caret line="61" column="9" selection-start-line="61" selection-start-column="9" selection-end-line="61" selection-end-column="9" />
+            <state relative-caret-position="-3526">
+              <caret line="85" column="9" selection-start-line="85" selection-start-column="9" selection-end-line="85" selection-end-column="9" />
+              <folding>
+                <element signature="n#style#0;n#select#0;n#div#5;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/views/LayerRequestForm_edit.ejs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-715">
+              <caret line="504" column="14" lean-forward="true" selection-start-line="504" selection-start-column="14" selection-end-line="504" selection-end-column="14" />
+              <folding>
+                <marker date="1565298305986" expanded="true" signature="48835:48855" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/views/userEdit.ejs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="275">
+              <caret line="151" column="22" selection-start-line="141" selection-start-column="16" selection-end-line="151" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -140,15 +164,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>/filterUser</find>
-      <find>/reset/:</find>
-      <find>render</find>
-      <find>/editData</find>
-      <find>data</find>
-      <find>: re</find>
-      <find>commN</find>
-      <find>: res</find>
-      <find>usgsWT</find>
       <find>&quot;/&quot;</find>
       <find>csPK</find>
       <find>mrdsDataP</find>
@@ -170,6 +185,15 @@
       <find>PhoneNumber</find>
       <find>/adduser</find>
       <find>toggle</find>
+      <find>checkForm</find>
+      <find>pic</find>
+      <find>pictureStr</find>
+      <find>upload</find>
+      <find>layerReqQuery</find>
+      <find>layer que</find>
+      <find>Layer_Uploader_name</find>
+      <find>/edit</find>
+      <find>upl</find>
     </findStrings>
     <replaceStrings>
       <replace>serverConfig</replace>
@@ -271,9 +295,9 @@
         <option value="$PROJECT_DIR$/views/signup.ejs" />
         <option value="$PROJECT_DIR$/views/LayerRequestForm.ejs" />
         <option value="$PROJECT_DIR$/views/userEdit.ejs" />
-        <option value="$PROJECT_DIR$/views/LayerRequestForm_edit.ejs" />
         <option value="$PROJECT_DIR$/views/userManagement.ejs" />
         <option value="$PROJECT_DIR$/views/adduser.ejs" />
+        <option value="$PROJECT_DIR$/views/LayerRequestForm_edit.ejs" />
       </list>
     </option>
   </component>
@@ -1160,20 +1184,6 @@
       <workItem from="1563386340103" duration="16226000" />
       <workItem from="1563476758566" duration="29166000" />
     </task>
-    <task id="LOCAL-00082" summary="new">
-      <created>1563387234690</created>
-      <option name="number" value="00082" />
-      <option name="presentableId" value="LOCAL-00082" />
-      <option name="project" value="LOCAL" />
-      <updated>1563387234690</updated>
-    </task>
-    <task id="LOCAL-00083" summary="new">
-      <created>1563392957788</created>
-      <option name="number" value="00083" />
-      <option name="presentableId" value="LOCAL-00083" />
-      <option name="project" value="LOCAL" />
-      <updated>1563392957788</updated>
-    </task>
     <task id="LOCAL-00084" summary="geoTIFF upload">
       <created>1563541846679</created>
       <option name="number" value="00084" />
@@ -1503,11 +1513,25 @@
       <option name="project" value="LOCAL" />
       <updated>1565280323791</updated>
     </task>
-    <option name="localTasksCounter" value="131" />
+    <task id="LOCAL-00131" summary="add user">
+      <created>1565290894777</created>
+      <option name="number" value="00131" />
+      <option name="presentableId" value="LOCAL-00131" />
+      <option name="project" value="LOCAL" />
+      <updated>1565290894777</updated>
+    </task>
+    <task id="LOCAL-00132" summary="add user">
+      <created>1565291136805</created>
+      <option name="number" value="00132" />
+      <option name="presentableId" value="LOCAL-00132" />
+      <option name="project" value="LOCAL" />
+      <updated>1565291136805</updated>
+    </task>
+    <option name="localTasksCounter" value="133" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="399259000" />
+    <option name="totallyTimeSpent" value="402506000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1520,14 +1544,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="831" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4989429" visible="true" weight="0.20100144" />
       <window_info id="Structure" order="1" sideWeight="0.5010571" side_tool="true" weight="0.30397728" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49761716" weight="0.32975206" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4792561" visible="true" weight="0.270636" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.8769671" visible="true" weight="0.202977" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4982136" weight="0.39737275" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -1536,7 +1559,7 @@
       <window_info anchor="bottom" id="Database Changes" order="8" />
       <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.48855507" weight="0.32882273" />
       <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49284694" weight="0.32882273" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5207439" side_tool="true" visible="true" weight="0.270636" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.123032905" side_tool="true" visible="true" weight="0.202977" />
       <window_info anchor="bottom" id="File Transfer" order="12" sideWeight="0.4980143" weight="0.32882273" />
       <window_info anchor="bottom" id="Database Console" order="13" weight="0.3299748" />
       <window_info anchor="bottom" id="Messages" order="14" />
@@ -1607,7 +1630,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="final version" />
     <MESSAGE value="Merge branch 'master' of https://github.com/Anson-Zhao/CitySmart22 into julia2&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
     <MESSAGE value="eye password" />
     <MESSAGE value="Merge branch 'Carrots' of https://github.com/Anson-Zhao/CitySmart22 into julia2&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;views/homepage.ejs" />
@@ -1632,7 +1654,8 @@
     <MESSAGE value="Merge branch 'Cucumbers' of https://github.com/Anson-Zhao/CitySmart22 into julia2&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;views/forgotPassword.ejs" />
     <MESSAGE value="clear form" />
     <MESSAGE value="prevent copy paste to phone field" />
-    <option name="LAST_COMMIT_MESSAGE" value="prevent copy paste to phone field" />
+    <MESSAGE value="add user" />
+    <option name="LAST_COMMIT_MESSAGE" value="add user" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/routes/passport.js">
@@ -1887,35 +1910,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/userEdit.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="123" selection-start-line="123" selection-end-line="123" />
-          <folding>
-            <element signature="e#14398#14433#0#HTML" />
-            <element signature="e#14936#14969#0#HTML" />
-            <element signature="e#15183#15234#0#HTML" />
-            <element signature="e#15379#15404#0#HTML" />
-            <element signature="e#15594#15620#0#HTML" />
-            <element signature="e#16379#16414#0#HTML" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/serverConfig.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-378">
           <caret line="5" column="20" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/LayerRequestForm_edit.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="989" column="9" lean-forward="true" selection-start-line="989" selection-start-column="9" selection-end-line="989" selection-end-column="9" />
-          <folding>
-            <marker date="1565279779296" expanded="true" signature="48677:48697" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1940,13 +1938,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/routes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="1198" column="21" selection-start-line="1198" selection-start-column="13" selection-end-line="1198" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/signup.ejs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="276">
@@ -1954,10 +1945,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/views/userEdit.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="151" column="22" selection-start-line="141" selection-start-column="16" selection-end-line="151" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/views/adduser.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-576">
-          <caret line="61" column="9" selection-start-line="61" selection-start-column="9" selection-end-line="61" selection-end-column="9" />
+        <state relative-caret-position="-3526">
+          <caret line="85" column="9" selection-start-line="85" selection-start-column="9" selection-end-line="85" selection-end-column="9" />
+          <folding>
+            <element signature="n#style#0;n#select#0;n#div#5;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/routes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3946">
+          <caret line="2167" column="18" selection-start-line="2167" selection-start-column="13" selection-end-line="2167" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/LayerRequestForm_edit.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-715">
+          <caret line="504" column="14" lean-forward="true" selection-start-line="504" selection-start-column="14" selection-end-line="504" selection-end-column="14" />
+          <folding>
+            <marker date="1565298305986" expanded="true" signature="48835:48855" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
