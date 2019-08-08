@@ -63,7 +63,7 @@
     <p id="falldown">In order to continue, click the <i>Send Verification Code</i> button. Your code will be valid for three minutes.</p>
     <form action="/pcode" method="post" id="PSendcode">
         <div class="form-group">
-            <button type="submit" id="sendCode" class="button" onclick="SendCode()">Send Verification Code</button>
+            <button type="submit" id="sendCode" class="button" onclick="SendCode()" autofocus>Send Verification Code</button>
             <input type="text" name="Phone_Number" value="<%= Phone_Number %>" hidden>
         </div>
         <input type="hidden" id="token">

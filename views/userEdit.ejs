@@ -121,13 +121,14 @@
                         </div>
                         <p style="margin-top:8px;color:#0088d8;" id="emailc"></p>
                         <p id="emailUser" style="text-align: center; color: palevioletred; margin-top:15px;"></p>
+                        <br>
                     </div>
                 </div>
                 <div class="form-group">
                     <label class="col-md-4 control-label">First Name:</label>
                     <div class="col-md-8 inputGroupContainer">
                         <div class="input-group">
-                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span><input id="firstName" name="firstName" class="form-control" value="" type="text">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span><input id="firstName" name="firstName" class="form-control" value="" type="text" minlength="1" maxlength="99" required>
                         </div>
                     </div>
                 </div>
@@ -135,7 +136,7 @@
                     <label class="col-md-4 control-label">Last Name:</label>
                     <div class="col-md-8 inputGroupContainer">
                         <div class="input-group">
-                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span><input id="lastName" name="lastName" class="form-control"  value="" type="text">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span><input id="lastName" name="lastName" class="form-control"  value="" type="text" minlength="1" maxlength="99" required>
                         </div>
                     </div>
                 </div>
