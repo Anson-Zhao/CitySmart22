@@ -83,7 +83,7 @@
     </div>
     <% } %>
     <!-- ADD USER FORM -->
-    <form onsubmit="return checkForm()" action="/addUser" method="post" id="addUser">
+    <form action="/addUser" method="post" id="addUser">
         <div class="form-group">
             <label>Username (email address):</label>
             <input type="email" class="form-control" id="username" name="username" onchange="SearchUsername(this.value)" style="height: 50px;" minlength="2" maxlength="99" autofocus required>
