@@ -317,8 +317,7 @@ module.exports = function (app, passport) {
         dateNtime();
 
             res.render('2step.ejs',{
-                user:req.user,
-                username: req.user.username
+                user:req.user
             });
         });
 
