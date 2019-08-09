@@ -9,7 +9,8 @@
     <!-- load fontawesome -->
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <!--<link rel="stylesheet" href="//unpkg.com/flatpickr/dist/flatpickr.min.css">-->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="../3rdPartyLibs/jquery-3.3.1.min.js"></script>
+    <script src="../3rdPartyLibs/jquery-validation-1.17.0/dist/jquery.validate.js"></script>
     <script src="https://www.google.com/recaptcha/api.js?render=6Ld7fq8UAAAAAOv8ZEiVj6P972pR_Vf3ko5R0JB_"></script>
     <script src="//cdn.jsdelivr.net/npm/flatpickr"></script>
     <?php include 'reCaptcha.php';?>
@@ -54,7 +55,11 @@
             background-color: lightgray;
             color: #ffffff;
         }
-
+        .error {
+            color: palevioletred;
+            margin-top:15px;
+            font-weight: 400;
+        }
     </style>
 </head>
 <div class="navul" style="height: 80px;
@@ -78,7 +83,7 @@
     </div>
     <% } %>
     <!-- ADD USER FORM -->
-    <form onsubmit="return checkForm()" action="/addUser" method="post" id="addUser">
+    <form action="/addUser" method="post" id="addUser">
         <div class="form-group">
             <label>Username (email address):</label>
             <input type="email" class="form-control" id="username" name="username" onchange="SearchUsername(this.value)" style="height: 50px;" minlength="2" maxlength="99" autofocus required>
@@ -94,8 +99,13 @@
         </div>
         <div class="form-group">
             <label>Password:</label>
-            <span toggle="#password" class="fa fa-fw fa-eye-slash field-icon toggle-password" style="float: right"></span>
-            <input type="password" class="form-control" id="password" name="password" style="height: 50px;" minlength="8" maxlength="99" required>
+            <input type="password" id="password" class="form-control" name="password" style="width: 95%; height: 50px;  display: inline-block" minlength="8" maxlength="99" required>
+            <span toggle="#password" class="fa fa-fw fa-eye-slash field-icon toggle-password" style="float: right; margin-top: 15px; display: inline-block"></span>
+        </div>
+        <div class="form-group">
+            <label>Confirm Password:</label>
+            <input type="password" id="confirmPassword" class="form-control" data-rule-equalTo="#password" style="width: 95%; height: 50px;  display: inline-block" minlength="8" maxlength="99" required>
+            <span toggle="#confirmPassword" class="fa fa-fw fa-eye-slash field-icon toggle-password" style="float: right; margin-top: 15px; display: inline-block"></span>
         </div>
         <p id="capsWarning" hidden><strong>WARNING: Caps lock is enabled.</strong></p>
 <!--        <div class="form-group">-->
@@ -105,11 +115,10 @@
 <!--        <p id="capsWarning" hidden><strong>WARNING: Caps lock is enabled.</strong></p>-->
         <div class="form-group">
             <label>User Role:</label>
-            <br>
-            <input type="radio" name="userrole" value="Admin" required>
-            <h5 class="floatingBox">&nbsp;&nbsp;&nbsp;Admin</h5>&nbsp;&nbsp;&nbsp;&nbsp;
-            <input type="radio" name="userrole" value="Regular" required>
-            <h5 class="floatingBox">&nbsp;&nbsp;&nbsp;Regular</h5>
+            <select id="userrole" name="User_Role" class="form-control" style="height: 50px;">
+                <option class="admin" value="Admin">Admin</option>
+                <option class="regular" value="Regular" selected>Regular</option>
+            </select>
         </div>
         <div class="form-group">
             <label>Date Created:</label>
@@ -140,65 +149,81 @@
     let firstname = document.getElementById("firstname");
     let lastname = document.getElementById("lastname");
 
-    password.addEventListener("keydown", function(e) {
+    // password.addEventListener("keydown", function(e) {
+    //
+    //     if (e.getModifierState("CapsLock")) {
+    //         capsWarning.style.display = "block";
+    //         capsWarning.hidden = false;
+    //     } else {}
+    // });
+    // password.addEventListener("keyup", function(e) {
+    //
+    //     if (e.getModifierState("CapsLock")) {}
+    //     else {
+    //         capsWarning.style.display = "none";
+    //         capsWarning.hidden = true;
+    //     }
+    // });
+    // username.addEventListener("keydown", function(e) {
+    //
+    //     if (e.getModifierState("CapsLock")) {
+    //         capsWarning.style.display = "block";
+    //         capsWarning.hidden = false;
+    //     } else {}
+    // });
+    // username.addEventListener("keyup", function(e) {
+    //
+    //     if (e.getModifierState("CapsLock")) {}
+    //     else {
+    //         capsWarning.style.display = "none";
+    //         capsWarning.hidden = true;
+    //     }
+    // });
+    // firstname.addEventListener("keydown", function(e) {
+    //
+    //     if (e.getModifierState("CapsLock")) {
+    //         capsWarning.style.display = "block";
+    //         capsWarning.hidden = false;
+    //     } else {}
+    // });
+    // firstname.addEventListener("keyup", function(e) {
+    //
+    //     if (e.getModifierState("CapsLock")) {}
+    //     else {
+    //         capsWarning.style.display = "none";
+    //         capsWarning.hidden = true;
+    //     }
+    // });
+    // lastname.addEventListener("keydown", function(e) {
+    //
+    //     if (e.getModifierState("CapsLock")) {
+    //         capsWarning.style.display = "block";
+    //         capsWarning.hidden = false;
+    //     } else {}
+    // });
+    // lastname.addEventListener("keyup", function(e) {
+    //
+    //     if (e.getModifierState("CapsLock")) {}
+    //     else {
+    //         capsWarning.style.display = "none";
+    //         capsWarning.hidden = true;
+    //     }
+    // });
 
-        if (e.getModifierState("CapsLock")) {
-            capsWarning.style.display = "block";
-            capsWarning.hidden = false;
-        } else {}
+    $('#confirmPassword').on("cut copy paste",function(e) {
+        e.preventDefault();
     });
-    password.addEventListener("keyup", function(e) {
 
-        if (e.getModifierState("CapsLock")) {}
-        else {
-            capsWarning.style.display = "none";
-            capsWarning.hidden = true;
+    $('#addUser').validate({
+        password: {
+            presence: true,
+            length: {
+                minimum: 8
+            }
         }
-    });
-    username.addEventListener("keydown", function(e) {
-
-        if (e.getModifierState("CapsLock")) {
-            capsWarning.style.display = "block";
-            capsWarning.hidden = false;
-        } else {}
-    });
-    username.addEventListener("keyup", function(e) {
-
-        if (e.getModifierState("CapsLock")) {}
-        else {
-            capsWarning.style.display = "none";
-            capsWarning.hidden = true;
-        }
-    });
-    firstname.addEventListener("keydown", function(e) {
-
-        if (e.getModifierState("CapsLock")) {
-            capsWarning.style.display = "block";
-            capsWarning.hidden = false;
-        } else {}
-    });
-    firstname.addEventListener("keyup", function(e) {
-
-        if (e.getModifierState("CapsLock")) {}
-        else {
-            capsWarning.style.display = "none";
-            capsWarning.hidden = true;
-        }
-    });
-    lastname.addEventListener("keydown", function(e) {
-
-        if (e.getModifierState("CapsLock")) {
-            capsWarning.style.display = "block";
-            capsWarning.hidden = false;
-        } else {}
-    });
-    lastname.addEventListener("keyup", function(e) {
-
-        if (e.getModifierState("CapsLock")) {}
-        else {
-            capsWarning.style.display = "none";
-            capsWarning.hidden = true;
-        }
+    })
+    jQuery.extend(jQuery.validator.messages, {
+        equalTo:"Password fields do not match."
     });
 
     $(".toggle-password").click(function() {
@@ -260,6 +285,8 @@
         let dateTime = date + ' ' + time2;
         document.getElementById("DATE").value = dateTime;
     });
+
+
 
     grecaptcha.ready(function() {
         grecaptcha.execute('6Ld7fq8UAAAAAOv8ZEiVj6P972pR_Vf3ko5R0JB_', {action: '/addUser'}.then(function (token) {

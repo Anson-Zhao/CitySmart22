@@ -431,6 +431,10 @@
             });
         });
 
+        $('#Phone_Number').on("cut copy paste",function(e) {
+            e.preventDefault();
+        });
+
         function dropDown() {
             console.log(UserRole);
             if (UserRole === "Admin") {
