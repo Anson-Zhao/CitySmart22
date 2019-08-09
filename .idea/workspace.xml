@@ -120,8 +120,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/LayerRequestForm_edit.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="558">
-              <caret line="1035" column="12" lean-forward="true" selection-start-line="1035" selection-start-column="12" selection-end-line="1036" selection-end-column="7" />
+            <state relative-caret-position="618">
+              <caret line="1039" column="115" lean-forward="true" selection-start-line="1039" selection-start-column="115" selection-end-line="1039" selection-end-column="115" />
             </state>
           </provider>
         </entry>
@@ -417,14 +417,7 @@
       <workItem from="1560168590379" duration="5311000" />
       <workItem from="1563386340103" duration="16226000" />
       <workItem from="1563476758566" duration="29166000" />
-      <workItem from="1565355089689" duration="2714000" />
-    </task>
-    <task id="LOCAL-00077" summary="Merge branch 'IV3' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;scripts/Home.js">
-      <created>1560182269585</created>
-      <option name="number" value="00077" />
-      <option name="presentableId" value="LOCAL-00077" />
-      <option name="project" value="LOCAL" />
-      <updated>1560182269585</updated>
+      <workItem from="1565355089689" duration="2991000" />
     </task>
     <task id="LOCAL-00078" summary="Merge branch 'Yiyang' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
       <created>1560182306444</created>
@@ -762,11 +755,18 @@
       <option name="project" value="LOCAL" />
       <updated>1565273152276</updated>
     </task>
-    <option name="localTasksCounter" value="126" />
+    <task id="LOCAL-00126" summary="Merge branch 'julia2' of https://github.com/Anson-Zhao/CitySmart22 into Cucumbers&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;views/forgotPassword.ejs">
+      <created>1565359077721</created>
+      <option name="number" value="00126" />
+      <option name="presentableId" value="LOCAL-00126" />
+      <option name="project" value="LOCAL" />
+      <updated>1565359077722</updated>
+    </task>
+    <option name="localTasksCounter" value="127" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="395713000" />
+    <option name="totallyTimeSpent" value="395990000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1253,8 +1253,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/views/LayerRequestForm_edit.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="558">
-          <caret line="1035" column="12" lean-forward="true" selection-start-line="1035" selection-start-column="12" selection-end-line="1036" selection-end-column="7" />
+        <state relative-caret-position="618">
+          <caret line="1039" column="115" lean-forward="true" selection-start-line="1039" selection-start-column="115" selection-end-line="1039" selection-end-column="115" />
         </state>
       </provider>
     </entry>
