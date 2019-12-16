@@ -1,4 +1,4 @@
-<!-- views/profileBK.ejs -->
+<!-- views/userProfile.ejs -->
 <!doctype html>
 <html>
 <head>
@@ -12,9 +12,12 @@
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 
     <script src="../3rdPartyLibs/jquery-3.3.1.min.js"></script>
+    <script src="../3rdPartyLibs/jquery-validation-1.17.0/dist/jquery.validate.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/file-uploader/5.16.2/all.fine-uploader/all.fine-uploader.min.js"></script>
     <script src="../3rdPartyLibs/jquery.multi-select.js"></script>
     <script src="../3rdPartyLibs/jquery-validation-1.17.0/dist/jquery.validate.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js?render=6Ld7fq8UAAAAAOv8ZEiVj6P972pR_Vf3ko5R0JB_"></script>
+    <?php include 'reCaptcha.php';?>
     <style>
         body { padding-bottom:80px; word-wrap:break-word; }
         #clear{
@@ -47,6 +50,17 @@
             background-color: #ff758f;
             color:white;
         }
+        .button2 {
+            width: 500px;
+            height: 50px;
+            border-radius: 15px;
+            -webkit-transition-duration: 0.4s;
+            transition-duration: 0.4s;
+            cursor: pointer;
+            background-color: lightgray;
+            color: #ffffff;
+        }
+
         #checkit{
             width: 250px;
             height: 50px;
@@ -57,7 +71,7 @@
             color:white;
         }
         input[type="text"] {
-             height: 60px;
+            height: 60px;
         }
         input[type="password"] {
             height: 60px;
@@ -69,13 +83,13 @@
     </style>
 
 </head>
-<div class="navul" style="height: 150px;
+<div class="navul" style="height: 80px;
     background: #000000;">
     <a class="navul" href="//aworldbridge.com" style="background: #000000;
     width: 500px;
-    height: 60px;">
-        <img class="banner" src="../images/NewWBBanner.jpg" style="width: 950px;
-    height: 150px;
+    height: 80px;">
+        <img class="banner" src="../images/NewWBBanner.jpg" style="width: 550px;
+    height: 80px;
     margin: auto; display: block;" />
     </a>
 </div>
@@ -83,159 +97,234 @@
 
 <div class="container" style="width: 850px;">
     <h1 class="text-center page-header"><strong>User Profile</strong></h1>
-    <h3 class="text-center" style="margin:30px;">Basic Form</h3>
-        <div class="generalForm">
-            <form id="basic"  class="well form-horizontal">
-                <fieldset>
-                    <div class="form-group">
-                        <label class="col-md-4 control-label">User Name(Email)</label>
-                        <div class="col-md-8 inputGroupContainer">
-                            <div class="input-group">
-                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span><input id="username" name="username" class="form-control" value="<%= user.username %>" type="text" onchange="verifyemaila()">
-                            </div>
-                            <p style="margin-top:8px;color:#0088d8;" id="emailc"></p>
+    <div class="generalForm">
+        <form id="basic"  class="well form-horizontal">
+            <fieldset>
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Username (Email Address):</label>
+                    <div class="col-md-8 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span><input id="username" name="username" class="form-control" value="<%= user.username %>" placeholder="<%= user.username %>" type="text" onchange="SearchUsername(this.value)" minlength="2" maxlength="99" autofocus required>
+                        </div>
+                        <p style="margin-top:8px;color:#0088d8;" id="emailc"></p>
+                        <p id="emailUser" style="text-align: center; color: palevioletred; margin-top:15px;"></p>
+                        <br>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label">First Name:</label>
+                    <div class="col-md-8 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span><input id="firstName" name="firstName" class="form-control" value="" type="text" minlength="1" maxlength="99" required>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label class="col-md-4 control-label">First Name</label>
-                        <div class="col-md-8 inputGroupContainer">
-                            <div class="input-group">
-                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span><input id="firstName" name="firstName" class="form-control" value="" type="text">
-                            </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Last Name:</label>
+                    <div class="col-md-8 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span><input id="lastName" name="lastName" class="form-control"  value="" type="text" minlength="1" maxlength="99" required>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label class="col-md-4 control-label">Last Name</label>
-                        <div class="col-md-8 inputGroupContainer">
-                            <div class="input-group">
-                                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span><input id="lastName" name="lastName" class="form-control"  value="" type="text">
-                            </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Address Line 1:</label>
+                    <div class="col-md-8 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input id="addressLine1" name="Address_Line1" placeholder="Street address, P.O. box, company name, c/o" class="form-control" value="" type="text" maxlength="42">
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label class="col-md-4 control-label">Address Line 1</label>
-                        <div class="col-md-8 inputGroupContainer">
-                            <div class="input-group">
-                                <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input id="addressLine1" name="Address_Line1" placeholder="Street address, P.O. box, company name, c/o" class="form-control" value="" type="text">
-                            </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Address Line 2:</label>
+                    <div class="col-md-8 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input id="addressLine2" name="Address_Line2" placeholder="Apartment, suite, unit, building, floor, etc." class="form-control" value="" type="text" maxlength="42"></div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label">City:</label>
+                    <div class="col-md-8 inputGroupContainer">
+                        <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input id="city" name="City" class="form-control" value="" type="text" maxlength="42"></div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label">State/Province/Region:</label>
+                    <div class="col-md-8 inputGroupContainer">
+                        <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input id="state" name="State_Province_Region" class="form-control" value="" type="text" maxlength="42"></div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Postal Code/ZIP:</label>
+                    <div class="col-md-8 inputGroupContainer">
+                        <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input id="postcode" name="PostalCode_ZIP" class="form-control" value="" type="text" maxlength="5"></div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Country:</label>
+                    <div class="col-md-8 inputGroupContainer">
+                        <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input id="country" name="Country" class="form-control" value="" type="text" maxlength="42"></div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Phone Number:</label>
+                    <div class="col-md-8 inputGroupContainer">
+                        <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+                            <input id="phoneNumber" name="Phone_Number" class="form-control" value="" type="text" onkeypress="isInputNumber (event)" placeholder="0000000000" maxlength="10" pattern="[0-9]{10}"></div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Security Question #1:</label>
+                    <div class="col-md-8 inputGroupContainer">
+                        <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                            <select id="q1" name="question1" class="form-control" style="height: 60px;" required>
+                                <option value="" disabled selected>SELECT SECURITY QUESTION</option>
+                                <option value="In what city or town did your mother and father meet?">In what city or town did your mother and father meet?</option>
+                                <option value="What is the middle name of your oldest child?">What is the middle name of your oldest child?</option>
+                                <option value="What was your favorite food as a child?">What was your favorite food as a child?</option>
+                                <option value="What is the last name of the boy or girl that you first kissed?">What is the last name of the boy or girl that you first kissed?</option>
+                                <option value="What was the name of the hospital where you were born?">What was the name of the hospital where you were born?</option>
+                                <option value="Who was your childhood hero?">Who was your childhood hero?</option>
+                                <option value="What was the last name of your third grade teacher?">What was the last name of your third grade teacher?</option>
+                                <option value="What was the name of your first pet?">What was the name of your first pet?</option>
+                                <option value="What\’s your parent\’s birthday?">What’s your parent’s birthday?</option>
+                                <option value="What was the name of your second pet?">What was the name of your second pet?</option>
+                                <option value="Where were you on New Year\’s Eve in 2000?">Where were you on New Year’s Eve in 2000?</option>
+                                <option value="What was your favorite sport in high school?">What was your favorite sport in high school?</option>
+                                <option value="What is the name of your best friend from childhood?">What is the name of your best friend from childhood?</option>
+                                <option value="When you were young, what did you want to be when you grew up?">When you were young, what did you want to be when you grew up?</option>
+                                <option value="What was the name of your first teacher?">What was the name of your first teacher?</option>
+                                <option value="What is the name of your manager at your first job?">What is the name of your manager at your first job?</option>
+                                <option value="What is your youngest sibling’s birthday?">What is your youngest sibling’s birthday?</option>
+                                <option value="What was your first job?">What was your first job?</option>
+                                <option value="What was the make of your first car?">What was the make of your first car?</option>
+                            </select>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label class="col-md-4 control-label">Address Line 2</label>
-                        <div class="col-md-8 inputGroupContainer">
-                            <div class="input-group">
-                                <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input id="addressLine2" name="Address_Line2" placeholder="Apartment, suite, unit, building, floor, etc." class="form-control" value="" type="text"></div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Answer:</label>
+                    <div class="col-md-8 inputGroupContainer">
+                        <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                            <input type="text" class="form-control" name="answer1" id="answer1" minlength="1" maxlength="200" spellcheck="true" required>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label class="col-md-4 control-label">City</label>
-                        <div class="col-md-8 inputGroupContainer">
-                            <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input id="city" name="City" class="form-control" value="" type="text"></div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Security Question #2:</label>
+                    <div class="col-md-8 inputGroupContainer">
+                        <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                            <select id="q2" name="question2" class="form-control" style="height: 60px;" required>
+                                <option value="" disabled selected>SELECT SECURITY QUESTION</option>
+                                <option value="In what city or town did your mother and father meet?">In what city or town did your mother and father meet?</option>
+                                <option value="What is the middle name of your oldest child?">What is the middle name of your oldest child?</option>
+                                <option value="What was your favorite food as a child?">What was your favorite food as a child?</option>
+                                <option value="What is the last name of the boy or girl that you first kissed?">What is the last name of the boy or girl that you first kissed?</option>
+                                <option value="What was the name of the hospital where you were born?">What was the name of the hospital where you were born?</option>
+                                <option value="Who was your childhood hero?">Who was your childhood hero?</option>
+                                <option value="What was the last name of your third grade teacher?">What was the last name of your third grade teacher?</option>
+                                <option value="What was the name of your first pet?">What was the name of your first pet?</option>
+                                <option value="What\’s your parent\’s birthday?">What’s your parent’s birthday?</option>
+                                <option value="What was the name of your second pet?">What was the name of your second pet?</option>
+                                <option value="Where were you on New Year\’s Eve in 2000?">Where were you on New Year’s Eve in 2000?</option>
+                                <option value="What was your favorite sport in high school?">What was your favorite sport in high school?</option>
+                                <option value="What is the name of your best friend from childhood?">What is the name of your best friend from childhood?</option>
+                                <option value="When you were young, what did you want to be when you grew up?">When you were young, what did you want to be when you grew up?</option>
+                                <option value="What was the name of your first teacher?">What was the name of your first teacher?</option>
+                                <option value="What is the name of your manager at your first job?">What is the name of your manager at your first job?</option>
+                                <option value="What is your youngest sibling’s birthday?">What is your youngest sibling’s birthday?</option>
+                                <option value="What was your first job?">What was your first job?</option>
+                                <option value="What was the make of your first car?">What was the make of your first car?</option>
+                            </select>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label class="col-md-4 control-label">State/Province/Region</label>
-                        <div class="col-md-8 inputGroupContainer">
-                            <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input id="state" name="State_Province_Region" class="form-control" value="" type="text"></div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Answer:</label>
+                    <div class="col-md-8 inputGroupContainer">
+                        <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                            <input type="text" class="form-control" id="answer2" name="answer2" minlength="1" maxlength="200" spellcheck="true" required>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label class="col-md-4 control-label">Postal Code/ZIP</label>
-                        <div class="col-md-8 inputGroupContainer">
-                            <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input id="postcode" name="PostalCode_ZIP" class="form-control" value="" type="text" maxlength="5"></div>
-                        </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label">User Role:</label>
+                    <div class="col-md-8 inputGroupContainer">
+                        <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                            <input class="form-control" type="text" style="background:#e6e6e6;" value="<%= user.userrole%>" readonly></div>
+                        <!--<h4 id="userrole" class="floating-Box"><strong>User Role:&nbsp;&nbsp;</strong></h4>-->
                     </div>
-                    <div class="form-group">
-                        <label class="col-md-4 control-label">Country</label>
-                        <div class="col-md-8 inputGroupContainer">
-                            <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span><input id="country" name="Country" class="form-control" value="" type="text"></div>
-                        </div>
+                </div>
+                <div class="form-group" id="dateCreated">
+                    <label class="col-md-4 control-label">Date Created:</label>
+                    <div class="col-md-8 inputGroupContainer">
+                        <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+                            <input class="form-control" type="text" style="background:#e6e6e6;" value="<%= user.dateCreated %>" readonly></div>
+                        <!--<h4 id="userrole" class="floating-Box"><strong>User Role:&nbsp;&nbsp;</strong></h4>-->
                     </div>
-                    <div class="form-group">
-                        <label class="col-md-4 control-label">Phone Number</label>
-                        <div class="col-md-8 inputGroupContainer">
-                            <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-                                <input id="phoneNumber" name="Phone_Number" class="form-control" value="" type="text" onkeypress="return numberPressed(event);"></div>
-                        </div>
+                </div>
+                <div class="form-group" id="lastModification">
+                    <label class="col-md-4 control-label">Last Modification:</label>
+                    <div class="col-md-8 inputGroupContainer">
+                        <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+                            <input class="form-control" type="text" style="background:#e6e6e6;" value="<%= user.dateModified %>" readonly></div>
+                        <!--<h4 id="userrole" class="floating-Box"><strong>User Role:&nbsp;&nbsp;</strong></h4>-->
                     </div>
-                    <div class="form-group">
-                        <label class="col-md-4 control-label">User Role</label>
-                        <div class="col-md-8 inputGroupContainer">
-                            <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                                <input class="form-control" type="text" style="background:#e6e6e6;" value="<%= user.userrole%>" readonly></div>
-                            <!--<h4 id="userrole" class="floating-Box"><strong>User Role:&nbsp;&nbsp;</strong></h4>-->
-                        </div>
+                </div>
+                <div class="form-group" id="lastModified">
+                    <label class="col-md-4 control-label">Last Modified by:</label>
+                    <div class="col-md-8 inputGroupContainer">
+                        <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-star"></i></span>
+                            <input class="form-control" type="text" style="background:#e6e6e6;" value="<%= user.username%>" readonly></div>
+                        <!--<h4 id="userrole" class="floating-Box"><strong>User Role:&nbsp;&nbsp;</strong></h4>-->
                     </div>
-                    <div class="form-group" id="dateCreated">
-                        <label class="col-md-4 control-label">Date Created</label>
-                        <div class="col-md-8 inputGroupContainer">
-                            <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
-                                <input class="form-control" type="text" style="background:#e6e6e6;" value="<%= user.dateCreated %>" readonly></div>
-                            <!--<h4 id="userrole" class="floating-Box"><strong>User Role:&nbsp;&nbsp;</strong></h4>-->
-                        </div>
-                    </div>
-                    <div class="form-group" id="lastModification">
-                        <label class="col-md-4 control-label">Last Modification</label>
-                        <div class="col-md-8 inputGroupContainer">
-                            <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
-                                <input class="form-control" type="text" style="background:#e6e6e6;" value="<%= user.dateModified %>" readonly></div>
-                            <!--<h4 id="userrole" class="floating-Box"><strong>User Role:&nbsp;&nbsp;</strong></h4>-->
-                        </div>
-                    </div>
-                    <div class="form-group" id="lastModified">
-                        <label class="col-md-4 control-label">Last Modified by</label>
-                        <div class="col-md-8 inputGroupContainer">
-                            <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-star"></i></span>
-                                <input class="form-control" type="text" style="background:#e6e6e6;" value="<%= user.username%>" readonly></div>
-                            <!--<h4 id="userrole" class="floating-Box"><strong>User Role:&nbsp;&nbsp;</strong></h4>-->
-                        </div>
-                    </div>
-                </fieldset>
-            </form>
-        </div>
-        <p style="font-size:15px">
-            <label for="password" >Do you want to change your password?</label>
-            <input type="checkbox" id="password" name="password" onclick="changePass()">
-        </p>
-        <div class="generalForm">
-            <form id="pswchange" style="display:none;" class="well form-horizontal">
-                <fieldset>
-                    <div>
-                        <label style="font-size:18px;">Password Change</label>
-                    </div>
-                    <p id="capsWarning" hidden><strong>WARNING: Caps lock is enabled.</strong></p>
-                    <div class="form-group">
-                        <label class="col-md-4 control-label">Current Password</label>
-                        <div class="col-md-8 inputGroupContainer">
-                            <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span><input id="currentPassword" name="CurrentPassword"  class="form-control"  onfocus ="showPassword()" value="" type="password"></div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-md-4 control-label">New Password</label>
-                        <div class="col-md-8 inputGroupContainer">
-                            <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span><input id="newPassword" name="NewPassword" class="form-control" onfocus ="showPassword()" value="" type="password"></div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label class="col-md-4 control-label">Confirm New Password</label>
-                        <div class="col-md-8 inputGroupContainer">
-                            <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span><input id="confirmPassword" name="ConfirmNewPassword" class="form-control"  onfocus ="showPassword()" value="" type="password"></div>
-                        </div>
-                    </div>
-                <br>
-                <br>
+                </div>
             </fieldset>
-                <div id="showPassword" hidden><input type="checkbox" onclick="yourFunction()"> Show Passwords</div>
-            </form>
-            <button id="checkit" class="btn-primary" style="display:none; margin-top:-85px; margin-left:550px;" onclick="check()">Check</button>
-        </div>
+            <input type="hidden" id="token">
+        </form>
+    </div>
+    <p style="font-size:15px">
+        <label for="password" >Do you want to change your password?</label>
+        <input type="checkbox" id="password" name="password" onclick="changePass()">
+    </p>
+    <h3 id="passTitle" class="text-center page-header" style="display: none">Password Change</h3>
+    <div class="generalForm">
+        <form id="pswchange" style="display:none;" class="well form-horizontal">
+            <fieldset>
+                <p id="capsWarning" hidden><strong>WARNING: Caps lock is enabled.</strong></p>
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Current Password:</label>
+                    <div class="col-md-8 inputGroupContainer">
+                        <span toggle="#currentPassword" class="fa fa-fw fa-eye-slash field-icon toggle-password" style="float: right; margin-top: 20px"></span>
+                        <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span><input id="currentPassword" name="CurrentPassword"  class="form-control" value="" type="password" maxlength="99"></div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label">New Password:</label>
+                    <div class="col-md-8 inputGroupContainer">
+                        <span toggle="#newPassword" class="fa fa-fw fa-eye-slash field-icon toggle-password" style="float: right; margin-top: 20px"></span>
+                        <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span><input id="newPassword" name="NewPassword" class="form-control" value="" type="password" minlength="8" maxlength="99"></div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Confirm New Password:</label>
+                    <div class="col-md-8 inputGroupContainer">
+                        <span toggle="#confirmPassword" class="fa fa-fw fa-eye-slash field-icon toggle-password" style="float: right; margin-top: 20px"></span>
+                        <div class="input-group"><span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span><input id="confirmPassword" name="ConfirmNewPassword" class="form-control" value="" type="password" minlength="8" maxlength="99"></div>
+                    </div>
+                </div>
+            </fieldset>
+            <input type="hidden" id="token">
+        </form>
+        <!--            <button id="checkit" class="btn-primary" style="display:none; margin-top:-85px; margin-left:550px;" onclick="check()">Check</button>-->
+    </div>
 
-        <div>
-            <button id="submit" type="submit" value="Submit" onclick="submitForm();">Save Changes</button>
-            <button id="clear" type="button" onclick="clearForm();" value="Clear">Clear</button>
-            <hr>
-            <p class="text-center"><a id="cancel" onclick="userHome();">Cancel</a></p>
-        </div>
+    <div>
+        <button id="submit" type="submit" value="Submit" onclick="submitForm();">Save Changes</button>
+        <button id="clear" type="button" onclick="clearForm();" value="Clear">Clear</button>
+        <hr>
+        <p class="text-center"><a id="cancel" onclick="userHome();">Cancel</a></p>
+    </div>
 </div>
 <script>
     let UserName = "<%= user.username %>";
@@ -292,56 +381,55 @@
         }
     });
 
-    function yourFunction() {
-        if (CurrPassword.type === "password") {
-            CurrPassword.type = "text";
+    $(".toggle-password").click(function() {
+        $(this).toggleClass("fa-eye-slash fa-eye");
+        let input = $($(this).attr("toggle"));
+        if (input.attr("type") === "password") {
+            input.attr("type", "text");
         } else {
-            CurrPassword.type = "password";
+            input.attr("type", "password");
         }
-        if (NewPassword.type === "password") {
-            NewPassword.type = "text";
-        } else {
-            NewPassword.type = "password";
-        }
-        if (ConfirmPassword.type === "password") {
-            ConfirmPassword.type = "text";
-        } else {
-            ConfirmPassword.type = "password";
-        }
-    }
-
-    function showPassword() {
-        document.getElementById("showPassword").hidden = false;
-    }
+    });
 
 
-    let getvalue = JSON.parse(localStorage.getItem("getvalue"));
-    document.getElementById('username').value = getvalue[0];
-    document.getElementById('firstName').value = getvalue[1];
-    document.getElementById('lastName').value = getvalue[2];
+    // let getvalue = JSON.parse(localStorage.getItem("getvalue"));
+    // document.getElementById('username').value = getvalue[0];
+    // document.getElementById('firstName').value = getvalue[1];
+    // document.getElementById('lastName').value = getvalue[2];
 
-
+    let userN = "userN=" + UserName;
 
     $.ajax({
         url: "/profile",
         dataType: 'json',
+        data: userN,
         success: function (results) {
             // console.log(results);
             newusername = results;
-            for(let i =0; i< results.length; i++) {
-                // console.log(results[i].username);
-                if (results[i].username === UserName) {
-                    document.getElementById('firstName').value = results[i].firstName;
-                    document.getElementById('lastName').value = results[i].lastName;
-                    document.getElementById('addressLine1').value = results[i].Address_Line1;
-                    document.getElementById('addressLine2').value = results[i].Address_Line2;
-                    document.getElementById('city').value = results[i].City;
-                    document.getElementById('state').value = results[i].State_Province_Region;
-                    document.getElementById('postcode').value = results[i].PostalCode_ZIP;
-                    document.getElementById('country').value = results[i].Country;
-                    document.getElementById('phoneNumber').value = results[i].Phone_Number;
-                }
-            }
+            // for(let i =0; i< results.length; i++) {
+            // console.log(results[i].username);
+            // if (results[i].username === UserName) {
+            document.getElementById('firstName').value = results[0][0].firstName;
+            document.getElementById('lastName').value = results[0][0].lastName;
+            document.getElementById('addressLine1').value = results[0][0].Address_Line1;
+            document.getElementById('addressLine2').value = results[0][0].Address_Line2;
+            document.getElementById('city').value = results[0][0].City;
+            document.getElementById('state').value = results[0][0].State_Province_Region;
+            document.getElementById('postcode').value = results[0][0].PostalCode_ZIP;
+            document.getElementById('country').value = results[0][0].Country;
+            document.getElementById('phoneNumber').value = results[0][0].Phone_Number;
+            document.getElementById('q1').value = results[1][0].question1;
+            document.getElementById('q2').value = results[1][0].question2;
+            document.getElementById('answer1').value = results[1][0].answer1;
+            document.getElementById('answer2').value = results[1][0].answer2;
+
+            document.getElementById('firstName').placeholder = results[0][0].firstName;
+            document.getElementById('lastName').placeholder = results[0][0].lastName;
+            document.getElementById('answer1').placeholder = results[1][0].answer1;
+            document.getElementById('answer2').placeholder = results[1][0].answer2;
+
+            // }
+            // }
         }
     })
 
@@ -374,41 +462,6 @@
         }
     }
 
-    function check() {
-        // let password = "pass=" + document.getElementById("currentPassword").value;
-        let oldP = document.getElementById("currentPassword").value;
-        let newP = document.getElementById("newPassword").value;
-        let confirmP = document.getElementById("confirmPassword").value;
-        let userProfileData = "username=" + UserName + "&pass=" + document.getElementById("currentPassword").value;
-
-        $.ajax({
-            url  : '/checkpassword',
-            method : "POST",
-            data : userProfileData,
-            dataType: 'json',
-            success : function(d){
-                if (d === true) {
-                    alert("Please make sure you typed your current password correctly.");
-                }else if(d === false){
-                    if (oldP !== "" && confirmP !== "" && newP !== "") {
-                        if (oldP !== newP) {
-                            if (newP === confirmP) {
-                                alert("You can submit now!");
-                                document.getElementById("submit").removeAttribute("disabled");
-                            } else {
-                                alert("New passwords do not match!");
-                            }
-                        } else {
-                            alert("Please make sure your new password is different from old one.");
-                        }
-                    } else {
-                        alert("All password fields are required.");
-                    }
-                }
-            }
-        });
-    }
-
     let password = $("#password");
     let initial = password.is(":checked");
     let change = $("#password_change")[initial ? "removeClass" : "addClass"]("gray");
@@ -419,77 +472,113 @@
         changeInputs.attr("disabled", !this.checked);
     });
 
+    $('#pswchange').validate({
+        'newPassword': {
+            presence: true,
+            length: {
+                minimum: 8
+            }
+        }
+    });
+
     function changePass(){
         let checkbox = document.getElementById("password");
         let text = document.getElementById("pswchange");
+        let title = document.getElementById("passTitle");
+
         if (checkbox.checked === true){
             text.style.display = "block";
-            document.getElementById("checkit").style.display = "block";
-            document.getElementById("checkit").style.backgroundColor =  "#4183c4";
-            document.getElementById("submit").setAttribute("disabled", "");
-            alert("Please verify your password(s) by clicking \"Check\" before updating.");
+            title.style.display = "block";
+            // alert("Please verify your password(s) by clicking \"Check\" before clicking update.");
             alert("Please also verify that your current password is correct and your two new passwords match before submitting.");
 
         } else{
             text.style.display = "none";
-            document.getElementById("checkit").style.display = "none";
-            document.getElementById("checkit").style.backgroundColor =  "lightgray";
-            document.getElementById("submit").removeAttribute("disabled");
+            title.style.display = "none";
         }
-        document.getElementById("submit").style.marginTop = "30px";
     }
 
     function submitForm () {
-        // alert("Changes were saved!");
+        let checkbox = document.getElementById("password");
         let data = $("#basic").serialize() + "&" + $("#pswchange").serialize();
-
-        // $.ajax({
-        //     url  : 'submit',
-        //     method : "POST",
-        //     data : data,
-        //     dataType: 'json',
-        //     success: function (result) {
-        //         // window.location.replace('/userProfile');
-        //     }
-        // });
-        //
-        // $.ajax({
-        //     url  : 'newPass',
-        //     method : "POST",
-        //     data : data,
-        //     dataType: 'json',
-        //     success : function(d){
-        //         // console.log(d);
-        //     }
-        // });
         let currentPassword = document.getElementById("currentPassword").value;
 
-        $.ajax({
-            url  : '/userProfile',
-            method : "POST",
-            data : data,
-            dataType: 'json',
-            success : function(d){
-                if (d.error) {
-                    alert(d.message);
-                } else {
-                    alert("Changes were saved!");
-                    if(currentPassword !== ""){
-                        window.location.replace('/login');
-                    }else{
-                        window.location.replace('/userProfile');
+        if (checkbox.checked === true) {
+            let oldP = document.getElementById("currentPassword").value;
+            let newP = document.getElementById("newPassword").value;
+            let confirmP = document.getElementById("confirmPassword").value;
+            let userProfileData = "username=" + UserName + "&pass=" + document.getElementById("currentPassword").value;
+            console.log("pass:" + newP);
+            $.ajax({
+                url: '/checkpassword',
+                method: "POST",
+                data: userProfileData,
+                dataType: 'json',
+                success: function (d) {
+                    if (d === true) {
+                        alert("Please make sure you typed your current password correctly.");
+                    } else if (d === false) {
+                        if (oldP !== "" && confirmP !== "" && newP !== "") {
+                            if (oldP !== newP) {
+                                if (newP === confirmP) {
+                                    $.ajax({
+                                        url  : '/userProfile',
+                                        method : "POST",
+                                        data : data,
+                                        dataType: 'json',
+                                        success : function(d){
+                                            if (d.error) {
+                                                alert(d.message);
+                                            } else {
+                                                alert("Changes were saved!");
+                                                if(oldP !== ""){
+                                                    window.location.replace('/login');
+                                                }else{
+                                                    window.location.replace('/userHome');
+                                                }
+                                            }
+                                        }
+                                    });
+                                } else {
+                                    alert("New passwords do not match!");
+                                }
+                            } else {
+                                alert("Your new password should be different from your current password.");
+                            }
+                        } else {
+                            alert("All password fields are required.");
+                        }
                     }
                 }
-            }
-        });
+            });
+        } else {
+            $.ajax({
+                url  : '/userProfile',
+                method : "POST",
+                data : data,
+                dataType: 'json',
+                success : function(d){
+                    if (d.error) {
+                        alert(d.message);
+                    } else {
+                        alert("Changes were saved!");
+                        if(currentPassword !== ""){
+                            window.location.replace('/login');
+                        }else{
+                            window.location.replace('/userHome');
+                        }
+                    }
+                }
+            });
+        }
     }
 
-    function verifyemaila(){
+    function verifyemail(){
         for (let i =0; i< newusername.length; i++){
             console.log(document.getElementById("username").value);
             console.log(newusername[i].username);
             if(document.getElementById("username").value === newusername[i].username && document.getElementById("username").value !== UserName){
-                document.getElementById("emailc").innerHTML = "This user name does exist!";
+                document.getElementById("emailc").innerHTML = "This user name already exists!";
                 break;
             } else if(document.getElementById("username").value === UserName) {
                 document.getElementById("emailc").innerHTML = "";
@@ -500,47 +589,56 @@
         // document.getElementById("emailc").innerHTML = "The User Name will not change until you verify the new username in your email.";
     }
 
-    // Format the phone number as the user types it
-    document.getElementById('phoneNumber').addEventListener('keyup',function(evt){
-        let phoneNumber = document.getElementById('phoneNumber');
-        let charCode = (evt.which) ? evt.which : evt.keyCode;
-        phoneNumber.value = phoneFormat(phoneNumber.value);
+    function SearchUsername(value) {
+        $.ajax({
+            url: "SearchUsername",
+            method: 'GET',
+            dataType: "json",
+            success: function (results) {
+                for (let i = 0; i < results.length; i++) {
+                    // let newRes = JSON.stringify(results);
+                    console.log(value);
+                    console.log(results[i].username);
+                    if (value === results[i].username && value !== UserName) {
+                        alert("This username is already taken. Please use a different one.");
+                        document.getElementById("emailUser").innerHTML = "This username is already taken. Please use a different one.";
+                        document.getElementById("submit").disabled = true;
+                        document.getElementById("submit").classList.remove("button1");
+                        document.getElementById("submit").classList.add("button2");
+                        break;
+                    } else {
+                        document.getElementById("emailUser").innerHTML = "";
+                        document.getElementById("submit").disabled = false;
+                        document.getElementById("submit").classList.add("button1");
+                        document.getElementById("submit").classList.remove("button2");
+                    }
+                }
+            }
+        });
+        verifyemail();
+    }
+
+    function isInputNumber (evt) {
+        let char = String.fromCharCode(evt.which);
+
+        if(!(/[0-9]/.test(char))) {
+            evt.preventDefault();
+        }
+    }
+
+    grecaptcha.ready(function() {
+        grecaptcha.execute('6Ld7fq8UAAAAAOv8ZEiVj6P972pR_Vf3ko5R0JB_', {action: '/userProfile'}).then(function (token) {
+            console.log(token);
+            document.getElementById("token").value = token;
+        });
     });
 
-    // We need to manually format the phone number on page load
-    document.getElementById('phoneNumber').value = phoneFormat(document.getElementById('phoneNumber').value);
-
-    // A function to determine if the pressed key is an integer
-    function numberPressed(evt){
-        let charCode = (evt.which) ? evt.which : evt.keyCode;
-        if(charCode > 31 && (charCode < 48 || charCode > 57) && (charCode < 36 || charCode > 40)){
-            return false;
-        }
-        return true;
-    }
-
-    // A function to format text to look like a phone number
-    function phoneFormat(input){
-        // Strip all characters from the input except digits
-        input = input.replace(/\D/g,'');
-
-        // Trim the remaining input to ten characters, to preserve phone number format
-        input = input.substring(0,10);
-
-        // Based upon the length of the string, we add formatting as necessary
-        let size = input.length;
-        if(size == 0){
-            input = input;
-        }else if(size < 4){
-            input = '('+input;
-        }else if(size < 7){
-            input = '('+input.substring(0,3)+') '+input.substring(3,6);
-        }else{
-            input = '('+input.substring(0,3)+') '+input.substring(3,6)+' - '+input.substring(6,10);
-        }
-        return input;
-    }
-
+    grecaptcha.ready(function() {
+        grecaptcha.execute('6Ld7fq8UAAAAAOv8ZEiVj6P972pR_Vf3ko5R0JB_', {action: '/checkpassword'}).then(function (token) {
+            console.log(token);
+            document.getElementById("token").value = token;
+        });
+    });
 
     function onFunction() {
         alert ("You are now online.");

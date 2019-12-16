@@ -1,4 +1,4 @@
-<!-- views/profile.ejs -->
+<!-- views/userManagement.ejs -->
 <!doctype html>
 <html>
 <head>
@@ -195,8 +195,8 @@
             <h4><span class="fa fa-user"></span>&nbsp;<strong>Account Name</strong>:  <%= user.username %> </h4>
         </div>
     </div>
-<!--<a href="/newEntry" class="btn btn-default btn-lg" id="class1">New Entry</a>-->
-<!--<a href="/query" class="btn btn-default btn-lg" id="class2">Data History</a>-->
+    <!--<a href="/newEntry" class="btn btn-default btn-lg" id="class1">New Entry</a>-->
+    <!--<a href="/query" class="btn btn-default btn-lg" id="class2">Data History</a>-->
     <div id="userListForm" style="width: 900px;padding: 0px 10px;">
         <div class="floatingBox" style="width: 500px;padding: 0px;">
             <h4 class="floatingBox" style="width: 500px;"><strong style="width: 365px;">Date Created:</strong></h4>
@@ -244,21 +244,16 @@
     padding-left: 10px;
     margin: 5px 150px 5px 5px;
     border-radius: 5px;
-    border: 1px solid #c8c8c8;">
+    border: 1px solid #c8c8c8;" minlength="1" maxlength="99" >
             <h5 id="123" class="floatingBox" style="width: 100px">Last Name:</h5>
             <input class="inputBoxDate select" type="text" id="lastName" placeholder="Enter Last Name" style="width: 210px;
     height: 40px;
     padding-left: 10px;
     margin: 5px 150px 5px 5px;
     border-radius: 5px;
-    border: 1px solid #c8c8c8;">
+    border: 1px solid #c8c8c8;" minlength="1" maxlength="99" >
             <h5 class="floatingBox">Phone Number:</h5>
-            <input class="inputBoxDate select" type="text" id="Phone_Number" placeholder="Enter Phone Number" style="width: 210px;
-    height: 40px;
-    padding-left: 10px;
-    margin: 5px;
-    border-radius: 5px;
-    border: 1px solid #c8c8c8;">
+            <input class="inputBoxDate select" type="tel" id="Phone_Number" pattern="[0-9]{10}" placeholder="Enter Phone Number" maxlength="10" onkeypress="isInputNumber (event)" style="width: 210px; height: 40px; padding-left: 10px; margin: 5px; border-radius: 5px;border: 1px solid #c8c8c8;">
         </div>
         <div class="container floatingBox" style="width: 100px;
     padding: 0px;">
@@ -394,18 +389,10 @@
 
                     let getvalue = table.rows('.selected').data();
                     localStorage.setItem("getvalue", JSON.stringify(getvalue[0]));
+                    console.log(getvalue);
+
                     window.location.replace('/editUser');
-//                    console.log("tstring for loop: " + tstring);
-//                     $.ajax({
-//                         url: '/editUserQuery',
-//                         type: 'GET',
-//                         dataType: 'json',
-//                         async: false,
-//                         data: tstring,
-//                         success: function (result) {
-//                             window.location.replace('/editUser')
-//                         }
-//                     })
+
                 }
             });
 
@@ -413,7 +400,7 @@
                 if (confirm("Are you sure you would like to suspend the user(s)?")) {
 
                     let usernameStr = "usernameStr=" + rowUserName.toString();
-                   console.log("usernameStr: " + usernameStr);
+                    console.log("usernameStr: " + usernameStr);
 
                     $.ajax({
                         url: '/suspendUser', //this inside routes
@@ -528,46 +515,75 @@
             });
         }
 
-        // Format the phone number as the user types it
-        document.getElementById('Phone_Number').addEventListener('keyup',function(evt){
-            let phoneNumber = document.getElementById('Phone_Number');
-            let charCode = (evt.which) ? evt.which : evt.keyCode;
-            phoneNumber.value = phoneFormat(phoneNumber.value);
-        });
+        // // Format the phone number as the user types it
+        // document.getElementById('Phone_Number').addEventListener('keyup',function(evt){
+        //     let phoneNumber = document.getElementById('Phone_Number');
+        //     let charCode = (evt.which) ? evt.which : evt.keyCode;
+        //     // phoneNumber.value = phoneFormat(phoneNumber.value);
+        // });
+        //
+        // // We need to manually format the phone number on page load
+        // // document.getElementById('Phone_Number').value = phoneFormat(document.getElementById('Phone_Number').value);
+        //
+        // // A function to determine if the pressed key is an integer
+        // function numberPressed(evt){
+        //     let charCode = (evt.which) ? evt.which : evt.keyCode;
+        //     if(charCode > 31 && (charCode < 48 || charCode > 57) && (charCode < 36 || charCode > 40)){
+        //         return false;
+        //     }
+        //     return true;
+        // }
+        //
+        // // A function to format text to look like a phone number
+        // function phoneFormat(input){
+        //     // Strip all characters from the input except digits
+        //     input = input.replace(/\D/g,'');
+        //
+        //     // Trim the remaining input to ten characters, to preserve phone number format
+        //     input = input.substring(0,10);
+        //
+        //     // Based upon the length of the string, we add formatting as necessary
+        //     let size = input.length;
+        //     if(size == 0){
+        //         input = input;
+        //     }else if(size < 4){
+        //         input = '('+input;
+        //     }else if(size < 7){
+        //         input = '('+input.substring(0,3)+') '+input.substring(3,6);
+        //     }else{
+        //         input = '('+input.substring(0,3)+') '+input.substring(3,6)+' - '+input.substring(6,10);
+        //     }
+        //     return input;
+        // }
 
-        // We need to manually format the phone number on page load
-        document.getElementById('Phone_Number').value = phoneFormat(document.getElementById('Phone_Number').value);
+        function isInputNumber (evt) {
+            let char = String.fromCharCode(evt.which);
 
-        // A function to determine if the pressed key is an integer
-        function numberPressed(evt){
-            let charCode = (evt.which) ? evt.which : evt.keyCode;
-            if(charCode > 31 && (charCode < 48 || charCode > 57) && (charCode < 36 || charCode > 40)){
-                return false;
+            if(!(/[0-9]/.test(char))) {
+                evt.preventDefault();
             }
-            return true;
         }
 
-        // A function to format text to look like a phone number
-        function phoneFormat(input){
-            // Strip all characters from the input except digits
-            input = input.replace(/\D/g,'');
-
-            // Trim the remaining input to ten characters, to preserve phone number format
-            input = input.substring(0,10);
-
-            // Based upon the length of the string, we add formatting as necessary
-            let size = input.length;
-            if(size == 0){
-                input = input;
-            }else if(size < 4){
-                input = '('+input;
-            }else if(size < 7){
-                input = '('+input.substring(0,3)+') '+input.substring(3,6);
-            }else{
-                input = '('+input.substring(0,3)+') '+input.substring(3,6)+' - '+input.substring(6,10);
-            }
-            return input;
+        function showFilter(){
+            document.getElementById("submitButton").disabled = false;
+            document.getElementById("submitButton").hidden = false;
         }
+
+        function donTShowFilter() {
+            document.getElementById("submitButton").disabled = true;
+            document.getElementById("submitButton").hidden = true;
+        }
+
+        function showAll() {
+            document.getElementById("showButton").disabled = false;
+            document.getElementById("showButton").hidden = false;
+        }
+
+        function donTShowAll() {
+            document.getElementById("showButton").disabled = true;
+            document.getElementById("showButton").hidden = true;
+        }
+
 
         function onFunction() {
             alert ("You are now online.");
@@ -577,7 +593,7 @@
             alert ("Your are offline. Some functionality may be unavailable.");
         }
 
-</script>
+    </script>
 </div>
 </body>
 </html>

@@ -10,7 +10,9 @@
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <!--<link rel="stylesheet" href="//unpkg.com/flatpickr/dist/flatpickr.min.css">-->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js?render=6Ld7fq8UAAAAAOv8ZEiVj6P972pR_Vf3ko5R0JB_"></script>
     <script src="//cdn.jsdelivr.net/npm/flatpickr"></script>
+    <?php include 'reCaptcha.php';?>
     <!--<script src="//unpkg.com/flatpickr"></script>-->
     <style>.floatingBox {
             display: inline-block;
@@ -41,9 +43,18 @@
             color: red;
             text-align: center;
         }
-        #showPassword {
-            text-align: center;
+
+        .button2 {
+            width: 500px;
+            height: 50px;
+            border-radius: 15px;
+            -webkit-transition-duration: 0.4s;
+            transition-duration: 0.4s;
+            cursor: pointer;
+            background-color: lightgray;
+            color: #ffffff;
         }
+
     </style>
 </head>
 <div class="navul" style="height: 80px;
@@ -59,7 +70,7 @@
 <body ononline="onFunction()" onoffline="offFunction()">
 <div class="container" style="width: 500px;
     padding: 0px;">
-    <h1 style="margin-top: 20px;"><span class="fa fa-sign-in"></span> Add User </h1>
+    <h1 style="margin-top: 20px; text-align: center;"><span class="fa fa-sign-in"></span> Add User </h1>
     <!-- show any messages that come back with authentication -->
     <% if (message.length > 0) { %>
     <div class="alert alert-danger">
@@ -70,28 +81,34 @@
     <form onsubmit="return checkForm()" action="/addUser" method="post" id="addUser">
         <div class="form-group">
             <label>Username (email address):</label>
-            <input type="email" class="form-control" id="username" name="username" style="height: 50px;">
+            <input type="email" class="form-control" id="username" name="username" onchange="SearchUsername(this.value)" style="height: 50px;" minlength="2" maxlength="99" autofocus required>
+            <p id="emailUser" style="text-align: center; color: palevioletred; margin-top:15px;"></p>
         </div>
         <div class="form-group">
             <label>First Name:</label>
-            <input type="text" class="form-control" id="FiRsTname" name="firstName" style="height: 50px;">
+            <input type="text" class="form-control" id="FiRsTname" name="firstName" style="height: 50px;" minlength="1" maxlength="99" required>
         </div>
         <div class="form-group">
             <label>Last Name:</label>
-            <input type="text" class="form-control" id="lastname" name="lastName" style="height: 50px;">
+            <input type="text" class="form-control" id="lastname" name="lastName" style="height: 50px;" minlength="1" maxlength="99" required>
         </div>
         <div class="form-group">
             <label>Password:</label>
-            <input type="password" class="form-control" id="password" name="password" onfocus ="showPassCheck()"style="height: 50px;">
+            <span toggle="#password" class="fa fa-fw fa-eye-slash field-icon toggle-password" style="float: right"></span>
+            <input type="password" class="form-control" id="password" name="password" style="height: 50px;" minlength="8" maxlength="99" required>
         </div>
         <p id="capsWarning" hidden><strong>WARNING: Caps lock is enabled.</strong></p>
-        <div id="showPassword" hidden><input type="checkbox" onclick="showPass()"> Show Password</div>
+<!--        <div class="form-group">-->
+<!--            <label>Confirm New Password: </label>-->
+<!--            <input type="password" class="form-control" id="Confirmpassword" name="Confirmpassword" maxlength="99" style="height: 50px;">-->
+<!--        </div>-->
+<!--        <p id="capsWarning" hidden><strong>WARNING: Caps lock is enabled.</strong></p>-->
         <div class="form-group">
             <label>User Role:</label>
             <br>
-            <input type="radio" name="userrole" value="Admin">
+            <input type="radio" name="userrole" value="Admin" required>
             <h5 class="floatingBox">&nbsp;&nbsp;&nbsp;Admin</h5>&nbsp;&nbsp;&nbsp;&nbsp;
-            <input type="radio" name="userrole" value="Regular">
+            <input type="radio" name="userrole" value="Regular" required>
             <h5 class="floatingBox">&nbsp;&nbsp;&nbsp;Regular</h5>
         </div>
         <div class="form-group">
@@ -108,8 +125,9 @@
         </div>
         <div class="container" style="width: 500px;
     padding: 0px;">
-            <button type="submit" class="button1"> Add User </button>
+            <button type="submit" form="addUser" id="addUserButton" class="button1"> Add User </button>
         </div>
+        <input type="hidden" id="token">
     </form>
     <hr style="margin-bottom: 10px;">
     <p style="margin-left: 225px;"> <a href="/userManagement">Cancel</a></p>
@@ -183,35 +201,57 @@
         }
     });
 
-    function showPassCheck() {
-        document.getElementById("showPassword").hidden = false;
-    }
-    function showPass() {
-        if (password.type === "password") {
-            password.type = "text";
+    $(".toggle-password").click(function() {
+        $(this).toggleClass("fa-eye-slash fa-eye");
+        let input = $($(this).attr("toggle"));
+        if (input.attr("type") === "password") {
+            input.attr("type", "text");
         } else {
-            password.type = "password";
+            input.attr("type", "password");
         }
-    }
+    });
 
     $(document).ready(function() {
         $(function() {
             $('#addUser').submit(function(e) {
                 e.preventDefault();
-                $.ajax({
-                    type: "post",
-                    url: "/addUser",
-                    dataType: 'json',
-                    data: $("#addUser").serialize(),
-                    success: function (result) {
-                        if (!result.error) {
-                            alert(result.message);
-                            window.location.replace('/userManagement');
+                var fail = false;
+                var fail_log = '';
+                var name;
+                $( '#addUser' ).find( 'select, textarea, input' ).each(function(){
+                    if( ! $( this ).prop( 'required' )){
+
+                    } else {
+                        if ( ! $( this ).val() ) {
+                            fail = true;
+                            fail_log = "All fields are required to be filled before submitting!";
+                            // name = $( this ).attr( 'name' );
+                            // fail_log += name + " is required \n";
                         } else {
-                            alert(result.message);
+
                         }
+
                     }
-                })
+                });
+                if (!fail) {
+                    $.ajax({
+                        type: "post",
+                        url: "/addUser",
+                        dataType: 'json',
+                        data: $("#addUser").serialize(),
+                        success: function (result) {
+                            if (!result.error) {
+                                alert(result.message);
+                                window.location.replace('/userManagement');
+                            } else {
+                                alert(result.message);
+                            }
+                        }
+                    })
+                } else {
+                    alert(fail_log);
+                }
+
             });
         });
         let today = new Date();
@@ -220,6 +260,52 @@
         let dateTime = date + ' ' + time2;
         document.getElementById("DATE").value = dateTime;
     });
+
+    grecaptcha.ready(function() {
+        grecaptcha.execute('6Ld7fq8UAAAAAOv8ZEiVj6P972pR_Vf3ko5R0JB_', {action: '/addUser'}).then(function (token) {
+            console.log(token);
+            document.getElementById("token").value = token;
+        });
+    });
+
+    function SearchUsername(value) {
+        $.ajax({
+            url: "SearchUsername",
+            method: 'GET',
+            dataType: "json",
+            success: function (results) {
+                for (let i = 0; i < results.length; i++) {
+                    // let newRes = JSON.stringify(results);
+                    console.log(value);
+                    console.log(results[i].username);
+                    if (value === results[i].username) {
+                        alert("This username is already taken. Please use a different one.");
+                        document.getElementById("emailUser").innerHTML = "This username is already taken. Please use a different one.";
+                        document.getElementById("addUserButton").disabled = true;
+                        document.getElementById("addUserButton").classList.remove("button1");
+                        document.getElementById("addUserButton").classList.add("button2");
+                        break;
+                    } else {
+                        document.getElementById("emailUser").innerHTML = "";
+                        document.getElementById("addUserButton").disabled = false;
+                        document.getElementById("addUserButton").classList.add("button1");
+                        document.getElementById("addUserButton").classList.remove("button2");
+                    }
+                }
+            }
+        });
+    }
+    // function checkForm() {
+    //     let newP=document.getElementById("password").value;
+    //     let confirmP =document.getElementById("Confirmpassword").value;
+    //
+    //     if (newP === confirmP) {
+    //         return true;
+    //     } else {
+    //         alert("Passwords don't match!");
+    //         return false;
+    //     }
+    // }
 
     function onFunction() {
         alert ("You are now online.");

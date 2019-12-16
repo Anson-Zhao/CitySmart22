@@ -1,4 +1,4 @@
-<!-- views/addUser.ejs -->
+<!-- views/EmailAuth.ejs -->
 <!doctype html>
 <html>
 <head>
@@ -44,20 +44,25 @@
         }
     </style>
 </head>
-<div class="navul" style="height: 80px; background: #000000;">
-    <a class="navul" href="//aworldbridge.com" style="background: #000000; width: 500px; height: 80px;">
-        <img class="banner" src="../images/NewWBBanner.jpg" style="width: 550px; height: 80px; margin: auto; display: block;" />
+<div class="navul" style="height: 80px;
+    background: #000000;">
+    <a class="navul" href="//aworldbridge.com" style="background: #000000;
+    width: 500px;
+    height: 80px;">
+        <img class="banner" src="../images/NewWBBanner.jpg" style="width: 550px;
+    height: 80px;
+    margin: auto; display: block;" />
     </a>
 </div>
 <body ononline="onFunction()" onoffline="offFunction()">
 <div class="container" style="width: 500px; padding: 0;">
-    <h1 style="margin-top: 30px;"><span class="fa fa-list"></span>  Email Authentication</h1>
+    <h1 class="text-center" style="margin-top: 30px;"><span class="fa fa-list"></span>  Email Authentication</h1>
     <!-- show any messages that come back with authentication -->
     <p id="falldown">In order to continue, enter the code consisting of letters, numbers, and symbols sent to your email. <br>Then click <strong>Submit</strong>.</p>
     <div class="form-group">
-        <input type="password" id="enterCode" placeholder="Enter Code Here" class="form-control" name="code" style="height: 50px; margin-bottom: 20px;" onfocus="showPassword()" required>
+        <input type="password" id="enterCode" placeholder="Enter Code Here" class="form-control" name="code" style="width: 90%; height: 50px; margin-bottom: 20px; display: inline-block" minlength="8" maxlength="8" autofocus required>
+        <span toggle="#enterCode" class="fa fa-fw fa-eye-slash field-icon toggle-password" style="display: inline-block"></span>
     </div>
-    <div id="showCode" hidden style="text-align: center;"><input type="checkbox" onclick="ShowFunction()"> Show Code</div>
     <br>
     <button id="eauthSubmit" type="submit" class="button1" onclick="submitForm()"><a href="/userhome" id="submite" hidden></a> Submit </button>
     <hr style="margin-bottom: 10px;">
@@ -122,18 +127,16 @@
         }
     }
 
-    function showPassword() {
-        document.getElementById("showCode").hidden = false;
-    }
-
-    function ShowFunction() {
-        let z = document.getElementById("enterCode");
-        if (z.type === "password") {
-            z.type = "text";
+    $(".toggle-password").click(function() {
+        $(this).toggleClass("fa-eye-slash fa-eye");
+        let input = $($(this).attr("toggle"));
+        if (input.attr("type") === "password") {
+            input.attr("type", "text");
         } else {
-            z.type = "password";
+            input.attr("type", "password");
         }
-    }
+    });
+
     function SendCode() {
         location.reload();
     }
