@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><WMS_Capabilities version="1.3.0" updateSequence="1453" xmlns="http://www.opengis.net/wms" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opengis.net/wms http://cs.aworldbridgelabs.com:8080/geoserver/schemas/wms/1.3.0/capabilities_1_3_0.xsd">
+<?xml version="1.0" encoding="UTF-8"?><WMS_Capabilities version="1.3.0" updateSequence="1749" xmlns="http://www.opengis.net/wms" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opengis.net/wms http://cs.aworldbridgelabs.com:8080/geoserver/schemas/wms/1.3.0/capabilities_1_3_0.xsd">
   <Service>
     <Name>WMS</Name>
     <Title>GeoServer Web Map Service</Title>
@@ -6026,34 +6026,6 @@ The area covered by the data set is in the vicinity of Spearfish and includes a 
         <BoundingBox CRS="CRS:84" minx="-126.489856" miny="24.276913" maxx="-66.742744" maxy="49.384527"/>
         <BoundingBox CRS="EPSG:4326" minx="24.276913" miny="-126.489856" maxx="49.384527" maxy="-66.742744"/>
       </Layer>
-      <Layer queryable="1" opaque="0">
-        <Name>Create_WMS_Layer:0Base-ParcelLabel_text</Name>
-        <Title>0Base-ParcelLabel_text</Title>
-        <Abstract/>
-        <KeywordList>
-          <Keyword>features</Keyword>
-          <Keyword>0Base-ParcelLabel_text</Keyword>
-        </KeywordList>
-        <CRS>EPSG:4326</CRS>
-        <CRS>CRS:84</CRS>
-        <EX_GeographicBoundingBox>
-          <westBoundLongitude>-156.6721220769617</westBoundLongitude>
-          <eastBoundLongitude>-151.8645801580744</eastBoundLongitude>
-          <southBoundLatitude>56.40651057202327</southBoundLatitude>
-          <northBoundLatitude>58.9218480568533</northBoundLatitude>
-        </EX_GeographicBoundingBox>
-        <BoundingBox CRS="CRS:84" minx="-156.6721220769617" miny="56.40651057202327" maxx="-151.8645801580744" maxy="58.9218480568533"/>
-        <BoundingBox CRS="EPSG:4326" minx="56.40651057202327" miny="-156.6721220769617" maxx="58.9218480568533" maxy="-151.8645801580744"/>
-        <Style>
-          <Name>point</Name>
-          <Title>Default Point</Title>
-          <Abstract>A sample style that draws a point</Abstract>
-          <LegendURL width="20" height="20">
-            <Format>image/png</Format>
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=Create_WMS_Layer%3A0Base-ParcelLabel_text"/>
-          </LegendURL>
-        </Style>
-      </Layer>
       <Layer queryable="0" opaque="0" cascaded="1">
         <Name>USGS:0_ColorShadedRelief</Name>
         <Title>contiguous.tif</Title>
@@ -9793,6 +9765,61 @@ The NHD is a national framework for assigning reach addresses to water-related e
         <BoundingBox CRS="EPSG:4326" minx="17.676208" miny="-176.695767" maxx="71.356693" maxy="-64.566965"/>
       </Layer>
       <Layer queryable="1" opaque="0">
+        <Name>DSA:Adventure-Of-The-Sea-Actual-Line</Name>
+        <Title>Adventure-Of-The-Sea-Actual-Line</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>Adventure-Of-The-Sea-Actual-Line</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-75.97178499609629</westBoundLongitude>
+          <eastBoundLongitude>-68.80409079617618</eastBoundLongitude>
+          <southBoundLatitude>24.194467363431745</southBoundLatitude>
+          <northBoundLatitude>36.83185497169486</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-75.97178499609629" miny="24.194467363431745" maxx="-68.80409079617618" maxy="36.83185497169486"/>
+        <BoundingBox CRS="EPSG:4326" minx="24.194467363431745" miny="-75.97178499609629" maxx="36.83185497169486" maxy="-68.80409079617618"/>
+        <Style>
+          <Name>line</Name>
+          <Title>Default Line</Title>
+          <Abstract>A sample style that draws a line</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=DSA%3AAdventure-Of-The-Sea-Actual-Line"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>DSA:Adventure-Of-The-Sea-Projection-Line</Name>
+        <Title>Adventure-Of-The-Sea-Projection-Line</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>Adventure-Of-The-Sea-Projection-Line</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-75.97178499609629</westBoundLongitude>
+          <eastBoundLongitude>-66.75915499467278</eastBoundLongitude>
+          <southBoundLatitude>17.67920679795313</southBoundLatitude>
+          <northBoundLatitude>36.83185497169486</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-75.97178499609629" miny="17.67920679795313" maxx="-66.75915499467278" maxy="36.83185497169486"/>
+        <BoundingBox CRS="EPSG:4326" minx="17.67920679795313" miny="-75.97178499609629" maxx="36.83185497169486" maxy="-66.75915499467278"/>
+        <Style>
+          <Name>Yellow Line</Name>
+          <Title>A yellow line style</Title>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=DSA%3AAdventure-Of-The-Sea-Projection-Line"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
         <Name>City_Smart:Airport_Substation</Name>
         <Title>Airport_Substation</Title>
         <Abstract/>
@@ -9899,6 +9926,61 @@ The NHD is a national framework for assigning reach addresses to water-related e
           <LegendURL width="20" height="20">
             <Format>image/png</Format>
             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=Approved%3ABVGC_May2016_mosaic"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>DSA:Babun-Express-Actual-Line</Name>
+        <Title>Babun-Express-Actual-Line</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>Babun-Express-Actual-Line</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-80.17166000000012</westBoundLongitude>
+          <eastBoundLongitude>-80.07083000000014</eastBoundLongitude>
+          <southBoundLatitude>25.65047000000007</southBoundLatitude>
+          <northBoundLatitude>25.770220000000194</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-80.17166000000012" miny="25.65047000000007" maxx="-80.07083000000014" maxy="25.770220000000194"/>
+        <BoundingBox CRS="EPSG:4326" minx="25.65047000000007" miny="-80.17166000000012" maxx="25.770220000000194" maxy="-80.07083000000014"/>
+        <Style>
+          <Name>line</Name>
+          <Title>Default Line</Title>
+          <Abstract>A sample style that draws a line</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=DSA%3ABabun-Express-Actual-Line"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>DSA:Banbun-Express-Projection-Line</Name>
+        <Title>Banbun-Express-Projection-Line</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>Banbun-Express-Projection-Line</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-80.17229719166397</westBoundLongitude>
+          <eastBoundLongitude>-74.03868678187462</eastBoundLongitude>
+          <southBoundLatitude>20.295776356689267</southBoundLatitude>
+          <northBoundLatitude>25.769571028553063</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-80.17229719166397" miny="20.295776356689267" maxx="-74.03868678187462" maxy="25.769571028553063"/>
+        <BoundingBox CRS="EPSG:4326" minx="20.295776356689267" miny="-80.17229719166397" maxx="25.769571028553063" maxy="-74.03868678187462"/>
+        <Style>
+          <Name>Yellow Line</Name>
+          <Title>A yellow line style</Title>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=DSA%3ABanbun-Express-Projection-Line"/>
           </LegendURL>
         </Style>
       </Layer>
@@ -10030,6 +10112,615 @@ The NHD is a national framework for assigning reach addresses to water-related e
         </Style>
       </Layer>
       <Layer queryable="1" opaque="0">
+        <Name>JZ_test:ET_10DaysLo</Name>
+        <Title>ET_10DaysLo</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>ET_10DaysLo</Keyword>
+          <Keyword>WCS</Keyword>
+          <Keyword>GeoTIFF</Keyword>
+        </KeywordList>
+        <CRS>EPSG:3857</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>29.14351496203603</westBoundLongitude>
+          <eastBoundLongitude>58.751516859212835</eastBoundLongitude>
+          <southBoundLatitude>-0.154611088222968</southBoundLatitude>
+          <northBoundLatitude>19.260066985786082</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="29.14351496203603" miny="-0.154611088222968" maxx="58.751516859212835" maxy="19.260066985786082"/>
+        <BoundingBox CRS="EPSG:3857" minx="3244241.2455" miny="-17211.24850000022" maxx="6540188.9401" maxy="2185578.6459"/>
+        <Style>
+          <Name>raster</Name>
+          <Title>Default Raster</Title>
+          <Abstract>A sample style that draws a raster, good for displaying imagery</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=JZ_test%3AET_10DaysLo"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>Covid19:ET_10DaysNDVIHi</Name>
+        <Title>ET_10DaysNDVIHi</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>ET_10DaysNDVIHi</Keyword>
+          <Keyword>WCS</Keyword>
+          <Keyword>GeoTIFF</Keyword>
+        </KeywordList>
+        <CRS>EPSG:404000</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>3073437.4721</westBoundLongitude>
+          <eastBoundLongitude>6427675.1902</eastBoundLongitude>
+          <southBoundLatitude>-17233.77839733474</southBoundLatitude>
+          <northBoundLatitude>2139688.5454973346</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="3073437.4721" miny="-17233.77839733474" maxx="6427675.1902" maxy="2139688.5454973346"/>
+        <BoundingBox CRS="EPSG:404000" minx="3073437.4721" miny="-17233.77839733474" maxx="6427675.1902" maxy="2139688.5454973346"/>
+        <Style>
+          <Name>raster</Name>
+          <Title>Default Raster</Title>
+          <Abstract>A sample style that draws a raster, good for displaying imagery</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=Covid19%3AET_10DaysNDVIHi"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>Covid19:ET_10DaysNDVILo</Name>
+        <Title>ET_10DaysNDVILo</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>ET_10DaysNDVILo</Keyword>
+          <Keyword>WCS</Keyword>
+          <Keyword>GeoTIFF</Keyword>
+        </KeywordList>
+        <CRS>EPSG:32618</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>3073437.4721</westBoundLongitude>
+          <eastBoundLongitude>6427675.1902</eastBoundLongitude>
+          <southBoundLatitude>-17106.95291235065</southBoundLatitude>
+          <northBoundLatitude>2139561.720012351</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="3073437.4721" miny="-17106.95291235065" maxx="6427675.1902" maxy="2139561.720012351"/>
+        <BoundingBox CRS="EPSG:32618" minx="3073437.4721" miny="-17106.95291235065" maxx="6427675.1902" maxy="2139561.720012351"/>
+        <Style>
+          <Name>raster</Name>
+          <Title>Default Raster</Title>
+          <Abstract>A sample style that draws a raster, good for displaying imagery</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=Covid19%3AET_10DaysNDVILo"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>Covid19:ET_Ag_Hi</Name>
+        <Title>ET_Ag_Hi</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>ET_Ag_Hi</Keyword>
+          <Keyword>WCS</Keyword>
+          <Keyword>GeoTIFF</Keyword>
+        </KeywordList>
+        <CRS>EPSG:32618</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-51.99134831964359</westBoundLongitude>
+          <eastBoundLongitude>-32.335647316607826</eastBoundLongitude>
+          <southBoundLatitude>1.509073701209173</southBoundLatitude>
+          <northBoundLatitude>15.024703809470957</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-51.99134831964359" miny="1.509073701209173" maxx="-32.335647316607826" maxy="15.024703809470957"/>
+        <BoundingBox CRS="EPSG:32618" minx="3131002.2303" miny="223187.34536871966" maxx="5597657.4165" maxy="1809355.0781312804"/>
+        <Style>
+          <Name>raster</Name>
+          <Title>Default Raster</Title>
+          <Abstract>A sample style that draws a raster, good for displaying imagery</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=Covid19%3AET_Ag_Hi"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>Covid19:ET_Ag_Lo</Name>
+        <Title>ET_Ag_Lo</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>ET_Ag_Lo</Keyword>
+          <Keyword>WCS</Keyword>
+          <Keyword>GeoTIFF</Keyword>
+        </KeywordList>
+        <CRS>EPSG:32618</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>3131002.2303</westBoundLongitude>
+          <eastBoundLongitude>5597657.4165</eastBoundLongitude>
+          <southBoundLatitude>223280.61089327955</southBoundLatitude>
+          <northBoundLatitude>1809261.8126067205</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="3131002.2303" miny="223280.61089327955" maxx="5597657.4165" maxy="1809261.8126067205"/>
+        <BoundingBox CRS="EPSG:32618" minx="3131002.2303" miny="223280.61089327955" maxx="5597657.4165" maxy="1809261.8126067205"/>
+        <Style>
+          <Name>raster</Name>
+          <Title>Default Raster</Title>
+          <Abstract>A sample style that draws a raster, good for displaying imagery</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=Covid19%3AET_Ag_Lo"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>Covid19:ET_Chlorophyl_1to5MayHi</Name>
+        <Title>ET_Chlorophyl_1to5MayHi</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>ET_Chlorophyl_1to5MayHi</Keyword>
+          <Keyword>WCS</Keyword>
+          <Keyword>GeoTIFF</Keyword>
+        </KeywordList>
+        <CRS>EPSG:3857</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>27.609158559730954</westBoundLongitude>
+          <eastBoundLongitude>57.74078864712512</eastBoundLongitude>
+          <southBoundLatitude>-0.1548134769963747</southBoundLatitude>
+          <northBoundLatitude>18.870442539436606</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="27.609158559730954" miny="-0.1548134769963747" maxx="57.74078864712512" maxy="18.870442539436606"/>
+        <BoundingBox CRS="EPSG:3857" minx="3073437.4721" miny="-17233.77839733474" maxx="6427675.1902" maxy="2139688.5454973346"/>
+        <Style>
+          <Name>raster</Name>
+          <Title>Default Raster</Title>
+          <Abstract>A sample style that draws a raster, good for displaying imagery</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=Covid19%3AET_Chlorophyl_1to5MayHi"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>Covid19:ET_Chlorophyl_1to5MayLo</Name>
+        <Title>ET_Chlorophyl_1to5MayLo</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>ET_Chlorophyl_1to5MayLo</Keyword>
+          <Keyword>WCS</Keyword>
+          <Keyword>GeoTIFF</Keyword>
+        </KeywordList>
+        <CRS>EPSG:32618</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>3073437.4721</westBoundLongitude>
+          <eastBoundLongitude>6427675.1902</eastBoundLongitude>
+          <southBoundLatitude>-17106.95291235065</southBoundLatitude>
+          <northBoundLatitude>2139561.720012351</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="3073437.4721" miny="-17106.95291235065" maxx="6427675.1902" maxy="2139561.720012351"/>
+        <BoundingBox CRS="EPSG:32618" minx="3073437.4721" miny="-17106.95291235065" maxx="6427675.1902" maxy="2139561.720012351"/>
+        <Style>
+          <Name>raster</Name>
+          <Title>Default Raster</Title>
+          <Abstract>A sample style that draws a raster, good for displaying imagery</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=Covid19%3AET_Chlorophyl_1to5MayLo"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>Covid19_SH:ET_M1</Name>
+        <Title>ET_M1</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>M1</Keyword>
+          <Keyword>WCS</Keyword>
+          <Keyword>GeoTIFF</Keyword>
+        </KeywordList>
+        <CRS>EPSG:3857</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>31.628756772149636</westBoundLongitude>
+          <eastBoundLongitude>49.8355469007878</eastBoundLongitude>
+          <southBoundLatitude>3.2883788295580834</southBoundLatitude>
+          <northBoundLatitude>14.546271081312865</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="31.628756772149636" miny="3.2883788295580834" maxx="49.8355469007878" maxy="14.546271081312865"/>
+        <BoundingBox CRS="EPSG:3857" minx="3520897.0983" miny="366261.78740000003" maxx="5547667.7044" maxy="1636964.3618"/>
+        <Style>
+          <Name>raster</Name>
+          <Title>Default Raster</Title>
+          <Abstract>A sample style that draws a raster, good for displaying imagery</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=Covid19_SH%3AET_M1"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>Covid19:ET_Moisture_LatestHi</Name>
+        <Title>ET_Moisture_LatestHi</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>ET_Moisture_LatestHi</Keyword>
+          <Keyword>WCS</Keyword>
+          <Keyword>GeoTIFF</Keyword>
+        </KeywordList>
+        <CRS>EPSG:32618</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>3517577.1479</westBoundLongitude>
+          <eastBoundLongitude>5531094.8479</eastBoundLongitude>
+          <southBoundLatitude>354800.4651183274</southBoundLatitude>
+          <northBoundLatitude>1649580.8717816728</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="3517577.1479" miny="354800.4651183274" maxx="5531094.8479" maxy="1649580.8717816728"/>
+        <BoundingBox CRS="EPSG:32618" minx="3517577.1479" miny="354800.4651183274" maxx="5531094.8479" maxy="1649580.8717816728"/>
+        <Style>
+          <Name>raster</Name>
+          <Title>Default Raster</Title>
+          <Abstract>A sample style that draws a raster, good for displaying imagery</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=Covid19%3AET_Moisture_LatestHi"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>Covid19:ET_Moisture_LatestLo</Name>
+        <Title>ET_Moisture_LatestLo</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>ET_Moisture_LatestLo</Keyword>
+          <Keyword>WCS</Keyword>
+          <Keyword>GeoTIFF</Keyword>
+        </KeywordList>
+        <CRS>EPSG:32618</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>3517577.1479</westBoundLongitude>
+          <eastBoundLongitude>5531094.8479</eastBoundLongitude>
+          <southBoundLatitude>354876.5972771924</southBoundLatitude>
+          <northBoundLatitude>1649504.7396228076</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="3517577.1479" miny="354876.5972771924" maxx="5531094.8479" maxy="1649504.7396228076"/>
+        <BoundingBox CRS="EPSG:32618" minx="3517577.1479" miny="354876.5972771924" maxx="5531094.8479" maxy="1649504.7396228076"/>
+        <Style>
+          <Name>raster</Name>
+          <Title>Default Raster</Title>
+          <Abstract>A sample style that draws a raster, good for displaying imagery</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=Covid19%3AET_Moisture_LatestLo"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>Covid19_SH:ET_NDMI_Sent2_L1C</Name>
+        <Title>ET_NDMI_Sent2_L1C</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>ET_NDMI_Sent2_L1C</Keyword>
+          <Keyword>WCS</Keyword>
+          <Keyword>GeoTIFF</Keyword>
+        </KeywordList>
+        <CRS>EPSG:3857</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>32.78320299999945</westBoundLongitude>
+          <eastBoundLongitude>49.35058599999916</eastBoundLongitude>
+          <southBoundLatitude>0.8788719999999761</southBoundLatitude>
+          <northBoundLatitude>15.241789999999744</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="32.78320299999945" miny="0.8788719999999761" maxx="49.35058599999916" maxy="15.241789999999744"/>
+        <BoundingBox CRS="EPSG:3857" minx="3649409.4645324573" miny="97839.42038285313" maxx="5493682.103869562" maxy="1717081.4200170052"/>
+        <Style>
+          <Name>raster</Name>
+          <Title>Default Raster</Title>
+          <Abstract>A sample style that draws a raster, good for displaying imagery</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=Covid19_SH%3AET_NDMI_Sent2_L1C"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>Covid19_SH:ET_NDVI2</Name>
+        <Title>ET_NDVI2</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>ET_NDVI2</Keyword>
+          <Keyword>WCS</Keyword>
+          <Keyword>GeoTIFF</Keyword>
+        </KeywordList>
+        <CRS>EPSG:3857</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>31.108243421907993</westBoundLongitude>
+          <eastBoundLongitude>50.87984573086315</eastBoundLongitude>
+          <southBoundLatitude>3.0262077918614696</southBoundLatitude>
+          <northBoundLatitude>15.547242832150529</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="31.108243421907993" miny="3.0262077918614696" maxx="50.87984573086315" maxy="15.547242832150529"/>
+        <BoundingBox CRS="EPSG:3857" minx="3462953.8172" miny="337032.64829999977" maxx="5663918.5184" maxy="1752349.7179"/>
+        <Style>
+          <Name>raster</Name>
+          <Title>Default Raster</Title>
+          <Abstract>A sample style that draws a raster, good for displaying imagery</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=Covid19_SH%3AET_NDVI2"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>Covid19:ET_NDVI_18MayHi</Name>
+        <Title>ET_NDVI_18MayHi</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>ET_NDVI_18MayHi</Keyword>
+          <Keyword>WCS</Keyword>
+          <Keyword>GeoTIFF</Keyword>
+        </KeywordList>
+        <CRS>EPSG:32618</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>3462953.8172</westBoundLongitude>
+          <eastBoundLongitude>5663918.5184</eastBoundLongitude>
+          <southBoundLatitude>337032.64827028266</southBoundLatitude>
+          <northBoundLatitude>1752349.7179297174</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="3462953.8172" miny="337032.64827028266" maxx="5663918.5184" maxy="1752349.7179297174"/>
+        <BoundingBox CRS="EPSG:32618" minx="3462953.8172" miny="337032.64827028266" maxx="5663918.5184" maxy="1752349.7179297174"/>
+        <Style>
+          <Name>raster</Name>
+          <Title>Default Raster</Title>
+          <Abstract>A sample style that draws a raster, good for displaying imagery</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=Covid19%3AET_NDVI_18MayHi"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>Covid19:ET_NDVI_18MayLo</Name>
+        <Title>ET_NDVI_18MayLo</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>ET_NDVI_18MayLo</Keyword>
+          <Keyword>WCS</Keyword>
+          <Keyword>GeoTIFF</Keyword>
+        </KeywordList>
+        <CRS>EPSG:32618</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>3462953.8172</westBoundLongitude>
+          <eastBoundLongitude>5663918.5184</eastBoundLongitude>
+          <southBoundLatitude>337115.867898443</southBoundLatitude>
+          <northBoundLatitude>1752266.498301557</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="3462953.8172" miny="337115.867898443" maxx="5663918.5184" maxy="1752266.498301557"/>
+        <BoundingBox CRS="EPSG:32618" minx="3462953.8172" miny="337115.867898443" maxx="5663918.5184" maxy="1752266.498301557"/>
+        <Style>
+          <Name>raster</Name>
+          <Title>Default Raster</Title>
+          <Abstract>A sample style that draws a raster, good for displaying imagery</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=Covid19%3AET_NDVI_18MayLo"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>Covid19:ET_NDVI_1May_12MayHi</Name>
+        <Title>ET_NDVI_1May_12MayHi</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>ET_NDVI_1May_12MayHi</Keyword>
+          <Keyword>WCS</Keyword>
+          <Keyword>GeoTIFF</Keyword>
+        </KeywordList>
+        <CRS>EPSG:32618</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>2606822.0026</westBoundLongitude>
+          <eastBoundLongitude>7540132.3751</eastBoundLongitude>
+          <southBoundLatitude>-398369.9019447132</southBoundLatitude>
+          <northBoundLatitude>2773965.563644713</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="2606822.0026" miny="-398369.9019447132" maxx="7540132.3751" maxy="2773965.563644713"/>
+        <BoundingBox CRS="EPSG:32618" minx="2606822.0026" miny="-398369.9019447132" maxx="7540132.3751" maxy="2773965.563644713"/>
+        <Style>
+          <Name>raster</Name>
+          <Title>Default Raster</Title>
+          <Abstract>A sample style that draws a raster, good for displaying imagery</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=Covid19%3AET_NDVI_1May_12MayHi"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>Covid19:ET_NDVI_1May_12MayLo</Name>
+        <Title>ET_NDVI_1May_12MayLo</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>ET_NDVI_1May_12MayLo</Keyword>
+          <Keyword>WCS</Keyword>
+          <Keyword>GeoTIFF</Keyword>
+        </KeywordList>
+        <CRS>EPSG:32618</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>2606822.0025931397</westBoundLongitude>
+          <eastBoundLongitude>7540132.37510686</eastBoundLongitude>
+          <southBoundLatitude>-398183.3709</southBoundLatitude>
+          <northBoundLatitude>2773779.0326</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="2606822.0025931397" miny="-398183.3709" maxx="7540132.37510686" maxy="2773779.0326"/>
+        <BoundingBox CRS="EPSG:32618" minx="2606822.0025931397" miny="-398183.3709" maxx="7540132.37510686" maxy="2773779.0326"/>
+        <Style>
+          <Name>raster</Name>
+          <Title>Default Raster</Title>
+          <Abstract>A sample style that draws a raster, good for displaying imagery</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=Covid19%3AET_NDVI_1May_12MayLo"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>Covid19_SH:ET_NDVI_Sent2_L1C</Name>
+        <Title>ET_NDVI_Sent2_L1C</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>ET_NDVI_Sent2_L1C</Keyword>
+          <Keyword>WCS</Keyword>
+          <Keyword>GeoTIFF</Keyword>
+        </KeywordList>
+        <CRS>EPSG:3857</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>32.78320299999945</westBoundLongitude>
+          <eastBoundLongitude>49.35058599999916</eastBoundLongitude>
+          <southBoundLatitude>0.8788719999999761</southBoundLatitude>
+          <northBoundLatitude>15.241789999999744</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="32.78320299999945" miny="0.8788719999999761" maxx="49.35058599999916" maxy="15.241789999999744"/>
+        <BoundingBox CRS="EPSG:3857" minx="3649409.4645324573" miny="97839.42038285313" maxx="5493682.103869562" maxy="1717081.4200170052"/>
+        <Style>
+          <Name>raster</Name>
+          <Title>Default Raster</Title>
+          <Abstract>A sample style that draws a raster, good for displaying imagery</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=Covid19_SH%3AET_NDVI_Sent2_L1C"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>Covid19_SH:ET_NDWI_Sent3_OLCI</Name>
+        <Title>ET_NDWI_Sent3_OLCI</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>ET_NDWI_Sent3_OLCI</Keyword>
+          <Keyword>WCS</Keyword>
+          <Keyword>GeoTIFF</Keyword>
+        </KeywordList>
+        <CRS>EPSG:3857</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>32.78320299999945</westBoundLongitude>
+          <eastBoundLongitude>49.35058599999916</eastBoundLongitude>
+          <southBoundLatitude>0.8788719999999761</southBoundLatitude>
+          <northBoundLatitude>15.241789999999744</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="32.78320299999945" miny="0.8788719999999761" maxx="49.35058599999916" maxy="15.241789999999744"/>
+        <BoundingBox CRS="EPSG:3857" minx="3649409.4645324573" miny="97839.42038285313" maxx="5493682.103869562" maxy="1717081.4200170052"/>
+        <Style>
+          <Name>raster</Name>
+          <Title>Default Raster</Title>
+          <Abstract>A sample style that draws a raster, good for displaying imagery</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=Covid19_SH%3AET_NDWI_Sent3_OLCI"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>Covid19:ET_S2L1CAg1Apr7MayHi</Name>
+        <Title>ET_S2L1CAg1Apr7MayHi</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>ET_Sentinel2_L1C_Ag1Aprto7MayHi</Keyword>
+          <Keyword>WCS</Keyword>
+          <Keyword>GeoTIFF</Keyword>
+        </KeywordList>
+        <CRS>EPSG:32618</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>3459527.3023</westBoundLongitude>
+          <eastBoundLongitude>5660492.0036</eastBoundLongitude>
+          <southBoundLatitude>335890.47658813046</southBoundLatitude>
+          <northBoundLatitude>1751207.5463118698</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="3459527.3023" miny="335890.47658813046" maxx="5660492.0036" maxy="1751207.5463118698"/>
+        <BoundingBox CRS="EPSG:32618" minx="3459527.3023" miny="335890.47658813046" maxx="5660492.0036" maxy="1751207.5463118698"/>
+        <Style>
+          <Name>raster</Name>
+          <Title>Default Raster</Title>
+          <Abstract>A sample style that draws a raster, good for displaying imagery</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=Covid19%3AET_S2L1CAg1Apr7MayHi"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>Covid19:ET_S2L1CAg1Apr7MayLo</Name>
+        <Title>ET_S2L1CAg1Apr7MayLo</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>ET_Sentinel2_L1C_Ag1Aprto7MayLo</Keyword>
+          <Keyword>WCS</Keyword>
+          <Keyword>GeoTIFF</Keyword>
+        </KeywordList>
+        <CRS>EPSG:32618</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>3459527.3022746574</westBoundLongitude>
+          <eastBoundLongitude>5660492.003625344</eastBoundLongitude>
+          <southBoundLatitude>335973.6962000001</southBoundLatitude>
+          <northBoundLatitude>1751124.3267</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="3459527.3022746574" miny="335973.6962000001" maxx="5660492.003625344" maxy="1751124.3267"/>
+        <BoundingBox CRS="EPSG:32618" minx="3459527.3022746574" miny="335973.6962000001" maxx="5660492.003625344" maxy="1751124.3267"/>
+        <Style>
+          <Name>raster</Name>
+          <Title>Default Raster</Title>
+          <Abstract>A sample style that draws a raster, good for displaying imagery</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=Covid19%3AET_S2L1CAg1Apr7MayLo"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>Covid19_SH:ET_SWIR_Sent2_L1C</Name>
+        <Title>ET_SWIR_Sent2_L1C</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>ET_SWIR_Sent2_L1C</Keyword>
+          <Keyword>WCS</Keyword>
+          <Keyword>GeoTIFF</Keyword>
+        </KeywordList>
+        <CRS>EPSG:3857</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>32.78320299999945</westBoundLongitude>
+          <eastBoundLongitude>49.35058599999916</eastBoundLongitude>
+          <southBoundLatitude>0.8788719999999761</southBoundLatitude>
+          <northBoundLatitude>15.241789999999744</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="32.78320299999945" miny="0.8788719999999761" maxx="49.35058599999916" maxy="15.241789999999744"/>
+        <BoundingBox CRS="EPSG:3857" minx="3649409.4645324573" miny="97839.42038285313" maxx="5493682.103869562" maxy="1717081.4200170052"/>
+        <Style>
+          <Name>raster</Name>
+          <Title>Default Raster</Title>
+          <Abstract>A sample style that draws a raster, good for displaying imagery</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=Covid19_SH%3AET_SWIR_Sent2_L1C"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
         <Name>Approved:Electricgrid</Name>
         <Title>Electricgrid</Title>
         <Abstract/>
@@ -10128,6 +10819,61 @@ The NHD is a national framework for assigning reach addresses to water-related e
         </EX_GeographicBoundingBox>
         <BoundingBox CRS="CRS:84" minx="-165.0" miny="24.0" maxx="-66.0" maxy="73.0"/>
         <BoundingBox CRS="EPSG:4269" minx="24.0" miny="-165.0" maxx="73.0" maxy="-66.0"/>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>DSA:Hai-Soon-48-Actual-Line</Name>
+        <Title>Hai-Soon-48-Actual-Line</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>Hai-Soon-48-Actual-Line</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-119.97824994193613</westBoundLongitude>
+          <eastBoundLongitude>-79.33099301478035</eastBoundLongitude>
+          <southBoundLatitude>6.373806072220182</southBoundLatitude>
+          <northBoundLatitude>17.675081021112398</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-119.97824994193613" miny="6.373806072220182" maxx="-79.33099301478035" maxy="17.675081021112398"/>
+        <BoundingBox CRS="EPSG:4326" minx="6.373806072220182" miny="-119.97824994193613" maxx="17.675081021112398" maxy="-79.33099301478035"/>
+        <Style>
+          <Name>line</Name>
+          <Title>Default Line</Title>
+          <Abstract>A sample style that draws a line</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=DSA%3AHai-Soon-48-Actual-Line"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>DSA:Hai-Soon-48-Projection-Line</Name>
+        <Title>Hai-Soon-48-Projection-Line</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>Hai-Soon-48-Projection-Line</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-157.7730677864848</westBoundLongitude>
+          <eastBoundLongitude>-79.33099301478035</eastBoundLongitude>
+          <southBoundLatitude>6.373806072220182</southBoundLatitude>
+          <northBoundLatitude>22.974348733685844</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-157.7730677864848" miny="6.373806072220182" maxx="-79.33099301478035" maxy="22.974348733685844"/>
+        <BoundingBox CRS="EPSG:4326" minx="6.373806072220182" miny="-157.7730677864848" maxx="22.974348733685844" maxy="-79.33099301478035"/>
+        <Style>
+          <Name>Yellow Line</Name>
+          <Title>A yellow line style</Title>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=DSA%3AHai-Soon-48-Projection-Line"/>
+          </LegendURL>
+        </Style>
       </Layer>
       <Layer queryable="0" opaque="0" cascaded="1">
         <Name>USGS:Hydrography</Name>
@@ -10458,6 +11204,61 @@ The NHD is a national framework for assigning reach addresses to water-related e
         </Style>
       </Layer>
       <Layer queryable="1" opaque="0">
+        <Name>DSA:Lacanau-Actual-line</Name>
+        <Title>Lacanau-Actual-line</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>Lacanau-Actual-line</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-78.69999999999999</westBoundLongitude>
+          <eastBoundLongitude>-66.73636287974945</eastBoundLongitude>
+          <southBoundLatitude>19.68926763435215</southBoundLatitude>
+          <northBoundLatitude>26.533329999999946</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-78.69999999999999" miny="19.68926763435215" maxx="-66.73636287974945" maxy="26.533329999999946"/>
+        <BoundingBox CRS="EPSG:4326" minx="19.68926763435215" miny="-78.69999999999999" maxx="26.533329999999946" maxy="-66.73636287974945"/>
+        <Style>
+          <Name>line</Name>
+          <Title>Default Line</Title>
+          <Abstract>A sample style that draws a line</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=DSA%3ALacanau-Actual-line"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>DSA:Lacanau-Projection-line</Name>
+        <Title>Lacanau-Projection-line</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>Lacanau-Projection-line</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-78.69999999999999</westBoundLongitude>
+          <eastBoundLongitude>-61.07333999999991</eastBoundLongitude>
+          <southBoundLatitude>14.608919999999973</southBoundLatitude>
+          <northBoundLatitude>26.533329999999946</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-78.69999999999999" miny="14.608919999999973" maxx="-61.07333999999991" maxy="26.533329999999946"/>
+        <BoundingBox CRS="EPSG:4326" minx="14.608919999999973" miny="-78.69999999999999" maxx="26.533329999999946" maxy="-61.07333999999991"/>
+        <Style>
+          <Name>Yellow Line</Name>
+          <Title>A yellow line style</Title>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=DSA%3ALacanau-Projection-line"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
         <Name>City_Smart:Line_WMS_Kodiak_Trident</Name>
         <Title>Line_WMS_Kodiak_Trident</Title>
         <Abstract/>
@@ -10618,6 +11419,35 @@ The NHD is a national framework for assigning reach addresses to water-related e
           <LegendURL width="20" height="20">
             <Format>image/png</Format>
             <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3AMaritimeBoundaries00"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>City_Smart:NAA_Campus1</Name>
+        <Title>FTAA_Campus</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>FTAA_Campus</Keyword>
+          <Keyword>WCS</Keyword>
+          <Keyword>GeoTIFF</Keyword>
+        </KeywordList>
+        <CRS>EPSG:32618</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-74.44129058718954</westBoundLongitude>
+          <eastBoundLongitude>-74.4341919107993</eastBoundLongitude>
+          <southBoundLatitude>41.448435982442064</southBoundLatitude>
+          <northBoundLatitude>41.454290649266234</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-74.44129058718954" miny="41.448435982442064" maxx="-74.4341919107993" maxy="41.454290649266234"/>
+        <BoundingBox CRS="EPSG:32618" minx="546668.47368" miny="4588694.099890001" maxx="547257.22268" maxy="4589340.281160001"/>
+        <Style>
+          <Name>raster</Name>
+          <Title>Default Raster</Title>
+          <Abstract>A sample style that draws a raster, good for displaying imagery</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3ANAA_Campus1"/>
           </LegendURL>
         </Style>
       </Layer>
@@ -10954,7 +11784,7 @@ The NHD is a national framework for assigning reach addresses to water-related e
         <BoundingBox CRS="CRS:84" minx="-180.0" miny="-90.0" maxx="180.0" maxy="90.0"/>
         <BoundingBox CRS="EPSG:4326" minx="-90.0" miny="-180.0" maxx="90.0" maxy="180.0"/>
       </Layer>
-      <Layer queryable="1" opaque="0" cascaded="1">
+      <Layer queryable="0" opaque="0" cascaded="1">
         <Name>mrdata:Sediment_Geochemistry_NURE</Name>
         <Title>NURE_Sediment_Geochemistry</Title>
         <Abstract>Sediment_Geochemistry_NURE</Abstract>
@@ -11186,34 +12016,6 @@ The NHD is a national framework for assigning reach addresses to water-related e
         </Style>
       </Layer>
       <Layer queryable="1" opaque="0">
-        <Name>City_Smart:UGTFP_polygon</Name>
-        <Title>UGTFP_polygon</Title>
-        <Abstract/>
-        <KeywordList>
-          <Keyword>features</Keyword>
-          <Keyword>UGTFP_polygon</Keyword>
-        </KeywordList>
-        <CRS>EPSG:4326</CRS>
-        <CRS>CRS:84</CRS>
-        <EX_GeographicBoundingBox>
-          <westBoundLongitude>-152.8933392361329</westBoundLongitude>
-          <eastBoundLongitude>-152.32765747468684</eastBoundLongitude>
-          <southBoundLatitude>57.439622220138986</southBoundLatitude>
-          <northBoundLatitude>57.87368806872767</northBoundLatitude>
-        </EX_GeographicBoundingBox>
-        <BoundingBox CRS="CRS:84" minx="-152.8933392361329" miny="57.439622220138986" maxx="-152.32765747468684" maxy="57.87368806872767"/>
-        <BoundingBox CRS="EPSG:4326" minx="57.439622220138986" miny="-152.8933392361329" maxx="57.87368806872767" maxy="-152.32765747468684"/>
-        <Style>
-          <Name>Neon Green</Name>
-          <Title>Default Line</Title>
-          <Abstract>A sample style that draws a line</Abstract>
-          <LegendURL width="20" height="20">
-            <Format>image/png</Format>
-            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=City_Smart%3AUGTFP_polygon"/>
-          </LegendURL>
-        </Style>
-      </Layer>
-      <Layer queryable="1" opaque="0">
         <Name>City_Smart:USCG_Sectors</Name>
         <Title>USCG_Sectors</Title>
         <Abstract/>
@@ -11257,6 +12059,61 @@ The NHD is a national framework for assigning reach addresses to water-related e
         </EX_GeographicBoundingBox>
         <BoundingBox CRS="CRS:84" minx="-165.0" miny="24.0" maxx="-66.0" maxy="73.0"/>
         <BoundingBox CRS="EPSG:4267" minx="23.9995" miny="-165.0" maxx="73.0006" maxy="-66.0005"/>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>DSA:Wafrah-Actual-Line</Name>
+        <Title>Wafrah-Actual-Line</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>Wafrah-Actual-Line</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-89.97253</westBoundLongitude>
+          <eastBoundLongitude>-73.18956999495445</eastBoundLongitude>
+          <southBoundLatitude>23.16661000297038</southBoundLatitude>
+          <northBoundLatitude>28.869319999999988</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-89.97253" miny="23.16661000297038" maxx="-73.18956999495445" maxy="28.869319999999988"/>
+        <BoundingBox CRS="EPSG:4326" minx="23.16661000297038" miny="-89.97253" maxx="28.869319999999988" maxy="-73.18956999495445"/>
+        <Style>
+          <Name>line</Name>
+          <Title>Default Line</Title>
+          <Abstract>A sample style that draws a line</Abstract>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=DSA%3AWafrah-Actual-Line"/>
+          </LegendURL>
+        </Style>
+      </Layer>
+      <Layer queryable="1" opaque="0">
+        <Name>DSA:Wafrah-Projection-Line</Name>
+        <Title>Wafrah-Projection-Line</Title>
+        <Abstract/>
+        <KeywordList>
+          <Keyword>features</Keyword>
+          <Keyword>Wafrah-Projection-Line</Keyword>
+        </KeywordList>
+        <CRS>EPSG:4326</CRS>
+        <CRS>CRS:84</CRS>
+        <EX_GeographicBoundingBox>
+          <westBoundLongitude>-89.972535</westBoundLongitude>
+          <eastBoundLongitude>-8.738665500000057</eastBoundLongitude>
+          <southBoundLatitude>23.16661320781153</southBoundLatitude>
+          <northBoundLatitude>40.718134486660574</northBoundLatitude>
+        </EX_GeographicBoundingBox>
+        <BoundingBox CRS="CRS:84" minx="-89.972535" miny="23.16661320781153" maxx="-8.738665500000057" maxy="40.718134486660574"/>
+        <BoundingBox CRS="EPSG:4326" minx="23.16661320781153" miny="-89.972535" maxx="40.718134486660574" maxy="-8.738665500000057"/>
+        <Style>
+          <Name>Yellow Line</Name>
+          <Title>A yellow line style</Title>
+          <LegendURL width="20" height="20">
+            <Format>image/png</Format>
+            <OnlineResource xmlns:xlink="http://www.w3.org/1999/xlink" xlink:type="simple" xlink:href="http://cs.aworldbridgelabs.com:8080/geoserver/ows?service=WMS&amp;request=GetLegendGraphic&amp;format=image%2Fpng&amp;width=20&amp;height=20&amp;layer=DSA%3AWafrah-Projection-Line"/>
+          </LegendURL>
+        </Style>
       </Layer>
       <Layer queryable="1" opaque="0">
         <Name>City_Smart:Wire_Transmission_Kodiak</Name>

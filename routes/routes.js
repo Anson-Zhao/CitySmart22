@@ -2147,6 +2147,50 @@ module.exports = function (app, passport) {
         }
     });
 
+    app.post('/inTime', function(req, res) {
+        console.log(req.body.send);
+        let bruh = req.body.send;
+        let statement = "UPDATE citysmart2.userlogin SET InTime = (?) WHERE username = '" + req.user.username + "';"
+        con_CS.query(statement, bruh, function(err){
+            if (err){
+                console.log(err);
+            } else {
+                console.log("Cool");
+            }
+        })
+        res.json(bruh);
+    })
+
+    app.post('/time', function(req, res){
+        console.log(req.body.cool);
+        let Minutes = Number(req.body.cool);
+        console.log(Minutes);
+        // let statement1 = "SELECT hoursLeft FROM citysmart2.userlogin WHERE id = '" + req.user.id + "';";
+        // con_CS.query(statement1, function (err, result) {
+        //     if (err) throw err;
+        //     console.log(result[0].hoursLeft);
+        //     let curr = result[0].hoursLeft - Hours
+        //     console.log(curr);
+        // });
+        let statement = "UPDATE citysmart2.userlogin SET minutesLeft = minutesLeft - ((?) - InTime)/60000 WHERE username = '" + req.user.username + "';"
+        let Reset = "UPDATE citysmart2.userlogin SET InTime = NULL WHERE username = '" + req.user.username + "';"
+        con_CS.query(statement, Minutes, function(err){
+            if(err) {
+                console.log(err)
+            } else {
+                con_CS.query(Reset, function(err){
+                    if(err){
+                        console.log(err);
+                    } else {
+                        console.log("reseted");
+                    }
+                })
+                console.log(Minutes);
+            }
+        })
+        res.json(Minutes);
+    })
+
 
     app.get('/rejected', isLoggedIn, function (req, res) {
         let myStat = "SELECT userrole FROM UserLogin WHERE username = '" + req.user.username + "';";

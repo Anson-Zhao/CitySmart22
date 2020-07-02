@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SshConfigs">
+    <configs>
+      <sshConfig authType="PASSWORD" host="v2.cs.aworldbridgelabs.com" id="37a041c0-966b-4453-8f0f-fdc53f99aeaa" port="5532" customName="cs2_Live" nameFormat="CUSTOM" />
+      <sshConfig authType="PASSWORD" host="v2.cs.aworldbridgelabs.com" id="7d8beef9-81be-4c7f-ba53-fc4c32d3cf1e" port="5532" customName="cs2_Live" nameFormat="CUSTOM" />
+      <sshConfig authType="PASSWORD" host="v2.cs.aworldbridgelabs.com" id="d40f10fc-ee3e-4509-8947-df4995dd0511" port="5532" customName="cs2_Live" nameFormat="CUSTOM" />
+    </configs>
+  </component>
+</project>

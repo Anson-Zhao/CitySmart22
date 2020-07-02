@@ -184,15 +184,19 @@
 <div class="container center">
     <div class="page-header text-center header">
         <h1><span class="fa fa-home"></span><strong> CitySmart - User Home </strong></h1><h4><span class="fa fa-user"></span>
-            <strong>Account Name</strong>: <%= user.username %></h4><br>
+            <strong>Account Name</strong>: <%= user.username %></h4>
+        <strong>Minutes Still Needed</strong>: <%= user.hoursLeft %><br>
     </div>
 </div>
 <br>
+
 <div class="container" style="width: 900px;">
-    <div class="center floating-Box clearForm" style="width: 490px;">
+    <div class="center floating-Box clearForm" style="width: 690px;">
         <h4 class="floating-Box" style="width: 220px;"><strong>Date Range:&nbsp;</strong></h4>
         <div style="width: 350px;">
-            <h5 class="floating-Box" style="width: 50px;">From:&nbsp;</h5>&nbsp;
+            <button id = "timeIn" style="width: 160px"> Log Start Time &nbsp;</button>
+            <button id = "timeOut" style="width: 160px"> Log End Time &nbsp;</button>
+            <h5 class="floating-Box" style="width: 50px;"><br>From:&nbsp;</h5>&nbsp;
             <input class="date floating-Box" id= "From" type="text" placeholder="Select Date" style="width: 280px;
     height: 40px;
     padding-left: 10px;
@@ -311,6 +315,15 @@
     let transactionID = [];
     let LayerNameStr = [];
     let queryStr;
+    let logInButton = document.getElementById('timeIn');
+    let logOutButton = document.getElementById('timeOut');
+    let logInTime;
+    let logOutTime;
+    let logInLength;
+    let seconds;
+    let minutes;
+    let hours;
+
 
 
     $(document).ready(function() {
@@ -550,6 +563,50 @@
     function offFunction() {
         alert ("Your are offline. Some functionality may be unavailable.");
     }
+
+    logInButton.addEventListener("click", function () {
+        logInTime = new Date();
+        console.log(logInTime.getTime());
+        let send = logInTime.getTime();
+        $.ajax({
+            url: 'inTime',
+            data: {send},
+            method: 'post',
+            dataType: 'json',
+            success: function(results){
+                console.log(results);
+                alert("You have successfully clocked in!")
+            }
+        })
+        //alert("You have now clocked in please do not close or refresh this tab make sure to click clock out when you leave")
+    })
+
+    logOutButton.addEventListener("click", function () {
+        logOutTime = new Date();
+        logInLength = logOutTime.getTime() - logInTime.getTime();
+        console.log(logInLength);
+        seconds = logInLength / 1000;
+        minutes = seconds / 60;
+        minutes = minutes.toString();
+        hours = minutes / 60;
+        console.log(hours);
+        hours = hours.toString();
+        let cool = logOutTime.getTime();
+        let ret;
+        let force = "bruh";
+        $.ajax({
+            url: 'time',
+            data: {cool, force},
+            method: 'post',
+            dataType: "json",
+            success: function (results) {
+                ret = results;
+                console.log(ret);
+                alert("Hours successfully added!")
+            }})
+    })
+
+
 
 </script>
 </body>
