@@ -5,6 +5,12 @@
       <sshConfig authType="PASSWORD" host="v2.cs.aworldbridgelabs.com" id="37a041c0-966b-4453-8f0f-fdc53f99aeaa" port="5532" customName="cs2_Live" nameFormat="CUSTOM" />
       <sshConfig authType="PASSWORD" host="v2.cs.aworldbridgelabs.com" id="7d8beef9-81be-4c7f-ba53-fc4c32d3cf1e" port="5532" customName="cs2_Live" nameFormat="CUSTOM" />
       <sshConfig authType="PASSWORD" host="v2.cs.aworldbridgelabs.com" id="d40f10fc-ee3e-4509-8947-df4995dd0511" port="5532" customName="cs2_Live" nameFormat="CUSTOM" />
+      <sshConfig authType="PASSWORD" host="v2.cs.aworldbridgelabs.com" id="7e14d841-fcdb-413e-97dd-49b4203ae324" port="5532" customName="cs2_Live" nameFormat="CUSTOM" />
+      <sshConfig authType="PASSWORD" host="v2.cs.aworldbridgelabs.com" id="13bb49d8-677e-4e84-baa1-f2605ff75200" port="5532" customName="cs2_Live" nameFormat="CUSTOM" />
+      <sshConfig authType="PASSWORD" host="v2.cs.aworldbridgelabs.com" id="c8624ab5-5eed-4b41-a8cc-94fd9f9da525" port="5532" customName="cs2_Live" nameFormat="CUSTOM" />
+      <sshConfig authType="PASSWORD" host="v2.cs.aworldbridgelabs.com" id="fc4a0540-87c5-4d96-bb7b-dda785f61e1d" port="5532" customName="cs2_Live" nameFormat="CUSTOM" />
+      <sshConfig authType="PASSWORD" host="v2.cs.aworldbridgelabs.com" id="60bf1b45-eac2-48b6-9deb-29dd542b317e" port="5532" customName="cs2_Live" nameFormat="CUSTOM" />
+      <sshConfig authType="PASSWORD" host="v2.cs.aworldbridgelabs.com" id="230ad055-3c69-4f79-acc9-2cbebb4d5262" port="5532" customName="cs2_Live" nameFormat="CUSTOM" />
     </configs>
   </component>
 </project>

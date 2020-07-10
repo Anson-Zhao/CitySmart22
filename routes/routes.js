@@ -840,62 +840,131 @@ module.exports = function (app, passport) {
         }
     });
 
+    // app.get('/filterQuery', isLoggedIn, function (req, res) {
+    //     // console.log(req.query);
+    //     let sqlStat = "SELECT UserProfile.firstName, UserProfile.lastName, Request_Form.* FROM Request_Form INNER JOIN UserProfile ON UserProfile.username = Request_Form.UID";
+    //     let myQueryObj = [ //change everything because we need to make sure it matches what we want to happen in client side
+    //         {
+    //             fieldVal: req.query.firstName,
+    //             dbCol: "firstName",
+    //             op: " = '",
+    //             adj: req.query.firstName,
+    //             table: 1
+    //         },
+    //         {
+    //             fieldVal: req.query.lastName,
+    //             dbCol: "lastName",
+    //             op: " = '",
+    //             adj: req.query.lastName,
+    //             table: 1
+    //         },
+    //         {
+    //             fieldVal: req.query.startDate,
+    //             dbCol: "date",
+    //             op: " >= '",
+    //             adj: req.query.startDate,
+    //             table: 1
+    //         },
+    //         {
+    //             fieldVal: req.query.endDate,
+    //             dbCol: "date",
+    //             op: " <= '",
+    //             adj: req.query.endDate,
+    //             table: 1
+    //         },
+    //         {
+    //             fieldVal: req.query.Current_Status1,
+    //             dbCol: req.query.Current_Status,
+    //             op: " = '",
+    //             adj: req.query.Current_Status1,
+    //             table: req.query.filter1
+    //         },
+    //         {
+    //             fieldVal: req.query.Current_Status2,
+    //             dbCol: req.query.Current_Status,
+    //             op: " = '",
+    //             adj: req.query.Current_Status2,
+    //             table: req.query.filter2
+    //         },
+    //         {
+    //             fieldVal: req.query.UID,
+    //             dbCol: req.query.UID,
+    //             op: " = '",
+    //             adj: req.query.UID,
+    //             table: req.query.filter3
+    //         }
+    //     ];
+    //     QueryStat(myQueryObj, sqlStat, res)
+    // });
+
     app.get('/filterQuery', isLoggedIn, function (req, res) {
-        // console.log(req.query);
-        let sqlStat = "SELECT UserProfile.firstName, UserProfile.lastName, Request_Form.* FROM Request_Form INNER JOIN UserProfile ON UserProfile.username = Request_Form.UID";
-        let myQueryObj = [ //change everything because we need to make sure it matches what we want to happen in client side
-            {
-                fieldVal: req.query.firstName,
-                dbCol: "firstName",
-                op: " = '",
-                adj: req.query.firstName,
-                table: 1
-            },
-            {
-                fieldVal: req.query.lastName,
-                dbCol: "lastName",
-                op: " = '",
-                adj: req.query.lastName,
-                table: 1
-            },
-            {
-                fieldVal: req.query.startDate,
-                dbCol: "date",
-                op: " >= '",
-                adj: req.query.startDate,
-                table: 1
-            },
-            {
-                fieldVal: req.query.endDate,
-                dbCol: "date",
-                op: " <= '",
-                adj: req.query.endDate,
-                table: 1
-            },
-            {
-                fieldVal: req.query.Current_Status1,
-                dbCol: req.query.Current_Status,
-                op: " = '",
-                adj: req.query.Current_Status1,
-                table: req.query.filter1
-            },
-            {
-                fieldVal: req.query.Current_Status2,
-                dbCol: req.query.Current_Status,
-                op: " = '",
-                adj: req.query.Current_Status2,
-                table: req.query.filter2
-            },
-            {
-                fieldVal: req.query.UID,
-                dbCol: req.query.UID,
-                op: " = '",
-                adj: req.query.UID,
-                table: req.query.filter3
-            }
-        ];
-        QueryStat(myQueryObj, sqlStat, res)
+        console.log(req.query);
+        let start = Number(req.query.startDate.slice(5, 7)) - 1;
+
+        start = req.query.startDate.slice(0, 4) + '-' + start + "-" + req.query.startDate.slice(8);
+        let end = Number(req.query.endDate.slice(5, 7)) - 1;
+
+        end = req.query.endDate.slice(0, 4) + '-' + end + "-" + req.query.endDate.slice(8);
+        console.log(start)
+        let sqlStat = "SELECT * FROM timelog WHERE logDate >= ? AND logDate <= ? AND username = '" + req.user.username + "';"
+        con_CS.query(sqlStat, [start, end], function(err, result){
+            res.json(result);
+        })
+        //let sqlStat = "SELECT username, logDate, inTime, outTime, timeLeft, timeDiff * FROM timelog WHERE username = '" + req.user.username + "';";
+        // let myQueryObj = [ //change everything because we need to make sure it matches what we want to happen in client side
+        //     {
+        //         fieldVal: req.query.username,
+        //         dbCol: "username",
+        //         op: " = '",
+        //         adj: req.query.username,
+        //         table: 1
+        //     },
+        //     {
+        //         fieldVal: req.query.inTime,
+        //         dbCol: "inTime",
+        //         op: " = '",
+        //         adj: req.query.inTime,
+        //         table: 1
+        //     },
+        //     {
+        //         fieldVal: req.query.startDate,
+        //         dbCol: "date",
+        //         op: " >= '",
+        //         adj: req.query.startDate,
+        //         table: 1
+        //     },
+        //     {
+        //         fieldVal: req.query.endDate,
+        //         dbCol: "date",
+        //         op: " <= '",
+        //         adj: req.query.endDate,
+        //         table: 1
+        //     },
+        //     {
+        //         fieldVal: req.query.outTime,
+        //         dbCol: req.query.outTime,
+        //         op: " = '",
+        //         adj: req.query.outTime,
+        //         table: req.query.outTime
+        //     },
+        //     {
+        //         fieldVal: req.query.timeDiff,
+        //         dbCol: req.query.timeDiff,
+        //         op: " = '",
+        //         adj: req.query.timeDiff,
+        //         table: req.query.timeDiff
+        //     },
+        //     {
+        //         fieldVal: req.query.timeLeft,
+        //         dbCol: req.query.timeLeft,
+        //         op: " = '",
+        //         adj: req.query.timeLeft,
+        //         table: req.query.timeLeft
+        //     }
+        // ];
+        // QueryStat(myQueryObj, sqlStat, res)
     });
+
 
     app.get('/layerReqQuery', isLoggedIn, function (req, res) {
         console.log('Layer query: ');
@@ -2147,50 +2216,156 @@ module.exports = function (app, passport) {
         }
     });
 
+    app.post('/add', function(req, res) {
+        console.log(req.body);
+        let min = (Number(req.body.hours) * 60) + Number(req.body.minutes);
+        let diff = req.body.hours + ":" + req.body.minutes + ":00";
+        let initial = "SELECT * FROM timelog WHERE username = '" + req.body.user + "';"
+        let statement = "INSERT INTO timelog(username, logDate, inTime, outTime, timeLeft, timeDiff, method) VALUES ('" + req.body.user + "','" + req.body.day + "', '00:00:00', '00:00:00', ('" + req.user.minutesLeft + "' + ?), ?, 'added')"
+        let statement1 = "UPDATE citysmart2.userlogin SET minutesLeft = (minutesLeft + (?)) WHERE username = '" + req.body.user + "';"
+        con_CS.query(initial, function(err, result){
+            if(err){
+                console.log(err);
+            } else if(result.length < 1){
+                res.json('There were no logs with that username please make sure you have entered it correctly');
+            } else {
+                con_CS.query(statement, [min, diff], function(err, result){
+                    if(err){
+                        console.log(err);
+                    } else {
+                        console.log('cool');
+                        con_CS.query(statement1, min, function(err){
+                            if(err){
+                                console.log(err);
+                            } else {
+                                console.log('my guy');
+                                res.json("successfully added hours to user's log");
+                            }
+                        })
+                    }
+                })
+            }
+        })
+    })
+
+    app.post('/remove', function(req, res){
+        console.log(req.body);
+        let min = (Number(req.body.hours) * 60) + Number(req.body.minutes);
+        let diff = req.body.hours + ":" + req.body.minutes + ":00";
+        let initial = "SELECT * FROM timelog WHERE username = '" + req.body.user + "';"
+        let statement = "INSERT INTO timelog(username, logDate, inTime, outTime, timeLeft, timeDiff, method) VALUES ('" + req.body.user + "','" + req.body.day + "', '00:00:00', '00:00:00', ('" + req.user.minutesLeft + "' - ?), ?, 'removed')"
+        let statement1 = "UPDATE citysmart2.userlogin SET minutesLeft = (minutesLeft - (?)) WHERE username = '" + req.body.user + "';"
+        con_CS.query(initial, function(err, result){
+            if(err){
+                console.log(err);
+            } else if(result.length < 1){
+                res.json('There were no logs with that username please make sure you have entered it correctly');
+            } else {
+                con_CS.query(statement, [min, diff], function(err, result){
+                    if(err){
+                        console.log(err);
+                    } else {
+                        console.log('cool');
+                        con_CS.query(statement1, min, function(err){
+                            if(err){
+                                console.log(err);
+                            } else {
+                                console.log('my guy');
+                                res.json("successfully removed hours from user's log");
+                            }
+                        })
+                    }
+                })
+            }
+        })
+    })
+
     app.post('/inTime', function(req, res) {
-        console.log(req.body.send);
+        console.log(req.body);
         let bruh = req.body.send;
-        let statement = "UPDATE citysmart2.userlogin SET InTime = (?) WHERE username = '" + req.user.username + "';"
-        con_CS.query(statement, bruh, function(err){
+        let lmao = req.body.send1;
+        console.log(bruh + "  " + lmao);
+        let statement = "INSERT INTO citysmart2.timelog(username, logDate, inTime, outTime, timeLeft) VALUES ('" + req.user.username + "', (?), (?), NULL,'" + req.user.minutesLeft + "' )"
+        con_CS.query(statement, [bruh, lmao], function(err){
             if (err){
                 console.log(err);
             } else {
                 console.log("Cool");
             }
         })
-        res.json(bruh);
+        res.json("lol");
     })
 
-    app.post('/time', function(req, res){
-        console.log(req.body.cool);
-        let Minutes = Number(req.body.cool);
-        console.log(Minutes);
-        // let statement1 = "SELECT hoursLeft FROM citysmart2.userlogin WHERE id = '" + req.user.id + "';";
-        // con_CS.query(statement1, function (err, result) {
-        //     if (err) throw err;
-        //     console.log(result[0].hoursLeft);
-        //     let curr = result[0].hoursLeft - Hours
-        //     console.log(curr);
-        // });
-        let statement = "UPDATE citysmart2.userlogin SET minutesLeft = minutesLeft - ((?) - InTime)/60000 WHERE username = '" + req.user.username + "';"
-        let Reset = "UPDATE citysmart2.userlogin SET InTime = NULL WHERE username = '" + req.user.username + "';"
-        con_CS.query(statement, Minutes, function(err){
-            if(err) {
-                console.log(err)
+    app.post('/time', async function(req, res){
+        //console.log(req.body.cool);
+        let lol = req.body.cool;
+        let time = req.body.lmao;
+        let theDiff;
+        let stat = 'You have logged an out time please refresh the page and if the \'hours needed\' does not change even though you think it should have please contact an admin'
+        //let start = '00:00:00'
+        //console.log(time);
+        //console.log(lol);
+        let statement = "UPDATE citysmart2.timelog SET outTime = (?) WHERE outTime IS NULL AND logDate = (?) AND username = '" + req.user.username + "';"
+        let statement1 = "SELECT inTime FROM citysmart2.timelog WHERE outTime IS NULL AND logDate = (?) AND username = '" + req.user.username + "';"
+        let update = "UPDATE citysmart2.userlogin SET minutesLeft = (minutesLeft - (?)) WHERE username = '" + req.user.username + "';"
+        let diff = "UPDATE citysmart2.timelog SET timeDiff = timediff((?), (?)) WHERE outTime IS NULL AND logDate = (?) AND username = '" + req.user.username + "';"
+        let diffSelect = "SELECT timeDiff FROM citysmart2.timelog WHERE outTime IS NULL AND logDate = (?) AND username = '" + req.user.username + "';"
+
+        con_CS.query(statement1, lol, function (err, result) {
+            if (err) {
+                console.log(err);
+            } else if (result.length == 0) {
+                //res.json("error");
+                stat = "An error occurred there may not be an in time"
+                console.log("bruh");
+                res.json(stat);
             } else {
-                con_CS.query(Reset, function(err){
-                    if(err){
+                console.log(result.length);
+                let start = result[0].inTime;
+                con_CS.query(diff, [time, start, lol], function (err) {
+                    if (err) {
                         console.log(err);
                     } else {
-                        console.log("reseted");
+                        con_CS.query(diffSelect, lol, function (err, result) {
+                            if (err) {
+                                console.log(err);
+                            } else {
+                                theDiff = result[0].timeDiff;
+                                let hMin = theDiff.slice(0, 2) * 60;
+                                let mMin = theDiff.slice(3, 5);
+                                let sMin = theDiff.slice(6) / 60;
+                                let total = Number(hMin) + Number(mMin) + Number(sMin);
+                                con_CS.query(update, total, function (err) {
+                                    if (err) {
+                                        console.log(err);
+                                    } else {
+                                        con_CS.query(statement, [time, lol], function (err) {
+                                            if (err) {
+                                                console.log(err);
+                                            } else {
+                                                res.json(stat);
+                                            }
+                                        })
+                                    }
+                                })
+                            }
+                        })
                     }
                 })
-                console.log(Minutes);
             }
         })
-        res.json(Minutes);
     })
 
+    app.get('/display', function(req, res){
+        let statement = "SELECT minutesLeft FROM citysmart2.userlogin WHERE username = '" + req.user.username + "';"
+        con_CS.query(statement, function(err, results){
+            if(err){
+                console.log (err);
+            } else {
+                res.json(results[0].minutesLeft);
+            }
+        })
+    })
 
     app.get('/rejected', isLoggedIn, function (req, res) {
         let myStat = "SELECT userrole FROM UserLogin WHERE username = '" + req.user.username + "';";

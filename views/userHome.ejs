@@ -151,18 +151,18 @@
     <a href="/homepageLI" style="width:110px;">
         <button class="navbutton1"> Homepage </button>
     </a>
-    <a href="/newRequest" id= "Request" style="width:110px;">
-        <button class="navbutton1" style="width: 140px"> New Request </button>
-    </a>
-    <a href="/recovery" id ="Restore" style="width:50px;">
-        <button class="navbutton1"> Restore </button>
-    </a>
+<!--    <a href="/newRequest" id= "Request" style="width:110px;">-->
+<!--        <button class="navbutton1" style="width: 140px"> New Request </button>-->
+<!--    </a>-->
+<!--    <a href="/recovery" id ="Restore" style="width:50px;">-->
+<!--        <button class="navbutton1"> Restore </button>-->
+<!--    </a>-->
     <a href="/dataHistory" style="width:110px;">
-        <button class="navbutton1" style="width: 160px"> Approved Requests </button>
-    </a>
-    <a href="/rejected" style="width:110px;">
-        <button class="navbutton1" style="width: 160px"> Rejected Requests </button>
-    </a>
+        <button class="navbutton1" style="width: 160px"> Data History </button>
+<!--    </a>-->
+<!--    <a href="/rejected" style="width:110px;">-->
+<!--        <button class="navbutton1" style="width: 160px"> Rejected Requests </button>-->
+<!--    </a>-->
     <div class="dropdown" style="height: 80px; width: 200px; float: right; margin: 0;">
         <button onclick="dropDown()" class="dropbutton" id="Username">
             <%= firstName%>
@@ -185,7 +185,8 @@
     <div class="page-header text-center header">
         <h1><span class="fa fa-home"></span><strong> CitySmart - User Home </strong></h1><h4><span class="fa fa-user"></span>
             <strong>Account Name</strong>: <%= user.username %></h4>
-        <strong>Minutes Still Needed</strong>: <%= user.hoursLeft %><br>
+                <strong id = 'Left'>Minutes Still Needed</strong><br>
+
     </div>
 </div>
 <br>
@@ -195,7 +196,8 @@
         <h4 class="floating-Box" style="width: 220px;"><strong>Date Range:&nbsp;</strong></h4>
         <div style="width: 350px;">
             <button id = "timeIn" style="width: 160px"> Log Start Time &nbsp;</button>
-            <button id = "timeOut" style="width: 160px"> Log End Time &nbsp;</button>
+            <button id = "timeOut" style="width: 160px"> Log End Time &nbsp;</button><br>
+            <button id = "edit" disabled style="width: 160px">Admin Edit Logs</button><br>
             <h5 class="floating-Box" style="width: 50px;"><br>From:&nbsp;</h5>&nbsp;
             <input class="date floating-Box" id= "From" type="text" placeholder="Select Date" style="width: 280px;
     height: 40px;
@@ -223,8 +225,22 @@
     margin: 5px 0px;
     border-radius: 5px;
     border: 1px solid #c8c8c8;" value="" onchange="showFilter()">
-            <h5 class="floating-Box">Last Name:</h5>
-            <input class="floating-Box" id="lastName" type="text" name="first name" style="background: WhiteSmoke;
+        </div>
+    </div>
+
+    <div class="floating-Box clearForm" id="deleteHours" style="width: 1000px;">
+        <h4 class="floatingBox" style="width: 220px;"><strong>Time to change:&nbsp;</strong></h4>
+        <div class="time" style="width: 375px;">
+            <h5 class="floating-Box">Hours to add/delete:</h5>
+            <input class="floating-Box" id="Hours" type="number" name="hours" min = '0' style="background: WhiteSmoke;
+    width: 275px;
+    height: 40px;
+    padding-left: 10px;
+    margin: 5px 0px;
+    border-radius: 5px;
+    border: 1px solid #c8c8c8;" value="" onchange="showFilter()">
+            <h5 class="floating-Box">Minutes to add/delete:</h5>
+            <input class="floating-Box" id="Minutes" type="number" name="minutes" min = '0' style="background: WhiteSmoke;
     width: 275px;
     height: 40px;
     padding-left: 10px;
@@ -233,11 +249,14 @@
     border: 1px solid #c8c8c8;" value="" onchange="showFilter()">
         </div>
     </div>
+
     <br>
     <br>
     <div class="center" style="width: 850px;
     padding: 0px;
     height: 40px;">
+        <button id = "add" type = "button" style="height: 40px; width: 110px; float: left;margin-right: 5px;">Add Time</button>
+        <button id = "remove" type = "button" style="height: 40px; width: 110px; float: left;margin-right: 5px;">Remove Time</button>
         <button id="submitButton" class="button1" type="button"  onclick="query(), showAll()" hidden disabled>Filter</button>
         <button id="editButton" class="btn btn-primary btn-sm button" type="button" style="height: 40px; width: 110px; float: left;margin-right: 5px;">Edit</button>
         <button id="deleteButton" class="btn btn-primary btn-sm button" type="button" style="height: 40px;
@@ -246,63 +265,63 @@
     width: 110px; float: left" onclick="donTShowAll()" disabled hidden>Show All</button>
     </div>
     <br>
-    <div class="center" style="width: 850px;">
-        <h4 id="subtitles"><strong>Most Recent Pending Records </strong></h4>
-        <h5>Continent Key</h5>
-        <p>SA: South America <br> NA: North America <br> OC: Oceania <br> EU: Europe <br> AS: Asia <br> AF: Africa <br> AN: Antarctica</p>
-        <div id="dvData">
-            <table id="dataDisplay">
-                <thead>
-                <tr>
-                    <th>Date</th>
-                    <th>UID</th>
-                    <th>RID</th>
-                    <th>Layer Type</th>
-                    <th>Layer Continent</th>
-                    <th>Layer Country</th>
-                    <th>Layer State</th>
-                    <th>Layer City</th>
-                    <th>Main Category</th>
-                    <th>Other Main Category</th>
-                    <th>Sub Category</th>
-                    <th>Other Sub Category</th>
-                    <th>Layer Display Name</th>
-                    <th>Layer Description</th>
-                    <th>Layer Format</th>
-                    <th>Layer Uploader Name</th>
-                    <th>Current_Status</th>
-                    <th>Comments</th>
-                </tr>
-                </thead>
-                <tbody>
+<!--    <div class="center" style="width: 850px;">-->
+<!--        <h4 id="subtitles"><strong>Most Recent Pending Records </strong></h4>-->
+<!--        <h5>Continent Key</h5>-->
+<!--        <p>SA: South America <br> NA: North America <br> OC: Oceania <br> EU: Europe <br> AS: Asia <br> AF: Africa <br> AN: Antarctica</p>-->
+<!--        <div id="dvData">-->
+<!--            <table id="dataDisplay">-->
+<!--                <thead>-->
+<!--                <tr>-->
+<!--                    <th>Date</th>-->
+<!--                    <th>UID</th>-->
+<!--                    <th>RID</th>-->
+<!--                    <th>Layer Type</th>-->
+<!--                    <th>Layer Continent</th>-->
+<!--                    <th>Layer Country</th>-->
+<!--                    <th>Layer State</th>-->
+<!--                    <th>Layer City</th>-->
+<!--                    <th>Main Category</th>-->
+<!--                    <th>Other Main Category</th>-->
+<!--                    <th>Sub Category</th>-->
+<!--                    <th>Other Sub Category</th>-->
+<!--                    <th>Layer Display Name</th>-->
+<!--                    <th>Layer Description</th>-->
+<!--                    <th>Layer Format</th>-->
+<!--                    <th>Layer Uploader Name</th>-->
+<!--                    <th>Current_Status</th>-->
+<!--                    <th>Comments</th>-->
+<!--                </tr>-->
+<!--                </thead>-->
+<!--                <tbody>-->
 
-                </tbody>
-                <tfoot>
-                <tr>
-                    <th>Date</th>
-                    <th>UID</th>
-                    <th>RID</th>
-                    <th>Layer Type</th>
-                    <th>Layer Continent</th>
-                    <th>Layer Country</th>
-                    <th>Layer State</th>
-                    <th>Layer City</th>
-                    <th>Main Category</th>
-                    <th>Other Main Category</th>
-                    <th>Sub Category</th>
-                    <th>Other Sub Category</th>
-                    <th>Layer Display Name</th>
-                    <th>Layer Description</th>
-                    <th>Layer Format</th>
-                    <th>Layer Uploader Name</th>
-                    <th>Current_Status</th>
-                    <th>Comments</th>
-                </tr>
-                </tfoot>
-            </table>
-            <!-- formal table //approve //recovery-->
-        </div>
-    </div>
+<!--                </tbody>-->
+<!--                <tfoot>-->
+<!--                <tr>-->
+<!--                    <th>Date</th>-->
+<!--                    <th>UID</th>-->
+<!--                    <th>RID</th>-->
+<!--                    <th>Layer Type</th>-->
+<!--                    <th>Layer Continent</th>-->
+<!--                    <th>Layer Country</th>-->
+<!--                    <th>Layer State</th>-->
+<!--                    <th>Layer City</th>-->
+<!--                    <th>Main Category</th>-->
+<!--                    <th>Other Main Category</th>-->
+<!--                    <th>Sub Category</th>-->
+<!--                    <th>Other Sub Category</th>-->
+<!--                    <th>Layer Display Name</th>-->
+<!--                    <th>Layer Description</th>-->
+<!--                    <th>Layer Format</th>-->
+<!--                    <th>Layer Uploader Name</th>-->
+<!--                    <th>Current_Status</th>-->
+<!--                    <th>Comments</th>-->
+<!--                </tr>-->
+<!--                </tfoot>-->
+<!--            </table>-->
+<!--            &lt;!&ndash; formal table //approve //recovery&ndash;&gt;-->
+<!--        </div>-->
+<!--    </div>-->
 </div>
 <script type='text/javascript'>
     let firstName = "<%= firstName %>";
@@ -323,6 +342,14 @@
     let seconds;
     let minutes;
     let hours;
+    let buttonIn = document.getElementById('timeIn');
+    let buttonOut = document.getElementById('timeOut');
+    let displayHour;
+    let displayMinute;
+    let displaySecond;
+    let adminButton = document.getElementById('edit');
+    let addButton = document.getElementById('add');
+    let removeButton = document.getElementById('remove');
 
 
 
@@ -343,6 +370,7 @@
                 queryStr = "Current_Status=Pending&UID=" + username;
             } else {
                 queryStr = "Current_Status=Pending";
+                adminButton.disabled = false;
             }
             console.log(queryStr);
             queryAndDisplay(queryStr);
@@ -353,6 +381,18 @@
             //We change to UID b/c of column name in Layer_Request form table
 
         });
+
+        $.ajax({
+            url: 'display',
+            method: 'get',
+            dataType: "json",
+            success: function (results) {
+                displayHour = Math.trunc(results/60);
+                displayMinute = Math.trunc(results - (displayHour*60));
+                displaySecond = Math.trunc((results - ((displayHour * 60) + displayMinute)) * 60);
+                let display = "Hours Still Needed: " + displayHour + ":" + displayMinute + ":" + displaySecond;
+                document.getElementById('Left').innerHTML = display;
+            }})
 
         $('#dataDisplay tbody').on('click', 'tr', function () {
             transactionID = [];
@@ -463,6 +503,27 @@
         }
     }
 
+    (function() {
+        $('form > input').keyup(function() {
+            var empty = false;
+            $('form > input').each(function() {
+                if ($(this).val() == '')
+                {
+                    empty = true;
+                }
+            });
+            if (empty)
+            {
+                $('#add').attr('disabled', 'disabled');
+            }
+            else
+            {
+                $('#add').removeAttr('disabled');
+            }
+        });
+    })()
+
+
     function query() {
         let firstName = document.getElementById("firstName").value;
         let lastName = document.getElementById("lastName").value;
@@ -564,17 +625,53 @@
         alert ("Your are offline. Some functionality may be unavailable.");
     }
 
-    logInButton.addEventListener("click", function () {
-        logInTime = new Date();
-        console.log(logInTime.getTime());
-        let send = logInTime.getTime();
+    addButton.addEventListener("click", function(){
+        let day = document.getElementsByClassName("date")[0].value;
+        let user = document.getElementById("firstName").value;
+        let hours = document.getElementById("Hours").value;
+        let minutes = document.getElementById("Minutes").value;
         $.ajax({
-            url: 'inTime',
-            data: {send},
+            url: 'add',
+            data: {day, user,hours, minutes},
             method: 'post',
             dataType: 'json',
             success: function(results){
-                console.log(results);
+                alert(results);
+            }
+        })
+    })
+
+    removeButton.addEventListener("click", function(){
+        let day = document.getElementsByClassName("date")[0].value;
+        let user = document.getElementById("firstName").value;
+        let hours = document.getElementById("Hours").value;
+        let minutes = document.getElementById("Minutes").value;
+        $.ajax({
+            url: 'remove',
+            data: {day, user,hours, minutes},
+            method: 'post',
+            dataType: 'json',
+            success: function(results){
+                alert(results);
+            }
+        })
+    })
+
+    logInButton.addEventListener("click", function () {
+        logInTime = new Date();
+        let send = logInTime.getFullYear() + "-" + logInTime.getMonth() + "-" + logInTime.getDate();
+        let send1 = logInTime.getHours() + ":" + logInTime.getMinutes() + ":" + logInTime.getSeconds();
+        console.log(logInTime.getUTCMonth());
+        //console.log(send1);
+        //buttonOut.disabled = false;
+        //buttonIn.disabled = true;
+        $.ajax({
+            url: 'inTime',
+            data: {send, send1},
+            method: 'post',
+            dataType: 'json',
+            success: function(results){
+                console.log("boi WHY ARE YOU LOOKING AT THE CONSOLE for what reason are you here like u aren't editing this so why are u here?");
                 alert("You have successfully clocked in!")
             }
         })
@@ -583,27 +680,29 @@
 
     logOutButton.addEventListener("click", function () {
         logOutTime = new Date();
-        logInLength = logOutTime.getTime() - logInTime.getTime();
-        console.log(logInLength);
-        seconds = logInLength / 1000;
-        minutes = seconds / 60;
-        minutes = minutes.toString();
-        hours = minutes / 60;
-        console.log(hours);
-        hours = hours.toString();
-        let cool = logOutTime.getTime();
+        // logInLength = logOutTime.getTime() - logInTime.getTime();
+        // console.log(logInLength);
+        // seconds = logInLength / 1000;
+        // minutes = seconds / 60;
+        // minutes = minutes.toString();
+        // hours = minutes / 60;
+        // console.log(hours);
+        // hours = hours.toString();
+        let cool = logOutTime.getFullYear() + "-" + logOutTime.getMonth() + "-" + logOutTime.getDate();
+        let lmao = logOutTime.getHours() + ":" + logOutTime.getMinutes() + ":" + logOutTime.getSeconds();
         let ret;
-        let force = "bruh";
         $.ajax({
             url: 'time',
-            data: {cool, force},
+            data: {cool, lmao},
             method: 'post',
             dataType: "json",
             success: function (results) {
                 ret = results;
                 console.log(ret);
-                alert("Hours successfully added!")
+                alert(ret);
             }})
+        //buttonOut.disabled = true;
+        //buttonIn.disabled = false;
     })
 
 
