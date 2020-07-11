@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="@90.16">
-  <database-model serializer="dbm" dbms="MYSQL" family-id="MYSQL" format-version="4.17">
+  <database-model serializer="dbm" dbms="MYSQL" family-id="MYSQL" format-version="4.15">
     <root id="1">
       <ServerVersion>8.0.15</ServerVersion>
       <DefaultEngine>InnoDB</DefaultEngine>
@@ -9,6 +9,7 @@
     </root>
     <schema id="2" parent="1" name="CitySmart2">
       <Current>1</Current>
+      <Visible>1</Visible>
       <Collation>utf8_general_ci</Collation>
     </schema>
     <schema id="3" parent="1" name="FAW_PUB">
