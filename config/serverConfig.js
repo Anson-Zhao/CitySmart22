@@ -3,7 +3,7 @@ let serverConfig = {
     commondb_connection: {
         'multipleStatements': true,
         'connectionLimit' : 100,
-        'host': '127.0.0.1',
+        'host': 'localhost',
         'user': 'AppUser',
         'password': 'Special888%',
         'port'    :  3306
@@ -11,7 +11,7 @@ let serverConfig = {
     session_connection: {
         'multipleStatements': true,
         'connectionLimit' : 100,
-        'host': '127.0.0.1',
+        'host': 'localhost',
         'user': 'AppUser',
         'password': 'Special888%',
         'port'    :  3306
@@ -51,7 +51,7 @@ let serverConfig = {
     Delete_Dir: 'trashfolder',
 
     num_backups: 24,
-    download_interval: 3600000,
+    download_interval: 36000000,
 
 };
 

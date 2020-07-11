@@ -2,15 +2,10 @@
 <project version="4">
   <component name="SshConfigs">
     <configs>
-      <sshConfig authType="PASSWORD" host="v2.cs.aworldbridgelabs.com" id="37a041c0-966b-4453-8f0f-fdc53f99aeaa" port="5532" customName="cs2_Live" nameFormat="CUSTOM" />
-      <sshConfig authType="PASSWORD" host="v2.cs.aworldbridgelabs.com" id="7d8beef9-81be-4c7f-ba53-fc4c32d3cf1e" port="5532" customName="cs2_Live" nameFormat="CUSTOM" />
-      <sshConfig authType="PASSWORD" host="v2.cs.aworldbridgelabs.com" id="d40f10fc-ee3e-4509-8947-df4995dd0511" port="5532" customName="cs2_Live" nameFormat="CUSTOM" />
-      <sshConfig authType="PASSWORD" host="v2.cs.aworldbridgelabs.com" id="7e14d841-fcdb-413e-97dd-49b4203ae324" port="5532" customName="cs2_Live" nameFormat="CUSTOM" />
-      <sshConfig authType="PASSWORD" host="v2.cs.aworldbridgelabs.com" id="13bb49d8-677e-4e84-baa1-f2605ff75200" port="5532" customName="cs2_Live" nameFormat="CUSTOM" />
-      <sshConfig authType="PASSWORD" host="v2.cs.aworldbridgelabs.com" id="c8624ab5-5eed-4b41-a8cc-94fd9f9da525" port="5532" customName="cs2_Live" nameFormat="CUSTOM" />
-      <sshConfig authType="PASSWORD" host="v2.cs.aworldbridgelabs.com" id="fc4a0540-87c5-4d96-bb7b-dda785f61e1d" port="5532" customName="cs2_Live" nameFormat="CUSTOM" />
-      <sshConfig authType="PASSWORD" host="v2.cs.aworldbridgelabs.com" id="60bf1b45-eac2-48b6-9deb-29dd542b317e" port="5532" customName="cs2_Live" nameFormat="CUSTOM" />
-      <sshConfig authType="PASSWORD" host="v2.cs.aworldbridgelabs.com" id="230ad055-3c69-4f79-acc9-2cbebb4d5262" port="5532" customName="cs2_Live" nameFormat="CUSTOM" />
+      <sshConfig authType="PASSWORD" host="v2.cs.aworldbridgelabs.com" id="7ff8b64b-995e-424c-98e8-b3f349f48a18" port="5532" customName="cs2_Live" nameFormat="CUSTOM" />
+      <sshConfig authType="PASSWORD" host="v2.cs.aworldbridgelabs.com" id="1c061df4-cd5d-45dd-b3b0-eb2b7eabc426" port="5532" customName="cs2_Live" nameFormat="CUSTOM" username="ansonz" />
+      <sshConfig authType="PASSWORD" host="v2.cs.aworldbridgelabs.com" id="90ac804f-4729-4b09-a54a-eee79deb8ef9" port="5532" customName="cs2_Live" nameFormat="CUSTOM" />
+      <sshConfig authType="PASSWORD" host="v2.cs.aworldbridgelabs.com" id="ab83468b-983d-4734-852b-1c09eb3581e2" port="5532" customName="cs2_Live" nameFormat="CUSTOM" />
     </configs>
   </component>
 </project>
