@@ -20,224 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3b2ba209-e08e-4f77-99ae-d893522cce16" name="Default Changelist" comment="Merge branch 'julia2' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
-      <change beforePath="$PROJECT_DIR$/.idea/sshConfigs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sshConfigs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/all.fine-uploader/all.fine-uploader.core.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/all.fine-uploader/all.fine-uploader.core.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/all.fine-uploader/all.fine-uploader.core.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/all.fine-uploader/all.fine-uploader.core.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/all.fine-uploader/all.fine-uploader.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/all.fine-uploader/all.fine-uploader.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/all.fine-uploader/all.fine-uploader.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/all.fine-uploader/all.fine-uploader.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/all.fine-uploader/continue.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/all.fine-uploader/edit.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/all.fine-uploader/fine-uploader-gallery.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/all.fine-uploader/fine-uploader-gallery.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/all.fine-uploader/fine-uploader-gallery.min.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/all.fine-uploader/fine-uploader-new.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/all.fine-uploader/fine-uploader-new.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/all.fine-uploader/fine-uploader-new.min.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/all.fine-uploader/fine-uploader.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/all.fine-uploader/fine-uploader.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/all.fine-uploader/fine-uploader.min.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/all.fine-uploader/loading.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/all.fine-uploader/pause.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/all.fine-uploader/placeholders/not_available-generic.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/all.fine-uploader/placeholders/waiting-generic.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/all.fine-uploader/processing.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/all.fine-uploader/retry.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/all.fine-uploader/templates/default.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/all.fine-uploader/templates/gallery.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/all.fine-uploader/templates/simple-thumbnails.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/all.fine-uploader/trash.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/azure.fine-uploader/azure.fine-uploader.core.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/azure.fine-uploader/azure.fine-uploader.core.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/azure.fine-uploader/azure.fine-uploader.core.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/azure.fine-uploader/azure.fine-uploader.core.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/azure.fine-uploader/azure.fine-uploader.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/azure.fine-uploader/azure.fine-uploader.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/azure.fine-uploader/azure.fine-uploader.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/azure.fine-uploader/azure.fine-uploader.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/azure.fine-uploader/continue.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/azure.fine-uploader/edit.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/azure.fine-uploader/fine-uploader-gallery.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/azure.fine-uploader/fine-uploader-gallery.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/azure.fine-uploader/fine-uploader-gallery.min.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/azure.fine-uploader/fine-uploader-new.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/azure.fine-uploader/fine-uploader-new.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/azure.fine-uploader/fine-uploader-new.min.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/azure.fine-uploader/fine-uploader.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/azure.fine-uploader/fine-uploader.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/azure.fine-uploader/fine-uploader.min.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/azure.fine-uploader/loading.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/azure.fine-uploader/pause.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/azure.fine-uploader/placeholders/not_available-generic.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/azure.fine-uploader/placeholders/waiting-generic.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/azure.fine-uploader/processing.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/azure.fine-uploader/retry.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/azure.fine-uploader/templates/default.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/azure.fine-uploader/templates/gallery.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/azure.fine-uploader/templates/simple-thumbnails.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/azure.fine-uploader/trash.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/azure.jquery.fine-uploader/azure.jquery.fine-uploader.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/azure.jquery.fine-uploader/azure.jquery.fine-uploader.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/azure.jquery.fine-uploader/azure.jquery.fine-uploader.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/azure.jquery.fine-uploader/azure.jquery.fine-uploader.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/azure.jquery.fine-uploader/continue.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/azure.jquery.fine-uploader/edit.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/azure.jquery.fine-uploader/fine-uploader-gallery.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/azure.jquery.fine-uploader/fine-uploader-gallery.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/azure.jquery.fine-uploader/fine-uploader-gallery.min.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/azure.jquery.fine-uploader/fine-uploader-new.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/azure.jquery.fine-uploader/fine-uploader-new.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/azure.jquery.fine-uploader/fine-uploader-new.min.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/azure.jquery.fine-uploader/fine-uploader.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/azure.jquery.fine-uploader/fine-uploader.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/azure.jquery.fine-uploader/fine-uploader.min.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/azure.jquery.fine-uploader/loading.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/azure.jquery.fine-uploader/pause.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/azure.jquery.fine-uploader/placeholders/not_available-generic.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/azure.jquery.fine-uploader/placeholders/waiting-generic.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/azure.jquery.fine-uploader/processing.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/azure.jquery.fine-uploader/retry.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/azure.jquery.fine-uploader/templates/default.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/azure.jquery.fine-uploader/templates/gallery.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/azure.jquery.fine-uploader/templates/simple-thumbnails.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/azure.jquery.fine-uploader/trash.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/dnd/dnd.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/dnd/dnd.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/dnd/dnd.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/dnd/dnd.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/fine-uploader/continue.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/fine-uploader/edit.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/fine-uploader/fine-uploader-gallery.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/fine-uploader/fine-uploader-gallery.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/fine-uploader/fine-uploader-gallery.min.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/fine-uploader/fine-uploader-new.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/fine-uploader/fine-uploader-new.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/fine-uploader/fine-uploader-new.min.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/fine-uploader/fine-uploader.core.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/fine-uploader/fine-uploader.core.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/fine-uploader/fine-uploader.core.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/fine-uploader/fine-uploader.core.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/fine-uploader/fine-uploader.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/fine-uploader/fine-uploader.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/fine-uploader/fine-uploader.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/fine-uploader/fine-uploader.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/fine-uploader/fine-uploader.min.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/fine-uploader/fine-uploader.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/fine-uploader/fine-uploader.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/fine-uploader/iframe.xss.response.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/fine-uploader/loading.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/fine-uploader/pause.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/fine-uploader/placeholders/not_available-generic.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/fine-uploader/placeholders/waiting-generic.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/fine-uploader/processing.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/fine-uploader/retry.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/fine-uploader/templates/default.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/fine-uploader/templates/gallery.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/fine-uploader/templates/simple-thumbnails.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/fine-uploader/trash.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/jquery.fine-uploader/continue.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/jquery.fine-uploader/edit.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/jquery.fine-uploader/fine-uploader-gallery.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/jquery.fine-uploader/fine-uploader-gallery.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/jquery.fine-uploader/fine-uploader-gallery.min.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/jquery.fine-uploader/fine-uploader-new.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/jquery.fine-uploader/fine-uploader-new.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/jquery.fine-uploader/fine-uploader-new.min.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/jquery.fine-uploader/fine-uploader.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/jquery.fine-uploader/fine-uploader.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/jquery.fine-uploader/fine-uploader.min.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/jquery.fine-uploader/iframe.xss.response.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/jquery.fine-uploader/jquery.fine-uploader.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/jquery.fine-uploader/jquery.fine-uploader.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/jquery.fine-uploader/jquery.fine-uploader.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/jquery.fine-uploader/jquery.fine-uploader.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/jquery.fine-uploader/loading.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/jquery.fine-uploader/pause.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/jquery.fine-uploader/placeholders/not_available-generic.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/jquery.fine-uploader/placeholders/waiting-generic.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/jquery.fine-uploader/processing.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/jquery.fine-uploader/retry.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/jquery.fine-uploader/templates/default.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/jquery.fine-uploader/templates/gallery.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/jquery.fine-uploader/templates/simple-thumbnails.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/jquery.fine-uploader/trash.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/lib/all.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/lib/azure.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/lib/core/all.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/lib/core/azure.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/lib/core/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/lib/core/s3.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/lib/core/traditional.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/lib/dnd.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/lib/jquery/azure.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/lib/jquery/s3.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/lib/jquery/traditional.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/lib/s3.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/lib/traditional.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/s3.fine-uploader/continue.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/s3.fine-uploader/edit.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/s3.fine-uploader/fine-uploader-gallery.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/s3.fine-uploader/fine-uploader-gallery.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/s3.fine-uploader/fine-uploader-gallery.min.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/s3.fine-uploader/fine-uploader-new.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/s3.fine-uploader/fine-uploader-new.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/s3.fine-uploader/fine-uploader-new.min.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/s3.fine-uploader/fine-uploader.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/s3.fine-uploader/fine-uploader.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/s3.fine-uploader/fine-uploader.min.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/s3.fine-uploader/loading.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/s3.fine-uploader/pause.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/s3.fine-uploader/placeholders/not_available-generic.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/s3.fine-uploader/placeholders/waiting-generic.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/s3.fine-uploader/processing.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/s3.fine-uploader/retry.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/s3.fine-uploader/s3.fine-uploader.core.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/s3.fine-uploader/s3.fine-uploader.core.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/s3.fine-uploader/s3.fine-uploader.core.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/s3.fine-uploader/s3.fine-uploader.core.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/s3.fine-uploader/s3.fine-uploader.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/s3.fine-uploader/s3.fine-uploader.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/s3.fine-uploader/s3.fine-uploader.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/s3.fine-uploader/s3.fine-uploader.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/s3.fine-uploader/templates/default.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/s3.fine-uploader/templates/gallery.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/s3.fine-uploader/templates/simple-thumbnails.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/s3.fine-uploader/trash.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/s3.jquery.fine-uploader/continue.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/s3.jquery.fine-uploader/edit.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/s3.jquery.fine-uploader/fine-uploader-gallery.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/s3.jquery.fine-uploader/fine-uploader-gallery.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/s3.jquery.fine-uploader/fine-uploader-gallery.min.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/s3.jquery.fine-uploader/fine-uploader-new.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/s3.jquery.fine-uploader/fine-uploader-new.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/s3.jquery.fine-uploader/fine-uploader-new.min.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/s3.jquery.fine-uploader/fine-uploader.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/s3.jquery.fine-uploader/fine-uploader.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/s3.jquery.fine-uploader/fine-uploader.min.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/s3.jquery.fine-uploader/loading.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/s3.jquery.fine-uploader/pause.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/s3.jquery.fine-uploader/placeholders/not_available-generic.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/s3.jquery.fine-uploader/placeholders/waiting-generic.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/s3.jquery.fine-uploader/processing.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/s3.jquery.fine-uploader/retry.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/s3.jquery.fine-uploader/s3.jquery.fine-uploader.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/s3.jquery.fine-uploader/s3.jquery.fine-uploader.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/s3.jquery.fine-uploader/s3.jquery.fine-uploader.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/s3.jquery.fine-uploader/s3.jquery.fine-uploader.min.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/s3.jquery.fine-uploader/templates/default.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/s3.jquery.fine-uploader/templates/gallery.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/s3.jquery.fine-uploader/templates/simple-thumbnails.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/s3.jquery.fine-uploader/trash.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/typescript/fine-uploader.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fine-uploader/typescript/fine-uploader.test.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/routes.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/dataHistory.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/dataHistory.ejs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/userHome.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/userHome.ejs" afterDir="false" />
@@ -403,13 +186,7 @@
       <workItem from="1594228947607" duration="27461000" />
       <workItem from="1594402855784" duration="1151000" />
       <workItem from="1594407835922" duration="299000" />
-    </task>
-    <task id="LOCAL-00036" summary="Merge with Julia's Branch">
-      <created>1556808330510</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1556808330510</updated>
+      <workItem from="1594412400087" duration="14176000" />
     </task>
     <task id="LOCAL-00037" summary="Merge with Julia's Branch">
       <created>1556809245945</created>
@@ -747,7 +524,14 @@
       <option name="project" value="LOCAL" />
       <updated>1593727878666</updated>
     </task>
-    <option name="localTasksCounter" value="85" />
+    <task id="LOCAL-00085" summary="Merge branch 'julia2' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
+      <created>1594412428614</created>
+      <option name="number" value="00085" />
+      <option name="presentableId" value="LOCAL-00085" />
+      <option name="project" value="LOCAL" />
+      <updated>1594412428614</updated>
+    </task>
+    <option name="localTasksCounter" value="86" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -825,34 +609,86 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="766" y="353" key="#com.intellij.tools.ToolEditorDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1593469268365" />
-    <state x="514" y="79" key="CommitChangelistDialog2" timestamp="1593727953204">
+    <state x="514" y="79" key="CommitChangelistDialog2" timestamp="1594413303137">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="514" y="79" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1593727953204" />
+    <state x="514" y="79" key="CommitChangelistDialog2/0.0.1920.1080@0.0.1920.1080" timestamp="1594413303137" />
     <state x="778" y="280" key="FileChooserDialogImpl" timestamp="1593469694765">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="778" y="280" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1593469694765" />
-    <state width="1547" height="210" key="GridCell.Tab.0.bottom" timestamp="1594340255013">
+    <state width="1545" height="210" key="GridCell.Tab.0.bottom" timestamp="1594425659295">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1547" height="210" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1594340255013" />
-    <state width="1547" height="210" key="GridCell.Tab.0.center" timestamp="1594340255013">
+    <state width="1545" height="210" key="GridCell.Tab.0.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1594425659295" />
+    <state width="1545" height="210" key="GridCell.Tab.0.center" timestamp="1594425659295">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1547" height="210" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1594340255013" />
-    <state width="1547" height="210" key="GridCell.Tab.0.left" timestamp="1594340255012">
+    <state width="1545" height="210" key="GridCell.Tab.0.center/0.0.1920.1080@0.0.1920.1080" timestamp="1594425659295" />
+    <state width="1545" height="210" key="GridCell.Tab.0.left" timestamp="1594425659294">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1547" height="210" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1594340255012" />
-    <state width="1547" height="210" key="GridCell.Tab.0.right" timestamp="1594340255013">
+    <state width="1545" height="210" key="GridCell.Tab.0.left/0.0.1920.1080@0.0.1920.1080" timestamp="1594425659294" />
+    <state width="1545" height="210" key="GridCell.Tab.0.right" timestamp="1594425659295">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state width="1547" height="210" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1594340255013" />
+    <state width="1545" height="210" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1594425659295" />
+    <state width="1545" height="327" key="GridCell.Tab.1.bottom" timestamp="1594413332832">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1545" height="327" key="GridCell.Tab.1.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1594413332832" />
+    <state width="1545" height="327" key="GridCell.Tab.1.center" timestamp="1594413332832">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1545" height="327" key="GridCell.Tab.1.center/0.0.1920.1080@0.0.1920.1080" timestamp="1594413332832" />
+    <state width="1545" height="327" key="GridCell.Tab.1.left" timestamp="1594413332832">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1545" height="327" key="GridCell.Tab.1.left/0.0.1920.1080@0.0.1920.1080" timestamp="1594413332832" />
+    <state width="1545" height="327" key="GridCell.Tab.1.right" timestamp="1594413332832">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1545" height="327" key="GridCell.Tab.1.right/0.0.1920.1080@0.0.1920.1080" timestamp="1594413332832" />
+    <state width="1545" height="327" key="GridCell.Tab.2.bottom" timestamp="1594413332832">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1545" height="327" key="GridCell.Tab.2.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1594413332832" />
+    <state width="1545" height="327" key="GridCell.Tab.2.center" timestamp="1594413332832">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1545" height="327" key="GridCell.Tab.2.center/0.0.1920.1080@0.0.1920.1080" timestamp="1594413332832" />
+    <state width="1545" height="327" key="GridCell.Tab.2.left" timestamp="1594413332832">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1545" height="327" key="GridCell.Tab.2.left/0.0.1920.1080@0.0.1920.1080" timestamp="1594413332832" />
+    <state width="1545" height="327" key="GridCell.Tab.2.right" timestamp="1594413332832">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1545" height="327" key="GridCell.Tab.2.right/0.0.1920.1080@0.0.1920.1080" timestamp="1594413332832" />
+    <state width="1545" height="327" key="GridCell.Tab.3.bottom" timestamp="1594413332833">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1545" height="327" key="GridCell.Tab.3.bottom/0.0.1920.1080@0.0.1920.1080" timestamp="1594413332833" />
+    <state width="1545" height="327" key="GridCell.Tab.3.center" timestamp="1594413332833">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1545" height="327" key="GridCell.Tab.3.center/0.0.1920.1080@0.0.1920.1080" timestamp="1594413332833" />
+    <state width="1545" height="327" key="GridCell.Tab.3.left" timestamp="1594413332832">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1545" height="327" key="GridCell.Tab.3.left/0.0.1920.1080@0.0.1920.1080" timestamp="1594413332832" />
+    <state width="1545" height="327" key="GridCell.Tab.3.right" timestamp="1594413332833">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1545" height="327" key="GridCell.Tab.3.right/0.0.1920.1080@0.0.1920.1080" timestamp="1594413332833" />
     <state x="499" y="168" key="SettingsEditor" timestamp="1593632095997">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="499" y="168" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1593632095997" />
+    <state x="590" y="259" key="Vcs.Push.Dialog.v2" timestamp="1594412442987">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="590" y="259" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1594412442987" />
     <state x="407" y="65" width="1150" height="923" key="find.popup" timestamp="1593713903531">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -865,9 +701,9 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="832" y="436" key="publish.login/0.0.1920.1080@0.0.1920.1080" timestamp="1593556136102" />
-    <state x="661" y="245" width="672" height="678" key="search.everywhere.popup" timestamp="1594338709016">
+    <state x="661" y="245" width="672" height="678" key="search.everywhere.popup" timestamp="1594423665284">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="661" y="245" width="672" height="678" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1594338709016" />
+    <state x="661" y="245" width="672" height="678" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1594423665284" />
   </component>
 </project>

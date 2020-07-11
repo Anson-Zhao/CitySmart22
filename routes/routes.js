@@ -897,6 +897,27 @@ module.exports = function (app, passport) {
     //     QueryStat(myQueryObj, sqlStat, res)
     // });
 
+    app.get('/stuff', function(req, res){
+        let sqlStat = "SELECT * FROM timelog WHERE username = '" + req.user.username + "';"
+        con_CS.query(sqlStat, function(err, result){
+            res.json(result);
+        })
+    })
+
+    app.get('/dateStuff', function(req,res){
+        let start = Number(req.query.startDate.slice(5, 7)) - 1;
+
+        start = req.query.startDate.slice(0, 4) + '-' + start + "-" + req.query.startDate.slice(8);
+        let end = Number(req.query.endDate.slice(5, 7)) - 1;
+
+        end = req.query.endDate.slice(0, 4) + '-' + end + "-" + req.query.endDate.slice(8);
+        let statement = "SELECT * FROM timelog WHERE logDate >= ? AND logDate <= ? AND username = '" + req.user.username + "';"
+        con_CS.query(statement, [start, end], function (err, result){
+            res.json(result);
+        })
+    })
+
+
     app.get('/filterQuery', isLoggedIn, function (req, res) {
         console.log(req.query);
         let start = Number(req.query.startDate.slice(5, 7)) - 1;
@@ -906,8 +927,9 @@ module.exports = function (app, passport) {
 
         end = req.query.endDate.slice(0, 4) + '-' + end + "-" + req.query.endDate.slice(8);
         console.log(start)
-        let sqlStat = "SELECT * FROM timelog WHERE logDate >= ? AND logDate <= ? AND username = '" + req.user.username + "';"
-        con_CS.query(sqlStat, [start, end], function(err, result){
+        let name = req.query.firstName;
+        let sqlStat = "SELECT * FROM timelog WHERE logDate >= ? AND logDate <= ? AND username = ?;"
+        con_CS.query(sqlStat, [start, end, name], function(err, result){
             res.json(result);
         })
         //let sqlStat = "SELECT username, logDate, inTime, outTime, timeLeft, timeDiff * FROM timelog WHERE username = '" + req.user.username + "';";
