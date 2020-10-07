@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SshConfigs">
+    <configs>
+      <sshConfig authType="PASSWORD" host="v2.cs.aworldbridgelabs.com" id="5de6b9a5-db86-47d4-9c62-bd12ec2a0cb9" port="5532" customName="cs2_Live" nameFormat="CUSTOM" username="ansonz">
+        <option name="customName" value="cs2_Live" />
+      </sshConfig>
+    </configs>
+  </component>
+</project>
