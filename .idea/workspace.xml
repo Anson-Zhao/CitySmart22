@@ -1,7 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="3b2ba209-e08e-4f77-99ae-d893522cce16" name="Default Changelist" comment="" />
+    <list default="true" id="3b2ba209-e08e-4f77-99ae-d893522cce16" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/CitySmart22.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/CitySmart22.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sshConfigs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sshConfigs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/webServers.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webServers.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/2step.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/2step.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/EmailAuth.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/EmailAuth.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/KnowledgeAuth.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/KnowledgeAuth.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/LayerRequestForm.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/LayerRequestForm.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/LayerRequestForm_edit.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/LayerRequestForm_edit.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/PhoneAuthP1.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/PhoneAuthP1.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/PhoneAuthP2.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/PhoneAuthP2.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/adduser.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/adduser.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/dataHistory.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/dataHistory.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/forgotPassword.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/forgotPassword.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/homepage.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/homepage.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/homepageUSER.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/homepageUSER.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/login.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/login.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/recovery.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/recovery.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/recovery_1.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/recovery_1.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/rejected.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/rejected.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/reset.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/reset.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/signup.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/signup.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/success.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/success.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/userEdit.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/userEdit.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/userHome.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/userHome.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/userHomeOG.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/userHomeOG.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/userManagement.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/userManagement.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/userProfile.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/userProfile.ejs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -54,6 +102,7 @@
     <other-services-enabled>true</other-services-enabled>
     <auto-save>true</auto-save>
   </component>
+  <component name="JupyterTrust" id="71175b30-28b3-4906-9951-5f93c563cad4" />
   <component name="ProjectId" id="1bhMPR63r0Z9koHUjDEFXq34rii" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -112,6 +161,17 @@
     </key>
   </component>
   <component name="RunManager">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="CS2_MainSvr.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="CS2_MainSvr.js" working-dir="$PROJECT_DIR$">
       <method v="2" />
     </configuration>
@@ -558,57 +618,53 @@
     <option name="LAST_COMMIT_MESSAGE" value="Revert &quot;Merge branch 'julia2' of https://github.com/Anson-Zhao/CitySmart22&quot;&#10;&#10;This reverts commit 814ddfc0" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="1399" y="261" key="#Deployment" timestamp="1602084135272">
+      <screen x="0" y="23" width="2560" height="1308" />
+    </state>
+    <state x="1399" y="261" key="#Deployment/0.23.2560.1308@0.23.2560.1308" timestamp="1602084135272" />
+    <state x="1379" y="244" key="#SSH_Configurations" timestamp="1602084132914">
+      <screen x="0" y="23" width="2560" height="1308" />
+    </state>
+    <state x="1379" y="244" key="#SSH_Configurations/0.23.2560.1308@0.23.2560.1308" timestamp="1602084132914" />
     <state x="297" y="0" key="CommitChangelistDialog2" timestamp="1594430824629">
       <screen x="0" y="0" width="1676" height="902" />
     </state>
     <state x="297" y="0" key="CommitChangelistDialog2/0.0.1676.902@0.0.1676.902" timestamp="1594430824629" />
-    <state x="92" y="92" width="1736" height="856" key="DirDiffDialog" timestamp="1589934202764">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="1338" y="123" width="1122" height="1108" key="DirDiffDialog" timestamp="1602084530204">
+      <screen x="0" y="23" width="2560" height="1308" />
     </state>
-    <state x="92" y="92" width="1736" height="856" key="DirDiffDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1589934202764" />
+    <state x="1338" y="123" width="1122" height="1108" key="DirDiffDialog/0.23.2560.1308@0.23.2560.1308" timestamp="1602084530204" />
     <state width="1620" height="245" key="GridCell.Tab.0.bottom" timestamp="1594430496346">
       <screen x="0" y="0" width="1676" height="902" />
     </state>
     <state width="1620" height="245" key="GridCell.Tab.0.bottom/0.0.1676.902@0.0.1676.902" timestamp="1594430496346" />
-    <state width="915" height="295" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1590024963367" />
     <state width="1620" height="245" key="GridCell.Tab.0.center" timestamp="1594430496346">
       <screen x="0" y="0" width="1676" height="902" />
     </state>
     <state width="1620" height="245" key="GridCell.Tab.0.center/0.0.1676.902@0.0.1676.902" timestamp="1594430496346" />
-    <state width="915" height="295" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1590024963367" />
     <state width="1620" height="245" key="GridCell.Tab.0.left" timestamp="1594430496346">
       <screen x="0" y="0" width="1676" height="902" />
     </state>
     <state width="1620" height="245" key="GridCell.Tab.0.left/0.0.1676.902@0.0.1676.902" timestamp="1594430496346" />
-    <state width="915" height="295" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1590024963367" />
     <state width="1620" height="245" key="GridCell.Tab.0.right" timestamp="1594430496346">
       <screen x="0" y="0" width="1676" height="902" />
     </state>
     <state width="1620" height="245" key="GridCell.Tab.0.right/0.0.1676.902@0.0.1676.902" timestamp="1594430496346" />
-    <state width="915" height="295" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1590024963367" />
     <state x="391" y="155" key="MultipleFileMergeDialog" timestamp="1594430819691">
       <screen x="0" y="0" width="1676" height="902" />
     </state>
     <state x="391" y="155" key="MultipleFileMergeDialog/0.0.1676.902@0.0.1676.902" timestamp="1594430819691" />
-    <state x="336" y="77" key="SettingsEditor" timestamp="1589080432596">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="336" y="77" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1589080432596" />
     <state x="329" y="118" key="Vcs.Push.Dialog.v2" timestamp="1594430392736">
       <screen x="0" y="0" width="1676" height="902" />
     </state>
     <state x="329" y="118" key="Vcs.Push.Dialog.v2/0.0.1676.902@0.0.1676.902" timestamp="1594430392736" />
+    <state x="1530" y="390" width="738" height="646" key="find.popup" timestamp="1602084519554">
+      <screen x="0" y="23" width="2560" height="1308" />
+    </state>
+    <state x="1530" y="390" width="738" height="646" key="find.popup/0.23.2560.1308@0.23.2560.1308" timestamp="1602084519554" />
     <state x="502" y="192" key="git4idea.merge.GitPullDialog" timestamp="1594428128734">
       <screen x="0" y="0" width="1676" height="902" />
     </state>
     <state x="502" y="192" key="git4idea.merge.GitPullDialog/0.0.1676.902@0.0.1676.902" timestamp="1594428128734" />
-    <state x="227" y="127" key="new project wizard" timestamp="1589903410019">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="227" y="127" key="new project wizard/0.0.1920.1040@0.0.1920.1040" timestamp="1589903410019" />
-    <state x="818" y="387" key="publish.login" timestamp="1589826845326">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="818" y="387" key="publish.login/0.0.1920.1040@0.0.1920.1040" timestamp="1589826845326" />
   </component>
 </project>
