@@ -349,7 +349,7 @@
         let rowUserName = [];
 
         $(document).ready(function() {
-            $(function () {
+            $(function() {
                 queryAndDisplay();
 
                 flatpickr(".date", {
@@ -358,7 +358,7 @@
                 });
             });
 
-            $('#dataDisplay tbody').on('click', 'tr', function () {
+            $('#dataDisplay tbody').on('click', 'tr', function() {
                 thArray = [];
                 rowUserName = [];
 
@@ -366,7 +366,7 @@
 
                 rowSelected = table.rows('.selected').data();    //Store all the data for selected rows'
 
-                $('#dataDisplay > thead > tr > th').each(function () {
+                $('#dataDisplay > thead > tr > th').each(function() {
                     thArray.push($(this).text())
                 })
 
@@ -377,7 +377,7 @@
             });
 
 
-            $("#editUserButton").on("click", function () {
+            $("#editUserButton").on("click", function() {
                 if (rowSelected.length >= 2) {
                     confirm("Please make sure to only select ONE of the users to edit.")
                 } else if (rowSelected.length === 0) {
@@ -409,7 +409,7 @@
                 }
             });
 
-            $("#suspendUserButton").on("click", function () {
+            $("#suspendUserButton").on("click", function() {
                 if (confirm("Are you sure you would like to suspend the user(s)?")) {
 
                     let usernameStr = "usernameStr=" + rowUserName.toString();
@@ -432,7 +432,7 @@
                     })
                 } else { return false;}
             });
-            $("#showButton").on("click", function () {
+            $("#showButton").on("click", function() {
                 table.clear();
                 table.draw();
                 queryAndDisplay("statusDel=" + "Active");
@@ -570,11 +570,11 @@
         }
 
         function onFunction() {
-            alert ("You are now online.");
+            alert("You are now online.");
         }
 
         function offFunction() {
-            alert ("Your are offline. Some functionality may be unavailable.");
+            alert("Your are offline. Some functionality may be unavailable.");
         }
 
 </script>

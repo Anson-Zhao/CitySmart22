@@ -254,7 +254,7 @@
 
     $(document).ready(function(){
 
-        $(function () {
+        $(function() {
             flatpickr(".date", {
                 dateFormat: "Y-m-d",
                 time_24hr: true
@@ -294,7 +294,7 @@
 
         });
 
-        $('#dataDisplay tbody').on('click', 'tr', function () {
+        $('#dataDisplay tbody').on('click', 'tr', function() {
 
             if ($(this).hasClass('selected')) { //if the row is selected already
 
@@ -331,7 +331,7 @@
 
                 let thArray = [];
 
-                $('#dataDisplay > thead > tr > th').each(function () {
+                $('#dataDisplay > thead > tr > th').each(function() {
                     thArray.push($(this).text())
                 })
                 // console.log(thArray);
@@ -363,7 +363,7 @@
             //
             //     let thArray = [];
             //
-            //     $('#dataDisplay > thead > tr > th').each(function () {
+            //     $('#dataDisplay > thead > tr > th').each(function() {
             //         thArray.push($(this).text())
             //     })
             //     console.log(thArray);
@@ -376,7 +376,7 @@
             // }
         });
 
-        $("#recoverButton").on("click", function () {
+        $("#recoverButton").on("click", function() {
             //determine if the prior_status is pending or approved
             //copy the data in requestForm to layer menu
             //update pic path with most current
@@ -487,11 +487,11 @@
     }
 
     function onFunction() {
-        alert ("You are now online.");
+        alert("You are now online.");
     }
 
     function offFunction() {
-        alert ("Your are offline. Some functionality may be unavailable.");
+        alert("Your are offline. Some functionality may be unavailable.");
     }
 
 </script>

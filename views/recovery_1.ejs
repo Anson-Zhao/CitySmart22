@@ -250,7 +250,7 @@
 
     $(document).ready(function(){
 
-        $(function () {
+        $(function() {
             flatpickr(".date", {
                 dateFormat: "Y-m-d",
                 time_24hr: true
@@ -290,7 +290,7 @@
 
         });
 
-        $('#dataDisplay tbody').on('click', 'tr', function () {
+        $('#dataDisplay tbody').on('click', 'tr', function() {
             console.log('hello')
 
             if ($(this).hasClass('selected')) { //if the row is selected already
@@ -314,7 +314,7 @@
 
                 let thArray = [];
 
-                $('#dataDisplay > thead > tr > th').each(function () {
+                $('#dataDisplay > thead > tr > th').each(function() {
                     thArray.push($(this).text())
                 })
                 console.log(thArray);
@@ -327,7 +327,7 @@
             }
         });
 
-        $("#recoverButton").on("click", function () {
+        $("#recoverButton").on("click", function() {
 
             if (confirm("Are you sure you would like to recover this row(s)?") === true) {
                 console.log(priorStatus)

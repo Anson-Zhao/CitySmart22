@@ -495,7 +495,7 @@
         document.getElementById('comment').value = rowSelectedValue[17];
         // $("#country2 option:selected").val(rowSelectedValue[5]);
 
-            document.getElementById('LayerFormat').value = rowSelectedValue[14];
+        document.getElementById('LayerFormat').value = rowSelectedValue[14];
         document.getElementById('LayerFormat2').value = rowSelectedValue[14];
 
         //getAttributeNode("value").value
@@ -740,6 +740,7 @@
             }
         });
 
+        $("#City").click(function() {
         $("#City").click(function () {
             new dgCitysCountries({
                 CityVal: document.getElementById("City").val,
