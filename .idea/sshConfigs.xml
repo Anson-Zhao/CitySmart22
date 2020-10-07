@@ -2,9 +2,10 @@
 <project version="4">
   <component name="SshConfigs">
     <configs>
-      <sshConfig authType="PASSWORD" host="v2.cs.aworldbridgelabs.com" id="5de6b9a5-db86-47d4-9c62-bd12ec2a0cb9" port="5532" customName="cs2_Live" nameFormat="CUSTOM" username="ansonz">
-        <option name="customName" value="cs2_Live" />
-      </sshConfig>
+      <sshConfig authType="PASSWORD" host="v2.cs.aworldbridgelabs.com" id="7ff8b64b-995e-424c-98e8-b3f349f48a18" port="5532" customName="cs2_Live" nameFormat="CUSTOM" />
+      <sshConfig authType="PASSWORD" host="v2.cs.aworldbridgelabs.com" id="1c061df4-cd5d-45dd-b3b0-eb2b7eabc426" port="5532" customName="cs2_Live" nameFormat="CUSTOM" username="ansonz" />
+      <sshConfig authType="PASSWORD" host="v2.cs.aworldbridgelabs.com" id="90ac804f-4729-4b09-a54a-eee79deb8ef9" port="5532" customName="cs2_Live" nameFormat="CUSTOM" />
+      <sshConfig authType="PASSWORD" host="v2.cs.aworldbridgelabs.com" id="ab83468b-983d-4734-852b-1c09eb3581e2" port="5532" customName="cs2_Live" nameFormat="CUSTOM" />
     </configs>
   </component>
 </project>

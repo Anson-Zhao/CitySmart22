@@ -1,27 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="BranchesTreeState">
-    <expand>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-    </expand>
-    <select />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="3b2ba209-e08e-4f77-99ae-d893522cce16" name="Default Changelist" comment="Merge branch 'julia2' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="3b2ba209-e08e-4f77-99ae-d893522cce16" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -54,13 +34,6 @@
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="CitySmart2: schema" type="76f4a085:MysqlImplModel$Schema" />
       </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="@90.16" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="CitySmart2: schema" type="76f4a085:MysqlImplModel$Schema" />
-        <item name="UserLogin: table" type="285a2a93:MysqlImplModel$Table" />
-      </path>
     </expand>
     <select />
   </component>
@@ -68,94 +41,12 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
-        <option value="ejs" />
       </list>
     </option>
   </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>form</find>
-      <find>&lt;form</find>
-      <find>submitForm();</find>
-      <find>reset/</find>
-      <find>/userhome</find>
-      <find>/userHome</find>
-      <find>/ks</find>
-      <find>'/login</find>
-      <find>.post</find>
-      <find>/ksu</find>
-      <find>firstname</find>
-      <find>/k</find>
-      <find>/reset</find>
-      <find>password</find>
-      <find>bruteforce</find>
-      <find>/login</find>
-      <find>pauthSubmit</find>
-      <find>checkForm</find>
-      <find>/kau</find>
-      <find>/loginu</find>
-      <find>phone_</find>
-      <find>/EditData</find>
-      <find>pcode</find>
-      <find>default</find>
-      <find>submit</find>
-      <find>thatFunction</find>
-      <find>/edit</find>
-      <find>admin</find>
-      <find>/position</find>
-      <find>/signup</find>
-    </findStrings>
-    <replaceStrings>
-      <replace>Name</replace>
-      <replace>Layer</replace>
-      <replace>serverConfig</replace>
-      <replace>categoryPK.placemark</replace>
-      <replace>canvas</replace>
-      <replace>v</replace>
-      <replace>firstTime</replace>
-      <replace>outerR</replace>
-      <replace>categoryPK</replace>
-      <replace>clientConfig</replace>
-      <replace>toggle.checked</replace>
-      <replace>toggleV</replace>
-      <replace>All_Layer_Menu</replace>
-      <replace>arrWT</replace>
-      <replace>arrMR</replace>
-      <replace>arrPL</replace>
-      <replace>e.Layer</replace>
-      <replace>menuLayer</replace>
-      <replace>menuL</replace>
-      <replace>layerMenuAll</replace>
-      <replace>index</replace>
-      <replace>127.0.0.1</replace>
-      <replace>barChange</replace>
-      <replace>../src</replace>
-      <replace>WW.wwd</replace>
-      <replace>newGlobe</replace>
-      <replace>newGlobe.wwd</replace>
-      <replace>newGlobe.globe.</replace>
-      <replace>newGlobe.globe</replace>
-      <replace>lForm</replace>
-    </replaceStrings>
-    <dirStrings>
-      <dir>$PROJECT_DIR$/src</dir>
-      <dir>$PROJECT_DIR$/scripts</dir>
-      <dir>$PROJECT_DIR$/config</dir>
-      <dir>$PROJECT_DIR$/routes</dir>
-      <dir>$PROJECT_DIR$/views</dir>
-      <dir>$PROJECT_DIR$</dir>
-    </dirStrings>
-  </component>
-  <component name="Git.Pull.Settings">
-    <option name="BRANCH" value="master" />
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="master" />
-      </map>
-    </option>
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="JsFlowSettings">
     <service-enabled>true</service-enabled>
@@ -163,28 +54,32 @@
     <other-services-enabled>true</other-services-enabled>
     <auto-save>true</auto-save>
   </component>
-  <component name="JupyterTrust" id="71175b30-28b3-4906-9951-5f93c563cad4" />
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="699" />
-    <option name="y" value="28" />
-    <option name="width" value="1966" />
-    <option name="height" value="1297" />
+  <component name="ProjectId" id="1bhMPR63r0Z9koHUjDEFXq34rii" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="JavaScriptWeakerCompletionTypeGuess" value="false" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
     <property name="database.console.LAST_STATE" value="true" />
-    <property name="javascript.nodejs.core.library.configured.version" value="10.14.1" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/views" />
+    <property name="javascript.nodejs.core.library.configured.version" value="13.11.0" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/config" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -195,37 +90,28 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
-    <property name="two.files.diff.last.used.folder" value="$PROJECT_DIR$/../CitySmart22.0" />
+    <property name="settings.editor.selected.configurable" value="settings.nodejs" />
+    <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
+    <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/CS2_MainSvr.js" />
+    <property name="two.files.diff.last.used.folder" value="$PROJECT_DIR$/views" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/views" />
       <recent name="$PROJECT_DIR$/config" />
+      <recent name="$PROJECT_DIR$/views" />
+      <recent name="$PROJECT_DIR$/newfolder" />
       <recent name="$PROJECT_DIR$/scripts" />
       <recent name="$PROJECT_DIR$/src" />
-      <recent name="$PROJECT_DIR$/examples" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/approvedfolder" />
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/views" />
       <recent name="$PROJECT_DIR$/3rdPartyLibs/build" />
       <recent name="$PROJECT_DIR$/3rdPartyLibs" />
+      <recent name="$PROJECT_DIR$/approvedfolder" />
+      <recent name="$PROJECT_DIR$/src" />
+      <recent name="$PROJECT_DIR$/config" />
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="CS2_MainSvr.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="CS2_MainSvr.js" working-dir="$PROJECT_DIR$">
       <method v="2" />
     </configuration>
@@ -258,23 +144,252 @@
       <workItem from="1558452332174" duration="5100000" />
       <workItem from="1559311388756" duration="13000" />
       <workItem from="1559311414670" duration="2271000" />
-      <workItem from="1560168590379" duration="5311000" />
-      <workItem from="1562265329124" duration="4543000" />
-      <workItem from="1562332050364" duration="2219000" />
-      <workItem from="1562334376734" duration="45000" />
-      <workItem from="1562334433859" duration="31000" />
-      <workItem from="1562334479657" duration="20000" />
-      <workItem from="1562334511752" duration="9246000" />
-      <workItem from="1562354840387" duration="81000" />
-      <workItem from="1562354949196" duration="54000" />
-      <workItem from="1562355080485" duration="1048000" />
-      <workItem from="1562590033046" duration="23629000" />
-      <workItem from="1562766579030" duration="14041000" />
-      <workItem from="1562852239270" duration="3164000" />
-      <workItem from="1562855761107" duration="9766000" />
-      <workItem from="1562870520274" duration="461000" />
-      <workItem from="1562872281631" duration="17170000" />
-      <workItem from="1563201479070" duration="10165000" />
+      <workItem from="1560168590379" duration="7722000" />
+      <workItem from="1563372310557" duration="1210000" />
+      <workItem from="1576265623882" duration="194000" />
+      <workItem from="1576522258116" duration="2396000" />
+      <workItem from="1589079849111" duration="1227000" />
+      <workItem from="1589826824520" duration="18473000" />
+      <workItem from="1593812147746" duration="792000" />
+      <workItem from="1594427500406" duration="1703000" />
+    </task>
+    <task id="LOCAL-00040" summary="Merge branch 'julia' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
+      <created>1556918608480</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1556918608480</updated>
+    </task>
+    <task id="LOCAL-00041" summary="AutoMenu bugs fix">
+      <created>1556921158717</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1556921158717</updated>
+    </task>
+    <task id="LOCAL-00042" summary="AutoMenu bugs fix">
+      <created>1556983127615</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1556983127615</updated>
+    </task>
+    <task id="LOCAL-00043" summary="Merge branch 'Yiyang' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
+      <created>1556983208444</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1556983208444</updated>
+    </task>
+    <task id="LOCAL-00044" summary="Merge branch 'Amy' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;routes/routes.js">
+      <created>1556983818630</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1556983818630</updated>
+    </task>
+    <task id="LOCAL-00045" summary="Merge branch 'Amy' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;routes/routes.js">
+      <created>1556983834356</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1556983834356</updated>
+    </task>
+    <task id="LOCAL-00046" summary="V2.3">
+      <created>1557170411420</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1557170411420</updated>
+    </task>
+    <task id="LOCAL-00047" summary="V2.3">
+      <created>1557250979347</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1557250979347</updated>
+    </task>
+    <task id="LOCAL-00048" summary="V2.3">
+      <created>1557251009242</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1557251009242</updated>
+    </task>
+    <task id="LOCAL-00049" summary="V2.3">
+      <created>1557254310618</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1557254310618</updated>
+    </task>
+    <task id="LOCAL-00050" summary="V2.3">
+      <created>1557255646132</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1557255646132</updated>
+    </task>
+    <task id="LOCAL-00051" summary="V2.3">
+      <created>1557261792504</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1557261792504</updated>
+    </task>
+    <task id="LOCAL-00052" summary="V2.3">
+      <created>1557266362905</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1557266362905</updated>
+    </task>
+    <task id="LOCAL-00053" summary="V2.3">
+      <created>1557344372959</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1557344372959</updated>
+    </task>
+    <task id="LOCAL-00054" summary="V2.3">
+      <created>1557352620553</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1557352620553</updated>
+    </task>
+    <task id="LOCAL-00055" summary="V2.3">
+      <created>1557352781296</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1557352781296</updated>
+    </task>
+    <task id="LOCAL-00056" summary="V2.3">
+      <created>1557354818563</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1557354818563</updated>
+    </task>
+    <task id="LOCAL-00057" summary="V2.3">
+      <created>1557412671189</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1557412671189</updated>
+    </task>
+    <task id="LOCAL-00058" summary="V2.3">
+      <created>1557429960805</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1557429960805</updated>
+    </task>
+    <task id="LOCAL-00059" summary="V2.3">
+      <created>1557491781733</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1557491781733</updated>
+    </task>
+    <task id="LOCAL-00060" summary="V2.3">
+      <created>1557494608659</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1557494608659</updated>
+    </task>
+    <task id="LOCAL-00061" summary="V2.3">
+      <created>1557499964368</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1557499964368</updated>
+    </task>
+    <task id="LOCAL-00062" summary="V2.3">
+      <created>1557500956199</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1557500956199</updated>
+    </task>
+    <task id="LOCAL-00063" summary="V2.3">
+      <created>1557503096135</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1557503096135</updated>
+    </task>
+    <task id="LOCAL-00064" summary="Merge branch 'Amy' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;config/geoCapacity/2019_5_10_11_25_32.xml&#10;#&#9;config/mainconf.js&#10;#&#9;routes/routes.js">
+      <created>1557503693948</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1557503693948</updated>
+    </task>
+    <task id="LOCAL-00065" summary="Merge branch 'Amy' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;config/geoCapacity/2019_5_10_11_25_32.xml&#10;#&#9;config/mainconf.js&#10;#&#9;routes/routes.js">
+      <created>1557504897103</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1557504897104</updated>
+    </task>
+    <task id="LOCAL-00066" summary="Merge branch 'Amy' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;config/geoCapacity/2019_5_10_11_25_32.xml&#10;#&#9;config/mainconf.js&#10;#&#9;routes/routes.js">
+      <created>1557518788256</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1557518788256</updated>
+    </task>
+    <task id="LOCAL-00067" summary="Merge branch 'Amy' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;config/geoCapacity/2019_5_10_11_25_32.xml&#10;#&#9;config/mainconf.js&#10;#&#9;routes/routes.js">
+      <created>1557519617277</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1557519617277</updated>
+    </task>
+    <task id="LOCAL-00068" summary="fix option list classes">
+      <created>1557522459361</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1557522459361</updated>
+    </task>
+    <task id="LOCAL-00069" summary="fix option list classes">
+      <created>1557587684655</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1557587684655</updated>
+    </task>
+    <task id="LOCAL-00070" summary="fix option list classes">
+      <created>1557588031599</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1557588031599</updated>
+    </task>
+    <task id="LOCAL-00071" summary="Merge branch 'IV3' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
+      <created>1557952008037</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1557952008037</updated>
+    </task>
+    <task id="LOCAL-00072" summary="Merge branch 'IV3' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
+      <created>1557952038034</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1557952038034</updated>
+    </task>
+    <task id="LOCAL-00073" summary="Merge branch 'IanNew' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;scripts/USGS_MD.js">
+      <created>1557952206936</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1557952206936</updated>
     </task>
     <task id="LOCAL-00074" summary="Merge branch 'IanNew' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;scripts/USGS_MD.js">
       <created>1558708377511</created>
@@ -312,327 +427,80 @@
       <updated>1560182306444</updated>
     </task>
     <task id="LOCAL-00079" summary="Merge branch 'Yiyang' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
-      <created>1562268491525</created>
+      <created>1560198022199</created>
       <option name="number" value="00079" />
       <option name="presentableId" value="LOCAL-00079" />
       <option name="project" value="LOCAL" />
-      <updated>1562268491526</updated>
+      <updated>1560198022199</updated>
     </task>
     <task id="LOCAL-00080" summary="Merge branch 'Yiyang' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
-      <created>1562270515905</created>
+      <created>1563550526365</created>
       <option name="number" value="00080" />
       <option name="presentableId" value="LOCAL-00080" />
       <option name="project" value="LOCAL" />
-      <updated>1562270515905</updated>
+      <updated>1563550526366</updated>
     </task>
     <task id="LOCAL-00081" summary="Merge branch 'Yiyang' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
-      <created>1562334324166</created>
+      <created>1563550763146</created>
       <option name="number" value="00081" />
       <option name="presentableId" value="LOCAL-00081" />
       <option name="project" value="LOCAL" />
-      <updated>1562334324167</updated>
+      <updated>1563550763146</updated>
     </task>
-    <task id="LOCAL-00082" summary="Merge branch 'Yiyang' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
-      <created>1562338273297</created>
+    <task id="LOCAL-00082" summary="Merge branch 'julia2' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
+      <created>1563551043726</created>
       <option name="number" value="00082" />
       <option name="presentableId" value="LOCAL-00082" />
       <option name="project" value="LOCAL" />
-      <updated>1562338273297</updated>
+      <updated>1563551043727</updated>
     </task>
-    <task id="LOCAL-00083" summary="Merge branch 'Yiyang' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
-      <created>1562356964417</created>
+    <task id="LOCAL-00083" summary="Merge branch 'julia2' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
+      <created>1576265791697</created>
       <option name="number" value="00083" />
       <option name="presentableId" value="LOCAL-00083" />
       <option name="project" value="LOCAL" />
-      <updated>1562356964417</updated>
+      <updated>1576265791697</updated>
     </task>
-    <task id="LOCAL-00084" summary="Merge branch 'Yiyang' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
-      <created>1562683879488</created>
+    <task id="LOCAL-00084" summary="Merge branch 'julia2' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
+      <created>1594427564828</created>
       <option name="number" value="00084" />
       <option name="presentableId" value="LOCAL-00084" />
       <option name="project" value="LOCAL" />
-      <updated>1562683879489</updated>
+      <updated>1594427564828</updated>
     </task>
-    <task id="LOCAL-00085" summary="Merge branch 'Yiyang' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
-      <created>1562694282010</created>
+    <task id="LOCAL-00085" summary="Merge branch 'julia2' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
+      <created>1594430389236</created>
       <option name="number" value="00085" />
       <option name="presentableId" value="LOCAL-00085" />
       <option name="project" value="LOCAL" />
-      <updated>1562694282010</updated>
+      <updated>1594430389236</updated>
     </task>
-    <task id="LOCAL-00086" summary="Merge branch 'Yiyang' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
-      <created>1562694374350</created>
+    <task id="LOCAL-00086" summary="Revert &quot;Merge branch 'julia2' of https://github.com/Anson-Zhao/CitySmart22&quot;&#10;&#10;This reverts commit 1f78ac3f">
+      <created>1594430751579</created>
       <option name="number" value="00086" />
       <option name="presentableId" value="LOCAL-00086" />
       <option name="project" value="LOCAL" />
-      <updated>1562694374350</updated>
+      <updated>1594430751579</updated>
     </task>
-    <task id="LOCAL-00087" summary="Merge branch 'Yiyang' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
-      <created>1562696113218</created>
+    <task id="LOCAL-00087" summary="Revert &quot;Merge branch 'julia2' of https://github.com/Anson-Zhao/CitySmart22&quot;&#10;&#10;This reverts commit 5b68f187">
+      <created>1594430809036</created>
       <option name="number" value="00087" />
       <option name="presentableId" value="LOCAL-00087" />
       <option name="project" value="LOCAL" />
-      <updated>1562696113218</updated>
+      <updated>1594430809036</updated>
     </task>
-    <task id="LOCAL-00088" summary="Merge branch 'Yiyang' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
-      <created>1562699572827</created>
+    <task id="LOCAL-00088" summary="Revert &quot;Merge branch 'julia2' of https://github.com/Anson-Zhao/CitySmart22&quot;&#10;&#10;This reverts commit 814ddfc0">
+      <created>1594430826395</created>
       <option name="number" value="00088" />
       <option name="presentableId" value="LOCAL-00088" />
       <option name="project" value="LOCAL" />
-      <updated>1562699572827</updated>
+      <updated>1594430826395</updated>
     </task>
-    <task id="LOCAL-00089" summary="Merge branch 'Yiyang' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
-      <created>1562767335373</created>
-      <option name="number" value="00089" />
-      <option name="presentableId" value="LOCAL-00089" />
-      <option name="project" value="LOCAL" />
-      <updated>1562767335373</updated>
-    </task>
-    <task id="LOCAL-00090" summary="Merge branch 'Yiyang' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
-      <created>1562767440853</created>
-      <option name="number" value="00090" />
-      <option name="presentableId" value="LOCAL-00090" />
-      <option name="project" value="LOCAL" />
-      <updated>1562767440853</updated>
-    </task>
-    <task id="LOCAL-00091" summary="Merge branch 'Yiyang' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
-      <created>1562769449613</created>
-      <option name="number" value="00091" />
-      <option name="presentableId" value="LOCAL-00091" />
-      <option name="project" value="LOCAL" />
-      <updated>1562769449613</updated>
-    </task>
-    <task id="LOCAL-00092" summary="Merge branch 'Yiyang' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
-      <created>1562780329216</created>
-      <option name="number" value="00092" />
-      <option name="presentableId" value="LOCAL-00092" />
-      <option name="project" value="LOCAL" />
-      <updated>1562780329216</updated>
-    </task>
-    <task id="LOCAL-00093" summary="Merge branch 'Yiyang' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
-      <created>1562781969082</created>
-      <option name="number" value="00093" />
-      <option name="presentableId" value="LOCAL-00093" />
-      <option name="project" value="LOCAL" />
-      <updated>1562781969082</updated>
-    </task>
-    <task id="LOCAL-00094" summary="Merge branch 'julia' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;views/LayerRequestForm_edit.ejs">
-      <created>1562853434655</created>
-      <option name="number" value="00094" />
-      <option name="presentableId" value="LOCAL-00094" />
-      <option name="project" value="LOCAL" />
-      <updated>1562853434655</updated>
-    </task>
-    <task id="LOCAL-00095" summary="Merge branch 'julia' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;views/LayerRequestForm_edit.ejs">
-      <created>1562866954665</created>
-      <option name="number" value="00095" />
-      <option name="presentableId" value="LOCAL-00095" />
-      <option name="project" value="LOCAL" />
-      <updated>1562866954666</updated>
-    </task>
-    <task id="LOCAL-00096" summary="Merge branch 'julia' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;views/LayerRequestForm_edit.ejs">
-      <created>1562869485745</created>
-      <option name="number" value="00096" />
-      <option name="presentableId" value="LOCAL-00096" />
-      <option name="project" value="LOCAL" />
-      <updated>1562869485745</updated>
-    </task>
-    <task id="LOCAL-00097" summary="Merge branch 'julia' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;views/LayerRequestForm_edit.ejs">
-      <created>1562869521149</created>
-      <option name="number" value="00097" />
-      <option name="presentableId" value="LOCAL-00097" />
-      <option name="project" value="LOCAL" />
-      <updated>1562869521149</updated>
-    </task>
-    <task id="LOCAL-00098" summary="Merge branch 'Carrots' of https://github.com/Anson-Zhao/CitySmart22 into julia&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
-      <created>1562872404505</created>
-      <option name="number" value="00098" />
-      <option name="presentableId" value="LOCAL-00098" />
-      <option name="project" value="LOCAL" />
-      <updated>1562872404505</updated>
-    </task>
-    <task id="LOCAL-00099" summary="Merge branches 'Carrots' and 'julia' of https://github.com/Anson-Zhao/CitySmart22 into julia&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
-      <created>1562873417163</created>
-      <option name="number" value="00099" />
-      <option name="presentableId" value="LOCAL-00099" />
-      <option name="project" value="LOCAL" />
-      <updated>1562873417163</updated>
-    </task>
-    <task id="LOCAL-00100" summary="Merge branches 'Carrots' and 'julia' of https://github.com/Anson-Zhao/CitySmart22 into julia&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
-      <created>1562875473388</created>
-      <option name="number" value="00100" />
-      <option name="presentableId" value="LOCAL-00100" />
-      <option name="project" value="LOCAL" />
-      <updated>1562875473388</updated>
-    </task>
-    <task id="LOCAL-00101" summary="Knowledge authentication complete">
-      <created>1562936866256</created>
-      <option name="number" value="00101" />
-      <option name="presentableId" value="LOCAL-00101" />
-      <option name="project" value="LOCAL" />
-      <updated>1562936866257</updated>
-    </task>
-    <task id="LOCAL-00102" summary="Merge branch 'julia' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;routes/routes.js&#10;#&#9;views/PhoneAuthP1.ejs&#10;#&#9;views/PhoneAuthP2.ejs">
-      <created>1563202002026</created>
-      <option name="number" value="00102" />
-      <option name="presentableId" value="LOCAL-00102" />
-      <option name="project" value="LOCAL" />
-      <updated>1563202002027</updated>
-    </task>
-    <task id="LOCAL-00103" summary="Merge branch 'julia' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;routes/routes.js&#10;#&#9;views/PhoneAuthP1.ejs&#10;#&#9;views/PhoneAuthP2.ejs">
-      <created>1563202007662</created>
-      <option name="number" value="00103" />
-      <option name="presentableId" value="LOCAL-00103" />
-      <option name="project" value="LOCAL" />
-      <updated>1563202007662</updated>
-    </task>
-    <task id="LOCAL-00104" summary="Merge branch 'julia' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;routes/routes.js&#10;#&#9;views/PhoneAuthP1.ejs&#10;#&#9;views/PhoneAuthP2.ejs">
-      <created>1563211786583</created>
-      <option name="number" value="00104" />
-      <option name="presentableId" value="LOCAL-00104" />
-      <option name="project" value="LOCAL" />
-      <updated>1563211786583</updated>
-    </task>
-    <task id="LOCAL-00105" summary="Merge branch 'julia' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;routes/routes.js&#10;#&#9;views/PhoneAuthP1.ejs&#10;#&#9;views/PhoneAuthP2.ejs">
-      <created>1563212329478</created>
-      <option name="number" value="00105" />
-      <option name="presentableId" value="LOCAL-00105" />
-      <option name="project" value="LOCAL" />
-      <updated>1563212329479</updated>
-    </task>
-    <task id="LOCAL-00106" summary="Merge branch 'julia' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;routes/routes.js&#10;#&#9;views/PhoneAuthP1.ejs&#10;#&#9;views/PhoneAuthP2.ejs">
-      <created>1563212422608</created>
-      <option name="number" value="00106" />
-      <option name="presentableId" value="LOCAL-00106" />
-      <option name="project" value="LOCAL" />
-      <updated>1563212422609</updated>
-    </task>
-    <task id="LOCAL-00107" summary="Merge branch 'julia' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;routes/routes.js&#10;#&#9;views/PhoneAuthP1.ejs&#10;#&#9;views/PhoneAuthP2.ejs">
-      <created>1563212589519</created>
-      <option name="number" value="00107" />
-      <option name="presentableId" value="LOCAL-00107" />
-      <option name="project" value="LOCAL" />
-      <updated>1563212589520</updated>
-    </task>
-    <task id="LOCAL-00108" summary="Merge branch 'julia' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;routes/routes.js&#10;#&#9;views/PhoneAuthP1.ejs&#10;#&#9;views/PhoneAuthP2.ejs">
-      <created>1563212876527</created>
-      <option name="number" value="00108" />
-      <option name="presentableId" value="LOCAL-00108" />
-      <option name="project" value="LOCAL" />
-      <updated>1563212876527</updated>
-    </task>
-    <task id="LOCAL-00109" summary="Merge branch 'julia' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;routes/routes.js&#10;#&#9;views/PhoneAuthP1.ejs&#10;#&#9;views/PhoneAuthP2.ejs">
-      <created>1563213128463</created>
-      <option name="number" value="00109" />
-      <option name="presentableId" value="LOCAL-00109" />
-      <option name="project" value="LOCAL" />
-      <updated>1563213128463</updated>
-    </task>
-    <task id="LOCAL-00110" summary="authentication">
-      <created>1563220593331</created>
-      <option name="number" value="00110" />
-      <option name="presentableId" value="LOCAL-00110" />
-      <option name="project" value="LOCAL" />
-      <updated>1563220593331</updated>
-    </task>
-    <task id="LOCAL-00111" summary="authentication simplified">
-      <created>1563287377335</created>
-      <option name="number" value="00111" />
-      <option name="presentableId" value="LOCAL-00111" />
-      <option name="project" value="LOCAL" />
-      <updated>1563287377335</updated>
-    </task>
-    <task id="LOCAL-00112" summary="Merge branch 'julia' of https://github.com/Anson-Zhao/CitySmart22 into Carrots&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;routes/routes.js&#10;#&#9;views/EmailAuth.ejs&#10;#&#9;views/PhoneAuthP2.ejs">
-      <created>1563287959354</created>
-      <option name="number" value="00112" />
-      <option name="presentableId" value="LOCAL-00112" />
-      <option name="project" value="LOCAL" />
-      <updated>1563287959354</updated>
-    </task>
-    <task id="LOCAL-00113" summary="Merge branch 'julia' of https://github.com/Anson-Zhao/CitySmart22 into Carrots&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;routes/routes.js&#10;#&#9;views/EmailAuth.ejs&#10;#&#9;views/PhoneAuthP2.ejs">
-      <created>1563287997603</created>
-      <option name="number" value="00113" />
-      <option name="presentableId" value="LOCAL-00113" />
-      <option name="project" value="LOCAL" />
-      <updated>1563287997603</updated>
-    </task>
-    <task id="LOCAL-00114" summary="Merge branch 'julia' of https://github.com/Anson-Zhao/CitySmart22 into Carrots&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;routes/routes.js&#10;#&#9;views/EmailAuth.ejs&#10;#&#9;views/PhoneAuthP2.ejs">
-      <created>1563288039227</created>
-      <option name="number" value="00114" />
-      <option name="presentableId" value="LOCAL-00114" />
-      <option name="project" value="LOCAL" />
-      <updated>1563288039227</updated>
-    </task>
-    <task id="LOCAL-00115" summary="Merge branch 'julia' of https://github.com/Anson-Zhao/CitySmart22 into Carrots&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;routes/routes.js&#10;#&#9;views/EmailAuth.ejs&#10;#&#9;views/PhoneAuthP2.ejs">
-      <created>1563288406131</created>
-      <option name="number" value="00115" />
-      <option name="presentableId" value="LOCAL-00115" />
-      <option name="project" value="LOCAL" />
-      <updated>1563288406131</updated>
-    </task>
-    <task id="LOCAL-00116" summary="Merge branch 'julia' of https://github.com/Anson-Zhao/CitySmart22 into Carrots&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;views/EmailAuth.ejs&#10;#&#9;views/KnowledgeAuth.ejs&#10;#&#9;views/PhoneAuthP2.ejs">
-      <created>1563289194943</created>
-      <option name="number" value="00116" />
-      <option name="presentableId" value="LOCAL-00116" />
-      <option name="project" value="LOCAL" />
-      <updated>1563289194943</updated>
-    </task>
-    <task id="LOCAL-00117" summary="Merge branch 'julia' of https://github.com/Anson-Zhao/CitySmart22 into Carrots&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;views/EmailAuth.ejs&#10;#&#9;views/KnowledgeAuth.ejs&#10;#&#9;views/PhoneAuthP2.ejs">
-      <created>1563289240748</created>
-      <option name="number" value="00117" />
-      <option name="presentableId" value="LOCAL-00117" />
-      <option name="project" value="LOCAL" />
-      <updated>1563289240748</updated>
-    </task>
-    <task id="LOCAL-00118" summary="Merge branch 'julia' of https://github.com/Anson-Zhao/CitySmart22 into Carrots&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;views/EmailAuth.ejs&#10;#&#9;views/KnowledgeAuth.ejs&#10;#&#9;views/PhoneAuthP2.ejs">
-      <created>1563289246169</created>
-      <option name="number" value="00118" />
-      <option name="presentableId" value="LOCAL-00118" />
-      <option name="project" value="LOCAL" />
-      <updated>1563289246169</updated>
-    </task>
-    <task id="LOCAL-00119" summary="Merge branch 'Carrots' of https://github.com/Anson-Zhao/CitySmart22 into julia&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
-      <created>1563289873655</created>
-      <option name="number" value="00119" />
-      <option name="presentableId" value="LOCAL-00119" />
-      <option name="project" value="LOCAL" />
-      <updated>1563289873655</updated>
-    </task>
-    <task id="LOCAL-00120" summary="new signup">
-      <created>1563304777835</created>
-      <option name="number" value="00120" />
-      <option name="presentableId" value="LOCAL-00120" />
-      <option name="project" value="LOCAL" />
-      <updated>1563304777835</updated>
-    </task>
-    <task id="LOCAL-00121" summary="sign up fix">
-      <created>1563368502520</created>
-      <option name="number" value="00121" />
-      <option name="presentableId" value="LOCAL-00121" />
-      <option name="project" value="LOCAL" />
-      <updated>1563368502520</updated>
-    </task>
-    <task id="LOCAL-00122" summary="Merge branch 'julia2' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
-      <created>1602082175832</created>
-      <option name="number" value="00122" />
-      <option name="presentableId" value="LOCAL-00122" />
-      <option name="project" value="LOCAL" />
-      <updated>1602082175832</updated>
-    </task>
-    <option name="localTasksCounter" value="123" />
+    <option name="localTasksCounter" value="89" />
     <servers />
   </component>
-  <component name="TodoView">
-    <todo-panel id="selected-file">
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-    <todo-panel id="all">
-      <are-packages-shown value="true" />
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-  </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -663,6 +531,13 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Merge branch 'Ian' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;scripts/MainMenu.js" />
+    <MESSAGE value="V2.2" />
+    <MESSAGE value="V2.2 WT_Placemark layer" />
+    <MESSAGE value="V2.2 AutoMenu restructure" />
+    <MESSAGE value="V2.2 WT_Placemark" />
+    <MESSAGE value="V2.2 Home.js" />
     <MESSAGE value="V2.2 Improve Globe Loading" />
     <MESSAGE value="Merge with Julia's Branch" />
     <MESSAGE value="Merge branch 'master' of https://github.com/Anson-Zhao/CitySmart22 into julia&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;config/geoCapacity/2019_5_2_11_46_2.xml&#10;#&#9;config/geoCapacity/2019_5_3_10_11_38.xml&#10;#&#9;config/geoCapacity/2019_5_3_12_38_12.xml&#10;#&#9;config/geoCapacity/2019_5_3_12_5_18.xml&#10;#&#9;config/geoCapacity/2019_5_3_13_5_18.xml&#10;#&#9;scripts/Home.js" />
@@ -676,18 +551,64 @@
     <MESSAGE value="Merge branch 'IanNew' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;scripts/USGS_MD.js" />
     <MESSAGE value="Merge branch 'IV3' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;scripts/Home.js" />
     <MESSAGE value="Merge branch 'Yiyang' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
-    <MESSAGE value="Merge branch 'julia' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;views/LayerRequestForm_edit.ejs" />
-    <MESSAGE value="Merge branches 'Carrots' and 'julia' of https://github.com/Anson-Zhao/CitySmart22 into julia&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
-    <MESSAGE value="Knowledge authentication complete" />
-    <MESSAGE value="Merge branch 'julia' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;routes/routes.js&#10;#&#9;views/PhoneAuthP1.ejs&#10;#&#9;views/PhoneAuthP2.ejs" />
-    <MESSAGE value="authentication" />
-    <MESSAGE value="authentication simplified" />
-    <MESSAGE value="Merge branch 'julia' of https://github.com/Anson-Zhao/CitySmart22 into Carrots&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;routes/routes.js&#10;#&#9;views/EmailAuth.ejs&#10;#&#9;views/PhoneAuthP2.ejs" />
-    <MESSAGE value="Merge branch 'julia' of https://github.com/Anson-Zhao/CitySmart22 into Carrots&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml&#10;#&#9;views/EmailAuth.ejs&#10;#&#9;views/KnowledgeAuth.ejs&#10;#&#9;views/PhoneAuthP2.ejs" />
-    <MESSAGE value="Merge branch 'Carrots' of https://github.com/Anson-Zhao/CitySmart22 into julia&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
-    <MESSAGE value="new signup" />
-    <MESSAGE value="sign up fix" />
     <MESSAGE value="Merge branch 'julia2' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge branch 'julia2' of https://github.com/Anson-Zhao/CitySmart22&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
+    <MESSAGE value="Revert &quot;Merge branch 'julia2' of https://github.com/Anson-Zhao/CitySmart22&quot;&#10;&#10;This reverts commit 1f78ac3f" />
+    <MESSAGE value="Revert &quot;Merge branch 'julia2' of https://github.com/Anson-Zhao/CitySmart22&quot;&#10;&#10;This reverts commit 5b68f187" />
+    <MESSAGE value="Revert &quot;Merge branch 'julia2' of https://github.com/Anson-Zhao/CitySmart22&quot;&#10;&#10;This reverts commit 814ddfc0" />
+    <option name="LAST_COMMIT_MESSAGE" value="Revert &quot;Merge branch 'julia2' of https://github.com/Anson-Zhao/CitySmart22&quot;&#10;&#10;This reverts commit 814ddfc0" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="297" y="0" key="CommitChangelistDialog2" timestamp="1594430824629">
+      <screen x="0" y="0" width="1676" height="902" />
+    </state>
+    <state x="297" y="0" key="CommitChangelistDialog2/0.0.1676.902@0.0.1676.902" timestamp="1594430824629" />
+    <state x="92" y="92" width="1736" height="856" key="DirDiffDialog" timestamp="1589934202764">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="92" y="92" width="1736" height="856" key="DirDiffDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1589934202764" />
+    <state width="1620" height="245" key="GridCell.Tab.0.bottom" timestamp="1594430496346">
+      <screen x="0" y="0" width="1676" height="902" />
+    </state>
+    <state width="1620" height="245" key="GridCell.Tab.0.bottom/0.0.1676.902@0.0.1676.902" timestamp="1594430496346" />
+    <state width="915" height="295" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1590024963367" />
+    <state width="1620" height="245" key="GridCell.Tab.0.center" timestamp="1594430496346">
+      <screen x="0" y="0" width="1676" height="902" />
+    </state>
+    <state width="1620" height="245" key="GridCell.Tab.0.center/0.0.1676.902@0.0.1676.902" timestamp="1594430496346" />
+    <state width="915" height="295" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1590024963367" />
+    <state width="1620" height="245" key="GridCell.Tab.0.left" timestamp="1594430496346">
+      <screen x="0" y="0" width="1676" height="902" />
+    </state>
+    <state width="1620" height="245" key="GridCell.Tab.0.left/0.0.1676.902@0.0.1676.902" timestamp="1594430496346" />
+    <state width="915" height="295" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1590024963367" />
+    <state width="1620" height="245" key="GridCell.Tab.0.right" timestamp="1594430496346">
+      <screen x="0" y="0" width="1676" height="902" />
+    </state>
+    <state width="1620" height="245" key="GridCell.Tab.0.right/0.0.1676.902@0.0.1676.902" timestamp="1594430496346" />
+    <state width="915" height="295" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1590024963367" />
+    <state x="391" y="155" key="MultipleFileMergeDialog" timestamp="1594430819691">
+      <screen x="0" y="0" width="1676" height="902" />
+    </state>
+    <state x="391" y="155" key="MultipleFileMergeDialog/0.0.1676.902@0.0.1676.902" timestamp="1594430819691" />
+    <state x="336" y="77" key="SettingsEditor" timestamp="1589080432596">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="336" y="77" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1589080432596" />
+    <state x="329" y="118" key="Vcs.Push.Dialog.v2" timestamp="1594430392736">
+      <screen x="0" y="0" width="1676" height="902" />
+    </state>
+    <state x="329" y="118" key="Vcs.Push.Dialog.v2/0.0.1676.902@0.0.1676.902" timestamp="1594430392736" />
+    <state x="502" y="192" key="git4idea.merge.GitPullDialog" timestamp="1594428128734">
+      <screen x="0" y="0" width="1676" height="902" />
+    </state>
+    <state x="502" y="192" key="git4idea.merge.GitPullDialog/0.0.1676.902@0.0.1676.902" timestamp="1594428128734" />
+    <state x="227" y="127" key="new project wizard" timestamp="1589903410019">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="227" y="127" key="new project wizard/0.0.1920.1040@0.0.1920.1040" timestamp="1589903410019" />
+    <state x="818" y="387" key="publish.login" timestamp="1589826845326">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="818" y="387" key="publish.login/0.0.1920.1040@0.0.1920.1040" timestamp="1589826845326" />
   </component>
 </project>

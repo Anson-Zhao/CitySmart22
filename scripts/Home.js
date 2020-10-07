@@ -24,7 +24,8 @@ requirejs(['./newGlobe',
     './CS_wmsLayer',
     './USGS_WT',
     './USGS_MD',
-    './USGS_MR'
+    './USGS_MR',
+    './CS_InvisPK'
 ], function (newGlobe, menuL) {
 
     "use strict";
@@ -56,7 +57,7 @@ requirejs(['./newGlobe',
         nextL.prop('disabled', true);
         previousL.prop('disabled', true);
 
-        // $("#popover").popover({html: true, placement: "top", trigger: "hover"});
+        $("#popover").popover({html: true, placement: "top", trigger: "hover"});
 
         //turn on/off layers
         $(menuL.arrType.toString()).click(function () {
@@ -69,7 +70,7 @@ requirejs(['./newGlobe',
             // console.log(array);
 
             if(firstTime) {
-                confirm("Some layers may take awhile to load. Please be patient.");
+                alert("Some layers may take awhile to load. Please be patient.");
                 firstTime = false; //alert (only appear at the first time)
             }
 
@@ -90,8 +91,11 @@ requirejs(['./newGlobe',
                     if (newGlobe.layers[selectedIndex] instanceof WorldWind.RenderableLayer) {
 
                         if (selectedIndex < 0 || !newGlobe.layers[selectedIndex].renderables.length) {
+                            // console.log("1");
+                            // console.log(selectedIndex);
+                            // console.log(newGlobe.layers[selectedIndex].renderables.length);
 
-                            confirm("The layer you selected is tentatively not available. Please try it later.");
+                            alert("The layer you selected is tentatively not available. Please try it later.");
                             $(toggle).prop('checked', false);
 
                         } else {
@@ -116,8 +120,10 @@ requirejs(['./newGlobe',
                         }
                     } else { // turn on the lock to select only one layer
                         if (selectedIndex < 0) {
-
-                            confirm("The layer you selected is tentatively not available. Please try it later.");
+                            // console.log("2");
+                            // console.log(selectedIndex);
+                            // console.log(newGlobe.layers[selectedIndex].renderables.length);
+                            alert("The layer you selected is tentatively not available. Please try it later.");
                             $(toggle).prop('checked', false);
                             // array.splice(-1,1)
 
@@ -161,8 +167,10 @@ requirejs(['./newGlobe',
 
                     if (newGlobe.layers[selectedIndex] instanceof WorldWind.RenderableLayer) {
                         if (selectedIndex < 0 || !newGlobe.layers[selectedIndex].renderables.length) {
-
-                            confirm("The layer you selected is tentatively not available. Please try it later.");
+                            // console.log("3");
+                            // console.log(selectedIndex);
+                            // console.log(newGlobe.layers[selectedIndex].renderables.length);
+                            alert("The layer you selected is tentatively not available. Please try it later.");
                             $(toggle).prop('checked', false);
 
                         } else {
@@ -188,8 +196,10 @@ requirejs(['./newGlobe',
                         }
                     } else {
                         if (selectedIndex < 0) {
-
-                            confirm("The layer you selected is tentatively not available. Please try it later.");
+                            // console.log("4");
+                            // console.log(selectedIndex);
+                            // console.log(newGlobe.layers[selectedIndex].renderables.length);
+                            alert("The layer you selected is tentatively not available. Please try it later.");
                             $(toggle).prop('checked', false);
                             array.splice(-1,1)
 
@@ -230,7 +240,7 @@ requirejs(['./newGlobe',
 
                 toggleCheck=true;
 
-                if(confirm("all the layers is going to be closed except the most recent one")){
+                if(alert("All the layers are going to be closed except for the most recent one.")){
                     if(arrMenu.length>1){
                         closeAllToggle()
                     }
@@ -352,6 +362,8 @@ requirejs(['./newGlobe',
         pickListCLK.objects.forEach(function (value) {
             let pickedPM = value.userObject;
             if (pickedPM instanceof WorldWind.Placemark && pickedPM.userProperties.layerType === 'CS_PKLayer') {
+                sitePopUp(pickedPM);
+            } else if (pickedPM instanceof WorldWind.Placemark && pickedPM.userProperties.layerType === 'CS_InvisPK') {
                 sitePopUp(pickedPM);
             }
         })

@@ -14,13 +14,13 @@ const rimraf = require("rimraf");
 const mkdirp = require("mkdirp");
 const multiparty = require('multiparty');
 const path    = require('path');
-const ExpressBrute = require('express-brute');
+// const ExpressBrute = require('express-brute');
 const rateLimit = require("express-rate-limit");
 const text = require('textbelt');
 const generator = require('generate-password');
 
-const store = new ExpressBrute.MemoryStore(); // stores state locally, don't use this in production
-const bruteforce = new ExpressBrute(store);
+// const store = new ExpressBrute.MemoryStore(); // stores state locally, don't use this in production
+// const bruteforce = new ExpressBrute(store);
 
 const geoServer = serverConfig.geoServer;
 const Download_From = serverConfig.Download_From;
@@ -298,8 +298,8 @@ module.exports = function (app, passport) {
     });
 
     // process the login form
-    app.post('/login', bruteforce.prevent, passport.authenticate('local-login', {
-            successRedirect: '/admindetector', // redirect to the secure profile section
+    app.post('/login', passport.authenticate('local-login', {
+            successRedirect: '/authentication', // redirect to the secure profile section
             failureRedirect: '/login', // redirect to the login page if there is an error
             failureFlash: true // allow flash messages
         }),
@@ -313,17 +313,13 @@ module.exports = function (app, passport) {
 
 
     // //Detects if user is admin
-    app.get('/admindetector', function (req, res) {
+    app.get('/authentication', function (req, res) {
         dateNtime();
-        if (req.user.userrole === "Admin" || req.userrole === "Admin") {
-            res.render('2step.ejs',{
-                user:req.user,
-                userrole: req.user.userrole,
-                username: req.user.username
-            });
-        } else {
-            res.redirect('/loginUpdate');
-        }
+
+        res.render('2step.ejs',{
+            user:req.user,
+            username: req.user.username
+        });
     });
 
     // Update user login status
@@ -402,12 +398,12 @@ module.exports = function (app, passport) {
         myStat = "SELECT question1, question2, answer1, answer2 FROM UserLogin WHERE username = '" + req.user.username + "'";
 
         con_CS.query(myStat, function (err, result) {
-            console.log("here is the result:");
+            console.log("Here is the result:");
             console.log(result);
             console.log(result[0].question1);
 
             if (err) {
-                res.send('There was a big no no.');
+                res.send('An unexpected error occurred.');
             } else {
                 res.render('KnowledgeAuth.ejs', {
                     user: req.user,
@@ -423,24 +419,28 @@ module.exports = function (app, passport) {
     });
 
     app.post('/pauth', function (req, res) {
+        let phoneNumber;
         res.setHeader("Access-Control-Allow-Origin", "*");
 
         myStat = "SELECT Phone_Number FROM UserProfile WHERE username = '" + req.user.username + "'";
 
         con_CS.query(myStat, function (err, result) {
-            console.log("here is the result:");
+            console.log("Here is the result:");
             console.log(result);
             console.log(result[0].Phone_Number);
 
-            if (err) {
-                res.send("There was a big nose nose.");
+            if(result[0].Phone_Number === "" || result[0].Phone_Number === "null" || result[0].Phone_Number === "NULL") {
+                phoneNumber = "NULL";
             } else {
-                res.render('PhoneAuthP1.ejs', {
-                    user: req.user,
-                    Phone_Number: result[0].Phone_Number,
-
-                });
+                phoneNumber = result[0].Phone_Number;
             }
+
+            res.render('PhoneAuthP1.ejs', {
+                user: req.user,
+                Phone_Number: phoneNumber,
+
+            });
+
         });
 
     });
@@ -453,7 +453,7 @@ module.exports = function (app, passport) {
         });
 
 
-        console.log('Waffles and bacon');
+        console.log('The code was successfully generated');
         console.log(result[0]);
 
         let password = generator.generateMultiple(1, {
@@ -492,7 +492,7 @@ module.exports = function (app, passport) {
     app.get('/emailRequest', function (req, res) {
         res.setHeader("Access-Control-Allow-Origin", "*"); // Allow cross domain header
         let requester = req.query.requester;
-        console.log("got here");
+        console.log("Email request initiated");
         console.log(requester);
 
         let statement = "SELECT username FROM UserLogin WHERE userrole = 'Admin';";
@@ -523,7 +523,6 @@ module.exports = function (app, passport) {
 
         con_CS.query(myStat, function (err, user) {
             dateNtime();
-            // console.log(user);
 
             if (!user || dateTime > user[0].resetPasswordExpires) {
                 res.send('Password reset token is invalid or has expired. Please contact Administrator.');
@@ -576,7 +575,7 @@ module.exports = function (app, passport) {
                     to: req.body.username,
                     subject: 'Your password has been changed',
                     text: 'Hello,\n\n' +
-                    'This is a confirmation that the password for your account, ' + changeMail(req.body.username) + ' has just been changed.\n'
+                        'This is a confirmation that the password for your account, ' + changeMail(req.body.username) + ' has just been changed.\n'
                 };
 
                 smtpTrans.sendMail(message, function (error) {
@@ -744,14 +743,14 @@ module.exports = function (app, passport) {
                 let statement1 = "UPDATE Request_Form SET Layer_Uploader = 'approvedfolder/',Current_Status = 'Approved' WHERE ThirdLayer ='"+ layerNameStr[i] +"';";
                 let statement2 = "UPDATE LayerMenu SET Status = 'Approved' WHERE ThirdLayer = '" + layerNameStr[i]  + "';";
                 console.log(statement2);
-                console.log('statement:D'+statement1+statement2);
+                console.log('statement: '+statement1+statement2);
                 console.log(i);
                 console.log(pictureStr.length);
                 con_CS.query(statement1+statement2, function (err, results) {
                     if(i === pictureStr.length - 1){
                         console.log('last one');
                         if (err) {
-                           throw err;
+                            throw err;
                             // res.json({"error": true, "message": "Recover Failed"});
                         } else {
                             res.json({"error": false, "message": "Recover successful, jump to UserHome"});
@@ -841,62 +840,131 @@ module.exports = function (app, passport) {
         }
     });
 
+    // app.get('/filterQuery', isLoggedIn, function (req, res) {
+    //     // console.log(req.query);
+    //     let sqlStat = "SELECT UserProfile.firstName, UserProfile.lastName, Request_Form.* FROM Request_Form INNER JOIN UserProfile ON UserProfile.username = Request_Form.UID";
+    //     let myQueryObj = [ //change everything because we need to make sure it matches what we want to happen in client side
+    //         {
+    //             fieldVal: req.query.firstName,
+    //             dbCol: "firstName",
+    //             op: " = '",
+    //             adj: req.query.firstName,
+    //             table: 1
+    //         },
+    //         {
+    //             fieldVal: req.query.lastName,
+    //             dbCol: "lastName",
+    //             op: " = '",
+    //             adj: req.query.lastName,
+    //             table: 1
+    //         },
+    //         {
+    //             fieldVal: req.query.startDate,
+    //             dbCol: "date",
+    //             op: " >= '",
+    //             adj: req.query.startDate,
+    //             table: 1
+    //         },
+    //         {
+    //             fieldVal: req.query.endDate,
+    //             dbCol: "date",
+    //             op: " <= '",
+    //             adj: req.query.endDate,
+    //             table: 1
+    //         },
+    //         {
+    //             fieldVal: req.query.Current_Status1,
+    //             dbCol: req.query.Current_Status,
+    //             op: " = '",
+    //             adj: req.query.Current_Status1,
+    //             table: req.query.filter1
+    //         },
+    //         {
+    //             fieldVal: req.query.Current_Status2,
+    //             dbCol: req.query.Current_Status,
+    //             op: " = '",
+    //             adj: req.query.Current_Status2,
+    //             table: req.query.filter2
+    //         },
+    //         {
+    //             fieldVal: req.query.UID,
+    //             dbCol: req.query.UID,
+    //             op: " = '",
+    //             adj: req.query.UID,
+    //             table: req.query.filter3
+    //         }
+    //     ];
+    //     QueryStat(myQueryObj, sqlStat, res)
+    // });
+
     app.get('/filterQuery', isLoggedIn, function (req, res) {
-        // console.log(req.query);
-        let sqlStat = "SELECT UserProfile.firstName, UserProfile.lastName, Request_Form.* FROM Request_Form INNER JOIN UserProfile ON UserProfile.username = Request_Form.UID";
-        let myQueryObj = [ //change everything because we need to make sure it matches what we want to happen in client side
-            {
-                fieldVal: req.query.firstName,
-                dbCol: "firstName",
-                op: " = '",
-                adj: req.query.firstName,
-                table: 1
-            },
-            {
-                fieldVal: req.query.lastName,
-                dbCol: "lastName",
-                op: " = '",
-                adj: req.query.lastName,
-                table: 1
-            },
-            {
-                fieldVal: req.query.startDate,
-                dbCol: "date",
-                op: " >= '",
-                adj: req.query.startDate,
-                table: 1
-            },
-            {
-                fieldVal: req.query.endDate,
-                dbCol: "date",
-                op: " <= '",
-                adj: req.query.endDate,
-                table: 1
-            },
-            {
-                fieldVal: req.query.Current_Status1,
-                dbCol: req.query.Current_Status,
-                op: " = '",
-                adj: req.query.Current_Status1,
-                table: req.query.filter1
-            },
-            {
-                fieldVal: req.query.Current_Status2,
-                dbCol: req.query.Current_Status,
-                op: " = '",
-                adj: req.query.Current_Status2,
-                table: req.query.filter2
-            },
-            {
-                fieldVal: req.query.UID,
-                dbCol: req.query.UID,
-                op: " = '",
-                adj: req.query.UID,
-                table: req.query.filter3
-            }
-        ];
-        QueryStat(myQueryObj, sqlStat, res)
+        console.log(req.query);
+        let start = Number(req.query.startDate.slice(5, 7)) - 1;
+
+        start = req.query.startDate.slice(0, 4) + '-' + start + "-" + req.query.startDate.slice(8);
+        let end = Number(req.query.endDate.slice(5, 7)) - 1;
+
+        end = req.query.endDate.slice(0, 4) + '-' + end + "-" + req.query.endDate.slice(8);
+        console.log(start)
+        let sqlStat = "SELECT * FROM timelog WHERE logDate >= ? AND logDate <= ? AND username = '" + req.user.username + "';"
+        con_CS.query(sqlStat, [start, end], function(err, result){
+            res.json(result);
+        })
+        //let sqlStat = "SELECT username, logDate, inTime, outTime, timeLeft, timeDiff * FROM timelog WHERE username = '" + req.user.username + "';";
+        // let myQueryObj = [ //change everything because we need to make sure it matches what we want to happen in client side
+        //     {
+        //         fieldVal: req.query.username,
+        //         dbCol: "username",
+        //         op: " = '",
+        //         adj: req.query.username,
+        //         table: 1
+        //     },
+        //     {
+        //         fieldVal: req.query.inTime,
+        //         dbCol: "inTime",
+        //         op: " = '",
+        //         adj: req.query.inTime,
+        //         table: 1
+        //     },
+        //     {
+        //         fieldVal: req.query.startDate,
+        //         dbCol: "date",
+        //         op: " >= '",
+        //         adj: req.query.startDate,
+        //         table: 1
+        //     },
+        //     {
+        //         fieldVal: req.query.endDate,
+        //         dbCol: "date",
+        //         op: " <= '",
+        //         adj: req.query.endDate,
+        //         table: 1
+        //     },
+        //     {
+        //         fieldVal: req.query.outTime,
+        //         dbCol: req.query.outTime,
+        //         op: " = '",
+        //         adj: req.query.outTime,
+        //         table: req.query.outTime
+        //     },
+        //     {
+        //         fieldVal: req.query.timeDiff,
+        //         dbCol: req.query.timeDiff,
+        //         op: " = '",
+        //         adj: req.query.timeDiff,
+        //         table: req.query.timeDiff
+        //     },
+        //     {
+        //         fieldVal: req.query.timeLeft,
+        //         dbCol: req.query.timeLeft,
+        //         op: " = '",
+        //         adj: req.query.timeLeft,
+        //         table: req.query.timeLeft
+        //     }
+        // ];
+        // QueryStat(myQueryObj, sqlStat, res)
     });
+
 
     app.get('/layerReqQuery', isLoggedIn, function (req, res) {
         console.log('Layer query: ');
@@ -964,7 +1032,8 @@ module.exports = function (app, passport) {
     // Show user profile page
     app.get('/profile', function (req, res) {
         res.setHeader("Access-Control-Allow-Origin", "*");
-        con_CS.query("SELECT * FROM UserProfile", function (err, results) {
+        let userN = req.query.userN;
+        con_CS.query("SELECT * FROM UserProfile WHERE username = '" + userN + "'; SELECT question1, answer1, question2, answer2 FROM UserLogin WHERE username = '" + userN + "';", function (err, results) {
             if (err) throw err;
             res.json(results);
         })
@@ -986,9 +1055,10 @@ module.exports = function (app, passport) {
         res.render('userProfile.ejs', {
             user: req.user,
         });
+        // console.log(req.user);
     });
 
-    app.post('/userProfile', bruteforce.prevent, isLoggedIn, function (req, res) {
+    app.post('/userProfile', isLoggedIn, function (req, res) {
         res.setHeader("Access-Control-Allow-Origin", "*"); // Allow cross domain header
 
         // new password (User Login)
@@ -1025,18 +1095,29 @@ module.exports = function (app, passport) {
 
             let update1 = "UPDATE UserProfile SET ";
             let update2 = "";
-            let update3 = " WHERE username = '" + req.user.username + "'";
-            for (let i = 1; i < result.length - 3; i++) {
-                if (i === result.length - 4) {
+            let update3 = " WHERE username = '" + req.user.username + "';";
+            let update4 = "UPDATE UserLogin SET ";
+            let update5 = "";
+            let update6 = " WHERE username = '" + req.user.username + "';";
+            for (let i = 1; i < result.length - 7; i++) {
+                if (i === result.length - 8) {
                     update2 += result[i][0] + " = '" + result[i][1] + "'";
                 } else {
                     update2 += result[i][0] + " = '" + result[i][1] + "', ";
                 }
             }
-            let statement1 = update1 + update2 + update3;
+            for (let i = result.length - 7; i < result.length - 3; i++) {
+                if (i === result.length - 4) {
+                    update5 += result[i][0] + " = '" + result[i][1] + "'";
+                } else {
+                    update5 += result[i][0] + " = '" + result[i][1] + "', ";
+                }
+            }
+            let statement1 = update1 + update2 + update3 + update4 + update5 + update6;
 
             con_CS.query(statement1, function (err, result) {
                 if (err) {
+
                     res.json({"error": true, "message": "Fail !"});
                 } else {
                     // res.json({"error": false, "message": "Success !"});
@@ -1068,7 +1149,7 @@ module.exports = function (app, passport) {
     });
 
     // Update user profile page
-    app.post('/newPass', bruteforce.prevent, isLoggedIn, function (req, res) {
+    app.post('/newPass', isLoggedIn, function (req, res) {
         res.setHeader("Access-Control-Allow-Origin", "*"); // Allow cross domain header
         let user = req.user;
         let newPass = {
@@ -1133,7 +1214,7 @@ module.exports = function (app, passport) {
         });
     });
 
-    app.post('/signup', bruteforce.prevent, function (req, res) {
+    app.post('/signup', function (req, res) {
         res.setHeader("Access-Control-Allow-Origin", "*"); // Allow cross domain header
         // con_CS.query('USE ' + serverConfig.Login_db); // Locate Login DB
 
@@ -1170,16 +1251,11 @@ module.exports = function (app, passport) {
                 let text = 'to sign up an account with this email.';
                 let url = "http://" + req.headers.host + "/verify/";
                 sendToken(username, subject, text, url, res);
-                let newStat = "UPDATE UserProfile SET Phone_Number = replace(Phone_Number, '-', '');";
-                con_CS.query(newStat, function (err, rows) {
-                    if (err) {
-                        console.log(err);
-                        res.json({"error": true, "message": "An unexpected error occurred!"});
-                    } else {
-                        console.log("donezo");
-                    }
-
-                });
+                res.redirect('/login');
+                // res.render('login.ejs', {
+                //     message: req.flash('loginMessage'),
+                //     error: "Your username and password don't match."
+                // });
             }
         });
     });
@@ -1193,7 +1269,7 @@ module.exports = function (app, passport) {
         });
     });
 
-    app.post('/addUser', bruteforce.prevent, isLoggedIn, function (req, res) {
+    app.post('/addUser', isLoggedIn, function (req, res) {
 
         res.setHeader("Access-Control-Allow-Origin", "*"); // Allow cross domain header
         // connection.query('USE ' + serverConfig.Login_db); // Locate Login DB
@@ -1371,15 +1447,15 @@ module.exports = function (app, passport) {
     let edit_User, edit_firstName, edit_lastName, edit_userrole, edit_status, edit_city;
     app.get('/editUserQuery', isLoggedIn, function (req, res) {
 
-         edit_User = req.query.Username;
-         edit_firstName = req.query.First_Name;
-         edit_city = req.query.City;
-         edit_lastName = req.query.Last_Name;
-         edit_userrole = req.query.User_Role;
-         edit_status = req.query.status;
+        edit_User = req.query.Username;
+        edit_firstName = req.query.First_Name;
+        edit_city = req.query.City;
+        edit_lastName = req.query.Last_Name;
+        edit_userrole = req.query.User_Role;
+        edit_status = req.query.status;
 
-         res.json({"error": false, "message": "/editUser"});
-     });
+        res.json({"error": false, "message": "/editUser"});
+    });
 
     app.post('/edituserform',function (req,res) {
         res.setHeader("Access-Control-Allow-Origin", "*"); // Allow cross domain header
@@ -1388,72 +1464,95 @@ module.exports = function (app, passport) {
         let user = req.body.Username;
         //Converts array to string
         let editingUser = req.user.username;
-        let editingUserPassword = req.user.password;
+        // let editingUserPassword = req.user.password;
 
-        let phoneNumber = {
-            phoneNumber: req.body.phoneNumber,
+        // basicInformation();
+
+        // let user = req.user;
+        let newPass = {
+            // currentpassword: req.body.CurrentPassword,
+            Newpassword: bcrypt.hashSync(req.body.NewPassword, null, null),
+            confirmPassword: bcrypt.hashSync(req.body.ConfirmNewPassword, null, null)
         };
 
+        // let passComp = bcrypt.compareSync(newPass.currentpassword, user.password);
 
+        if (!!req.body.NewPassword) {
+            let passReset = "UPDATE UserLogin SET password = '" + newPass.Newpassword + "' WHERE username = '" + user.username + "'";
 
-        if(user === editingUser) {
-            let newEditPass = {
-                currentpassword: req.body.CurrentPassword,
-                Newpassword: bcrypt.hashSync(req.body.NewPassword, null, null),
-                confirmPassword: bcrypt.hashSync(req.body.ConfirmNewPassword, null, null)
-            };
-
-
-            let passComp = bcrypt.compareSync(newEditPass.currentpassword, editingUserPassword);
-
-
-            if (!!req.body.NewPassword) {
-                let passAdminReset = "UPDATE UserLogin SET password = '" + newEditPass.Newpassword + "' WHERE username = '" + user + "'";
-
-                con_CS.query(passAdminReset, function (err, rows) {
-                    if (err) {
-                        console.log(err);
-                        res.json({"error": true, "message": "Fail !"});
-                    } else {
-                        // res.json({"error": false, "message": "Success !"});
-                        basicInformation();
-                    }
-                });
-            } else {
-                basicInformation();
-            }
+            con_CS.query(passReset, function (err, rows) {
+                if (err) {
+                    console.log(err);
+                    res.json({"error": true, "message": "Fail!"});
+                } else {
+                    // res.json({"error": false, "message": "Success !"});
+                    basicInformation();
+                }
+            });
         } else {
-            let newPass = {
-                Newpassword: bcrypt.hashSync(req.body.NewPassword, null, null),
-                confirmPassword: bcrypt.hashSync(req.body.ConfirmNewPassword, null, null)
-            };
-
-
-            if (!!req.body.NewPassword) {
-                let passReset = "UPDATE UserLogin SET password = '" + newPass.Newpassword + "' WHERE username = '" + user + "'";
-
-                con_CS.query(passReset, function (err, rows) {
-                    if (err) {
-                        console.log(err);
-                        res.json({"error": true, "message": "Fail !"});
-                        res.json({"error": true, "message": err});
-                    } else {
-                        // res.json({"error": false, "message": "Success !"});
-                        basicInformation();
-                    }
-                });
-            } else {
-                basicInformation();
-            }
+            basicInformation();
         }
+
+        // if(user === editingUser) {
+        //     let newEditPass = {
+        //         currentpassword: req.body.CurrentPassword,
+        //         Newpassword: bcrypt.hashSync(req.body.NewPassword, null, null),
+        //         confirmPassword: bcrypt.hashSync(req.body.ConfirmNewPassword, null, null)
+        //     };
+        //
+        //
+        //     let passComp = bcrypt.compareSync(newEditPass.currentpassword, editingUserPassword);
+        //
+
+        //
+        //     // if (!!req.body.NewPassword) {
+        //         let passAdminReset = "UPDATE UserLogin SET password = '" + newEditPass.Newpassword + "' WHERE username = '" + user + "'";
+        //
+        //         con_CS.query(passAdminReset, function (err, rows) {
+        //             if (err) {
+        //                 console.log(err);
+        //                 res.json({"error": true, "message": "Fail !"});
+        //             } else {
+        //                 // res.json({"error": false, "message": "Success !"});
+        //                 basicInformation();
+        //             }
+        //         });
+        //     } else {
+        //         basicInformation();
+        //     }
+        // } else {
+        //     let newPass = {
+        //         Newpassword: bcrypt.hashSync(req.body.NewPassword, null, null),
+        //         confirmPassword: bcrypt.hashSync(req.body.ConfirmNewPassword, null, null)
+        // };
+
+
+        // if (!!req.body.NewPassword) {
+        //     let passReset = "UPDATE UserLogin SET password = '" + newPass.Newpassword + "' WHERE username = '" + user + "'";
+        //
+        //     con_CS.query(passReset, function (err, rows) {
+        //         if (err) {
+        //             console.log(err);
+        //             res.json({"error": true, "message": "Fail !"});
+        //             res.json({"error": true, "message": err});
+        //         } else {
+        //             // res.json({"error": false, "message": "Success !"});
+        //             basicInformation();
+        //         }
+        //     });
+        // } else {
+        //     basicInformation();
+        // }
+        // }
 
         function basicInformation() {
             let result = Object.keys(req.body).map(function (key) {
                 return [String(key), req.body[key]];
             });
+            console.log(result);
 
             // let update3 = " WHERE username = '" + req.user.username + "'";
-            let statement1 = "UPDATE UserLogin SET userrole = '" + result[3][1] + "',   status = '" + result[4][1] + "' WHERE username = '" + result[0][1]+ "';";
+            let statement1 = "UPDATE UserLogin SET userrole = '" + result[3][1] + "',   status = '" + result[4][1] + "', dateModified = '" + result[5][1] + "', modifiedUser = '" + result[6][1] + "'  WHERE username = '" + result[0][1]+ "';";
             let statement2 = "UPDATE UserProfile SET firstName = '" + result[1][1] + "', lastName = '" + result[2][1] + "' WHERE username = '" + result[0][1] + "';";
             con_CS.query(statement1 + statement2, function (err, result) {
                 if (err) throw err;
@@ -1464,6 +1563,7 @@ module.exports = function (app, passport) {
 
     // Show user edit form
     app.get('/editUser', isLoggedIn, function (req, res) {
+
         res.render('userEdit.ejs', {
             user: req.user, // get the user out of session and pass to template
             username: req.body.username,
@@ -1605,7 +1705,7 @@ module.exports = function (app, passport) {
     });
 
     //Submit Request form//
-    app.post('/submitL', bruteforce.prevent, function (req, res) {
+    app.post('/submitL', function (req, res) {
         let result = Object.keys(req.body).map(function (key) {
             return [String(key), req.body[key]];
         });
@@ -1743,7 +1843,7 @@ module.exports = function (app, passport) {
 
     app.get('/SearchUsername', function (req, res) {
         res.setHeader("Access-Control-Allow-Origin", "*");
-        con_CS.query("SELECT username FROM UserLogin", function (err, results) {
+        con_CS.query("SELECT username FROM CitySmart2.UserLogin", function (err, results) {
             if (err) throw err;
             res.json(results);
         });
@@ -1788,7 +1888,7 @@ module.exports = function (app, passport) {
                 if (err) throw err;
                 // console.log(results);
 
-                if (format === "shapefile") {
+                if (format === "ShapeFile") {
                     console.log("name of file: " + approvepictureStr[0]);
                     let type = "Content-type: application/zip";
                     let datastore = "datastore" + fName;
@@ -1800,92 +1900,90 @@ module.exports = function (app, passport) {
                             console.log(uploadStat1);
                             console.log('stdout: ' + stdout);
                             console.log('stderr: ' + stderr);
-
                             if (error !== null) {
                                 console.log('exec error: ' + error);
                             } else {
                                 setTimeout( function () {
                                     let uploadStat2 = "curl -u julia:123654 -v -XGET " + geoServer + "rest/workspaces/Approved/datastores/" + datastore + "/featuretypes.json";
-                                let jsonF;
-                                child = exec(uploadStat2,
-                                    function (error, stdout, stderr) {
-                                        console.log(uploadStat2);
-                                        console.log('stdout: ' + stdout);
-                                        console.log('stderr: ' + stderr);
+                                    let jsonF;
+                                    child = exec(uploadStat2,
+                                        function (error, stdout, stderr) {
+                                            console.log(uploadStat2);
+                                            console.log('stdout: ' + stdout);
+                                            console.log('stderr: ' + stderr);
 
-                                        jsonF = JSON.parse(stdout);
-                                        if (error !== null) {
+                                            jsonF = JSON.parse(stdout);
+                                            if (error !== null) {
 
-                                            console.log('exec error: ' + error);
-                                        } else {
-                                            setTimeout( function () {
-                                                layerName = "Approved:" + jsonF.featureTypes.featureType[0].name;
-                                            console.log(layerName);
-                                            geoName = layerName;
-                                            // let lname = jsonF.featureTypes.featureType[0].name;
+                                                console.log('exec error: ' + error);
+                                            } else {
+                                                setTimeout( function () {
+                                                    layerName = "Approved:" + jsonF.featureTypes.featureType[0].name;
+                                                    console.log(layerName);
+                                                    geoName = layerName;
+                                                    // let lname = jsonF.featureTypes.featureType[0].name;
 
-                                            let myState2 = "UPDATE Request_Form SET LayerName = '" + geoName +"' WHERE RID = '" + approveIDStr + "';";
-                                            let myState3 = "UPDATE LayerMenu SET LayerName = '" + geoName +"' WHERE RID = '" + approveIDStr + "'";
+                                                    let myState2 = "UPDATE Request_Form SET LayerName = '" + geoName +"' WHERE RID = '" + approveIDStr + "';";
+                                                    let myState3 = "UPDATE LayerMenu SET LayerName = '" + geoName +"' WHERE RID = '" + approveIDStr + "'";
 
-                                            con_CS.query(myState2 + myState3, function (err, results) {
-                                                if (err) {
-                                                    throw err;
-                                                } else {
-                                                    setTimeout( function () {
-                                                        //res.json(results);
-                                                    let uploadStat3 = "curl -u julia:123654 -v -H 'Accept: text/xml' -XGET -H 'Content-type: text/json' " + geoServer + "rest/workspaces/Approved/datastores/" + datastore + "/featuretypes/"+ jsonF.featureTypes.featureType[0].name +".json";
-                                                    let jsonL;
-                                                        child = exec(uploadStat3,
-                                                        function (error, stdout, stderr) {
-                                                            console.log(uploadStat3);
-                                                            console.log('stdout: ' + stdout);
-                                                            console.log('stderr: ' + stderr);
+                                                    con_CS.query(myState2 + myState3, function (err, results) {
+                                                        if (err) {
+                                                            throw err;
+                                                        } else {
+                                                            setTimeout( function () {
+                                                                //res.json(results);
+                                                                let uploadStat3 = "curl -u julia:123654 -v -H 'Accept: text/xml' -XGET -H 'Content-type: text/json' " + geoServer + "rest/workspaces/Approved/datastores/" + datastore + "/featuretypes/"+ jsonF.featureTypes.featureType[0].name +".json";
+                                                                let jsonL;
+                                                                child = exec(uploadStat3,
+                                                                    function (error, stdout, stderr) {
+                                                                        console.log(uploadStat3);
+                                                                        console.log('stdout: ' + stdout);
+                                                                        console.log('stderr: ' + stderr);
 
-                                                            jsonL = JSON.parse(stdout);
-                                                            if (error !== null) {
+                                                                        jsonL = JSON.parse(stdout);
+                                                                        if (error !== null) {
 
-                                                                console.log('exec error: ' + error);
-                                                            } else {
-                                                                let minx, maxx, miny, maxy, avgx, avgy;
-                                                                minx = jsonL.featureType.nativeBoundingBox.minx;
-                                                                maxx = jsonL.featureType.nativeBoundingBox.maxx;
-                                                                miny = jsonL.featureType.nativeBoundingBox.miny;
-                                                                maxy = jsonL.featureType.nativeBoundingBox.maxy;
-                                                                avgx = (minx + maxx)/2;
-                                                                avgy = (miny + maxy)/2;
-                                                                console.log(minx);
-                                                                console.log(maxx);
-                                                                console.log(avgx);
-                                                                console.log(miny);
-                                                                console.log(maxy);
-                                                                console.log(avgy);
+                                                                            console.log('exec error: ' + error);
+                                                                        } else {
+                                                                            let minx, maxx, miny, maxy, avgx, avgy;
+                                                                            minx = jsonL.featureType.latLonBoundingBox.minx;
+                                                                            maxx = jsonL.featureType.latLonBoundingBox.maxx;
+                                                                            miny = jsonL.featureType.latLonBoundingBox.miny;
+                                                                            maxy = jsonL.featureType.latLonBoundingBox.maxy;
+                                                                            avgx = (minx + maxx)/2;
+                                                                            avgy = (miny + maxy)/2;
+                                                                            console.log(minx);
+                                                                            console.log(maxx);
+                                                                            console.log(avgx);
+                                                                            console.log(miny);
+                                                                            console.log(maxy);
+                                                                            console.log(avgy);
 
-                                                                let myState4 = "UPDATE LayerMenu SET Latitude = '" + avgy +"', Longitude = '" + avgx +"' WHERE RID = '" + approveIDStr + "'";
+                                                                            let myState4 = "UPDATE LayerMenu SET Latitude = '" + avgy +"', Longitude = '" + avgx +"', Altitude = '1' WHERE RID = '" + approveIDStr + "'";
 
-                                                                con_CS.query(myState4, function (err, results) {
-                                                                    if (err) {
-                                                                        throw err;
-                                                                    } else {
-                                                                        //res.json(results);
-                                                                    }
-                                                                });
-                                                            }}, 5000);
-                                                        });
-                                                }}, 5000);
-                                            });
+                                                                            con_CS.query(myState4, function (err, results) {
+                                                                                if (err) {
+                                                                                    throw err;
+                                                                                } else {
+                                                                                    //res.json(results);
+                                                                                }
+                                                                            });
+                                                                        }}, 5000);
+                                                            });
+                                                        }}, 5000);
+                                                });
 
-                                        }}, 5000);
-                                    });
+                                            }}, 5000);
+                                });
                             }
                         });
-                } else if (format === "geoTIFF") {
-                    console.log("geotiff file works :D");
+                } else if (format === "GeoTIFF") {
                     console.log("name of file: " + approvepictureStr[0]);
                     let fileName = approvepictureStr[0].slice(0, -4);
                     type = "Content-type: text/plain";
                     let coveragestore = "coveragestore" + fName;
 
-                    let uploadStat4 = "curl -u julia:123654 -v -XPUT -H '" + type + "' -d 'file:data_dir/data/Approved/coveragestore/" + approvepictureStr[0] + "' " + geoServer + "rest/workspaces/Approved/coveragestores/" + coveragestore +"/external.geotiff";
+                    let uploadStat4 = "curl -u julia:123654 -v -XPUT -H '" + type + "' -d 'file:/var/www/cs/v2/approvedfolder/" + approvepictureStr[0] + "' " + geoServer + "rest/workspaces/Approved/coveragestores/" + coveragestore +"/external.geotiff";
 
                     child = exec(uploadStat4,
                         function (error, stdout, stderr) {
@@ -1895,75 +1993,90 @@ module.exports = function (app, passport) {
                             if (error !== null) {
                                 console.log('exec error: ' + error);
                             } else {
-                                // let statement = "curl -u julia:123654 -v -XGET " + geoServer + "rest/workspaces/Approved/coveragestore/" + datastore + "/featuretypes.json";
-                                // let jsonF;
-                                // child = exec(statement,
-                                //     function (error, stdout, stderr) {
-                                //         console.log(statement);
-                                //         console.log('stdout: ' + stdout);
-                                //         console.log('stderr: ' + stderr);
-                                //
-                                //         jsonF = JSON.parse(stdout);
-                                //         if (error !== null) {
-                                //
-                                //             console.log('exec error: ' + error);
-                                //         } else {
-                                //             layerName = "Approved:" + jsonF.featureTypes.featureType[0].name;
-                                //             console.log(layerName);
-                                //             geoName = layerName;
-                                //             let lname = jsonF.featureTypes.featureType[0].name;
-                                //
-                                //             let statementNext = "UPDATE Request_Form SET LayerName = '" + geoName +"' WHERE RID = '" + approveIDStr + "';";
-                                //             let statementNext2 = "UPDATE LayerMenu SET LayerName = '" + geoName +"' WHERE RID = '" + approveIDStr + "'";
-                                //
-                                //             con_CS.query(statementNext + statementNext2, function (err, results) {
-                                //                 if (err) {
-                                //                     throw err;
-                                //                 } else {
-                                //                     //res.json(results);
-                                //                     let statement = "curl -u julia:123654 -v -H 'Accept: text/xml' -XGET -H 'Content-type: text/json' " + geoServer + "rest/workspaces/Approved/datastores/" + datastore + "/featuretypes/"+ lname +".json";
-                                //                     let jsonL;
-                                //                     child = exec(statement,
-                                //                         function (error, stdout, stderr) {
-                                //                             console.log(statement);
-                                //                             console.log('stdout: ' + stdout);
-                                //                             console.log('stderr: ' + stderr);
-                                //
-                                //                             jsonL = JSON.parse(stdout);
-                                //                             if (error !== null) {
-                                //
-                                //                                 console.log('exec error: ' + error);
-                                //                             } else {
-                                //                                 let minx, maxx, miny, maxy, avgx, avgy;
-                                //                                 minx = jsonL.featureType.nativeBoundingBox.minx;
-                                //                                 maxx = jsonL.featureType.nativeBoundingBox.maxx;
-                                //                                 miny = jsonL.featureType.nativeBoundingBox.miny;
-                                //                                 maxy = jsonL.featureType.nativeBoundingBox.maxy;
-                                //                                 avgx = (minx + maxx)/2;
-                                //                                 avgy = (miny + maxy)/2;
-                                //                                 console.log(minx);
-                                //                                 console.log(maxx);
-                                //                                 console.log(avgx);
-                                //                                 console.log(miny);
-                                //                                 console.log(maxy);
-                                //                                 console.log(avgy);
-                                //
-                                //                                 let statementNext3 = "UPDATE LayerMenu SET Latitude = '" + avgy +"', Longitude = '" + avgx +"' WHERE RID = '" + approveIDStr + "'";
-                                //
-                                //                                 con_CS.query(statementNext3, function (err, results) {
-                                //                                     if (err) {
-                                //                                         throw err;
-                                //                                     } else {
-                                //                                         //res.json(results);
-                                //                                     }
-                                //                                 });
-                                //                             }
-                                //                         });
-                                //                 }
-                                //             });
-                                //
-                                //         }
-                                //     });
+                                setTimeout( function () {
+                                    let statement = "curl -u julia:123654 -v -XGET " + geoServer + "rest/workspaces/Approved/coveragestores/" + coveragestore + "/coverages/" + fileName + ".json";
+                                    let jsonF;
+                                    child = exec(statement,
+                                        function (error, stdout, stderr) {
+                                            console.log(statement);
+                                            console.log('stdout: ' + stdout);
+                                            console.log('stderr: ' + stderr);
+
+                                            jsonF = JSON.parse(stdout);
+                                            if (error !== null) {
+
+                                                console.log('exec error: ' + error);
+                                            } else {
+                                                layerName = "Approved:" + jsonF.coverage.name;
+                                                console.log(layerName);
+
+                                                let minx, maxx, miny, maxy, avgx, avgy;
+                                                minx = jsonF.coverage.latLonBoundingBox.minx;
+                                                maxx = jsonF.coverage.latLonBoundingBox.maxx;
+                                                miny = jsonF.coverage.latLonBoundingBox.miny;
+                                                maxy = jsonF.coverage.latLonBoundingBox.maxy;
+                                                avgx = (minx + maxx)/2;
+                                                avgy = (miny + maxy)/2;
+                                                console.log(minx);
+                                                console.log(maxx);
+                                                console.log(avgx);
+                                                console.log(miny);
+                                                console.log(maxy);
+                                                console.log(avgy);
+
+                                                let statementNext = "UPDATE Request_Form SET LayerName = '" + layerName +"' WHERE RID = '" + approveIDStr + "';";
+                                                let statementNext2 = "UPDATE LayerMenu SET LayerName = '" + layerName +"' WHERE RID = '" + approveIDStr + "';";
+                                                let statementNext3 = "UPDATE LayerMenu SET Latitude = '" + avgy +"', Longitude = '" + avgx +"', Altitude = '1' WHERE RID = '" + approveIDStr + "';";
+
+                                                con_CS.query(statementNext + statementNext2 + statementNext3, function (err, results) {
+                                                    if (err) {
+                                                        throw err;
+                                                    } else {
+                                                        console.log("Here are the statements: "+statementNext + statementNext2 + statementNext3);
+                                                        //res.json(results);
+                                                        // let statement = "curl -u julia:123654 -v -H 'Accept: text/xml' -XGET -H 'Content-type: text/json' " + geoServer + "rest/workspaces/Approved/datastores/" + datastore + "/featuretypes/"+ lname +".json";
+                                                        // let jsonL;
+                                                        // child = exec(statement,
+                                                        //     function (error, stdout, stderr) {
+                                                        //         console.log(statement);
+                                                        //         console.log('stdout: ' + stdout);
+                                                        //         console.log('stderr: ' + stderr);
+                                                        //
+                                                        //         jsonL = JSON.parse(stdout);
+                                                        //         if (error !== null) {
+                                                        //
+                                                        //             console.log('exec error: ' + error);
+                                                        //         } else {
+                                                        //             let minx, maxx, miny, maxy, avgx, avgy;
+                                                        //             minx = jsonL.featureType.nativeBoundingBox.minx;
+                                                        //             maxx = jsonL.featureType.nativeBoundingBox.maxx;
+                                                        //             miny = jsonL.featureType.nativeBoundingBox.miny;
+                                                        //             maxy = jsonL.featureType.nativeBoundingBox.maxy;
+                                                        //             avgx = (minx + maxx)/2;
+                                                        //             avgy = (miny + maxy)/2;
+                                                        //             console.log(minx);
+                                                        //             console.log(maxx);
+                                                        //             console.log(avgx);
+                                                        //             console.log(miny);
+                                                        //             console.log(maxy);
+                                                        //             console.log(avgy);
+                                                        //
+                                                        //             let statementNext3 = "UPDATE LayerMenu SET Latitude = '" + avgy +"', Longitude = '" + avgx +"' WHERE RID = '" + approveIDStr + "'";
+                                                        //
+                                                        //             con_CS.query(statementNext3, function (err, results) {
+                                                        //                 if (err) {
+                                                        //                     throw err;
+                                                        //                 } else {
+                                                        //                     //res.json(results);
+                                                        //                 }
+                                                        //             });
+                                                        //         }
+                                                        //     });
+                                                    }
+                                                });
+
+                                            }}, 5000);
+                                });
                             }
                         });
                 }
@@ -2042,7 +2155,7 @@ module.exports = function (app, passport) {
         console.log(statement2);
         console.log(statement3);
         if(result[3][1] === "other"){
-            let statement = " INSERT INTO LayerMenu (LayerName, LayerType, FirstLayer, SecondLayer, ThirdLayer, Picture_Location, ContinentName, CountryName, StateName, CityName, Site_Description, Status, RID) VALUES ('" + result[7][1] + "', 'Wmslayer', '" + result[4][1] + "','" + result[6][1] + "','" + result[8][1] + "','" + result[14][1] + "','" + result[9][1] + "','" + result[10][1] + "','" + result[11][1] + "','" + result[12][1] + "','" + result[13][1] + "', 'Approved', '" + result[1][1] + "') ON DUPLICATE KEY UPDATE LayerName ='" + result[7][1] + "', FirstLayer = '" + result[4][1] + "', SecondLayer = '" + result[6][1] + "', ThirdLayer = '" + result[8][1] + "', Picture_Location = '" + result[14][1] + "', Status = 'Approved'; ";
+            let statement = " INSERT INTO LayerMenu (LayerName, LayerType, FirstLayer, SecondLayer, ThirdLayer, Picture_Location, ContinentName, CountryName, StateName, CityName, Site_Description, Status, RID) VALUES ('" + result[7][1] + "', 'WmsLayer', '" + result[4][1] + "','" + result[6][1] + "','" + result[8][1] + "','" + result[14][1] + "','" + result[9][1] + "','" + result[10][1] + "','" + result[11][1] + "','" + result[12][1] + "','" + result[13][1] + "', 'Approved', '" + result[1][1] + "') ON DUPLICATE KEY UPDATE LayerName ='" + result[7][1] + "', FirstLayer = '" + result[4][1] + "', SecondLayer = '" + result[6][1] + "', ThirdLayer = '" + result[8][1] + "', Picture_Location = '" + result[14][1] + "', Status = 'Approved'; ";
             con_CS.query(statement1 + statement + statement2 + statement3, function (err, result) {
                 console.log(statement);
                 if (err) {
@@ -2052,10 +2165,10 @@ module.exports = function (app, passport) {
                 }
             });
         }else{
-            let statement = " INSERT INTO LayerMenu (LayerName, LayerType, FirstLayer, SecondLayer, ThirdLayer, Picture_Location, ContinentName, CountryName, StateName, CityName, Site_Description, Status, RID) VALUES ('" + result[7][1] + "', 'Wmslayer', '" + result[3][1] + "','" + result[5][1] + "','" + result[8][1] + "','" + result[14][1] + "','" + result[9][1] + "','" + result[10][1] + "','" + result[11][1] + "','" + result[12][1] + "','" + result[13][1] + "', 'Approved', '" + result[1][1] + "') ON DUPLICATE KEY UPDATE LayerName ='" + result[7][1] + "', FirstLayer = '" + result[3][1] + "', SecondLayer = '" + result[5][1] + "', ThirdLayer = '" + result[8][1] + "', Picture_Location = '" + result[14][1] + "', Status = 'Approved'; ";
-           con_CS.query(statement1 + statement + statement2 + statement3, function (err, result) {
-               console.log(statement);
-               if (err) {
+            let statement = " INSERT INTO LayerMenu (LayerName, LayerType, FirstLayer, SecondLayer, ThirdLayer, Picture_Location, ContinentName, CountryName, StateName, CityName, Site_Description, Status, RID) VALUES ('" + result[7][1] + "', 'WmsLayer', '" + result[3][1] + "','" + result[5][1] + "','" + result[8][1] + "','" + result[14][1] + "','" + result[9][1] + "','" + result[10][1] + "','" + result[11][1] + "','" + result[12][1] + "','" + result[13][1] + "', 'Approved', '" + result[1][1] + "') ON DUPLICATE KEY UPDATE LayerName ='" + result[7][1] + "', FirstLayer = '" + result[3][1] + "', SecondLayer = '" + result[5][1] + "', ThirdLayer = '" + result[8][1] + "', Picture_Location = '" + result[14][1] + "', Status = 'Approved'; ";
+            con_CS.query(statement1 + statement + statement2 + statement3, function (err, result) {
+                console.log(statement);
+                if (err) {
                     throw err;
                 } else {
                     res.json("Connected!");
@@ -2103,6 +2216,156 @@ module.exports = function (app, passport) {
         }
     });
 
+    app.post('/add', function(req, res) {
+        console.log(req.body);
+        let min = (Number(req.body.hours) * 60) + Number(req.body.minutes);
+        let diff = req.body.hours + ":" + req.body.minutes + ":00";
+        let initial = "SELECT * FROM timelog WHERE username = '" + req.body.user + "';"
+        let statement = "INSERT INTO timelog(username, logDate, inTime, outTime, timeLeft, timeDiff, method) VALUES ('" + req.body.user + "','" + req.body.day + "', '00:00:00', '00:00:00', ('" + req.user.minutesLeft + "' + ?), ?, 'added')"
+        let statement1 = "UPDATE citysmart2.userlogin SET minutesLeft = (minutesLeft + (?)) WHERE username = '" + req.body.user + "';"
+        con_CS.query(initial, function(err, result){
+            if(err){
+                console.log(err);
+            } else if(result.length < 1){
+                res.json('There were no logs with that username please make sure you have entered it correctly');
+            } else {
+                con_CS.query(statement, [min, diff], function(err, result){
+                    if(err){
+                        console.log(err);
+                    } else {
+                        console.log('cool');
+                        con_CS.query(statement1, min, function(err){
+                            if(err){
+                                console.log(err);
+                            } else {
+                                console.log('my guy');
+                                res.json("successfully added hours to user's log");
+                            }
+                        })
+                    }
+                })
+            }
+        })
+    })
+
+    app.post('/remove', function(req, res){
+        console.log(req.body);
+        let min = (Number(req.body.hours) * 60) + Number(req.body.minutes);
+        let diff = req.body.hours + ":" + req.body.minutes + ":00";
+        let initial = "SELECT * FROM timelog WHERE username = '" + req.body.user + "';"
+        let statement = "INSERT INTO timelog(username, logDate, inTime, outTime, timeLeft, timeDiff, method) VALUES ('" + req.body.user + "','" + req.body.day + "', '00:00:00', '00:00:00', ('" + req.user.minutesLeft + "' - ?), ?, 'removed')"
+        let statement1 = "UPDATE citysmart2.userlogin SET minutesLeft = (minutesLeft - (?)) WHERE username = '" + req.body.user + "';"
+        con_CS.query(initial, function(err, result){
+            if(err){
+                console.log(err);
+            } else if(result.length < 1){
+                res.json('There were no logs with that username please make sure you have entered it correctly');
+            } else {
+                con_CS.query(statement, [min, diff], function(err, result){
+                    if(err){
+                        console.log(err);
+                    } else {
+                        console.log('cool');
+                        con_CS.query(statement1, min, function(err){
+                            if(err){
+                                console.log(err);
+                            } else {
+                                console.log('my guy');
+                                res.json("successfully removed hours from user's log");
+                            }
+                        })
+                    }
+                })
+            }
+        })
+    })
+
+    app.post('/inTime', function(req, res) {
+        console.log(req.body);
+        let bruh = req.body.send;
+        let lmao = req.body.send1;
+        console.log(bruh + "  " + lmao);
+        let statement = "INSERT INTO citysmart2.timelog(username, logDate, inTime, outTime, timeLeft) VALUES ('" + req.user.username + "', (?), (?), NULL,'" + req.user.minutesLeft + "' )"
+        con_CS.query(statement, [bruh, lmao], function(err){
+            if (err){
+                console.log(err);
+            } else {
+                console.log("Cool");
+            }
+        })
+        res.json("lol");
+    })
+
+    app.post('/time', async function(req, res){
+        //console.log(req.body.cool);
+        let lol = req.body.cool;
+        let time = req.body.lmao;
+        let theDiff;
+        let stat = 'You have logged an out time please refresh the page and if the \'hours needed\' does not change even though you think it should have please contact an admin'
+        //let start = '00:00:00'
+        //console.log(time);
+        //console.log(lol);
+        let statement = "UPDATE citysmart2.timelog SET outTime = (?) WHERE outTime IS NULL AND logDate = (?) AND username = '" + req.user.username + "';"
+        let statement1 = "SELECT inTime FROM citysmart2.timelog WHERE outTime IS NULL AND logDate = (?) AND username = '" + req.user.username + "';"
+        let update = "UPDATE citysmart2.userlogin SET minutesLeft = (minutesLeft - (?)) WHERE username = '" + req.user.username + "';"
+        let diff = "UPDATE citysmart2.timelog SET timeDiff = timediff((?), (?)) WHERE outTime IS NULL AND logDate = (?) AND username = '" + req.user.username + "';"
+        let diffSelect = "SELECT timeDiff FROM citysmart2.timelog WHERE outTime IS NULL AND logDate = (?) AND username = '" + req.user.username + "';"
+
+        con_CS.query(statement1, lol, function (err, result) {
+            if (err) {
+                console.log(err);
+            } else if (result.length == 0) {
+                //res.json("error");
+                stat = "An error occurred there may not be an in time"
+                console.log("bruh");
+                res.json(stat);
+            } else {
+                console.log(result.length);
+                let start = result[0].inTime;
+                con_CS.query(diff, [time, start, lol], function (err) {
+                    if (err) {
+                        console.log(err);
+                    } else {
+                        con_CS.query(diffSelect, lol, function (err, result) {
+                            if (err) {
+                                console.log(err);
+                            } else {
+                                theDiff = result[0].timeDiff;
+                                let hMin = theDiff.slice(0, 2) * 60;
+                                let mMin = theDiff.slice(3, 5);
+                                let sMin = theDiff.slice(6) / 60;
+                                let total = Number(hMin) + Number(mMin) + Number(sMin);
+                                con_CS.query(update, total, function (err) {
+                                    if (err) {
+                                        console.log(err);
+                                    } else {
+                                        con_CS.query(statement, [time, lol], function (err) {
+                                            if (err) {
+                                                console.log(err);
+                                            } else {
+                                                res.json(stat);
+                                            }
+                                        })
+                                    }
+                                })
+                            }
+                        })
+                    }
+                })
+            }
+        })
+    })
+
+    app.get('/display', function(req, res){
+        let statement = "SELECT minutesLeft FROM citysmart2.userlogin WHERE username = '" + req.user.username + "';"
+        con_CS.query(statement, function(err, results){
+            if(err){
+                console.log (err);
+            } else {
+                res.json(results[0].minutesLeft);
+            }
+        })
+    })
 
     app.get('/rejected', isLoggedIn, function (req, res) {
         let myStat = "SELECT userrole FROM UserLogin WHERE username = '" + req.user.username + "';";
@@ -2164,9 +2427,9 @@ module.exports = function (app, passport) {
             let statement = "UPDATE Request_Form SET Layer_Uploader = 'trashfolder/', Prior_Status = Current_Status, Current_Status = 'Deleted'  WHERE RID = '" + transactionID[i] + "';";
             let statement1 = "UPDATE LayerMenu SET Status = 'Deleted' WHERE ThirdLayer = '" + LayerName[i] + "';";
 
-            console.log("WOW " + statement1);
+            console.log("Statement1:  " + statement1);
             // let statement1 = "DELETE FROM LayerMenu WHERE ThirdLayer = '" + LayerName[i]  + "';"; // the [i] is converting the array back to string so it can be used
-        ////transferred value from client side to server side and then be used in SQL
+            ////transferred value from client side to server side and then be used in SQL
             fs.rename(''+ Pending_Dir + '/' + pictureStr[i] + '' , ''  + Delete_Dir + '/' + pictureStr[i] + '',  function (err) {
                 if (err) {
                     console.log(err);
@@ -2465,12 +2728,12 @@ module.exports = function (app, passport) {
         })
     }
 
-function QueryStat(myObj, sqlStat, res) {
-    let j = 0;
-    let NewsqlStat = sqlStat;
-    let aw;
-    for (let i = 0; i < myObj.length; i++) {
-        if (!!myObj[i].adj){
+    function QueryStat(myObj, sqlStat, res) {
+        let j = 0;
+        let NewsqlStat = sqlStat;
+        let aw;
+        for (let i = 0; i < myObj.length; i++) {
+            if (!!myObj[i].adj){
 
                 if (j === 0) {
                     aw = " WHERE ";
@@ -2487,7 +2750,7 @@ function QueryStat(myObj, sqlStat, res) {
                     dataList(NewsqlStat, res);
                 }
             } else {
-            // console.log(aw);
+                // console.log(aw);
                 if (i === myObj.length - 1) {
                     NewsqlStat = sqlStat + "; ";
                     console.log(NewsqlStat);
@@ -2651,7 +2914,7 @@ function QueryStat(myObj, sqlStat, res) {
         res.setHeader("Access-Control-Allow-Origin", "*"); // Allow cross domain header
         //console.log("result=" + req.params.uuid);
         let uuid = req.params.uuid,
-            dirToDelete = Pending_Dir + '/' + uuid;
+            dirToDelete = Delete_Dir + '/' + uuid;
         rimraf(dirToDelete, function(error) {
             if (error) {
                 console.error("Problem deleting file! " + error);
@@ -2700,7 +2963,7 @@ function QueryStat(myObj, sqlStat, res) {
                         success();
                     })
                     .pipe(destStream);
-                }
+            }
         });
 
         // let sourceStream = fs.createReadStream(sourceFile);
@@ -2818,9 +3081,9 @@ function QueryStat(myObj, sqlStat, res) {
 
                     // plaintext body
                     text: 'You are receiving this because you (or someone else) have requested ' + text + '\n\n' +
-                    'Please click on the following link, or paste this into your browser to complete the process:\n\n' +
-                    url + token + '\n\n' +
-                    'If you did not request this, please ignore this email.\n'
+                        'Please click on the following link, or paste this into your browser to complete the process:\n\n' +
+                        url + token + '\n\n' +
+                        'If you did not request this, please ignore this email.\n'
                 };
 
                 smtpTrans.sendMail(message, function(error){
@@ -2939,7 +3202,7 @@ function QueryStat(myObj, sqlStat, res) {
                     // plaintext body
                     text: 'This email is sent to inform all admins that user ' + username + ' has ' + text + '\n\n' +
                         'Please click on the following link, or paste this into your browser to review the new layer:\n\n' +
-                    url + '\n\n'
+                        url + '\n\n'
                 };
 
                 smtpTrans.sendMail(message, function(error){
@@ -2991,9 +3254,9 @@ function QueryStat(myObj, sqlStat, res) {
                     subject: subject, // Subject of the message
                     // plaintext body
                     text: 'You are receiving this because you (or someone else) have requested ' + text + '\n\n' +
-                    'Please click on the following link, or paste this into your browser to complete the process:\n\n' +
-                    url + token + '\n\n' +
-                    'If you did not request this, please ignore this email.\n'
+                        'Please click on the following link, or paste this into your browser to complete the process:\n\n' +
+                        url + token + '\n\n' +
+                        'If you did not request this, please ignore this email.\n'
                 };
 
                 smtpTrans.sendMail(message, function(error){
@@ -3006,7 +3269,7 @@ function QueryStat(myObj, sqlStat, res) {
                     }
                 });
             }
-            ], function(err) {
+        ], function(err) {
             if (err) return next(err);
             res.json({"error": true, "message": "An unexpected error occurred !"});
         });
@@ -3082,33 +3345,33 @@ function QueryStat(myObj, sqlStat, res) {
 
         fs.readdir(copyDestDir, (err, files) => {//a method to calculate the number of the files in the geoCapacity folder
 
-            if(files.length > num_backups){
-
-                //if there are more than 100 file in the directory
-                if(!downloadFalse){ //if download succeed, run the code below
-                    fs.unlink(copyDestDir + "/" + files[0], (err) => { //delete the first (the oldest) file in the directory
-                        if (err) {throw err} else {
-                            downloadFalse = true; //change the value of "downloadFalse" to true
-                        }
-                        console.log('download and remove copy successfully');
-                    })
-                } else { //if download failed, run the code below
-                    fs.unlink(copyDestDir + "/" + files[files.length-1], (err) => { //then delete the last (the latest) file in the directory
-                        if (err) {throw err}
-                        console.log('download file failed, removed copy successfully')
-                    })
-                }
-            }else {
-                //if the file number is less than num_backups, and download failed
-                if (files.length > 0) {
-                    if (downloadFalse === null) {
-                        fs.unlink(copyDestDir + "/" + files[files.length - 1], (err) => { //then delete the last (the latest) file in the directory
-                            if (err) throw err;
-                            console.log('download file failed,number is less than num_backups, removed copy successfully')
-                        })
-                    }
-                }
-            }
+            // if(files.length > num_backups){
+            //
+            //     //if there are more than 100 file in the directory
+            //     if(!downloadFalse){ //if download succeed, run the code below
+            //         fs.unlink(copyDestDir + "/" + files[0], (err) => { //delete the first (the oldest) file in the directory
+            //             if (err) {throw err} else {
+            //                 downloadFalse = true; //change the value of "downloadFalse" to true
+            //             }
+            //             console.log('download and remove copy successfully');
+            //         })
+            //     } else { //if download failed, run the code below
+            //         fs.unlink(copyDestDir + "/" + files[files.length-1], (err) => { //then delete the last (the latest) file in the directory
+            //             if (err) {throw err}
+            //             console.log('download file failed, removed copy successfully')
+            //         })
+            //     }
+            // }else {
+            //     //if the file number is less than num_backups, and download failed
+            //     if (files.length > 0) {
+            //         if (downloadFalse === null) {
+            //             fs.unlink(copyDestDir + "/" + files[files.length - 1], (err) => { //then delete the last (the latest) file in the directory
+            //                 if (err) throw err;
+            //                 console.log('download file failed,number is less than num_backups, removed copy successfully')
+            //             })
+            //         }
+            //     }
+            // }
         });
     }
 };
